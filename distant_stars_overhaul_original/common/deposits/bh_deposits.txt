@@ -1,0 +1,110 @@
+bh_harvested_planet_deposit_small = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			physics_research = 6
+			society_research = 6
+			engineering_research = 6
+			unity = 10
+			alloys = 6
+			minerals = 10
+			food = 20
+		
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+bh_harvested_planet_deposit_moderate = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+        	physics_research = 8
+			society_research = 8
+			engineering_research = 8
+			unity = 10
+			alloys = 12
+			minerals = 20
+			food = 40
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+bh_harvested_planet_deposit_large = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			physics_research = 15
+			society_research = 15
+			engineering_research = 15
+			unity = 10
+			alloys = 20
+			minerals = 40
+			food = 80
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+
+harvester_engine_harvested_planet_deposit_small = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			alloys = 6
+			minerals = 10
+			food = 20
+		
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+harvester_engine_harvested_planet_deposit_moderate = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			alloys = 12
+			minerals = 20
+			food = 40
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+harvester_engine_harvested_planet_deposit_large = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			alloys = 20
+			minerals = 40
+			food = 80
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}

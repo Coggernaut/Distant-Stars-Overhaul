@@ -1,0 +1,125 @@
+# Available requirements:
+#
+#	SKILLS
+#	#skill = 2
+#
+#	LEADER
+#	leader = scientist
+#	leader = admiral
+#	leader = general
+#	leader = ruler
+#	leader = governor
+#	
+#	MILITARY SHIPS
+#	shipclass_military = 1
+#	
+#	CIVILIAN SHIPS
+#	shipclass_constructor = 2
+#	shipclass_science_ship = 1
+#	shipclass_colonizer = 2
+#	
+#	ARMIES
+#	shipclass_transport = 1
+#	assault_armies = 2
+#	defense_armies = 1
+#	
+#	STATIONS
+#	research_station = yes
+#	mining_station = yes
+#	observation_station = yes
+#
+#	SCOPES
+#	abort_trigger
+#	this = country (project owner)
+#	from = event scope (planet or ship, MIGHT NOT EXIST)
+#	fromfrom = project creation scope (usually equals location)
+#	
+#	on_success
+#	this = event scope (ship or planet)
+#	from = project creation scope (usually equals location)
+#	
+#	on_cancel 
+#	this = country (project owner)
+#	from = event scope (planet or ship, MIGHT NOT EXIST)
+#	fromfrom = project creation scope (usually equals location)
+#
+#	on_fail
+#	this = country (project owner)
+#	from = project creation scope (usually equals location)
+
+special_project = {
+	key = "HARVESTER_DISTURBANCE_1_PROJECT"
+	event_chain = "harvest_subterranean_civilization_chain"
+	cost = 1
+	tech_department = society_technology
+	picture = GFX_evt_underground_civilization
+	timelimit = 360
+	
+	event_scope = planet_event
+	
+	on_success = {
+		ROOT = { change_pc = pc_bh_harvest_colony }
+		space_owner = { country_event = { id = harvest_colony.510 } }
+		space_owner = { end_event_chain = "harvest_subterranean_civilization_chain" }
+	}
+	
+	on_fail = {
+		end_event_chain = "harvest_subterranean_civilization_chain"
+		random_list = {
+			60 = {
+				ROOT = { planet_event = { id = harvest_colony.54 } }
+			}
+			40 = {
+				ROOT = { planet_event = { id = harvest_colony.59 } }
+			}
+		}
+	}
+}
+
+special_project = {
+	key = "HARVESTER_DISTURBANCE_2_PROJECT"
+	event_chain = "harvest_subterranean_civilization_chain"
+	cost = 1
+	tech_department = engineering_technology
+	picture = GFX_evt_nuclear_explosion
+	timelimit = 30
+	
+	same_option_group_as = { HARVESTER_DISTURBANCE_1_PROJECT }
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = harvest_colony.52 }
+		space_owner = { end_event_chain = "harvest_subterranean_civilization_chain" }
+	}
+	
+	on_fail = {
+		end_event_chain = "harvest_subterranean_civilization_chain"
+		if = {
+			limit = {
+				ROOT = {
+					space_owner = {
+						is_homicidal = yes
+					}
+				}
+			}
+			ROOT = { planet_event = { id = harvest_colony.54 } }
+		}
+	}
+}
+
+special_project = {
+	key = "HARVESTER_DISTURBANCE_3_PROJECT"
+	cost = 5000
+	tech_department = engineering_technology
+	picture = GFX_evt_nuclear_explosion
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = harvest_colony.52 }
+	}
+	
+	on_fail = {
+	}
+}

@@ -1,0 +1,39 @@
+objectTypes = {
+
+	
+	
+	
+	
+	
+	pdxmesh = {
+		name = "nanite_orbital_station_frame_mesh"
+		file = "gfx/models/ships/humanoid_01/humanoid_01_orbital_station_frame.mesh"
+		scale = 1.0
+	}
+	
+	
+	 
+	pdxmesh = {
+		name = "nanite_habitat_shielded_planet_mesh"
+		file = "gfx/models/planets/shielded_planet.mesh"
+		animation = { id = "idle"	type = "shielded_planet_idle" }
+		scale = 6
+		cull_distance = 99999999.0f
+	}
+	
+	#Maybe I can edit this file and change it's dds
+	pdxmesh = {
+		name = "nanite_shielded_planet_mesh"
+		file = "gfx/models/planets/apocalypse_planet_effects/planet_shield_effect.mesh"
+		animation = { id = "idle"	type = "shielded_planet_idle" }
+		cull_distance = 99999999.0f
+		meshsettings = {
+			name = "planet_geosphereShape"
+			index = 0
+			texture_diffuse = "nanite_habitat_shield_clouds.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+			shader = "PdxMeshAlphaAdditiveAnimateUV"
+		}
+	}
+}

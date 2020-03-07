@@ -1,0 +1,23 @@
+on_game_start_country = {
+	events = {
+		bio_harvest.3 # Setup the machine world correctly
+	}
+}
+
+on_terraforming_complete = {
+	events = {
+		bio_harvest.2 # Remove the deposits and whatnot
+	}
+}
+
+on_colonized = {
+	events = {
+        bio_harvest.1 # Turn the planet into a harvesting world
+    }
+}
+
+on_destroy_planet_with_PLANET_KILLER_HARVESTER = {
+	events = {
+		harvester_engine.100
+	}
+}

@@ -1,0 +1,70 @@
+
+nanite_mothership = {
+	graphical_culture = no
+	can_be_inspected = no
+	formation_priority = @titan_formation_priority
+	entity = "gatebuilder_01_mothership_entity"
+	formation_priority = 40
+	max_speed = 70
+	acceleration = 0.16
+	rotation_speed = 0.09
+	collision_radius = 18
+	max_hitpoints = 50000
+	modifier = {
+		ship_evasion_add = 10
+		ship_shield_add = 10000
+		ship_armor_add = 10000
+		ship_hull_regen_add_perc = 0.1
+		ship_armor_regen_add_perc = 0.1
+		ship_shield_regen_add_perc = 0.25
+	}
+	size_multiplier = 64
+	fleet_slot_size = 64
+	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } "stern" = { locator = "part4" } }
+	num_target_locators = 8
+	is_space_station = no
+	icon_frame = 6
+	base_buildtime = 3600
+	can_have_federation_design = no
+	enable_default_design = yes
+	
+	default_behavior = artillery
+
+	prerequisites = { "tech_nanite_mothership" }
+	
+	combat_disengage_chance = 2.00
+	
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "PLANET_KILLER_HARVESTER"
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "dcv_crew"
+
+	possible_starbase = {
+		has_starbase_size >= starbase_citadel
+		has_starbase_building = orbital_nanite_shipyard
+	}
+	
+	empire_limit = {
+		base = 1
+		max = 1
+		naval_cap_div = 300
+	}
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = 15
+			nanites = 2
+		}
+	}
+
+	min_upgrade_cost = {
+		nanites = 50
+	}
+
+}

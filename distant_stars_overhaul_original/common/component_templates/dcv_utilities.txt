@@ -1,0 +1,100 @@
+utility_component_template = {
+	key = "DCV_REACTOR"
+	size = extra_large
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 5000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	component_set = "power_core"
+	size_restriction = { nanite_mothership }
+}
+utility_component_template = {
+	key = "DCV_THRUSTER"
+	size = large
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	modifier = {
+		ship_evasion_add = 10
+	}
+	component_set = "thruster_components"
+	size_restriction = { nanite_mothership }
+}
+
+utility_component_template = {
+	key = "DCV_CORE"
+	size = medium
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -900
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { nanite_mothership }
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 1
+		weapon_type_strike_craft_speed_mult = 1
+		ship_hull_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.9
+		ship_armor_regen_add_perc = 0.7
+		ship_tracking_add = 15
+	}
+}
+utility_component_template = {
+	key = "DCV_MAINTENANCE_CREW"
+	size = aux
+	icon = "GFX_elite_maintenance_crew"
+	icon_frame = 1
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+		
+	}
+	ship_modifier = {
+
+	}
+	
+	component_set = "dcv_crew"
+	
+}
+utility_component_template = {
+	key = "DCV_PILOT_CREW"
+	size = aux
+	icon = "GFX_elite_pilot_crew"
+	icon_frame = 1
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+		
+	}
+	ship_modifier = {
+
+	}
+	
+	component_set = "dcv_crew"
+	
+}

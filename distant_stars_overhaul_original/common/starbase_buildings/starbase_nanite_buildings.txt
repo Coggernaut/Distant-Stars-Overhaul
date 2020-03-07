@@ -1,0 +1,55 @@
+orbital_nanite_shipyard = {
+	icon = "GFX_spaceport_module_titan_assembly_yard"
+	construction_days = 720
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_orbital_nanite_shipyard }			
+	}
+	
+	show_in_tech = "tech_orbital_nanite_shipyard"
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_citadel"
+			has_starbase_size >= starbase_citadel
+		}
+		has_starbase_module = shipyard
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+		}
+
+		upkeep = {
+			energy = 10
+			nanites = 1
+		}
+	}
+	
+	station_modifier = {
+		starbase_shipyard_capacity_add = 2
+		starbase_shipyard_build_speed_mult = 0.1
+	}
+
+	custom_tooltip = sm_orbital_nanite_shipyard_desc_modifier
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = shipyard
+				count < 3
+			}
+		}
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
+}

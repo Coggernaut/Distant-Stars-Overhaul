@@ -1,0 +1,16 @@
+version="2.5"
+tags={
+	"Overhaul"
+	"Events"
+	"Economy"
+	"Diplomacy"
+	"Buildings"
+	"Military"
+	"Spaceships"
+	"Species"
+	"Technologies"
+	"Gameplay"
+	"Galaxy Generation"
+}
+name="Nanite Machines & Distant Stars Overhaul"
+supported_version="2.5.1"

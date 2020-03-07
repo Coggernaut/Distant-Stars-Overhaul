@@ -1,0 +1,62 @@
+trait_robot_advanced_nanites = {
+	cost = 0
+	initial = no
+	randomized = no
+	modification = no
+	allowed_archetypes = { ROBOT MACHINE }
+
+	# Machines only
+	species_potential_add = {
+		exists = from
+		
+		from = {
+			AND = {
+				has_authority = auth_machine_intelligence
+				has_technology = tech_advanced_nanites
+			}			
+			NOT = { has_policy_flag = ai_outlawed }
+		}
+	}
+
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.15
+		pop_growth_speed = 0.10
+	}
+}
+
+trait_dessanu_nanites = {
+	cost = 0
+	
+	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
+	initial = no
+	randomized = no
+	modification = no
+	allowed_archetypes = { ROBOT MACHINE }
+
+	# Machines only
+
+	modifier = {
+		pop_growth_speed = 0.10
+	}
+}
+
+trait_dessanu_uplifted = {
+	cost = 0
+	
+	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
+	initial = no
+	modification = no
+	randomized = no
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	#custom_tooltip = TRAIT_DESSANU_UPLIFTED_EFFECT
+	
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.05
+		pop_ethic_spiritualist_attraction_mult = 0.05
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

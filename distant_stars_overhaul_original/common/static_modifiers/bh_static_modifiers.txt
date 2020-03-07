@@ -1,0 +1,10 @@
+# Harvested Planet
+bh_harvested_modifier = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
+    icon_frame = 2
+}
+
+bh_harvest_modifier = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
+    icon_frame = 2
+}

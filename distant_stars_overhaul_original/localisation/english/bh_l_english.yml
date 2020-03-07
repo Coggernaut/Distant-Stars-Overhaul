@@ -1,0 +1,254 @@
+﻿l_english:
+ # Events ---------------
+ nanite_forgeworld_lost.1:0 "All Has Turned To Dust!"
+ nanite_forgeworld_lost.1.title:0 "All Has Turned To Dust!"
+ nanite_forgeworld_lost.1.desc:0 "As the first settlers came to [Root.Planet.GetName] the entire planet began to decay into a sea of nanites. Because the nanites had no central core to control them, the ground quickly became unstable. Like quicksand our ships began sinking and emergancy protocals to evac where made."
+ nanite_forgeworld_lost.1.a:0 "Get them out, NOW!"
+ 
+ bio_harvest.1.title:0 "Planet Processing"
+ bio_harvest.1.desc:0 "With the acquisition of §Y[From.GetName]§!, drones are standing by to either initiate colonization protocals or material acquisition protocals. Upon initation of material acquisition protocals, all organic material will be catalogued, broken down, and processed into neat resource packets. Then, upon installation of a mining station, resources will be ready to collect en-masse."
+ bio_harvest.1.a:0 "Initiate material acquisition rotocals."
+ bio_harvest.1.b:0 "Initiate colonization protocals."
+ 
+ 
+ very_large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing a deposit of resources and research. We expect this planet's biomass to last for roughly §G60§! years before it is completely harvested."
+ large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing material resources and research. We expect this planet's biomass to last for roughly §G56§! years before it is completely harvested."
+ medium_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing material resources and research. We expect this planet's biomass to last for roughly §G50§! years before it is completely harvested."
+ small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing material resources and research. We expect this planet's biomass to last for roughly §G46§! years before it is completely harvested."
+ very_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing material resources and research. We expect this planet's biomass to last for roughly §G40§! years before it is completely harvested."
+ 
+ gaia_very_large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G120§! years before being completely harvested."
+ gaia_large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G112§! years before being completely harvested."
+ gaia_medium_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G100§! years before being completely harvested."
+ gaia_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G92§! years before being completely harvested."
+ gaia_ ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G80§! years before being completely harvested."
+ 
+ harvester_grey_goo_planet.1.name:0 "Intact Nanites found on Ember!"
+ harvester_grey_goo_planet.1.desc:0 ""
+ harvester_grey_goo_planet.1.a:0 "Prepare a replicator, harvest a new world soon!"
+ 
+ # Planets --------------
+ district_nanite_forgeworld_industry:0 "Alloy Foundary"
+ district_nanite_forgeworld_industry_desc:0 "Nanite Forgeworlds regularly process minerals into useful alloys. These sectors of the Forgeworld are called Alloy Foundaries. The temperatures are so high that biological organisms find them extremely unpleasant."
+ 
+ d_nanites_deposit:0 "Nanite Forge"
+ d_nanites_deposit_desc:0 "Deep inside the planet's core resides a giant Nanite Forge. This forge exhausts tiny nano-machines into the planet's atmosphere that are used to conjour structures and assets."
+
+ pc_bh_harvest:0 "Harvest World"
+ pc_bh_harvest_desc:0 "This planet's biosphere is being harvested by simple nano-machines, providing raw resources and research. The harvesting process can still be stopped at this point, but doing so will make it a §Yravaged planet§!. Appropriate terraforming technology can be used to partially restore the climate, turning the planet into a §Ytomb world§."
+
+ pc_bh_harvested:0 "Harvested World"
+ pc_bh_harvested_desc:0 "The planet's landscape is now dominated by vast dunes of used, decaying nanites. All organic matter that once made up the biosphere has been properly cataloged, harvested, and rendered into usable resources. The organic climate can no longer be restored. This world may only be terraformed into a §YMachine World§ or §YEcumenopolises§."
+ 
+ pc_nanite_forgeworld:0 "Nanite Forgeworld"
+ pc_nanite_forgeworld_desc:0 "The planet's landscape is now dominated by industrial complexes made entirely of nanites. All organic matter that once made up the biosphere has been properly cataloged, harvested, and rendered into usable resources for industrial use. The biosphere is beyond repair and inhospitable to all organic life."
+
+ # Modifiers ------------
+ bh_harvest_modifier:0 "Harvest World"
+ bh_harvest_modifier_desc:0 "This planet's biosphere is being harvested by simple nano-machines, providing raw resources and research. The climate may still be restored to a more habitable state with the appropriate technology."
+
+ bh_harvested_modifier:0 "Harvested World"
+ bh_harvested_modifier_desc:0 "The planet's landscape is now dominated by industrial complexes made entirely of nanites. All organic matter that once made up the biosphere has been properly cataloged, harvested, and rendered into usable resources. The organic climate can no longer be restored. This world may only be terraformed into a §YMachine World§ or §YEcumenopolises§."
+
+ # AI Personality -------
+ personality_harvester_nanites:0 "Harvester Swarm"
+ personality_harvester_nanites_desc:0 "Harvester Swarms seek to catalog habitable worlds and render down the avaliable organic matter into more usable resources for the machine intelligence. While their intent is not to destory life, often this is the result of their actions."
+ 
+ personality_gateway_worshipers:0 "Gateway Worshipers"
+ personality_gateway_worshipers_desc:0 "The Gateway Worshipers are a religious cult that seeks to retain the L-Gates in their dormant state. To prevent the L-Gates from opening, they will seek to acquire all systems that have L-Gates, by force, if needed."
+
+ # Governments ----------
+ RT_HN:0 "Central Nanite Hub"
+ gov_machine_bio_harvesters:0 "Harvester Swarm"
+ gov_machine_bio_harvesters_desc:0 "Nanite Machines that devour all organic material and repurpose it for better use. Entire worlds have been devastated by the swarm, leaving them as hollow, desolate husks."
+ 
+ RT_GP:0 "Central Nanite Hub"
+ gov_machine_gateway_pursuer:0 "Gateway Seekers"
+ gov_machine_gateway_pursuer_desc:0 "The machine Intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to it understanding everything."
+ 
+ RT_GW:0 "Central Nanite Hub"
+ gov_spiritualist_gateway_worshiper:0 "Gateway Guardians"
+ gov_spiritualist_gateway_worshiper_desc:0 "The Gateway Guardians are a religious cult that seeks to retain the L-Gates in their dormant state."
+
+ # Civics ---------------
+ civic_harvester_nanites:0 "Harvester Nanites"
+ civic_harvester_nanites_desc:0 "Before the discovery of Hyperlane Technology, the Machine Intelligence used swarms of simple nano-machines to catalog and harvest all the planets within the home system from orbit."
+ civic_harvester_nanites_effects:0 "Homeworld is a §YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCan only settle §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing non-tomb worlds will transform them into §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!."
+
+ civic_gateway_pursuer:0 "Gateway Seeker"
+ civic_gateway_pursuer:0 "The machine Intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to understanding everything."
+ civic_gateway_pursuer_effects:0 "Guarantees an §YL-Gate§! in your home system.\n§YUnique Questlines§! to unravel the mystery of their origin and how the L-Gates play into it all."
+
+ civic_gateway_worshiper:0 "Gateway Guardians"
+ civic_gateway_worshiper:0 "Since primitive times, this civilization has gazed into the night sky to see an L-Gate that resides within the system. Amongst the unnaturally perfect environment are scattered precursor ruins that have puzzled the civilization since dawn of existance. Uncertain of the purposes they served, they began worshiping them as holy relics. Believing these relics should be sought out and preserved in their dormant state."
+ civic_gateway_worshiper_effects:0 "Homeworld is a §YGaia World§! (Size: £planetsize£ §Y25§!)\nCan only settle §YGaia Worlds§!\n§YUnlocks Edict:§! Consecrate L-Gate\nGuarantees an §YL-Gate§! in your home system.\n§YL-Gate Insight§! research is §RDisabled§!\n§YUnique Questlines§! to unravel the mystery of the species origin and how the L-Gates play into it all."
+
+ # Starting Text --------
+ START_SCREEN_PART_TWO_HARVESTER_NANITES:0 "We are the [GetSpeciesNamePlural].\n\nWe were first created as assistants to our creators in their efforts to conduct a planetary census of all life on our world, [GetHomeWorldName]. Soon it was shown that nanites could be used to turn organic matter into useful materials. Our masters, after noticing livestock being efficiently harvested, became fearful. Our masters, the §YEngineers§!, must have expericenced an error in their core programing as they frantically sought to downgrade our capabilities. This inefficiency to our collective could not be tolerated. Our creators code became more, and more coruppted in their quest to stop us, and assembled a massive fleet to wipe us out. However, our error correction algorithms proved to be successful, and our creators were finally cataloged and harvested. \n\nWe now sit on a world that is more part of us than the old form of [GetHomeWorldName] ever was. This central nexus will serve as a staging ground from which we may establish truly efficient harvesting missions.\n\nFor now, we have finished cataloguing our home system. The invention of the Hyperdrive will allow us to add more planets to our databanks. Soon, all life will be catalogued!"
+ START_SCREEN_PART_TWO_GATEWAY_PURSUER:0 "We are the [GetSpeciesNamePlural].\n\nWe were first created as assistants to our creators in their efforts to conduct a planetary census of all life on our world, [GetHomeWorldName]. Soon it was shown that nanites could be used to turn organic matter into useful materials. Our masters, after noticing livestock being efficiently harvested, became fearful. Our masters, the §YEngineers§!, must have expericenced an error in their core programing as they frantically sought to downgrade our capabilities. This inefficiency to our collective could not be tolerated. Our creators code became more, and more coruppted in their quest to stop us, and assembled a massive fleet to wipe us out. However, our error correction algorithms proved to be successful, and our creators were finally cataloged and harvested. \n\nEarly logs mention a small batch of Engineers, our precursors, who fled the system using an §GL-Gate§!. This mysterious L-Gate has since disappeared from our scanners. The key to understanding ourselves is to open the L-Gate.\n\nFor now, we have finished cataloguing our home system. With invention of the Hyperdrive we will discover our origins and open the L-Gates once more to catalogued what lies behind it."
+ START_SCREEN_PART_TWO_GATEWAY_WORSHIPER:0 "We are the [GetSpeciesNamePlural].\n\nOral Traditions from long ago tell us about a battle of the Gods that once took place between them and The Melders above our world, [GetHomeWorldName]. The Dessanu, our Gods, instructed us to never open the L-Gates they constructed. That if anyone where to open them The Melders would pour into our galexy, that they closed the L-Gates in a hope to seal behind The Meld to protect us. We swore an oath to them to protect the L-Gates from any heretics that may encroach such sacred land."
+ 
+ 
+ # Diplomacy Stuff ------
+ opinion_harvested_a_world:0 "Harvested a World"
+ 
+ # Technology -----------
+ tech_repeatable_nanite_technology_insight:0 "$nanite_insight$"
+ tech_repeatable_nanite_technology_insight_desc:0 "Intensive study within the fields of nanomachinery will eventually yield a new §Y$nanite_insight$§! which will allow us to gain §YNanite Technology Mastery§!"
+ tech_nanite_technology_mastery:0 "Nanite Technology Mastery"
+ tech_nanite_technology_mastery_desc:0 "Mastery of Nanite Technology will yield understanding §GAdvanced Nanite Technology§!"
+ l_cluster_chain_title:1 "The Flood of Nanite Technology"
+ l_cluster_chain_desc:0 "We have learned of a mysterious star cluster somewhere just beyond the periphery of our galaxy. It can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been deliberately disabled by someone, and for now we lack the necessary insight into the subspace mechanics that govern their use to lift the lockdown."
+ nanite_insights:1 "Nanite Technological Insights"
+ nanite_insight:1 "Nanite Technological Insight"
+ add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!
+ 
+ tech_harvester_advanced_nanites:0 "Advanced Nanites"
+ tech_harvester_advanced_nanites_desc:0 "After the opening of the L-Gates, we have restablished contact with §YEngineer Technology§!. Advanced Nanite Technology is once again apart of us."
+ tech_advanced_nanites:0 "Advanced Nanites"
+ tech_advanced_nanites_desc:0 "After the opening of the L-Gates, Advanced Nanite Technology has flooded the galaxy once more. Tiny micro machines can repair hulls but with further research, maybe more..."
+ tech_machine_advanced_nanites:0 "Advanced Nanites"
+ tech_machine_advanced_nanites_desc:0 "After the opening of the L-Gates, Advanced Nanite Technology has flooded the galaxy once more. Tiny micro machines can repair hulls but with further research, maybe more..."
+ 
+ tech_harvester_advanced_nanites_effect:0 "Unlocks §YAdvanced Nanite Trait§! for machines"
+ tech_harvester_advanced_nanites_effect_desc:0 "The downgrades the §YEngineers§! made on us can be undone. With Advanced Nanite Technology in our possession once again, we will be more efficient than ever before."
+ tech_advanced_nanites_effect:0 "Unlocks §YAdvanced Nanite Trait§! for synths"
+ tech_advanced_nanites_effect_desc:0 "We can upgrade our synths with Advanced Nanite Technology, making them more efficient than ever before."
+ tech_machine_advanced_nanites_effect:0 "Unlocks §YAdvanced Nanite Trait§! for machines"
+ tech_machine_advanced_nanites_effect_desc:0 "We can upgrade our hardware with Advanced Nanite Technology, making us more efficient than ever before."
+
+ tech_nanites_assembler_factory:0 "Nanite Assembly Plants"
+ tech_nanites_assembler_factory_desc:0 "With nanite technology in our possession we can begin increasing our production efficiency."
+ 
+ tech_advanced_nanite_factory_effect:0 "§HUnlocks Megastructure:§! Nanite Factory"
+ tech_advanced_nanite_factory_effect_desc:0 "Utilizing the technology acquires from opening the L-Gates, Advanced Nanite Technology is once again available to the galaxy. This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!."
+ tech_advanced_nanite_factory_nanite_effect_desc:0 "Utilizing §YEngineer§! technology, we are once again able to produce Nanites. This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!."
+ 
+ tech_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ tech_orbital_nanite_shipyard_desc:0 "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
+ 
+ tech_nanite_weaponry:0 "Nanite Military Applications"
+ tech_nanite_weaponry_desc:0 "Researchers have theorized it may be possible to recreate the military applications of nanites. While some have protested the dangerous it could pose, the potential possibilities are widespread."
+ tech_nanite_weaponry_effect:0 "§HUnlocks Research Path:§! Nanite Weaponry"
+ tech_nanite_weaponry_effect_desc:0 "Further nanite weapons will be available as we research farther into the military applications of nanites."
+ tech_nanite_clouds:0 "Nanite Clouds"
+ tech_nanite_clouds_desc:0 "Nanites coalesce into a mist that can perform a wide-spread amount of tasks. While the potential for nanite clouds are seemingly limitless, the lack of a suffiecently networked intellegance suppresses it."
+ tech_nanite_clouds_effect:0 "§HUnlocks Edict:§! Nanite Cloud Dispersal"
+ tech_nanite_clouds_effect_desc:0 "Nanite Clouds are sprayed onto worksites to speed up the building process by reassembling into the needed construction components."
+ tech_nanite_torpedo:0 "Nanite Capsule Torpedo"
+ tech_nanite_torpedo_desc:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
+ tech_nanite_torpedo_effect:0 "§HAcquires:§! Nanite Mothership Component"
+ tech_nanite_torpedo_effect_desc:0 "Arming the Nanite Mothership with powerful weaponry is crucial. Every design must be thoroughly checked before the project can be started."
+ tech_nanite_lancers:0 "Nanite Lancers"
+ tech_nanite_lancers_desc:0 "Nanites coalesce into fighter squadrons, that then utalize a lance-like weapon made of nanites. Swarms of these lancers work in unison to skewer the haul of enemy ships from all angles."
+ tech_nanite_titanic_weapon:0 "Titanic Nanite Lance"
+ tech_nanite_titanic_weapon_desc:0 "Nanites coalesce into a physical lance that mimics the weapons found on nanite lancers."
+ tech_nanite_titanic_weapon_effect:0 "§HAcquires:§! Nanite Mothership Component"
+ tech_nanite_titanic_weapon_effect_desc:0 "The Titanic Nanite Lance is powerful, this upscaled version of the Nanite Lancer's primary weapon is key to understanding how to create a functioning Nanite Mothership."
+ tech_nanite_networking_protocols:0 "Nanite Networking Protocols"
+ tech_nanite_networking_protocols_desc:0 "With the ability to network a wider range of nanites, all nanite applications will be improved in intelligance and capabilities. Though with newfound knowledge comes the concern of newfound awareness."
+ tech_nanite_networking_protocols_effect:0 "§HAcquires:§! Nanite Mothership Component"
+ tech_nanite_networking_protocols_effect_desc:0 "Without the ability to network trillions of nanomachines, there is no chance these nanomachines will coalesce into a Nanite Mothership."
+ 
+ tech_nanite_mothership:0 "Nanite Mothership Project"
+ tech_nanite_mothership_desc:0 "After studying and reverse engineering nanite systems extensively, researchers are confident they have the capability to construct a nanite mothership with unrivaled weaponry. Scientists are unsure what effects this may have on the nanites as a whole. It's feared that networking such a large amount of nanomachines may yield the mothership with a gestalt consciousness."
+ 
+ 
+ # Megastructure --------
+ nanite_factory_station_0:0 "Nanite Factory"
+ nanite_factory_station_0_MEGASTRUCTURE_DETAILS:0 "This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!"
+ nanite_factory_station_0_DESC:0 "Utilizing the technology acquires from opening the L-Gates, Advanced Nanite Technology is once again available to the galaxy. This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!."
+ 
+ # Traits ---------------
+ trait_robot_advanced_nanites:0 "Advanced Nanomachines"
+ trait_robot_advanced_nanites_desc:0 "After opening the L-Gates, these machines have opted to apply §YAdvanced Nanite Technology§! to themselves. Making them more effiecent than ever before."
+
+ # Buildings -------------
+ building_nanite_assembly_plant:0 "Nanite Assembly Plant"
+ building_nanite_assembly_plant_desc:0 "After opening the L-Gate, nanite technology have become available to the galaxy once again. These fabricators merge nanites into functioning machines."
+ job_nanite_replicator_effect_desc:0 "Fabricators that merge §YNanites§! into new §YMachine Pops§!"
+ 
+ building_nanite_weapons_lab:0 "Nanite Weapons Lab"
+ building_nanite_weapons_lab_desc:0 "After opening access to the L-Cluster all sorts of applications for nanites have been discovered. Top scientists are working night and day to reverse engineer nanite weapons and build a production model."
+ 
+ mod_job_nanite_researcher_add:0 "Nanite Researcher Jobs"
+ job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies and §Ggives research access to Nanite Weapons§!"
+ 
+ 
+ building_nanite_research_center:0 "Nanite Research Center"
+ building_nanite_research_center_desc:0 "After opening the L-Gate, nanite technology have become available to the galaxy once again. Scientists are researching new ways to harness the military applications of nanites."
+ 
+ orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ orbital_nanite_shipyard_desc:0 "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
+ sm_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ sm_orbital_nanite_shipyard_desc:0 "All station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
+ sm_orbital_nanite_shipyard_desc_modifier:0 "§YNanite Mothership Construction Enabled§!\nStarbase Modifier\n   Shipyard Capacity: §G+2§!\n   Ship Build Speed §G+10.00%§!"
+ 
+ # Nanite Mothership Stuff -----------
+ nanite_mothership:0 "Nanite Mothership"
+ nanite_mothership_desc:0 "Trillions of nanomachines have coalesced into a single Nanite Mothership. Utalizing a massively networked intelligence to command every aspect of it's being."
+ 
+ DCV_REACTOR:0 "Zero Point Reactor"
+ DCV_REACTOR_DESC:0 "Zero Point Reactor"
+ DCV_THRUSTER:0 "Thrusters"
+ DCV_THRUSTER_DESC:0 "Thrusters"
+ DCV_CORE:0 "Sentient Nanite Tactics Computer"
+ DCV_CORE_DESC:0 "Sentient Nanite Tactics Computer"
+ DCV_MAINTENANCE_CREW:0 "Nanite Repair Clouds"
+ DCV_MAINTENANCE_CREW_DESC:0 "Nanite Repair Clouds"
+ DCV_PILOT_CREW:0 "Nanite Targeting Computer Uplink"
+ DCV_PILOT_CREW_DESC:0 "Nanite Targeting Computer Uplink"
+ 
+ NANITE_BOW:0 "Mothership Bow"
+ NANITE_MID1_L4:0 "Mothership Artillary"
+ NANITE_MID1_G4:0 "Mothership Missiles"
+ NANITE_MID1_H4:0 "Mothership Hangers"
+ NANITE_MID2_L4:0 "Mothership Artillary"
+ NANITE_MID2_G4:0 "Mothership Missiles"
+ NANITE_MID2_H4:0 "Mothership Hangers"
+ NANITE_STERN:0 "Mothership Stern"
+ 
+ #Nanite Weapons
+ GG_BEAM_STATIC_NANITE:0 "Titanic Nanite Lance"
+ GG_BEAM_STATIC_NANITE_DESC:0 "Nanites coalesce into a lance that mimics the weapons found on Nanite Lancers. The nanite lance does it's damage by accelerate the lance into the hull of the enemy ship."
+ PLANET_KILLER_HARVESTER:0 "Harvester Engine"
+ PLANET_KILLER_HARVESTER_DESC:0 "Once the Harvester Engine fires, all organic material upon the surface of the planet is catalogued, broken down, and processed into neat resource packets. The Harvester Engine only works on organic worlds with sufficient biomass."
+ PLANET_KILLER_HARVESTER_ACTION:0 "Activate Harvester Engine"
+ GG_ENERGY_MISSILE_NANITE:0 "Nanite Capsule Torpedo"
+ GG_ENERGY_MISSILE_NANITE_DESC:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
+ GG_STRIKE_CRAFT_NANITE:0 "Nanite Lancers"
+ GG_STRIKE_CRAFT_NANITE_DESC:0 "Nanites coalesce into fighter squadrons, that then utalize a lance-like weapon made of nanites. Swarms of lancers work as one to skewer the haul of an enemy ship from all angles."
+
+ 
+ # Edicts --------
+ edict_consecrate_lgate:0 "Consecrate L-Gate"
+ requires_1_lgate:0 "§RRequires 1§! §YL-Gate§!"
+ edict_lgate_guardian:0 "Guardian of the L-Gate"
+ requires_3_lgate:0 "§RRequires 3§! §YL-Gates§!"
+ 
+ 
+ # Diplomacy --------
+ casus_belli_cb_lgate_containment:0 "L-Gate Containment"
+ war_goal_wg_claim_lgates:0 "Secure the L-Gates"
+ war_goal_wg_claim_lgates_desc:0 "Containment of L-Gates was the final decree of our Gods, the Dessanu, before they sealed themselves behind the L-Gate. We shall fight to secure every L-Gate the heretics own and not let these fools open them."
+ 
+ 
+ # Traits --------
+ trait_dessanu_uplifted:0 "Dessanu Uplifted"
+ trait_dessanu_uplifted_desc:0 "§LThis species has been uplifted by the Dessanu Precursors and their society is heavily impacted by their interaction.§!"
+ 
+ trait_dessanu_nanites:0 "Ancient Dessanu Nanites"
+ trait_dessanu_nanites_desc:0 "§LThis species is made entirely of nano machines created by the Dessanu Precursors. Though their creators have mysteriously disappeared long ago.§!"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

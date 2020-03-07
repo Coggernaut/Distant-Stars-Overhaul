@@ -1,0 +1,18 @@
+sound =
+{
+	name = "harvest_01"
+	file = "ambient/harvest_01.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "harvest_02"
+	file = "ambient/harvest_02.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "harvest_03"
+	file = "ambient/harvest_03.wav"
+	volume = 0.7
+}

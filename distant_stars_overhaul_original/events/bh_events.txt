@@ -1,0 +1,1087 @@
+namespace = bio_harvest
+namespace = bio_harvest_planet_stages
+namespace = bio_harvest_planet_depleted
+namespace = test_action
+
+namespace = very_large_harvest
+namespace = large_harvest
+namespace = medium_harvest
+namespace = small_harvest
+namespace = very_small_harvest
+
+namespace = gaia_very_large_harvest
+namespace = gaia_large_harvest
+namespace = gaia_medium_harvest
+namespace = gaia_small_harvest
+namespace = gaia_very_small_harvest
+
+namespace = gateway_pursuer
+namespace = gateway_pursuer_gateway
+
+namespace = harvester_grey_goo_planet
+
+namespace = nanite_forgeworld_lost
+
+planet_event = {
+    id = nanite_forgeworld_lost.1
+	title = nanite_forgeworld_lost.1.title
+    desc = nanite_forgeworld_lost.1.desc
+	picture = GFX_evt_gray_goo
+	
+	location = THIS
+	
+	is_triggered_only = no
+	
+	#mean_time_to_happen = { months = 2 }
+    hide_window = no
+
+    trigger = {
+		THIS = {
+			is_planet_class = pc_nanite_forgeworld
+			NOT = { has_planet_flag = abandon_nanite_forgeworld_flag }
+		}
+		owner = {
+			NOT = { has_civic = civic_harvester_nanites }
+		}
+    }
+    immediate = {
+		set_planet_flag = abandon_nanite_forgeworld_flag
+		remove_planet_flag = pc_nanite_forgeworld
+		destroy_colony = yes
+		
+    }    
+	after = {
+			change_pc = pc_gray_goo
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			remove_planet_flag = abandon_nanite_forgeworld_flag
+	}
+	
+	option = {
+		name = nanite_forgeworld_lost.1.a
+		
+	}
+	
+}
+
+
+#Begin Harvesting Planet
+planet_event = {
+    id = bio_harvest.1
+    title = bio_harvest.1.title
+    desc = bio_harvest.1.desc
+
+    picture = GFX_evt_gray_gooed_planet
+    
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            has_civic = civic_harvester_nanites
+        }
+        NOR = {
+			is_planet_class = pc_nuked
+            is_planet_class = pc_machine
+			is_planet_class = pc_nanite_forgeworld
+            is_planet_class = pc_habitat 
+            is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_relic
+			is_planet_class = pc_bh_harvest_colony
+        }
+		NOT = { exists = archaeological_site }
+		NOT = { has_planet_flag = apsr_planet }
+    }
+	option = {
+		name = bio_harvest.1.a
+		hidden_effect = {
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			set_planet_flag = pc_bh_harvest
+			#space_owner = { country_event = { id = harvest_colony.50 } }
+			#gaia_very_large
+			if = {
+				limit = {
+					AND = {
+						is_planet_class = pc_gaia
+						OR = { 
+							planet_size = 25
+							planet_size = 24
+							planet_size = 23
+						}
+					}
+				}
+				ROOT = { planet_event = { id = bio_harvest_planet_stages.1 days = 21600 }}
+			}
+			#gaia_large
+			if = { 
+				limit = {
+					AND = {
+						is_planet_class = pc_gaia
+						OR = { 
+							planet_size = 22
+							planet_size = 21
+							planet_size = 20
+						}
+					}
+				}
+				ROOT = { planet_event = { id = bio_harvest_planet_stages.1 days = 20000 }}
+			}
+			#gaia_medium
+			if = {
+				limit = {
+					AND = {
+						is_planet_class = pc_gaia
+						OR = { 
+							planet_size = 19
+							planet_size = 18
+							planet_size = 17
+						}
+					}
+				}
+				ROOT = { planet_event = { id = bio_harvest_planet_stages.1 days = 18000 }}
+			}
+			#gaia_small
+			if = { 
+				limit = {
+					AND = {
+						is_planet_class = pc_gaia
+						OR = { 
+							planet_size = 16
+							planet_size = 15
+							planet_size = 14
+						}
+					}
+				}
+				ROOT = { planet_event = { id = bio_harvest_planet_stages.1 days = 16000 }}
+			}
+			#gaia_very_small
+			if = {
+				limit = { 
+					AND = {
+						is_planet_class = pc_gaia
+						OR = { 
+							planet_size = 13
+							planet_size = 12
+							planet_size = 11
+							planet_size = 10
+							planet_size = 9
+							planet_size = 8
+							planet_size = 7
+							planet_size = 6
+							planet_size = 5
+							planet_size = 4
+							planet_size = 3
+							planet_size = 2
+							planet_size = 1
+						}
+					}
+				}
+				ROOT = { planet_event = { id = bio_harvest_planet_stages.1 days = 14000 }}
+			}
+			#very_large
+			if = { 
+				limit = { 
+					OR = { 
+						planet_size = 25
+						planet_size = 24
+						planet_size = 23
+					}
+				}
+				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 10800 }}
+			}
+			#large
+			if = { 
+				limit = { 
+					OR = { 
+						planet_size = 22
+						planet_size = 21
+						planet_size = 20
+					}
+				}
+				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 10000 }}
+			}
+			#medium
+			if = { 
+				limit = { 
+					OR = { 
+						planet_size = 19
+						planet_size = 18
+						planet_size = 17
+						
+					}
+				}
+				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 9000 }}
+			}
+			#small
+			if = { 
+				limit = { 
+					OR = { 
+						planet_size = 16
+						planet_size = 15
+						planet_size = 14
+					}
+				}
+				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 8000 }}
+			}
+			#very_small
+			if = { 
+				limit = { 
+					OR = { 
+						planet_size = 13
+						planet_size = 12
+						planet_size = 11
+						planet_size = 10
+						planet_size = 9
+						planet_size = 8
+						planet_size = 7
+						planet_size = 6
+						planet_size = 5
+						planet_size = 4
+						planet_size = 3
+						planet_size = 2
+						planet_size = 1
+					}
+				}
+				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 7000 }}
+			}
+			every_country = {
+						limit = {
+							has_communications = prev.owner
+							OR = {
+								has_ai_personality = awakened_fallen_empire_xenophile
+								AND = {
+									is_country_type = default
+									NOR = {
+										has_civic = civic_harvester_nanites
+										has_civic = civic_machine_terminator
+									}
+								}
+							}
+						}
+						add_opinion_modifier = { modifier = opinion_harvested_a_world who = prev.owner }
+			}
+		}
+		hidden_effect = {
+			add_modifier = {
+				modifier = "bh_harvest_modifier"
+				days = -1
+			}
+				
+			destroy_colony = yes
+			change_pc = pc_bh_harvest
+			clear_deposits = yes
+			add_deposit = bh_harvested_planet_deposit_large
+			add_deposit = d_nanosands
+			ROOT = {
+				create_mining_station = { owner = ROOT }
+			}
+		}
+		#gaia_very_large
+		if = {
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 25
+						planet_size = 24
+						planet_size = 23
+					}
+				}
+			}
+			custom_tooltip = gaia_very_large_harvest.1.tooltip
+		}
+		#gaia_large
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 22
+						planet_size = 21
+						planet_size = 20
+					}
+				}
+			}
+			custom_tooltip = gaia_large_harvest.1.tooltip
+		}
+		#gaia_medium
+		if = {
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 19
+						planet_size = 18
+						planet_size = 17
+					}
+				}
+			}
+			custom_tooltip = gaia_medium_harvest.1.tooltip
+		}
+		#gaia_small
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 16
+						planet_size = 15
+						planet_size = 14
+					}
+				}
+			}
+			custom_tooltip = gaia_small_harvest.1.tooltip
+		}
+		#gaia_very_small
+		if = {
+			limit = { 
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 13
+						planet_size = 12
+						planet_size = 11
+						planet_size = 10
+						planet_size = 9
+						planet_size = 8
+						planet_size = 7
+						planet_size = 6
+						planet_size = 5
+						planet_size = 4
+						planet_size = 3
+						planet_size = 2
+						planet_size = 1
+					}
+				}
+			}
+			custom_tooltip = gaia_very_small_harvest.1.tooltip
+		}
+		#very_large
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			custom_tooltip = very_large_harvest.1.tooltip
+		}
+		#large
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			custom_tooltip = large_harvest.1.tooltip
+		}
+		#medium
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+					
+				}
+			}
+			custom_tooltip = medium_harvest.1.tooltip
+		}
+		#small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			custom_tooltip = small_harvest.1.tooltip
+		}
+		#very_small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 13
+					planet_size = 12
+					planet_size = 11
+					planet_size = 10
+					planet_size = 9
+					planet_size = 8
+					planet_size = 7
+					planet_size = 6
+					planet_size = 5
+					planet_size = 4
+					planet_size = 3
+					planet_size = 2
+					planet_size = 1
+				}
+			}
+			custom_tooltip = very_small_harvest.1.tooltip
+		}
+	}
+	
+	option = {
+		name = bio_harvest.1.b
+		
+	}
+}
+
+# Harvested Planet is Terraformed
+planet_event = {
+    id = bio_harvest.2
+
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+    immediate = {
+        remove_modifier = "bh_harvested_modifier"
+        clear_deposits = yes
+		remove_planet_flag = pc_bh_harvest
+    }
+}
+
+# Prepare capital world for game start
+country_event = {
+    id = bio_harvest.3
+
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        owner = {
+			OR = {
+				has_civic = civic_harvester_nanites
+				has_civic = civic_gateway_worshiper
+			}
+        }
+    }
+    immediate = {
+		if = {
+			limit = {
+				ROOT = { has_civic = civic_harvester_nanites }
+			}
+			random_owned_planet = {
+				limit = { is_capital = yes }
+				change_pc = pc_nanite_forgeworld
+				set_planet_size = 25
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_generator
+				remove_district = district_nexus
+				remove_district = district_nexus
+				remove_district = district_nexus
+				add_district = district_mining
+				add_district = district_mining
+				add_district = district_mining
+				add_district = district_mining
+				add_deposit = d_nanosands
+				every_deposit = {
+					limit = { is_blocker = yes }
+					clear_blocker = yes
+				}
+				add_deposit = d_nanites_deposit
+				set_planet_flag = pc_nanite_forgeworld
+			}
+			ROOT = { country_event = { id = harvester_grey_goo_planet.1 days = 30 } }
+        }
+		if = {
+			limit = {
+				ROOT = { has_civic = civic_gateway_pursuer }
+			}
+			start_lcluster_chain = yes
+			random_system_within_border = { save_event_target_as = gateway_system }
+			ROOT = { set_country_flag = encountered_first_lgate }
+		}
+		if = {
+			limit = {
+				ROOT = { has_civic = civic_gateway_worshiper }
+			}
+			random_owned_planet = {
+				limit = { is_capital = yes }
+				set_planet_size = 25
+				reroll_deposits = yes
+				every_deposit = {
+					limit = { is_blocker = yes }
+					clear_blocker = yes
+				}
+			}
+			start_lcluster_chain = no
+			random_system_within_border = { save_event_target_as = gateway_system }
+			ROOT = { set_country_flag = encountered_first_lgate }
+		}
+		random_system_within_border = {
+			if = {
+				limit = {
+					ROOT = { 
+						OR = {
+							has_civic = civic_gateway_pursuer 
+							has_civic = civic_gateway_worshiper
+						}
+					}
+				}
+				set_star_flag = lgate 
+				spawn_megastructure = {
+					type = lgate_base
+					orbit_angle = 225
+					orbit_distance = 40
+					location = solar_system
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { has_civic = civic_harvester_nanites }
+				}
+				spawn_planet = {
+					class = "pc_shattered"
+					location = solar_system
+					orbit_location = yes
+					orbit_angle_offset = 225
+					orbit_distance_offset = 50
+					size = 25
+					has_ring = yes
+					name = "Exodus"
+				}
+				spawn_planet = {
+					class = "pc_gray_goo"
+					location = solar_system
+					orbit_location = yes
+					orbit_angle_offset = 50
+					orbit_distance_offset = 100
+					size = 25
+					has_ring = yes
+					name = "Ember"
+				}
+				
+				create_ambient_object = {
+					type = ancient_battlefield_02_object 
+					scale = 1
+					location = solar_system 
+					entity_offset = 35
+					entity_offset_angle = 210
+					entity_offset_height = 10
+	
+					entity_face_object = star
+					entity_scale_to_size = no
+				}
+			
+				create_ambient_object = {
+					type = ancient_battlefield_02_object 
+					scale = 1
+					location = solar_system 
+					entity_offset = 45
+					entity_offset_angle = 260
+					entity_offset_height = 14
+
+					entity_face_object = star
+					entity_scale_to_size = no
+				}
+			
+				create_ambient_object = {
+					type = ancient_battlefield_02_object 
+					scale = 1
+					location = solar_system 
+					entity_offset = 50
+					entity_offset_angle = 115
+					entity_offset_height = 8
+
+					entity_face_object = star
+					entity_scale_to_size = no
+				}
+			}
+		
+		}
+		
+		#if = {
+		#	limit = {
+		#		ROOT = { has_civic = civic_harvester_nanites }
+		#	}
+		#	random_system_within_border = {
+		#		spawn_system = {
+		#			min_jumps = 0
+		#			max_jumps = 0
+		#			min_distance = 15
+		#			max_distance = 20
+		#			initializer = dessanu_war_system
+		#			hyperlane = yes
+		#			is_discovered = no
+		#		}
+		#	}
+		#}
+		
+	}
+}
+
+country_event = {
+	id = harvester_grey_goo_planet.1
+	title = harvester_grey_goo_planet.1.name
+	desc = harvester_grey_goo_planet.1.desc
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = event_laboratory_sound
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = harvester_grey_goo_planet.1.a
+		add_resource = { nanites = 50 }
+		random_planet_within_border = {
+			limit = { 
+				is_planet_class = pc_gray_goo 	
+			}
+			custom_tooltip = terraforming_candidate
+			hidden_effect = {
+				add_modifier = {
+					modifier = "terraforming_candidate"
+					days = -1
+				}
+			}
+		}
+		#custom_tooltip = harvester_grey_goo_planet.1.tooltip
+	}
+}
+
+planet_event = {
+	id = harvester_grey_goo_planet.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		add_modifier = {
+			modifier = "terraforming_candidate"
+			days = -1
+		}
+	}
+}
+
+# Direct Commands, won't be triggered in-game
+# -------------------------------------------
+
+# Create a Harvested World
+planet_event = {
+    id = bio_harvest.10
+    
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        add_modifier = {
+            modifier = "bh_harvested_modifier"
+            days = -1
+        }
+        
+        change_pc = pc_bh_harvest
+        clear_deposits = yes
+        add_deposit = bh_harvested_planet_deposit_large
+    }
+}
+
+# Reset Harvested Worlds
+planet_event = {
+    id = bio_harvest.11
+    
+    is_triggered_only = yes
+    hide_window = yes
+    
+    trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+
+    immediate = {
+        remove_modifier = "bh_harvested_modifier"
+		remove_modifier = "bh_harvest_modifier"
+        change_pc = pc_barren
+        clear_deposits = yes
+    }
+}
+
+# ----------------------------------------------------------------------------------
+#								Harvest Stages
+# ----------------------------------------------------------------------------------
+
+# Depreciate Level Medium Stage_2
+planet_event = {
+    id = bio_harvest_planet_stages.1
+	
+	trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+    
+    is_triggered_only = yes
+	
+	immediate = {
+		#gaia_very_large
+		if = {
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 25
+						planet_size = 24
+						planet_size = 23
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 14400 }}
+		}
+		#gaia_large
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 22
+						planet_size = 21
+						planet_size = 20
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 13400 }}
+		}
+		#gaia_medium
+		if = {
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 19
+						planet_size = 18
+						planet_size = 17
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 12400 }}
+		}
+		#gaia_small
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 16
+						planet_size = 15
+						planet_size = 14
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 11400 }}
+		}
+		#gaia_very_small
+		if = {
+			limit = { 
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 13
+						planet_size = 12
+						planet_size = 11
+						planet_size = 10
+						planet_size = 9
+						planet_size = 8
+						planet_size = 7
+						planet_size = 6
+						planet_size = 5
+						planet_size = 4
+						planet_size = 3
+						planet_size = 2
+						planet_size = 1
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 10400 }}
+		}
+		#very_large
+		if = {
+			limit = { 
+				OR = { 
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 7200 }}
+		}
+		#large
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 6700 }}
+		}
+		#medium
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+					
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 6200 }}
+		}
+		#small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 5700 }}
+		}
+		#very_small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 13
+					planet_size = 12
+					planet_size = 11
+					planet_size = 10
+					planet_size = 9
+					planet_size = 8
+					planet_size = 7
+					planet_size = 6
+					planet_size = 5
+					planet_size = 4
+					planet_size = 3
+					planet_size = 2
+					planet_size = 1
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_stages.2 days = 5200 }}
+		}
+		
+	}
+	
+	option = {
+		name = OK
+        custom_tooltip = bio_harvest.1.tooltip
+        hidden_effect = {
+            clear_deposits = yes
+            add_deposit = bh_harvested_planet_deposit_moderate
+			add_deposit = d_nanosands
+        }
+	}
+}
+
+#Depreciate Level Low Stage_3
+planet_event = {
+    id = bio_harvest_planet_stages.2
+	
+	trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+    
+    is_triggered_only = yes
+	
+	immediate = {
+		#gaia_very_large
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = { 
+						planet_size = 25
+						planet_size = 24
+						planet_size = 23
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 7200 }}
+		}
+		#gaia_large
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 22
+						planet_size = 21
+						planet_size = 20
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 6500 }}
+		}
+		#gaia_medium
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 19
+						planet_size = 18
+						planet_size = 17
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 6200 }}
+		}
+		#gaia_small
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 16
+						planet_size = 15
+						planet_size = 14
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 5700 }}
+		}
+		#gaia_very_small
+		if = { 
+			limit = {
+				AND = {
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 13
+						planet_size = 12
+						planet_size = 11
+						planet_size = 10
+						planet_size = 9
+						planet_size = 8
+						planet_size = 7
+						planet_size = 6
+						planet_size = 5
+						planet_size = 4
+						planet_size = 3
+						planet_size = 2
+						planet_size = 1
+					}
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 5200 }}
+		}
+		#very_large
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 3600 }}
+		}
+		#large
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 3350 }}
+		}
+		#medium
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+					
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 3100 }}
+		}
+		#small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 2850 }}
+		}
+		#very_small
+		if = { 
+			limit = { 
+				OR = { 
+					planet_size = 13
+					planet_size = 12
+					planet_size = 11
+					planet_size = 10
+					planet_size = 9
+					planet_size = 8
+					planet_size = 7
+					planet_size = 6
+					planet_size = 5
+					planet_size = 4
+					planet_size = 3
+					planet_size = 2
+					planet_size = 1
+				}
+			}
+			ROOT = { planet_event = { id = bio_harvest_planet_depleted.1 days = 2600 }}
+		}
+		hidden_effect = {
+            clear_deposits = yes
+            add_deposit = bh_harvested_planet_deposit_small
+			add_deposit = d_nanosands
+        }
+	}
+	
+	option = {
+		name = OK
+        custom_tooltip = bio_harvest.1.tooltip
+		
+	}
+}
+
+# ----------------------------------------------------------------------------------
+#								Harvest Depleted
+# ----------------------------------------------------------------------------------
+
+# Depleted
+planet_event = {
+    id = bio_harvest_planet_depleted.1
+    
+    is_triggered_only = yes
+    
+    trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+	
+	immediate = {
+		remove_planet_flag = pc_bh_harvest
+	}
+
+	option = {
+		name = OK
+        custom_tooltip = bio_harvest.1.tooltip
+        hidden_effect = {
+			add_modifier = {
+                modifier = "bh_harvested_modifier"
+                days = -1
+            }
+			remove_modifier = "bh_harvest_modifier"
+			change_pc = pc_nanite_forgeworld
+			add_deposit = d_nanosands
+			set_planet_flag = pc_nanite_forgeworld
+        }
+	}
+}

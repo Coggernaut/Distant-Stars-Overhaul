@@ -1,0 +1,712 @@
+# ##################
+# L-GATE TECH
+# ##################
+
+tech_lgate_activation = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	is_dangerous = yes
+	category = { particles }
+	weight = 0
+
+	potential = {
+		NOT = { has_global_flag = l_cluster_opened }
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = lgate_activation_title
+			desc = lgate_activation_desc
+		}
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+
+tech_repeatable_lcluster_clue = {
+	area = engineering
+	cost = 2000
+	cost_per_level = @repeatableTechLevelCost
+	tier = 2
+	is_rare = yes
+	category = { voidcraft }
+	levels = -1
+	weight = 70
+
+	potential = {
+		has_country_flag = encountered_first_lgate
+		NOT = { has_country_flag = completed_lcluster_chain }
+		NOT = { has_civic = civic_gateway_worshiper }
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = add_lcluster_clue
+			desc = tech_repeatable_lcluster_clue_desc
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.00
+			NOT = { has_civic = civic_gateway_pursuer }
+			
+		}
+		modifier = {
+			factor = 100.00
+			has_civic = civic_gateway_pursuer
+		}
+	}
+
+	weight_groups = {
+		#repeatable
+	}
+	mod_weight_if_group_picked = {
+		#repeatable = 0.01
+	}
+}
+
+# =================================================================================
+
+tech_repeatable_nanite_technology_insight = {
+	area = engineering
+	cost = 10000
+	cost_per_level = @repeatableTechLevelCost
+	tier = 5
+	is_rare = yes
+	category = { industry }
+	levels = -1
+	weight = 70
+
+	potential = {
+		has_global_flag = l_cluster_opened
+		NOT = { has_country_flag = completed_nanite_technology_insight_chain }
+		NOT = { has_civic = civic_gateway_worshiper }
+		if = {
+			limit = { NOT = { has_authority = auth_machine_intelligence } }
+			has_technology = tech_synthetic_workers
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = add_nanite_insight
+			desc = tech_repeatable_nanite_technology_insight_desc
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.00
+			NOT = { has_civic = civic_gateway_pursuer }
+			
+		}
+	}
+
+	weight_groups = {
+		#repeatable
+	}
+	mod_weight_if_group_picked = {
+		#repeatable = 0.01
+	}
+}
+
+tech_nanite_technology_mastery = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	is_dangerous = yes
+	category = { particles }
+	weight = 0
+
+	potential = {
+		has_country_flag = completed_nanite_technology_insight_chain
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_technology_mastery
+			desc = tech_nanite_technology_mastery_desc
+		}
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_harvester_advanced_nanites = {
+	area = engineering
+	cost = 40000
+	tier = 2
+	is_rare = yes
+	category = { industry }
+	weight = 50
+	is_reverse_engineerable = no
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.2
+	}
+	
+	prerequisites = { "tech_nanite_technology_mastery" } 
+
+	potential = {
+		has_civic = civic_harvester_nanites
+		has_authority = auth_machine_intelligence
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_harvester_advanced_nanites_effect
+			desc = tech_harvester_advanced_nanites_effect_desc
+		}
+		custom = {
+			title = tech_advanced_nanite_factory_effect
+			desc = tech_advanced_nanite_factory_nanite_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 2.00
+			has_civic = civic_harvester_nanites
+		}
+	}
+}
+
+tech_advanced_nanites = {
+	area = engineering
+	cost = 40000
+	tier = 2
+	is_dangerous = yes
+	category = { materials }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.2
+	}
+
+	potential = {
+		NOT = { has_civic = civic_harvester_nanites }
+		NOT = { has_authority = auth_machine_intelligence }
+		NOT = { has_authority = auth_hive_mind }
+	}
+	
+	prerequisites = { "tech_nanite_technology_mastery" } 
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_advanced_nanites_effect
+			desc = tech_advanced_nanites_effect_desc
+		}
+		
+		custom = {
+			title = tech_advanced_nanite_factory_effect
+			desc = tech_advanced_nanite_factory_effect_desc
+		}
+	}
+	
+	
+	
+	ai_weight = {
+		modifier = {
+			factor = 0.25
+			AND = {
+				NOT = { has_civic = civic_harvester_nanites }
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				NOR = {
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+			}
+		}
+		modifier = {
+			factor = 0.50
+			AND = {
+				NOT = { has_civic = civic_harvester_nanites }
+				NOR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				OR = {
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				NOT = { has_civic = civic_harvester_nanites }
+				OR = {
+					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				NOR = {
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				NOT = { has_civic = civic_machine_worshipers }
+			}
+		}
+		modifier = {
+			factor = 0.50
+			AND = {
+				NOT = { has_civic = civic_harvester_nanites }
+				OR = {
+					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				NOR = {
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				has_civic = civic_machine_worshipers
+			}
+		}
+	}
+}
+
+tech_machine_advanced_nanites = {
+	area = engineering
+	cost = 40000
+	tier = 2
+	is_dangerous = yes
+	category = { materials }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.2
+	}
+	
+	prerequisites = { "tech_nanite_technology_mastery" } 
+
+	potential = {
+		NOT = { has_civic = civic_harvester_nanites }
+		has_authority = auth_machine_intelligence
+	} 
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_machine_advanced_nanites_effect
+			desc = tech_machine_advanced_nanites_effect_desc
+		}
+		custom = {
+			title = tech_advanced_nanite_factory_effect
+			desc = tech_advanced_nanite_factory_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		factor = 2.00
+		modifier = {
+			factor = 0.50
+			NOT = { has_civic = civic_harvester_nanites }
+		}
+	}
+}
+
+# ##################
+# NANITE TECH
+# ##################
+
+tech_nanite_clouds = {
+	area = engineering
+	cost = 25000
+	tier = 3
+	is_rare = yes
+	category = { materials }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_clouds_effect
+			desc = tech_nanite_clouds_effect_desc
+		}
+	}
+	
+	potential = {
+		OR = {	
+			has_technology = tech_harvester_advanced_nanites
+			has_technology = tech_advanced_nanites
+			has_technology = tech_machine_advanced_nanites
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.75
+	}
+
+}
+
+tech_nanites_assembler_factory = {
+	area = engineering
+	cost = 20000
+	tier = 2
+	is_rare = yes
+	category = { industry }
+	weight = 50
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_nanite_clouds" } 
+	
+	ai_weight = {
+		factor = 0.5
+		modifier = {
+			factor = 0
+			NOR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = { 
+				has_authority = auth_machine_intelligence 
+				has_ethic = ethic_materialists 
+				has_ethic = ethic_fanatic_materialists 
+			}
+		}
+	}
+}
+
+tech_orbital_nanite_shipyard = {
+	area = engineering
+	cost = 50000
+	tier = 3
+	is_rare = yes
+	category = { industry }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_nanites_assembler_factory" } 
+	
+	
+	ai_weight = {
+		factor = 0.25
+		modifier = {
+			factor = 0
+			OR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 1
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				NOT = { has_civic = civic_harvester_nanites }
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				has_civic = civic_harvester_nanites
+			}
+		}
+	}
+
+}
+
+tech_nanite_networking_protocols = {
+	area = engineering
+	cost = 35000
+	tier = 4
+	is_dangerous = yes
+	category = { computing }
+	weight = 15
+	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		factor = 1.5
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_expertise_computing"
+				}
+				research_leader = {
+					area = physics
+					has_trait = "leader_trait_curator"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	
+	prerequisites = { "tech_nanite_clouds" } 
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_networking_protocols_effect
+			desc = tech_nanite_networking_protocols_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.35
+		modifier = {
+			factor = 0
+			OR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 1
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				NOT = { has_civic = civic_harvester_nanites }
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				has_civic = civic_harvester_nanites
+			}
+		}
+	}
+
+}
+
+tech_nanite_weaponry = {
+	area = engineering
+	cost = 50000
+	tier = 3
+	is_dangerous = yes
+	category = { computing }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_orbital_nanite_shipyard" }
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_weaponry_effect
+			desc = tech_nanite_weaponry_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.1
+		modifier = {
+			factor = 0
+			OR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0.35
+			OR = {
+				has_ethic = ethic_materialists 
+				has_ethic = ethic_fanatic_materialists 
+			}
+		}
+		modifier = {
+			factor = 1
+			AND = {
+				has_authority = auth_machine_intelligence 
+				NOT = { has_civic = civic_harvester_nanites }
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				has_authority = auth_machine_intelligence 
+				has_civic = civic_harvester_nanites
+			}
+		}
+	}
+
+}
+
+tech_nanite_torpedo = {
+	area = engineering
+	cost = 25000
+	tier = 3
+	is_dangerous = yes
+	category = { propulsion }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_nanite_weaponry" } 
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_torpedo_effect
+			desc = tech_nanite_torpedo_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.75
+	}
+
+}
+
+tech_nanite_lancers = {
+	area = engineering
+	cost = 25000
+	tier = 3
+	is_dangerous = yes
+	category = { voidcraft }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_nanite_weaponry" } 
+	
+	ai_weight = {
+		factor = 0.75
+	}
+
+}
+
+tech_nanite_titanic_weapon = {
+	area = engineering
+	cost = 50000
+	tier = 4
+	is_dangerous = yes
+	category = { particles }
+	weight = 15
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_nanite_lancers" } 
+	
+	prereqfor_desc = {
+		custom = {
+			title = tech_nanite_titanic_weapon_effect
+			desc = tech_nanite_titanic_weapon_effect_desc
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.1
+		modifier = {
+			factor = 0
+			OR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0.75
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				NOT = { has_civic = civic_harvester_nanites }
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				has_civic = civic_harvester_nanites
+			}
+		}
+	}
+
+}
+
+tech_nanite_mothership = {
+	area = engineering
+	cost = 50000
+	tier = 4
+	is_dangerous = yes
+	category = { voidcraft }
+	weight = 15
+	is_reverse_engineerable = no
+	
+	prerequisites = { "tech_orbital_nanite_shipyard" } 
+	
+	potential = {
+		AND = {
+			has_technology = tech_nanite_networking_protocols
+			has_technology = tech_nanite_titanic_weapon
+			has_technology = tech_nanite_torpedo
+		}
+	}
+	
+	ai_weight = {
+		factor = 0.1
+		modifier = {
+			factor = 0
+			OR = { 
+				has_authority = auth_hive_mind
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		modifier = {
+			factor = 0.5
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				NOT = { has_civic = civic_harvester_nanites }
+			}
+		}
+		modifier = {
+			factor = 1
+			AND = {
+				OR = { 
+					has_authority = auth_machine_intelligence 
+					has_ethic = ethic_materialists 
+					has_ethic = ethic_fanatic_materialists 
+				}
+				has_civic = civic_harvester_nanites
+			}
+		}
+	}
+
+}

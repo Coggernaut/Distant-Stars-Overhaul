@@ -1,0 +1,14 @@
+soundeffect = {
+	name = pc_bh_harvested
+	volume = 0.3
+	loop = no
+	sounds = {
+		sound = harvest_01
+		sound = harvest_02
+		sound = harvest_03
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
