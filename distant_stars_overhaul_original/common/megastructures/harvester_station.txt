@@ -113,7 +113,8 @@ nanite_factory_station_0 = {
 			factor = 0.2
 			AND = {
 				has_monthly_income = { resource = nanites value <= 0 }
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 			
 		}
@@ -121,7 +122,10 @@ nanite_factory_station_0 = {
 			factor = 1
 			AND = {
 				has_monthly_income = { resource = nanites value <= 0 }
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}

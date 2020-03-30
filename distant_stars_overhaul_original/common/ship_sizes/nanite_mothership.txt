@@ -1,5 +1,5 @@
 
-dso_nanite_titan = {
+nanite_mothership = {
 	formation_priority = @titan_formation_priority
 	entity = "gatebuilder_01_mothership_entity"
 	max_speed = 100
@@ -109,7 +109,7 @@ dso_nanite_titan = {
 	}
 }
 
-dso_nanite_mothership = {
+nanite_titan = {
 	formation_priority = @battleship_formation_priority
 	entity = "gatebuilder_01_mothership_entity"
 	max_speed = 120
@@ -133,7 +133,7 @@ dso_nanite_mothership = {
 
 	default_behavior = line
 
-	prerequisites = { "tech_nanite_mothership" }
+	prerequisites = { "tech_nanite_mothership_never" }
 
 	combat_disengage_chance = 1.25
 	
@@ -161,7 +161,7 @@ dso_nanite_mothership = {
 	}
 }
 
-dso_nanite_interdictor = {
+nanite_interdictor = {
 	formation_priority = @cruiser_formation_priority
 	entity = gatebuilder_01_cruiser_entity
 	max_speed = 140
@@ -185,7 +185,7 @@ dso_nanite_interdictor = {
 
 	default_behavior = line
 
-	prerequisites = { "tech_nanite_mothership" }
+	prerequisites = { "tech_nanite_mothership_never" }
 
 	combat_disengage_chance = 1.25
 

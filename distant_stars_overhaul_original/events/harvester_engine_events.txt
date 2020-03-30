@@ -263,7 +263,8 @@ planet_event = {
 							AND = {
 								is_country_type = default
 								NOR = {
-									has_civic = civic_harvester_nanites
+									has_origin = civic_harvester_nanites
+									has_origin = civic_gateway_pursuer
 									has_civic = civic_machine_terminator
 								}
 							}

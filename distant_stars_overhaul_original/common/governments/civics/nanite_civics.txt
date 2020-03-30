@@ -1,4 +1,6 @@
 civic_harvester_nanites = {
+	is_origin = yes
+	description = "civic_harvester_nanites_effects"
 	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	potential = { authority = { value = auth_machine_intelligence } }
 	homeworld = pc_nuked
@@ -26,10 +28,12 @@ civic_harvester_nanites = {
 			NOT = { host_has_dlc = "Distant Stars Story Pack" }
 		}
 	}
-	description = civic_harvester_nanites_effects
 }
 
 civic_gateway_pursuer = {
+	picture = GFX_origin_galactic_doorstep
+	is_origin = yes
+	description = "civic_gateway_pursuer_effects"
 	playable = { 
 		host_has_dlc = "Synthetic Dawn Story Pack" 
 		host_has_dlc = "Distant Stars Story Pack" 
@@ -38,7 +42,7 @@ civic_gateway_pursuer = {
 	homeworld = pc_nuked
 	possible = {
 		civics = {
-			value = civic_harvester_nanites
+			#value = civic_harvester_nanites
 			NOR = {
 				value = civic_machine_terminator
 				value = civic_machine_assimilator
@@ -46,6 +50,7 @@ civic_gateway_pursuer = {
 			}
 		}
 	}
+	traits = { trait = trait_dessanu_nanites }
 	modification = no
 	random_weight = {
 		base = 1
@@ -60,10 +65,12 @@ civic_gateway_pursuer = {
 			NOT = { host_has_dlc = "Distant Stars Story Pack" }
 		}
 	}
-	description = civic_gateway_pursuer_effects
 }
 
 civic_gateway_worshiper = {
+	picture = GFX_origin_galactic_doorstep
+	is_origin = yes
+	description = "civic_gateway_worshiper_effects"
 	playable = { 
 		host_has_dlc = "Distant Stars Story Pack" 
 	}
@@ -88,14 +95,6 @@ civic_gateway_worshiper = {
 				value = ethic_fanatic_spiritualist
 			}
 		}
-		civics = {
-			NOT = {
-				value = civic_life_seeded
-				value = civic_mechanists
-				value = civic_syncretic_evolution
-				value = civic_post_apocalyptic
-			}
-		}
 	}
 	modification = no
 	random_weight = {
@@ -111,5 +110,4 @@ civic_gateway_worshiper = {
 			NOT = { host_has_dlc = "Distant Stars Story Pack" }
 		}
 	}
-	description = civic_gateway_worshiper_effects
 }

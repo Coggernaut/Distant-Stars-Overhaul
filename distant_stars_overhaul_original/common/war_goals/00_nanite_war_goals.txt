@@ -33,10 +33,10 @@ wg_claim_lgates = {
 	# FROM = The targeted country
 	# THIS = The acting country
 	potential = {
-		THIS = { has_civic = civic_gateway_worshiper }
+		THIS = { has_origin = civic_gateway_worshiper }
 	}
 	possible = {
-		THIS = { has_civic = civic_gateway_worshiper }
+		THIS = { has_origin = civic_gateway_worshiper }
 	}
 	
 	on_wargoal_set = {

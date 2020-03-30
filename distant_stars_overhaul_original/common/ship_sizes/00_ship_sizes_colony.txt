@@ -78,7 +78,10 @@ colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					has_civic = civic_harvester_nanites
+					OR = {
+						has_origin = civic_harvester_nanites
+						has_origin = civic_gateway_pursuer
+					}
 					is_robot_empire = yes
 				}
 			}
@@ -89,7 +92,8 @@ colonizer = {
 			trigger = {
 				from = {
 					is_robot_empire = yes
-					NOT = { has_civic = civic_harvester_nanites }
+					NOT = { has_origin = civic_harvester_nanites }
+					NOT = { has_origin = civic_gateway_pursuer }
 				}
 			}
 			alloys = 400

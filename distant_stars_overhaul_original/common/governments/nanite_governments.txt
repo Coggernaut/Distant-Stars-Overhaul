@@ -6,8 +6,7 @@ gov_machine_bio_harvesters = {
 
 	possible = {
 		has_authority = auth_machine_intelligence
-		has_civic = civic_harvester_nanites
-		NOT = { has_civic = civic_gateway_pursuer }
+		has_origin = civic_harvester_nanites
 	}
 
 	weight = {
@@ -23,8 +22,7 @@ gov_machine_gateway_pursuer = {
 
 	possible = {
 		has_authority = auth_machine_intelligence
-		has_civic = civic_harvester_nanites
-		has_civic = civic_gateway_pursuer
+		has_origin = civic_gateway_pursuer
 	}
 
 	weight = {
@@ -39,7 +37,7 @@ gov_spiritualist_gateway_worshiper = {
 	should_force_rename = yes
 
 	possible = {
-		has_civic = civic_gateway_worshiper
+		has_origin = civic_gateway_worshiper
 	}
 
 	weight = {

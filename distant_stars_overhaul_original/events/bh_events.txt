@@ -41,7 +41,7 @@ planet_event = {
 			NOT = { has_planet_flag = abandon_nanite_forgeworld_flag }
 		}
 		owner = {
-			NOT = { has_civic = civic_harvester_nanites }
+			NOT = { OR = { has_origin = civic_harvester_nanites has_origin = civic_gateway_pursuer } }
 		}
     }
     immediate = {
@@ -79,7 +79,7 @@ planet_event = {
 
     trigger = {
         owner = {
-            has_civic = civic_harvester_nanites
+            OR = { has_origin = civic_harvester_nanites has_origin = civic_gateway_pursuer }
         }
         NOR = {
 			is_planet_class = pc_nuked
@@ -256,7 +256,8 @@ planet_event = {
 								AND = {
 									is_country_type = default
 									NOR = {
-										has_civic = civic_harvester_nanites
+										has_origin = civic_harvester_nanites
+										has_origin = civic_gateway_pursuer
 										has_civic = civic_machine_terminator
 									}
 								}
@@ -461,15 +462,16 @@ country_event = {
     trigger = {
         owner = {
 			OR = {
-				has_civic = civic_harvester_nanites
-				has_civic = civic_gateway_worshiper
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+				has_origin = civic_gateway_worshiper
 			}
         }
     }
     immediate = {
 		if = {
 			limit = {
-				ROOT = { has_civic = civic_harvester_nanites }
+				ROOT = { OR = { has_origin = civic_harvester_nanites has_origin = civic_gateway_pursuer } }
 			}
 			random_owned_planet = {
 				limit = { is_capital = yes }
@@ -498,7 +500,7 @@ country_event = {
         }
 		if = {
 			limit = {
-				ROOT = { has_civic = civic_gateway_pursuer }
+				ROOT = { has_origin = civic_gateway_pursuer }
 			}
 			start_lcluster_chain = yes
 			random_system_within_border = { save_event_target_as = gateway_system }
@@ -506,7 +508,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				ROOT = { has_civic = civic_gateway_worshiper }
+				ROOT = { has_origin = civic_gateway_worshiper }
 			}
 			random_owned_planet = {
 				limit = { is_capital = yes }
@@ -526,8 +528,8 @@ country_event = {
 				limit = {
 					ROOT = { 
 						OR = {
-							has_civic = civic_gateway_pursuer 
-							has_civic = civic_gateway_worshiper
+							has_origin = civic_gateway_pursuer 
+							has_origin = civic_gateway_worshiper
 						}
 					}
 				}
@@ -541,7 +543,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					ROOT = { has_civic = civic_harvester_nanites }
+					ROOT = { OR = { has_origin = civic_harvester_nanites has_origin = civic_gateway_pursuer } }
 				}
 				spawn_planet = {
 					class = "pc_shattered"
@@ -605,7 +607,7 @@ country_event = {
 		
 		#if = {
 		#	limit = {
-		#		ROOT = { has_civic = civic_harvester_nanites }
+		#		ROOT = { has_origin = civic_harvester_nanites }
 		#	}
 		#	random_system_within_border = {
 		#		spawn_system = {

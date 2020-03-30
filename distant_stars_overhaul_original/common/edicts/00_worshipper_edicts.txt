@@ -23,7 +23,7 @@ consecrate_lgate = {
 	}
 	
 	potential = {
-		has_civic = civic_gateway_worshiper
+		has_origin = civic_gateway_worshiper
 		
 	}
 	
@@ -56,7 +56,7 @@ lgate_guardian = {
 	}
 	
 	potential = {
-		has_civic = civic_gateway_worshiper
+		has_origin = civic_gateway_worshiper
 		
 	}
 	

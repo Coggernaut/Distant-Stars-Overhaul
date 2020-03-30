@@ -40,7 +40,7 @@ tech_repeatable_lcluster_clue = {
 	potential = {
 		has_country_flag = encountered_first_lgate
 		NOT = { has_country_flag = completed_lcluster_chain }
-		NOT = { has_civic = civic_gateway_worshiper }
+		NOT = { has_origin = civic_gateway_worshiper }
 	}
 
 	prereqfor_desc = {
@@ -53,12 +53,12 @@ tech_repeatable_lcluster_clue = {
 	ai_weight = {
 		modifier = {
 			factor = 1.00
-			NOT = { has_civic = civic_gateway_pursuer }
+			NOT = { has_origin = civic_gateway_pursuer }
 			
 		}
 		modifier = {
 			factor = 100.00
-			has_civic = civic_gateway_pursuer
+			has_origin = civic_gateway_pursuer
 		}
 	}
 
@@ -85,7 +85,7 @@ tech_repeatable_nanite_technology_insight = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_country_flag = completed_nanite_technology_insight_chain }
-		NOT = { has_civic = civic_gateway_worshiper }
+		NOT = { has_origin = civic_gateway_worshiper }
 		if = {
 			limit = { NOT = { has_authority = auth_machine_intelligence } }
 			has_technology = tech_synthetic_workers
@@ -102,7 +102,7 @@ tech_repeatable_nanite_technology_insight = {
 	ai_weight = {
 		modifier = {
 			factor = 1.00
-			NOT = { has_civic = civic_gateway_pursuer }
+			NOT = { has_origin = civic_gateway_pursuer }
 			
 		}
 	}
@@ -155,7 +155,10 @@ tech_harvester_advanced_nanites = {
 	prerequisites = { "tech_nanite_technology_mastery" } 
 
 	potential = {
-		has_civic = civic_harvester_nanites
+		OR = {
+			has_origin = civic_harvester_nanites
+			has_origin = civic_gateway_pursuer
+		}
 		has_authority = auth_machine_intelligence
 	}
 
@@ -173,7 +176,10 @@ tech_harvester_advanced_nanites = {
 	ai_weight = {
 		modifier = {
 			factor = 2.00
-			has_civic = civic_harvester_nanites
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
 		}
 	}
 }
@@ -192,7 +198,8 @@ tech_advanced_nanites = {
 	}
 
 	potential = {
-		NOT = { has_civic = civic_harvester_nanites }
+		NOT = { has_origin = civic_harvester_nanites }
+		NOT = { has_origin = civic_gateway_pursuer }
 		NOT = { has_authority = auth_machine_intelligence }
 		NOT = { has_authority = auth_hive_mind }
 	}
@@ -217,7 +224,8 @@ tech_advanced_nanites = {
 		modifier = {
 			factor = 0.25
 			AND = {
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 				NOR = {
 					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
@@ -231,7 +239,8 @@ tech_advanced_nanites = {
 		modifier = {
 			factor = 0.50
 			AND = {
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 				NOR = {
 					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
@@ -245,7 +254,8 @@ tech_advanced_nanites = {
 		modifier = {
 			factor = 0
 			AND = {
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 				OR = {
 					has_ethic = ethic_spiritualist 
 					has_ethic = ethic_fanatic_spiritualist
@@ -254,13 +264,14 @@ tech_advanced_nanites = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				NOT = { has_civic = civic_machine_worshipers }
+				NOT = { has_origin = civic_machine_worshipers }
 			}
 		}
 		modifier = {
 			factor = 0.50
 			AND = {
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 				OR = {
 					has_ethic = ethic_spiritualist 
 					has_ethic = ethic_fanatic_spiritualist
@@ -269,7 +280,7 @@ tech_advanced_nanites = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				has_civic = civic_machine_worshipers
+				has_origin = civic_machine_worshipers
 			}
 		}
 	}
@@ -291,7 +302,8 @@ tech_machine_advanced_nanites = {
 	prerequisites = { "tech_nanite_technology_mastery" } 
 
 	potential = {
-		NOT = { has_civic = civic_harvester_nanites }
+		NOT = { has_origin = civic_harvester_nanites }
+		NOT = { has_origin = civic_gateway_pursuer }
 		has_authority = auth_machine_intelligence
 	} 
 
@@ -310,7 +322,8 @@ tech_machine_advanced_nanites = {
 		factor = 2.00
 		modifier = {
 			factor = 0.50
-			NOT = { has_civic = civic_harvester_nanites }
+			NOT = { has_origin = civic_harvester_nanites }
+			NOT = { has_origin = civic_gateway_pursuer }
 		}
 	}
 }
@@ -411,7 +424,8 @@ tech_orbital_nanite_shipyard = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 		}
 		modifier = {
@@ -422,7 +436,10 @@ tech_orbital_nanite_shipyard = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}
@@ -490,7 +507,8 @@ tech_nanite_networking_protocols = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 		}
 		modifier = {
@@ -501,7 +519,10 @@ tech_nanite_networking_protocols = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}
@@ -547,14 +568,18 @@ tech_nanite_weaponry = {
 			factor = 1
 			AND = {
 				has_authority = auth_machine_intelligence 
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 		}
 		modifier = {
 			factor = 2
 			AND = {
 				has_authority = auth_machine_intelligence 
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}
@@ -638,7 +663,8 @@ tech_nanite_titanic_weapon = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 		}
 		modifier = {
@@ -649,7 +675,10 @@ tech_nanite_titanic_weapon = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}
@@ -693,7 +722,8 @@ tech_nanite_mothership = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				NOT = { has_civic = civic_harvester_nanites }
+				NOT = { has_origin = civic_harvester_nanites }
+				NOT = { has_origin = civic_gateway_pursuer }
 			}
 		}
 		modifier = {
@@ -704,7 +734,10 @@ tech_nanite_mothership = {
 					has_ethic = ethic_materialists 
 					has_ethic = ethic_fanatic_materialists 
 				}
-				has_civic = civic_harvester_nanites
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
 		}
 	}
