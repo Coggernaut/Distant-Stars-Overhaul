@@ -137,21 +137,21 @@
  tech_nanite_clouds_effect_desc:0 "Nanite Clouds are sprayed onto worksites to speed up the building process by reassembling into the needed construction components."
  tech_nanite_torpedo:0 "Nanite Capsule Torpedo"
  tech_nanite_torpedo_desc:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
- tech_nanite_torpedo_effect:0 "§HAcquires:§! Nanite Mothership Component"
- tech_nanite_torpedo_effect_desc:0 "Arming the Nanite Mothership with powerful weaponry is crucial. Every design must be thoroughly checked before the project can be started."
+ tech_nanite_torpedo_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_torpedo_effect_desc:0 "Arming the Nanite Core with powerful weaponry is crucial. Every design must be thoroughly checked before the project can be started."
  tech_nanite_lancers:0 "Nanite Lancers"
  tech_nanite_lancers_desc:0 "Nanites coalesce into fighter squadrons, that then utalize a lance-like weapon made of nanites. Swarms of these lancers work in unison to skewer the haul of enemy ships from all angles."
  tech_nanite_titanic_weapon:0 "Titanic Nanite Lance"
  tech_nanite_titanic_weapon_desc:0 "Nanites coalesce into a physical lance that mimics the weapons found on nanite lancers."
- tech_nanite_titanic_weapon_effect:0 "§HAcquires:§! Nanite Mothership Component"
- tech_nanite_titanic_weapon_effect_desc:0 "The Titanic Nanite Lance is powerful, this upscaled version of the Nanite Lancer's primary weapon is key to understanding how to create a functioning Nanite Mothership."
+ tech_nanite_titanic_weapon_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_titanic_weapon_effect_desc:0 "The Titanic Nanite Lance is powerful, this upscaled version of the Nanite Lancer's primary weapon is key to understanding how to create a functioning Nanite Core."
  tech_nanite_networking_protocols:0 "Nanite Networking Protocols"
  tech_nanite_networking_protocols_desc:0 "With the ability to network a wider range of nanites, all nanite applications will be improved in intelligance and capabilities. Though with newfound knowledge comes the concern of newfound awareness."
- tech_nanite_networking_protocols_effect:0 "§HAcquires:§! Nanite Mothership Component"
- tech_nanite_networking_protocols_effect_desc:0 "Without the ability to network trillions of nanomachines, there is no chance these nanomachines will coalesce into a Nanite Mothership."
+ tech_nanite_networking_protocols_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_networking_protocols_effect_desc:0 "Without the ability to network trillions of nanomachines, there is no chance these nanomachines will coalesce into a Nanite Core."
  
- tech_nanite_mothership:0 "Nanite Mothership Project"
- tech_nanite_mothership_desc:0 "After studying and reverse engineering nanite systems extensively, researchers are confident they have the capability to construct a nanite mothership with unrivaled weaponry. Scientists are unsure what effects this may have on the nanites as a whole. It's feared that networking such a large amount of nanomachines may yield the mothership with a gestalt consciousness."
+ tech_nanite_Core:0 "Nanite Core Project"
+ tech_nanite_Core_desc:0 "After studying and reverse engineering nanite systems extensively, researchers are confident they have the capability to construct a nanite Core with unrivaled weaponry. Scientists are unsure what effects this may have on the nanites as a whole. It's feared that networking such a large amount of nanomachines may yield the Core with a gestalt consciousness."
  
  
  # Megastructure --------
@@ -182,11 +182,11 @@
  orbital_nanite_shipyard_desc:0 "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
  sm_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
  sm_orbital_nanite_shipyard_desc:0 "All station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
- sm_orbital_nanite_shipyard_desc_modifier:0 "§YNanite Mothership Construction Enabled§!\nStarbase Modifier\n   Shipyard Capacity: §G+2§!\n   Ship Build Speed §G+10.00%§!"
+ sm_orbital_nanite_shipyard_desc_modifier:0 "§YNanite Core Construction Enabled§!\nStarbase Modifier\n   Shipyard Capacity: §G+2§!\n   Ship Build Speed §G+10.00%§!"
  
- # Nanite Mothership Stuff -----------
- nanite_mothership:0 "Nanite Mothership"
- nanite_mothership_desc:0 "Trillions of nanomachines have coalesced into a single Nanite Mothership. Utalizing a massively networked intelligence to command every aspect of it's being."
+ # Nanite Core Stuff -----------
+ dso_nanite_Core:0 "Nanite Core"
+ dso_nanite_Core_desc:0 "Trillions of nanomachines have coalesced into a single Nanite Core. Utalizing a massively networked intelligence to command every aspect of it's being."
  
  DCV_REACTOR:0 "Zero Point Reactor"
  DCV_REACTOR_DESC:0 "Zero Point Reactor"
@@ -199,14 +199,14 @@
  DCV_PILOT_CREW:0 "Nanite Targeting Computer Uplink"
  DCV_PILOT_CREW_DESC:0 "Nanite Targeting Computer Uplink"
  
- NANITE_BOW:0 "Mothership Bow"
- NANITE_MID1_L4:0 "Mothership Artillary"
- NANITE_MID1_G4:0 "Mothership Missiles"
- NANITE_MID1_H4:0 "Mothership Hangers"
- NANITE_MID2_L4:0 "Mothership Artillary"
- NANITE_MID2_G4:0 "Mothership Missiles"
- NANITE_MID2_H4:0 "Mothership Hangers"
- NANITE_STERN:0 "Mothership Stern"
+ NANITE_BOW:0 "Core Bow"
+ NANITE_MID1_L4:0 "Core Artillary"
+ NANITE_MID1_G4:0 "Core Missiles"
+ NANITE_MID1_H4:0 "Core Hangers"
+ NANITE_MID2_L4:0 "Core Artillary"
+ NANITE_MID2_G4:0 "Core Missiles"
+ NANITE_MID2_H4:0 "Core Hangers"
+ NANITE_STERN:0 "Core Stern"
  
  #Nanite Weapons
  GG_BEAM_STATIC_NANITE:0 "Titanic Nanite Lance"

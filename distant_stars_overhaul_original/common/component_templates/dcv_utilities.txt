@@ -11,7 +11,7 @@ utility_component_template = {
 		}
 	}
 	component_set = "power_core"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 }
 utility_component_template = {
 	key = "DCV_THRUSTER"
@@ -29,7 +29,7 @@ utility_component_template = {
 		ship_evasion_add = 10
 	}
 	component_set = "thruster_components"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 }
 
 utility_component_template = {
@@ -45,7 +45,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military }
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 

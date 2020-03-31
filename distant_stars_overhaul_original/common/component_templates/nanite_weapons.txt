@@ -27,13 +27,13 @@ weapon_component_template = { # Nanobot Assimilation
 	static_rotation = yes
 	use_ship_kill_target = no
 
-	prerequisites = { "tech_nanite_mothership" }
+	prerequisites = { "tech_dso_nanite_core" }
 
 	icon = GFX_ship_part_nanobot_diffuser
 	icon_frame = 1
 
 	component_set = "PLANET_KILLER_HARVESTER"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 
 	planet_destruction_gfx = "assimilation_nanobots_gfx"
 	
@@ -80,7 +80,7 @@ strike_craft_component_template = {
 	prerequisites = { "tech_nanite_lancers" }
 	
 	component_set = "GG_STRIKE_CRAFT_NANITE"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 
 	power = -60
 
@@ -131,7 +131,7 @@ weapon_component_template = {
 	icon_frame = 1
 	
 	component_set = "GG_ENERGY_MISSILE_NANITE"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 	
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"
@@ -174,7 +174,7 @@ weapon_component_template = {
 	tags = { weapon_type_kinetic }
 	
 	component_set = "GG_BEAM_STATIC_NANITE"
-	size_restriction = { nanite_mothership }
+	size_restriction = { dso_nanite_core }
 	
 	projectile_gfx = "gatebuilder_titan_weapon"
 	

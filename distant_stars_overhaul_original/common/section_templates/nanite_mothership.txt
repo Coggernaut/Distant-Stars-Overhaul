@@ -1,6 +1,6 @@
 ship_section_template = {
 	key = "NANITE_BOW"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = bow
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_bow"
@@ -25,7 +25,7 @@ ship_section_template = {
 #Mid1
 ship_section_template = {
 	key = "NANITE_MID1_L4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -67,7 +67,7 @@ ship_section_template = {
 
 ship_section_template = {
 	key = "NANITE_MID1_G4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -109,7 +109,7 @@ ship_section_template = {
 
 ship_section_template = {
 	key = "NANITE_MID1_H4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -153,7 +153,7 @@ ship_section_template = {
 #MID2
 ship_section_template = {
 	key = "NANITE_MID2_L4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -195,7 +195,7 @@ ship_section_template = {
 
 ship_section_template = {
 	key = "NANITE_MID2_G4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -237,7 +237,7 @@ ship_section_template = {
 
 ship_section_template = {
 	key = "NANITE_MID2_H4"
-	ship_size = nanite_mothership 
+	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
@@ -281,7 +281,7 @@ ship_section_template = {
 #STERN
 ship_section_template = {
 	key = "NANITE_STERN"
-	ship_size = nanite_mothership
+	ship_size = dso_nanite_core
 	fits_on_slot = stern
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_stern"
