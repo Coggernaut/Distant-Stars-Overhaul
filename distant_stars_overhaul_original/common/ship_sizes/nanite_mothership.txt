@@ -131,7 +131,7 @@ dso_nanite_mothership = {
 	can_have_federation_design = no
 	enable_default_design = yes
 
-	default_behavior = line
+	default_behavior = artillery
 
 	prerequisites = { "tech_nanite_mothership" }
 

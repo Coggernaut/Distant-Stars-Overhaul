@@ -1,5 +1,5 @@
 ship_section_template = {
-	key = "NANITE_BOW"
+	key = "NANITE_CORE_BOW"
 	ship_size = dso_nanite_core 
 	fits_on_slot = bow
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -24,7 +24,7 @@ ship_section_template = {
 	
 #Mid1
 ship_section_template = {
-	key = "NANITE_MID1_L4"
+	key = "NANITE_CORE_MID1_L4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -66,7 +66,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "NANITE_MID1_G4"
+	key = "NANITE_CORE_MID1_G4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -108,7 +108,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "NANITE_MID1_H4"
+	key = "NANITE_CORE_MID1_H4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid1
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -152,7 +152,7 @@ ship_section_template = {
 	
 #MID2
 ship_section_template = {
-	key = "NANITE_MID2_L4"
+	key = "NANITE_CORE_MID2_L4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -194,7 +194,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "NANITE_MID2_G4"
+	key = "NANITE_CORE_MID2_G4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -236,7 +236,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "NANITE_MID2_H4"
+	key = "NANITE_CORE_MID2_H4"
 	ship_size = dso_nanite_core 
 	fits_on_slot = mid2
 	entity = "gatebuilder_01_mothership_section_entity"
@@ -280,7 +280,7 @@ ship_section_template = {
 
 #STERN
 ship_section_template = {
-	key = "NANITE_STERN"
+	key = "NANITE_CORE_STERN"
 	ship_size = dso_nanite_core
 	fits_on_slot = stern
 	entity = "gatebuilder_01_mothership_section_entity"

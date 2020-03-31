@@ -13,6 +13,7 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = { dso_nanite_core }
 }
+
 utility_component_template = {
 	key = "DCV_THRUSTER"
 	size = large
@@ -58,6 +59,7 @@ utility_component_template = {
 		ship_tracking_add = 15
 	}
 }
+
 utility_component_template = {
 	key = "DCV_MAINTENANCE_CREW"
 	size = aux
@@ -78,6 +80,7 @@ utility_component_template = {
 	component_set = "dcv_crew"
 	
 }
+
 utility_component_template = {
 	key = "DCV_PILOT_CREW"
 	size = aux

@@ -55,6 +55,8 @@ weapon_component_template = { # Nanobot Assimilation
 		}
 	}
 }
+
+
 strike_craft_component_template = {
 	key = "GG_STRIKE_CRAFT_NANITE"
 	size = LARGE
@@ -154,6 +156,7 @@ weapon_component_template = {
 		}
 	}
 }
+
 
 weapon_component_template = {
 	key = "GG_BEAM_STATIC_NANITE"
