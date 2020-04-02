@@ -29,6 +29,7 @@
  
  # Planets --------------
  district_nanite_forgeworld_industry:0 "Alloy Foundary"
+ district_nanite_forgeworld_industry_plural:0 "Alloy Foundaries"
  district_nanite_forgeworld_industry_desc:0 "Nanite Forgeworlds regularly process minerals into useful alloys. These sectors of the Forgeworld are called Alloy Foundaries. The temperatures are so high that biological organisms find them extremely unpleasant."
  
  d_nanites_deposit:0 "Nanite Forge"
@@ -173,6 +174,13 @@
  
  mod_job_nanite_researcher_add:0 "Nanite Researcher Jobs"
  job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies and §Ggives research access to Nanite Weapons§!"
+ 
+ district_forgeworld_bio_reactor:0 "Bio-Processing Foundary"
+ district_forgeworld_bio_reactor_plural:0 "Bio-Processing Foundaries"
+ district_forgeworld_bio_reactor_desc:0 "Nanite Forgeworlds regularly process biomass into energy. These sectors of the Forgeworld are called Bio-Processing Foundaries. Biological organisms find them extremely disturbing."
+ job_bio_processor_drone:0 "Bio-Processor Job"
+ mod_job_bio_processor_drone_add:0 "Bio-Processor Jobs"
+ bio_processor_drone_effect_desc:0 "Bio-Processors turn §YFood§! into £energy£ §YCredits§!"
  
  
  building_nanite_research_center:0 "Nanite Research Center"
