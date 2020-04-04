@@ -124,7 +124,7 @@ dso_nanite_mothership = {
 	size_multiplier = 8
 	fleet_slot_size = 8
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
-	num_target_locators = 4
+	num_target_locators = 8
 	is_space_station = no
 	icon_frame = 6
 	base_buildtime = 480
@@ -176,7 +176,7 @@ dso_nanite_interdictor = {
 	size_multiplier = 4
 	fleet_slot_size = 4
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
-	num_target_locators = 4
+	num_target_locators = 8
 	is_space_station = no
 	icon_frame = 4
 	base_buildtime = 240

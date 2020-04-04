@@ -1,3 +1,4 @@
+#Bow
 ship_section_template = {
 	key = "NANITE_CORE_BOW"
 	ship_size = dso_nanite_core 
@@ -306,6 +307,535 @@ ship_section_template = {
 		category = ship_sections
 		cost = {
 			nanites = 25
+		}
+	}
+}
+
+
+#Bow
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_BOW_XL1"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_BOW_L2"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_BOW_G2"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_BOW_H2"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_02"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+	
+	
+#Mid
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_MID_L3"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_gun_03"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_MID_G3"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_03"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_MID_H3"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_02"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_03"
+	}
+
+	large_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+
+#STERN
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_STERN_L1"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = stern
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+
+	large_utility_slots = 1
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_STERN_G1"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = stern
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	large_utility_slots = 1
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_MOTHERSHIP_STERN_H1"
+	ship_size = dso_nanite_mothership 
+	fits_on_slot = stern
+	entity = "gatebuilder_01_mothership_section_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+
+	large_utility_slots = 1
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 12
+		}
+	}
+}
+
+
+#Bow
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_BOW_M2"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_02"
+	}
+
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_BOW_S3P2"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = bow
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+
+#Mid
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_MID_M3"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "medium_gun_03"
+	}
+
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_MID_S5P2"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "small_gun_04"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "small_gun_05"
+	}
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+
+#Stern
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_STERN_M1"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = stern
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	medium_utility_slots = 1
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+ship_section_template = {
+	key = "NANITE_INTERDICTOR_STERN_S1P2"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = stern
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+
+	medium_utility_slots = 1
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
 		}
 	}
 }
