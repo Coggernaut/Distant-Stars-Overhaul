@@ -1,4 +1,5 @@
 district_nanite_forgeworld_industry = {
+	icon = district_nanite_forgeworld_industry
 	base_buildtime = 600
 	is_capped_by_modifier = no
 	
@@ -12,9 +13,7 @@ district_nanite_forgeworld_industry = {
 	
 	conversion_ratio = 1
 	convert_to = {
-		district_city
 		district_nexus
-		district_hive
 	}	
 	
 	resources = {
@@ -42,42 +41,6 @@ district_nanite_forgeworld_industry = {
 		}
 	}	
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_alloy_drone_add = 10
-		}
-	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_foundry_add = 10
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		text = job_foundry_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = { 
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_alloy_drone_effect_desc
-	}		
-	
 	triggered_desc = {
 		trigger = { 
 			exists = owner
@@ -98,6 +61,69 @@ district_nanite_forgeworld_industry = {
 				has_monthly_income = {
 					resource = minerals
 					value > 99
+				}
+			}
+		}
+	}
+}
+
+district_forgeworld_bio_reactor = {
+	icon = district_forgeworld_bio_reactor
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_nanite_forgeworld
+	}
+	
+	potential = {
+		is_planet_class = pc_nanite_forgeworld
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_nexus
+		district_nanite_forgeworld_industry
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			nanites = 50
+		}	
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_bio_processor_drone_add = 6
+		}
+	}		
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = bio_processor_drone_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 500
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 100
 				}
 			}
 		}

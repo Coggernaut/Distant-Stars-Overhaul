@@ -484,10 +484,6 @@ country_event = {
 				remove_district = district_nexus
 				remove_district = district_nexus
 				remove_district = district_nexus
-				add_district = district_mining
-				add_district = district_mining
-				add_district = district_mining
-				add_district = district_mining
 				add_deposit = d_nanosands
 				every_deposit = {
 					limit = { is_blocker = yes }
