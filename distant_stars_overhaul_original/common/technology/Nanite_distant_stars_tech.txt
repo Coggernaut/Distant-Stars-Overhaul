@@ -85,6 +85,7 @@ tech_repeatable_nanite_technology_insight = {
 	potential = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_country_flag = completed_nanite_technology_insight_chain }
+		NOT = { has_technology = tech_nanite_technology_mastery }
 		NOT = { has_origin = civic_gateway_worshiper }
 		if = {
 			limit = { NOT = { has_authority = auth_machine_intelligence } }
@@ -119,12 +120,15 @@ tech_nanite_technology_mastery = {
 	cost = @tier3cost3
 	area = physics
 	tier = 3
-	is_dangerous = yes
+	is_rare = yes
 	category = { particles }
-	weight = 0
+	weight = 100
 
 	potential = {
-		has_country_flag = completed_nanite_technology_insight_chain
+		OR = {	
+			has_country_flag = completed_nanite_technology_insight_chain
+			has_country_flag = lcluster_opener
+		}
 	}
 
 	prereqfor_desc = {
@@ -134,8 +138,12 @@ tech_nanite_technology_mastery = {
 		}
 	}
 	
-	weight_modifier = {
-		factor = 0
+	ai_weight = {
+		modifier = {
+			factor = 1.00
+			NOT = { has_origin = civic_gateway_pursuer }
+			
+		}
 	}
 }
 
