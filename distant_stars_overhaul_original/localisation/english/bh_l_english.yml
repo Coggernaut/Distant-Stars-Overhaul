@@ -216,6 +216,28 @@
  NANITE_CORE_MID2_H4:0 "Core Hangers"
  NANITE_CORE_STERN:0 "Core Stern"
  
+ dso_nanite_mothership:0 "Nanite Mothership"
+ 
+ NANITE_MOTHERSHIP_BOW_XL1:0 "Mothership Siege"
+ NANITE_MOTHERSHIP_BOW_L2:0 "Mothership Artillary"
+ NANITE_MOTHERSHIP_BOW_G2:0 "Mothership Missiles"
+ NANITE_MOTHERSHIP_BOW_H2:0 "Mothership Hangers"
+ NANITE_MOTHERSHIP_MID_L3:0 "Mothership Artillary"
+ NANITE_MOTHERSHIP_MID_G3:0 "Mothership Missiles"
+ NANITE_MOTHERSHIP_MID_H3:0 "Mothership Hangers"
+ NANITE_MOTHERSHIP_STERN_L1:0 "Mothership Artillary"
+ NANITE_MOTHERSHIP_STERN_G1:0 "Mothership Missiles"
+ NANITE_MOTHERSHIP_STERN_H1:0 "Mothership Hangers"
+ 
+ dso_nanite_interdictor:0 "Nanite Interdictor"
+ 
+ NANITE_INTERDICTOR_BOW_M2:0 "Interdictor Cannons"
+ NANITE_INTERDICTOR_BOW_S3P2:0 "Interdictor Interdiction"
+ NANITE_INTERDICTOR_MID_M3:0 "Interdictor Cannons"
+ NANITE_INTERDICTOR_MID_S5P2:0 "Interdictor Interdiction"
+ NANITE_INTERDICTOR_STERN_M1:0 "Interdictor Cannons"
+ NANITE_INTERDICTOR_STERN_S1P2:0 "Interdictor Interdiction"
+ 
  #Nanite Weapons
  GG_BEAM_STATIC_NANITE:0 "Titanic Nanite Lance"
  GG_BEAM_STATIC_NANITE_DESC:0 "Nanites coalesce into a lance that mimics the weapons found on Nanite Lancers. The nanite lance does it's damage by accelerate the lance into the hull of the enemy ship."
