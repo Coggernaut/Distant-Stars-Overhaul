@@ -1,4 +1,26 @@
 ﻿l_english:
+ # Insight Events ---------------
+ 
+ nanite_technology_mastery_chain:0 "Nanite Technological Mastery"
+ nanite_technology_mastery_finish_tooltip:0 "Finishes the §YNanite Technological Mastery§! event chain."
+ 
+ distar_overhaul_insight_start.1.name:0 "Nanite Technology Floods The Galaxy"
+ distar_overhaul_insight_start.1.desc:0 "Our scientists where baffled as the L-Gates opened. Though it is clear nanite technology has flooded our galaxy, and can be reverse engineered. The question is, shall we pursue it?"
+ distar_overhaul_insight_start.1.a:0 "Nanite Technology is a mystery, for now."
+ start_nanite_technology_mastery_chain_tooltip:0 "Begins the §YNanite Technological Mastery§! event chain."
+ 
+ distar_overhaul.2.name:0 "Nanite Technological Insight"
+ distar_overhaul.2.desc:0 "After reverse engineering the Scavanger Bot's auto repair system it gave our scientists a better insight into Nanite Technology."
+ distar_overhaul.2.a:0 "Very interesting!"
+ 
+ distar_overhaul_insight_finished.1.name:0 "Nanite Technological Mastery"
+ distar_overhaul_insight_finished.1.desc:0 "Our scientists have already gained what they could from Nanite Technology. Any remaining insight into the technology will be redundant to research further."
+ distar_overhaul_insight_finished.1.a:0 "These insights have become redundant to research."
+ 
+ distar_overhaul.10904.name:0 "Nanite Technological Mastery"
+ distar_overhaul.10904.desc:0 "These insights into Nanite Technology have created a vast understanding of nano-machinery. It is now possible to replicate the machinery the Dessanu mastered. Hopefully nothing bad comes from this mastery."
+ distar_overhaul.10904.a:0 "Nanite Technology is now within our grasp!"
+ 
  # Events ---------------
  nanite_forgeworld_lost.1:0 "All Has Turned To Dust!"
  nanite_forgeworld_lost.1.title:0 "All Has Turned To Dust!"
@@ -98,8 +120,8 @@
  tech_repeatable_nanite_technology_insight_desc:0 "Intensive study within the fields of nanomachinery will eventually yield a new §Y$nanite_insight$§! which will allow us to gain §YNanite Technology Mastery§!"
  tech_nanite_technology_mastery:0 "Nanite Technology Mastery"
  tech_nanite_technology_mastery_desc:0 "Mastery of Nanite Technology will yield understanding §GAdvanced Nanite Technology§!"
- l_cluster_chain_title:1 "The Flood of Nanite Technology"
- l_cluster_chain_desc:0 "We have learned of a mysterious star cluster somewhere just beyond the periphery of our galaxy. It can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been deliberately disabled by someone, and for now we lack the necessary insight into the subspace mechanics that govern their use to lift the lockdown."
+ nanite_technology_mastery_chain_title:1 "The Flood of Nanite Technology"
+ nanite_technology_mastery_chain_desc:1 "We have learned the mysterious star cluster just beyond the periphery of our galaxy was home to the §HDessanu§!. The Dessanu are seemingly connected to the mysterious constructs created by §HNanite Technology§!. Though, the §HDessanu Cluster§! can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been opened by someone, and insight into these constructs can bring about §HNanite Technological Mastery§!.
  nanite_insights:1 "Nanite Technological Insights"
  nanite_insight:1 "Nanite Technological Insight"
  add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!

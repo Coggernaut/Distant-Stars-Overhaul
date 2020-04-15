@@ -80,11 +80,13 @@ tech_repeatable_nanite_technology_insight = {
 	is_rare = yes
 	category = { industry }
 	levels = -1
-	weight = 70
+	weight = 0
+	is_reverse_engineerable = yes
 
 	potential = {
 		has_global_flag = l_cluster_opened
-		NOT = { has_country_flag = completed_nanite_technology_insight_chain }
+		NOT = { has_country_flag = lcluster_opener }
+		NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
 		NOT = { has_technology = tech_nanite_technology_mastery }
 		NOT = { has_origin = civic_gateway_worshiper }
 		if = {
@@ -101,10 +103,10 @@ tech_repeatable_nanite_technology_insight = {
 	}
 	
 	ai_weight = {
+		factor = 1
 		modifier = {
-			factor = 1.00
-			NOT = { has_origin = civic_gateway_pursuer }
-			
+			factor = 0
+			has_origin = civic_gateway_pursuer
 		}
 	}
 
@@ -118,15 +120,15 @@ tech_repeatable_nanite_technology_insight = {
 
 tech_nanite_technology_mastery = {
 	cost = @tier3cost3
-	area = physics
-	tier = 3
+	area = engineering
+	tier = 5
 	is_rare = yes
-	category = { particles }
-	weight = 100
+	category = { industry }
+	weight = 0
 
 	potential = {
 		OR = {	
-			has_country_flag = completed_nanite_technology_insight_chain
+			has_country_flag = completed_nanite_technology_mastery_chain
 			has_country_flag = lcluster_opener
 		}
 	}
@@ -197,7 +199,7 @@ tech_advanced_nanites = {
 	cost = 40000
 	tier = 2
 	is_dangerous = yes
-	category = { materials }
+	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
 	
@@ -299,7 +301,7 @@ tech_machine_advanced_nanites = {
 	cost = 40000
 	tier = 2
 	is_dangerous = yes
-	category = { materials }
+	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
 	
@@ -345,7 +347,7 @@ tech_nanite_clouds = {
 	cost = 25000
 	tier = 3
 	is_rare = yes
-	category = { materials }
+	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
 	

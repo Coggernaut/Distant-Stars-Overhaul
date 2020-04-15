@@ -1,0 +1,67 @@
+
+# giving clues, see pop_lcluster_event for popping follow-up events
+# this = country getting a clue
+generate_add_nanite_insight = {
+	hidden_effect = {
+		# increment counter
+		if = {
+			limit = {
+				has_distar = yes
+				has_event_chain = nanite_technology_mastery_chain
+			}
+			# increment counter
+			custom_tooltip = add_nanite_insight
+			add_event_chain_counter = {
+				event_chain = nanite_technology_mastery_chain
+				counter = nanite_insight
+				amount = 1
+			}
+			# increment variable
+			change_variable = {
+				which = num_nanite_insight
+				value = 1
+			}
+		}
+		#else = {
+		#	# failsafe, do nothing
+		#}
+		# check if completed
+		if = {
+			limit = {
+				has_completed_event_chain_counter = {
+					event_chain = nanite_technology_mastery_chain
+					counter = nanite_insight
+				}
+				NOT = { has_origin = civic_gateway_worshiper }
+			}
+			custom_tooltip = nanite_technology_mastery_finish_tooltip
+			set_country_flag = completed_nanite_technology_mastery_chain
+			country_event = { id = distar_overhaul.10904 }
+		}
+		if = {
+			limit = {
+				has_completed_event_chain_counter = {
+					event_chain = nanite_technology_mastery_chain
+					counter = nanite_insight
+				}
+				has_origin = civic_gateway_worshiper
+			}
+			custom_tooltip = nanite_technology_mastery_finish_tooltip
+			set_country_flag = completed_nanite_technology_mastery_chain
+		}
+	}
+}
+
+start_nanite_technology_mastery_chain = {
+	hidden_effect = {
+		custom_tooltip = begin_nanite_technology_mastery_chain
+		begin_event_chain = {
+			event_chain = nanite_technology_mastery_chain
+			target = this
+		}
+		set_variable = {
+			which = num_nanite_insight
+			value = 0
+		}
+	}
+}

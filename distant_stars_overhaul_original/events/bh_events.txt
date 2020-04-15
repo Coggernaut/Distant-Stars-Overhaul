@@ -22,6 +22,180 @@ namespace = harvester_grey_goo_planet
 
 namespace = nanite_forgeworld_lost
 
+namespace = distar_overhaul
+namespace = distar_overhaul_insight_start
+namespace = distar_overhaul_opener
+namespace = distar_overhaul_insight_finished
+
+event = {
+	id = distar_overhaul_insight_start.1
+	title = "distar_overhaul_insight_start.1.name"
+	desc = "distar_overhaul_insight_start.1.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = no
+	#mean_time_to_happen = { months = 2 }
+
+	trigger = {
+		has_global_flag = l_cluster_opened
+		NOT = { has_country_flag = lcluster_opener }
+		NOT = { has_country_flag = distar_overhaul_insight_started_flag }
+		NOT = { has_global_flag = distar_overhaul_insight_start_flag }
+	}
+
+	immediate = {
+		set_global_flag = distar_overhaul_insight_start_flag
+		ROOT = { start_nanite_technology_mastery_chain = yes }
+		ROOT = { set_country_flag = distar_overhaul_insight_started_flag }
+	}
+	
+	option = {
+		name = distar_overhaul_insight_start.1.a
+		custom_tooltip = start_nanite_technology_mastery_chain_tooltip
+	}
+}
+
+country_event = {
+	id = distar_overhaul.12000
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_repeatable_nanite_technology_insight
+		NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
+	}
+
+	immediate = {
+		generate_add_nanite_insight = yes
+	}
+}
+
+country_event = {
+	id = distar_overhaul_insight_finished.1
+	title = "distar_overhaul_insight_finished.1.name"
+	desc = "distar_overhaul_insight_finished.1.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_repeatable_nanite_technology_insight
+		has_country_flag = completed_nanite_technology_mastery_chain
+	}
+
+	option = {
+		
+	}
+}
+
+country_event = {
+	id = distar_overhaul.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_nanite_technology_mastery
+		NOT = { has_technology = tech_repeatable_nanite_technology_insight }
+	}
+
+	immediate = {
+		ROOT = { set_country_flag = completed_nanite_technology_mastery_chain }
+		give_technology = {
+			tech = tech_repeatable_nanite_technology_insight
+			message = yes 
+		}
+	}
+}
+
+country_event = {
+	id = distar_overhaul.2
+	title = "distar_overhaul.2.name"
+	desc = "distar_overhaul.2.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_nanite_repair_system
+		NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				ROOT = { NOT = { has_country_flag = distar_overhaul_insight_started_flag } }
+			}
+			ROOT = { start_nanite_technology_mastery_chain = yes }
+			ROOT = { set_country_flag = distar_overhaul_insight_started_flag }
+		}
+	}
+	
+	option = {
+		name = GOOD
+		give_technology = {
+			tech = tech_repeatable_nanite_technology_insight 
+			message = no 
+		}
+	}
+}
+
+
+# Technology available upon gaining all insights
+country_event = {
+	id = distar_overhaul.10904
+	title = "distar_overhaul.10904.name"
+	desc = "distar_overhaul.10904.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+
+	#immediate = {
+		#observer_event = { id = observer.61 }
+	#}
+
+	option = {
+		name = GOOD
+		add_research_option = tech_nanite_technology_mastery
+	}
+}
+
+country_event = {
+	id = distar_overhaul_opener.10904
+	title = "distar_overhaul.10904.name"
+	desc = "distar_overhaul.10904.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = no
+	#mean_time_to_happen = { months = 2 }
+
+	trigger = {
+		has_country_flag = lcluster_opener
+		NOT = { has_country_flag = distar_overhaul_opener_flag }
+	}
+	
+	immediate = {
+		ROOT = { set_country_flag = distar_overhaul_opener_flag }
+		ROOT = {
+			give_technology = {
+				tech = tech_repeatable_nanite_technology_insight 
+				message = yes 
+			}
+		}
+	}
+
+	option = {
+		name = GOOD
+		add_research_option = tech_nanite_technology_mastery
+	}
+}
+
 planet_event = {
     id = nanite_forgeworld_lost.1
 	title = nanite_forgeworld_lost.1.title
