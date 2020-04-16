@@ -27,7 +27,7 @@ weapon_component_template = { # Nanobot Assimilation
 	static_rotation = yes
 	use_ship_kill_target = no
 
-	prerequisites = { "tech_dso_nanite_core" }
+	prerequisites = { "tech_nanite_core" }
 
 	icon = GFX_ship_part_nanobot_diffuser
 	icon_frame = 1
@@ -82,7 +82,7 @@ strike_craft_component_template = {
 	prerequisites = { "tech_nanite_lancers" }
 	
 	component_set = "GG_STRIKE_CRAFT_NANITE"
-	size_restriction = { dso_nanite_core }
+	size_restriction = { dso_nanite_core dso_nanite_mothership }
 
 	power = -60
 
@@ -133,7 +133,7 @@ weapon_component_template = {
 	icon_frame = 1
 	
 	component_set = "GG_ENERGY_MISSILE_NANITE"
-	size_restriction = { dso_nanite_core }
+	size_restriction = { dso_nanite_core dso_nanite_mothership }
 	
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"

@@ -81,7 +81,7 @@ pc_bh_harvest_colony = {
 	
 	colonizable = yes
 	starting_planet = no
-	show_city = yes
+	show_city = no
 }
 
 
@@ -143,5 +143,5 @@ pc_nanite_forgeworld = {
 	
 	colonizable = yes
 	starting_planet = no
-	show_city = yes
+	show_city = no
 }

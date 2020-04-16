@@ -222,7 +222,7 @@ planet_event = {
 		set_planet_flag = abandon_nanite_forgeworld_flag
 		remove_planet_flag = pc_nanite_forgeworld
 		destroy_colony = yes
-		
+		remove_deposit = d_nanites_deposit
     }    
 	after = {
 			change_pc = pc_gray_goo
@@ -235,7 +235,7 @@ planet_event = {
 	
 	option = {
 		name = nanite_forgeworld_lost.1.a
-		
+		add_deposit = d_nanosands
 	}
 	
 }
@@ -649,22 +649,22 @@ country_event = {
 			}
 			random_owned_planet = {
 				limit = { is_capital = yes }
+				set_planet_flag = pc_nanite_forgeworld
 				change_pc = pc_nanite_forgeworld
+				clear_deposits = yes
 				set_planet_size = 25
-				add_district = district_generator
-				add_district = district_generator
-				add_district = district_generator
-				add_district = district_generator
-				remove_district = district_nexus
-				remove_district = district_nexus
-				remove_district = district_nexus
-				add_deposit = d_nanosands
+				#add_deposit = d_nanosands
 				every_deposit = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
 				}
 				add_deposit = d_nanites_deposit
-				set_planet_flag = pc_nanite_forgeworld
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_generator
+				add_district = district_nexus
+				add_district = district_nexus
+				add_district = district_nexus
 			}
 			ROOT = { country_event = { id = harvester_grey_goo_planet.1 days = 30 } }
         }

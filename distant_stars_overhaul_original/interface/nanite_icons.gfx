@@ -11,4 +11,22 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_torpedo"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_torpedo.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_origin_harvester_nanites"
+		texturefile = "gfx/event_pictures/origins/origin_harvester_nanites.dds"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_origin_lgate_pursuer"
+		texturefile = "gfx/event_pictures/origins/origin_lgate_pursuer.dds"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_origin_gateway_guardian"
+		texturefile = "gfx/event_pictures/origins/origin_gateway_guardian.dds"
+		alwaystransparent = yes
+	}
 }

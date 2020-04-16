@@ -1,6 +1,10 @@
 ﻿l_english:
  # Insight Events ---------------
- 
+ nanite_technology_mastery_chain_title:1 "The Flood of Nanite Technology"
+ nanite_technology_mastery_chain_desc:0 "We have learned the mysterious star cluster just beyond the periphery of our galaxy was home to the §HDessanu§!. The Dessanu are seemingly connected to the mysterious constructs created by Nanite Technology. Though, the §HDessanu Cluster§! can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been opened by someone, and insight into these nanite constructs can bring about §HNanite Technological Mastery§!."
+ nanite_insights:1 "Nanite Technological Insights"
+ nanite_insight:1 "Nanite Technological Insight"
+ add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!
  nanite_technology_mastery_chain:0 "Nanite Technological Mastery"
  nanite_technology_mastery_finish_tooltip:0 "Finishes the §YNanite Technological Mastery§! event chain."
  
@@ -120,11 +124,7 @@
  tech_repeatable_nanite_technology_insight_desc:0 "Intensive study within the fields of nanomachinery will eventually yield a new §Y$nanite_insight$§! which will allow us to gain §YNanite Technology Mastery§!"
  tech_nanite_technology_mastery:0 "Nanite Technology Mastery"
  tech_nanite_technology_mastery_desc:0 "Mastery of Nanite Technology will yield understanding §GAdvanced Nanite Technology§!"
- nanite_technology_mastery_chain_title:1 "The Flood of Nanite Technology"
- nanite_technology_mastery_chain_desc:1 "We have learned the mysterious star cluster just beyond the periphery of our galaxy was home to the §HDessanu§!. The Dessanu are seemingly connected to the mysterious constructs created by §HNanite Technology§!. Though, the §HDessanu Cluster§! can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been opened by someone, and insight into these constructs can bring about §HNanite Technological Mastery§!.
- nanite_insights:1 "Nanite Technological Insights"
- nanite_insight:1 "Nanite Technological Insight"
- add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!
+ 
  
  tech_harvester_advanced_nanites:0 "Advanced Nanites"
  tech_harvester_advanced_nanites_desc:0 "After the opening of the L-Gates, we have restablished contact with §YEngineer Technology§!. Advanced Nanite Technology is once again apart of us."
@@ -173,8 +173,14 @@
  tech_nanite_networking_protocols_effect:0 "§HAcquires:§! Nanite Core Component"
  tech_nanite_networking_protocols_effect_desc:0 "Without the ability to network trillions of nanomachines, there is no chance these nanomachines will coalesce into a Nanite Core."
  
- tech_nanite_mothership:0 "Nanite Core Project"
- tech_nanite_mothership_desc:0 "After studying and reverse engineering nanite systems extensively, researchers are confident they have the capability to construct a nanite Core with unrivaled weaponry. Scientists are unsure what effects this may have on the nanites as a whole. It's feared that networking such a large amount of nanomachines may yield the Core with a gestalt consciousness."
+ tech_nanite_interdictor:0 "Nanite Interdictor Project"
+ tech_nanite_interdictor_desc:0 "After studying and reverse engineering nanite systems extensively, researchers are confident they have the capability to construct a Nanite Interdictor. Scientists are unsure what effects this may have on the nanites for this ship. It's a concern that networking such a significant amount of nanomachines could yield the Interdictor with a gestalt consciousness."
+ 
+ tech_nanite_mothership:0 "Nanite Mothership Project"
+ tech_nanite_mothership_desc:0 "After experimenting with the Nanite Interdictor, researchers are confident they have the capability to construct a Nanite Mothership with deadly weaponry. Scientists are unsure what effects this may have on the nanites for this ship. It's feared that networking such a large amount of nanomachines may yield the Core with a gestalt consciousness."
+ 
+ tech_nanite_core:0 "Nanite Core Project"
+ tech_nanite_core_desc:0 "After stress testing the nano technology on Nanite Motherships, researchers are confident they have the knowledge to create a Nanite Core. Nanite Cores have unrivaled weaponry and intellegance. Scientists are unsure what effects this may have on the nanites within our empire. Scientists are certain that networking such a massive amount of nanomachines will yield the Core with a gestalt consciousness if they're not careful."
  
  
  # Megastructure --------
@@ -218,10 +224,18 @@
  dso_nanite_core:0 "Nanite Core"
  dso_nanite_core_desc:0 "Trillions of nanomachines have coalesced into a single Nanite Core. Utalizing a massively networked intelligence to command every aspect of it's being."
  
- DCV_REACTOR:0 "Zero Point Reactor"
- DCV_REACTOR_DESC:0 "Zero Point Reactor"
+ DCV_REACTOR:0 "Dessanu Nano Reactor"
+ DCV_REACTOR_DESC:0 "A Dessanu Zero Point Reactor, entirely created from nano-machinery, used to power a Core class ship. These reactors are as equally as advanced as Dark Matter Reactors found in Fallen Empires, but in a completely asymmetrical way."
+ DCV_REACTOR_MOTHERSHIP:0 "Dessanu Nano Reactor"
+ DCV_REACTOR_MOTHERSHIP_DESC:0 "A Dessanu Zero Point Reactor, entirely created from nano-machinery, used to power an Mothership class ship. These reactors are as equally as advanced as Dark Matter Reactors found in Fallen Empires, but in a completely asymmetrical way."
+ DCV_REACTOR_INTERDICTOR:0 "Dessanu Nano Reactor"
+ DCV_REACTOR_INTERDICTOR_DESC:0 "A Dessanu Zero Point Reactor, entirely created from nano-machinery, used to power an Interdictor class ship. These reactors are as equally as advanced as Dark Matter Reactors found in Fallen Empires, but in a completely asymmetrical way."
  DCV_THRUSTER:0 "Thrusters"
- DCV_THRUSTER_DESC:0 "Thrusters"
+ DCV_THRUSTER_DESC:0 "Nanite Core Class Thrusters"
+ DCV_THRUSTER_MOTHERSHIP:0 "Thrusters"
+ DCV_THRUSTER_MOTHERSHIP_DESC:0 "Nanite Mothership Class Thrusters"
+ DCV_THRUSTER_INTERDICTOR:0 "Thrusters"
+ DCV_THRUSTER_INTERDICTOR_DESC:0 "Nanite Interdictor Class Thrusters"
  DCV_CORE:0 "Sentient Nanite Tactics Computer"
  DCV_CORE_DESC:0 "Sentient Nanite Tactics Computer"
  DCV_MAINTENANCE_CREW:0 "Nanite Repair Clouds"
