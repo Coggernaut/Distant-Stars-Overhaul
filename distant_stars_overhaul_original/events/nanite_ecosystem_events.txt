@@ -1,0 +1,105 @@
+namespace = distar_nanite_ecosystem
+
+
+
+
+
+country_event = {
+	id = distar_nanite_ecosystem.1
+
+    is_triggered_only = no
+    hide_window = yes
+	
+	trigger = {
+        NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }
+		any_country = {
+			is_country_type = ldragon_country
+		}
+    }
+
+	immediate = {
+		set_global_flag = distar_nanite_ecosystem_created_flag
+		random_system = {
+			limit = { has_star_flag = lcluster1 }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster2 }
+			everym_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster3 }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster4 }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster5 }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster1b }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster2b }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster3b }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster4b }
+			every_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				change_pc = pc_nanite_gaia
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

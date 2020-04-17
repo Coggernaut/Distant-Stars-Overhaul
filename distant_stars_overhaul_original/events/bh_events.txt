@@ -206,9 +206,8 @@ planet_event = {
 	
 	location = THIS
 	
-	is_triggered_only = no
+	is_triggered_only = yes
 	
-	#mean_time_to_happen = { months = 2 }
     hide_window = no
 
     trigger = {
