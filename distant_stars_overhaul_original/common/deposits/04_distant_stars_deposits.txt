@@ -29,7 +29,7 @@ d_nanites_deposit = {
 		}
 	}
 	planet_modifier = { 
-		district_generator_max = 4
+		district_generator_max = 8
 	}	
 	
 	icon = d_mining_tunnels
