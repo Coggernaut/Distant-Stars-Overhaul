@@ -654,7 +654,6 @@ country_event = {
 				change_pc = pc_nanite_forgeworld
 				clear_deposits = yes
 				set_planet_size = 25
-				#add_deposit = d_nanosands
 				every_deposit = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
@@ -800,10 +799,10 @@ country_event = {
 	immediate = {
 		random_owned_planet = {
 			limit = { is_capital = yes }
-			add_district = district_generator
-			add_district = district_generator
-			add_district = district_generator
-			add_district = district_generator
+			add_district = district_generator_uncapped
+			add_district = district_generator_uncapped
+			add_district = district_generator_uncapped
+			add_district = district_generator_uncapped
 			add_district = district_nexus
 			add_district = district_nexus
 			add_district = district_nexus
