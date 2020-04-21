@@ -23,7 +23,7 @@ district_nanite_forgeworld_industry = {
 		category = planet_districts
 		cost = {
 			minerals = 300
-			nanites = 50
+			nanites = 10
 		}
 		upkeep = {
 			energy = 5
@@ -93,7 +93,7 @@ district_forgeworld_bio_reactor = {
 		category = planet_districts
 		cost = {
 			minerals = 300
-			nanites = 50
+			nanites = 10
 		}	
 	}
 	
