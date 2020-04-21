@@ -26,11 +26,7 @@ d_nanites_deposit = {
 	resources = {
 		produces = {
 			nanites = 1
-		}
-	}
-	planet_modifier = { 
-		district_generator_max = 8
-	}	
+		}	
 	
 	icon = d_mining_tunnels
 	

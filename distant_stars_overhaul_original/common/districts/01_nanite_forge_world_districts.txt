@@ -176,56 +176,11 @@ dso_district_generator_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-			}
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_technician_drone_add = 3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
 			job_technician_drone_add = 2
 			planet_housing_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-		}
-		modifier = {
-			job_technician_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		modifier = {
-			job_fe_acolyte_generator_add = 2
 		}
 	}
 
@@ -235,23 +190,6 @@ dso_district_generator_uncapped = {
 			owner = { is_gestalt = yes }
 		}
 		text = job_technician_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-		}
-		text = job_technician_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		text = job_fe_acolyte_generator_effect_desc
 	}
 
 	ai_weight = {
