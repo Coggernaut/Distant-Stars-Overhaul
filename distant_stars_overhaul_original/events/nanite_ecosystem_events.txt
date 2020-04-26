@@ -11,85 +11,131 @@ country_event = {
     hide_window = yes
 	
 	trigger = {
-        NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }
+		NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }
 		any_country = {
 			is_country_type = ldragon_country
 		}
+		
     }
 
 	immediate = {
+		every_planet = {
+			limit = {
+				is_planet_class = pc_gray_goo
+				solar_system = {
+					OR = {
+						has_star_flag = lcluster1
+						has_star_flag = lcluster2
+						has_star_flag = lcluster3
+						has_star_flag = lcluster4
+						has_star_flag = lcluster5
+						has_star_flag = lcluster1b
+						has_star_flag = lcluster2b
+						has_star_flag = lcluster3b
+						has_star_flag = lcluster4b
+					}
+				}
+			}
+			set_planet_flag = distar_nanite_ecosystem_planet_flag
+			change_pc = pc_nanite_gaia
+		}
 		set_global_flag = distar_nanite_ecosystem_created_flag
-		random_system = {
-			limit = { has_star_flag = lcluster1 }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster2 }
-			everym_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster3 }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster4 }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster5 }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster1b }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster2b }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster3b }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
-		random_system = {
-			limit = { has_star_flag = lcluster4b }
-			every_planet = {
-				limit = { is_planet_class = pc_gray_goo }
-				change_pc = pc_nanite_gaia
-			}
-		}
 	}
 }
 
 
+country_event = {
+	id = distar_nanite_ecosystem.3
 
+    is_triggered_only = yes
+    hide_window = yes
 
-
-
+	immediate = {
+		set_global_flag = distar_nanite_ecosystem_created_flag
+		#if = {
+		#	limit = {
+		#		star = { has_star_flag = lcluster1 }
+		#	}
+		#	THIS = {
+		#		every_planet = {
+		#			limit = { 
+		#				is_planet_class = pc_gray_goo
+		#			}
+		#			change_pc = pc_nanite_gaia
+		#		}
+		#	}
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		star = { has_star_flag = lcluster1 }
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		star = { has_star_flag = lcluster2 }
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo 
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster3
+		#	}
+		#		change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster4
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = {
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster5
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster1b
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo 
+		#		has_star_flag = lcluster2b
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster3b
+		#	}
+		#		change_pc = pc_nanite_gaia
+		#}
+		#every_planet = {
+		#	limit = { 
+		#		is_planet_class = pc_gray_goo
+		#		has_star_flag = lcluster4b
+		#	}
+		#	change_pc = pc_nanite_gaia
+		#}
+	}
+}
 
 
 
