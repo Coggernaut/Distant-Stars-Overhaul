@@ -1,24 +1,1537 @@
 namespace = distar_nanite_ecosystem
+namespace = nanite_ecosystem_uplift
+namespace = nanite_ecosystem_colony
+namespace = ldragon_country_starts_nanite_ecosystem
+
+planet_event = {
+	id = ldragon_country_starts_nanite_ecosystem.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_star_flag = nanite_ecosystem_presapient_system 
+	}
+
+	immediate = {
+		
+	}
+}
+
+ship_event = {
+	id = nanite_ecosystem_uplift.6080
+	title = "uplift.6080.name"
+	desc = "uplift.6080.desc"
+	picture = GFX_evt_microscopic_life
+	location = FROM
+	show_sound = event_default
+
+	is_triggered_only = yes
+	
+	trigger = {
+		From = {
+			has_star_flag = nanite_ecosystem_presapient_system 
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = upl_ongoing_nanite_ecosystem_generic log = "upl_ongoing_nanite_ecosystem_generic_Flag set for nation" }
+		owner = { set_country_flag = found_presapients }
+		owner = { country_event = { id = tutorial.57 days = 5 } }
+		owner = { country_event = { id = story.4 days = 30 } }
+	}
+
+	option = {
+		name = uplift.6000.a
+		trigger = {
+			owner = { has_technology = "tech_epigenetic_triggers" }
+		}
+	}
+
+	option = {
+		name = uplift.6000.b
+		trigger = {
+			owner = { NOT = { has_technology = "tech_epigenetic_triggers" } }
+		}
+	}
+}
+
+### Uplifting Generic Success
+planet_event = {
+	id = nanite_ecosystem_uplift.6081
+	title = "uplift.6081.name"
+	desc = "uplift.6081.desc"
+	picture = GFX_evt_society_research
+	location = root
+	show_sound = notification_uplift
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_planet_flag = upl_ongoing_nanite_ecosystem_planet
+		NOT = { has_planet_flag = snakeoid_planet }
+	}
+
+	immediate = {
+		owner = { set_country_flag = found_presapients }
+		remove_planet_flag = upl_ongoing_nanite_ecosystem_planet
+		owner = { remove_country_flag = upl_ongoing_nanite_ecosystem_generic }
+	}
+
+	option = {
+		name = uplift.6011.a
+		hidden_effect = { owner = { country_event = { id = tutorial.58 days = 5 } } }
+		hidden_effect = { planet_event = { id = uplift.7199 } }
+	}
+}
 
 
+### Seismic Disturbances
+planet_event = {
+	id = nanite_ecosystem_colony.50
+	title = "colony.50.name"
+	desc = "colony.50.desc"
+	picture = GFX_evt_in_the_dark
+	show_sound = event_air_raid_siren
+	location = ROOT
+	trackable = yes
+	
+	is_triggered_only = no
 
+	trigger = {
+		original_owner = yes
+		is_capital = no
+		has_ground_combat = no
+		is_homeworld = no
+		is_occupied_flag = no
+		has_owner = yes
+		num_pops > 0
+		NOR = {
+			has_global_flag = nanite_ecosystem_seismic_disturbance_global
+			has_planet_flag = colony_event
+			is_planet_class = pc_nuked
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_habitat
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+		}
+		has_planet_flag = nanite_ecosystem_subterranean_planet
+	}
+
+	immediate = {
+		owner = { save_event_target_as = nanite_ecosystem_subterranean_planet_owner }
+		set_global_flag = nanite_ecosystem_seismic_disturbance_global
+		set_planet_flag = nanite_ecosystem_seismic_disturbance
+		set_planet_flag = colony_event
+		add_deposit = d_underground_farm_blocked
+		add_deposit = d_underground_mine_blocked
+		add_deposit = d_underground_generator_blocked
+	}
+
+	option = {
+		name = colony.50.a
+		begin_event_chain = {
+			event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+			target = ROOT
+		}
+		enable_special_project = {
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT" #Establish Communications
+			location = this
+			owner = root
+		}
+		enable_special_project = {
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT" #Preemptive Strike
+			location = this
+			owner = root
+		}
+
+	}
+	option = {
+		name = distar.216.a.exter
+		exclusive_trigger = { owner = { is_homicidal = yes } }
+		begin_event_chain = {
+			event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+			target = ROOT
+		}
+		enable_special_project = {
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT" #Preemptive Strike
+			location = this
+			owner = root
+		}
+
+	}
+}
+
+# Special Project Completed 1
+planet_event = {
+	id = nanite_ecosystem_colony.51
+	title = "PROJECT_COMPLETE"
+	desc = "colony.51.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_alien_signal
+	location = ROOT
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { save_event_target_as = nanite_ecosystem_subterranean_planet_owner }
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		create_species = {
+			name = random
+			class = random_non_machine
+			portrait = random
+			traits = random
+			homeworld = root
+		}
+		create_country = {
+			name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
+			species = last_created
+			type = adversary
+			ethos = random
+			auto_delete = no
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_10.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "new_dawn.dds"
+				}
+				colors={
+					"red"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			set_relation_flag = {
+				who = root.owner
+				flag = nanite_ecosystem_subterror
+			}
+			set_country_flag = nanite_ecosystem_subterranean_nation
+			establish_contact = { who = event_target:nanite_ecosystem_subterranean_planet_owner location = root }
+			establish_communications_no_message = event_target:nanite_ecosystem_subterranean_planet_owner
+			save_event_target_as = nanite_ecosystem_subterranean_nation
+			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
+		}
+	}
+
+	option = {
+		name = colony.51.a
+		hidden_effect = {
+			owner = { country_event = { id = nanite_ecosystem_colony.53 } }
+		}
+	}
+}
+
+# Special Project Completed 2 or 3
+planet_event = {
+	id = nanite_ecosystem_colony.52
+	title = "PROJECT_COMPLETE"
+	desc = "colony.52.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_structural_collapse
+	location = ROOT
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		remove_planet_flag = nanite_ecosystem_seismic_disturbance_war
+
+		remove_deposit = d_underground_farm_blocked
+		remove_deposit = d_underground_mine_blocked
+		remove_deposit = d_underground_generator_blocked
+
+		add_deposit = d_underground_farm_dead
+		add_deposit = d_underground_mine_dead
+		add_deposit = d_underground_generator_dead
+
+		remove_deposit = d_underground_contact_zone
+	}
+
+	option = {
+		name = colony.52.a
+		custom_tooltip = underground_expansion_tooltip
+	}
+}
+
+# Subterranean Aliens
+country_event = {
+	id = nanite_ecosystem_colony.53
+	title = "colony.53.name"
+	desc = "colony.53.desc"
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	option = {
+		name = colony.53.a
+		response_text = colony.53.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = colony.53.b
+		response_text = colony.53.b.response
+		hidden_effect = {
+			FROM = { set_planet_flag = nanite_ecosystem_seismic_disturbance_friendly }
+		}
+		FROM = {
+			add_modifier = {
+				modifier = "subterranean_civilization"
+				days = -1
+			}
+			add_deposit = d_underground_contact_zone
+			#set_planet_flag = trade_size_increase
+		}
+		custom_tooltip = underground_expansion_tooltip
+	}
+	option = {
+		name = colony.53.c
+		response_text = colony.53.c.response
+		hidden_effect = {
+			FROM = {
+				planet_event = { id = nanite_ecosystem_colony.54 days = 35 random = 40 }
+			}
+		}
+	}
+}
+
+# Subterranean Invasion!
+planet_event = {
+	id = nanite_ecosystem_colony.54
+	title = "colony.54.name"
+	desc = "colony.54.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = ROOT
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = nanite_ecosystem_subterranean_invasion_country }
+		set_planet_flag = nanite_ecosystem_subterranean_invasion_planet
+		event_target:nanite_ecosystem_subterranean_nation = {
+			create_leader = {
+				class = general
+				species = owner_main_species
+				name = random
+				skill = 3
+			}
+		}
+		if = {
+			limit = {
+				event_target:nanite_ecosystem_subterranean_nation = {
+					NOT = { has_country_flag = nanite_ecosystem_tech_request_approved }
+				}
+			}
+			while = {
+				count = 6
+				create_army = {
+					name = "NAME_Invading_Horde"
+					owner = event_target:nanite_ecosystem_subterranean_nation
+					species = event_target:nanite_ecosystem_subterranean_species
+					type = "subterranean_industrial_army"
+					leader = last_created_leader
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:nanite_ecosystem_subterranean_nation = { has_country_flag = nanite_ecosystem_tech_request_approved }
+			}
+			while = {
+				count = 6
+				create_army = {
+					name = "NAME_Invading_Horde"
+					owner = event_target:nanite_ecosystem_subterranean_nation
+					species = event_target:nanite_ecosystem_subterranean_species
+					type = "subterranean_postatomic_army"
+					leader = last_created_leader
+				}
+			}
+		}
+	}
+
+	option = {
+		name = colony.54.a
+		custom_tooltip = subterranean_invasion
+	}
+}
+
+# Victory
+country_event = {
+	id = nanite_ecosystem_colony.56
+	title = "colony.56.name"
+	desc = "colony.56.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = FROMFROM
+	trackable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = nanite_ecosystem_subterranean_invasion_country
+		NOT = { has_country_flag = nanite_ecosystem_subterraneans_defeated_once }
+		FROMFROM = { has_planet_flag = nanite_ecosystem_subterranean_invasion_planet }
+	}
+
+	immediate = {
+		remove_country_flag = nanite_ecosystem_subterranean_invasion_country
+		set_country_flag = nanite_ecosystem_subterraneans_defeated_once
+		FROMFROM = {
+			set_planet_flag = nanite_ecosystem_seismic_disturbance_war
+			remove_planet_flag = nanite_ecosystem_subterranean_invasion_planet
+		}
+	}
+
+	option = {
+		name = colony.56.a
+		enable_special_project = {
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_3_PROJECT" #Destroy them
+			location = FROMFROM
+			owner = ROOT
+		}
+	}
+}
+
+# Defeat
+country_event = {
+	id = nanite_ecosystem_colony.57
+	title = "colony.57.name"
+	desc = "colony.57.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_alien_signal
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = nanite_ecosystem_subterranean_invasion_country
+		FROMFROM = { has_planet_flag = nanite_ecosystem_subterranean_invasion_planet }
+		from = { is_country_type = adversary }
+	}
+
+	immediate = {
+		remove_country_flag = nanite_ecosystem_subterranean_invasion_country
+		save_event_target_as = nanite_ecosystem_subterranean_former_planet_owner
+		from = {
+			save_event_target_as = nanite_ecosystem_subterranean_nation
+			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
+		}
+		fromfrom = {
+			create_country = {
+				name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = default
+				auto_delete = yes
+				ethos = {
+					ethic = ethic_fanatic_militarist
+					ethic = ethic_authoritarian
+				}
+				authority = random
+				civics = random
+				flag = {
+					icon = {
+						category = "zoological"
+						file = "flag_zoological_10.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "new_dawn.dds"
+					}
+					colors={
+						"red"
+						"black"
+						"null"
+						"null"
+					}
+				}
+			}
+			last_created_country = {
+				set_relation_flag = {
+					who = event_target:nanite_ecosystem_subterranean_former_planet_owner
+					flag = subwar
+				}
+				set_country_flag = nanite_ecosystem_subterranean_empire
+				establish_communications_no_message = event_target:nanite_ecosystem_subterranean_former_planet_owner
+				save_event_target_as = nanite_ecosystem_subterranean_empire
+				owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
+			}
+		}
+		from = { destroy_country = yes }
+		FROMFROM = {
+			remove_planet_flag = nanite_ecosystem_subterranean_invasion_planet
+			save_event_target_as = nanite_ecosystem_conquered_planet
+			set_owner = event_target:nanite_ecosystem_subterranean_empire
+			random_pop = { kill_pop = yes }
+			random_pop = { kill_pop = yes }
+			create_pop = { species = owner_main_species }
+			create_pop = { species = owner_main_species }
+			create_army = {
+				name = "NAME_Loot-Equipped_Army"
+				owner = event_target:nanite_ecosystem_subterranean_empire
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "defense_army"
+			}
+			create_army = {
+				name = "NAME_Loot-Equipped_Army"
+				owner = event_target:nanite_ecosystem_subterranean_empire
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "defense_army"
+			}
+			# flip starbase
+			solar_system = {
+				if = {
+					limit = { exists = starbase }
+					starbase = { set_owner = event_target:nanite_ecosystem_subterranean_empire }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "ONSCREEN"
+		end_event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+		country_event = { id = nanite_ecosystem_colony.58 }
+	}
+}
+
+# Incoming Transmission
+country_event = {
+	id = nanite_ecosystem_colony.58
+	title = TRANSMISSION
+	desc = "colony.58.desc"
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:nanite_ecosystem_subterranean_empire
+		planet_background = event_target:nanite_ecosystem_conquered_planet
+		graphical_culture = event_target:nanite_ecosystem_conquered_planet
+		graphical_culture = event_target:nanite_ecosystem_conquered_planet
+		room = event_target:nanite_ecosystem_subterranean_empire.ruler
+	}
+
+	option = {
+		name = colony.58.a
+	}
+}
+
+# Aliens Surface
+planet_event = {
+	id = nanite_ecosystem_colony.59
+	title = "colony.59.name"
+	desc = "colony.59.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	is_triggered_only = yes
+
+	option = {
+		name = colony.59.a
+		owner = {
+			country_event = { id = nanite_ecosystem_colony.53 }
+		}
+	}
+}
+
+# Another Invasion
+planet_event = {
+	id = nanite_ecosystem_colony.60
+	title = "colony.54.name"
+	desc = "colony.60.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		owner = { set_country_flag = nanite_ecosystem_subterranean_invasion_country }
+		set_planet_flag = nanite_ecosystem_subterranean_invasion_planet
+		random_country = {
+			limit = {
+				is_country_type = adversary
+				has_country_flag = nanite_ecosystem_subterranean_nation
+			}
+			save_event_target_as = nanite_ecosystem_subterranean_nation
+			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
+			create_leader = {
+				class = general
+				species = event_target:nanite_ecosystem_subterranean_species
+				name = random
+				skill = 3
+			}
+		}
+		if = {
+			limit = {
+				event_target:nanite_ecosystem_subterranean_nation = {
+					NOT = { has_country_flag = nanite_ecosystem_tech_request_approved }
+				}
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "industrial_army"
+				leader = last_created_leader
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				event_target:nanite_ecosystem_subterranean_nation = { has_country_flag = nanite_ecosystem_tech_request_approved }
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			create_army = {
+				name = "NAME_Invading_Horde"
+				owner = event_target:nanite_ecosystem_subterranean_nation
+				species = event_target:nanite_ecosystem_subterranean_species
+				type = "postatomic_army"
+				leader = last_created_leader
+			}
+			break = yes
+		}
+	}
+
+	option = {
+		name = colony.60.a
+		custom_tooltip = subterranean_invasion_2
+	}
+}
+
+# Collapse
+planet_event = {
+	id = nanite_ecosystem_colony.61
+	title = "colony.61.name"
+	desc = "colony.61.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_structural_collapse
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_collapse }
+		has_army = yes
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_collapse
+	}
+
+	option = {
+		name = colony.61.a
+		add_deposit = d_sinkhole_subterraneans
+		random_planet_army = { remove_army = yes }
+	}
+}
+
+# Raiding Parties
+planet_event = {
+	id = nanite_ecosystem_colony.62
+	title = "colony.62.name"
+	desc = "colony.62.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_raid }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_raid
+		add_planet_devastation = 10
+	}
+
+	option = {
+		name = colony.62.a
+		tooltip = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+# Surface Attack
+planet_event = {
+	id = nanite_ecosystem_colony.63
+	title = "colony.63.name"
+	desc = "colony.63.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_ground_battle
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_attack }
+		num_pops > 1
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_attack
+	}
+
+	option = {
+		name = colony.63.a
+		add_planet_devastation = 10
+		random_owned_pop = { kill_pop = yes }
+		add_deposit = d_sinkhole_subterraneans
+	}
+}
+
+# Survivor Pocket
+planet_event = {
+	id = nanite_ecosystem_colony.64
+	title = "colony.64.name"
+	desc = "colony.64.desc"
+	picture = GFX_evt_in_the_dark
+	show_sound = event_scanner
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_pocket }
+		has_ground_combat = no
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_pocket
+		create_species = {
+			name = random
+			class = random_non_machine
+			portrait = random
+			traits = random
+			homeworld = planet
+		}
+		last_created_species = {
+			save_event_target_as = nanite_ecosystem_subterranean_species
+		}
+	}
+
+	option = {
+		name = colony.64.a
+	}
+	option = {
+		name = colony.64.b
+		trigger = {
+			#free_housing > 5
+			owner = { OR = { is_authoritarian = yes is_xenophobe = yes } }
+		}
+		hidden_effect = {
+			create_pop = {
+				species = event_target:nanite_ecosystem_subterranean_species
+				ethos = {
+					ethic = "ethic_spiritualist"
+				}
+			}
+			create_pop = {
+				species = event_target:nanite_ecosystem_subterranean_species
+				ethos = {
+					ethic = "ethic_spiritualist"
+				}
+			}
+			last_created_pop = { set_citizenship_type = { type = citizenship_slavery cooldown = yes } }
+		}
+	}
+}
+
+# Subterranean Expansion
+planet_event = {
+	id = nanite_ecosystem_colony.65
+	title = "colony.65.name"
+	desc = "colony.65.desc"
+	picture = GFX_evt_in_the_dark
+	show_sound = event_construction
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_expansion }
+		#has_any_strategic_resource = no
+		num_pops > 0
+		#planet_size < 25
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_expansion
+	}
+
+	option = {
+		name = EXCELLENT
+		add_modifier = {
+			modifier = "subterranean_expansion"
+			days = -1
+		}
+		#change_planet_size = +1
+	}
+}
+
+# Gold!
+planet_event = {
+	id = nanite_ecosystem_colony.66
+	title = "colony.66.name"
+	desc = "colony.66.desc"
+	picture = GFX_evt_in_the_dark
+	show_sound = event_mystic_reveal
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_gold }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_planet_flag = nanite_ecosystem_seismic_disturbance_gold
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+		}
+	}
+}
+
+# Treasury
+planet_event = {
+	id = nanite_ecosystem_colony.67
+	title = "colony.67.name"
+	desc = "colony.67.desc"
+	picture = GFX_evt_in_the_dark
+	show_sound = event_radio_chatter
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_treasury }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_treasury
+	}
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+		}
+	}
+}
+
+# Earthquakes 1
+planet_event = {
+	id = nanite_ecosystem_colony.68
+	title = "colony.68.name"
+	desc = "colony.68.desc"
+	picture = GFX_evt_burning_settlement
+	show_sound = event_air_raid_siren
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_quake }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_quake
+		add_planet_devastation = 10
+
+	}
+
+	option = {
+		name = UNFORTUNATE
+		tooltip = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+# Famine
+planet_event = {
+	id = nanite_ecosystem_colony.69
+	title = "colony.69.name"
+	desc = "colony.69.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_famine }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_famine
+	}
+
+	option = {
+		name = colony.69.a
+		allow = {
+			owner = {
+				resource_stockpile_compare = { resource = food value >= 50 }
+			}
+		}
+		owner = {
+			add_resource = { food = -50 }
+		}
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = -1
+			}
+		}
+		custom_tooltip = subterraneans_pleased
+	}
+	option = {
+		name = colony.69.b
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = 1
+			}
+		}
+		custom_tooltip = subterraneans_displeased
+	}
+}
+
+# Gift
+planet_event = {
+	id = nanite_ecosystem_colony.70
+	title = "colony.70.name"
+	desc = "colony.70.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_gift }
+		num_pops > 0
+		check_variable = {
+			which = "angry_subterraneans"
+			value < 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_gift
+	}
+
+	option = {
+		name = colony.70.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier1materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+		}
+	}
+}
+
+# Subterranean Refugees
+planet_event = {
+	id = nanite_ecosystem_colony.71
+	title = "colony.71.name"
+	desc = "colony.71.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_refugees }
+		num_pops > 0
+		#free_housing > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_refugees
+		random_country = {
+			limit = {
+				is_country_type = adversary
+				has_country_flag = nanite_ecosystem_subterranean_nation
+			}
+			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
+		}
+	}
+
+	option = {
+		name = colony.71.a
+		trigger = {
+			#free_housing > 0
+		}
+		create_pop = {
+			species = event_target:nanite_ecosystem_subterranean_species
+			ethos = {
+				ethic = "ethic_spiritualist"
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = 1
+			}
+		}
+		custom_tooltip = subterraneans_displeased
+	}
+	option = {
+		name = colony.71.b
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = -1
+			}
+		}
+		custom_tooltip = subterraneans_pleased
+	}
+}
+
+# Xeno Anthropologists
+planet_event = {
+	id = nanite_ecosystem_colony.72
+	title = "colony.72.name"
+	desc = "colony.72.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_anthropologists }
+		num_pops > 0
+		check_variable = {
+			which = "angry_subterraneans"
+			value < 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_anthropologists
+	}
+
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+# Earthquakes 2
+planet_event = {
+	id = nanite_ecosystem_colony.73
+	title = "colony.68.name"
+	desc = "colony.73.desc"
+	picture = GFX_evt_underground_civilization
+	show_sound = event_air_raid_siren
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_quake2 }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_quake2
+		add_planet_devastation = 10
+	}
+
+	option = {
+		name = colony.73.a
+		tooltip = {
+			add_planet_devastation = 10
+		}
+		every_owned_pop = {
+			add_modifier = {
+				modifier = "pop_angry_subterranean"
+				days = 3600
+			}
+		}
+	}
+	option = {
+		name = colony.73.b
+		tooltip = {
+			add_planet_devastation = 10
+		}
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = 1
+			}
+		}
+		custom_tooltip = subterraneans_displeased
+	}
+}
+
+# Request for Technology
+planet_event = {
+	id = nanite_ecosystem_colony.74
+	title = "colony.74.name"
+	desc = "colony.74.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_tech }
+		num_pops > 0
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_planet_flag = nanite_ecosystem_seismic_disturbance_tech
+	}
+
+	option = {
+		name = colony.74.a
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = 1
+			}
+		}
+		custom_tooltip = subterraneans_displeased
+	}
+	option = {
+		name = colony.74.b
+		owner = {
+			add_modifier = {
+				modifier = subterranean_tech_transaction
+				days = 3600
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = "angry_subterraneans"
+				value = -1
+			}
+			random_country = {
+				limit = {
+					is_country_type = adversary
+					has_country_flag = nanite_ecosystem_subterranean_nation
+				}
+				set_country_flag = nanite_ecosystem_tech_request_approved
+			}
+		}
+		custom_tooltip = subterraneans_pleased
+	}
+}
+
+# Message Delivered
+planet_event = {
+	id = nanite_ecosystem_colony.75
+	title = "colony.75.name"
+	desc = "colony.75.desc"
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_primitive_civilization
+	location = ROOT
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+	}
+
+	trigger = {
+		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		check_variable = {
+			which = "angry_subterraneans"
+			value > 2
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	immediate = {
+		hidden_effect = {
+			remove_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+		}
+	}
+
+	option = {
+		name = colony.75.a
+		owner = {
+			country_event = { id = nanite_ecosystem_colony.76 }
+		}
+	}
+}
+
+# Message
+country_event = {
+	id = nanite_ecosystem_colony.76
+	title = "colony.76.name"
+	desc = "colony.76.desc"
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = nanite_ecosystem_subterranean_nation
+				is_country_type = adversary
+			}
+			save_event_target_as = nanite_ecosystem_subterranean_nation
+		}
+	}
+
+	option = {
+		name = colony.76.a
+		FROM = {
+			remove_modifier = "subterranean_civilization"
+		}
+		hidden_effect = {
+			FROM = {
+				planet_event = { id = nanite_ecosystem_colony.54 days = 35 random = 40 }
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = ldragon_country_starts_nanite_ecosystem.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = ldragon_country_starts_nanite_ecosystem_flag }
+		OWNER = { 
+			is_country_type = ldragon_country
+			log = "L-Drake is owner and L-Drake"
+		}
+		log = "L-Drake has entered System"
+	}
+
+	immediate = {
+		owner = { country_event = { id = distar_nanite_ecosystem.1 log = "L-Drake got event" } }
+		set_global_flag = ldragon_country_starts_nanite_ecosystem_flag
+	}
+}
 
 
 country_event = {
 	id = distar_nanite_ecosystem.1
 
-    is_triggered_only = no
+    is_triggered_only = yes
     hide_window = yes
 	
 	trigger = {
-		NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }
-		any_country = {
-			is_country_type = ldragon_country
-		}
-		
+		NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }	
     }
 
 	immediate = {
+		log = "log message"
 		every_planet = {
 			limit = {
 				is_planet_class = pc_gray_goo
@@ -39,104 +1552,291 @@ country_event = {
 			set_planet_flag = distar_nanite_ecosystem_planet_flag
 			change_pc = pc_nanite_gaia
 		}
+		random_list = {
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster1 }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster1_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster2 }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster2_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster3 }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster3_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster4 }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster4_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster5 }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster5_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster1b }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster1b_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster2b }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster2b_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = { 
+					limit = { has_star_flag = lcluster3b }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster3b_nanite_ecosystem_presapient_system"
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { has_star_flag = lcluster4b }
+					set_star_flag = nanite_ecosystem_presapient_system
+					log = "lcluster4b_nanite_ecosystem_presapient_system"
+				}
+			}
+		}
 		set_global_flag = distar_nanite_ecosystem_created_flag
+		country_event = { id = distar_nanite_ecosystem.2 }
 	}
 }
 
-
 country_event = {
-	id = distar_nanite_ecosystem.3
+	id = distar_nanite_ecosystem.2
 
     is_triggered_only = yes
     hide_window = yes
 
 	immediate = {
-		set_global_flag = distar_nanite_ecosystem_created_flag
-		#if = {
-		#	limit = {
-		#		star = { has_star_flag = lcluster1 }
-		#	}
-		#	THIS = {
-		#		every_planet = {
-		#			limit = { 
-		#				is_planet_class = pc_gray_goo
-		#			}
-		#			change_pc = pc_nanite_gaia
-		#		}
-		#	}
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		star = { has_star_flag = lcluster1 }
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		star = { has_star_flag = lcluster2 }
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo 
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster3
-		#	}
-		#		change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster4
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = {
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster5
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster1b
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo 
-		#		has_star_flag = lcluster2b
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster3b
-		#	}
-		#		change_pc = pc_nanite_gaia
-		#}
-		#every_planet = {
-		#	limit = { 
-		#		is_planet_class = pc_gray_goo
-		#		has_star_flag = lcluster4b
-		#	}
-		#	change_pc = pc_nanite_gaia
-		#}
+		
+		set_global_flag = distar_nanite_ecosystem_populated_flag
+		random_list = {
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster1
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster1_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster2
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster2_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster3
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster3_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster4
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster4_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster5
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster5_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster1b
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster1b_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster2b
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster2b_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = { 
+					limit = { 
+						has_star_flag = lcluster3b
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster3b_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+			11 = {
+				random_system = {
+					limit = { 
+						has_star_flag = lcluster4b
+					}
+					random_system_planet = { 
+						limit = { is_planet_class = pc_nanite_gaia }
+						set_planet_flag = nanite_ecosystem_subterranean_planet 
+						log = "lcluster4b_nanite_ecosystem_subterranean_planet"
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nanite_ecosystem_presapient_system
+			}
+			log = "Picking System for Pre Sapient"
+			random_system_planet = { 
+				limit = { is_planet_class = pc_nanite_gaia }
+				set_planet_flag = upl_ongoing_nanite_ecosystem_planet
+				log = "Planet System for Pre Sapient"
+				random_list = {
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_MAM"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_REP"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_AVI"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_ART"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_MOL"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+					15 = {
+						create_species = {
+							name = random
+							class = "PRE_FUN"
+							portrait = random
+							traits = {
+								trait = random_presapient_trait
+							}
+							homeworld = THIS
+							sapient = no
+						}
+					}
+				}
+				while = {
+					limit = {
+						count_pops = {
+							limit = { is_sapient = no }
+							count < 3
+						}
+					}
+					create_pop = { species = last_created_species }
+				}
+			}
+		}
 	}
 }
-
 
 
 

@@ -4,6 +4,23 @@ on_game_start_country = {
 	}
 }
 
+on_uplift_completion = {
+	events = {
+		nanite_ecosystem_uplift.6081
+	}
+}
+
+# Triggers event when each country first sends a ship into the system (once per country)
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system_first_time = {
+	events = {
+		nanite_ecosystem_uplift.6080
+		ldragon_country_starts_nanite_ecosystem.1
+	}
+}
+
 on_terraforming_complete = {
 	events = {
 		bio_harvest.2 # Remove the deposits and whatnot

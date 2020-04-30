@@ -1,0 +1,68 @@
+special_project = {
+	key = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT"
+	event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+	cost = 1000
+	tech_department = society_technology
+	picture = GFX_evt_underground_civilization
+	timelimit = 360
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = nanite_ecosystem_colony.51 }
+		owner = { end_event_chain = "nanite_ecosystem_subterranean_civilization_chain" }
+	}
+	
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT"
+	event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+	cost = 5000
+	tech_department = engineering_technology
+	picture = GFX_evt_nuclear_explosion
+	timelimit = 360
+	
+	same_option_group_as = { NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT }
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = nanite_ecosystem_colony.52 }
+		owner = { end_event_chain = "nanite_ecosystem_subterranean_civilization_chain" }
+	}
+
+	on_fail = {
+		end_event_chain = "nanite_ecosystem_subterranean_civilization_chain"
+		random_list = {
+			60 = {
+				FROM = { planet_event = { id = nanite_ecosystem_colony.54 } }
+			}
+			40 = {
+				FROM = { planet_event = { id = nanite_ecosystem_colony.59 } }
+				modifier = {
+					factor = 0
+					owner = { is_homicidal = yes }
+				}
+			}
+		}
+	}
+}
+
+special_project = {
+	key = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_3_PROJECT"
+	cost = 5000
+	tech_department = engineering_technology
+	picture = GFX_evt_nuclear_explosion
+	
+	event_scope = planet_event
+	
+	on_success = {
+		planet_event = { id = nanite_ecosystem_colony.52 }
+	}
+	
+	on_fail = {
+	}
+}
