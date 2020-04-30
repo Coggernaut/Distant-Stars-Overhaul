@@ -136,7 +136,7 @@ building_machine_assembly_complex = {
 
 building_nanite_assembly_plant = {
 	base_buildtime = 360
-	icon = building_nanite_transmuter
+	icon = building_robot_assembly_plant
 	can_build = no
 
 	category = pop_assembly
