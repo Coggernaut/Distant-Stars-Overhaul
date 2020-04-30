@@ -70,9 +70,6 @@
  pc_nanite_forgeworld:0 "Nanite Forgeworld"
  pc_nanite_forgeworld_desc:0 "The planet's landscape is now dominated by industrial complexes made entirely of nanites. All organic matter that once made up the biosphere has been properly cataloged, harvested, and rendered into usable resources for industrial use. The biosphere is beyond repair and inhospitable to all organic life."
 
- pc_nanite_gaia:0 "Nanite Gaia World"
- pc_nanite_gaia_desc:0 "The planet's landscape is now dominated by an ecosystem made entirely of nanites. All organic matter that once made up the biosphere has been imitated by nano-machines. They function as synthetic copies of organic life and have the capacity to sustain organic life of all types.\n\nNanite Gaia Worlds have a constantly evolving and surreal ecosystem, which attracts tourists and researchers alike. When the ecosystem is endangered, the nano-organisms evolve and adapt to protect themselves. This has created a natural protection to planetary bombardments but also a protection to land clearing techniques."
-
  # Modifiers ------------
  bh_harvest_modifier:0 "Harvest World"
  bh_harvest_modifier_desc:0 "This planet's biosphere is being harvested by simple nano-machines, providing raw resources and research. The climate may still be restored to a more habitable state with the appropriate technology."
@@ -309,15 +306,5 @@
  trait_dessanu_nanites:0 "Ancient Dessanu Nanites"
  trait_dessanu_nanites_desc:0 "§LThis species is made entirely of nano machines created by the Dessanu Precursors. Though their creators have mysteriously disappeared long ago.§!"
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ # Districts
+ dso_district_generator_uncapped:0 "Energy Generator Districts"
