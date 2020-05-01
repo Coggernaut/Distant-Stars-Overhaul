@@ -1,0 +1,49 @@
+namespace = gray_tempest_country_spawned
+namespace = distar_gray_tempest_flavour
+
+
+
+ship_event = {
+	id = gray_tempest_country_spawned.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = gray_tempest_country_spawned_flag }
+		OWNER = { 
+			is_country_type = gray_goo
+			log = "Gray Tempest is owner"
+		}
+		log = "Gray Tempest spawned"
+	}
+
+	immediate = {
+		#owner = { country_event = { id = distar_gray_tempest_flavour.1 log = "Gray Tempest got event" } }
+		set_global_flag = gray_tempest_country_spawned_flag
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

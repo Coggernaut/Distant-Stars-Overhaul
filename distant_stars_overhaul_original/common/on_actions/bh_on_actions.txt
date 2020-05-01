@@ -17,8 +17,25 @@ on_uplift_completion = {
 on_entering_system_first_time = {
 	events = {
 		nanite_ecosystem_uplift.6080
-		ldragon_country_starts_nanite_ecosystem.1
+		#ldragon_country_starts_nanite_ecosystem.1
 		nanite_ecosystem_enter.550
+	}
+}
+
+# A ship has been built
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+		ldragon_country_starts_nanite_ecosystem.1
+	}
+}
+
+# A ship design has been finished
+# Root = Country
+on_ship_designed = {
+	events = {
+		#ldragon_country_starts_nanite_ecosystem.1
 	}
 }
 

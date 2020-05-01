@@ -1567,6 +1567,8 @@ ship_event = {
 }
 
 
+
+
 country_event = {
 	id = distar_nanite_ecosystem.1
 
