@@ -22,20 +22,13 @@ on_entering_system_first_time = {
 	}
 }
 
-# A ship has been built
-# Root = Ship
-# From = Planet
-on_ship_built = {
+# Called upon entering FTL (on-action name scripted on the Bypass type)
+# THIS = Fleet
+# FROM = System jumping to
+# FROMFROM = System jumped from
+on_entering_lgate = {
 	events = {
 		ldragon_country_starts_nanite_ecosystem.1
-	}
-}
-
-# A ship design has been finished
-# Root = Country
-on_ship_designed = {
-	events = {
-		#ldragon_country_starts_nanite_ecosystem.1
 	}
 }
 
@@ -49,6 +42,7 @@ on_colonized = {
 	events = {
         bio_harvest.1 # Turn the planet into a harvesting world
 		nanite_forgeworld_lost.1
+		nanite_ecosystem_colony.50
     }
 }
 

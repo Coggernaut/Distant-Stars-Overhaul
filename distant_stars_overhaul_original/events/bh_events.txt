@@ -36,6 +36,7 @@ event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 
+	#can be triggered via outcome ship_events
 	is_triggered_only = no
 	#mean_time_to_happen = { months = 2 }
 
@@ -174,6 +175,7 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 
+	#can be triggered via outcome ship_events
 	is_triggered_only = no
 	#mean_time_to_happen = { months = 2 }
 

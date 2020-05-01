@@ -142,7 +142,8 @@ planet_event = {
 	location = ROOT
 	trackable = yes
 	
-	is_triggered_only = no
+	#is_triggered_only = no
+	is_triggered_only = yes
 
 	trigger = {
 		original_owner = yes
@@ -1546,22 +1547,25 @@ country_event = {
 	}
 }
 
-ship_event = {
+fleet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.1
 	hide_window = yes
 	is_triggered_only = yes
 	
 	trigger = {
 		NOT = { has_global_flag = ldragon_country_starts_nanite_ecosystem_flag }
-		OWNER = { 
-			is_country_type = ldragon_country
-			log = "L-Drake is owner and L-Drake"
+		any_country = {
+			#OWNER = { 
+				is_country_type = ldragon_country
+				#log = "L-Drake is owner and L-Drake"
+			#}
+			log = "L-Drake has entered System"
 		}
-		log = "L-Drake has entered System"
+		#FROM = { has_star_flag = lcluster1 }
 	}
 
 	immediate = {
-		owner = { country_event = { id = distar_nanite_ecosystem.1 log = "L-Drake got event" } }
+		THIS = { owner = { country_event = { id = distar_nanite_ecosystem.1 log = "L-Drake got event" } } }
 		set_global_flag = ldragon_country_starts_nanite_ecosystem_flag
 	}
 }
