@@ -52,7 +52,10 @@ country_event = {
 		#}
 		#else_if = {
 			#limit = { has_global_flag = dragon_season }
+			clr_global_flag = gray_goo_crisis_set
+			clr_global_flag = gray_goo_empire_set
 			country_event = { id = distar.13000 }
+			set_global_flag = dragon_season
 		#}
 		#else_if = {
 		#	limit = { has_global_flag = gray_goo_empire_set }

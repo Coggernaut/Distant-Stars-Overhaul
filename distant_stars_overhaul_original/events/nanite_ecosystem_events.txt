@@ -2,6 +2,53 @@ namespace = distar_nanite_ecosystem
 namespace = nanite_ecosystem_uplift
 namespace = nanite_ecosystem_colony
 namespace = ldragon_country_starts_nanite_ecosystem
+namespace = nanite_ecosystem_enter
+namespace = graygoo
+
+
+# Entering Empty Cluster
+ship_event = {
+	id = graygoo.550
+	title = "graygoo.550.name"
+	desc = "graygoo.550.desc"
+	picture = GFX_evt_ruined_system
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = gray_goo_crisis_set
+			#has_global_flag = dragon_season
+			has_global_flag = gray_goo_empire_set
+		}
+		from = { has_star_flag = lcluster1 }
+	}
+
+	option = {
+		name = graygoo.550.a
+	}
+}
+
+# Entering Nanite Ecosystem Cluster
+ship_event = {
+	id = nanite_ecosystem_enter.550
+	title = "nanite_ecosystem_enter.550.name"
+	desc = "nanite_ecosystem_enter.550.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = ldragon_country_starts_nanite_ecosystem_flag
+		from = { has_star_flag = lcluster1 }
+	}
+
+	option = {
+		name = nanite_ecosystem_enter.550.a
+	}
+}
 
 planet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.2
@@ -19,8 +66,8 @@ planet_event = {
 
 ship_event = {
 	id = nanite_ecosystem_uplift.6080
-	title = "uplift.6080.name"
-	desc = "uplift.6080.desc"
+	title = "nanite_ecosystem_uplift.6080.name"
+	desc = "nanite_ecosystem_uplift.6080.desc"
 	picture = GFX_evt_microscopic_life
 	location = FROM
 	show_sound = event_default
