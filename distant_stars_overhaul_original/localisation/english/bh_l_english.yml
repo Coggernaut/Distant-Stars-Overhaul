@@ -95,8 +95,8 @@
  personality_harvester_nanites:0 "Harvester Swarm"
  personality_harvester_nanites_desc:0 "Harvester Swarms seek to catalog habitable worlds and render down the avaliable organic matter into more usable resources for the machine intelligence. While their intent is not to destory life, often this is the result of their actions."
  
- personality_gateway_worshipers:0 "Gateway Worshipers"
- personality_gateway_worshipers_desc:0 "The Gateway Worshipers are a religious cult that seeks to retain the L-Gates in their dormant state. To prevent the L-Gates from opening, they will seek to acquire all systems that have L-Gates, by force, if needed."
+ personality_gateway_worshipers:0 "Gateway Guardians"
+ personality_gateway_worshipers_desc:0 "The Gateway Guardians are a religious cult that seeks to retain the L-Gates in their dormant state. To prevent the L-Gates from opening, they will seek to acquire all systems that have L-Gates, by force, if needed."
 
  # Governments ----------
  RT_HN:0 "Central Nanite Hub"
@@ -104,7 +104,7 @@
  gov_machine_bio_harvesters_desc:0 "Nanite Machines that devour all organic material and repurpose it for better use. Entire worlds have been devastated by the swarm, leaving them as hollow, desolate husks."
  
  RT_GP:0 "Central Nanite Hub"
- gov_machine_gateway_pursuer:0 "Gateway Seekers"
+ gov_machine_gateway_pursuer:0 "Gateway Pursuer"
  gov_machine_gateway_pursuer_desc:0 "The machine Intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to it understanding everything."
  
  RT_GW:0 "Central Nanite Hub"
@@ -116,7 +116,7 @@
  civic_harvester_nanites_desc:0 "Before the discovery of Hyperlane Technology, the Machine Intelligence used swarms of simple nano-machines to catalog and harvest all the planets within the home system from orbit."
  civic_harvester_nanites_effects:0 "Homeworld is a §YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCan only settle §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing non-tomb worlds will transform them into §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!."
 
- civic_gateway_pursuer:0 "Gateway Seeker"
+ civic_gateway_pursuer:0 "Gateway Pursuer"
  civic_gateway_pursuer_desc:0 "Before the discovery of Hyperlane Technology, this Machine Intelligence used swarms of simple nano-machines to catalog and harvest all the planets within the home system from orbit. Though it seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to understanding everything."
  civic_gateway_pursuer_effects:0 "Homeworld is a §YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCan only settle §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing non-tomb worlds will transform them into §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!.\n\nGuarantees an §YL-Gate§! in your home system.\n§YUnique Questlines§! to unravel the mystery of their origin and how the L-Gates play into it all."
 
