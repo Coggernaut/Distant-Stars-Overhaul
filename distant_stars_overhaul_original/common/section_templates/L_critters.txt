@@ -1,0 +1,413 @@
+
+# Elderly Tiyanki
+ ship_section_template = {
+ 	key = "L_elderly_tiyanki_key"
+ 	ship_size = L_leviathan_01_elder_tiyanki
+ 	fits_on_slot = mid
+ 	entity = "leviathan_01_elder_tiyanki_section_entity"
+ 	icon = "GFX_ship_part_core_mid"
+ 	
+ 	component_slot = {
+ 		name = "TITAN_01"
+ 		template = "invisible_titanic_fixed"
+ 		locatorname = "xl_gun_01"
+ 	}
+ 	component_slot = {
+ 		name = "LARGE_GUN_01"
+ 		template = "large_turret"
+ 		locatorname = "head"
+ 	}
+ 	
+ 	large_utility_slots = 10
+ 	aux_utility_slots = 1
+ }
+
+# Space Whale Cow Section
+ship_section_template = {
+	key = "L_space_whale_1_section"
+	ship_size = L_space_whale_1
+	fits_on_slot = mid
+	entity = "space_whale_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Whale Bull Section
+ship_section_template = {
+	key = "L_space_whale_2_section"
+	ship_size = L_space_whale_2
+	fits_on_slot = mid
+	entity = "space_whale_red_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Whale Calf Section
+ship_section_template = {
+	key = "L_space_whale_3_section"
+	ship_size = L_space_whale_3
+	fits_on_slot = mid
+	entity = "space_whale_orange_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Matriarch Space Whale Section (Unused)
+ship_section_template = {
+	key = "L_space_whale_4_section"
+	ship_size = L_space_whale_4
+	fits_on_slot = mid
+	entity = "space_whale_albino_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_06"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+#####################################
+#									#
+# 			Space Amoebas			#
+#									#
+#####################################
+
+ship_section_template = {
+	key = "L_space_amoeba_large_beige_blue"
+	ship_size = L_space_amoeba_mother
+	fits_on_slot = mid
+	entity = "space_amoeba_large_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_spawn_locator"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Amoeba Section
+ship_section_template = {
+	key = "L_space_amoeba_small_beige_blue"
+	ship_size = L_space_amoeba
+	fits_on_slot = mid
+	entity = "space_amoeba_medium_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+
+
+ship_section_template = {
+	key = "L_space_amoeba_large_yellow_teal"
+	ship_size = L_space_amoeba_mother
+	fits_on_slot = mid
+	entity = "space_amoeba_large_section_bright_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_spawn_locator"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Amoeba Section
+ship_section_template = {
+	key = "L_space_amoeba_small_yellow_teal"
+	ship_size = L_space_amoeba
+	fits_on_slot = mid
+	entity = "space_amoeba_medium_green_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+
+ship_section_template = {
+	key = "L_space_amoeba_large_black_orange"
+	ship_size = L_space_amoeba_mother
+	fits_on_slot = mid
+	entity = "space_amoeba_large_section_dark_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_spawn_locator"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Amoeba Section
+ship_section_template = {
+	key = "L_space_amoeba_small_black_orange"
+	ship_size = L_space_amoeba
+	fits_on_slot = mid
+	entity = "space_amoeba_medium_dark_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}
+
+
+ship_section_template = {
+	key = "L_space_amoeba_large_zebra_blue"
+	ship_size = L_space_amoeba_mother
+	fits_on_slot = mid
+	entity = "space_amoeba_large_darkwhite_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_spawn_locator"
+	}
+	
+	aux_utility_slots = 1
+}
+
+# Space Amoeba Section
+ship_section_template = {
+	key = "L_space_amoeba_small_zebra_blue"
+	ship_size = L_space_amoeba
+	fits_on_slot = mid
+	entity = "space_amoeba_medium_darkwhite_entity"
+	icon = "GFX_ship_part_core_mid"
+		
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "gun_01"
+	}
+	
+	aux_utility_slots = 1
+}

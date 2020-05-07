@@ -30,12 +30,24 @@
  nanite_ecosystem_uplift.6080.name:0 "Pre-Sapient L-Species Found"
  nanite_ecosystem_uplift.6080.desc:0 "Numerous rapidly evolving L-Species have been observed within the L-Cluster, But Scientists aboard the [Root.GetName] where not expecting this finding. The L-Species native to the [From.GetName] system have achieved a tentative mastery of local planet. Scientists have observed a proto-society amongst the natives with use of primitive social behaviors.\n\nScience Officer [Root.GetLeaderName] wants to conduct research on this Pre-Sapient L-Species. They propose we monitor their societal and biological development closely, and maybe even help them along if possible. The L-Cluster has given us many questions, and the origin of these L-Species seem increasingly unnatural."
  nanite_ecosystem_uplift.6081.name:0 "L-Species Uplift Successful"
- nanite_ecosystem_uplift.6081.desc:0 "Our scientists conducted extensive genetic modification upon the [From.GetName]. During the uplifting process, the organs of the Pre-Sapient L-Species would shrivle into dust as they where seperated. Scientists where concerned that organic genetic theory wouldnt apply to possibly snytheticly constructed DNA. Though after many trials genetic splicing was succesful and the synthetic organisms where reacting positively to our mutagen. It was after uplifting our scientist's understood the biology of L-Species: That they have become the perfect inorganic manifestation of life."
+ nanite_ecosystem_uplift.6081.desc:0 "Our scientists conducted extensive genetic modification upon the [From.GetName]. During the uplifting process, the organs of the Pre-Sapient L-Species would shrivle into nanite dust as they where seperated. Scientists where concerned that organic genetic theory wouldnt apply to possibly snytheticly constructed DNA. Though after many trials genetic splicing was succesful and the synthetic organisms where reacting positively to our mutagen. It was after uplifting our scientist's understood the biology of L-Species: These nano-biomachines have become with the perfect manifestation of life."
  nanite_ecosystem_uplift.6081.a:0 "We still have much to learn from the L-Species and their Origin."
  
  nanite_ecosystem_enter.550.name:0 "A Flourishing Ecosystem"
- nanite_ecosystem_enter.550.desc:0 "Upon entering the [From.GetName] system in the L-Cluster, the Scientists aboard the the [Root.GetName] never expected this. The L-Cluster is supporting an entire ecosystem flourishing with life that our scientists have dubbed §YL-Species§!. Scans reveal planets with near-perfect conditions for life. Paradoxically the system has an unaturally high amount of planets that have been shattered beyond recognition.\n\nOur lead scientist theorizes the L-Cluster may be plagued by rogue planets, but this theory is still debated. Our scientists are eager to explore the L-Cluster and learn more about these L-Species. Though this still leaves the question of who or what built the L-Gates in the first place. The leading theory is the L-Gates where constructed as a barrier to keep the L-Species isolated. Because of this theory, our military advisors have advised using caution while exploring the L-Cluster."
+ nanite_ecosystem_enter.550.desc:0 "Upon entering the [From.GetName] system in the L-Cluster, the Scientists aboard the the [Root.GetName] never expected this. The L-Cluster is supporting an entire ecosystem flourishing with life that our scientists have dubbed §YL-Species§!. Scans reveal planets with near-perfect conditions for life that have are now being refered to as §YL-Gaia Worlds§!. This is due to their near perfect habitable conditions for life. Paradoxically the system has an unaturally high amount of planets that have been shattered beyond recognition.\n\nOur lead scientist theorizes the L-Cluster may be plagued by rogue planets, but this theory is still debated. The scientific community is eager to explore the L-Cluster and learn more about these L-Species. Though this still leaves the question of who or what built the L-Gates in the first place. The leading theory is the L-Gates where constructed as a barrier to keep the L-Species isolated. Because of this theory, our military advisors have advised using caution while exploring the L-Cluster."
  nanite_ecosystem_enter.550.a:0 "What a surreal ecosystem!"
+ 
+ L_Tiyanki_Herd:0 "L-Tiyanki Herd"
+ L_Progenitor:0 "L-Tiyanki Progenitor"
+ L_Tiyanki_Elder:0 "L-Tiyanki Elder"
+ L_Tiyanki_Cow:0 "L-Tiyanki Cow"
+ L_Tiyanki_Bull:0 "L-Tiyanki Bull"
+ L_Tiyanki_Calf:0 "L-Tiyanki Calf"
+ 
+ L_leviathan_01_elder_tiyanki:0 "L-Tiyanki Elder"
+ L_space_whale_1:0 "L-Tiyanki Cow"
+ L_space_whale_2:0 "L-Tiyanki Bull"
+ L_space_whale_3:0 "L-Tiyanki Calf"
  
  nanite_forgeworld_lost.1:0 "All Has Turned To Dust!"
  nanite_forgeworld_lost.1.title:0 "All Has Turned To Dust!"
@@ -81,8 +93,30 @@
  pc_nanite_forgeworld:0 "Nanite Forgeworld"
  pc_nanite_forgeworld_desc:0 "The planet's landscape is now dominated by industrial complexes made entirely of nanites. All organic matter that once made up the biosphere has been properly cataloged, harvested, and rendered into usable resources for industrial use. The biosphere is beyond repair and inhospitable to all organic life."
 
- pc_nanite_gaia:0 "Nanite Gaia World"
- pc_nanite_gaia_desc:0 "The planet's landscape is now dominated by an ecosystem made entirely of nanites. All organic matter that once made up the biosphere has been imitated by nano-machines. They function as synthetic copies of organic life and have the capacity to sustain organic life of all types.\n\nNanite Gaia Worlds have a constantly evolving and surreal ecosystem, which attracts tourists and researchers alike. When the ecosystem is endangered, the nano-organisms evolve and adapt to protect themselves. This has created a natural protection to planetary bombardments but also a protection to land clearing techniques."
+ pc_nanite_gaia:0 "L-Gaia World"
+ pc_nanite_gaia_desc:0 "The planet's ecosystem is populated by strange organisms dubbed L-Species. The planet's ecosystem mirrors none that exist outside the L-Cluster. Yet paradoxically the biosphere is unique as it has the capacity to sustain life forms of all types, even those from outside the L-Cluster.\n\nL-Gaia Worlds have a constantly evolving and surreal ecosystem, which attracts tourists and researchers alike. When the ecosystem is endangered, these L-Species tend to evolve and adapt rapidly for protection. This seems to be the ecosystem's natural protection to planetary bombardments and land clearing techniques."
+ 
+ #pc_nanite_gaia_desc:0 "The planet's landscape is dominated by an ecosystem made entirely of nanites. All organic matter that once made up the biosphere has been imitated by nano-machines. They function as synthetic copies of organic life and have the capacity to sustain organic life of all types.\n\nNanite Gaia Worlds have a constantly evolving and surreal ecosystem, which attracts tourists and researchers alike. When the ecosystem is endangered, the nano-organisms evolve and adapt to protect themselves. This has created a natural protection to planetary bombardments but also a protection to land clearing techniques."
+ 
+ harvest_nanite_gaia.1.name:0 "Harvesting Status: Disturbance Detected"
+ harvest_nanite_gaia.1.desc:0 "§WHarvesting Status:§! §HExtraction Complications§!\nScans detect abnormal evolutionary changes towards adapating to harvesting process within the ecosystem on [ROOT.GetName]. All simulations with current data present resistance as futile.\n\n§WOrganic Material Status:§! §HAbnormal§!\nMaterial analysis shows L-Species have insufficent levels of organic matter upon harvesting.\n\n§WMaterial Composition Analysis:§! §RError§!\n Error. Illogical outcome. Trace nanomachine found. Does not compute with logical simulations. Response input required."
+ harvest_nanite_gaia.1.a:0 "Continue Harvesting Protocals"
+ harvest_nanite_gaia.1.b:0 "Abort Harvesting Protocals"
+ 
+ harvest_nanite_gaia.2.name:0 "Harvesting Status: Cataclysmic Failure"
+ harvest_nanite_gaia.2.desc:0 "Reports have found the ecosystem on [ROOT.GetName] have begun melding into a single entity. This began as the harvesting process was reaching it's maximum extraction potential.\n\nThe L-Gaia world began growing chitin shells on it's surface for whatever purpose, it is undetermined. Further scans of the extracted material found more than half the organic material contained nanite dust. Our logic processors have concluded the L-Gaia world's ecosystem is entirely comprised of §YNanite Biomachines§!.\n\nOur military and science advisors recomend neutralizing the planet as soon as possible. No simulation can predict what is about to happen."
+ harvest_nanite_gaia.2.a:0 "Send a Colossus to [ROOT.GetName] now!"
+ harvest_nanite_gaia.2.b:0 "Without a Colossus, it is impossible to stop this growth."
+ 
+ harvest_nanite_gaia.3.name:0 "L-Gaia's Incarnation"
+ harvest_nanite_gaia.3.desc:0 "The L-Gaia world, [ROOT.GetName], and all the nano-biomachines on it melded into a planet-sized cocoon. As scientists observed this anomoly the planet cracked upon to birth a monsterous creature dubbed as §YL-Gaia's Incarnation§!.\n\n The creature is the embodiment of all life merged into one entity. Little is still known about it, but what is known is that the L-Gaia's Incarnation is not friendly to us. \n\nEvacuation measures should be conducted immediately!"
+ harvest_nanite_gaia.3.a:0 "The L-Gaia's Incarnation seems unstoppable."
+ 
+ NAME_L_Gaia_Incarnation:0 "L-Gaia's Incarnation"
+ NAME_L_Gaia_Incarnation_desc:0 "It is said that after an empire attempted to harvest an L-Gaia World, the world melded in defense and birthed what is now known as the L-Gaia's Incarnation."
+ 
+ L_Gaia_Incarnation:0 "L-Gaia's Incarnation"
+ L_Gaia_Incarnation_desc:0 "It is said that after an empire attempted to harvest an L-Gaia World, the world melded in defense and birthed what is now known as the L-Gaia's Incarnation."
  
  # Modifiers ------------
  bh_harvest_modifier:0 "Harvest World"

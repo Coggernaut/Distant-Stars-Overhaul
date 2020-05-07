@@ -6,7 +6,6 @@ bh_harvested_planet_deposit_small = {
 			society_research = 6
 			engineering_research = 6
 			unity = 10
-			alloys = 6
 			minerals = 10
 			food = 20
 		
@@ -27,7 +26,6 @@ bh_harvested_planet_deposit_moderate = {
 			society_research = 8
 			engineering_research = 8
 			unity = 10
-			alloys = 12
 			minerals = 20
 			food = 40
 		}
@@ -47,7 +45,6 @@ bh_harvested_planet_deposit_large = {
 			society_research = 15
 			engineering_research = 15
 			unity = 10
-			alloys = 20
 			minerals = 40
 			food = 80
 		}

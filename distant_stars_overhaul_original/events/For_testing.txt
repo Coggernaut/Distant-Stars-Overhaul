@@ -8,7 +8,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		#set_country_flag = lcluster_opener
+		set_country_flag = lcluster_opener
 		set_global_flag = l_cluster_opened
 		# spawn L-Cluster
 		country_event = { id = distar.11000 }
@@ -39,19 +39,33 @@ country_event = {
 		}
 		# outcome, to be determined at game start
 		#if = {
-		#	limit = { has_global_flag = gray_goo_crisis_set }
-		#	country_event = { id = graygoo.1 }
-		#	every_megastructure = {
-		#		limit = {
-		#			is_megastructure_type = lgate_base
-		#			NOT = { has_megastructure_flag = lgate_activated }
-		#		}
-		#		activate_gateway = this
-		#		set_megastructure_flag = lgate_activated
-		#	}
+			#limit = { has_global_flag = gray_goo_crisis_set }
+				#set_global_flag = gray_goo_crisis_set
+				#country_event = {
+				#	id = graygoo.1
+				#	days = 1
+				#}
+				# Make friendly
+				#country_event = {
+				#	id = distar.13006
+				#	days = 1
+				#}
+				#country_event = {
+				#	id = a_deadly_tempest.137
+				#	days = 24
+				#}
+			#country_event = { id = graygoo.1 }
+			#every_megastructure = {
+			#	limit = {
+			#		is_megastructure_type = lgate_base
+			#		NOT = { has_megastructure_flag = lgate_activated }
+			#	}
+			#	activate_gateway = this
+			3	set_megastructure_flag = lgate_activated
+			#}
 		#}
 		#else_if = {
-			#limit = { has_global_flag = dragon_season }
+		#	#limit = { has_global_flag = dragon_season }
 			clr_global_flag = gray_goo_crisis_set
 			clr_global_flag = gray_goo_empire_set
 			country_event = { id = distar.13000 }

@@ -1,0 +1,45 @@
+
+generate_l_tiyanki_herd = {
+	create_fleet = {
+		name = "L_Tiyanki_Herd"
+		settings = {
+			is_boss = no
+			spawn_debris = no
+			can_upgrade = no
+			can_disband = yes
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				design = "L_Tiyanki_Cow"
+				name = "L_Tiyanki_Cow"
+				prefix = no
+				upgradable = no
+			}
+			create_ship = {
+				design = "L_Tiyanki_Bull"
+				name = "L_Tiyanki_Bull"
+				prefix = no
+				upgradable = no
+			}
+			create_ship = {
+				design = "L_Tiyanki_Calf"
+				name = "L_Tiyanki_Calf"
+				prefix = no
+				upgradable = no
+			}
+			set_location = PREV
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self #or return_point
+			set_aggro_range = 300
+			#auto_move_to_planet = {
+			#	target = prev # dragon_point star
+			#	clear_auto_move_on_arrival = yes # hang around
+			#}
+			set_formation_scale = 10
+		}
+	}
+}

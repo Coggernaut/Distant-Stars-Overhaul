@@ -1,0 +1,534 @@
+
+#####################################
+#									#
+# 			Space Amoebas			#
+#									#
+#####################################
+
+
+# Large Space Amoeba w/ warp
+ship_design = {
+	name = "L_Great_Space_Organism"
+	ship_size = L_space_amoeba_mother
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_large_beige_blue"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "L_AMOEBA_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+}
+
+# Large Space Amoeba
+ship_design = {
+	name = "L_Large_Space_Organism_Blue"
+	ship_size = L_space_amoeba_mother
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_large_beige_blue"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "L_AMOEBA_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+}
+
+# Small Space Amoeba
+ship_design = {
+	name = "L_Small_Space_Organism_Blue"
+	ship_size = L_space_amoeba
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_small_beige_blue"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}		
+	}
+	required_component="BIO_DRIVE"
+}
+
+# Large Space Amoeba
+ship_design = {
+	name = "L_Large_Space_Organism_Teal"
+	ship_size = L_space_amoeba_mother
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_large_yellow_teal"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "L_AMOEBA_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Small Space Amoeba
+ship_design = {
+	name = "L_Small_Space_Organism_Teal"
+	ship_size = L_space_amoeba
+	hide_size = yes
+	is_event_design = yes #For Lost Amoeba Chain
+	
+	section = {
+		template = "L_space_amoeba_small_yellow_teal"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}		
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Large Space Amoeba
+ship_design = {
+	name = "L_Large_Space_Organism_Orange"
+	ship_size = L_space_amoeba_mother
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_large_black_orange"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "L_AMOEBA_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Small Space Amoeba
+ship_design = {
+	name = "L_Small_Space_Organism_Orange"
+	ship_size = L_space_amoeba
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_small_black_orange"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}		
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Large Space Amoeba
+ship_design = {
+	name = "L_Large_Space_Organism_Zebra"
+	ship_size = L_space_amoeba_mother
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_large_zebra_blue"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "L_AMOEBA_STRIKE_CRAFT"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Small Space Amoeba
+ship_design = {
+	name = "L_Small_Space_Organism_Zebra"
+	ship_size = L_space_amoeba
+	hide_size = yes
+	
+	section = {
+		template = "L_space_amoeba_small_zebra_blue"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}		
+	}
+	
+	required_component="BIO_DRIVE"
+}
+
+# Big Space Whale
+ship_design = {
+	name = "L_Tiyanki_Cow"
+	ship_size = L_space_whale_1
+	hide_size = yes
+	
+	section = {
+		template = "L_space_whale_1_section"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "L_SPACE_WHALE_WEAPON"
+		}						
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+}
+
+# Medium Space Whale
+ship_design = {
+	name = "L_Tiyanki_Bull"
+	ship_size = L_space_whale_2
+	hide_size = yes
+	
+	section = {
+		template = "L_space_whale_2_section"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "L_SPACE_WHALE_WEAPON"
+		}			
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+}
+
+# Small Space Whale
+ship_design = {
+	name = "L_Tiyanki_Calf"
+	ship_size = L_space_whale_3
+	hide_size = yes
+	
+	section = {
+		template = "L_space_whale_3_section"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+}
+
+# Matriarch (Unused)
+ship_design = {
+	name = "L_The_Matriarch"
+	ship_size = L_space_whale_4
+	hide_size = yes
+	
+	section = {
+		template = "L_space_whale_4_section"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "L_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+}
+
+#####################################
+#									#
+#  	      Tiyanki Matriarch   		#
+#									#
+#####################################
+
+ship_design = {
+	name = "L_Progenitor"
+	ship_size = L_leviathan_01_elder_tiyanki
+	is_event_design = yes
+	hide_size = yes
+	
+	section = {
+		template = "L_elderly_tiyanki_key"
+		slot = "mid"
+		
+		component = {
+			slot = "TITAN_01"
+			template = "L_ELDER_SPACE_WHALE_WEAPON"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "L_ELDER_SPACE_WHALE_SPIKE"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "L_LARGE_TIYANKI_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="BIO_DRIVE"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+}

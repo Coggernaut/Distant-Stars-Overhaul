@@ -4,7 +4,206 @@ namespace = nanite_ecosystem_colony
 namespace = ldragon_country_starts_nanite_ecosystem
 namespace = nanite_ecosystem_enter
 namespace = graygoo
+namespace = harvest_nanite_gaia
 
+
+country_event = {
+	id = harvest_nanite_gaia.1
+	title = "harvest_nanite_gaia.1.name"
+	desc = "harvest_nanite_gaia.1.desc"
+	picture = GFX_evt_gray_gooed_planet
+	location = FROM
+	hide_window = no
+	
+	is_triggered_only = yes
+
+	option = {
+		name = harvest_nanite_gaia.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				has_country_flag = avoid_harvesting_nanite_gaia_worlds
+			}
+		}
+		ROOT = {
+			hidden_effect = { country_event = { id = harvest_nanite_gaia.2 days = 120 } }
+		}
+	}
+	option = {
+		name = harvest_nanite_gaia.1.b
+		ai_chance = {
+			factor = 75
+		}
+		FROM = {
+			change_pc = pc_nanite_gaia
+			clear_deposits = yes
+		}
+		ROOT = { set_country_flag = avoid_harvesting_nanite_gaia_worlds }
+	}
+}
+
+country_event = {
+	id = harvest_nanite_gaia.2
+	title = "harvest_nanite_gaia.2.name"
+	desc = "harvest_nanite_gaia.2.desc"
+	picture = GFX_evt_gray_goo
+	location = FROMFROM
+	hide_window = no
+	
+	is_triggered_only = yes
+
+	option = {
+		name = harvest_nanite_gaia.2.a
+		trigger = {
+			ROOT = { 
+				count_owned_ships = {
+					limit = { is_ship_size = colossus }
+					count > 0
+				}
+			}
+		}
+		ROOT = {
+			hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
+		}
+		ROOT = { 
+			enable_special_project = {
+				name = "NEUTRALIZE_HARVEST_WORLD"
+				location = FROMFROM
+				owner = ROOT
+			}
+		}
+	}
+	option = {
+		name = harvest_nanite_gaia.2.b
+		trigger = {
+			ROOT = { 
+				count_owned_ships = {
+					limit = { is_ship_size = colossus }
+					count < 1
+				}
+			}
+		}
+		ROOT = {
+			hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
+		}
+		ROOT = { 
+			enable_special_project = {
+				name = "NEUTRALIZE_HARVEST_WORLD"
+				location = FROMFROM
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = harvest_nanite_gaia.3
+	title = "harvest_nanite_gaia.3.name"
+	desc = "harvest_nanite_gaia.3.desc"
+	picture = GFX_evt_voidspawn
+	location = FROMFROMFROM
+	hide_window = no
+	
+	is_triggered_only = yes
+
+	option = {
+		name = harvest_nanite_gaia.3.a
+		hidden_effect = { FROMFROMFROM = { planet_event = { id = harvest_nanite_gaia.31 } } }
+	}
+}
+
+planet_event = {
+	id = harvest_nanite_gaia.31
+	title = "harvest_nanite_gaia.31.name"
+	desc = "harvest_nanite_gaia.31.desc"
+	picture = GFX_evt_voidspawn
+	location = ROOT
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+        is_planet_class = pc_bh_harvest
+    }
+
+	option = {
+		name = harvest_nanite_gaia.31.a
+		ROOT = { 
+			change_pc = pc_egg_cracked
+			hidden_effect = { clear_deposits = yes }
+			remove_modifier = "terraforming_candidate"
+			remove_modifier = "bh_harvest_modifier"
+		}
+		hidden_effect = {
+			space_owner = { set_country_flag = avoid_harvesting_nanite_gaia_worlds }
+			if = {
+				limit = {
+					any_country = {
+						is_country_type = lgaia_incarnation_country
+					}
+				}
+				event_target:l_gaia_incarnation = {
+					set_faction_hostility = {
+						target = FROM 
+						set_hostile = yes 
+						set_neutral = no 
+						set_friendly = no 
+					}
+				}
+			}
+			else = {
+				create_country = {
+					name = "NAME_L_Gaia_Incarnation"
+					type = lgaia_incarnation_country
+					effect = {
+						save_global_event_target_as = l_gaia_incarnation
+						every_playable_country = {
+							establish_communications_no_message = prev
+						}
+						set_faction_hostility = {
+							target = FROM 
+							set_hostile = yes 
+							set_neutral = no 
+							set_friendly = no 
+						}
+					}	
+				}
+			}
+			ROOT = {
+				create_fleet = {
+					name = "NAME_L_Gaia_Incarnation"
+					settings = {
+						is_boss = yes
+						spawn_debris = no
+						can_upgrade = no
+						can_disband = yes
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+					}
+					effect = {
+						set_owner = event_target:l_gaia_incarnation
+						create_ship = {
+							design = "NAME_Voidspawn"
+							name = "NAME_L_Gaia_Incarnation"
+							prefix = no
+							upgradable = no
+						}
+						set_location = ROOT
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self #or return_point
+						set_aggro_range = 300
+						#auto_move_to_planet = {
+						#	target = prev # dragon_point star
+						#	clear_auto_move_on_arrival = yes # hang around
+						#}
+					}
+				}
+			}
+		}
+	}
+}
 
 # Entering Empty Cluster
 ship_event = {
@@ -13,6 +212,7 @@ ship_event = {
 	desc = "graygoo.550.desc"
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
+	location = FROM
 
 	is_triggered_only = yes
 
@@ -37,6 +237,7 @@ ship_event = {
 	desc = "nanite_ecosystem_enter.550.desc"
 	picture = GFX_evt_microscopic_life
 	show_sound = event_radio_chatter
+	location = FROM
 
 	is_triggered_only = yes
 
@@ -1670,6 +1871,56 @@ country_event = {
 				}
 			}
 		}
+		random_list = {
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster2 }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster3 }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster4 }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster5 }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster1b }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster2b }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = { 
+					limit = { has_star_flag = lcluster3b }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+			12.5 = {
+				random_system = {
+					limit = { has_star_flag = lcluster4b }
+					set_star_flag = nanite_ecosystem_elder_tiyanki_system
+				}
+			}
+		}
 		set_global_flag = distar_nanite_ecosystem_created_flag
 		country_event = { id = distar_nanite_ecosystem.2 }
 	}
@@ -1792,6 +2043,100 @@ country_event = {
 						log = "lcluster4b_nanite_ecosystem_subterranean_planet"
 					}
 				}
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = nanite_ecosystem_elder_tiyanki_system
+			}
+			random_system_planet = {
+				limit = { is_planet_class = pc_nanite_gaia }
+				set_planet_flag = l_tiyanki_elder_planet
+				save_global_event_target_as = L_Tiyanki_CustomCapital
+				create_country = {
+					name = "L_Tiyanki_Elder"
+					type = l_tiyanki_elder_country
+					effect = {
+						save_global_event_target_as = l_tiyanki_elder
+						every_playable_country = {
+							establish_communications_no_message = prev
+						}
+					}
+				}
+				create_fleet = {
+					name = "L_Tiyanki_Elder"
+					settings = {
+						is_boss = yes
+						spawn_debris = no
+						can_upgrade = no
+						can_disband = yes
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+					}
+					effect = {
+						set_owner = event_target:l_tiyanki_elder
+						create_ship = {
+							design = "L_Progenitor"
+							name = "L_Tiyanki_Elder"
+							prefix = no
+							upgradable = no
+						}
+						set_location = PREV
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self #or return_point
+						set_aggro_range = 300
+						#auto_move_to_planet = {
+						#	target = prev # dragon_point star
+						#	clear_auto_move_on_arrival = yes # hang around
+						#}
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Tiyanki_CustomCapital
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 1
+					max_jumps = 1
+				}
+			}
+			random_system_planet = {
+				generate_l_tiyanki_herd = yes
+			}
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Tiyanki_CustomCapital
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 2
+					max_jumps = 2
+				}
+			}
+			random_system_planet = {
+				generate_l_tiyanki_herd = yes
+			}
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Tiyanki_CustomCapital
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 2
+					max_jumps = 2
+				}
+			}
+			random_system_planet = {
+				generate_l_tiyanki_herd = yes
 			}
 		}
 		random_system = {

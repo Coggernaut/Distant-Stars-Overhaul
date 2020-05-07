@@ -23,11 +23,27 @@ namespace = harvester_grey_goo_planet
 
 namespace = nanite_forgeworld_lost
 
+namespace = harvest_nanite_gaia
+
 namespace = distar_overhaul
 namespace = distar_overhaul_insight_start
 namespace = distar_overhaul_opener
 namespace = distar_overhaul_insight_finished
 
+namespace = distar_overhaul_compatibility
+
+#has_global_flag = a_deadly_tempest_mod_active
+event = {
+	id = distar_overhaul_compatibility.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = distar_overhaul_mod_active
+		log = "distar_overhaul_mod_active"
+	}
+}
 
 event = {
 	id = distar_overhaul_insight_start.1
@@ -37,25 +53,23 @@ event = {
 	show_sound = event_mystic_reveal
 
 	#can be triggered via outcome ship_events
-	is_triggered_only = no
+	is_triggered_only = yes
 	#mean_time_to_happen = { months = 2 }
 
 	trigger = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_country_flag = lcluster_opener }
 		NOT = { has_country_flag = distar_overhaul_insight_started_flag }
-		NOT = { has_global_flag = distar_overhaul_insight_start_flag }
 	}
 
 	immediate = {
-		set_global_flag = distar_overhaul_insight_start_flag
-		ROOT = { start_nanite_technology_mastery_chain = yes }
 		ROOT = { set_country_flag = distar_overhaul_insight_started_flag }
 	}
 	
 	option = {
 		name = distar_overhaul_insight_start.1.a
 		custom_tooltip = start_nanite_technology_mastery_chain_tooltip
+		hidden_effect = { start_nanite_technology_mastery_chain = yes }
 	}
 }
 
@@ -185,11 +199,18 @@ country_event = {
 	}
 	
 	immediate = {
+		every_playable_country = {
+			limit = { 
+				NOT = { has_country_flag = lcluster_opener }
+				NOT = { has_country_flag = distar_overhaul_insight_started_flag }
+			}
+			country_event = { id = distar_overhaul_insight_start.1 }
+		}
 		ROOT = { set_country_flag = distar_overhaul_opener_flag }
 		ROOT = {
 			give_technology = {
 				tech = tech_repeatable_nanite_technology_insight 
-				message = yes 
+				message = no 
 			}
 		}
 	}
@@ -272,6 +293,13 @@ planet_event = {
     }
 	option = {
 		name = bio_harvest.1.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				has_country_flag = avoid_harvesting_nanite_gaia_worlds
+			}
+		}
 		hidden_effect = {
 			add_modifier = {
 				modifier = "terraforming_candidate"
@@ -279,6 +307,13 @@ planet_event = {
 			}
 			set_planet_flag = pc_bh_harvest
 			#space_owner = { country_event = { id = harvest_colony.50 } }
+			#If it is Nanite Gaia World
+			if = {
+				limit = {
+					is_planet_class = pc_nanite_gaia
+				}
+				space_owner = { country_event = { id = harvest_nanite_gaia.1 days = 90 }}
+			}
 			#gaia_very_large
 			if = {
 				limit = {
@@ -608,7 +643,9 @@ planet_event = {
 	
 	option = {
 		name = bio_harvest.1.b
-		
+		ai_chance = {
+			factor = 50
+		}
 	}
 }
 
