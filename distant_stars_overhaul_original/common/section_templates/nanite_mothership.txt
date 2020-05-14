@@ -720,6 +720,41 @@ ship_section_template = {
 }
 
 ship_section_template = {
+	key = "NANITE_INTERDICTOR_MID_P2H1"
+	ship_size = dso_nanite_interdictor 
+	fits_on_slot = mid
+	entity = "gatebuilder_01_cruiser_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "strike_craft_locator_01"
+	}
+
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			nanites = 6
+		}
+	}
+}
+
+ship_section_template = {
 	key = "NANITE_INTERDICTOR_MID_S5P2"
 	ship_size = dso_nanite_interdictor 
 	fits_on_slot = mid
