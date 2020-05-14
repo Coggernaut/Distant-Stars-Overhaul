@@ -121,7 +121,7 @@ bio_processor_drone = {
 	resources = {
 		category = planet_technician
 		produces = {
-			energy = 4
+			energy = 5
 		}
 		upkeep = {
 			food = 3

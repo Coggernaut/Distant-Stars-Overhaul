@@ -27,6 +27,7 @@
 
 # Tiyanki Matriarch
 L_leviathan_01_elder_tiyanki = {
+	entity = "leviathan_01_elder_tiyanki_entity"
 	graphical_culture = no
 	can_be_inspected = no
 	is_space_object = yes
@@ -53,6 +54,7 @@ L_leviathan_01_elder_tiyanki = {
 
 # Space Amoeba
 L_space_amoeba = {
+	entity = "space_amoeba_entity"
 	graphical_culture = no
 	is_space_object = yes
 	max_speed = @speed_slow
@@ -76,6 +78,7 @@ L_space_amoeba = {
 
 # Space Amoeba
 L_space_amoeba_mother = {
+	entity = "space_amoeba_mother_entity"
 	graphical_culture = no
 	is_space_object = yes
 	max_speed = @speed_slow
@@ -99,6 +102,7 @@ L_space_amoeba_mother = {
 
 # Space Whale Cow
 L_space_whale_1 = {
+	entity = "space_whale_1_entity"
 	graphical_culture = no
 	is_space_object = yes	
 	max_speed = @speed_very_slow
@@ -120,6 +124,7 @@ L_space_whale_1 = {
 
 # Space Whale Bull
 L_space_whale_2 = {
+	entity = "space_whale_2_entity"
 	graphical_culture = no
 	is_space_object = yes
 	max_speed = @speed_very_slow
@@ -141,6 +146,7 @@ L_space_whale_2 = {
 
 # Space Whale Calf
 L_space_whale_3 = {
+	entity = "space_whale_3_entity"
 	graphical_culture = no
 	is_space_object = yes
 	max_speed = @speed_very_slow
@@ -162,6 +168,7 @@ L_space_whale_3 = {
 
 # Space Whale Matriarch (Unused)
 L_space_whale_4 = {
+	entity = "space_whale_4_entity"
 	graphical_culture = no
 	is_space_object = yes	
 	max_speed = @speed_very_slow
