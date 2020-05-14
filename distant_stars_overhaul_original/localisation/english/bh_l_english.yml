@@ -4,7 +4,7 @@
  nanite_technology_mastery_chain_desc:0 "We have learned the mysterious star cluster just beyond the periphery of our galaxy was home to the §HDessanu§!. The Dessanu are seemingly connected to the mysterious constructs created by Nanite Technology. Though, the §HDessanu Cluster§! can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been opened by someone, and insight into these nanite constructs can bring about §HNanite Technological Mastery§!."
  nanite_insights:1 "Nanite Technological Insights"
  nanite_insight:1 "Nanite Technological Insight"
- add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!
+ add_nanite_insight:1 "$nanite_insight$ Gained: §G+1§!"
  nanite_technology_mastery_chain:0 "Nanite Technological Mastery"
  nanite_technology_mastery_finish_tooltip:0 "Finishes the §YNanite Technological Mastery§! event chain."
  
@@ -37,6 +37,18 @@
  nanite_ecosystem_enter.550.desc:0 "Upon entering the [From.GetName] system in the L-Cluster, the Scientists aboard the the [Root.GetName] never expected this. The L-Cluster is supporting an entire ecosystem flourishing with life that our scientists have dubbed §YL-Species§!. Scans reveal planets with near-perfect conditions for life that have are now being refered to as §YL-Gaia Worlds§!. This is due to their near perfect habitable conditions for life. Paradoxically the system has an unaturally high amount of planets that have been shattered beyond recognition.\n\nOur lead scientist theorizes the L-Cluster may be plagued by rogue planets, but this theory is still debated. The scientific community is eager to explore the L-Cluster and learn more about these L-Species. Though this still leaves the question of who or what built the L-Gates in the first place. The leading theory is the L-Gates where constructed as a barrier to keep the L-Species isolated. Because of this theory, our military advisors have advised using caution while exploring the L-Cluster."
  nanite_ecosystem_enter.550.a:0 "What a surreal ecosystem!"
  
+ pc_nanite_gas_giant:0 "L-Gas Giant"
+ pc_nanite_gas_giant_desc:0 "Gaseous planet with an atmosphere primarily composed of hydrogen and helium surrounding a dense core of various gases. Though this planet seems to have a strange ecology of L-Species thriving within the low pressure of the atmosphere."
+ 
+ 
+ l_tiyanki_spawn_modifier:0 "L-Tiyanki Spawning Grounds"
+ l_tiyanki_spawn_modifier_desc:0 "Normally L-Gas Giants only support L-Species on a microscopic level, but this ecosystem seems to be thriving with organisms on massive scales.\n\nDue to this, the planet supports a thriving ecology of L-Tiyanki that spawn within the upper atmospheric layers."
+ 
+ nanite_ecosystem_anomaly.1.name:0 "Unusual L-Tiyanki Clustering"
+ nanite_ecosystem_anomaly.1.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Tiyanki-like L-Species dubbed the L-Tiyanki Matriarch. The L-Tiyanki species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants would greatly benefit our knowledge towards the strange biology of L-Species."
+ 
+ 
+ 
  L_Tiyanki_Herd:0 "L-Tiyanki Herd"
  L_Progenitor:0 "L-Tiyanki Progenitor"
  L_Tiyanki_Elder:0 "L-Tiyanki Elder"
@@ -44,10 +56,20 @@
  L_Tiyanki_Bull:0 "L-Tiyanki Bull"
  L_Tiyanki_Calf:0 "L-Tiyanki Calf"
  
- L_leviathan_01_elder_tiyanki:0 "L-Tiyanki Elder"
- L_space_whale_1:0 "L-Tiyanki Cow"
- L_space_whale_2:0 "L-Tiyanki Bull"
- L_space_whale_3:0 "L-Tiyanki Calf"
+ L_leviathan_01_elder_tiyanki:0 "L-Tiyanki"
+ L_space_whale_1:0 "L-Tiyanki"
+ L_space_whale_2:0 "L-Tiyanki"
+ L_space_whale_3:0 "L-Tiyanki"
+ 
+ L_leviathan_01_elder_tiyanki_plural:0 "L-Tiyanki"
+ L_space_whale_1_plural:0 "L-Tiyanki"
+ L_space_whale_2_plural:0 "L-Tiyanki"
+ L_space_whale_3_plural:0 "L-Tiyanki"
+ 
+ L_leviathan_01_elder_tiyanki_section:0 "L-Tiyanki Elder"
+ L_space_whale_1_section:0 "L-Tiyanki Cow"
+ L_space_whale_2_section:0 "L-Tiyanki Bull"
+ L_space_whale_3_section:0 "L-Tiyanki Calf"
  
  nanite_forgeworld_lost.1:0 "All Has Turned To Dust!"
  nanite_forgeworld_lost.1.title:0 "All Has Turned To Dust!"

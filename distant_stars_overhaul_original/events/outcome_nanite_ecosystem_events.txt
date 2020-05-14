@@ -5,6 +5,28 @@ namespace = ldragon_country_starts_nanite_ecosystem
 namespace = nanite_ecosystem_enter
 namespace = graygoo
 namespace = harvest_nanite_gaia
+namespace = nanite_ecosystem_anomaly
+
+
+### L-Tiyanki Gas Giant
+ship_event = {
+	id = nanite_ecosystem_anomaly.1
+	title = "nanite_ecosystem_anomaly.1.name"
+	desc = "nanite_ecosystem_anomaly.1.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+	}
+
+	option = {
+		name = FASCINATING
+	}
+}
 
 
 country_event = {
@@ -56,43 +78,36 @@ country_event = {
 	option = {
 		name = harvest_nanite_gaia.2.a
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				count_owned_ships = {
-					limit = { is_ship_size = colossus }
+					#limit = { is_ship_size = colossus }
+					is_ship_size = colossus
 					count > 0
 				}
 			}
 		}
-		ROOT = {
-			hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
-		}
-		ROOT = { 
-			enable_special_project = {
-				name = "NEUTRALIZE_HARVEST_WORLD"
-				location = FROMFROM
-				owner = ROOT
-			}
+		hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
+		enable_special_project = {
+			name = NEUTRALIZE_HARVEST_WORLD
+			location = FROMFROM
+			owner = ROOT
 		}
 	}
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				count_owned_ships = {
-					limit = { is_ship_size = colossus }
+					is_ship_size = colossus
 					count < 1
 				}
 			}
 		}
-		ROOT = {
-			hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
-		}
-		ROOT = { 
-			enable_special_project = {
-				name = "NEUTRALIZE_HARVEST_WORLD"
-				location = FROMFROM
-				owner = ROOT
-			}
+		hidden_effect = { country_event = { id = harvest_nanite_gaia.3 days = 90 } }
+		enable_special_project = {
+			name = NEUTRALIZE_HARVEST_WORLD
+			location = FROMFROM
+			owner = ROOT
 		}
 	}
 }
@@ -235,7 +250,7 @@ ship_event = {
 	id = nanite_ecosystem_enter.550
 	title = "nanite_ecosystem_enter.550.name"
 	desc = "nanite_ecosystem_enter.550.desc"
-	picture = GFX_evt_microscopic_life
+	picture = GFX_evt_alien_nature
 	show_sound = event_radio_chatter
 	location = FROM
 
@@ -1766,7 +1781,7 @@ fleet_event = {
 	}
 
 	immediate = {
-		THIS = { owner = { country_event = { id = distar_nanite_ecosystem.1 log = "L-Drake got event" } } }
+		THIS = { owner = { country_event = { id = distar_nanite_ecosystem.1 } log = "L-Drake got event" } }
 		set_global_flag = ldragon_country_starts_nanite_ecosystem_flag
 	}
 }
@@ -1871,56 +1886,6 @@ country_event = {
 				}
 			}
 		}
-		random_list = {
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster2 }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster3 }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster4 }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster5 }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster1b }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster2b }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = { 
-					limit = { has_star_flag = lcluster3b }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-			12.5 = {
-				random_system = {
-					limit = { has_star_flag = lcluster4b }
-					set_star_flag = nanite_ecosystem_elder_tiyanki_system
-				}
-			}
-		}
 		set_global_flag = distar_nanite_ecosystem_created_flag
 		country_event = { id = distar_nanite_ecosystem.2 }
 	}
@@ -1933,129 +1898,185 @@ country_event = {
     hide_window = yes
 
 	immediate = {
+		random_system = {
+			limit = {
+				OR = {
+					has_star_flag = lcluster2
+					has_star_flag = lcluster3
+					has_star_flag = lcluster4
+					has_star_flag = lcluster5
+					has_star_flag = lcluster1b
+					has_star_flag = lcluster2b
+					has_star_flag = lcluster3b
+					has_star_flag = lcluster4b
+				}
+				count_planets = {
+					limit = { is_planet_class = pc_nanite_gaia }
+					count < 2
+				}
+				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
+			}
+			every_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				change_pc = pc_t_star
+				create_ambient_object = {
+					type = "space_storm_2"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+			}
+			every_system_planet = {
+				limit = {
+					is_star = no
+				}
+				remove_planet = yes
+			}
+			set_star_flag = nanite_ecosystem_elder_tiyanki_system
+		}
+		country_event = { id = distar_nanite_ecosystem.3 }
+	}
+}
+
+country_event = {
+	id = distar_nanite_ecosystem.3
+
+    is_triggered_only = yes
+    hide_window = yes
+
+	immediate = {
 		
 		set_global_flag = distar_nanite_ecosystem_populated_flag
-		random_list = {
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster1
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster1_nanite_ecosystem_subterranean_planet"
-					}
+		random_system = {
+			limit = { 
+				OR = {
+					has_star_flag = lcluster1
+					has_star_flag = lcluster2
+					has_star_flag = lcluster3
+					has_star_flag = lcluster4
+					has_star_flag = lcluster5
+					has_star_flag = lcluster1b
+					has_star_flag = lcluster2b
+					has_star_flag = lcluster3b
+					has_star_flag = lcluster4b
 				}
+				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
 			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster2
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster2_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster3
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster3_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster4
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster4_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster5
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster5_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster1b
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster1b_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster2b
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster2b_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = { 
-					limit = { 
-						has_star_flag = lcluster3b
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster3b_nanite_ecosystem_subterranean_planet"
-					}
-				}
-			}
-			11 = {
-				random_system = {
-					limit = { 
-						has_star_flag = lcluster4b
-					}
-					random_system_planet = { 
-						limit = { is_planet_class = pc_nanite_gaia }
-						set_planet_flag = nanite_ecosystem_subterranean_planet 
-						log = "lcluster4b_nanite_ecosystem_subterranean_planet"
-					}
-				}
+			random_system_planet = { 
+				limit = { is_planet_class = pc_nanite_gaia }
+				set_planet_flag = nanite_ecosystem_subterranean_planet 
+				log = "lcluster1_nanite_ecosystem_subterranean_planet"
 			}
 		}
 		random_system = {
 			limit = {
 				has_star_flag = nanite_ecosystem_elder_tiyanki_system
 			}
+			save_global_event_target_as = L_Tiyanki_HomeSystem
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Zathika Mev"
+				orbit_distance = 55
+				orbit_angle = 35
+				size = 30
+				has_ring = yes
+				flags = { tiyanki_l_gas_giant1 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_gas_giant1
+					add_deposit = d_society_6
+				}
+			}
+
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Surribzha"
+				orbit_distance = 65
+				orbit_angle = 85
+				size = 25
+				has_ring = yes
+				flags = { tiyanki_l_gas_giant2 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_gas_giant2
+					add_deposit = d_society_6
+				}
+			}
+
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Yllarv"
+				orbit_distance = 85
+				orbit_angle = 195
+				size = 35
+				has_ring = yes
+				flags = { tiyanki_l_gas_giant3 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_gas_giant3
+					add_deposit = d_society_6
+				}
+			}
+
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Khetzhavu"
+				orbit_distance = 45
+				orbit_angle = 300
+				size = 31
+				has_ring = yes
+				flags = { tiyanki_l_gas_giant4 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_gas_giant4
+					add_deposit = d_society_6
+				}
+			}
 			random_system_planet = {
-				limit = { is_planet_class = pc_nanite_gaia }
+				limit = { is_planet_class = pc_nanite_gas_giant }
+				#change_pc = pc_nanite_gas_giant
+				clear_deposits = yes
+				add_modifier = {
+					modifier = "l_tiyanki_spawn_modifier"
+					days = -1
+				}
+				set_deposit = d_society_10
 				set_planet_flag = l_tiyanki_elder_planet
-				save_global_event_target_as = L_Tiyanki_CustomCapital
 				create_country = {
-					name = "L_Tiyanki_Elder"
+					name = "L-Tiyanki"
 					type = l_tiyanki_elder_country
+					flag = {
+						icon = {
+							category = "zoological"
+							file = "flag_zoological_1.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"black"
+							"black"
+							"null"
+							"null"
+						}
+					}
 					effect = {
 						save_global_event_target_as = l_tiyanki_elder
 						every_playable_country = {
@@ -2064,7 +2085,7 @@ country_event = {
 					}
 				}
 				create_fleet = {
-					name = "L_Tiyanki_Elder"
+					name = "L-Tiyanki Matriarch"
 					settings = {
 						is_boss = yes
 						spawn_debris = no
@@ -2077,8 +2098,8 @@ country_event = {
 					effect = {
 						set_owner = event_target:l_tiyanki_elder
 						create_ship = {
-							design = "L_Progenitor"
-							name = "L_Tiyanki_Elder"
+							design = L_Progenitor
+							name = "Matriarch"
 							prefix = no
 							upgradable = no
 						}
@@ -2093,50 +2114,79 @@ country_event = {
 					}
 				}
 			}
+			create_l_tiyanki_home_fleet_1 = yes
+			create_l_tiyanki_home_fleet_2 = yes
+			create_l_tiyanki_home_fleet_3 = yes
+			create_l_tiyanki_home_fleet_4 = yes
+			create_l_tiyanki_home_roaming_fleets = yes
 		}
 		random_system = {
 			limit = {
 				#has_any_lcluster_star_flag = yes
 				distance = {
-					source = event_target:L_Tiyanki_CustomCapital
+					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
 					uses_bypass= no
 					min_jumps = 1
-					max_jumps = 1
+					max_jumps = 2
 				}
+				NOT = { has_star_flag = l_tiyanki_territory_flag }
 			}
+			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
-				generate_l_tiyanki_herd = yes
+				random_list = {
+					20 = { create_l_tiyanki_fleet_1 = yes } 
+					20 = { create_l_tiyanki_fleet_2 = yes } 
+					20 = { create_l_tiyanki_fleet_3 = yes } 
+					20 = { create_l_tiyanki_fleet_4 = yes } 
+					20 = { create_l_tiyanki_fleet_5 = yes } 
+				}
 			}
 		}
 		random_system = {
 			limit = {
 				#has_any_lcluster_star_flag = yes
 				distance = {
-					source = event_target:L_Tiyanki_CustomCapital
+					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
 					uses_bypass= no
-					min_jumps = 2
+					min_jumps = 1
 					max_jumps = 2
 				}
+				NOT = { has_star_flag = l_tiyanki_territory_flag }
 			}
+			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
-				generate_l_tiyanki_herd = yes
+				random_list = {
+					20 = { create_l_tiyanki_fleet_1 = yes } 
+					20 = { create_l_tiyanki_fleet_2 = yes } 
+					20 = { create_l_tiyanki_fleet_3 = yes } 
+					20 = { create_l_tiyanki_fleet_4 = yes } 
+					20 = { create_l_tiyanki_fleet_5 = yes } 
+				}
 			}
 		}
 		random_system = {
 			limit = {
 				#has_any_lcluster_star_flag = yes
 				distance = {
-					source = event_target:L_Tiyanki_CustomCapital
+					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
 					uses_bypass= no
-					min_jumps = 2
+					min_jumps = 1
 					max_jumps = 2
 				}
+				NOT = { has_star_flag = l_tiyanki_territory_flag }
 			}
+			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
-				generate_l_tiyanki_herd = yes
+				random_list = {
+					20 = { create_l_tiyanki_fleet_1 = yes } 
+					20 = { create_l_tiyanki_fleet_2 = yes } 
+					20 = { create_l_tiyanki_fleet_3 = yes } 
+					20 = { create_l_tiyanki_fleet_4 = yes } 
+					20 = { create_l_tiyanki_fleet_5 = yes } 
+				}
 			}
 		}
 		random_system = {

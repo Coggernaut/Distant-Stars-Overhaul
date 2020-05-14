@@ -157,8 +157,6 @@ weapon_component_template = {
 #  Critter Weapons - Space Amoeba
 # ####################
 
-@critter_cost_value = 35
-
 
 ### Standard Amoeba Weapon
 

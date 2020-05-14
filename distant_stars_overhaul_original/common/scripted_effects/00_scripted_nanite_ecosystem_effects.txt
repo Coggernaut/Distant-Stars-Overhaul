@@ -1,7 +1,7 @@
 
 generate_l_tiyanki_herd = {
 	create_fleet = {
-		name = "L_Tiyanki_Herd"
+		name = "L-Tiyanki Herd"
 		settings = {
 			is_boss = no
 			spawn_debris = no
@@ -15,19 +15,19 @@ generate_l_tiyanki_herd = {
 			set_owner = event_target:l_tiyanki_elder
 			create_ship = {
 				design = "L_Tiyanki_Cow"
-				name = "L_Tiyanki_Cow"
+				name = "Cow"
 				prefix = no
 				upgradable = no
 			}
 			create_ship = {
 				design = "L_Tiyanki_Bull"
-				name = "L_Tiyanki_Bull"
+				name = "Bull"
 				prefix = no
 				upgradable = no
 			}
 			create_ship = {
 				design = "L_Tiyanki_Calf"
-				name = "L_Tiyanki_Calf"
+				name = "Calf"
 				prefix = no
 				upgradable = no
 			}
@@ -40,6 +40,766 @@ generate_l_tiyanki_herd = {
 			#	clear_auto_move_on_arrival = yes # hang around
 			#}
 			set_formation_scale = 10
+		}
+	}
+}
+
+create_l_tiyanki_fleet_1 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			set_location = PREV
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_l_tiyanki_fleet_2 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			set_location = PREV
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_l_tiyanki_fleet_3 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			set_location = PREV
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_l_tiyanki_fleet_4 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "L_Tiyanki_Calf"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			create_ship = {
+				name = "Calf"
+				design = "L_Tiyanki_Calf"
+			}
+			set_location = PREV
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_l_tiyanki_fleet_5 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Cow"
+				design = "L_Tiyanki_Cow"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Bull"
+				design = "L_Tiyanki_Bull"
+			}
+			create_ship = {
+				name = "Hatchling"
+				design = "NAME_Tiyanki_Hatchling"
+			}
+			set_location = PREV
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_l_tiyanki_home_fleet_1 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 5
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Bull"
+				}
+			}
+			while = {
+				count = 8
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			while = {
+				count = 9
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = event_target:l_gas_giant1
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 2
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 4
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant1
+				distance = 12
+				angle = 0
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+}
+
+create_l_tiyanki_home_fleet_2 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 2
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Bull"
+				}
+			}
+			while = {
+				count = 2
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			while = {
+				count = 3
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = event_target:l_gas_giant2
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 2
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 4
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant2
+				distance = 12
+				angle = 0
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+}
+
+create_l_tiyanki_home_fleet_3 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 2
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 6
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Bull"
+				}
+			}
+			while = {
+				count = 12
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			while = {
+				count = 2
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = event_target:l_gas_giant3
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 4
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 2
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			while = {
+				count = 3
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant3
+				distance = 12
+				angle = 0
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+}
+
+create_l_tiyanki_home_fleet_4 = {
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 4
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 3
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Bull"
+				}
+			}
+			while = {
+				count = 12
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			while = {
+				count = 9
+				create_ship = {
+					name = "Calf"
+					design = "L_Tiyanki_Calf"
+				}
+			}
+			set_location = event_target:l_gas_giant4
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Herd"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 4
+				create_ship = {
+					name = "Cow"
+					design = "L_Tiyanki_Cow"
+				}
+			}
+			while = {
+				count = 6
+				create_ship = {
+					name = "Bull"
+					design = "L_Tiyanki_Bull"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant4
+				distance = 12
+				angle = 0
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+		}
+	}
+}
+
+create_l_tiyanki_home_roaming_fleets = {
+	create_fleet = {
+		name = "L-Tiyanki Brood"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 22
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant1
+				distance = 25
+				angle = 94
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				repeat = {
+					find_closest_planet = {
+						trigger = {
+							id = tiyanki.patrol.1
+							has_planet_flag = tiyanki_l_gas_giant2
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki.patrol.2
+							has_planet_flag = tiyanki_l_gas_giant3
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki.patrol.3
+							has_planet_flag = tiyanki_l_gas_giant4
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki.patrol.4
+							has_planet_flag = tiyanki_l_gas_giant1
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Brood"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 14
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant1
+				distance = 25
+				angle = 94
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				repeat = {
+					find_closest_planet = {
+						trigger = {
+							id = tiyanki2.patrol.1
+							has_planet_flag = tiyanki_l_gas_giant4
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki2.patrol.2
+							has_planet_flag = tiyanki_l_gas_giant3
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki2.patrol.3
+							has_planet_flag = tiyanki_l_gas_giant2
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki2.patrol.4
+							has_planet_flag = tiyanki_l_gas_giant1
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Brood"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 19
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant3
+				distance = 25
+				angle = 94
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				repeat = {
+					find_closest_planet = {
+						trigger = {
+							id = tiyanki3.patrol.1
+							has_planet_flag = tiyanki_l_gas_giant2
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki3.patrol.2
+							has_planet_flag = tiyanki_l_gas_giant1
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki3.patrol.3
+							has_planet_flag = tiyanki_l_gas_giant4
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki3.patrol.4
+							has_planet_flag = tiyanki_l_gas_giant3
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+				}
+			}
+		}
+	}
+
+	create_fleet = {
+		name = "L-Tiyanki Brood"
+		effect = {
+			set_owner = event_target:l_tiyanki_elder
+			while = {
+				count = 16
+				create_ship = {
+					name = "Hatchling"
+					design = "NAME_Tiyanki_Hatchling"
+				}
+			}
+			set_location = {
+				target = event_target:l_gas_giant2
+				distance = 25
+				angle = 94
+			}
+			set_fleet_stance = passive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				repeat = {
+					find_closest_planet = {
+						trigger = {
+							id = tiyanki4.patrol.1
+							has_planet_flag = tiyanki_l_gas_giant3
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki4.patrol.2
+							has_planet_flag = tiyanki_l_gas_giant4
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki4.patrol.3
+							has_planet_flag = tiyanki_l_gas_giant1
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+					find_closest_planet  = {
+						trigger = {
+							id = tiyanki4.patrol.4
+							has_planet_flag = tiyanki_l_gas_giant2
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+						}
+					}
+				}
+			}
 		}
 	}
 }
