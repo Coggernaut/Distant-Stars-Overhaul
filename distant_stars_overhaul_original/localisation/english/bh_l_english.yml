@@ -318,6 +318,7 @@
  NANITE_INTERDICTOR_BOW_M2:0 "Interdictor Cannons"
  NANITE_INTERDICTOR_BOW_S3P2:0 "Interdictor Interdiction"
  NANITE_INTERDICTOR_MID_M3:0 "Interdictor Cannons"
+ NANITE_INTERDICTOR_MID_P2H1:0 "Interdictor Hanger"
  NANITE_INTERDICTOR_MID_S5P2:0 "Interdictor Interdiction"
  NANITE_INTERDICTOR_STERN_M1:0 "Interdictor Cannons"
  NANITE_INTERDICTOR_STERN_S1P2:0 "Interdictor Interdiction"
