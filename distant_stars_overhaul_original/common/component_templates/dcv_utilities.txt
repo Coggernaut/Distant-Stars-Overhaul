@@ -7,8 +7,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
-			nanites = 5
+			nanites = 224
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -25,8 +24,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
-			nanites = 5
+			nanites = 112
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -43,8 +41,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
-			nanites = 5
+			nanites = 56
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -61,7 +58,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
+			nanites = 120
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -81,7 +78,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 15
+			nanites = 60
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -101,7 +98,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 10
+			nanites = 30
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -117,11 +114,11 @@ utility_component_template = {
 	size = medium
 	icon = "GFX_ship_part_computer_artillery_sapient"
 	icon_frame = 1
-	power = -900
+	power = -25
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
+			nanites = 10
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
@@ -145,11 +142,11 @@ utility_component_template = {
 	size = aux
 	icon = "GFX_elite_maintenance_crew"
 	icon_frame = 1
-	power = -100
+	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
+			nanites = 10
 		}
 		
 	}
@@ -167,11 +164,11 @@ utility_component_template = {
 	size = aux
 	icon = "GFX_elite_pilot_crew"
 	icon_frame = 1
-	power = -100
+	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 20
+			nanites = 10
 		}
 		
 	}
