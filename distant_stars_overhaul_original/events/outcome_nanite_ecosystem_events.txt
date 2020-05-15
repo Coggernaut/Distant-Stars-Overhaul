@@ -28,6 +28,26 @@ ship_event = {
 	}
 }
 
+### L-Amoeba Gas Giant
+ship_event = {
+	id = nanite_ecosystem_anomaly.2
+	title = "nanite_ecosystem_anomaly.2.name"
+	desc = "nanite_ecosystem_anomaly.2.desc"
+	picture = GFX_evt_microscopic_life
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
+	}
+
+	option = {
+		name = FASCINATING
+	}
+}
+
 
 country_event = {
 	id = harvest_nanite_gaia.1
@@ -1952,6 +1972,61 @@ country_event = {
     hide_window = yes
 
 	immediate = {
+		random_system = {
+			limit = {
+				OR = {
+					has_star_flag = lcluster2
+					has_star_flag = lcluster3
+					has_star_flag = lcluster4
+					has_star_flag = lcluster5
+					has_star_flag = lcluster1b
+					has_star_flag = lcluster2b
+					has_star_flag = lcluster3b
+					has_star_flag = lcluster4b
+				}
+				count_planets = {
+					limit = { is_planet_class = pc_nanite_gaia }
+					count < 2
+				}
+				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+			}
+			every_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				change_pc = pc_t_star
+				create_ambient_object = {
+					type = "space_storm_1"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+			}
+			every_system_planet = {
+				limit = {
+					is_star = no
+				}
+				remove_planet = yes
+			}
+			set_star_flag = nanite_ecosystem_elder_amoeba_system
+		}
+		country_event = { id = distar_nanite_ecosystem.4 }
+	}
+}
+
+country_event = {
+	id = distar_nanite_ecosystem.4
+
+    is_triggered_only = yes
+    hide_window = yes
+
+	immediate = {
 		
 		set_global_flag = distar_nanite_ecosystem_populated_flag
 		random_system = {
@@ -1969,6 +2044,7 @@ country_event = {
 				}
 				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
 				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			random_system_planet = { 
 				limit = { is_planet_class = pc_nanite_gaia }
@@ -1995,6 +2071,10 @@ country_event = {
 					clear_deposits = yes
 					save_global_event_target_as = l_gas_giant1
 					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_tiyanki_spawn_modifier"
+						days = -1
+					}
 				}
 			}
 
@@ -2012,6 +2092,10 @@ country_event = {
 					clear_deposits = yes
 					save_global_event_target_as = l_gas_giant2
 					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_tiyanki_spawn_modifier"
+						days = -1
+					}
 				}
 			}
 
@@ -2029,6 +2113,10 @@ country_event = {
 					clear_deposits = yes
 					save_global_event_target_as = l_gas_giant3
 					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_tiyanki_spawn_modifier"
+						days = -1
+					}
 				}
 			}
 
@@ -2046,17 +2134,18 @@ country_event = {
 					clear_deposits = yes
 					save_global_event_target_as = l_gas_giant4
 					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_tiyanki_spawn_modifier"
+						days = -1
+					}
 				}
 			}
 			random_system_planet = {
 				limit = { is_planet_class = pc_nanite_gas_giant }
 				#change_pc = pc_nanite_gas_giant
 				clear_deposits = yes
-				add_modifier = {
-					modifier = "l_tiyanki_spawn_modifier"
-					days = -1
-				}
 				set_deposit = d_society_10
+				add_deposit = d_exotic_gases_3
 				set_planet_flag = l_tiyanki_elder_planet
 				create_country = {
 					name = "L-Tiyanki"
@@ -2128,9 +2217,11 @@ country_event = {
 					type= hyperlane
 					uses_bypass= no
 					min_jumps = 1
-					max_jumps = 2
+					max_jumps = 1
 				}
 				NOT = { has_star_flag = l_tiyanki_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
@@ -2154,6 +2245,8 @@ country_event = {
 					max_jumps = 2
 				}
 				NOT = { has_star_flag = l_tiyanki_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
@@ -2177,6 +2270,8 @@ country_event = {
 					max_jumps = 2
 				}
 				NOT = { has_star_flag = l_tiyanki_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
@@ -2187,6 +2282,284 @@ country_event = {
 					20 = { create_l_tiyanki_fleet_4 = yes } 
 					20 = { create_l_tiyanki_fleet_5 = yes } 
 				}
+			}
+		}
+		#Amoeba 
+		random_system = {
+			limit = {
+				has_star_flag = nanite_ecosystem_elder_amoeba_system
+			}
+			save_global_event_target_as = L_Amoeba_HomeSystem
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Zathika Mev"
+				orbit_distance = 55
+				orbit_angle = 35
+				size = 30
+				has_ring = yes
+				flags = { l_amoeba_gas_giant1 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_amoeba_gas_giant1
+					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_amoeba_spawn_modifier"
+						days = -1
+					}
+				}
+			}
+
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Surribzha"
+				orbit_distance = 65
+				orbit_angle = 85
+				size = 25
+				has_ring = yes
+				flags = { l_amoeba_gas_giant2 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_amoeba_gas_giant2
+					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_amoeba_spawn_modifier"
+						days = -1
+					}
+				}
+			}
+			
+			spawn_planet = {
+				class = pc_nanite_gas_giant
+				name = "Veronax"
+				orbit_distance = 85
+				orbit_angle = 195
+				size = 42
+				has_ring = no
+				flags = { l_amoeba_gas_giant3 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_amoeba_gas_giant3
+					add_deposit = d_exotic_gases_3
+					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_amoeba_spawn_modifier"
+						days = -1
+					}
+				}
+
+				change_orbit = @base_moon_distance
+				moon = {
+					class = pc_barren_cold
+					name = "NAME_Evor_Tomos"
+					orbit_angle = { min = 90 max = 270 }
+					orbit_distance = 10
+					size = 12
+			
+					init_effect = {
+						prevent_anomaly = yes
+						clear_deposits = yes
+						add_deposit = d_minerals_4
+					}
+				}
+				moon = {
+					class = pc_barren_cold
+					name = "NAME_Evor_Aras"
+					orbit_angle = { min = 90 max = 270 }
+					orbit_distance = 5
+					size = 9
+			
+					init_effect = {
+						prevent_anomaly = yes
+						clear_deposits = yes
+						add_deposit = d_society_6
+					}
+				}
+			}
+
+			spawn_planet = {
+				class = "pc_nanite_gas_giant"
+				name = "Khetzhavu"
+				orbit_distance = 45
+				orbit_angle = 300
+				size = 31
+				has_ring = yes
+				flags = { l_amoeba_gas_giant4 }
+
+				init_effect = {
+					prevent_anomaly = yes
+					clear_deposits = yes
+					save_global_event_target_as = l_amoeba_gas_giant4
+					add_deposit = d_society_6
+					add_modifier = {
+						modifier = "l_amoeba_spawn_modifier"
+						days = -1
+					}
+				}
+			}
+			random_system_planet = {
+				limit = { is_planet_class = pc_nanite_gas_giant }
+				#change_pc = pc_nanite_gas_giant
+				clear_deposits = yes
+				set_deposit = d_society_10
+				add_deposit = d_exotic_gases_3
+				set_planet_flag = l_amoeba_elder_planet
+				create_country = {
+					name = "L-Amoeba"
+					type = l_amoeba_elder_country
+					flag = {
+						icon = {
+							category = "zoological"
+							file = "flag_zoological_1.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"black"
+							"black"
+							"null"
+							"null"
+						}
+					}
+					effect = {
+						save_global_event_target_as = l_amoeba_elder
+						every_playable_country = {
+							establish_communications_no_message = prev
+						}
+					}
+				}
+				create_fleet = {
+					name = "L-Amoeba Overlord"
+					settings = {
+						is_boss = yes
+						spawn_debris = no
+						can_upgrade = no
+						can_disband = yes
+						can_change_composition = no
+						can_change_leader = no
+						uses_naval_capacity = no
+					}
+					effect = {
+						set_owner = event_target:l_amoeba_elder
+						create_ship = {
+							design = L_Great_Space_Organism
+							name = "Overlord"
+							prefix = no
+							upgradable = no
+						}
+						set_location = PREV
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self #or return_point
+						set_aggro_range = 300
+						#auto_move_to_planet = {
+						#	target = prev # dragon_point star
+						#	clear_auto_move_on_arrival = yes # hang around
+						#}
+					}
+				}
+			}
+			create_l_amoeba_home_fleet_1 = yes
+			create_l_amoeba_home_fleet_2 = yes
+			create_l_amoeba_home_fleet_3 = yes
+			create_l_amoeba_home_fleet_4 = yes
+			create_l_amoeba_home_roaming_fleets = yes
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Amoeba_HomeSystem
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 1
+					max_jumps = 1
+				}
+				NOT = { has_star_flag = l_amoeba_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
+			}
+			set_star_flag = l_amoeba_territory_flag
+			random_system_planet = {
+				random_list = {
+					20 = { create_l_amoeba_fleet_1 = yes } 
+					20 = { create_l_amoeba_fleet_2 = yes } 
+					20 = { create_l_amoeba_fleet_3 = yes } 
+					20 = { create_l_amoeba_fleet_4 = yes } 
+					20 = { create_l_amoeba_fleet_5 = yes } 
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Amoeba_HomeSystem
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 1
+					max_jumps = 2
+				}
+				NOT = { has_star_flag = l_amoeba_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
+			}
+			set_star_flag = l_amoeba_territory_flag
+			random_system_planet = {
+				random_list = {
+					20 = { create_l_amoeba_fleet_1 = yes } 
+					20 = { create_l_amoeba_fleet_2 = yes } 
+					20 = { create_l_amoeba_fleet_3 = yes } 
+					20 = { create_l_amoeba_fleet_4 = yes } 
+					20 = { create_l_amoeba_fleet_5 = yes } 
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				#has_any_lcluster_star_flag = yes
+				distance = {
+					source = event_target:L_Amoeba_HomeSystem
+					type= hyperlane
+					uses_bypass= no
+					min_jumps = 1
+					max_jumps = 2
+				}
+				NOT = { has_star_flag = l_amoeba_territory_flag }
+				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
+			}
+			set_star_flag = l_amoeba_territory_flag
+			random_system_planet = {
+				random_list = {
+					20 = { create_l_amoeba_fleet_1 = yes } 
+					20 = { create_l_amoeba_fleet_2 = yes } 
+					20 = { create_l_amoeba_fleet_3 = yes } 
+					20 = { create_l_amoeba_fleet_4 = yes } 
+					20 = { create_l_amoeba_fleet_5 = yes } 
+				}
+			}
+		}
+		event_target:l_tiyanki_elder = {
+			set_faction_hostility = {
+				target = event_target:l_amoeba_elder 
+				set_hostile = yes 
+				set_neutral = no 
+				set_friendly = no 
+			}
+		}
+		event_target:l_amoeba_elder = {
+			set_faction_hostility = {
+				target = event_target:l_tiyanki_elder 
+				set_hostile = yes 
+				set_neutral = no 
+				set_friendly = no 
 			}
 		}
 		random_system = {

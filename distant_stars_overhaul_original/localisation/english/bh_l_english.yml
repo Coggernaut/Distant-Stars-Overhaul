@@ -48,6 +48,13 @@
  nanite_ecosystem_anomaly.1.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Tiyanki-like L-Species dubbed the L-Tiyanki Matriarch. The L-Tiyanki species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants would greatly benefit our knowledge towards the strange biology of L-Species."
  
  
+ l_amoeba_spawn_modifier:0 "L-Amobea Spawning Grounds"
+ l_amoeba_spawn_modifier_desc:0 "Normally L-Gas Giants only support L-Species on a microscopic level, but this ecosystem seems to be thriving with organisms on massive scales.\n\nDue to this, the planet supports a thriving ecology of L-Amoeba that spawn within the upper atmospheric layers."
+ 
+ nanite_ecosystem_anomaly.2.name:0 "Unusual L-Amoeba Swarm"
+ nanite_ecosystem_anomaly.2.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Amoeba-like L-Species dubbed the L-Amoeba Overlord. The L-Amoeba species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants would greatly benefit our knowledge towards the strange biology of L-Species."
+ 
+ 
  
  L_Tiyanki_Herd:0 "L-Tiyanki Herd"
  L_Progenitor:0 "L-Tiyanki Progenitor"
@@ -55,21 +62,44 @@
  L_Tiyanki_Cow:0 "L-Tiyanki Cow"
  L_Tiyanki_Bull:0 "L-Tiyanki Bull"
  L_Tiyanki_Calf:0 "L-Tiyanki Calf"
+ L_Great_Space_Organism:0 "L-Amobea Overlord"
+ L_Large_Space_Organism_Blue:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Blue:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Teal:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Teal:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Orange:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Orange:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Zebra:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Zebra:0 "L-Amobea Swarmling"
+ 
  
  L_leviathan_01_elder_tiyanki:0 "L-Tiyanki"
  L_space_whale_1:0 "L-Tiyanki"
  L_space_whale_2:0 "L-Tiyanki"
  L_space_whale_3:0 "L-Tiyanki"
- 
+ L_space_amoeba:0 "L-Amobea"
+ L_space_amoeba_mother:0 "L-Amobea"
  L_leviathan_01_elder_tiyanki_plural:0 "L-Tiyanki"
  L_space_whale_1_plural:0 "L-Tiyanki"
  L_space_whale_2_plural:0 "L-Tiyanki"
  L_space_whale_3_plural:0 "L-Tiyanki"
+ L_space_amoeba_plural:0 "L-Amobea"
+ L_space_amoeba_mother_plural:0 "L-Amobea"
+ 
  
  L_leviathan_01_elder_tiyanki_section:0 "L-Tiyanki Elder"
  L_space_whale_1_section:0 "L-Tiyanki Cow"
  L_space_whale_2_section:0 "L-Tiyanki Bull"
  L_space_whale_3_section:0 "L-Tiyanki Calf"
+ 
+ L_space_amoeba_large_beige_blue:0 "Mother"
+ L_space_amoeba_small_beige_blue:0 "Swarmling"
+ L_space_amoeba_large_yellow_teal:0 "Mother"
+ L_space_amoeba_small_yellow_teal:0 "Swarmling"
+ L_space_amoeba_large_black_orange:0 "Mother"
+ L_space_amoeba_small_black_orange:0 "Swarmling"
+ L_space_amoeba_large_zebra_blue:0 "Mother"
+ L_space_amoeba_small_zebra_blue:0 "Swarmling"
  
  nanite_forgeworld_lost.1:0 "All Has Turned To Dust!"
  nanite_forgeworld_lost.1.title:0 "All Has Turned To Dust!"

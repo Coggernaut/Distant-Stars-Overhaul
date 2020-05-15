@@ -15,3 +15,10 @@ l_tiyanki_spawn_modifier = {
 	
 	important = yes
 }
+
+l_amoeba_spawn_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_hallucinogen.dds"
+	icon_frame = 1
+	
+	important = yes
+}

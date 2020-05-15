@@ -33,6 +33,7 @@ on_uplift_completion = {
 on_entering_system_first_time = {
 	events = {
 		nanite_ecosystem_anomaly.1
+		nanite_ecosystem_anomaly.2
 		nanite_ecosystem_uplift.6080
 		#ldragon_country_starts_nanite_ecosystem.1
 		nanite_ecosystem_enter.550
