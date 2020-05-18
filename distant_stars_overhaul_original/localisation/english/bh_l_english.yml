@@ -303,13 +303,14 @@
  mod_job_nanite_researcher_add:0 "Nanite Researcher Jobs"
  job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies and §Ggives research access to Nanite Weapons§!"
  
+ #Districts
  district_forgeworld_bio_reactor:0 "Bio-Processing Foundary"
  district_forgeworld_bio_reactor_plural:0 "Bio-Processing Foundaries"
  district_forgeworld_bio_reactor_desc:0 "Nanite Forgeworlds regularly process biomass into energy. These sectors of the Forgeworld are called Bio-Processing Foundaries. Biological organisms find them extremely disturbing."
+ dso_district_nexus:0 "Nexus District"
  job_bio_processor_drone:0 "Bio-Processor Job"
  mod_job_bio_processor_drone_add:0 "Bio-Processor Jobs"
  bio_processor_drone_effect_desc:0 "Bio-Processors turn §YFood§! into £energy£ §YCredits§!"
- 
  
  building_nanite_research_center:0 "Nanite Research Center"
  building_nanite_research_center_desc:0 "After opening the L-Gate, nanite technology have become available to the galaxy once again. Scientists are researching new ways to harness the military applications of nanites."

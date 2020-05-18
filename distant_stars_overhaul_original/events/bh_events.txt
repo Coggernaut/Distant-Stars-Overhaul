@@ -842,9 +842,9 @@ country_event = {
 			add_district = dso_district_generator_uncapped
 			add_district = dso_district_generator_uncapped
 			add_district = dso_district_generator_uncapped
-			add_district = district_nexus
-			add_district = district_nexus
-			add_district = district_nexus
+			add_district = dso_district_nexus
+			add_district = dso_district_nexus
+			add_district = dso_district_nexus
 		}
 	}
 }

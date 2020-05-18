@@ -1,5 +1,87 @@
-@base_cost = 300
-@city_cost = 500
+dso_district_nexus = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+			uses_district_set = dso_nanite_forgeworld
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+			uses_district_set = dso_nanite_forgeworld
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_arcology_housing
+		district_city
+		district_hive
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 5
+		job_maintenance_drone_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_maintenance_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_swapped_tradition = tr_prosperity_optimized_nexus }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+			planet = {
+				planet_devastation < 1
+				years_passed > 10
+				free_housing < 4
+			}
+		}
+	}
+}
 
 district_nanite_forgeworld_industry = {
 	icon = district_nanite_forgeworld_industry
@@ -7,11 +89,11 @@ district_nanite_forgeworld_industry = {
 	is_capped_by_modifier = no
 	
 	show_on_uncolonized = {
-		is_planet_class = pc_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 	
 	potential = {
-		is_planet_class = pc_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 	
 	conversion_ratio = 1
@@ -76,11 +158,11 @@ district_forgeworld_bio_reactor = {
 	is_capped_by_modifier = no
 	
 	show_on_uncolonized = {
-		is_planet_class = pc_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 	
 	potential = {
-		is_planet_class = pc_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 	
 	conversion_ratio = 1
@@ -143,13 +225,13 @@ dso_district_generator_uncapped = {
 
 	show_on_uncolonized = {
 		OR = {
-			is_planet_class = pc_nanite_forgeworld
+			uses_district_set = dso_nanite_forgeworld
 		}
 	}
 
 	potential = {
 		OR = {
-			is_planet_class = pc_nanite_forgeworld
+			uses_district_set = dso_nanite_forgeworld
 		}
 	}
 
@@ -200,14 +282,11 @@ dso_district_generator_uncapped = {
 		modifier = {
 			weight = 250
 			districts_build_district = yes
-			OR = {
-				owner = {
-					has_monthly_income = {
-						resource = energy
-							value < 200
-					}
+			owner = {
+				has_monthly_income = {
+					resource = energy
+						value < 200
 				}
-				num_free_districts = { type = district_mining_uncapped value = 0 } #ring worlds
 			}
 		}
 		modifier = {
