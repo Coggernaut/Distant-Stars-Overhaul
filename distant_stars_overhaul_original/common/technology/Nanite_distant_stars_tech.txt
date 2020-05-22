@@ -348,7 +348,7 @@ tech_nanite_clouds = {
 	tier = 3
 	is_rare = yes
 	category = { industry }
-	weight = 25
+	weight = 75
 	is_reverse_engineerable = no
 	
 	prereqfor_desc = {
