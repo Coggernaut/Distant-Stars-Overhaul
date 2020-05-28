@@ -25,9 +25,7 @@ cb_lgate_containment = {
 			overlord = { NOT = { is_same_value = from } }
 		}	
 		FROM = {
-			any_owned_megastructure = {
-				is_megastructure_type = lgate_base
-			}	
+			any_system_within_border = { has_star_flag = lgate }
 		}
 		FROM = {
 			NOT = { has_civic = civic_gateway_worshiper }

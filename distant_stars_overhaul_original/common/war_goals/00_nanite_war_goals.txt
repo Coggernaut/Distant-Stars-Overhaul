@@ -40,17 +40,16 @@ wg_claim_lgates = {
 	}
 	
 	on_wargoal_set = {
-		every_system = {
-			limit = {
-				has_megastructure = lgate_base
-				is_owned_by = FROM
+		FROM = {
+			every_system_within_border = {
+				limit = { has_star_flag = lgate }
+				add_claims = {
+					who = ROOT
+					num_of_claims = 1
+					show_notification = yes
+				}
 			}
-			add_claims = {
-				who = PREV
-				num_of_claims = 1
-				show_notification = yes
-			}
-		}	
+		}
 	}
 	
 	# Run when war ends in status quo
@@ -59,15 +58,14 @@ wg_claim_lgates = {
 	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {	
-		every_system = {
-			limit = {
-				has_megastructure = lgate_base
-				is_owned_by = FROM
-			}
-			starbase = {
-				set_owner = PREVPREV
+		FROM = {
+			every_system_within_border = {
+				limit = { has_star_flag = lgate }
+					starbase = {
+						set_owner = ROOT
+					}
+				}
 			}
 		}
 	}
-
 }
