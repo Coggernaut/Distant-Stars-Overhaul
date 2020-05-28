@@ -61,9 +61,8 @@ wg_claim_lgates = {
 		FROM = {
 			every_system_within_border = {
 				limit = { has_star_flag = lgate }
-					starbase = {
-						set_owner = ROOT
-					}
+				starbase = {
+					set_owner = ROOT
 				}
 			}
 		}
