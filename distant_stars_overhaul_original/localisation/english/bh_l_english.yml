@@ -181,21 +181,24 @@
  personality_harvester_nanites:0 "Harvester Swarm"
  personality_harvester_nanites_desc:0 "Harvester Swarms seek to catalog habitable worlds and render down the avaliable organic matter into more usable resources for the machine intelligence. While their intent is not to destory life, often this is the result of their actions."
  
+ personality_gateway_pursuers:0 "Gateway Pursuer"
+ personality_gateway_pursuers_desc:0 "This machine intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to it understanding everything."
+ 
  personality_gateway_worshipers:0 "Gateway Guardians"
- personality_gateway_worshipers_desc:0 "The Gateway Guardians are a religious cult that seeks to retain the L-Gates in their dormant state. To prevent the L-Gates from opening, they will seek to acquire all systems that have L-Gates, by force, if needed."
+ personality_gateway_worshipers_desc:0 "This empire has made a covenant long ago to keep L-Gates in their dormant state. To prevent the L-Gates from opening, they will seek to acquire all systems that have L-Gates, by force, if needed."
 
  # Governments ----------
  RT_HN:0 "Central Nanite Hub"
- gov_machine_bio_harvesters:0 "Harvester Swarm"
+ gov_machine_bio_harvesters:0 "Nanite Harvesting Network"
  gov_machine_bio_harvesters_desc:0 "Nanite Machines that devour all organic material and repurpose it for better use. Entire worlds have been devastated by the swarm, leaving them as hollow, desolate husks."
  
  RT_GP:0 "Central Nanite Hub"
- gov_machine_gateway_pursuer:0 "Gateway Pursuer"
- gov_machine_gateway_pursuer_desc:0 "The machine Intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to it understanding everything."
+ gov_machine_gateway_pursuer:0 "Nanite Harvesting Network"
+ gov_machine_gateway_pursuer_desc:0 "This machine intelligence seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to it understanding everything."
  
  RT_GW:0 "Central Nanite Hub"
- gov_spiritualist_gateway_worshiper:0 "Gateway Guardians"
- gov_spiritualist_gateway_worshiper_desc:0 "The Gateway Guardians are a religious cult that seeks to retain the L-Gates in their dormant state."
+ gov_spiritualist_gateway_worshiper:0 "Gateway Covenant Tribunal"
+ gov_spiritualist_gateway_worshiper_desc:0 "This government is commanded by the grand patriarchs and matriarchs of the Gateway Covenant. The Gateway Covenant is a militant religious organization who has sworn guardianship over the mysterious L-Gates."
 
  # Civics ---------------
  civic_harvester_nanites:0 "Harvester Nanites"
@@ -206,8 +209,8 @@
  civic_gateway_pursuer_desc:0 "Before the discovery of Hyperlane Technology, this Machine Intelligence used swarms of simple nano-machines to catalog and harvest all the planets within the home system from orbit. Though it seeks understanding of its origin. It does not believe it was mere chance that it was left behind , but created for something much more. The L-Gates are the key to understanding everything."
  civic_gateway_pursuer_effects:0 "Homeworld is a §YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCan only settle §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing non-tomb worlds will transform them into §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!.\n\nGuarantees an §YL-Gate§! in your home system.\n§YUnique Questlines§! to unravel the mystery of their origin and how the L-Gates play into it all."
 
- civic_gateway_worshiper:0 "Gateway Guardian"
- civic_gateway_worshiper_desc:0 "Long ago an ancient precursor race, the Dessanu, came in contact with this society. The Dessanu no doubte left their mark on them as primitives with lending technology and advancing them. Revering the Dessanu as Gods, this society worships L-Gates as holy relics. Their society is structured to uphold the covenant with the Dessanu. This covenant was a vow to keep the L-Gates in their dormant state."
+ civic_gateway_worshiper:0 "Dessanu Heritage"
+ civic_gateway_worshiper_desc:0 "Long ago an ancient precursor race, the Dessanu, came in contact with this society. The Dessanu uplifted them from presapient to a primitive state. What ultimately impacted this society was the cataclysmic war that required the Dessanu to protecting the planet, before they inevitably had to sealed off the L-Gates. The Dessanu left this society instructions to never open the L-Gates."
  civic_gateway_worshiper_effects:0 "Homeworld is a §YGaia World§! (Size: £planetsize£ §Y25§!)\nCan only settle §YGaia Worlds§!\n§YUnlocks Edict:§! Consecrate L-Gate\nGuarantees an §YL-Gate§! in your home system.\n§YL-Gate Insight§! research is §RDisabled§!\n§YUnique Questlines§! to unravel the mystery of the species origin and how the L-Gates play into it all."
 
  # Starting Text --------
@@ -402,8 +405,8 @@
  
  
  # Traits --------
- trait_dessanu_uplifted:0 "Dessanu Uplifted"
- trait_dessanu_uplifted_desc:0 "§LThis species has been uplifted by the Dessanu Precursors and their society is heavily impacted by their interaction.§!"
+ trait_dessanu_uplifted:0 "Dessanu Heritage"
+ trait_dessanu_uplifted_desc:0 "§LThis species has been partially uplifted by an ancient precursor known as the Dessanu. This has made a deep culutral adoption and worship of the Dessanu people. The most fervent members of this society sometimes accidentally siphon the Shroud's power.§!"
  
  trait_dessanu_nanites:0 "Ancient Dessanu Nanites"
  trait_dessanu_nanites_desc:0 "§LThis species is made entirely of nano machines created by the Dessanu Precursors. Though their creators have mysteriously disappeared long ago.§!"

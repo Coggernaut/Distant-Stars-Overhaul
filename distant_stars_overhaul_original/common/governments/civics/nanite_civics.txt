@@ -15,6 +15,7 @@ civic_harvester_nanites = {
 		}
 	}
 	traits = { trait = trait_dessanu_nanites }
+	flags = { custom_start_screen }
 	modification = no
 	random_weight = {
 		base = 1
@@ -52,6 +53,7 @@ civic_gateway_pursuer = {
 		}
 	}
 	traits = { trait = trait_dessanu_nanites }
+	flags = { custom_start_screen }
 	modification = no
 	random_weight = {
 		base = 1
@@ -84,6 +86,7 @@ civic_gateway_worshiper = {
 		authority = { NOT = { value = auth_corporate } }
 	}
 	traits = { trait = trait_dessanu_uplifted }
+	flags = { custom_start_screen }
 	possible = {
 		ethics = {
 			OR = {

@@ -1,43 +1,28 @@
 # Machine Empire - Harvester Nanites
 part = {
-	location = 1
+	location = 0
 	localization = "START_SCREEN_PART_TWO_HARVESTER_NANITES"
 	
 	trigger = {
-		OR = {
-			has_government = gov_machine_bio_harvesters
-		}
-		NOT = { 
-			has_country_flag = custom_start_screen 
-		}
+		has_origin = civic_harvester_nanites
 	}
 }
 
 # Machine Empire - Gateway Pursuer 
 part = {
-	location = 1
+	location = 0
 	localization = "START_SCREEN_PART_TWO_GATEWAY_PURSUER"
 	
 	trigger = {
-		OR = {
-			has_government = gov_machine_gateway_pursuer
-		}
-		NOT = { 
-			has_country_flag = custom_start_screen 
-		}
+		has_origin = civic_gateway_pursuer
 	}
 }
 # Gateway worshiper 
 part = {
-	location = 1
+	location = 0
 	localization = "START_SCREEN_PART_TWO_GATEWAY_WORSHIPER"
 	
 	trigger = {
-		OR = {
-			has_government = gov_spiritualist_gateway_worshiper
-		}
-		NOT = { 
-			has_country_flag = custom_start_screen 
-		}
+		has_government = gov_spiritualist_gateway_worshiper
 	}
 }

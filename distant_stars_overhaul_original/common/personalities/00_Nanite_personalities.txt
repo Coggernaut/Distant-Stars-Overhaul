@@ -50,7 +50,7 @@ harvester_nanites = {
 	combat_bravery = 1.5
 
 	military_spending = 1
-	colony_spending = 2
+	colony_spending = 3
 
 	federation_acceptance = 0
 	nap_acceptance = 0
@@ -60,7 +60,7 @@ harvester_nanites = {
 	
 	advanced_start_chance = 50
 
-	weapon_preferences = weapon_type_kinetic
+	weapon_preferences = weapon_type_energy
 	armor_ratio = 0.6
 	shields_ratio = 0.3
 	hull_ratio = 0.1
@@ -85,41 +85,39 @@ harvester_nanites = {
 		robot_liberator = yes
 		propagator = no
 		multispecies = no
-		crisis_fighter = no
+		crisis_fighter = yes
 		attack_neutrals = yes
 	}
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_origin = "civic_harvester_nanites"
-		}
+		has_authority = "auth_machine_intelligence"
+		has_origin = civic_harvester_nanites
 	}
 
 	weight_modifier = {
-		weight = 1000
+		weight = 10000
 	}
 }
 
-harvester_nanites = {
+gateway_pursuers = {
 	aggressiveness = 1
 	trade_willingness = 1.0	# But only with fellow machines
 	bravery = 1.0
 	combat_bravery = 1.5
 
 	military_spending = 1
-	colony_spending = 2
+	colony_spending = 1.5
 
 	federation_acceptance = 0
 	nap_acceptance = 0
 	commercial_pact_acceptance = 0
-	research_agreement_acceptance = -20
-	defensive_pact_acceptance = -20
+	research_agreement_acceptance = 0
+	defensive_pact_acceptance = -10
 	
 	advanced_start_chance = 50
 
-	weapon_preferences = weapon_type_kinetic
+	weapon_preferences = weapon_type_energy
 	armor_ratio = 0.6
 	shields_ratio = 0.3
 	hull_ratio = 0.1
@@ -130,7 +128,7 @@ harvester_nanites = {
 	claims_modifier = 0
 
 	behaviour = {
-		conqueror = yes
+		conqueror = no
 		subjugator = no
 		liberator = no
 		opportunist = yes
@@ -138,36 +136,35 @@ harvester_nanites = {
 		uplifter = no
 		purger = yes
 		displacer = no
-		dominator = yes
+		dominator = no
 		infiltrator = no
 		robot_exploiter = no
-		robot_liberator = yes
+		robot_liberator = no
 		propagator = no
 		multispecies = no
-		crisis_fighter = no
-		attack_neutrals = yes
+		crisis_fighter = yes
+		attack_neutrals = no
 	}
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_origin = "civic_gateway_pursuer"
-		}
+		has_authority = "auth_machine_intelligence"
+		has_origin = civic_gateway_pursuer
 	}
 
 	weight_modifier = {
-		weight = 1000
+		weight = 10000
 	}
 }
+
 
 gateway_worshipers = {
 	aggressiveness = 1
 	trade_willingness = 1.0	# But only with fellow machines
-	bravery = 1.0
+	bravery = 1.5
 	combat_bravery = 1.5
 
-	military_spending = 1
+	military_spending = 2
 	colony_spending = 0.75
 	
 	federation_acceptance = 0
@@ -179,7 +176,7 @@ gateway_worshipers = {
 
 	advanced_start_chance = 75
 
-	weapon_preferences = weapon_type_energy
+	weapon_preferences = weapon_type_kinetic
 	armor_ratio = 0.3
 	shields_ratio = 0.6
 	hull_ratio = 0.1
@@ -205,18 +202,15 @@ gateway_worshipers = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		attack_neutrals = yes
+		attack_neutrals = no
 	}
 
 	allow = {
 		is_country_type = default
-		AND = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			has_valid_origin = "civic_gateway_worshiper"
-		}
+		has_origin = civic_gateway_worshiper
 	}
 
 	weight_modifier = {
-		weight = 1000
+		weight = 10000
 	}
 }

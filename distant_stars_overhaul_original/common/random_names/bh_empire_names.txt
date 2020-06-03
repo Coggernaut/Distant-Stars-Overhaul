@@ -6,6 +6,7 @@ empire_name_format = {
 			add = 5
 			OR = {
 				has_government = "gov_machine_bio_harvesters"
+				has_government = "gov_machine_gateway_pursuer"
 			}
 			is_pirate = no
 			is_primitive = no
@@ -31,25 +32,6 @@ empire_name_parts_list = {
         "Classifiers" = 1
         "Index" = 1
 	}
-}
-
-empire_name_format = {
-	random_weight = {
-		factor = 0
-		modifier = {
-			add = 5
-			OR = {
-				has_government = "gov_machine_gateway_pursuer"
-			}
-			is_pirate = no
-			is_primitive = no
-			NOT = { is_country_type = fallen_empire }
-			NOT = { is_country_type = awakened_fallen_empire }
-		}
-	}
-	format = "format.bio_harvesters.1"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <bio_harvesters>"
 }
 
 empire_name_format = {

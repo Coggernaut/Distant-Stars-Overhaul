@@ -461,21 +461,15 @@ planet_event = {
 				ROOT = {planet_event = { id = bio_harvest_planet_stages.1 days = 7000 }}
 			}
 			every_country = {
-						limit = {
-							has_communications = prev.owner
-							OR = {
-								has_ai_personality = awakened_fallen_empire_xenophile
-								AND = {
-									is_country_type = default
-									NOR = {
-										has_origin = civic_harvester_nanites
-										has_origin = civic_gateway_pursuer
-										has_civic = civic_machine_terminator
-									}
-								}
-							}
-						}
-						add_opinion_modifier = { modifier = opinion_harvested_a_world who = prev.owner }
+				limit = {
+					has_communications = prev.owner
+					OR = {
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_xenophile
+						has_civic = civic_machine_servitor
+					}
+				}
+				add_opinion_modifier = { modifier = opinion_harvested_a_world who = prev.owner }
 			}
 		}
 		hidden_effect = {

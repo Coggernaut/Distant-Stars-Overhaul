@@ -1,34 +1,34 @@
 # Terminator
-gov_machine_bio_harvesters = {
-	ruler_title = RT_HN
-	
-	should_force_rename = yes
-
-	possible = {
-		has_authority = auth_machine_intelligence
-		has_origin = civic_harvester_nanites
-	}
-
-	weight = {
-		base = 2000
-	}
-}
+#gov_machine_bio_harvesters = {
+#	ruler_title = RT_HN
+#	
+#	should_force_rename = yes
+#
+#	possible = {
+#		has_authority = auth_machine_intelligence
+#		has_origin = civic_harvester_nanites
+#	}
+#
+#	weight = {
+#		base = 2000
+#	}
+#}
 
 #L-Gate Pursuer
-gov_machine_gateway_pursuer = {
-	ruler_title = RT_GP
-	
-	should_force_rename = yes
-
-	possible = {
-		has_authority = auth_machine_intelligence
-		has_origin = civic_gateway_pursuer
-	}
-
-	weight = {
-		base = 2000
-	}
-}
+#gov_machine_gateway_pursuer = {
+#	ruler_title = RT_GP
+#	
+#	should_force_rename = yes
+#
+#	possible = {
+#		has_authority = auth_machine_intelligence
+#		has_origin = civic_gateway_pursuer
+#	}
+#
+#	weight = {
+#		base = 2000
+#	}
+#}
 
 #L-Gate Worshiper
 gov_spiritualist_gateway_worshiper = {
