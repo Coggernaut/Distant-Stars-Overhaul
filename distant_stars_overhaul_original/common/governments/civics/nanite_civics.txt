@@ -5,6 +5,7 @@ civic_harvester_nanites = {
 	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	potential = { authority = { value = auth_machine_intelligence } }
 	homeworld = pc_nuked
+	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {
 			NOR = {
@@ -35,6 +36,7 @@ civic_harvester_nanites = {
 civic_gateway_pursuer = {
 	picture = GFX_origin_lgate_pursuer
 	is_origin = yes
+	max_once_global = yes
 	description = "civic_gateway_pursuer_effects"
 	playable = { 
 		host_has_dlc = "Synthetic Dawn Story Pack" 
@@ -42,6 +44,7 @@ civic_gateway_pursuer = {
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
 	homeworld = pc_nuked
+	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {
 			#value = civic_harvester_nanites
@@ -74,6 +77,7 @@ civic_gateway_worshiper = {
 	picture = GFX_origin_gateway_guardian
 	icon = "gfx/interface/icons/origins/origins_gateway.dds"
 	is_origin = yes
+	max_once_global = yes
 	description = "civic_gateway_worshiper_effects"
 	playable = { 
 		host_has_dlc = "Distant Stars Story Pack" 

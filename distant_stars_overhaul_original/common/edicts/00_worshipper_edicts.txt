@@ -17,13 +17,20 @@ consecrate_lgate = {
 			influence = @Edict1Cost
 		}
 	}
+	
+	effect = {
+		set_timed_country_flag = {
+			flag = DSO_consecrated_lgate 
+			days = 3600 
+		}
+	}
 
 	modifier = {
 		country_base_unity_produces_add = 10
 	}
 	
 	potential = {
-		has_origin = civic_gateway_worshiper
+		has_government = gov_spiritualist_gateway_worshiper
 		
 	}
 	
@@ -56,7 +63,7 @@ lgate_guardian = {
 	}
 	
 	potential = {
-		has_origin = civic_gateway_worshiper
+		has_government = gov_spiritualist_gateway_worshiper
 		
 	}
 	

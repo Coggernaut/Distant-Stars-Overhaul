@@ -1,0 +1,620 @@
+##############################
+# Gateway Covenant Faction
+##############################
+
+gateway_covenant = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_spiritualist
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		produces = {
+			influence = 2
+		}
+	}
+
+	is_potential = {
+		years_passed > 10
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+		count_owned_pops = {
+			count > 4
+			has_pop_flag = DSO_dessanu_heritage
+			pop_has_ethic = ethic_spiritualist
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+		is_robot_pop = no
+	}
+
+	can_join_faction = {
+		has_culture_shock = no
+		NOT = { has_trait = trait_nerve_stapled }
+		OR = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	attraction = {
+		base = 150
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+	}
+
+	leader = {
+		base = 100
+		modifier = {
+			factor = 0
+			species = {
+				has_trait = "trait_mechanical"
+			}
+		}
+
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+	}
+
+	demand = {
+		title = "FACTION_OUTRAGED_GC"
+		unfulfilled_title = "FACTION_OUTRAGED_GC"
+		desc = "FACTION_OUTRAGED_GC_DESC"
+
+		fulfilled_effect = -20
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = faction_spiritualist_outraged_gc
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = faction_spiritualist_outraged_gc
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_NO_ROBOTS"
+		title = "GATEWAY_COVENANT_NO_ROBOTS"
+		unfulfilled_title = "GATEWAY_COVENANT_ROBOTS"
+		desc = "GATEWAY_COVENANT_NO_ROBOTS_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = robots_outlawed
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_NO_ROBOT_RIGHTS"
+		title = "GATEWAY_COVENANT_NO_ROBOT_RIGHTS"
+		unfulfilled_title = "GATEWAY_COVENANT_ROBOT_RIGHTS"
+		desc = "GATEWAY_COVENANT_NO_ROBOT_RIGHTS_DESC"
+
+		unfulfilled_effect = -10
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				can_set_ai_policy = yes
+				NOT = { has_policy_flag = ai_full_rights }
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = ai_servitude }
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS"
+		title = "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS"
+		unfulfilled_title = "GATEWAY_COVENANT_FULL_ROBOT_RIGHTS"
+		desc = "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS_DESC"
+
+		unfulfilled_effect = -20
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				can_set_ai_policy = yes
+				has_policy_flag = ai_full_rights
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = ai_full_rights }
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT"
+		title = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT"
+		unfulfilled_title = "GATEWAY_COVENANT_SECULAR_GOVERNMENT"
+		desc = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_CONSECRATE_L_GATE"
+		title = "GATEWAY_COVENANT_CONSECRATE_L_GATE"
+		unfulfilled_title = "GATEWAY_COVENANT_NO_CONSECRATED_L_GATE"
+		desc = "GATEWAY_COVENANT_CONSECRATE_L_GATE_DESC"
+
+		unfulfilled_effect = -10
+		fulfilled_effect = 5
+
+		potential = {
+			exists = owner
+			owner = {
+				has_government = gov_spiritualist_gateway_worshiper
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_country_flag = DSO_consecrated_lgate
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_L_GATE_GUARDIAN"
+		title = "GATEWAY_COVENANT_L_GATE_GUARDIAN"
+		unfulfilled_title = "GATEWAY_COVENANT_NOT_L_GATE_GUARDIAN"
+		desc = "GATEWAY_COVENANT_L_GATE_GUARDIAN_DESC"
+
+		fulfilled_effect = 30
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_government = gov_spiritualist_gateway_worshiper
+			}
+			NOT = { has_global_flag = l_cluster_opened }
+		}
+		
+		modifier = {
+			country_unity_produces_mult = 0.25
+		}
+
+		trigger = {
+			owner = {
+				count_owned_megastructure = {
+					is_megastructure_type = lgate_base
+					count >= 3
+				}
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_L_GATE_SEALED"
+		title = "GATEWAY_COVENANT_L_GATE_SEALED"
+		unfulfilled_title = "GATEWAY_COVENANT_NO_L_GATE_SEALED"
+		desc = "GATEWAY_COVENANT_L_GATE_SEALED_DESC"
+
+		fulfilled_effect = 30
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			NOT = { has_global_flag = l_cluster_opened }
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_FLESH_IS_STRONG"
+		title = "GATEWAY_COVENANT_FLESH_IS_STRONG"
+		unfulfilled_title = "GATEWAY_COVENANT_FLESH_IS_WEAK"
+		desc = "GATEWAY_COVENANT_FLESH_IS_STRONG_DESC"
+
+		unfulfilled_effect = -30
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_the_flesh_is_weak
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					has_country_flag = flesh_weakened
+				}
+			}
+		}
+	}
+	
+	demand = { # "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
+		title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
+		unfulfilled_title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE_BANNED"
+		desc = "GATEWAY_COVENANT_HOLY_PILGRIMAGE_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+			owner = {
+				pop_percentage = {
+					percentage > 0.09
+					limit = { pop_has_ethic = ethic_spiritualist }
+				}
+			}
+			if = {
+				limit = {
+					Any_country = {
+						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
+						NOT = { is_same_empire = ROOT.OWNER }
+						NOT = { has_migration_access = ROOT.OWNER }
+						has_communications = ROOT.OWNER
+					}
+				}
+				always = yes
+			}
+			else = {
+				always = no
+			}
+		}
+
+		trigger = {
+			if = {
+				limit = {
+					Any_country = {
+						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
+						has_migration_access = ROOT.OWNER
+					}
+				}
+				always = yes
+			}
+			else = {
+				always = no
+			}
+		}
+	}
+
+	demand = { # "GATEWAY_COVENANT_NO_NANITES"
+		title = "GATEWAY_COVENANT_NO_NANITES"
+		unfulfilled_title = "GATEWAY_COVENANT_NANITES"
+		desc = "GATEWAY_COVENANT_NANITES_DESC"
+
+		unfulfilled_effect = -35
+		fulfilled_effect = 0.05
+
+		potential = {
+			exists = owner
+			has_global_flag = l_cluster_opened
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					has_technology = tech_harvester_advanced_nanites
+					has_technology = tech_advanced_nanites
+					has_technology = tech_machine_advanced_nanites
+				}
+			}
+		}
+	}
+
+	#Another Non-Covenant Empire owens an L-Gateway
+	#L-Gates have been Kept Closed
+	#Sending Missionaries to spread religion
+	#No diplomacy with nanites
+
+	demand = { # "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
+		title = "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
+		unfulfilled_title = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE"
+		desc = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE_DESC"
+		
+		unfulfilled_effect = -15
+		fulfilled_effect = 15
+
+		potential = {
+			exists = owner
+			NOT = { has_global_flag = l_cluster_opened }
+			if = {
+				limit = {
+					any_megastructure = {
+						is_megastructure_type = lgate_base
+						owner = { 
+							NOT = { has_government = gov_spiritualist_gateway_worshiper } 
+							has_communications = ROOT.OWNER
+						}
+					}
+				}
+				always = yes
+			}
+			else = {
+				always = no
+			}
+		}
+
+		trigger = {
+			if = {
+				limit = {
+					any_megastructure = {
+						is_megastructure_type = lgate_base
+						owner = { 
+							NOT = { has_government = gov_spiritualist_gateway_worshiper } 
+							has_communications = ROOT.OWNER
+						}
+					}
+				}
+				always = no
+			}
+			else = {
+				always = yes
+			}
+		}
+	}
+
+	on_create = {
+		pop_faction_event = { id = factions.1 }
+	}
+
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = promoted_spiritualist
+			}
+			remove_modifier = promoted_spiritualist
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_spiritualist
+			}
+			remove_modifier = suppressed_spiritualist
+		}
+	}
+
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				influence = 500
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { is_subject_type = dominion }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOT = { has_ethic = "ethic_fanatic_spiritualist" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					shift_ethic = ethic_spiritualist
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+							}
+							country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_spiritualist
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						owner = {
+							exists = ruler
+							ruler = {
+								leader_of_faction = traditionalist
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_spiritualist
+						has_modifier = promoted_spiritualist
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = promoted_spiritualist days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = promoted_spiritualist
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = promoted_spiritualist
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_spiritualist
+						has_modifier = promoted_spiritualist
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = suppressed_spiritualist days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = suppressed_spiritualist
+				}
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = suppressed_spiritualist
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}

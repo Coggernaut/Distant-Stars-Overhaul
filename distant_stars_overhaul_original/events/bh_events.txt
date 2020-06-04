@@ -716,7 +716,12 @@ country_event = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
 				}
+				add_modifier = {
+					modifier = "DSO_dessanu_heritage_world"
+					days = -1
+				}
 			}
+			owner_species = { set_pop_flag = DSO_dessanu_heritage }
 			start_lcluster_chain = no
 			random_system_within_border = { save_event_target_as = gateway_system }
 			ROOT = { set_country_flag = encountered_first_lgate }
