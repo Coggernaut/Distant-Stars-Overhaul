@@ -39,8 +39,11 @@ tech_repeatable_lcluster_clue = {
 
 	potential = {
 		has_country_flag = encountered_first_lgate
-		NOT = { has_country_flag = completed_lcluster_chain }
-		NOT = { has_origin = civic_gateway_worshiper }
+		NOR = {
+			has_country_flag = completed_lcluster_chain
+			has_origin = civic_gateway_worshiper
+			has_global_flag = l_cluster_opened
+		}
 	}
 
 	prereqfor_desc = {
