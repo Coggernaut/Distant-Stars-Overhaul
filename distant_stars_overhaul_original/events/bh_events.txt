@@ -857,12 +857,20 @@ country_event = {
 	location = root
 
 	is_triggered_only = yes
+	
+	trigger = {
+		any_planet_within_border = {
+			is_capital = no
+			is_planet_class = pc_gray_goo 	
+		}
+	}
 
 	option = {
 		name = harvester_grey_goo_planet.1.a
 		add_resource = { nanites = 50 }
 		random_planet_within_border = {
 			limit = { 
+				is_capital = no
 				is_planet_class = pc_gray_goo 	
 			}
 			custom_tooltip = terraforming_candidate

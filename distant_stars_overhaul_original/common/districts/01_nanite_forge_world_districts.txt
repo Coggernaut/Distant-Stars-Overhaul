@@ -4,13 +4,13 @@ dso_district_nexus = {
 
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }
-			uses_district_set = dso_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
-			uses_district_set = dso_nanite_forgeworld
+		uses_district_set = dso_nanite_forgeworld
 	}
 
 	allow = {
