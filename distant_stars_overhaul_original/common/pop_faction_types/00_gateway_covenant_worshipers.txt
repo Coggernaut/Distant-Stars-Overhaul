@@ -21,9 +21,11 @@ gateway_covenant = {
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		count_owned_pops = {
 			count > 4
-			has_pop_flag = DSO_dessanu_heritage
-			pop_has_ethic = ethic_spiritualist
-		}
+			limit = {
+				species = { has_species_flag = DSO_dessanu_heritage }
+				pop_has_ethic = ethic_spiritualist
+			}
+        }
 	}
 
 	parameters = {

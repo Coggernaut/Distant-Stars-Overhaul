@@ -1,5 +1,6 @@
 dso_district_nexus = {
 	base_buildtime = 480
+	icon = district_nanite_forgeworld_nexus
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
@@ -221,7 +222,7 @@ district_forgeworld_bio_reactor = {
 
 dso_district_generator_uncapped = {
 	base_buildtime = 240
-	icon = district_generator
+	icon = district_nanite_forgeworld_generator
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
