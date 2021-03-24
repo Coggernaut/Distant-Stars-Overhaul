@@ -1,4 +1,4 @@
-version="2.5"
+version="2.7"
 tags={
 	"Overhaul"
 	"Events"
@@ -12,5 +12,7 @@ tags={
 	"Gameplay"
 	"Galaxy Generation"
 }
-name="Nanite Machines & Distant Stars Overhaul"
-supported_version="2.5.1"
+name="Harvester Nanites Origin & Distant Stars Overhaul"
+picture="thumbnail.png"
+supported_version="2.8.*"
+remote_file_id="1971940221"

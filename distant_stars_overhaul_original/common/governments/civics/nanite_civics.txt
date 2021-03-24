@@ -77,7 +77,7 @@ civic_gateway_worshiper = {
 	picture = GFX_origin_gateway_guardian
 	icon = "gfx/interface/icons/origins/origins_gateway.dds"
 	is_origin = yes
-	max_once_global = yes
+	max_once_global = no
 	description = "civic_gateway_worshiper_effects"
 	playable = { 
 		host_has_dlc = "Distant Stars Story Pack" 
@@ -104,6 +104,9 @@ civic_gateway_worshiper = {
 				value = ethic_fanatic_spiritualist
 			}
 		}
+	}
+	modifier = {
+		damage_vs_country_type_gray_goo_mult = 0.05
 	}
 	modification = no
 	random_weight = {

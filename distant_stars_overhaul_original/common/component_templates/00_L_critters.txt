@@ -142,7 +142,8 @@ weapon_component_template = {
 	projectile_gfx = "space_whale_weapon"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_shield }
-		
+	hidden = yes
+	
 	component_set = "SPACE_WHALE_WEAPON_1"
 	prerequisites = { "tech_space_whale_weapon_1" }
 	resources = {
@@ -171,7 +172,8 @@ weapon_component_template = {
 	projectile_gfx = "space_amoeba_weapon"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
-
+	hidden = yes
+	
 	resources = {
 		category = ship_components
 		cost = {
@@ -191,7 +193,8 @@ weapon_component_template = {
 	projectile_gfx = "small_space_amoeba_weapon"
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
-
+	hidden = yes
+	
 	resources = {
 		category = ship_components
 		cost = {
@@ -214,6 +217,7 @@ strike_craft_component_template = {
 			alloys = 60
 		}
 	}
+	hidden = yes
 
 	count = @count
 	regeneration_per_day = @regen

@@ -297,7 +297,7 @@ planet_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				has_country_flag = avoid_harvesting_nanite_gaia_worlds
+				OWNER = { has_country_flag = avoid_harvesting_nanite_gaia_worlds }
 			}
 		}
 		hidden_effect = {
@@ -725,6 +725,24 @@ country_event = {
 			start_lcluster_chain = no
 			random_system_within_border = { save_event_target_as = gateway_system }
 			ROOT = { set_country_flag = encountered_first_lgate }
+			if = { 
+				limit = { 
+					ROOT = { 
+						has_country_flag = is_cult_of_the_gateway_flag 
+						is_ai = yes
+					}
+				}
+				ROOT = {
+					if = { 
+						limit = { 
+							has_technology = tech_starbase_2
+							NOT = { has_technology = tech_starbase_3 } 
+						}
+						give_technology = { tech = tech_starbase_3 message = no }
+					}
+				}
+				#random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
+			}
 		}
 		random_system_within_border = {
 			if = {
@@ -857,12 +875,20 @@ country_event = {
 	location = root
 
 	is_triggered_only = yes
+	
+	trigger = {
+		any_planet_within_border = {
+			is_capital = no
+			is_planet_class = pc_gray_goo 	
+		}
+	}
 
 	option = {
 		name = harvester_grey_goo_planet.1.a
 		add_resource = { nanites = 50 }
 		random_planet_within_border = {
 			limit = { 
+				is_capital = no
 				is_planet_class = pc_gray_goo 	
 			}
 			custom_tooltip = terraforming_candidate
