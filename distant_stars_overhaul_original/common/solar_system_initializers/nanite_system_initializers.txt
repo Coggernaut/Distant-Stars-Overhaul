@@ -405,13 +405,12 @@ dessanu_war_system = {
 			type = nanite_habitat_0
 			orbit_angle = 120
 			orbit_distance = 5
-			location = event_target:shattered_planet_habitat_target
+			planet = event_target:shattered_planet_habitat_target
 		}
 		spawn_megastructure = {
 			type = gateway_ruined
 			orbit_angle = 60
 			orbit_distance = 150
-			location = THIS
 		}
 	}
 
