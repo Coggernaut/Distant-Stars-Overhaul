@@ -20,12 +20,11 @@ tech_lgate_activation = {
 			desc = lgate_activation_desc
 		}
 	}
-	
+
 	weight_modifier = {
 		factor = 0
 	}
 }
-
 
 tech_repeatable_lcluster_clue = {
 	area = engineering
@@ -52,12 +51,12 @@ tech_repeatable_lcluster_clue = {
 			desc = tech_repeatable_lcluster_clue_desc
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 1.00
 			NOT = { has_origin = civic_gateway_pursuer }
-			
+
 		}
 		modifier = {
 			factor = 100.00
@@ -104,7 +103,7 @@ tech_repeatable_nanite_technology_insight = {
 		}
 	}
 	is_reverse_engineerable = yes
-	
+
 	ai_weight = {
 		factor = 1
 		modifier = {
@@ -130,7 +129,7 @@ tech_nanite_technology_mastery = {
 	weight = 0
 
 	#potential = {
-	#	OR = {	
+	#	OR = {
 	#		has_country_flag = completed_nanite_technology_mastery_chain
 	#		has_country_flag = lcluster_opener
 	#	}
@@ -142,12 +141,12 @@ tech_nanite_technology_mastery = {
 			desc = tech_nanite_technology_mastery_desc
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 1.00
 			NOT = { has_origin = civic_gateway_pursuer }
-			
+
 		}
 	}
 }
@@ -160,12 +159,12 @@ tech_harvester_advanced_nanites = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
-	
+
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
 	}
-	
-	prerequisites = { "tech_nanite_technology_mastery" } 
+
+	prerequisites = { "tech_nanite_technology_mastery" }
 
 	potential = {
 		OR = {
@@ -185,7 +184,7 @@ tech_harvester_advanced_nanites = {
 			desc = tech_advanced_nanite_factory_nanite_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		modifier = {
 			factor = 2.00
@@ -205,7 +204,7 @@ tech_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
+
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
 	}
@@ -216,23 +215,23 @@ tech_advanced_nanites = {
 		NOT = { has_authority = auth_machine_intelligence }
 		NOT = { has_authority = auth_hive_mind }
 	}
-	
-	prerequisites = { "tech_nanite_technology_mastery" } 
-	
+
+	prerequisites = { "tech_nanite_technology_mastery" }
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_advanced_nanites_effect
 			desc = tech_advanced_nanites_effect_desc
 		}
-		
+
 		custom = {
 			title = tech_advanced_nanite_factory_effect
 			desc = tech_advanced_nanite_factory_effect_desc
 		}
 	}
-	
-	
-	
+
+
+
 	ai_weight = {
 		modifier = {
 			factor = 0.25
@@ -244,8 +243,8 @@ tech_advanced_nanites = {
 					has_ethic = ethic_fanatic_spiritualist
 				}
 				NOR = {
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 			}
 		}
@@ -259,8 +258,8 @@ tech_advanced_nanites = {
 					has_ethic = ethic_fanatic_spiritualist
 				}
 				OR = {
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 			}
 		}
@@ -270,12 +269,12 @@ tech_advanced_nanites = {
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
 				OR = {
-					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
 				}
 				NOR = {
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_machine_worshipers }
 			}
@@ -286,12 +285,12 @@ tech_advanced_nanites = {
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
 				OR = {
-					has_ethic = ethic_spiritualist 
+					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
 				}
 				NOR = {
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				has_origin = civic_machine_worshipers
 			}
@@ -307,18 +306,18 @@ tech_machine_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
+
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
 	}
-	
-	prerequisites = { "tech_nanite_technology_mastery" } 
+
+	prerequisites = { "tech_nanite_technology_mastery" }
 
 	potential = {
 		NOT = { has_origin = civic_harvester_nanites }
 		NOT = { has_origin = civic_gateway_pursuer }
 		has_authority = auth_machine_intelligence
-	} 
+	}
 
 	prereqfor_desc = {
 		custom = {
@@ -330,7 +329,7 @@ tech_machine_advanced_nanites = {
 			desc = tech_advanced_nanite_factory_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 2.00
 		modifier = {
@@ -353,22 +352,22 @@ tech_nanite_clouds = {
 	category = { industry }
 	weight = 75
 	is_reverse_engineerable = no
-	
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_clouds_effect
 			desc = tech_nanite_clouds_effect_desc
 		}
 	}
-	
+
 	potential = {
-		OR = {	
+		OR = {
 			has_technology = tech_harvester_advanced_nanites
 			has_technology = tech_advanced_nanites
 			has_technology = tech_machine_advanced_nanites
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.75
 	}
@@ -383,14 +382,14 @@ tech_nanites_assembler_factory = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_clouds" } 
-	
+
+	prerequisites = { "tech_nanite_clouds" }
+
 	ai_weight = {
 		factor = 0.5
 		modifier = {
 			factor = 0
-			NOR = { 
+			NOR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -398,10 +397,10 @@ tech_nanites_assembler_factory = {
 		}
 		modifier = {
 			factor = 2
-			OR = { 
-				has_authority = auth_machine_intelligence 
-				has_ethic = ethic_materialists 
-				has_ethic = ethic_fanatic_materialists 
+			OR = {
+				has_authority = auth_machine_intelligence
+				has_ethic = ethic_materialists
+				has_ethic = ethic_fanatic_materialists
 			}
 		}
 	}
@@ -415,15 +414,15 @@ tech_orbital_nanite_shipyard = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanites_assembler_factory" } 
-	
-	
+
+	prerequisites = { "tech_nanites_assembler_factory" }
+
+
 	ai_weight = {
 		factor = 0.25
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -432,10 +431,10 @@ tech_orbital_nanite_shipyard = {
 		modifier = {
 			factor = 1
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -444,10 +443,10 @@ tech_orbital_nanite_shipyard = {
 		modifier = {
 			factor = 2
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites
@@ -467,7 +466,7 @@ tech_nanite_networking_protocols = {
 	category = { computing }
 	weight = 15
 	is_reverse_engineerable = no
-	
+
 	weight_modifier = {
 		factor = 1.5
 		modifier = {
@@ -491,22 +490,22 @@ tech_nanite_networking_protocols = {
 			}
 		}
 	}
-	
-	
-	prerequisites = { "tech_nanite_clouds" } 
-	
+
+
+	prerequisites = { "tech_nanite_clouds" }
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_networking_protocols_effect
 			desc = tech_nanite_networking_protocols_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.35
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -515,10 +514,10 @@ tech_nanite_networking_protocols = {
 		modifier = {
 			factor = 1
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -527,10 +526,10 @@ tech_nanite_networking_protocols = {
 		modifier = {
 			factor = 2
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites
@@ -550,21 +549,21 @@ tech_nanite_weaponry = {
 	category = { computing }
 	weight = 25
 	is_reverse_engineerable = no
-	
+
 	prerequisites = { "tech_orbital_nanite_shipyard" }
-	
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_weaponry_effect
 			desc = tech_nanite_weaponry_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.1
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -573,14 +572,14 @@ tech_nanite_weaponry = {
 		modifier = {
 			factor = 0.35
 			OR = {
-				has_ethic = ethic_materialists 
-				has_ethic = ethic_fanatic_materialists 
+				has_ethic = ethic_materialists
+				has_ethic = ethic_fanatic_materialists
 			}
 		}
 		modifier = {
 			factor = 1
 			AND = {
-				has_authority = auth_machine_intelligence 
+				has_authority = auth_machine_intelligence
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
 			}
@@ -588,7 +587,7 @@ tech_nanite_weaponry = {
 		modifier = {
 			factor = 2
 			AND = {
-				has_authority = auth_machine_intelligence 
+				has_authority = auth_machine_intelligence
 				OR = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
@@ -607,16 +606,16 @@ tech_nanite_torpedo = {
 	category = { propulsion }
 	weight = 25
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_weaponry" } 
-	
+
+	prerequisites = { "tech_nanite_weaponry" }
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_torpedo_effect
 			desc = tech_nanite_torpedo_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.75
 	}
@@ -631,9 +630,9 @@ tech_nanite_lancers = {
 	category = { voidcraft }
 	weight = 25
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_weaponry" } 
-	
+
+	prerequisites = { "tech_nanite_weaponry" }
+
 	ai_weight = {
 		factor = 0.75
 	}
@@ -648,21 +647,21 @@ tech_nanite_titanic_weapon = {
 	category = { particles }
 	weight = 15
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_lancers" } 
-	
+
+	prerequisites = { "tech_nanite_lancers" }
+
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_titanic_weapon_effect
 			desc = tech_nanite_titanic_weapon_effect_desc
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.1
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -671,10 +670,10 @@ tech_nanite_titanic_weapon = {
 		modifier = {
 			factor = 0.75
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -683,10 +682,10 @@ tech_nanite_titanic_weapon = {
 		modifier = {
 			factor = 2
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites
@@ -706,9 +705,9 @@ tech_nanite_interdictor = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_orbital_nanite_shipyard" } 
-	
+
+	prerequisites = { "tech_orbital_nanite_shipyard" }
+
 	potential = {
 		AND = {
 			has_technology = tech_nanite_networking_protocols
@@ -716,12 +715,12 @@ tech_nanite_interdictor = {
 			has_technology = tech_nanite_torpedo
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.1
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -730,10 +729,10 @@ tech_nanite_interdictor = {
 		modifier = {
 			factor = 0.5
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -742,10 +741,10 @@ tech_nanite_interdictor = {
 		modifier = {
 			factor = 1
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites
@@ -765,9 +764,9 @@ tech_nanite_mothership = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_interdictor" } 
-	
+
+	prerequisites = { "tech_nanite_interdictor" }
+
 	potential = {
 		AND = {
 			has_technology = tech_nanite_networking_protocols
@@ -775,12 +774,12 @@ tech_nanite_mothership = {
 			has_technology = tech_nanite_torpedo
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.1
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -789,10 +788,10 @@ tech_nanite_mothership = {
 		modifier = {
 			factor = 0.5
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -801,10 +800,10 @@ tech_nanite_mothership = {
 		modifier = {
 			factor = 1
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites
@@ -824,9 +823,9 @@ tech_nanite_core = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
-	prerequisites = { "tech_nanite_mothership" } 
-	
+
+	prerequisites = { "tech_nanite_mothership" }
+
 	potential = {
 		AND = {
 			has_technology = tech_nanite_networking_protocols
@@ -834,12 +833,12 @@ tech_nanite_core = {
 			has_technology = tech_nanite_torpedo
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0.1
 		modifier = {
 			factor = 0
-			OR = { 
+			OR = {
 				has_authority = auth_hive_mind
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
@@ -848,10 +847,10 @@ tech_nanite_core = {
 		modifier = {
 			factor = 0.5
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
@@ -860,10 +859,10 @@ tech_nanite_core = {
 		modifier = {
 			factor = 1
 			AND = {
-				OR = { 
-					has_authority = auth_machine_intelligence 
-					has_ethic = ethic_materialists 
-					has_ethic = ethic_fanatic_materialists 
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_ethic = ethic_materialists
+					has_ethic = ethic_fanatic_materialists
 				}
 				OR = {
 					has_origin = civic_harvester_nanites

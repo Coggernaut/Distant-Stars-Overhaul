@@ -42,7 +42,7 @@ event = {
 	show_sound = event_mystic_reveal
 	#can be triggered via outcome ship_events
 	is_triggered_only = yes
-	#mean_time_to_happen = { months = 2  }
+	#mean_time_to_happen = { months = 2 }
 	trigger = {
 		has_global_flag = l_cluster_opened
 		NOT = { has_country_flag = lcluster_opener }
@@ -134,7 +134,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 	#immediate = {
-	#observer_event = { id = observer.61  }
+	#observer_event = { id = observer.61 }
 	#}
 	option = {
 		name = GOOD
@@ -150,7 +150,7 @@ country_event = {
 	show_sound = event_mystic_reveal
 	#can be triggered via outcome ship_events
 	is_triggered_only = no
-	#mean_time_to_happen = { months = 2  }
+	#mean_time_to_happen = { months = 2 }
 	trigger = {
 		has_country_flag = lcluster_opener
 		NOT = { has_country_flag = distar_overhaul_opener_flag }
@@ -271,13 +271,11 @@ planet_event = {
 			#gaia_very_large
 			if = {
 				limit = {
-					AND = {
-						is_planet_class = pc_gaia
-						OR = {
-							planet_size = 25
-							planet_size = 24
-							planet_size = 23
-						}
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 25
+						planet_size = 24
+						planet_size = 23
 					}
 				}
 				ROOT = {
@@ -290,13 +288,11 @@ planet_event = {
 			#gaia_large
 			if = {
 				limit = {
-					AND = {
-						is_planet_class = pc_gaia
-						OR = {
-							planet_size = 22
-							planet_size = 21
-							planet_size = 20
-						}
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 22
+						planet_size = 21
+						planet_size = 20
 					}
 				}
 				ROOT = {
@@ -326,13 +322,11 @@ planet_event = {
 			#gaia_small
 			if = {
 				limit = {
-					AND = {
-						is_planet_class = pc_gaia
-						OR = {
-							planet_size = 16
-							planet_size = 15
-							planet_size = 14
-						}
+					is_planet_class = pc_gaia
+					OR = {
+						planet_size = 16
+						planet_size = 15
+						planet_size = 14
 					}
 				}
 				ROOT = {
@@ -421,23 +415,7 @@ planet_event = {
 			}
 			#very_small
 			if = {
-				limit = {
-					OR = {
-						planet_size = 13
-						planet_size = 12
-						planet_size = 11
-						planet_size = 10
-						planet_size = 9
-						planet_size = 8
-						planet_size = 7
-						planet_size = 6
-						planet_size = 5
-						planet_size = 4
-						planet_size = 3
-						planet_size = 2
-						planet_size = 1
-					}
-				}
+				limit = { planet_size < 14 }
 				ROOT = {
 					planet_event = {
 						id = bio_harvest_planet_stages.1
@@ -525,10 +503,8 @@ planet_event = {
 		#gaia_very_small
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					planet_size < 14
-				}
+				is_planet_class = pc_gaia
+				planet_size < 14
 			}
 			custom_tooltip = gaia_very_small_harvest.1.tooltip
 		}
@@ -578,7 +554,7 @@ planet_event = {
 		}
 		#very_small
 		if = {
-			limit = {  planet_size < 14 }
+			limit = { planet_size < 14 }
 			custom_tooltip = very_small_harvest.1.tooltip
 		}
 	}
@@ -775,7 +751,7 @@ country_event = {
 		}
 		#if = {
 		#	limit = {
-		#		ROOT = { has_origin = civic_harvester_nanites  }
+		#		ROOT = { has_origin = civic_harvester_nanites }
 		#	}
 		#	random_system_within_border = {
 		#		spawn_system = {
@@ -900,13 +876,11 @@ planet_event = {
 		#gaia_very_large
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 25
-						planet_size = 24
-						planet_size = 23
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
 				}
 			}
 			ROOT = {
@@ -919,13 +893,11 @@ planet_event = {
 		#gaia_large
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 22
-						planet_size = 21
-						planet_size = 20
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
 				}
 			}
 			ROOT = {
@@ -938,13 +910,11 @@ planet_event = {
 		#gaia_medium
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 19
-						planet_size = 18
-						planet_size = 17
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
 				}
 			}
 			ROOT = {

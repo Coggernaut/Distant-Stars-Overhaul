@@ -8,7 +8,6 @@
 
 @EdictDuration = 3600
 
-
 consecrate_lgate = {
 	length = @EdictDuration
 	resources = {
@@ -17,24 +16,24 @@ consecrate_lgate = {
 			influence = @Edict1Cost
 		}
 	}
-	
+
 	effect = {
 		set_timed_country_flag = {
-			flag = DSO_consecrated_lgate 
-			days = 3600 
+			flag = DSO_consecrated_lgate
+			days = 3600
 		}
 	}
 
 	modifier = {
 		country_base_unity_produces_add = 10
 	}
-	
+
 	potential = {
 		has_government = gov_spiritualist_gateway_worshiper
-		
+
 	}
-	
-	allow = {		
+
+	allow = {
 		custom_tooltip = {
 			fail_text = "requires_1_lgate"
 			any_owned_megastructure = {
@@ -43,7 +42,7 @@ consecrate_lgate = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		weight = @EdictHighPrio
 	}
@@ -61,13 +60,13 @@ lgate_guardian = {
 	modifier = {
 		country_unity_produces_mult = 0.50
 	}
-	
+
 	potential = {
 		has_government = gov_spiritualist_gateway_worshiper
-		
+
 	}
-	
-	allow = {		
+
+	allow = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
 			any_owned_megastructure = {
@@ -76,7 +75,7 @@ lgate_guardian = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		weight = @EdictHighPrio
 	}

@@ -1,5 +1,5 @@
 # ####################
-#  Planet killer beam?
+# Planet killer beam?
 # ####################
 
 #weapon_component_template = {
@@ -18,7 +18,6 @@
 #	planet_destruction_gfx = "neutron_planet_gfx"
 #}
 
-
 weapon_component_template = { # Nanobot Assimilation
 	key = "PLANET_KILLER_HARVESTER"
 	size = planet_killer
@@ -36,8 +35,7 @@ weapon_component_template = { # Nanobot Assimilation
 	size_restriction = { dso_nanite_core }
 
 	planet_destruction_gfx = "assimilation_nanobots_gfx"
-	
-	
+
 	resources = {
 		category = ship_components
 		cost = {
@@ -56,7 +54,6 @@ weapon_component_template = { # Nanobot Assimilation
 	}
 }
 
-
 strike_craft_component_template = {
 	key = "GG_STRIKE_CRAFT_NANITE"
 	size = LARGE
@@ -70,7 +67,7 @@ strike_craft_component_template = {
 			energy = 1
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -78,9 +75,9 @@ strike_craft_component_template = {
 			has_monthly_income = { resource = nanites value <= 0 }
 		}
 	}
-	
+
 	prerequisites = { "tech_nanite_lancers" }
-	
+
 	component_set = "GG_STRIKE_CRAFT_NANITE"
 	size_restriction = { dso_nanite_core dso_nanite_mothership }
 
@@ -89,36 +86,35 @@ strike_craft_component_template = {
 	count = 16
 	regeneration_per_day = 1.50
 	launch_time = 1
-	
+
 	damage = { min = 20 max = 40 }
 	cooldown = 5.0
 	range = 20
 	accuracy = 1.0
-	
+
 	health = 100
 	armor = 50
 	shield = 50
 	evasion = 0.80
-	
+
 	speed = 525
 	rotation_speed = 0.6
 	acceleration = 0.6
-	
+
 	shield_damage = 1.0
 	shield_penetration = 1
 	armor_penetration = 1
-	
+
 	ship_behavior = "bombers_behavior"
-	
+
 	weapon_type = instant
 	projectile_gfx = "strike_craft_laser_3"
-	
+
 	component_set = "GG_STRIKE_CRAFT_NANITE"
 	icon = "GFX_ship_part_nanite_strike_craft_fighter"
 	icon_frame = 1
 	tags = { weapon_type_strike_craft }
 }
-
 
 weapon_component_template = {
 	key = "GG_ENERGY_MISSILE_NANITE"
@@ -126,19 +122,18 @@ weapon_component_template = {
 	entity = "invisible_turret_entity"
 	type = missile
 	prio_projectile = yes
-	
+
 	prerequisites = { "tech_nanite_torpedo" }
-	
+
 	icon = "GFX_ship_part_nanite_torpedo"
 	icon_frame = 1
-	
+
 	component_set = "GG_ENERGY_MISSILE_NANITE"
 	size_restriction = { dso_nanite_core dso_nanite_mothership }
-	
+
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"
-	
-	
+
 	resources = {
 		category = ship_components
 		cost = {
@@ -157,30 +152,29 @@ weapon_component_template = {
 	}
 }
 
-
 weapon_component_template = {
 	key = "GG_BEAM_STATIC_NANITE"
 	size = titanic
 	entity = "invisible_turret_entity"
 	type = instant
 	prio_projectile = yes
-	
+
 	prerequisites = { "tech_nanite_titanic_weapon" }
-	
+
 	icon = "GFX_ship_part_global_pacifier"
 	icon_frame = 1
-	
+
 	firing_arc = 15.0
 	min_range = 30.0
 	static_rotation = yes
-	
+
 	tags = { weapon_type_kinetic }
-	
+
 	component_set = "GG_BEAM_STATIC_NANITE"
 	size_restriction = { dso_nanite_core }
-	
+
 	projectile_gfx = "gatebuilder_titan_weapon"
-	
+
 	resources = {
 		category = ship_components
 		cost = {

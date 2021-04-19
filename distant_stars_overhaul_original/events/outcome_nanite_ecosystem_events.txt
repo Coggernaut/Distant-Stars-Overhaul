@@ -7,7 +7,6 @@ namespace = graygoo
 namespace = harvest_nanite_gaia
 namespace = nanite_ecosystem_anomaly
 
-
 ### L-Tiyanki Gas Giant
 ship_event = {
 	id = nanite_ecosystem_anomaly.1
@@ -43,7 +42,6 @@ ship_event = {
 
 	option = { name = FASCINATING }
 }
-
 
 country_event = {
 	id = harvest_nanite_gaia.1
@@ -343,7 +341,6 @@ planet_event = {
 		hidden_effect = { planet_event = { id = uplift.7199 } }
 	}
 }
-
 
 ### Seismic Disturbances
 planet_event = {
@@ -1706,7 +1703,6 @@ fleet_event = {
 		set_global_flag = ldragon_country_starts_nanite_ecosystem_flag
 	}
 }
-
 
 
 

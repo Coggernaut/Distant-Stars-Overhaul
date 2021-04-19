@@ -100,14 +100,14 @@ colonizer = {
 		}
 		cost = {
 			trigger = {
-				from = { 
-					is_hive_empire = yes 
+				from = {
+					is_hive_empire = yes
 					is_lithoid_empire = no
 				}
 			}
 			alloys = 200
-			food = 500		
-		}		
+			food = 500
+		}
 		cost = {
 			trigger = {
 				from = {
@@ -118,12 +118,11 @@ colonizer = {
 			alloys = 200
 			minerals = 500
 		}
-		
+
 		upkeep = {
 			energy = @colony_upkeep_energy
 			alloys = @colony_upkeep_alloys
 		}
 	}
 }
-
 

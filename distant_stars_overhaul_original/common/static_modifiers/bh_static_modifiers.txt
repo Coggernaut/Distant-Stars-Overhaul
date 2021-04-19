@@ -1,33 +1,33 @@
 # Harvested Planet
 bh_harvested_modifier = {
-    icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
-    icon_frame = 2
+ icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
+ icon_frame = 2
 }
 
 bh_harvest_modifier = {
-    icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
-    icon_frame = 2
+ icon = "gfx/interface/icons/planet_modifiers/pm_bh_harvested.dds"
+ icon_frame = 2
 }
 
 DSO_dessanu_heritage_world = {
-    icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
-    icon_frame = 2
-	
+ icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+ icon_frame = 2
+
 	planet_immigration_pull_mult = 0.25
-	
+
 	important = yes
 }
 
 l_tiyanki_spawn_modifier = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_hallucinogen.dds"
 	icon_frame = 1
-	
+
 	important = yes
 }
 
 l_amoeba_spawn_modifier = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_hallucinogen.dds"
 	icon_frame = 1
-	
+
 	important = yes
 }
