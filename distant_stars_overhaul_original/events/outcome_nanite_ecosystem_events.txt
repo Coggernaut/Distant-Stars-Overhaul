@@ -18,14 +18,12 @@ ship_event = {
 	location = FROM
 
 	is_triggered_only = yes
-	
+
 	trigger = {
 		FROM = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
 	}
 
-	option = {
-		name = FASCINATING
-	}
+	option = { name = FASCINATING }
 }
 
 ### L-Amoeba Gas Giant
@@ -38,14 +36,12 @@ ship_event = {
 	location = FROM
 
 	is_triggered_only = yes
-	
+
 	trigger = {
 		FROM = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 	}
 
-	option = {
-		name = FASCINATING
-	}
+	option = { name = FASCINATING }
 }
 
 
@@ -56,7 +52,7 @@ country_event = {
 	picture = GFX_evt_gray_gooed_planet
 	location = FROM
 	hide_window = no
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -74,9 +70,7 @@ country_event = {
 	}
 	option = {
 		name = harvest_nanite_gaia.1.b
-		ai_chance = {
-			factor = 75
-		}
+		ai_chance = { factor = 75 }
 		FROM = {
 			change_pc = pc_nanite_gaia
 			clear_deposits = yes
@@ -92,16 +86,15 @@ country_event = {
 	picture = GFX_evt_gray_goo
 	location = FROMFROM
 	hide_window = no
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = harvest_nanite_gaia.2.a
 		trigger = {
 			ROOT = {
-				count_owned_ships = {
-					#limit = { is_ship_size = colossus }
-					is_ship_size = colossus
+				count_owned_ship = {
+					limit = { is_ship_size = colossus }
 					count > 0
 				}
 			}
@@ -117,8 +110,8 @@ country_event = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
 			ROOT = {
-				count_owned_ships = {
-					is_ship_size = colossus
+				count_owned_ship = {
+					limit = { is_ship_size = colossus }
 					count < 1
 				}
 			}
@@ -139,7 +132,7 @@ country_event = {
 	picture = GFX_evt_voidspawn
 	location = FROMFROMFROM
 	hide_window = no
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -155,16 +148,14 @@ planet_event = {
 	picture = GFX_evt_voidspawn
 	location = ROOT
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
-	trigger = {
-        is_planet_class = pc_bh_harvest
-    }
+
+	trigger = { is_planet_class = pc_bh_harvest }
 
 	option = {
 		name = harvest_nanite_gaia.31.a
-		ROOT = { 
+		ROOT = {
 			change_pc = pc_egg_cracked
 			hidden_effect = { clear_deposits = yes }
 			remove_modifier = "terraforming_candidate"
@@ -174,16 +165,14 @@ planet_event = {
 			space_owner = { set_country_flag = avoid_harvesting_nanite_gaia_worlds }
 			if = {
 				limit = {
-					any_country = {
-						is_country_type = lgaia_incarnation_country
-					}
+					any_country = { is_country_type = lgaia_incarnation_country }
 				}
 				event_target:l_gaia_incarnation = {
 					set_faction_hostility = {
-						target = FROM 
-						set_hostile = yes 
-						set_neutral = no 
-						set_friendly = no 
+						target = FROM
+						set_hostile = yes
+						set_neutral = no
+						set_friendly = no
 					}
 				}
 			}
@@ -193,16 +182,14 @@ planet_event = {
 					type = lgaia_incarnation_country
 					effect = {
 						save_global_event_target_as = l_gaia_incarnation
-						every_playable_country = {
-							establish_communications_no_message = prev
-						}
+						every_playable_country = { establish_communications_no_message = prev }
 						set_faction_hostility = {
-							target = FROM 
-							set_hostile = yes 
-							set_neutral = no 
-							set_friendly = no 
+							target = FROM
+							set_hostile = yes
+							set_neutral = no
+							set_friendly = no
 						}
-					}	
+					}
 				}
 			}
 			ROOT = {
@@ -260,9 +247,7 @@ ship_event = {
 		from = { has_star_flag = lcluster1 }
 	}
 
-	option = {
-		name = graygoo.550.a
-	}
+	option = { name = graygoo.550.a }
 }
 
 # Entering Nanite Ecosystem Cluster
@@ -281,23 +266,17 @@ ship_event = {
 		from = { has_star_flag = lcluster1 }
 	}
 
-	option = {
-		name = nanite_ecosystem_enter.550.a
-	}
+	option = { name = nanite_ecosystem_enter.550.a }
 }
 
 planet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.2
 	hide_window = yes
 	is_triggered_only = yes
-	
-	trigger = {
-		has_star_flag = nanite_ecosystem_presapient_system 
-	}
 
-	immediate = {
-		
-	}
+	trigger = { has_star_flag = nanite_ecosystem_presapient_system }
+
+	immediate = { 	 }
 }
 
 ship_event = {
@@ -309,11 +288,9 @@ ship_event = {
 	show_sound = event_default
 
 	is_triggered_only = yes
-	
+
 	trigger = {
-		From = {
-			has_star_flag = nanite_ecosystem_presapient_system 
-		}
+		From = { has_star_flag = nanite_ecosystem_presapient_system }
 	}
 
 	immediate = {
@@ -377,17 +354,19 @@ planet_event = {
 	show_sound = event_air_raid_siren
 	location = ROOT
 	trackable = yes
-	
-	#is_triggered_only = no
+
 	is_triggered_only = yes
 
-	trigger = {
+	pre_triggers = {
 		original_owner = yes
 		is_capital = no
 		has_ground_combat = no
 		is_homeworld = no
 		is_occupied_flag = no
 		has_owner = yes
+	}
+
+	trigger = {
 		num_pops > 0
 		NOR = {
 			has_global_flag = nanite_ecosystem_seismic_disturbance_global
@@ -468,7 +447,7 @@ planet_event = {
 		}
 		create_country = {
 			name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
-			species = last_created
+			species = last_created_species
 			type = adversary
 			ethos = random
 			auto_delete = no
@@ -552,9 +531,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		room = no_video_feed_room
-	}
+	picture_event_data = { room = no_video_feed_room }
 
 	option = {
 		name = colony.53.a
@@ -807,9 +784,7 @@ country_event = {
 		room = event_target:nanite_ecosystem_subterranean_empire.ruler
 	}
 
-	option = {
-		name = colony.58.a
-	}
+	option = { name = colony.58.a }
 }
 
 # Aliens Surface
@@ -852,9 +827,7 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		owner = { set_country_flag = nanite_ecosystem_subterranean_invasion_country }
@@ -1030,13 +1003,9 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_collapse
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_collapse }
 
 	option = {
 		name = colony.61.a
@@ -1067,9 +1036,7 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		set_planet_flag = nanite_ecosystem_seismic_disturbance_raid
@@ -1078,9 +1045,7 @@ planet_event = {
 
 	option = {
 		name = colony.62.a
-		tooltip = {
-			add_planet_devastation = 10
-		}
+		tooltip = { add_planet_devastation = 10 }
 	}
 }
 
@@ -1106,13 +1071,9 @@ planet_event = {
 		num_pops > 1
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_attack
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_attack }
 
 	option = {
 		name = colony.63.a
@@ -1135,18 +1096,16 @@ planet_event = {
 		has_owner = yes
 		is_homeworld = no
 		original_owner = yes
+		has_ground_combat = no
 	}
 
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_pocket }
-		has_ground_combat = no
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		set_planet_flag = nanite_ecosystem_seismic_disturbance_pocket
@@ -1157,14 +1116,10 @@ planet_event = {
 			traits = random
 			homeworld = planet
 		}
-		last_created_species = {
-			save_event_target_as = nanite_ecosystem_subterranean_species
-		}
+		last_created_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 	}
 
-	option = {
-		name = colony.64.a
-	}
+	option = { name = colony.64.a }
 	option = {
 		name = colony.64.b
 		trigger = {
@@ -1174,15 +1129,11 @@ planet_event = {
 		hidden_effect = {
 			create_pop = {
 				species = event_target:nanite_ecosystem_subterranean_species
-				ethos = {
-					ethic = "ethic_spiritualist"
-				}
+				ethos = { ethic = "ethic_spiritualist" }
 			}
 			create_pop = {
 				species = event_target:nanite_ecosystem_subterranean_species
-				ethos = {
-					ethic = "ethic_spiritualist"
-				}
+				ethos = { ethic = "ethic_spiritualist" }
 			}
 			last_created_pop = { set_citizenship_type = { type = citizenship_slavery cooldown = yes } }
 		}
@@ -1213,13 +1164,9 @@ planet_event = {
 		#planet_size < 25
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_expansion
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_expansion }
 
 	option = {
 		name = EXCELLENT
@@ -1253,14 +1200,10 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
-		hidden_effect = {
-			set_planet_flag = nanite_ecosystem_seismic_disturbance_gold
-		}
+		hidden_effect = { set_planet_flag = nanite_ecosystem_seismic_disturbance_gold }
 	}
 
 	option = {
@@ -1298,13 +1241,9 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_treasury
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_treasury }
 
 	option = {
 		name = EXCELLENT
@@ -1341,9 +1280,7 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		set_planet_flag = nanite_ecosystem_seismic_disturbance_quake
@@ -1353,9 +1290,7 @@ planet_event = {
 
 	option = {
 		name = UNFORTUNATE
-		tooltip = {
-			add_planet_devastation = 10
-		}
+		tooltip = { add_planet_devastation = 10 }
 	}
 }
 
@@ -1381,13 +1316,9 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_famine
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_famine }
 
 	option = {
 		name = colony.69.a
@@ -1445,13 +1376,9 @@ planet_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_gift
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_gift }
 
 	option = {
 		name = colony.70.a
@@ -1489,9 +1416,7 @@ planet_event = {
 		#free_housing > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		set_planet_flag = nanite_ecosystem_seismic_disturbance_refugees
@@ -1511,9 +1436,7 @@ planet_event = {
 		}
 		create_pop = {
 			species = event_target:nanite_ecosystem_subterranean_species
-			ethos = {
-				ethic = "ethic_spiritualist"
-			}
+			ethos = { ethic = "ethic_spiritualist" }
 		}
 		hidden_effect = {
 			change_variable = {
@@ -1561,13 +1484,9 @@ planet_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_anthropologists
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_anthropologists }
 
 	option = {
 		name = EXCELLENT
@@ -1604,9 +1523,7 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
 	immediate = {
 		set_planet_flag = nanite_ecosystem_seismic_disturbance_quake2
@@ -1615,9 +1532,7 @@ planet_event = {
 
 	option = {
 		name = colony.73.a
-		tooltip = {
-			add_planet_devastation = 10
-		}
+		tooltip = { add_planet_devastation = 10 }
 		every_owned_pop = {
 			add_modifier = {
 				modifier = "pop_angry_subterranean"
@@ -1627,9 +1542,7 @@ planet_event = {
 	}
 	option = {
 		name = colony.73.b
-		tooltip = {
-			add_planet_devastation = 10
-		}
+		tooltip = { add_planet_devastation = 10 }
 		hidden_effect = {
 			change_variable = {
 				which = "angry_subterraneans"
@@ -1662,13 +1575,9 @@ planet_event = {
 		num_pops > 0
 	}
 
-	mean_time_to_happen = {
-		months = 240
-	}
+	mean_time_to_happen = { months = 240 }
 
-	immediate = {
-		set_planet_flag = nanite_ecosystem_seismic_disturbance_tech
-	}
+	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_tech }
 
 	option = {
 		name = colony.74.a
@@ -1728,14 +1637,10 @@ planet_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		days = 20
-	}
+	mean_time_to_happen = { days = 20 }
 
 	immediate = {
-		hidden_effect = {
-			remove_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
-		}
+		hidden_effect = { remove_planet_flag = nanite_ecosystem_seismic_disturbance_friendly }
 	}
 
 	option = {
@@ -1756,9 +1661,7 @@ country_event = {
 
 	diplomatic = yes
 
-	picture_event_data = {
-		room = no_video_feed_room
-	}
+	picture_event_data = { room = no_video_feed_room }
 
 	immediate = {
 		random_country = {
@@ -1772,9 +1675,7 @@ country_event = {
 
 	option = {
 		name = colony.76.a
-		FROM = {
-			remove_modifier = "subterranean_civilization"
-		}
+		FROM = { remove_modifier = "subterranean_civilization" }
 		hidden_effect = {
 			FROM = {
 				planet_event = { id = nanite_ecosystem_colony.54 days = 35 random = 40 }
@@ -1787,11 +1688,11 @@ fleet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.1
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		NOT = { has_global_flag = ldragon_country_starts_nanite_ecosystem_flag }
 		any_country = {
-			#OWNER = { 
+			#OWNER = {
 				is_country_type = ldragon_country
 				#log = "L-Drake is owner and L-Drake"
 			#}
@@ -1812,34 +1713,25 @@ fleet_event = {
 country_event = {
 	id = distar_nanite_ecosystem.1
 
-    is_triggered_only = yes
-    hide_window = yes
-	
+	is_triggered_only = yes
+	hide_window = yes
+
 	trigger = {
-		NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }	
-    }
+		NOT = { has_global_flag = distar_nanite_ecosystem_created_flag }
+	}
 
 	immediate = {
-		log = "log message"
-		every_planet = {
+		# log = "log message"
+		every_system = {
 			limit = {
-				is_planet_class = pc_gray_goo
-				solar_system = {
-					OR = {
-						has_star_flag = lcluster1
-						has_star_flag = lcluster2
-						has_star_flag = lcluster3
-						has_star_flag = lcluster4
-						has_star_flag = lcluster5
-						has_star_flag = lcluster1b
-						has_star_flag = lcluster2b
-						has_star_flag = lcluster3b
-						has_star_flag = lcluster4b
-					}
-				}
+				has_star_flag = lcluster
+				any_system_planet = { is_planet_class = pc_gray_goo }
 			}
-			set_planet_flag = distar_nanite_ecosystem_planet_flag
-			change_pc = pc_nanite_gaia
+			every_system_planet = {
+				limit = { is_planet_class = pc_gray_goo }
+				set_planet_flag = distar_nanite_ecosystem_planet_flag
+				change_pc = pc_nanite_gaia
+			}
 		}
 		random_list = {
 			11 = {
@@ -1892,7 +1784,7 @@ country_event = {
 				}
 			}
 			11 = {
-				random_system = { 
+				random_system = {
 					limit = { has_star_flag = lcluster3b }
 					set_star_flag = nanite_ecosystem_presapient_system
 					log = "lcluster3b_nanite_ecosystem_presapient_system"
@@ -1914,32 +1806,22 @@ country_event = {
 country_event = {
 	id = distar_nanite_ecosystem.2
 
-    is_triggered_only = yes
-    hide_window = yes
+	is_triggered_only = yes
+	hide_window = yes
 
 	immediate = {
 		random_system = {
 			limit = {
-				OR = {
-					has_star_flag = lcluster2
-					has_star_flag = lcluster3
-					has_star_flag = lcluster4
-					has_star_flag = lcluster5
-					has_star_flag = lcluster1b
-					has_star_flag = lcluster2b
-					has_star_flag = lcluster3b
-					has_star_flag = lcluster4b
-				}
-				count_planets = {
+				has_star_flag = lcluster
+				NOT = { has_star_flag = lcluster1 }
+				count_system_planet = {
 					limit = { is_planet_class = pc_nanite_gaia }
 					count < 2
 				}
 				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
 			}
 			every_system_planet = {
-				limit = {
-					is_star = yes
-				}
+				limit = { is_star = yes }
 				change_pc = pc_t_star
 				create_ambient_object = {
 					type = "space_storm_2"
@@ -1954,9 +1836,7 @@ country_event = {
 				}
 			}
 			every_system_planet = {
-				limit = {
-					is_star = no
-				}
+				limit = { is_star = no }
 				remove_planet = yes
 			}
 			set_star_flag = nanite_ecosystem_elder_tiyanki_system
@@ -1968,23 +1848,15 @@ country_event = {
 country_event = {
 	id = distar_nanite_ecosystem.3
 
-    is_triggered_only = yes
-    hide_window = yes
+	is_triggered_only = yes
+	hide_window = yes
 
 	immediate = {
 		random_system = {
 			limit = {
-				OR = {
-					has_star_flag = lcluster2
-					has_star_flag = lcluster3
-					has_star_flag = lcluster4
-					has_star_flag = lcluster5
-					has_star_flag = lcluster1b
-					has_star_flag = lcluster2b
-					has_star_flag = lcluster3b
-					has_star_flag = lcluster4b
-				}
-				count_planets = {
+				has_star_flag = lcluster
+				NOT = { has_star_flag = lcluster1 }
+				count_system_planet = {
 					limit = { is_planet_class = pc_nanite_gaia }
 					count < 2
 				}
@@ -1992,9 +1864,7 @@ country_event = {
 				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
 			}
 			every_system_planet = {
-				limit = {
-					is_star = yes
-				}
+				limit = { is_star = yes }
 				change_pc = pc_t_star
 				create_ambient_object = {
 					type = "space_storm_1"
@@ -2009,9 +1879,7 @@ country_event = {
 				}
 			}
 			every_system_planet = {
-				limit = {
-					is_star = no
-				}
+				limit = { is_star = no }
 				remove_planet = yes
 			}
 			set_star_flag = nanite_ecosystem_elder_amoeba_system
@@ -2023,39 +1891,29 @@ country_event = {
 country_event = {
 	id = distar_nanite_ecosystem.4
 
-    is_triggered_only = yes
-    hide_window = yes
+	is_triggered_only = yes
+	hide_window = yes
 
 	immediate = {
-		
+
 		set_global_flag = distar_nanite_ecosystem_populated_flag
 		random_system = {
-			limit = { 
-				OR = {
-					has_star_flag = lcluster1
-					has_star_flag = lcluster2
-					has_star_flag = lcluster3
-					has_star_flag = lcluster4
-					has_star_flag = lcluster5
-					has_star_flag = lcluster1b
-					has_star_flag = lcluster2b
-					has_star_flag = lcluster3b
-					has_star_flag = lcluster4b
+			limit = {
+				has_star_flag = lcluster
+				NOR = {
+					has_star_flag = nanite_ecosystem_presapient_system
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system
+					has_star_flag = nanite_ecosystem_elder_amoeba_system
 				}
-				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
-				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
-			random_system_planet = { 
+			random_system_planet = {
 				limit = { is_planet_class = pc_nanite_gaia }
-				set_planet_flag = nanite_ecosystem_subterranean_planet 
+				set_planet_flag = nanite_ecosystem_subterranean_planet
 				log = "lcluster1_nanite_ecosystem_subterranean_planet"
 			}
 		}
 		random_system = {
-			limit = {
-				has_star_flag = nanite_ecosystem_elder_tiyanki_system
-			}
+			limit = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
 			save_global_event_target_as = L_Tiyanki_HomeSystem
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
@@ -2168,9 +2026,7 @@ country_event = {
 					}
 					effect = {
 						save_global_event_target_as = l_tiyanki_elder
-						every_playable_country = {
-							establish_communications_no_message = prev
-						}
+						every_playable_country = { establish_communications_no_message = prev }
 					}
 				}
 				create_fleet = {
@@ -2215,7 +2071,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 1
 				}
@@ -2226,11 +2081,11 @@ country_event = {
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_tiyanki_fleet_1 = yes } 
-					20 = { create_l_tiyanki_fleet_2 = yes } 
-					20 = { create_l_tiyanki_fleet_3 = yes } 
-					20 = { create_l_tiyanki_fleet_4 = yes } 
-					20 = { create_l_tiyanki_fleet_5 = yes } 
+					20 = { create_l_tiyanki_fleet_1 = yes }
+					20 = { create_l_tiyanki_fleet_2 = yes }
+					20 = { create_l_tiyanki_fleet_3 = yes }
+					20 = { create_l_tiyanki_fleet_4 = yes }
+					20 = { create_l_tiyanki_fleet_5 = yes }
 				}
 			}
 		}
@@ -2240,7 +2095,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 2
 				}
@@ -2251,11 +2105,11 @@ country_event = {
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_tiyanki_fleet_1 = yes } 
-					20 = { create_l_tiyanki_fleet_2 = yes } 
-					20 = { create_l_tiyanki_fleet_3 = yes } 
-					20 = { create_l_tiyanki_fleet_4 = yes } 
-					20 = { create_l_tiyanki_fleet_5 = yes } 
+					20 = { create_l_tiyanki_fleet_1 = yes }
+					20 = { create_l_tiyanki_fleet_2 = yes }
+					20 = { create_l_tiyanki_fleet_3 = yes }
+					20 = { create_l_tiyanki_fleet_4 = yes }
+					20 = { create_l_tiyanki_fleet_5 = yes }
 				}
 			}
 		}
@@ -2265,7 +2119,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 2
 				}
@@ -2276,19 +2129,17 @@ country_event = {
 			set_star_flag = l_tiyanki_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_tiyanki_fleet_1 = yes } 
-					20 = { create_l_tiyanki_fleet_2 = yes } 
-					20 = { create_l_tiyanki_fleet_3 = yes } 
-					20 = { create_l_tiyanki_fleet_4 = yes } 
-					20 = { create_l_tiyanki_fleet_5 = yes } 
+					20 = { create_l_tiyanki_fleet_1 = yes }
+					20 = { create_l_tiyanki_fleet_2 = yes }
+					20 = { create_l_tiyanki_fleet_3 = yes }
+					20 = { create_l_tiyanki_fleet_4 = yes }
+					20 = { create_l_tiyanki_fleet_5 = yes }
 				}
 			}
 		}
-		#Amoeba 
+		#Amoeba
 		random_system = {
-			limit = {
-				has_star_flag = nanite_ecosystem_elder_amoeba_system
-			}
+			limit = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			save_global_event_target_as = L_Amoeba_HomeSystem
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
@@ -2331,7 +2182,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			spawn_planet = {
 				class = pc_nanite_gas_giant
 				name = "Veronax"
@@ -2360,7 +2211,7 @@ country_event = {
 					orbit_angle = { min = 90 max = 270 }
 					orbit_distance = 10
 					size = 12
-			
+
 					init_effect = {
 						prevent_anomaly = yes
 						clear_deposits = yes
@@ -2373,7 +2224,7 @@ country_event = {
 					orbit_angle = { min = 90 max = 270 }
 					orbit_distance = 5
 					size = 9
-			
+
 					init_effect = {
 						prevent_anomaly = yes
 						clear_deposits = yes
@@ -2430,9 +2281,7 @@ country_event = {
 					}
 					effect = {
 						save_global_event_target_as = l_amoeba_elder
-						every_playable_country = {
-							establish_communications_no_message = prev
-						}
+						every_playable_country = { establish_communications_no_message = prev }
 					}
 				}
 				create_fleet = {
@@ -2477,7 +2326,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 1
 				}
@@ -2488,11 +2336,11 @@ country_event = {
 			set_star_flag = l_amoeba_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_amoeba_fleet_1 = yes } 
-					20 = { create_l_amoeba_fleet_2 = yes } 
-					20 = { create_l_amoeba_fleet_3 = yes } 
-					20 = { create_l_amoeba_fleet_4 = yes } 
-					20 = { create_l_amoeba_fleet_5 = yes } 
+					20 = { create_l_amoeba_fleet_1 = yes }
+					20 = { create_l_amoeba_fleet_2 = yes }
+					20 = { create_l_amoeba_fleet_3 = yes }
+					20 = { create_l_amoeba_fleet_4 = yes }
+					20 = { create_l_amoeba_fleet_5 = yes }
 				}
 			}
 		}
@@ -2502,7 +2350,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 2
 				}
@@ -2513,11 +2360,11 @@ country_event = {
 			set_star_flag = l_amoeba_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_amoeba_fleet_1 = yes } 
-					20 = { create_l_amoeba_fleet_2 = yes } 
-					20 = { create_l_amoeba_fleet_3 = yes } 
-					20 = { create_l_amoeba_fleet_4 = yes } 
-					20 = { create_l_amoeba_fleet_5 = yes } 
+					20 = { create_l_amoeba_fleet_1 = yes }
+					20 = { create_l_amoeba_fleet_2 = yes }
+					20 = { create_l_amoeba_fleet_3 = yes }
+					20 = { create_l_amoeba_fleet_4 = yes }
+					20 = { create_l_amoeba_fleet_5 = yes }
 				}
 			}
 		}
@@ -2527,7 +2374,6 @@ country_event = {
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type= hyperlane
-					uses_bypass= no
 					min_jumps = 1
 					max_jumps = 2
 				}
@@ -2538,36 +2384,34 @@ country_event = {
 			set_star_flag = l_amoeba_territory_flag
 			random_system_planet = {
 				random_list = {
-					20 = { create_l_amoeba_fleet_1 = yes } 
-					20 = { create_l_amoeba_fleet_2 = yes } 
-					20 = { create_l_amoeba_fleet_3 = yes } 
-					20 = { create_l_amoeba_fleet_4 = yes } 
-					20 = { create_l_amoeba_fleet_5 = yes } 
+					20 = { create_l_amoeba_fleet_1 = yes }
+					20 = { create_l_amoeba_fleet_2 = yes }
+					20 = { create_l_amoeba_fleet_3 = yes }
+					20 = { create_l_amoeba_fleet_4 = yes }
+					20 = { create_l_amoeba_fleet_5 = yes }
 				}
 			}
 		}
 		event_target:l_tiyanki_elder = {
 			set_faction_hostility = {
-				target = event_target:l_amoeba_elder 
-				set_hostile = yes 
-				set_neutral = no 
-				set_friendly = no 
+				target = event_target:l_amoeba_elder
+				set_hostile = yes
+				set_neutral = no
+				set_friendly = no
 			}
 		}
 		event_target:l_amoeba_elder = {
 			set_faction_hostility = {
-				target = event_target:l_tiyanki_elder 
-				set_hostile = yes 
-				set_neutral = no 
-				set_friendly = no 
+				target = event_target:l_tiyanki_elder
+				set_hostile = yes
+				set_neutral = no
+				set_friendly = no
 			}
 		}
 		random_system = {
-			limit = {
-				has_star_flag = nanite_ecosystem_presapient_system
-			}
+			limit = { has_star_flag = nanite_ecosystem_presapient_system }
 			log = "Picking System for Pre Sapient"
-			random_system_planet = { 
+			random_system_planet = {
 				limit = { is_planet_class = pc_nanite_gaia }
 				set_planet_flag = upl_ongoing_nanite_ecosystem_planet
 				log = "Planet System for Pre Sapient"
@@ -2577,9 +2421,7 @@ country_event = {
 							name = random
 							class = "PRE_MAM"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2589,9 +2431,7 @@ country_event = {
 							name = random
 							class = "PRE_REP"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2601,9 +2441,7 @@ country_event = {
 							name = random
 							class = "PRE_AVI"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2613,9 +2451,7 @@ country_event = {
 							name = random
 							class = "PRE_ART"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2625,9 +2461,7 @@ country_event = {
 							name = random
 							class = "PRE_MOL"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2637,9 +2471,7 @@ country_event = {
 							name = random
 							class = "PRE_FUN"
 							portrait = random
-							traits = {
-								trait = random_presapient_trait
-							}
+							traits = { trait = random_presapient_trait }
 							homeworld = THIS
 							sapient = no
 						}
@@ -2647,7 +2479,7 @@ country_event = {
 				}
 				while = {
 					limit = {
-						count_pops = {
+						count_owned_pop = {
 							limit = { is_sapient = no }
 							count < 3
 						}
@@ -2658,15 +2490,3 @@ country_event = {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

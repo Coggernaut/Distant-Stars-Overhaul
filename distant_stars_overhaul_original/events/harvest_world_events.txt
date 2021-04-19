@@ -11,7 +11,7 @@ country_event = {
 	trackable = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		ROOT = { save_event_target_as = harvester_subterranean_planet_owner }
 		FROM = { set_planet_flag = harvest_disturbance }
@@ -104,7 +104,7 @@ planet_event = {
 		}
 		create_country = {
 			name = "NAME_Subterranean_Nation"
-			species = last_created
+			species = last_created_species
 			type = adversary
 			ethos = random
 			auto_delete = no
@@ -368,12 +368,7 @@ country_event = {
 						category = "backgrounds"
 						file = "new_dawn.dds"
 					}
-					colors={
-						"red"
-						"black"
-						"null"
-						"null"
-					}
+					colors={ "red" "black" "null" "null" }
 				}
 			}
 			last_created_country = {
@@ -771,12 +766,12 @@ planet_event = {
 		has_owner = yes
 		is_homeworld = no
 		original_owner = yes
+		has_ground_combat = no
 	}
 
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_pocket }
-		has_ground_combat = no
 		num_pops > 0
 	}
 

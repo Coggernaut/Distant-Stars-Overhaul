@@ -19,13 +19,13 @@ gateway_covenant = {
 	is_potential = {
 		years_passed > 10
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		count_owned_pop = {
 			count > 4
 			limit = {
 				species = { has_species_flag = DSO_dessanu_heritage }
 				pop_has_ethic = ethic_spiritualist
 			}
-        }
+		}
 	}
 
 	parameters = {
@@ -234,15 +234,16 @@ gateway_covenant = {
 			}
 			NOT = { has_global_flag = l_cluster_opened }
 		}
-		
-		modifier = {
-			country_unity_produces_mult = 0.25
-		}
+		# add_modifier = {
+		# 	modifier = {
+		# 		country_unity_produces_mult = 0.25
+		# 	}
+		# }
 
 		trigger = {
 			owner = {
 				count_owned_megastructure = {
-					is_megastructure_type = lgate_base
+					limit = { is_megastructure_type = lgate_base }
 					count >= 3
 				}
 			}
@@ -289,7 +290,7 @@ gateway_covenant = {
 			}
 		}
 	}
-	
+
 	demand = { # "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
 		title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
 		unfulfilled_title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE_BANNED"
@@ -371,7 +372,7 @@ gateway_covenant = {
 		title = "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
 		unfulfilled_title = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE"
 		desc = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE_DESC"
-		
+
 		unfulfilled_effect = -15
 		fulfilled_effect = 15
 
@@ -382,8 +383,8 @@ gateway_covenant = {
 				limit = {
 					any_megastructure = {
 						is_megastructure_type = lgate_base
-						owner = { 
-							NOT = { has_government = gov_spiritualist_gateway_worshiper } 
+						owner = {
+							NOT = { has_government = gov_spiritualist_gateway_worshiper }
 							has_communications = ROOT.OWNER
 						}
 					}
@@ -400,8 +401,8 @@ gateway_covenant = {
 				limit = {
 					any_megastructure = {
 						is_megastructure_type = lgate_base
-						owner = { 
-							NOT = { has_government = gov_spiritualist_gateway_worshiper } 
+						owner = {
+							NOT = { has_government = gov_spiritualist_gateway_worshiper }
 							has_communications = ROOT.OWNER
 						}
 					}
