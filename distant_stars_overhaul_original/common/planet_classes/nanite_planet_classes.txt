@@ -5,33 +5,33 @@ pc_nanite_habitat_shielded = {
 	enable_tilt = no
 	fixed_entity_scale = no
 	place_entity_on_planet_plane = no
-	entity_face_object = no 
+	entity_face_object = no
 	chance_of_ring = 0.0
 	planet_size = 25
 	moon_size = 6
 	ideal = yes
 	orbit_lines = no
 	has_colonization_influence_cost = no
-	
+
 	entity = "nanite_habitat_shielded_entity"
 	overlay_entity = "planet_shield_effect_entity"
-	
-	atmosphere_color 		= hsv { 0.25 0.9 0.8 }		
+
+	atmosphere_color 		= hsv { 0.25 0.9 0.8 }
 	atmosphere_intensity 	= 1.0
 	atmosphere_width 		= 1.2
 
 	min_distance_from_sun = 60
 	max_distance_from_sun = 80
 	spawn_odds = 0
-	
+
 	show_city = no
 	city_color_lut = "gfx/portraits/misc/colorcorrection_desert.dds"
-	
+
 	extra_orbit_size = 0
 	extra_planet_count = 0
-	
+
 	production_spawn_chance = 0.4
-	
+
 	colonizable = no
 	starting_planet = no
 }
@@ -44,17 +44,17 @@ pc_bh_harvest = {
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
 	atmosphere_width 		= 1.2
-	
+
 	spawn_odds = 0
-	
+
 	extra_orbit_size = 0
 	extra_planet_count = 0
-	
+
 	chance_of_ring = 0.2
-	
+
 	planet_size = { min = 12 max = 25 }
 	moon_size = { min = 6 max = 10 }
-	
+
 	colonizable = no
 	starting_planet = no
 	show_city = no
@@ -68,22 +68,21 @@ pc_bh_harvest_colony = {
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
 	atmosphere_width 		= 1.2
-	
+
 	spawn_odds = 0
-	
+
 	extra_orbit_size = 0
 	extra_planet_count = 0
-	
+
 	chance_of_ring = 0.2
-	
+
 	planet_size = { min = 12 max = 25 }
 	moon_size = { min = 6 max = 10 }
-	
+
 	colonizable = yes
 	starting_planet = no
 	show_city = no
 }
-
 
 pc_bh_harvested = {
 	entity = "harvest_planet_entity"
@@ -93,17 +92,17 @@ pc_bh_harvested = {
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
 	atmosphere_width 		= 1.2
-	
+
 	spawn_odds = 0
-	
+
 	extra_orbit_size = 0
 	extra_planet_count = 0
-	
+
 	chance_of_ring = 0.2
-	
+
 	planet_size = { min = 12 max = 25 }
 	moon_size = { min = 6 max = 10 }
-	
+
 	colonizable = no
 	starting_planet = no
 	show_city = no
@@ -114,36 +113,36 @@ pc_nanite_forgeworld = {
 	entity_scale = @planet_standard_scale
 	#picture = pc_ai	#The is in the machienworlds data
 	#tile_set = pc_ai	#the location to define these may have moved here
-	
+
 	icon_frame = 11
 
 	atmosphere_color 		= hsv { 0.19 0.45 0.9 }
 	atmosphere_intensity 	= 0.1
 	atmosphere_width 		= 1.2
-	
+
 	city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
-	
+
 	min_distance_from_sun = 40
 	max_distance_from_sun = 1000
-	
+
 	modifier = {
 		job_replicator_add = 3
 		planet_housing_add = 20
 		planet_pops_robotics_upkeep_mult = -0.30
 	}
-	
-	#is_artificial_planet = yes  #Doesn't appear to be used anymore
-	
+
+	#is_artificial_planet = yes #Doesn't appear to be used anymore
+
 	spawn_odds = 0
 	extra_orbit_size = 1
 	extra_planet_count = 2
-	
+
 	can_be_moon = no
 	chance_of_ring = 0.0
-	
+
 	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
 	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
-	
+
 	colonizable = yes
 	district_set = dso_nanite_forgeworld
 	starting_planet = no
@@ -154,13 +153,13 @@ pc_nanite_gaia = {
 	entity = "gaia_planet"
 	entity_scale = @planet_standard_scale
 	icon_frame = 8
-	
+
 	atmosphere_color 		= hsv { 0.58	0.3 0.7 }
 	atmosphere_intensity 	= 1.0
 	atmosphere_width 		= 0.5
-	
+
 	city_color_lut = "gfx/portraits/misc/colorcorrection_tropical.dds"
-	
+
 	modifier = {
 		planet_jobs_produces_mult = 0.10
 		biological_pop_happiness = 0.10
@@ -170,21 +169,21 @@ pc_nanite_gaia = {
 		planet_orbital_bombardment_damage = -0.05
 		planet_clear_blocker_time_mult = 0.50
 		deposit_blockers_cost_mult = 0.35
-		
+
 	}
 
 	min_distance_from_sun = 60
 	max_distance_from_sun = 95
 	spawn_odds = 0
-	
+
 	extra_orbit_size = 0
 	extra_planet_count = 0
-	
+
 	chance_of_ring = 0.2
-	
+
 	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
 	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
-	
+
 	colonizable = yes
 	district_set = standard
 	ideal = yes
@@ -196,26 +195,26 @@ pc_nanite_gas_giant = {
 	entity = "gas_giant"
 	entity_scale = 14
 	icon_frame = 14
-	
+
 	atmosphere_color 		= hsv { 0.1 0.15 1.1 }		#DONE
 	atmosphere_intensity 	= 1.1
 	atmosphere_width 		= 0.5
-	
+
 	min_distance_from_sun = 40
 	max_distance_from_sun = 1000
-	
+
 	spawn_odds = 6
 	extra_orbit_size = 1
 	extra_planet_count = 2
-	
+
 	can_be_moon = no
 	chance_of_ring = 0.6
-	
+
 	planet_size = { min = 20 max = 30 }
 	moon_size = { min = 8 max = 15 }
-	
+
 	production_spawn_chance = 0.5
-	
+
 	space_monster_target = yes
 
 	colonizable = no

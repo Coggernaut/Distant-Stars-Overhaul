@@ -7,7 +7,7 @@ fleet_event = {
 	trigger = {
 		NOT = { has_global_flag = mimic_dessanu_country_spawned_flag }
 		any_country = { is_country_type = gate_builders }
-		#FROM = { has_star_flag = lcluster1  }
+		#FROM = { has_star_flag = lcluster1 }
 	}
 	immediate = {
 		# log = "Mimic Dessanu is owner"

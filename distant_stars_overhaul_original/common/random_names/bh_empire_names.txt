@@ -23,14 +23,14 @@ empire_name_parts_list = {
 	key = "bio_harvesters"
 	parts = {
 		"Cataloguers" = 1
-        "Harvesters" = 1
-        "Research Array" = 1
-        "Gatherers" = 1
-        "Reapers" = 1
-        "Archivers" = 1
-        "Prospectors" = 1
-        "Classifiers" = 1
-        "Index" = 1
+  "Harvesters" = 1
+  "Research Array" = 1
+  "Gatherers" = 1
+  "Reapers" = 1
+  "Archivers" = 1
+  "Prospectors" = 1
+  "Classifiers" = 1
+  "Index" = 1
 	}
 }
 

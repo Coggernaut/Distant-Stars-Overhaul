@@ -5,7 +5,7 @@
 @regen = 1
 
 # ######################
-#  Elder Whale
+# Elder Whale
 # ######################
 
 weapon_component_template = {
@@ -54,17 +54,17 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	hidden = yes
-	
+
 	modifier = {
 		ship_armor_add = @armor_6S
 	}
-	
+
 	component_set = "TIYANKI_ARMOR"
 	resources = {
 		category = ship_components
 		cost = {
 			alloys = @s_t6_cost
-		}		
+		}
 		upkeep = {
 			energy = @s_t6_upkeep_energy
 			alloys = @s_t6_upkeep_alloys
@@ -79,17 +79,17 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	hidden = yes
-	
+
 	modifier = {
 		ship_armor_add = @armor_6M
 	}
-	
+
 	component_set = "TIYANKI_ARMOR"
 	resources = {
 		category = ship_components
 		cost = {
 			alloys = @m_t6_cost
-		}		
+		}
 		upkeep = {
 			energy = @m_t6_upkeep_energy
 			alloys = @m_t6_upkeep_alloys
@@ -104,17 +104,17 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	hidden = yes
-	
+
 	modifier = {
 		ship_armor_add = @armor_6L
 	}
-	
+
 	component_set = "TIYANKI_ARMOR"
 	resources = {
 		category = ship_components
 		cost = {
 			alloys = @l_t6_cost
-		}		
+		}
 		upkeep = {
 			energy = @l_t6_upkeep_energy
 			alloys = @l_t6_upkeep_alloys
@@ -123,11 +123,10 @@ utility_component_template = {
 }
 
 # ####################
-#  Critter Weapons - Space Cloud
+# Critter Weapons - Space Cloud
 # ####################
 
 @critter_cost_value = 35
-
 
 ### Standard Whale Weapon
 
@@ -143,7 +142,7 @@ weapon_component_template = {
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_shield }
 	hidden = yes
-	
+
 	component_set = "SPACE_WHALE_WEAPON_1"
 	prerequisites = { "tech_space_whale_weapon_1" }
 	resources = {
@@ -155,9 +154,8 @@ weapon_component_template = {
 }
 
 # ####################
-#  Critter Weapons - Space Amoeba
+# Critter Weapons - Space Amoeba
 # ####################
-
 
 ### Standard Amoeba Weapon
 
@@ -173,7 +171,7 @@ weapon_component_template = {
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	hidden = yes
-	
+
 	resources = {
 		category = ship_components
 		cost = {
@@ -194,7 +192,7 @@ weapon_component_template = {
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_anti_armor }
 	hidden = yes
-	
+
 	resources = {
 		category = ship_components
 		cost = {

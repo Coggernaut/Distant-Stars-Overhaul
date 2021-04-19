@@ -18,7 +18,7 @@ nanite_factory_station_0 = {
 			energy = 100
 			alloys = 50
 		}
-		
+
 		produces = {
 			nanites = 10
 		}
@@ -26,13 +26,12 @@ nanite_factory_station_0 = {
 	construction_blocks_others = yes
 
 	potential = {
-		OR = {	
+		OR = {
 			has_technology = tech_harvester_advanced_nanites
 			has_technology = tech_advanced_nanites
 			has_technology = tech_machine_advanced_nanites
 		}
 	}
-
 
 	possible = {
 		custom_tooltip = {
@@ -93,10 +92,10 @@ nanite_factory_station_0 = {
 	}
 
 	 #root = system
-	 #from = country	
+	 #from = country
 	ai_weight = {
 		factor = 10
-	
+
 		modifier = {
 			factor = 0
 			starbase = { NOT = { has_starbase_size >= starbase_starport } }
@@ -116,7 +115,7 @@ nanite_factory_station_0 = {
 				NOT = { has_origin = civic_harvester_nanites }
 				NOT = { has_origin = civic_gateway_pursuer }
 			}
-			
+
 		}
 		modifier = {
 			factor = 1
@@ -129,13 +128,13 @@ nanite_factory_station_0 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
-	
+
 	on_build_complete = {
-	
-	
-	
+
+
+
 	}
 }

@@ -1,7 +1,7 @@
 @regen = 0.5
 
 # ######################
-#  Scavenger Bot Weapons
+# Scavenger Bot Weapons
 # ######################
 
 # ## Scavenger Bot Secondary Weapon
@@ -39,9 +39,8 @@ weapon_component_template = {
 	projectile_gfx = "scavenger_bot_main_weapon"
 }
 
-
 # ######################
-#  Gray Goo
+# Gray Goo
 # ######################
 
 strike_craft_component_template = {
@@ -90,7 +89,6 @@ strike_craft_component_template = {
 	icon_frame = 1
 	tags = { weapon_type_strike_craft }
 }
-
 
 weapon_component_template = {
 	key = "GG_ENERGY_MISSILE"

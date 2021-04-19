@@ -4,10 +4,9 @@
 #								# this = attacker (CB owner), from = defender (target country); default: { always = yes }
 #	destroy_if = { ... }	# trigger, evaluated daily to destroy CBs that have been granted via script ahead of expiration date;
 #								# this = attacker (CB owner), from = defender (target country); default: { always = no }
-#	show_notification = no/yes	# optional (default = yes), flag to control whether this CB will generate a notification (to avoid duplicate 
+#	show_notification = no/yes	# optional (default = yes), flag to control whether this CB will generate a notification (to avoid duplicate
 # 								# notification when a claim CB is generated)
 #}
-
 
 cb_lgate_containment = {
 	show_in_diplomacy = yes
@@ -23,11 +22,11 @@ cb_lgate_containment = {
 		OR = {
 			is_subject = no
 			overlord = { NOT = { is_same_value = from } }
-		}	
+		}
 		FROM = {
 			any_owned_megastructure = {
 				is_megastructure_type = lgate_base
-			}	
+			}
 		}
 		FROM = {
 			NOT = { has_civic = civic_gateway_worshiper }

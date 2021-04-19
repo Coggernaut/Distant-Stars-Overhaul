@@ -3,21 +3,21 @@ building_nanite_weapons_lab = {
 	base_cap_amount = 1
 
 	category = research
-	
+
 	potential = {
-		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = resort_colony }
 		NOT = { has_modifier = slave_colony }
 		NOT = { is_planet_class = pc_habitat }
 	}
-	
+
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+
 	planet_modifier = {
 		job_nanite_researcher_add = 1
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -28,15 +28,15 @@ building_nanite_weapons_lab = {
 			energy = 2
 		}
 	}
-	
+
 	triggered_desc = {
 		text = job_nanite_researcher_effect_desc
-	}	
-	
+	}
+
 	prerequisites = {
 		"tech_nanite_weaponry"
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -45,7 +45,6 @@ building_nanite_weapons_lab = {
 		}
 	}
 }
-
 
 #############
 # Nanite Machine building
@@ -56,16 +55,16 @@ building_machine_assembly_complex = {
 	can_build = no
 
 	category = pop_assembly
-	
+
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
-	
+
 	convert_to = {
 		building_robot_assembly_plant
 	}
-	
+
 	allow = {
 		OR = {
 			owner = { is_ai = no }
@@ -93,11 +92,11 @@ building_machine_assembly_complex = {
 			}
 		}
 	}
-	
+
 	planet_modifier = {
 		job_replicator_add = 3
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -109,19 +108,19 @@ building_machine_assembly_complex = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
-	
+
 	upgrades = {
 		building_nanite_assembly_plant
 	}
 
 	prerequisites = {
 		tech_mega_assembly
-	}	
-	
+	}
+
 	triggered_desc = {
 		text = job_replicator_effect_desc
-	}	
-	
+	}
+
 	ai_weight = {
 		weight = 50000
 		modifier = {
@@ -140,21 +139,21 @@ building_nanite_assembly_plant = {
 	can_build = no
 
 	category = pop_assembly
-	
+
 	prerequisites = {
 		tech_mega_assembly
 		"tech_nanites_assembler_factory"
 	}
-	
+
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
-	
+
 	convert_to = {
 		building_machine_assembly_complex
 	}
-	
+
 	allow = {
 		OR = {
 			owner = { is_ai = no }
@@ -182,11 +181,11 @@ building_nanite_assembly_plant = {
 			}
 		}
 	}
-	
+
 	planet_modifier = {
 		job_replicator_add = 5
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -201,8 +200,8 @@ building_nanite_assembly_plant = {
 
 	triggered_desc = {
 		text = job_replicator_effect_desc
-	}	
-	
+	}
+
 	ai_weight = {
 		weight = 50000
 		modifier = {
@@ -287,7 +286,7 @@ building_mineral_purification_plant = {
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
@@ -448,7 +447,7 @@ building_energy_grid = {
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
@@ -606,7 +605,7 @@ building_energy_nexus = {
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive

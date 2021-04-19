@@ -57,7 +57,7 @@ harvester_nanites = {
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = -20
 	defensive_pact_acceptance = -20
-	
+
 	advanced_start_chance = 50
 
 	weapon_preferences = weapon_type_energy
@@ -114,7 +114,7 @@ gateway_pursuers = {
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
 	defensive_pact_acceptance = -10
-	
+
 	advanced_start_chance = 50
 
 	weapon_preferences = weapon_type_energy
@@ -157,7 +157,6 @@ gateway_pursuers = {
 	}
 }
 
-
 gateway_worshipers = {
 	aggressiveness = 1
 	trade_willingness = 1.0	# But only with fellow machines
@@ -166,7 +165,7 @@ gateway_worshipers = {
 
 	military_spending = 2
 	colony_spending = 0.75
-	
+
 	federation_acceptance = 0
 	nap_acceptance = 0
 	commercial_pact_acceptance = 0

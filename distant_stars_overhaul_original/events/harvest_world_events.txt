@@ -1,6 +1,5 @@
 namespace = harvest_colony
 
-
 country_event = {
 	id = harvest_colony.50
 	title = "harvest_colony.50.name"
@@ -178,7 +177,6 @@ planet_event = {
 	}
 }
 
-
 country_event = {
 	id = harvest_colony.53
 	title = "harvest_colony.53.name"
@@ -223,7 +221,6 @@ country_event = {
 		}
 	}
 }
-
 
 planet_event = {
 	id = harvest_colony.54

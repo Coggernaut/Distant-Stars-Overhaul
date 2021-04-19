@@ -3,7 +3,6 @@ namespace = bio_harvest
 namespace = harvester_engine
 namespace = harvester_engine_planet_stages
 namespace = harvester_engine_planet_depleted
-
 #planet_event = {
 #	id = planet_destruction.1
 #	is_triggered_only = yes
@@ -13,49 +12,46 @@ namespace = harvester_engine_planet_depleted
 #		remove_planet = yes
 #	}
 #}
-
-# Add static war exhaustion for these planet destruction events with: 
+# Add static war exhaustion for these planet destruction events with:
 # add_static_war_exhaustion = {
 #				attacker = <country>		 				# attacker in this battle
 #				location = <planet>							# location for battle
 #				value_for_planet_destruction = <0.0-1.0>	# scale amount of WE added to this battle
 #			}
-
 # Cracked
 planet_event = {
 	id = harvester_engine.100
 	is_triggered_only = yes
 	hide_window = yes
-
 	immediate = {
 		if = {
-			limit = {
-				is_planet_class = pc_frozen
+			limit = { is_planet_class = pc_frozen }
+			from.owner = {
+				country_event = { id = harvester_engine.102 }
 			}
-			from.owner = { country_event = { id = harvester_engine.102 } }
 		}
 		if = {
 			limit = {
 				NOT = { is_planet_class = pc_ai }
 			}
-			from.owner = { country_event = { id = harvester_engine.101 } }
+			from.owner = {
+				country_event = { id = harvester_engine.101 }
+			}
 		}
-
 		# Contingency Machine World
 		if = {
-			limit = { 
-				is_planet_class = pc_ai 
+			limit = {
+				is_planet_class = pc_ai
 				NOT = { has_planet_flag = machine_lair }
 			}
 			set_planet_flag = destroyed_by_colossus
 			set_planet_flag = planet_cracked
 			planet_event = { id = crisis.2040 }
 		}
-
 		# Contingency Final Machine World
 		if = {
-			limit = { 
-				is_planet_class = pc_ai 
+			limit = {
+				is_planet_class = pc_ai
 				has_planet_flag = machine_lair
 			}
 			set_planet_flag = destroyed_by_colossus
@@ -63,7 +59,6 @@ planet_event = {
 			from.owner = { save_event_target_as = final_machine_world_destroyer }
 			planet_event = { id = crisis.2043 }
 		}
-
 		# Swarm Situation Log counter
 		if = {
 			limit = {
@@ -74,186 +69,188 @@ planet_event = {
 				add_event_chain_counter = {
 					event_chain = "prethoryn_scourge_chain"
 					counter = "infested_worlds"
-					amount = -1 
+					amount = -1
 				}
 				add_event_chain_counter = {
 					event_chain = "prethoryn_scourge_chain"
 					counter = "infested_worlds_cleansed"
-					amount = 1 
+					amount = 1
 				}
 			}
 		}
-		
 		# Exterminatus Achievement
 		if = {
 			limit = { is_capital = yes }
 			from.owner = { set_country_flag = exterminatus }
 		}
-		# Add war exhaustion to planet owner 
+		# Add war exhaustion to planet owner
 		if = {
-			limit = {
-				exists = owner
-			}
+			limit = { exists = owner }
 			owner = {
 				add_static_war_exhaustion = {
 					attacker = from.fleet.owner
 					location = root
-					value_for_planet_destruction = 1.0
+					value_for_planet_destruction = 1
 				}
-			}			
+			}
 		}
-		every_owned_pop = {
-			kill_pop = yes
-		}
+		every_owned_pop = { kill_pop = yes }
 		remove_all_buildings = yes
 		# destroy habitats and ringworlds
-		
 		#Actual Harvest world Stuff
-		
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 25
-						planet_size = 24
-						planet_size = 23
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.1 days = 21600 }}
-		}
-		#gaia_large
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 22
-						planet_size = 21
-						planet_size = 20
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.1 days = 20000 }}
-		}
-		#gaia_medium
-		if = {
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 19
-						planet_size = 18
-						planet_size = 17
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.1 days = 18000 }}
-		}
-		#gaia_small
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 16
-						planet_size = 15
-						planet_size = 14
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.1 days = 16000 }}
-		}
-		#gaia_very_small
-		if = {
-			limit = { 
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 13
-						planet_size = 12
-						planet_size = 11
-						planet_size = 10
-						planet_size = 9
-						planet_size = 8
-						planet_size = 7
-						planet_size = 6
-						planet_size = 5
-						planet_size = 4
-						planet_size = 3
-						planet_size = 2
-						planet_size = 1
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.1 days = 14000 }}
-		}
-		#very_large
-		if = { 
-			limit = { 
-				OR = { 
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 25
 					planet_size = 24
 					planet_size = 23
 				}
 			}
-			ROOT = {planet_event = { id = harvester_engine_planet_stages.1 days = 10800 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 21600
+				}
+			}
 		}
-		#large
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_large
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 22
 					planet_size = 21
 					planet_size = 20
 				}
 			}
-			ROOT = {planet_event = { id = harvester_engine_planet_stages.1 days = 10000 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 20000
+				}
+			}
 		}
-		#medium
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_medium
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 19
 					planet_size = 18
 					planet_size = 17
-					
 				}
 			}
-			ROOT = {planet_event = { id = harvester_engine_planet_stages.1 days = 9000 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 18000
+				}
+			}
 		}
-		#small
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 16
 					planet_size = 15
 					planet_size = 14
 				}
 			}
-			ROOT = {planet_event = { id = harvester_engine_planet_stages.1 days = 8000 }}
-		}
-		#very_small
-		if = { 
-			limit = { 
-				OR = { 
-					planet_size = 13
-					planet_size = 12
-					planet_size = 11
-					planet_size = 10
-					planet_size = 9
-					planet_size = 8
-					planet_size = 7
-					planet_size = 6
-					planet_size = 5
-					planet_size = 4
-					planet_size = 3
-					planet_size = 2
-					planet_size = 1
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 16000
 				}
 			}
-			ROOT = {planet_event = { id = harvester_engine_planet_stages.1 days = 7000 }}
+		}
+		#gaia_very_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				planet_size < 14
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 14000
+				}
+			}
+		}
+		#very_large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 10800
+				}
+			}
+		}
+		#large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 10000
+				}
+			}
+		}
+		#medium
+		if = {
+			limit = {
+				OR = {
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 9000
+				}
+			}
+		}
+		#small
+		if = {
+			limit = {
+				OR = {
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 8000
+				}
+			}
+		}
+		#very_small
+		if = {
+			limit = { planet_size < 14 }
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.1
+					days = 7000
+				}
+			}
 		}
 		every_country = {
 			limit = {
@@ -264,14 +261,16 @@ planet_event = {
 					has_civic = civic_machine_servitor
 				}
 			}
-			add_opinion_modifier = { modifier = opinion_harvested_a_world who = prev.owner }
+			add_opinion_modifier = {
+				modifier = opinion_harvested_a_world
+				who = prev.owner
+			}
 		}
 		hidden_effect = {
 			add_modifier = {
-                modifier = "bh_harvest_modifier"
-                days = -1
-            }
-            
+				modifier = "bh_harvest_modifier"
+				days = -1
+			}
 			destroy_colony = yes
 			change_pc = pc_bh_harvest
 			clear_deposits = yes
@@ -281,35 +280,29 @@ planet_event = {
 		ROOT = {
 			create_mining_station = { owner = ROOT }
 		}
-		
 	}
-	
 	option = {
 		name = OK
 		#gaia_very_large
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 25
-						planet_size = 24
-						planet_size = 23
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
 				}
 			}
 			custom_tooltip = gaia_very_large_harvest.1.tooltip
 		}
 		#gaia_large
-		if = { 
+		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 22
-						planet_size = 21
-						planet_size = 20
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
 				}
 			}
 			custom_tooltip = gaia_large_harvest.1.tooltip
@@ -317,59 +310,39 @@ planet_event = {
 		#gaia_medium
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 19
-						planet_size = 18
-						planet_size = 17
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
 				}
 			}
 			custom_tooltip = gaia_medium_harvest.1.tooltip
 		}
 		#gaia_small
-		if = { 
+		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 16
-						planet_size = 15
-						planet_size = 14
-					}
+				is_planet_class = pc_gaia
+				OR = {
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
 				}
 			}
 			custom_tooltip = gaia_small_harvest.1.tooltip
 		}
 		#gaia_very_small
 		if = {
-			limit = { 
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 13
-						planet_size = 12
-						planet_size = 11
-						planet_size = 10
-						planet_size = 9
-						planet_size = 8
-						planet_size = 7
-						planet_size = 6
-						planet_size = 5
-						planet_size = 4
-						planet_size = 3
-						planet_size = 2
-						planet_size = 1
-					}
-				}
+			limit = {
+				is_planet_class = pc_gaia
+				planet_size < 14
 			}
 			custom_tooltip = gaia_very_small_harvest.1.tooltip
 		}
 		#very_large
-		if = { 
-			limit = { 
-				OR = { 
+		if = {
+			limit = {
+				OR = {
 					planet_size = 25
 					planet_size = 24
 					planet_size = 23
@@ -378,9 +351,9 @@ planet_event = {
 			custom_tooltip = very_large_harvest.1.tooltip
 		}
 		#large
-		if = { 
-			limit = { 
-				OR = { 
+		if = {
+			limit = {
+				OR = {
 					planet_size = 22
 					planet_size = 21
 					planet_size = 20
@@ -389,21 +362,20 @@ planet_event = {
 			custom_tooltip = large_harvest.1.tooltip
 		}
 		#medium
-		if = { 
-			limit = { 
-				OR = { 
+		if = {
+			limit = {
+				OR = {
 					planet_size = 19
 					planet_size = 18
 					planet_size = 17
-					
 				}
 			}
 			custom_tooltip = medium_harvest.1.tooltip
 		}
 		#small
-		if = { 
-			limit = { 
-				OR = { 
+		if = {
+			limit = {
+				OR = {
 					planet_size = 16
 					planet_size = 15
 					planet_size = 14
@@ -412,24 +384,8 @@ planet_event = {
 			custom_tooltip = small_harvest.1.tooltip
 		}
 		#very_small
-		if = { 
-			limit = { 
-				OR = { 
-					planet_size = 13
-					planet_size = 12
-					planet_size = 11
-					planet_size = 10
-					planet_size = 9
-					planet_size = 8
-					planet_size = 7
-					planet_size = 6
-					planet_size = 5
-					planet_size = 4
-					planet_size = 3
-					planet_size = 2
-					planet_size = 1
-				}
-			}
+		if = {
+			limit = { planet_size < 14 }
 			custom_tooltip = very_small_harvest.1.tooltip
 		}
 	}
@@ -438,383 +394,379 @@ planet_event = {
 # ----------------------------------------------------------------------------------
 #								Harvest Stages
 # ----------------------------------------------------------------------------------
-
 # Depreciate Level Medium Stage_2
 planet_event = {
-    id = harvester_engine_planet_stages.1
-	
-	trigger = {
-        is_planet_class = pc_bh_harvest
-    }
-    
-    is_triggered_only = yes
-	
+	id = harvester_engine_planet_stages.1
+	trigger = { is_planet_class = pc_bh_harvest }
+	is_triggered_only = yes
 	immediate = {
 		#gaia_very_large
 		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 25
-						planet_size = 24
-						planet_size = 23
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 14400 }}
-		}
-		#gaia_large
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 22
-						planet_size = 21
-						planet_size = 20
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 13400 }}
-		}
-		#gaia_medium
-		if = {
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 19
-						planet_size = 18
-						planet_size = 17
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 12400 }}
-		}
-		#gaia_small
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 16
-						planet_size = 15
-						planet_size = 14
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 11400 }}
-		}
-		#gaia_very_small
-		if = {
-			limit = { 
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 13
-						planet_size = 12
-						planet_size = 11
-						planet_size = 10
-						planet_size = 9
-						planet_size = 8
-						planet_size = 7
-						planet_size = 6
-						planet_size = 5
-						planet_size = 4
-						planet_size = 3
-						planet_size = 2
-						planet_size = 1
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 10400 }}
-		}
-		#very_large
-		if = {
-			limit = { 
-				OR = { 
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 25
 					planet_size = 24
 					planet_size = 23
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 7200 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 14400
+				}
+			}
 		}
-		#large
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_large
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 22
 					planet_size = 21
 					planet_size = 20
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 6700 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 13400
+				}
+			}
 		}
-		#medium
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_medium
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 19
 					planet_size = 18
 					planet_size = 17
-					
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 6200 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 12400
+				}
+			}
 		}
-		#small
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 16
 					planet_size = 15
 					planet_size = 14
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 5700 }}
-		}
-		#very_small
-		if = { 
-			limit = { 
-				OR = { 
-					planet_size = 13
-					planet_size = 12
-					planet_size = 11
-					planet_size = 10
-					planet_size = 9
-					planet_size = 8
-					planet_size = 7
-					planet_size = 6
-					planet_size = 5
-					planet_size = 4
-					planet_size = 3
-					planet_size = 2
-					planet_size = 1
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 11400
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_stages.2 days = 5200 }}
 		}
-		
+		#gaia_very_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				planet_size < 14
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 10400
+				}
+			}
+		}
+		#very_large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 7200
+				}
+			}
+		}
+		#large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 6700
+				}
+			}
+		}
+		#medium
+		if = {
+			limit = {
+				OR = {
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 6200
+				}
+			}
+		}
+		#small
+		if = {
+			limit = {
+				OR = {
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 5700
+				}
+			}
+		}
+		#very_small
+		if = {
+			limit = { planet_size < 14 }
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_stages.2
+					days = 5200
+				}
+			}
+		}
 	}
-	
 	option = {
 		name = OK
-        custom_tooltip = bio_harvest.1.tooltip
-        hidden_effect = {
-            clear_deposits = yes
-            add_deposit = harvester_engine_harvested_planet_deposit_moderate
+		custom_tooltip = bio_harvest.1.tooltip
+		hidden_effect = {
+			clear_deposits = yes
+			add_deposit = harvester_engine_harvested_planet_deposit_moderate
 			add_deposit = d_nanosands
-        }
+		}
 	}
 }
 
 #Depreciate Level Low Stage_3
 planet_event = {
-    id = harvester_engine_planet_stages.2
-	
-	trigger = {
-        is_planet_class = pc_bh_harvest
-    }
-    
-    is_triggered_only = yes
-	
+	id = harvester_engine_planet_stages.2
+	trigger = { is_planet_class = pc_bh_harvest }
+	is_triggered_only = yes
 	immediate = {
 		#gaia_very_large
-		if = { 
+		if = {
 			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = { 
-						planet_size = 25
-						planet_size = 24
-						planet_size = 23
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 7200 }}
-		}
-		#gaia_large
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 22
-						planet_size = 21
-						planet_size = 20
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 6500 }}
-		}
-		#gaia_medium
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 19
-						planet_size = 18
-						planet_size = 17
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 6200 }}
-		}
-		#gaia_small
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 16
-						planet_size = 15
-						planet_size = 14
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 5700 }}
-		}
-		#gaia_very_small
-		if = { 
-			limit = {
-				AND = {
-					is_planet_class = pc_gaia
-					OR = {
-						planet_size = 13
-						planet_size = 12
-						planet_size = 11
-						planet_size = 10
-						planet_size = 9
-						planet_size = 8
-						planet_size = 7
-						planet_size = 6
-						planet_size = 5
-						planet_size = 4
-						planet_size = 3
-						planet_size = 2
-						planet_size = 1
-					}
-				}
-			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 5200 }}
-		}
-		#very_large
-		if = { 
-			limit = { 
-				OR = { 
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 25
 					planet_size = 24
 					planet_size = 23
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 3600 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 7200
+				}
+			}
 		}
-		#large
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_large
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 22
 					planet_size = 21
 					planet_size = 20
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 3350 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 6500
+				}
+			}
 		}
-		#medium
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_medium
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 19
 					planet_size = 18
 					planet_size = 17
-					
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 3100 }}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 6200
+				}
+			}
 		}
-		#small
-		if = { 
-			limit = { 
-				OR = { 
+		#gaia_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				OR = {
 					planet_size = 16
 					planet_size = 15
 					planet_size = 14
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 2850 }}
-		}
-		#very_small
-		if = { 
-			limit = { 
-				OR = { 
-					planet_size = 13
-					planet_size = 12
-					planet_size = 11
-					planet_size = 10
-					planet_size = 9
-					planet_size = 8
-					planet_size = 7
-					planet_size = 6
-					planet_size = 5
-					planet_size = 4
-					planet_size = 3
-					planet_size = 2
-					planet_size = 1
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 5700
 				}
 			}
-			ROOT = { planet_event = { id = harvester_engine_planet_depleted.1 days = 2600 }}
+		}
+		#gaia_very_small
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+				planet_size < 14
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 5200
+				}
+			}
+		}
+		#very_large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 25
+					planet_size = 24
+					planet_size = 23
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 3600
+				}
+			}
+		}
+		#large
+		if = {
+			limit = {
+				OR = {
+					planet_size = 22
+					planet_size = 21
+					planet_size = 20
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 3350
+				}
+			}
+		}
+		#medium
+		if = {
+			limit = {
+				OR = {
+					planet_size = 19
+					planet_size = 18
+					planet_size = 17
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 3100
+				}
+			}
+		}
+		#small
+		if = {
+			limit = {
+				OR = {
+					planet_size = 16
+					planet_size = 15
+					planet_size = 14
+				}
+			}
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 2850
+				}
+			}
+		}
+		#very_small
+		if = {
+			limit = { planet_size < 14 }
+			ROOT = {
+				planet_event = {
+					id = harvester_engine_planet_depleted.1
+					days = 2600
+				}
+			}
 		}
 		hidden_effect = {
-            clear_deposits = yes
-            add_deposit = harvester_engine_harvested_planet_deposit_small
+			clear_deposits = yes
+			add_deposit = harvester_engine_harvested_planet_deposit_small
 			add_deposit = d_nanosands
-        }
+		}
 	}
-	
 	option = {
 		name = OK
-        custom_tooltip = bio_harvest.1.tooltip
-		
+		custom_tooltip = bio_harvest.1.tooltip
 	}
 }
 
 # ----------------------------------------------------------------------------------
 #								Harvest Depleted
 # ----------------------------------------------------------------------------------
-
 # Depleted
 planet_event = {
-    id = harvester_engine_planet_depleted.1
-    
-    is_triggered_only = yes
-    
-    trigger = {
-        is_planet_class = pc_bh_harvest
-    }
-
+	id = harvester_engine_planet_depleted.1
+	is_triggered_only = yes
+	trigger = { is_planet_class = pc_bh_harvest }
 	option = {
 		name = OK
-        custom_tooltip = bio_harvest.1.tooltip
-        hidden_effect = {
+		custom_tooltip = bio_harvest.1.tooltip
+		hidden_effect = {
 			add_modifier = {
-                modifier = "bh_harvested_modifier"
-                days = -1
-            }
+				modifier = "bh_harvested_modifier"
+				days = -1
+			}
 			remove_modifier = "bh_harvest_modifier"
 			change_pc = pc_bh_harvested
-            clear_deposits = yes
+			clear_deposits = yes
 			add_deposit = d_nanosands
-        }
+		}
 	}
 }
 
 # ----------------------------------------------------------------------------------
 #								Messages
 # ----------------------------------------------------------------------------------
-
 country_event = {
 	id = harvester_engine.101
 	title = planet_destruction.101.name
@@ -822,10 +774,7 @@ country_event = {
 	picture = GFX_evt_exploding_planet
 	show_sound = event_super_explosion
 	location = from
-	
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOT = { has_country_flag = fired_cracker }
 		FROM = {
@@ -835,11 +784,7 @@ country_event = {
 			}
 		}
 	}
-
-	immediate = {
-		set_country_flag = fired_cracker
-	}
-
+	immediate = { set_country_flag = fired_cracker }
 	option = {
 		name = OK
 		trigger = {
@@ -849,7 +794,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
@@ -874,18 +818,11 @@ country_event = {
 	picture = GFX_evt_exploding_planet
 	show_sound = event_super_explosion
 	location = from
-	
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOT = { has_country_flag = fired_cracker }
 	}
-
-	immediate = {
-		set_country_flag = fired_cracker
-	}
-
+	immediate = { set_country_flag = fired_cracker }
 	option = {
 		name = OK
 		trigger = {
@@ -895,7 +832,6 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = planet_destruction.101.a.purifexter
 		trigger = {
