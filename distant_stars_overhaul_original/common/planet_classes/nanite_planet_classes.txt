@@ -129,6 +129,8 @@ pc_nanite_forgeworld = {
 		job_replicator_add = 3
 		planet_housing_add = 20
 		planet_pops_robotics_upkeep_mult = -0.30
+		pop_environment_tolerance = 0.0
+		planet_max_buildings_add = 12
 	}
 
 	#is_artificial_planet = yes #Doesn't appear to be used anymore
@@ -147,6 +149,8 @@ pc_nanite_forgeworld = {
 	district_set = dso_nanite_forgeworld
 	starting_planet = no
 	show_city = no
+	
+	carry_cap_per_free_district = @carry_cap_low
 }
 
 pc_nanite_gaia = {
