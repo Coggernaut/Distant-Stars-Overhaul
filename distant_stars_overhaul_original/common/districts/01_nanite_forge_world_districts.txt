@@ -1,3 +1,7 @@
+@nanite_district_cost = 300
+@base_cost = 300
+@nanite_city_cost = 500
+
 dso_district_nexus = {
 	base_buildtime = 480
 	icon = district_nanite_forgeworld_nexus
@@ -24,11 +28,10 @@ dso_district_nexus = {
 		district_city
 		district_hive
 	}
-
 	resources = {
 		category = planet_districts_cities
 		cost = {
-			minerals = @city_cost
+			minerals = @nanite_city_cost
 		}
 		upkeep = {
 			energy = 2
@@ -39,6 +42,7 @@ dso_district_nexus = {
 		planet_housing_add = 5
 		job_maintenance_drone_add = 3
 		planet_pop_assembly_mult = 0.05
+		planet_max_buildings_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -71,18 +75,6 @@ dso_district_nexus = {
 			planet_housing_add = 1
 		}
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 100
-			planet = {
-				planet_devastation < 1
-				years_passed > 10
-				free_housing < 4
-			}
-		}
-	}
 }
 
 district_nanite_forgeworld_industry = {
@@ -106,7 +98,7 @@ district_nanite_forgeworld_industry = {
 	resources = {
 		category = planet_districts
 		cost = {
-			minerals = 300
+			minerals = @nanite_district_cost
 			nanites = 5
 		}
 		upkeep = {
@@ -135,23 +127,7 @@ district_nanite_forgeworld_industry = {
 		}
 		text = job_fabricator_effect_desc
 	}	
-	
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 500
-			owner = {
-				has_monthly_income = {
-					resource = alloys
-					value < 500
-				}
-				has_monthly_income = {
-					resource = minerals
-					value > 99
-				}
-			}
-		}
-	}
+
 }
 
 district_forgeworld_bio_reactor = {
@@ -176,7 +152,7 @@ district_forgeworld_bio_reactor = {
 	resources = {
 		category = planet_districts
 		cost = {
-			minerals = 300
+			minerals = @nanite_district_cost
 			nanites = 5
 		}
 		#upkeep = {
@@ -205,19 +181,7 @@ district_forgeworld_bio_reactor = {
 		}
 		text = bio_processor_drone_effect_desc
 	}	
-	
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 500
-			owner = {
-				has_monthly_income = {
-					resource = energy
-					value < 100
-				}
-			}
-		}
-	}
+
 }
 
 dso_district_generator_uncapped = {
@@ -263,10 +227,92 @@ dso_district_generator_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
 			job_technician_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+			has_active_building = building_energy_nexus
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 1
 		}
 	}
 
@@ -277,34 +323,26 @@ dso_district_generator_uncapped = {
 		}
 		text = job_technician_drone_effect_desc
 	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
 
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 250
-			districts_build_district = yes
-			owner = {
-				has_monthly_income = {
-					resource = energy
-						value < 200
-				}
-			}
-		}
-		modifier = {
-			factor = 3
-			owner = {
-				has_monthly_income = {
-					resource = energy
-						value < 0
-				}
-			}
-		}
-		modifier = {
-			factor = 10
-			owner = {
-				has_deficit = energy
-			}
-		}
+	prerequisites = {
+		tech_power_plant_1
 	}
 
 	ai_resource_production = {
