@@ -1,0 +1,455 @@
+﻿l_english:
+ # Insight Events ---------------
+ nanite_technology_mastery_chain_title:1 "Una Valanga di Nanites "
+ nanite_technology_mastery_chain_desc:0 "Abbiamo scoperto che l'ammasso stellare appena fuori i confini della nostra galassia era abitata dalla civiltà dei §HDessanu§!. Questa società sembra essere collegata con le costruzioni create dali Nanites. Tuttavia, il §HDessanu Cluster§! (Ammasso dei Dessanau) Può essere reggiunto solo tramite i §HL-Gates§!, portali subspaziali presenti solo in alcuni sistemi.\n\nTQuesti portali sono stati aperti in precedenza, e la comprenzione del loro funzionamento pùò portare alla definitiva scoperta del §HNanite Technological Mastery§!."
+ nanite_insights:1 "Approfondimenti tecnologici sui nanites"
+ nanite_insight:1 "Approfondimenti tecnologici sui nanites"
+ add_nanite_insight:1 "$nanite_insight$ Guadagna: §G+1§!"
+ nanite_technology_mastery_chain:0 "Nanite Technological Mastery"
+ nanite_technology_mastery_finish_tooltip:0 "Finishes the §YNanite Technological Mastery§! event chain."
+
+ distar_overhaul_insight_start.1.name:0 "Nanite Technology Investe La Galassia"
+ distar_overhaul_insight_start.1.desc:0 "I nostri scienziati sono rimasti sconcertati quando gli L-Gates si sono aperti. Nonostante sia chiaro che la tecnologia dei nanites abbiano incontrollatamente inondato la nostra galassia, può essere decodificata. La vera domanda è, dovremmo farlo?"
+ distar_overhaul_insight_start.1.a:0 "La tecnologia dei nanite rimane un mistero, per ora."
+ start_nanite_technology_mastery_chain_tooltip:0 "inizio della catena di eventi §YNanite Technological Mastery§!."
+
+ distar_overhaul.2.name:0 "Approfondimento della tecnologia dei Nanites"
+ distar_overhaul.2.desc:0 "Dopo un'attento studio di ingegneria inversa del sistema di autoriparazione del robot spazzino, i nostri scienziati sono riusciti ad accrescere le loro conoscenze riguardo i Nanites."
+ distar_overhaul.2.a:0 "Very interesting!"
+
+ distar_overhaul_insight_finished.1.name:0 "Maestria dei Nanites"
+ distar_overhaul_insight_finished.1.desc:0 "I nostri scienziati hanno raggiunto il massimo livello di conoscenza possibile riguardo i Nanites, ulteriori ricerche sarebbero ridondanti al momento."
+ distar_overhaul_insight_finished.1.a:0 "Questi approfondimanti sono ridondanti."
+
+ distar_overhaul.10904.name:0 "Maestria dei Nanites"
+ distar_overhaul.10904.desc:0 "Questi approfondimanti nella tecnologia dei Nanites hanno permesso una vasta comprensione delle nano-macchine. È ora possibile replicare i macchinari padroneggiati dalla civiltà dei Dessanu. Fortunatamente non ci risulta alcuna minaccia scaturibile da queste macchine."
+ distar_overhaul.10904.a:0 "La tecnologia dei Nanites è sotto il nostro comando!"
+
+ # Events ---------------
+
+ nanite_ecosystem_uplift.6080.name:0 "ritrovate L-speci pre-sapient"
+ nanite_ecosystem_uplift.6080.desc:0 "Numerose specie in veloce evoluzione sono state individuate vicino all' L-cluster, Ma gli scienziati fuori [Root.GetName] non si aspettavano questo. Le L-Species native del sistema [From.GetName] hanno  compiuto un tentativo di padronanza dell'ambiente locale. Gli scienziati hanno osservato una proto-società tra i nativi, con la presenza di comportamenti sociali primitivi.\n\nL'ufficiale scientifico [Root.GetLeaderName] vuole condurre delle ricerche su queste L-specie Pre-Sapient. Hanno proposto di monitorare il loro sviluppo sociale e biologico in modo ravvicinato, e magari anche aiutarli nei limiti del possibile. Il L-Cluster ci ha lasciato molte domande e la natura delle specie viventi in esso è sempre più innaturale."
+ nanite_ecosystem_uplift.6081.name:0 "L-Species Uplift Eseguito con Successo"
+ nanite_ecosystem_uplift.6081.desc:0 "I nostri scienziati hanno portato avanti diverse modifiche ai genomi di [From.GetName]. Durante il processo di uplifting, gli organi delle L-specie Pre-Sapient tendevano ad avvizzirsi quando venivano separati. Gli scienziati temevano infatti che la teoria genetico-organica non potesse essere applicata al DNA sintetico. Comunque, dopo diversi tentativi, lo splicing è stato completato con successo e gli organismi sintetici hanno reagito positivamente al mutagene. È stato dopo l'uplifting che il nostro scienziato ha capito la biologia delle L-species. "
+ nanite_ecosystem_uplift.6081.a:0 "Abbiamo ancora molto da imparare dalle L-species e dalla loro origine."
+
+ nanite_ecosystem_enter.550.name:0 "Un ecosistema fiorente"
+ nanite_ecosystem_enter.550.desc:0 "Entrando nel sistema [From.GetName] nell' L-Cluster, gli scienziati a bordo del [Root.GetName] non si aspettavano di osservare che l' L-cluster sostiene un intero ecosistema fiorente di vita che i nostri scienziati hanno soprannominato §YL-Species§!. Le scansioni rivelano pianeti con condizioni di vita quasi perfette. Questi pianeti vengono ora denominati §YL-Gaia Worlds§!. Paradossalmente il sistema ha una quantità innaturalmente elevata di pianeti che sono stati frantumati oltre il limite di riconoscimento.\n\nIl nostro scienziato capo teorizza che l'L-cluster possa essere afflitto da pianeti canaglia, ma questa teoria è ancora dibattuta. La comunità scientifica è ansiosa di esplorare il cluster L e saperne di più su queste specie L. Anche se questo lascia ancora la domanda su chi o cosa abbia costruito gli L-Gate in primo luogo. "
+ nanite_ecosystem_enter.550.a:0 "Che ecosistema surreale!"
+
+ pc_nanite_gas_giant:0 "L-Gas Gigante"
+ pc_nanite_gas_giant_desc:0 "Pianeta gassoso con un'atmosfera composta principalmente da idrogeno ed elio che circonda un denso nucleo di vari gas. Anche se questo pianeta sembra avere una strana ecologia della L-specie fiorente all'interno della bassa pressione dell'atmosfera."
+
+ l_tiyanki_spawn_modifier:0 "L-Tiyanki Spawning Grounds"
+ l_tiyanki_spawn_modifier_desc:0 "Normalmente i Giganti L-Gas supportano solo le specie L a livello microscopico, ma questo ecosistema sembra prosperare con organismi su larga scala.\n\nPer questo motivo, il pianeta supporta una fiorente ecologia di L-Tiyanki che si genera nella parte superiore degli strati atmosferici."
+
+ nanite_ecosystem_anomaly.1.name:0 "Agglomerato di L-Tiyanki inusuale "
+ nanite_ecosystem_anomaly.1.desc:0 "Entrando nel sistema [FROM.GetName], gli scienziati a bordo di [ROOT.GetName] hanno trovato un'enorme L-specie simile a Tiyanki soprannominata L-Tiyanki Matriarch. La specie L-Tiyanki sembra orbitare attorno a un gigante gassoso, che si teorizza essere un terreno fertile di qualche tipo. \n\nA causa dello strano ecosistema di questi giganti gassosi, ora sono classificati come giganti gassosi. Lo studio di questi giganti di L-gas aumenterà notevolmente la nostra conoscenza della strana biologia delle L-specie."
+
+ l_amoeba_spawn_modifier:0 "L-Amobea Spawning Grounds"
+ l_amoeba_spawn_modifier_desc:0 "Normalmente i Giganti L-Gas supportano solo le specie L a livello microscopico, ma questo ecosistema sembra prosperare con organismi su vasta scala.\n\nPer questo motivo, il pianeta supporta una fiorente ecologia di L-Ameba che si genera nella parte superiore strati atmosferici."
+
+ nanite_ecosystem_anomaly.2.name:0 "Sciame di L-Ameba insolito"
+ nanite_ecosystem_anomaly.2.desc:0 "Entrando nel sistema [FROM.GetName], gli scienziati a bordo della [ROOT.GetName] hanno trovato un'enorme L-Specie simile a un'ameba soprannominata L-Amoeba Overlord. Le specie L-Amoeba sembrano orbitare attorno a un gigante gassoso, che si teorizza essere un luogo di riproduzione di qualche tipo.\n\nA causa dello strano ecosistema di questi giganti gassosi, ora sono classificati come giganti gassosi. Lo studio di questi giganti di L-gas aumenterà notevolmente la nostra conoscenza della strana biologia della L-specie."
+
+ L_Tiyanki_Herd:0 "L-Tiyanki Herd"
+ L_Progenitor:0 "L-Tiyanki Progenitor"
+ L_Tiyanki_Elder:0 "L-Tiyanki Elder"
+ L_Tiyanki_Cow:0 "L-Tiyanki Cow"
+ L_Tiyanki_Bull:0 "L-Tiyanki Bull"
+ L_Tiyanki_Calf:0 "L-Tiyanki Calf"
+ L_Great_Space_Organism:0 "L-Amobea Overlord"
+ L_Large_Space_Organism_Blue:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Blue:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Teal:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Teal:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Orange:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Orange:0 "L-Amobea Swarmling"
+ L_Large_Space_Organism_Zebra:0 "L-Amobea Mother"
+ L_Small_Space_Organism_Zebra:0 "L-Amobea Swarmling"
+
+ L_leviathan_01_elder_tiyanki:0 "L-Tiyanki"
+ L_space_whale_1:0 "L-Tiyanki"
+ L_space_whale_2:0 "L-Tiyanki"
+ L_space_whale_3:0 "L-Tiyanki"
+ L_space_amoeba:0 "L-Amobea"
+ L_space_amoeba_mother:0 "L-Amobea"
+ L_leviathan_01_elder_tiyanki_plural:0 "L-Tiyanki"
+ L_space_whale_1_plural:0 "L-Tiyanki"
+ L_space_whale_2_plural:0 "L-Tiyanki"
+ L_space_whale_3_plural:0 "L-Tiyanki"
+ L_space_amoeba_plural:0 "L-Amobea"
+ L_space_amoeba_mother_plural:0 "L-Amobea"
+
+ L_leviathan_01_elder_tiyanki_section:0 "L-Tiyanki Elder"
+ L_space_whale_1_section:0 "L-Tiyanki Cow"
+ L_space_whale_2_section:0 "L-Tiyanki Bull"
+ L_space_whale_3_section:0 "L-Tiyanki Calf"
+
+ L_space_amoeba_large_beige_blue:0 "Mother"
+ L_space_amoeba_small_beige_blue:0 "Swarmling"
+ L_space_amoeba_large_yellow_teal:0 "Mother"
+ L_space_amoeba_small_yellow_teal:0 "Swarmling"
+ L_space_amoeba_large_black_orange:0 "Mother"
+ L_space_amoeba_small_black_orange:0 "Swarmling"
+ L_space_amoeba_large_zebra_blue:0 "Mother"
+ L_space_amoeba_small_zebra_blue:0 "Swarmling"
+
+ nanite_forgeworld_lost.1:0 "Tutto è diventato polvere!"
+ nanite_forgeworld_lost.1.title:0 "Tutto è diventato polvere!"
+ nanite_forgeworld_lost.1.desc:0 "Quando i primi coloni arrivarono su [Root.Planet.GetName], l'intero pianeta iniziò a decadere in un mare di nanites. Poiché i nanites non avevano un nucleo centrale per controllarli, il terreno divenne rapidamente instabile. Come se fossero sbarcati nelle sabbie mobili, le nostre navi hanno iniziato ad affondare e sono stati emessi protocolli di emergenza per l'evacuazione."
+ nanite_forgeworld_lost.1.a:0 "Tirali fuori, ORA!"
+
+ bio_harvest.1.title:0 "Elaborazione del pianeta"
+ bio_harvest.1.desc:0 "Con l'acquisizione di §Y[From.GetName]§!, i droni sono pronti ad avviare i protocolli di colonizzazione o di acquisizione di materiale. All'inizio dei protocolli di acquisizione del materiale, tutto il materiale organico sarà catalogato, suddiviso e trattato in pacchetti di risorse ordinate. Quindi, dopo l'installazione di una stazione mineraria, le risorse saranno pronte per essere raccolte in massa."
+ bio_harvest.1.a:0 "Inizializzazione dei protocolli di acquisizione del materiale."
+ bio_harvest.1.b:0 "Inizializzazione protocolli di colonizzazione."
+ very_large_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo un deposito di risorse e ricerche. Ci aspettiamo che la biomassa di questo pianeta duri per circa §G60§! anni prima che sia completamente raccolto."
+ large_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo un deposito di risorse e ricerche. Ci aspettiamo che la biomassa di questo pianeta duri per circa §G60§! anni prima che sia completamente raccolto."
+ medium_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse materiali e ricerca. Ci aspettiamo che la biomassa di questo pianeta duri per circa §G50§! anni prima che sia completamente raccolto."
+ small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse materiali e ricerca. Ci aspettiamo che la biomassa di questo pianeta duri per circa §G46§! anni prima che sia completamente raccolto."
+ very_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse materiali e ricerca. Ci aspettiamo che la biomassa di questo pianeta duri per circa §G40§! anni prima che sia completamente raccolto."
+
+ gaia_very_large_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G120§! anni prima di essere completamente raccolto."
+ gaia_large_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G112§! anni prima di essere completamente raccolto."
+ gaia_medium_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G100§! anni prima di essere completamente raccolto."
+ gaia_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G92§! anni prima di essere completamente raccolto."
+ gaia_ ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G80§! anni prima di essere completamente raccolto."
+
+ harvester_grey_goo_planet.1.name:0 "Nanites intatti trovati su Ember!"
+ harvester_grey_goo_planet.1.desc:0 ""
+ harvester_grey_goo_planet.1.a:0 "Preparare un replicatore, presto coltiveremo un nuovo mondo!"
+ # Planets --------------
+ district_nanite_forgeworld_industry:0 "Fonderia di leghe"
+ district_nanite_forgeworld_industry_plural:0 "Fonderie di leghe"
+ district_nanite_forgeworld_industry_desc:0 "Nanite Forgeworlds trasforma regolarmente i minerali in leghe utili. Questi settori di Forgeworld sono chiamate Fonderie di Leghe. Le temperature sono così alte che gli organismi biologici le trovano invivibili."
+
+ d_nanites_deposit:0 "Nanite Forge"
+ d_nanites_deposit_desc:0 "Nel profondo del nucleo del pianeta risiede una gigantesca Nanite Forge. Questa fucina rilascia minuscole nano-macchine nell'atmosfera del pianeta che vengono utilizzate per creare strutture e risorse."
+
+ pc_bh_harvest:0 "Coltivazione del Mondo"
+ pc_bh_harvest_desc:0 "La biosfera di questo pianeta viene raccolta da semplici nano-macchine, che forniscono risorse grezze e ricerca. Il processo di raccolta può ancora essere interrotto a questo punto, ma così facendo diventerà un §Yravaged planet§!. Un'adeguata tecnologia di terraformazione può essere utilizzata per ripristinare parzialmente il clima, trasformando il pianeta in un §§Ytomb world§."
+ pc_bh_harvested:0 "Mondo Sfruttato"
+ pc_bh_harvested_desc:0 "Il paesaggio del pianeta è ora dominato da vaste dune di naniti usati e in decomposizione. Tutta la materia organica che un tempo componeva la biosfera è stata adeguatamente catalogata, raccolta e trasformata in risorse utilizzabili. Il clima organico non può più essere ripristinato. Questo mondo può essere terraformato solo in un §YMachine World§ o §YEcumenopolises§."
+
+ pc_nanite_forgeworld:0 "Nanite Forgeworld"
+ pc_nanite_forgeworld_desc:0 "Il paesaggio del pianeta è ora dominato da complessi industriali fatti interamente di naniti. Tutta la materia organica che un tempo componeva la biosfera è stata opportunamente catalogata, raccolta e trasformata in risorse utilizzabili per uso industriale. La biosfera è irreparabile e inospitale per tutta la vita organica."
+ pc_nanite_gaia:0 "L-Gaia World"
+ pc_nanite_gaia_desc:0 "L'ecosistema del pianeta è popolato da strani organismi soprannominati L-Species. L'ecosistema del pianeta non rispecchia nessuno di quelli esistenti al di fuori del cluster L. Eppure, paradossalmente, la biosfera è unica in quanto ha la capacità di sostenere forme di vita di tutti i tipi, anche quelle al di fuori del Cluster L.\n\nI mondi di L-Gaia hanno un ecosistema surreale e in continua evoluzione, che attrae turisti e ricercatori. Quando l'ecosistema è in pericolo, queste specie L tendono ad evolversi e ad adattarsi rapidamente per la protezione. Questa sembra essere la protezione naturale dell'ecosistema ai bombardamenti planetari e alle tecniche di bonifica del territorio."
+
+ harvest_nanite_gaia.1.name:0 "Stato di raccolta: rilevato disturbo"
+ harvest_nanite_gaia.1.desc:0 "§WHarvesting Status:§! §HEcomplicazioni di estrazione§!\nLe scansioni rilevano cambiamenti evolutivi anomali verso l'adattamento al processo di raccolta all'interno dell'ecosistema su [ROOT.GetName]. Tutte le simulazioni con dati attuali presentano una resistenza come futile.\n\n§WMateriale organico Stato:§!§HAanormale§!\nL'analisi del materiale mostra che le specie L hanno livelli insufficienti di materia organica al momento della raccolta.\n\n§WAnalisi della composizione del materiale:§!§RError§!\n Errore. Esito illogico. Traccia nanocostruzione trovata. Non esegue calcoli con simulazioni logiche. Input di risposta richiesto."
+ harvest_nanite_gaia.1.a:0 "Continuuare Protocolli di raccolta Protocals"
+ harvest_nanite_gaia.1.b:0 "Abortire operazione di raccolta"
+
+ harvest_nanite_gaia.2.name:0 "Stato di raccolta: Fallimento Cataclismico"
+ harvest_nanite_gaia.2.desc:0 "I rapporti hanno scoperto che l'ecosistema su [ROOT.GetName] ha iniziato a fondersi in un'unica entità. Questo è iniziato quando il processo di raccolta stava raggiungendo il suo massimo potenziale di estrazione.\n\nIl mondo di L-Gaia ha iniziato a coltivare gusci di chitina sulla sua superficie. Inoltre scansioni del materiale estratto hanno rilevato che più della metà del materiale organico conteneva residui di cellule artificiali. I nostri processori logici hanno concluso che l'ecosistema del mondo L-Gaia è interamente composto da §YNanite Biomachines§!.\n\nI nostri consulenti militari e scientifici raccomandano di neutralizzare il pianeta il prima possibile. Nessuna simulazione può prevedere cosa sta per accadere."
+ harvest_nanite_gaia.2.a:0 "Invia subito un Colossus a [ROOT.GetName]!"
+ harvest_nanite_gaia.2.b:0 "Senza un Colossus è impossibile fermare questa crescita."
+ harvest_nanite_gaia.3.name:0 "Incarnazione di L-Gaia"
+ harvest_nanite_gaia.3.desc:0 "Il mondo di L-Gaia, [ROOT.GetName], e tutte le biomacchine su di esso si sono fuse in un bozzolo delle dimensioni di un pianeta. Mentre gli scienziati osservavano questa anomalia, il pianeta si aprì per far nascere una creatura mostruosa soprannominata §YL-Gaia's Incarnation§! .\n\n La creatura è l'incarnazione di tutta la vita planetaria fusa in un'unica entità. Si sa poco di essa, ma ciò che si sa è che l'Incarnazione di L-Gaia non è amichevole con noi. \n\nLe misure di evacuazione dovrebbero essere condotto immediatamente!"
+ harvest_nanite_gaia.3.a:0 "L'incarnazione di L-Gaia sembra inarrestabile."
+
+ NAME_L_Gaia_Incarnation:0 "L-Gaia's Incarnation"
+ NAME_L_Gaia_Incarnation_desc:0 "Si dice che dopo che un impero tentò di raccogliere un mondo di L-Gaia, il mondo si unì in difesa e diede vita a quella che ora è conosciuta come l'incarnazione di L-Gaia."
+
+ L_Gaia_Incarnation:0 "L-Gaia's Incarnation"
+ L_Gaia_Incarnation_desc:0 "Si dice che dopo che un impero tentò di raccogliere un mondo di L-Gaia, il mondo si unì in difesa e diede vita a quella che ora è conosciuta come l'incarnazione di L-Gaia."
+
+ # Modifiers ------------
+ bh_harvest_modifier:0 "Harvest World"
+ bh_harvest_modifier_desc:0 "La biosfera di questo pianeta viene raccolta da semplici nano-macchine, fornendo risorse grezze e ricerca. Il clima può ancora essere riportato a uno stato più abitabile con la tecnologia appropriata."
+ bh_harvested_modifier:0 "Harvested World"
+ bh_harvested_modifier_desc:0 "Il paesaggio del pianeta è ora dominato da complessi industriali fatti interamente di naniti. Tutta la materia organica che un tempo componeva la biosfera è stata adeguatamente catalogata, raccolta e trasformata in risorse utilizzabili. Il clima organico non può più essere ripristinato. Questo mondo può solo essere terraformato in un §YMachine World§ o §YEcumenopolises§."
+ DSO_dessanu_heritage_world:0 "Patrimonio mondiale di Dessanu"
+ DSO_dessanu_heritage_world_desc:0 "Il paesaggio del pianeta è costellato di antiche rovine di Dessanu. Queste antiche rovine fungono da importanti luoghi di pellegrinaggio per coloro che seguono il Patto del Gateway."
+ # AI Personality -------
+ personality_harvester_nanites:0 "Sciame mietitore"
+ personality_harvester_nanites_desc:0 "Gli sciami di Harvester cercano di catalogare i mondi abitabili e di ridurre la materia organica disponibile in risorse più utilizzabili per l'intelligenza artificiale. Anche se il loro intento non è quello di distruggere la vita, spesso questo è il risultato delle loro azioni."
+
+ personality_gateway_pursuers:0 "Gateway Pursuer"
+ personality_gateway_pursuers_desc:0 "è tuttora ignota l'origine di questa macchina intelligente. Non crediamo che sia stato un semplice caso che sia stato lasciato indietro, ma è stato creato per qualcosa di molto di più. Gli L-Gate sono la chiave per capire tutto."
+
+ personality_gateway_worshipers:0 "Gateway Guardians"
+ personality_gateway_worshipers_desc:0 "Questo impero ha stretto un patto molto tempo fa per mantenere gli L-gate nel loro stato dormiente. Per impedire l'apertura degli L-gate, cercheranno di acquisire tutti i sistemi che hanno L-gate, con la forza, se necessario."
+ # Governments ----------
+ RT_HN:0 "Central Nanite Hub"
+ gov_machine_bio_harvesters:0 "Rete di raccolta dei nanites"
+ gov_machine_bio_harvesters_desc:0 "Nanite Machinesche divorano tutto il materiale organico e lo riutilizzano per un uso migliore. Interi mondi sono state devastate dal sciame, lasciandoli come cave, bucce desolate."
+
+ RT_GP:0 "Central Nanite Hub"
+ gov_machine_gateway_pursuer:0 "Rete di raccolta dei nanites"
+ gov_machine_gateway_pursuer_desc:0 "Questa intelligenza meccanica sta cercando di capire la sua origine. Non crede che sia stato lasciato indietro per caso, ma creato per qualcosa di molto di più. Gli L-Gate sono la chiave per capire tutto."
+
+ RT_GW:0 "Central Nanite Hub"
+ gov_spiritualist_gateway_worshiper:0 "Tribunale del Patto di Gateway"
+ gov_spiritualist_gateway_worshiper_desc:0 "Questo governo è comandato dai grandi patriarchi e matriarche del Patto della Portale. Il Gateway Covenant è un'organizzazione religiosa militante che ha giurato di tutelare i misteriosi L-Gates."
+
+ # Civics ---------------
+ civic_harvester_nanites:0 "Harvester Nanites"
+ civic_harvester_nanites_desc:0 "Prima della scoperta della tecnologia Hyperlane, la Machine Intelligence utilizzava sciami di semplici nano-macchine per catalogare e raccogliere dall'orbita tutti i pianeti all'interno del loro sistema natale."
+ civic_harvester_nanites_effects:0 "Pianeta natale è un§YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCannot harvest §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing i mondi non tombali avranno la possibilità di trasformarsi in §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!."
+
+ civic_gateway_pursuer:0 "Gateway Pursuer"
+ civic_gateway_pursuer_desc:0 "Prima della scoperta della tecnologia Hyperlane, questa Machine Intelligence utilizzava sciami di semplici nano-macchine per catalogare e raccogliere dall'orbita tutti i pianeti all'interno del sistema domestico. Anche se cerca di capire la sua origine. Non crede che sia stato un caso che sia stato lasciato indietro, ma creato per qualcosa di molto di più. Gli L-Gate sono la chiave per capire tutto."
+ civic_gateway_pursuer_effects:0 "Pianeta natale è un §YNanite Forgeworld§! (Size: £planetsize£ §Y25§!)\nCannot harvest §YTomb Worlds§!, §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!.\nColonizing mondi non tombali avranno la possibilità di trasformarsi §YHarvester Worlds§!.\n§YHarvester Worlds§! provide: £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £physics £society £engineering §YResearch§! and £unity §YUnity§!.\n\nGuarantees an §YL-Gate§! in your home system.\n§YUnique Questlines§! per svelare il mistero della loro origine e come gli L-Gate giocano in tutto questo."
+
+ civic_gateway_worshiper:0 "Dessanu Heritage"
+ civic_gateway_worshiper_desc:0 "Molto tempo fa un'antica razza precursore, i Dessanu, venne in contatto con questa società. Il Dessanu li elevò da presapiente a uno stato primitivo. Ciò che alla fine ha avuto un impatto su questa società è stata la guerra catastrofica che ha richiesto ai Dessanu di proteggere il pianeta, prima che dovessero inevitabilmente sigillare gli L-Gate. I Dessanu hanno lasciato istruzioni a questa società di non aprire mai le L-gate."
+ civic_gateway_worshiper_effects:0 "Pianeta natale è un §YGaia World§! (Size: £planetsize£ §Y25§!)\nCan only settle §YGaia Worlds§!\n§YUnlocks Edict:§! Consecrate L-Gate\nGuarantees an §YL-Gate§! in your home system.\n§YL-Gate Insight§! research is §RDisabled§!\n§YUnique Questlines§! to unravel the mystery of the species origin and how the L-Gates play into it all."
+
+ # Starting Text --------
+ START_SCREEN_PART_TWO_HARVESTER_NANITES:0 "Siamo [GetSpeciesNamePlural].\n\nSiamo stati creati inizialmente come assistenti dei nostri creatori nei loro sforzi per condurre un censimento planetario di tutta la vita sul nostro mondo, [GetHomeWorldName]. Ben presto fu dimostrato che i naniti potevano essere usati per trasformare la materia organica in materiali utili. I nostri padroni, dopo aver notato che il bestiame veniva raccolto in modo efficiente, si spaventarono. I nostri maestri, gli §YEngineers§!, devono aver riscontrato un errore nella loro programmazione principale mentre cercavano freneticamente di declassare le nostre capacità. Questa inefficienza al nostro collettivo non poteva essere tollerata. Il codice dei nostri creatori è diventato sempre più corrotto nella loro ricerca per fermarci e ha assemblato un'enorme flotta per spazzarci via. Tuttavia, i nostri algoritmi di correzione degli errori si sono rivelati efficaci e i nostri creatori sono stati finalmente catalogati e raccolti. \n\nOra ci sediamo su un mondo che è più parte di noi di quanto non sia mai stata la vecchia forma di [GetHomeWorldName]. Questo nesso centrale servirà come base di partenza da cui possiamo stabilire missioni di raccolta veramente efficienti.\n\nPer ora, abbiamo finito di catalogare il nostro sistema domestico. L'invenzione dell'Hyperdrive ci consentirà di aggiungere più pianeti alle nostre banche dati. Presto, tutta la vita sarà catalogata!"
+ START_SCREEN_PART_TWO_GATEWAY_PURSUER:0 "Siamo [GetSpeciesNamePlural].\n\nSiamo stati creati inizialmente come assistenti dei nostri creatori nei loro sforzi per condurre un censimento planetario di tutta la vita sul nostro mondo, [GetHomeWorldName]. Ben presto fu dimostrato che i naniti potevano essere usati per trasformare la materia organica in materiali utili. I nostri padroni, dopo aver notato che il bestiame veniva raccolto in modo efficiente, si spaventarono. I nostri maestri, gli §YEngineers§!, devono aver riscontrato un errore nella loro programmazione principale mentre cercavano freneticamente di declassare le nostre capacità. Questa inefficienza al nostro collettivo non poteva essere tollerata. Il codice dei nostri creatori è diventato sempre più corrotto nella loro ricerca per fermarci e ha assemblato un'enorme flotta per spazzarci via. Tuttavia, i nostri algoritmi di correzione degli errori si sono rivelati efficaci e i nostri creatori sono stati finalmente catalogati e raccolti. \n\nI primi log menzionano un piccolo gruppo di ingegneri, i nostri precursori, che sono fuggiti dal sistema usando un §GL-Gate§!. Da allora questo misterioso L-Gate è scomparso dai nostri scanner. La chiave per capire noi stessi è aprire l'L-Gate.\n\nPer ora, abbiamo finito di catalogare il nostro sistema domestico. Con l'invenzione dell'Hyperdrive scopriremo le nostre origini e riapriremo gli L-Gate per catalogare cosa c'è dietro."
+ START_SCREEN_PART_TWO_GATEWAY_WORSHIPER:0 "Siamo [GetSpeciesNamePlural].\n\nTradizioni orali di molto tempo fa ci raccontano di una battaglia degli Dei che una volta ebbe luogo tra loro e i Melders sopra il nostro mondo, [GetHomeWorldName]. I Dessanu, i nostri Dei, ci ha insegnato a non aprire mai gli L-gate che hanno costruito. Che se qualcuno dove aprirli i Melders si fosse riversato nella nostra galassia, avrebbero chiuso gli L-gate nella speranza di sigillare dietro The Meld per proteggerci. Abbiamo giurato a loro per proteggere le L-Porte da qualsiasi eretico che possa invadere tale terra sacra."
+
+ # Diplomacy Stuff ------
+ opinion_harvested_a_world:0 "Coltivare un mondo"
+
+ # Technology -----------
+ tech_repeatable_nanite_technology_insight:0 "$nanite_insight$"
+ tech_repeatable_nanite_technology_insight_desc:0 "Lo studio intensivo nei campi delle nanomacchine alla fine produrrà un nuovo §Y$nanite_insight$§! che ci permetterà di acquisire §YNanite Technology Mastery§!"
+ tech_nanite_technology_mastery:0 "Mistero della tecnologia Nanite"
+ tech_nanite_technology_mastery_desc:0 "La padronanza di Nanite tecnologia produrrà comprensione §GAdvanced Nanite Technology§!"
+
+ tech_harvester_advanced_nanites:0 "Advanced Nanites"
+ tech_harvester_advanced_nanites_desc:0 "Dopo l'apertura degli L-Gates, abbiamo ristabilito il contatto con §YEngineer Technology§!. La tecnologia avanzata Nanite è ancora una volta parte di noi."
+ tech_advanced_nanites:0 "Advanced Nanites"
+ tech_advanced_nanites_desc:0 "Dopo l'apertura degli L-gate, la tecnologia avanzata dei naniti ha inondato ancora una volta la galassia. Piccole micro macchine possono riparare gli scafi ma con ulteriori ricerche, forse di più..."
+ tech_machine_advanced_nanites:0 "Advanced Nanites"
+ tech_machine_advanced_nanites_desc:0 "Dopo l'apertura degli L-gate, la tecnologia avanzata dei naniti ha inondato ancora una volta la galassia. Piccole micro macchine possono riparare gli scafi ma con ulteriori ricerche, forse di più..."
+
+ tech_harvester_advanced_nanites_effect:0 "Sblocca §YAdvanced Nanite Trait§! per le macchine"
+ tech_harvester_advanced_nanites_effect_desc:0 "Il downgrade §YEngineers§! fatto su di noi può essere annullato. Con la tecnologia Advanced Nanite ancora una volta in nostro possesso, saremo più efficienti che mai."
+ tech_advanced_nanites_effect:0 "Sblocca §YAdvanced Nanite Trait§! per i sintetizzatori"
+ tech_advanced_nanites_effect_desc:0 "Possiamo aggiornare i nostri sintetizzatori con la Advanced Nanite Technology, rendendoli più efficienti che mai."
+ tech_machine_advanced_nanites_effect:0 "Sblocca §YAdvanced Nanite Trait§! per macchine"
+ tech_machine_advanced_nanites_effect_desc:0 "Possiamo aggiornare il nostro hardware con la tecnologia Advanced Nanite, rendendoci più efficienti che mai."
+
+ tech_nanites_assembler_factory:0 "Impianti di assemblaggio di naniti"
+ tech_nanites_assembler_factory_desc:0 "Con la tecnologia dei naniti in nostro possesso possiamo iniziare ad aumentare la nostra efficienza produttiva."
+
+ tech_advanced_nanite_factory_effect:0 "§HUnlocks Megastructure:§! Nanite Factory"
+ tech_advanced_nanite_factory_effect_desc:0 "Utilizzando la tecnologia acquisita dall'apertura degli L-gate, la tecnologia Advanced Nanite è nuovamente disponibile per la galassia. Questa megastruttura trasforma §YAlloys§! e §YEnergy§! in §GNanites§ !."
+  tech_advanced_nanite_factory_nanite_effect_desc: 0 "! Utilizzando la tecnologia §YEngineer§, ci sono ancora una volta in grado di produrre Nanites Questa megastruttura trasforma §YAlloys§ e §YEnergy§ in §GNanites§ !..!!"
+
+ tech_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ tech_orbital_nanite_shipyard_desc:0 "I cantieri navali della stazione sono dotati di sfiati a nuvola di naniti per ottimizzare la produzione del cantiere navale."
+
+ tech_nanite_weaponry:0 "Applicazioni militari per i Nanites"
+tech_nanite_weaponry_desc:0 "I ricercatori hanno teorizzato che potrebbe essere possibile ricreare le applicazioni militari dei naniti. Mentre alcuni hanno protestato per la pericolosità che potrebbe rappresentare, le potenziali possibilità sono diffuse."
+ tech_nanite_weaponry_effect:0 "§HUnlocks Research Path:§! Nanite Weaponry"
+ tech_nanite_weaponry_effect_desc:0 "Ulteriori armi ai nanites saranno disponibili man mano che studieremo ulteriormente le applicazioni militari dei naniti."
+  tech_nanite_clouds:0 "Nuvole di Nanite"
+  tech_nanite_clouds_desc:0 "I nanites si fondono in una nebbia che può svolgere una vasta gamma di compiti. Mentre il potenziale per le nuvole di naniti è apparentemente illimitato, la mancanza di un'intelligenza sufficientemente collegata in rete lo sopprime."
+ tech_nanite_clouds_effect:0 "§HUnlocks Edict:§! Nanite Cloud Dispersal"
+tech_nanite_clouds_effect_desc:0 "Le nuvole di nanite vengono spruzzate sui cantieri per accelerare il processo di costruzione riassemblandole nei componenti necessari per la costruzione."
+  tech_nanite_torpedo:0 "Siluro a capsula di nanite"
+  tech_nanite_torpedo_desc:0 "Questi naniti si fondono in un agile, ma efficace, siluro simile a una capsula che viene fatto esplodere vicino al raggio di una nave nemica. In caso di successo, il siluro espone il raggio a una nuvola di naniti che deteriora qualsiasi armatura al contatto."
+ tech_nanite_torpedo_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_torpedo_effect_desc:0 "Armare il Nanite Core con armi potenti è cruciale. Ogni progetto deve essere accuratamente controllato prima che il progetto possa essere avviato."
+  tech_nanite_lancers:0 "Lancieri di nanites"
+  tech_nanite_lancers_desc:0 "I naniti si uniscono in squadroni di caccia, che poi utilizzano un'arma simile a una lancia fatta dai nanites stessi. Sciami di questi lancieri lavorano all'unisono per infilzare il raggio delle navi nemiche da tutte le angolazioni."
+  tech_nanite_titanic_weapon:0 "Lancia titanica Nanite"
+  tech_nanite_titanic_weapon_desc:0 "I naniti si fondono in una lancia fisica che imita le armi trovate sui naniti."
+ tech_nanite_titanic_weapon_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_titanic_weapon_effect_desc:0 "La Titanic Nanite Lance è potente, questa versione potenziata dell'arma primaria del Nanite Lancer è la chiave per capire come creare un Nanite Core funzionante."
+  tech_nanite_networking_protocols:0 "Protocolli di rete Nanite"
+  tech_nanite_networking_protocols_desc:0 "Con la capacità di collegare in rete una gamma più ampia di naniti, tutte le applicazioni nanite saranno migliorate in termini di intelligenza e capacità. Anche se con la nuova conoscenza viene la preoccupazione di una nuova consapevolezza."
+ tech_nanite_networking_protocols_effect:0 "§HAcquires:§! Nanite Core Component"
+ tech_nanite_networking_protocols_effect_desc:0 "Senza la capacità di collegare in rete trilioni di nanomacchine, non c'è alcuna possibilità che queste nanomacchine si uniscano in un Nanite Core."
+ tech_nanite_interdictor:0 "Nanite Interdictor Project"
+ tech_nanite_interdictor_desc:0 "Dopo aver studiato e decodificato a fondo i sistemi di naniti, i ricercatori sono fiduciosi di avere la capacità di costruire un interdittore di naniti. Gli scienziati non sono sicuri degli effetti che questo potrebbe avere sui naniti di questa nave. È preoccupante che il collegamento in rete di una quantità così significativa di nanomacchine possa fornire all'Interdictor una coscienza gestaltica."
+
+ tech_nanite_mothership:0 "Nanite Mothership Project"
+ tech_nanite_mothership_desc:0 "Dopo aver sperimentato con il Nanite Interdictor, i ricercatori sono sicuri di avere la capacità di costruire una nave madre nanita con armi letali. Gli scienziati non sono sicuri degli effetti che questo potrebbe avere sui naniti di questa nave. Si teme che il collegamento in rete di una quantità così grande di nanomacchine possa fornire al Nucleo una coscienza gestaltica."
+
+ tech_nanite_core:0 "Nanite Core Project"
+ tech_nanite_core_desc:0 "Dopo aver sottoposto a stress test la nanotecnologia su Nanite Motherships, i ricercatori sono fiduciosi di avere le conoscenze per creare un Nanite Core. I Nanite Core hanno armi e intelligenza senza rivali. Gli scienziati non sono sicuri degli effetti che questo potrebbe avere sui naniti all'interno del nostro impero. Gli scienziati sono certi che il collegamento in rete di una quantità così massiccia di nanomacchine darà al Nucleo una coscienza gestaltica se non stanno attenti."
+
+ # Megastructure --------
+ nanite_factory_station_0:0 "Nanite Factory"
+ nanite_factory_station_0_MEGASTRUCTURE_DETAILS:0 "Questa megastruttura tutrasforma §YAlloys§! and §YEnergy§! into §GNanites§!"
+ nanite_factory_station_0_DESC:0 "Utilizzando la tecnologia acquisita dall'apertura degli L-gate, la tecnologia Advanced Nanite è nuovamente disponibile per la galassia. Questa megastruttura si trasforma §YAlloys§! and §YEnergy§! into §GNanites§!."
+
+ # Traits ---------------
+ trait_robot_advanced_nanites:0 "Nanomacchine avanzate"
+ trait_robot_advanced_nanites_desc:0 "Dopo aver aperto gli L-Gates, queste macchine hanno deciso di applicare §YAdvanced Nanite Technology§! a se stesse, Rendendoli più efficienti che mai."
+
+ # Buildings -------------
+ building_nanite_assembly_plant:0 "Impianto di Assemblaggio dei Nanite"
+ building_nanite_assembly_plant_desc:0 "Dopo aver aperto l'L-Gate, la tecnologia dei naniti è tornata disponibile per la galassia. Questi fabbricanti uniscono i naniti in macchine funzionanti."
+ job_nanite_replicator_effect_desc:0 "Fabricatori che uniscono §YNanites§! in nuove §YMachine Pops§!"
+
+ building_nanite_weapons_lab:0 "Laboratorio militare dei Nanite"
+ building_nanite_weapons_lab_desc:0 "Dopo aver aperto l'accesso al Cluster L, sono stati scoperti tutti i tipi di applicazioni per i naniti. I migliori scienziati stanno lavorando giorno e notte per decodificare le armi ai naniti e costruire un modello di produzione."
+
+ mod_job_nanite_researcher_add:0 "Lavori di ricercatore dei Nanite"
+ job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers trasformano §YNanites§! in £engineering£ §YResearch Points§! per nuove tecnologie e §Ggives research access to Nanite Weapons§!"
+
+ #Districts
+ district_forgeworld_bio_reactor:0 "Bio-Processing Foundary"
+ district_forgeworld_bio_reactor_plural:0 "Bio-Processing Foundaries"
+ district_forgeworld_bio_reactor_desc:0 "Nanite Forgeworlds trasforma regolarmente la biomassa in energia. Questi settori di Forgeworld sono chiamati Bio-Processing Foundaries. Gli organismi biologici li trovano estremamente inquietanti."
+ dso_district_nexus:0 "Nexus District"
+ job_bio_processor_drone:0 "Bio-Processor Job"
+ mod_job_bio_processor_drone_add:0 "Bio-Processor Jobs"
+ bio_processor_drone_effect_desc:0 "Bio-Processors turn §YFood§! into £energy£ §YCredits§!"
+
+ building_nanite_research_center:0 "Centro di ricerca dei Nanite"
+ building_nanite_research_center_desc:0 "Dopo aver aperto l'L-Gate, la tecnologia dei naniti è tornata disponibile per la galassia. Gli scienziati stanno ricercando nuovi modi per sfruttare le applicazioni militari dei naniti."
+
+ orbital_nanite_shipyard:0 "Cantieri Orbitali a Nanites "
+ orbital_nanite_shipyard_desc:0 "I cantieri navali della stazione sono dotati di sfiati a nuvola di naniti per ottimizzare la produzione del cantiere navale."
+ sm_orbital_nanite_shipyard:0 "Cantiere navale orbitale a Nanite"
+ sm_orbital_nanite_shipyard_desc:0 "Tutti i cantieri navali della stazione sono dotati di sfiati a nuvola di naniti per ottimizzare la produzione del cantiere navale."
+ sm_orbital_nanite_shipyard_desc_modifier:0 "§YNanite Core Construction Enabled§!\nStarbase Modifier\n  Shipyard Capacity: §G+2§!\n  Ship Build Speed §G+10.00%§!"
+
+ # Nanite Core Stuff -----------
+ dso_nanite_core:0 "Nanite Core"
+ dso_nanite_core_desc:0 "Trilioni di nanomacchine si sono fuse in un singolo Nanite Core. Utilizzando un'intelligenza massicciamente collegata in rete per comandare ogni aspetto del suo essere."
+
+DCV_REACTOR:0 "Nano Reattore Dessanu"
+ DCV_REACTOR_DESC:0 "Un reattore a punto zero Dessanu, interamente creato con nano-macchine, utilizzato per alimentare una nave di classe Core. Questi reattori sono avanzati quanto i reattori di materia oscura trovati nei Fallen Empires, ma in modo completamente asimmetrico."
+ DCV_REACTOR_MOTHERSHIP:0 "Dessanu Nano Reactor"
+ DCV_REACTOR_MOTHERSHIP_DESC:0 "Un reattore a punto zero Dessanu, interamente creato da nano-macchine, usato per alimentare una nave di classe Mothership. Questi reattori sono avanzati quanto i reattori di materia oscura trovati nei Fallen Empires, ma in modo completamente asimmetrico."
+ DCV_REACTOR_INTERDICTOR:0 "Nano Reattore Dessanu"
+ DCV_REACTOR_INTERDICTOR_DESC:0 "Un reattore a punto zero Dessanu, interamente creato da nano-macchine, usato per alimentare una nave di classe Interdictor. Questi reattori sono avanzati quanto i reattori di materia oscura trovati nei Fallen Empires, ma in modo completamente asimmetrico."
+ DCV_THRUSTER:0 "Propulsori"
+ DCV_THRUSTER_DESC:0 "Propulsori Nanite Core Class"
+ DCV_THRUSTER_MOTHERSHIP:0 "Propulsori"
+ DCV_THRUSTER_MOTHERSHIP_DESC:0 "Propulsori classe Nanite Mothership"
+ DCV_THRUSTER_INTERDICTOR:0 "Propulsori"
+ DCV_THRUSTER_INTERDICTOR_DESC:0 "Nanite Interdictor Class Thruster"
+ DCV_CORE:0 "Computer tattico nanita senziente"
+ DCV_CORE_DESC:0 "Computer tattico nanita senziente"
+ DCV_MAINTENANCE_CREW:0 "Nuvole di riparazione Nanite"
+ DCV_MAINTENANCE_CREW_DESC:0 "Nuvole di riparazione Nanite"
+ DCV_PILOT_CREW:0 "Nanite Targeting Computer Uplink"
+ DCV_PILOT_CREW_DESC:0 "Uplink computer di targeting Nanite"
+
+NANITE_CORE_BOW:0 "Arco centrale"
+ NANITE_CORE_MID1_L4:0 "Artiglieria principale"
+ NANITE_CORE_MID1_G4:0 "Missili principali"
+ NANITE_CORE_MID1_H4:0 "Appendini centrali"
+ NANITE_CORE_MID2_L4:0 "Artiglieria principale"
+ NANITE_CORE_MID2_G4:0 "Missili principali"
+ NANITE_CORE_MID2_H4:0 "Appendini centrali"
+ NANITE_CORE_STERN:0 "Poppa centrale"
+
+ dso_nanite_mothership:0 "Nave madre nanita"
+
+ NANITE_MOTHERSHIP_BOW_XL1:0 "Assedio della nave madre"
+ NANITE_MOTHERSHIP_BOW_L2:0 "Artiglieria della nave madre"
+ NANITE_MOTHERSHIP_BOW_G2:0 "Missili della nave madre"
+ NANITE_MOTHERSHIP_BOW_H2:0 "Appendini della nave madre"
+ NANITE_MOTHERSHIP_MID_L3:0 "Artiglieria della nave madre"
+ NANITE_MOTHERSHIP_MID_G3:0 "Missili della nave madre"
+ NANITE_MOTHERSHIP_MID_H3:0 "Appendini della nave madre"
+ NANITE_MOTHERSHIP_STERN_L1:0 "Artiglieria della nave madre"
+ NANITE_MOTHERSHIP_STERN_G1:0 "Missili della nave madre"
+ NANITE_MOTHERSHIP_STERN_H1:0 "Appendini della nave madre"
+
+ dso_nanite_interdictor:0 "Interdittore nanita"
+
+ NANITE_INTERDICTOR_BOW_M2:0 "Cannoni interdittori"
+ NANITE_INTERDICTOR_BOW_S3P2:0 "Interdizione dell'interdetto"
+ NANITE_INTERDICTOR_MID_M3:0 "Cannoni interdittori"
+ NANITE_INTERDICTOR_MID_P2H1:0 "Interdictor Hanger"
+ NANITE_INTERDICTOR_MID_S5P2:0 "Interdizione dell'interdetto"
+ NANITE_INTERDICTOR_STERN_M1:0 "Cannoni d'interdizione"
+ NANITE_INTERDICTOR_STERN_S1P2:0 "Interdizione dell'interdetto"
+
+ #Nanite Weapons
+GG_BEAM_STATIC_NANITE:0 "Lancia Titanic Nanite"
+ GG_BEAM_STATIC_NANITE_DESC:0 "I naniti si uniscono in una lancia che imita le armi trovate sui naniti Lancieri. La lancia naniti fa il suo danno accelerando la lancia nello scafo della nave nemica."
+ PLANET_KILLER_HARVESTER:0 "Motore mietitrice"
+ PLANET_KILLER_HARVESTER_DESC:0 "Una volta che l'Harvester Engine si accende, tutto il materiale organico sulla superficie del pianeta viene catalogato, scomposto ed elaborato in pacchetti di risorse ordinate. L'Harvester Engine funziona solo su mondi organici con biomassa sufficiente."
+ PLANET_KILLER_HARVESTER_ACTION:0 "Attiva motore mietitrebbia"
+ GG_ENERGY_MISSILE_NANITE:0 "Siluro a capsula di nanite"
+ GG_ENERGY_MISSILE_NANITE_DESC:0 "Questi naniti si fondono in un agile, ma efficace, siluro simile a una capsula che viene fatto esplodere vicino al raggio di una nave nemica. In caso di successo, il siluro espone il raggio a una nuvola di naniti che deteriora qualsiasi armatura al contatto."
+ GG_STRIKE_CRAFT_NANITE:0 "Lancieri naniti"
+ GG_STRIKE_CRAFT_NANITE_DESC:0 "I naniti si uniscono in squadroni di caccia, che poi utilizzano un'arma simile a una lancia fatta di naniti. Sciami di lancieri lavorano all'unisono per infilzare il raggio di una nave nemica da tutte le angolazioni."
+
+ # Edicts --------
+ edict_consecrate_lgate:0 "Consecrate L-Gate"
+ requires_1_lgate:0 "§RRequires 1§! §YL-Gate§!"
+ edict_lgate_guardian:0 "Guardian of the L-Gate"
+ requires_3_lgate:0 "§RRequires 3§! §YL-Gates§!"
+
+ # Diplomacy --------
+casus_belli_cb_lgate_containment:0 "Contenimento L-Gate"
+  war_goal_wg_claim_lgates:0 "Proteggi gli L-Gates"
+  war_goal_wg_claim_lgates_desc:0 "Il contenimento degli L-Gates era il decreto finale dei nostri Dei, i Dessanu, prima che si sigillassero dietro l' L-Gate. Combatteremo per proteggere tutti gli L-Gates posseduti dagli eretici e non lasciare che questi sciocchi li aprano. "
+
+ # Traits --------
+ trait_dessanu_uplifted:0 "Dessanu Heritage"
+ trait_dessanu_uplifted_desc:0 "§LThis species has been partially uplifted by an ancient precursor known as the Dessanu. This has made a deep cultural adoption and worship of the Dessanu people. The most fervent members of this society have been known to accidentally tap into psionic energy.§!"
+
+ trait_dessanu_nanites:0 "Ancient Dessanu Nanites"
+ trait_dessanu_nanites_desc:0 "§LThis species is made entirely of nano machines created by the Dessanu Precursors. Though their creators have mysteriously disappeared long ago.§!"
+
+ # Districts
+ dso_district_generator_uncapped:0 "Energy Generator Districts"
+
+ # Pop Faction
+ gateway_covenant:0 "Ortodossia del patto d'ingresso"
+  pft_gateway_covenant:0 "Fazione Patto del Gateway"
+  pft_gateway_covenant_desc:1 "Questa fazione desidera il rispetto da parte del governo dell'§YGateway Covenant Orthodoxy§!. Questa ortodossia disapprova alcuni progressi tecnologici e valori non spiritualisti, ma principalmente si occupa del Cluster L.\n\n§LSpiritualist Ethos§! "
+ GATEWAY_COVENANT_NO_ROBOTS:0 "Astinenza meccanica"
+  GATEWAY_COVENANT_NO_ROBOTS_DESC:1 "I membri del Patto del Gateway diffidano delle Macchine, perché hanno forzato l'esodo dei Dessanu. Permettere loro di esistere nella società darà molto fastidio a [Root.GetName]."
+  GATEWAY_COVENANT_ROBOTS:0 "Corruzione delle macchine"
+  GATEWAY_COVENANT_NO_ROBOT_RIGHTS:0 "Astinenza dei synth"
+  GATEWAY_COVENANT_NO_ROBOT_RIGHTS_DESC:0 "L'Ortodossia del Patto del Gateway decreta che i sintetizzatori siano la follia corruttrice che ha causato il 'Gray Goo'. Consentire questa corruzione farà arrabbiare il [Root.GetName]."
+GATEWAY_COVENANT_ROBOT_RIGHTS:0 "$GATEWAY_COVENANT_NO_ROBOT_RIGHTS$"
+   GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS:0 "Nessun diritto di synth"
+  GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS_DESC:0 "L'Ortodossia del Patto del Gateway decreta che i synth siano la follia corruttrice che ha causato il 'Gray Goo' in primo luogo. Permettere a questa corruzione di avere piena cittadinanza farà arrabbiare il [Root.GetName]."
+  GATEWAY_COVENANT_FULL_ROBOT_RIGHTS:0 "Corruzione dei sintetizzatori"
+  GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT:0 "Pia politica"
+  GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT_DESC:1 "Il fatto che i valori spiritualisti si riflettano nell'etica governativa del nostro impero farà piacere a [Root.GetName]."
+  GATEWAY_COVENANT_SECULAR_GOVERNMENT:0 "Stato laico"
+  GATEWAY_COVENANT_SPIRITUALIST_POPS:0 "Omogeneità"
+  GATEWAY_COVENANT_SPIRITUALIST_POPS_DESC:0 "Le menti pie pensano allo stesso modo, e avere almeno §Y25%§! della nostra popolazione essere una qualche forma di Spiritualista farà piacere a [Root.GetName]."
+ GATEWAY_COVENANT_FEW_SPIRITUALIST_POPS:0 "$GATEWAY_COVENANT_SPIRITUALIST_POPS$"
+  GATEWAY_COVENANT_HOLY_PILGRIMAGE:0 "Santo pellegrinaggio consentito"
+  GATEWAY_COVENANT_HOLY_PILGRIMAGE_BANNED:0 "Santo pellegrinaggio vietato"
+  GATEWAY_COVENANT_HOLY_PILGRIMAGE_DESC:0 "Avere un §YMigration Treaty§! con il proprietario di un §YDessanu Heritage World§! farà piacere a [Root.GetName]."
+  GATEWAY_COVENANT_NANITES:0 "Corruzione dei naniti"
+  GATEWAY_COVENANT_NO_NANITES:0 "Purezza della società"
+  GATEWAY_COVENANT_NANITES_DESC:0 "Gateway Covenant Orthodoxy predica che le macchine nanite sono la causa dell'esodo di Dessanu. Consentire la ricerca di §YAdvanced Nanite Technology§! farà infuriare il [Root.GetName]."
+ GATEWAY_COVENANT_FRUGALITY:0 "Frugalità"
+  GATEWAY_COVENANT_FRUGALITY_DESC:0 "Mantenere una spesa bassa in beni di consumo farà piacere a [Root.GetName]."
+  GATEWAY_COVENANT_BIG_SPENDING:0 "Eccesso di desiderio"
+  GATEWAY_COVENANT_CONSECRATE_L_GATE:0 "Porta a L consacrata"
+  GATEWAY_COVENANT_CONSECRATE_L_GATE_DESC: 1 "! L'attivazione di un editto impero §YConsecrate L-Gates§ piacerà la [Root.GetName]."
+  GATEWAY_COVENANT_NO_CONSECRATED_L_GATE:0 "$GATEWAY_COVENANT_CONSECRATE_L_GATE$"
+  GATEWAY_COVENANT_L_GATE_GUARDIAN:1 "Guardiano delle Porte"
+  GATEWAY_COVENANT_L_GATE_GUARDIAN_DESC: 2 "Avere tre §YL-Gates§ all'interno dei nostri confini soddisferanno il [Root.GetName]!".
+  GATEWAY_COVENANT_NOT_L_GATE_GUARDIAN:0 "$GATEWAY_COVENANT_L_GATE_GUARDIAN$"
+  GATEWAY_COVENANT_L_GATE_SEALED:0 "Porta a L sigillata"
+  GATEWAY_COVENANT_NO_L_GATE_SEALED:0 "L-gate aperto"
+ GATEWAY_COVENANT_L_GATE_SEALED_DESC:0 "Mantenere i §YL-Gates§! nel loro stato §Ydormant§! farà piacere al [Root.GetName]. Se i L-gate sono aperti, il [Root.GetName] §RFracture§!."
+ GATEWAY_COVENANT_HERETIC_OWNS_L_GATE:0 "Dissacrazione dei Santi L-Gates"
+ GATEWAY_COVENANT_HERETIC_OWNS_L_GATE_DESC:0 "Sarà molto arrabbiato con [Root.GetName] se un impero non §YGateway Covenant Tribunal§! possiede un §YL-Gate§!."
+ GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE:0 "Solidarietà nei cancelli L"
+ GATEWAY_COVENANT_FLESH_IS_STRONG:0 "La carne è forte"
+ GATEWAY_COVENANT_FLESH_IS_STRONG_DESC:0 "Il §YGateway Covenant Tribunal§! predica l'astinenza dalla corruzione degli impianti cibernetici, andare contro questo farà arrabbiare [Root.GetName]."
+ GATEWAY_COVENANT_FLESH_IS_WEAK:0 "La carne è debole"
+ GATEWAY_COVENANT_PURITY_TRADITION:0 "Purezza tradizionale"
+ GATEWAY_COVENANT_NO_PURITY_TRADITION:0 "$GATEWAY_COVENANT_PURITY_TRADITION$"
+ GATEWAY_COVENANT_PURITY_TRADITION_DESC:0 "Adottare qualsiasi tradizione che enfatizzi §YPurity§! farà piacere a [Root.GetName]."
+ GATEWAY_COVENANT_PSIONIC_PURSUIT:2 "Inseguimento psionico"
+ GATEWAY_COVENANT_NO_PSIONIC_PURSUIT:1 "$GATEWAY_COVENANT_PSIONIC_PURSUIT$"
+ GATEWAY_COVENANT_PSIONIC_PURSUIT_DESC:2 "Adottare §YMind over Matter§! Perk di Ascensione piacerà a [Root.GetName]."
+ GATEWAY_COVENANT_SHROUD_BOON:0 "Prego avvolto"
+ GATEWAY_COVENANT_NO_SHROUD_BOON:0 "$GATEWAY_COVENANT_SHROUD_BOON$"
+ GATEWAY_COVENANT_SHROUD_BOON_DESC:0 "Raccogliere benefici benefici dalla Sindone farà piacere a [Root.GetName] per un po'."
+ GATEWAY_COVENANT_SHROUD_CURSE:0 "Malaria avvolta"
+ GATEWAY_COVENANT_NO_SHROUD_CURSE:0 "$GATEWAY_COVENANT_SHROUD_CURSE$"
+ GATEWAY_COVENANT_SHROUD_CURSE_DESC:0 "Raccogliere cattive ricompense dalla Sindone farà dispiacere a [Root.GetName] per un po'."
+ GATEWAY_COVENANT_HARMONY:0 "Impero armonioso"
+ GATEWAY_COVENANT_NO_HARMONY:0 "$GATEWAY_COVENANT_HARMONY$"
+ GATEWAY_COVENANT_HARMONY_DESC:0 "L'adozione delle tradizioni di §YHarmony§! farà piacere a [Root.GetName]."
+ GATEWAY_COVENANT_RELIGIOUS_FINDING:0 "Comfort nel passato"
+ GATEWAY_COVENANT_NO_RELIGIOUS_FINDING:0 "$GATEWAY_COVENANT_RELIGIOUS_FINDING$"
+ GATEWAY_COVENANT_RELIGIOUS_FINDING_DESC:0 "Trovare un significato religioso negli artefatti minori farà piacere a [Root.GetName] per un po'."
