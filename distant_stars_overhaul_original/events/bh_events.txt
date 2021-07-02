@@ -243,11 +243,12 @@ planet_event = {
 		NOT = { exists = archaeological_site }
 		NOT = { has_planet_flag = apsr_planet }
 	}
-	from.owner = {
-				if = {
-					limit = { has_ascension_perk = ap_become_the_crisis }
-					complete_crisis_objective = crisobj_destroy_worlds
-				}
+			#from.owner = {
+			#	if = {
+			#		limit = { has_ascension_perk = ap_become_the_crisis }
+			#		complete_crisis_objective = crisobj_destroy_worlds
+			#	}
+			#}
 	option = {
 		name = bio_harvest.1.a
 		ai_chance = {

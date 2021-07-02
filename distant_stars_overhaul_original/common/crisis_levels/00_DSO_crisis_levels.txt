@@ -1,0 +1,14 @@
+# CRISIS LEVELS
+# Levels can be unlocked in the order they are written in this file. A later listed level with lower requirements will not be unlocked until the previous levels have been unlocked.
+#
+# level_name = {
+#	perks = {
+#		menp_undertaker		# The menace perks that will be applied when the level is unlocked.
+#		menp_ship_chipper
+#	}
+#	required_menace = 0		# The required amount of Menace to unlock the level
+#	allow = { has_completed_special_project_in_log = CRISIS_SPECIAL_PROJECT_1 }	# You can only unlock this level when this trigger returns true
+#																			# scope COUNTRY, This = country trying to unlock the level
+#	on_unlock = { set_country_flag = CRISIS_LEVEL_FLAG }	# an effect that is triggered when you unlock the level
+#															# scope COUNTRY, This = country the level is being unlocked for
+# }
