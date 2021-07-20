@@ -7,7 +7,9 @@ namespace = graygoo
 namespace = harvest_nanite_gaia
 namespace = nanite_ecosystem_anomaly
 
-### L-Tiyanki Gas Giant
+##########################################
+# L-Tiyanki Gas Giant Discoverable Event #
+##########################################
 ship_event = {
 	id = nanite_ecosystem_anomaly.1
 	title = "nanite_ecosystem_anomaly.1.name"
@@ -24,8 +26,9 @@ ship_event = {
 
 	option = { name = FASCINATING }
 }
-
-### L-Amoeba Gas Giant
+#########################################
+# L-Amoeba Gas Giant Discoverable Event #
+#########################################
 ship_event = {
 	id = nanite_ecosystem_anomaly.2
 	title = "nanite_ecosystem_anomaly.2.name"
@@ -42,7 +45,11 @@ ship_event = {
 
 	option = { name = FASCINATING }
 }
+#######################
+# L-Nanite Incarnation#
+#######################
 
+### Event Triggers Upon On_Action Harvesting
 country_event = {
 	id = harvest_nanite_gaia.1
 	title = "harvest_nanite_gaia.1.name"
@@ -77,6 +84,7 @@ country_event = {
 	}
 }
 
+### Final Warning
 country_event = {
 	id = harvest_nanite_gaia.2
 	title = "harvest_nanite_gaia.2.name"
@@ -86,7 +94,8 @@ country_event = {
 	hide_window = no
 
 	is_triggered_only = yes
-
+	
+	#Suggests Blowing it Up
 	option = {
 		name = harvest_nanite_gaia.2.a
 		trigger = {
@@ -104,6 +113,7 @@ country_event = {
 			owner = ROOT
 		}
 	}
+	#Prepare for doom
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
@@ -123,6 +133,7 @@ country_event = {
 	}
 }
 
+#Establish Scope for Planet Event
 country_event = {
 	id = harvest_nanite_gaia.3
 	title = "harvest_nanite_gaia.3.name"
@@ -139,6 +150,7 @@ country_event = {
 	}
 }
 
+#Spawns L-Gaia Incarnation & New Critter Faction
 planet_event = {
 	id = harvest_nanite_gaia.31
 	title = "harvest_nanite_gaia.31.name"
@@ -225,7 +237,9 @@ planet_event = {
 	}
 }
 
-# Entering Empty Cluster
+#########################
+#Entering Empty Cluster #
+#########################
 ship_event = {
 	id = graygoo.550
 	title = "graygoo.550.name"
@@ -247,8 +261,9 @@ ship_event = {
 
 	option = { name = graygoo.550.a }
 }
-
-# Entering Nanite Ecosystem Cluster
+#####################################
+# Entering Nanite Ecosystem Cluster #
+#####################################
 ship_event = {
 	id = nanite_ecosystem_enter.550
 	title = "nanite_ecosystem_enter.550.name"
@@ -277,6 +292,9 @@ planet_event = {
 	immediate = { 	 }
 }
 
+####################
+# Presapient Chain #
+####################
 ship_event = {
 	id = nanite_ecosystem_uplift.6080
 	title = "nanite_ecosystem_uplift.6080.name"
@@ -342,11 +360,14 @@ planet_event = {
 	}
 }
 
+###############################
+# L-Subterranean Colony Chain #
+###############################
 ### Seismic Disturbances
 planet_event = {
 	id = nanite_ecosystem_colony.50
-	title = "colony.50.name"
-	desc = "colony.50.desc"
+	title = "nanite_ecosystem_colony.50.name"
+	desc = "nanite_ecosystem_colony.50.desc"
 	picture = GFX_evt_in_the_dark
 	show_sound = event_air_raid_siren
 	location = ROOT
@@ -388,7 +409,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.50.a
+		name = nanite_ecosystem_colony.50.a
 		begin_event_chain = {
 			event_chain = "nanite_ecosystem_subterranean_civilization_chain"
 			target = ROOT
@@ -425,7 +446,7 @@ planet_event = {
 planet_event = {
 	id = nanite_ecosystem_colony.51
 	title = "PROJECT_COMPLETE"
-	desc = "colony.51.desc"
+	desc = "nanite_ecosystem_colony.51.desc"
 	picture = GFX_evt_underground_civilization
 	show_sound = event_alien_signal
 	location = ROOT
@@ -479,7 +500,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.51.a
+		name = nanite_ecosystem_colony.51.a
 		hidden_effect = {
 			owner = { country_event = { id = nanite_ecosystem_colony.53 } }
 		}
@@ -490,7 +511,7 @@ planet_event = {
 planet_event = {
 	id = nanite_ecosystem_colony.52
 	title = "PROJECT_COMPLETE"
-	desc = "colony.52.desc"
+	desc = "nanite_ecosystem_colony.52.desc"
 	picture = GFX_evt_underground_civilization
 	show_sound = event_structural_collapse
 	location = ROOT
@@ -513,7 +534,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.52.a
+		name = nanite_ecosystem_colony.52.a
 		custom_tooltip = underground_expansion_tooltip
 	}
 }
@@ -521,8 +542,8 @@ planet_event = {
 # Subterranean Aliens
 country_event = {
 	id = nanite_ecosystem_colony.53
-	title = "colony.53.name"
-	desc = "colony.53.desc"
+	title = "nanite_ecosystem_colony.53.name"
+	desc = "nanite_ecosystem_colony.53.desc"
 
 	is_triggered_only = yes
 
@@ -531,13 +552,13 @@ country_event = {
 	picture_event_data = { room = no_video_feed_room }
 
 	option = {
-		name = colony.53.a
-		response_text = colony.53.a.response
+		name = nanite_ecosystem_colony.53.a
+		response_text = nanite_ecosystem_colony.53.a.response
 		is_dialog_only = yes
 	}
 	option = {
-		name = colony.53.b
-		response_text = colony.53.b.response
+		name = nanite_ecosystem_colony.53.b
+		response_text = nanite_ecosystem_colony.53.b.response
 		hidden_effect = {
 			FROM = { set_planet_flag = nanite_ecosystem_seismic_disturbance_friendly }
 		}
@@ -552,8 +573,8 @@ country_event = {
 		custom_tooltip = underground_expansion_tooltip
 	}
 	option = {
-		name = colony.53.c
-		response_text = colony.53.c.response
+		name = nanite_ecosystem_colony.53.c
+		response_text = nanite_ecosystem_colony.53.c.response
 		hidden_effect = {
 			FROM = {
 				planet_event = { id = nanite_ecosystem_colony.54 days = 35 random = 40 }
@@ -565,8 +586,8 @@ country_event = {
 # Subterranean Invasion!
 planet_event = {
 	id = nanite_ecosystem_colony.54
-	title = "colony.54.name"
-	desc = "colony.54.desc"
+	title = "nanite_ecosystem_colony.54.name"
+	desc = "nanite_ecosystem_colony.54.desc"
 	picture = GFX_evt_ground_combat
 	show_sound = event_ground_battle
 	location = ROOT
@@ -619,7 +640,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.54.a
+		name = nanite_ecosystem_colony.54.a
 		custom_tooltip = subterranean_invasion
 	}
 }
@@ -627,8 +648,8 @@ planet_event = {
 # Victory
 country_event = {
 	id = nanite_ecosystem_colony.56
-	title = "colony.56.name"
-	desc = "colony.56.desc"
+	title = "nanite_ecosystem_colony.56.name"
+	desc = "nanite_ecosystem_colony.56.desc"
 	picture = GFX_evt_ground_combat
 	show_sound = event_ground_battle
 	location = FROMFROM
@@ -652,7 +673,7 @@ country_event = {
 	}
 
 	option = {
-		name = colony.56.a
+		name = nanite_ecosystem_colony.56.a
 		enable_special_project = {
 			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_3_PROJECT" #Destroy them
 			location = FROMFROM
@@ -664,8 +685,8 @@ country_event = {
 # Defeat
 country_event = {
 	id = nanite_ecosystem_colony.57
-	title = "colony.57.name"
-	desc = "colony.57.desc"
+	title = "nanite_ecosystem_colony.57.name"
+	desc = "nanite_ecosystem_colony.57.desc"
 	picture = GFX_evt_burning_settlement
 	show_sound = event_alien_signal
 	location = FROMFROM
@@ -767,7 +788,7 @@ country_event = {
 country_event = {
 	id = nanite_ecosystem_colony.58
 	title = TRANSMISSION
-	desc = "colony.58.desc"
+	desc = "nanite_ecosystem_colony.58.desc"
 
 	diplomatic = yes
 
@@ -781,14 +802,14 @@ country_event = {
 		room = event_target:nanite_ecosystem_subterranean_empire.ruler
 	}
 
-	option = { name = colony.58.a }
+	option = { name = nanite_ecosystem_colony.58.a }
 }
 
 # Aliens Surface
 planet_event = {
 	id = nanite_ecosystem_colony.59
-	title = "colony.59.name"
-	desc = "colony.59.desc"
+	title = "nanite_ecosystem_colony.59.name"
+	desc = "nanite_ecosystem_colony.59.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -796,7 +817,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = colony.59.a
+		name = nanite_ecosystem_colony.59.a
 		owner = {
 			country_event = { id = nanite_ecosystem_colony.53 }
 		}
@@ -806,8 +827,8 @@ planet_event = {
 # Another Invasion
 planet_event = {
 	id = nanite_ecosystem_colony.60
-	title = "colony.54.name"
-	desc = "colony.60.desc"
+	title = "nanite_ecosystem_colony.54.name"
+	desc = "nanite_ecosystem_colony.60.desc"
 	picture = GFX_evt_ground_combat
 	show_sound = event_ground_battle
 	location = ROOT
@@ -972,7 +993,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.60.a
+		name = nanite_ecosystem_colony.60.a
 		custom_tooltip = subterranean_invasion_2
 	}
 }
@@ -980,8 +1001,8 @@ planet_event = {
 # Collapse
 planet_event = {
 	id = nanite_ecosystem_colony.61
-	title = "colony.61.name"
-	desc = "colony.61.desc"
+	title = "nanite_ecosystem_colony.61.name"
+	desc = "nanite_ecosystem_colony.61.desc"
 	picture = GFX_evt_underground_civilization
 	show_sound = event_structural_collapse
 	location = ROOT
@@ -1005,7 +1026,7 @@ planet_event = {
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_collapse }
 
 	option = {
-		name = colony.61.a
+		name = nanite_ecosystem_colony.61.a
 		add_deposit = d_sinkhole_subterraneans
 		random_planet_army = { remove_army = yes }
 	}
@@ -1014,8 +1035,8 @@ planet_event = {
 # Raiding Parties
 planet_event = {
 	id = nanite_ecosystem_colony.62
-	title = "colony.62.name"
-	desc = "colony.62.desc"
+	title = "nanite_ecosystem_colony.62.name"
+	desc = "nanite_ecosystem_colony.62.desc"
 	picture = GFX_evt_burning_settlement
 	show_sound = event_ground_battle
 	location = ROOT
@@ -1041,7 +1062,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.62.a
+		name = nanite_ecosystem_colony.62.a
 		tooltip = { add_planet_devastation = 10 }
 	}
 }
@@ -1049,8 +1070,8 @@ planet_event = {
 # Surface Attack
 planet_event = {
 	id = nanite_ecosystem_colony.63
-	title = "colony.63.name"
-	desc = "colony.63.desc"
+	title = "nanite_ecosystem_colony.63.name"
+	desc = "nanite_ecosystem_colony.63.desc"
 	picture = GFX_evt_burning_settlement
 	show_sound = event_ground_battle
 	location = ROOT
@@ -1073,7 +1094,7 @@ planet_event = {
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_attack }
 
 	option = {
-		name = colony.63.a
+		name = nanite_ecosystem_colony.63.a
 		add_planet_devastation = 10
 		random_owned_pop = { kill_pop = yes }
 		add_deposit = d_sinkhole_subterraneans
@@ -1083,8 +1104,8 @@ planet_event = {
 # Survivor Pocket
 planet_event = {
 	id = nanite_ecosystem_colony.64
-	title = "colony.64.name"
-	desc = "colony.64.desc"
+	title = "nanite_ecosystem_colony.64.name"
+	desc = "nanite_ecosystem_colony.64.desc"
 	picture = GFX_evt_in_the_dark
 	show_sound = event_scanner
 	location = ROOT
@@ -1116,9 +1137,9 @@ planet_event = {
 		last_created_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 	}
 
-	option = { name = colony.64.a }
+	option = { name = nanite_ecosystem_colony.64.a }
 	option = {
-		name = colony.64.b
+		name = nanite_ecosystem_colony.64.b
 		trigger = {
 			#free_housing > 5
 			owner = { OR = { is_authoritarian = yes is_xenophobe = yes } }
@@ -1140,8 +1161,8 @@ planet_event = {
 # Subterranean Expansion
 planet_event = {
 	id = nanite_ecosystem_colony.65
-	title = "colony.65.name"
-	desc = "colony.65.desc"
+	title = "nanite_ecosystem_colony.65.name"
+	desc = "nanite_ecosystem_colony.65.desc"
 	picture = GFX_evt_in_the_dark
 	show_sound = event_construction
 	location = ROOT
@@ -1178,8 +1199,8 @@ planet_event = {
 # Gold!
 planet_event = {
 	id = nanite_ecosystem_colony.66
-	title = "colony.66.name"
-	desc = "colony.66.desc"
+	title = "nanite_ecosystem_colony.66.name"
+	desc = "nanite_ecosystem_colony.66.desc"
 	picture = GFX_evt_in_the_dark
 	show_sound = event_mystic_reveal
 	location = ROOT
@@ -1219,8 +1240,8 @@ planet_event = {
 # Treasury
 planet_event = {
 	id = nanite_ecosystem_colony.67
-	title = "colony.67.name"
-	desc = "colony.67.desc"
+	title = "nanite_ecosystem_colony.67.name"
+	desc = "nanite_ecosystem_colony.67.desc"
 	picture = GFX_evt_in_the_dark
 	show_sound = event_radio_chatter
 	location = ROOT
@@ -1258,8 +1279,8 @@ planet_event = {
 # Earthquakes 1
 planet_event = {
 	id = nanite_ecosystem_colony.68
-	title = "colony.68.name"
-	desc = "colony.68.desc"
+	title = "nanite_ecosystem_colony.68.name"
+	desc = "nanite_ecosystem_colony.68.desc"
 	picture = GFX_evt_burning_settlement
 	show_sound = event_air_raid_siren
 	location = ROOT
@@ -1294,8 +1315,8 @@ planet_event = {
 # Famine
 planet_event = {
 	id = nanite_ecosystem_colony.69
-	title = "colony.69.name"
-	desc = "colony.69.desc"
+	title = "nanite_ecosystem_colony.69.name"
+	desc = "nanite_ecosystem_colony.69.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1318,7 +1339,7 @@ planet_event = {
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_famine }
 
 	option = {
-		name = colony.69.a
+		name = nanite_ecosystem_colony.69.a
 		allow = {
 			owner = {
 				resource_stockpile_compare = { resource = food value >= 50 }
@@ -1333,25 +1354,25 @@ planet_event = {
 				value = -1
 			}
 		}
-		custom_tooltip = subterraneans_pleased
+		custom_tooltip = l_subterraneans_pleased
 	}
 	option = {
-		name = colony.69.b
+		name = nanite_ecosystem_colony.69.b
 		hidden_effect = {
 			change_variable = {
 				which = "angry_subterraneans"
 				value = 1
 			}
 		}
-		custom_tooltip = subterraneans_displeased
+		custom_tooltip = l_subterraneans_displeased
 	}
 }
 
 # Gift
 planet_event = {
 	id = nanite_ecosystem_colony.70
-	title = "colony.70.name"
-	desc = "colony.70.desc"
+	title = "nanite_ecosystem_colony.70.name"
+	desc = "nanite_ecosystem_colony.70.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1378,7 +1399,7 @@ planet_event = {
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_gift }
 
 	option = {
-		name = colony.70.a
+		name = nanite_ecosystem_colony.70.a
 		owner = {
 			add_monthly_resource_mult = {
 				resource = minerals
@@ -1393,8 +1414,8 @@ planet_event = {
 # Subterranean Refugees
 planet_event = {
 	id = nanite_ecosystem_colony.71
-	title = "colony.71.name"
-	desc = "colony.71.desc"
+	title = "nanite_ecosystem_colony.71.name"
+	desc = "nanite_ecosystem_colony.71.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1427,7 +1448,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.71.a
+		name = nanite_ecosystem_colony.71.a
 		trigger = {
 			#free_housing > 0
 		}
@@ -1441,25 +1462,25 @@ planet_event = {
 				value = 1
 			}
 		}
-		custom_tooltip = subterraneans_displeased
+		custom_tooltip = l_subterraneans_displeased
 	}
 	option = {
-		name = colony.71.b
+		name = nanite_ecosystem_colony.71.b
 		hidden_effect = {
 			change_variable = {
 				which = "angry_subterraneans"
 				value = -1
 			}
 		}
-		custom_tooltip = subterraneans_pleased
+		custom_tooltip = l_subterraneans_pleased
 	}
 }
 
 # Xeno Anthropologists
 planet_event = {
 	id = nanite_ecosystem_colony.72
-	title = "colony.72.name"
-	desc = "colony.72.desc"
+	title = "nanite_ecosystem_colony.72.name"
+	desc = "nanite_ecosystem_colony.72.desc"
 	picture = GFX_evt_underground_civilization
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1501,8 +1522,8 @@ planet_event = {
 # Earthquakes 2
 planet_event = {
 	id = nanite_ecosystem_colony.73
-	title = "colony.68.name"
-	desc = "colony.73.desc"
+	title = "nanite_ecosystem_colony.68.name"
+	desc = "nanite_ecosystem_colony.73.desc"
 	picture = GFX_evt_underground_civilization
 	show_sound = event_air_raid_siren
 	location = ROOT
@@ -1528,7 +1549,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.73.a
+		name = nanite_ecosystem_colony.73.a
 		tooltip = { add_planet_devastation = 10 }
 		every_owned_pop = {
 			add_modifier = {
@@ -1538,7 +1559,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = colony.73.b
+		name = nanite_ecosystem_colony.73.b
 		tooltip = { add_planet_devastation = 10 }
 		hidden_effect = {
 			change_variable = {
@@ -1546,15 +1567,15 @@ planet_event = {
 				value = 1
 			}
 		}
-		custom_tooltip = subterraneans_displeased
+		custom_tooltip = l_subterraneans_displeased
 	}
 }
 
 # Request for Technology
 planet_event = {
 	id = nanite_ecosystem_colony.74
-	title = "colony.74.name"
-	desc = "colony.74.desc"
+	title = "nanite_ecosystem_colony.74.name"
+	desc = "nanite_ecosystem_colony.74.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1577,17 +1598,17 @@ planet_event = {
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_tech }
 
 	option = {
-		name = colony.74.a
+		name = nanite_ecosystem_colony.74.a
 		hidden_effect = {
 			change_variable = {
 				which = "angry_subterraneans"
 				value = 1
 			}
 		}
-		custom_tooltip = subterraneans_displeased
+		custom_tooltip = l_subterraneans_displeased
 	}
 	option = {
-		name = colony.74.b
+		name = nanite_ecosystem_colony.74.b
 		owner = {
 			add_modifier = {
 				modifier = subterranean_tech_transaction
@@ -1607,15 +1628,15 @@ planet_event = {
 				set_country_flag = nanite_ecosystem_tech_request_approved
 			}
 		}
-		custom_tooltip = subterraneans_pleased
+		custom_tooltip = l_subterraneans_pleased
 	}
 }
 
 # Message Delivered
 planet_event = {
 	id = nanite_ecosystem_colony.75
-	title = "colony.75.name"
-	desc = "colony.75.desc"
+	title = "nanite_ecosystem_colony.75.name"
+	desc = "nanite_ecosystem_colony.75.desc"
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_primitive_civilization
 	location = ROOT
@@ -1641,7 +1662,7 @@ planet_event = {
 	}
 
 	option = {
-		name = colony.75.a
+		name = nanite_ecosystem_colony.75.a
 		owner = {
 			country_event = { id = nanite_ecosystem_colony.76 }
 		}
@@ -1651,8 +1672,8 @@ planet_event = {
 # Message
 country_event = {
 	id = nanite_ecosystem_colony.76
-	title = "colony.76.name"
-	desc = "colony.76.desc"
+	title = "nanite_ecosystem_colony.76.name"
+	desc = "nanite_ecosystem_colony.76.desc"
 
 	is_triggered_only = yes
 
@@ -1671,7 +1692,7 @@ country_event = {
 	}
 
 	option = {
-		name = colony.76.a
+		name = nanite_ecosystem_colony.76.a
 		FROM = { remove_modifier = "subterranean_civilization" }
 		hidden_effect = {
 			FROM = {
@@ -1680,6 +1701,10 @@ country_event = {
 		}
 	}
 }
+
+#######################
+# L-Drake Event Spawn #
+#######################
 
 fleet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.1
@@ -1705,7 +1730,11 @@ fleet_event = {
 }
 
 
+############################################
+# L-Cluster Ecosystem Generate Event Chain #
+############################################
 
+### Setting System Flags for Events & Identification
 country_event = {
 	id = distar_nanite_ecosystem.1
 
@@ -1729,6 +1758,7 @@ country_event = {
 				change_pc = pc_nanite_gaia
 			}
 		}
+		# Randomly Establish Flags for Discoverable Events
 		random_list = {
 			11 = {
 				random_system = {
@@ -1798,7 +1828,7 @@ country_event = {
 		country_event = { id = distar_nanite_ecosystem.2 }
 	}
 }
-
+### Randomly Establish L-Tiyanki System
 country_event = {
 	id = distar_nanite_ecosystem.2
 
@@ -1840,7 +1870,7 @@ country_event = {
 		country_event = { id = distar_nanite_ecosystem.3 }
 	}
 }
-
+### Randomly Establish L-Amoeba System
 country_event = {
 	id = distar_nanite_ecosystem.3
 
@@ -1883,7 +1913,7 @@ country_event = {
 		country_event = { id = distar_nanite_ecosystem.4 }
 	}
 }
-
+### Populate Solar-Systems According to Events Flags
 country_event = {
 	id = distar_nanite_ecosystem.4
 
