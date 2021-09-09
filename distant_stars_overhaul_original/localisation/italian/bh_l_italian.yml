@@ -114,7 +114,7 @@
  gaia_large_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G112§! anni prima di essere completamente raccolto."
  gaia_medium_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G100§! anni prima di essere completamente raccolto."
  gaia_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G92§! anni prima di essere completamente raccolto."
- gaia_ ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca. Essendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G80§! anni prima di essere completamente raccolto."
+ gaia_ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! si trasforma in un §Y$pc_bh_harvest$§!, fornendo risorse grezze e ricerca.\nEssendo un §G$pc_gaia$§!, ci aspettiamo che la biomassa duri per circa §G80§! anni prima di essere completamente raccolto."
 
  harvester_grey_goo_planet.1.name:0 "Nanites intatti trovati su Ember!"
  harvester_grey_goo_planet.1.desc:0 ""
@@ -128,7 +128,7 @@
  d_nanites_deposit_desc:0 "Nel profondo del nucleo del pianeta risiede una gigantesca Nanite Forge. Questa fucina rilascia minuscole nano-macchine nell'atmosfera del pianeta che vengono utilizzate per creare strutture e risorse."
 
  pc_bh_harvest:0 "Coltivazione del Mondo"
- pc_bh_harvest_desc:0 "La biosfera di questo pianeta viene raccolta da semplici nano-macchine, che forniscono risorse grezze e ricerca. Il processo di raccolta può ancora essere interrotto a questo punto, ma così facendo diventerà un §Yravaged planet§!. Un'adeguata tecnologia di terraformazione può essere utilizzata per ripristinare parzialmente il clima, trasformando il pianeta in un §§Ytomb world§."
+ pc_bh_harvest_desc:0 "La biosfera di questo pianeta viene raccolta da semplici nano-macchine, che forniscono risorse grezze e ricerca. Il processo di raccolta può ancora essere interrotto a questo punto, ma così facendo diventerà un §Yravaged planet§!. Un'adeguata tecnologia di terraformazione può essere utilizzata per ripristinare parzialmente il clima, trasformando il pianeta in un §Ytomb world§."
  pc_bh_harvested:0 "Mondo Sfruttato"
  pc_bh_harvested_desc:0 "Il paesaggio del pianeta è ora dominato da vaste dune di naniti usati e in decomposizione. Tutta la materia organica che un tempo componeva la biosfera è stata adeguatamente catalogata, raccolta e trasformata in risorse utilizzabili. Il clima organico non può più essere ripristinato. Questo mondo può essere terraformato solo in un §YMachine World§ o §YEcumenopolises§."
 
@@ -424,7 +424,7 @@ GATEWAY_COVENANT_ROBOT_RIGHTS:0 "$GATEWAY_COVENANT_NO_ROBOT_RIGHTS$"
   GATEWAY_COVENANT_CONSECRATE_L_GATE_DESC: 1 "! L'attivazione di un editto impero §YConsecrate L-Gates§ piacerà la [Root.GetName]."
   GATEWAY_COVENANT_NO_CONSECRATED_L_GATE:0 "$GATEWAY_COVENANT_CONSECRATE_L_GATE$"
   GATEWAY_COVENANT_L_GATE_GUARDIAN:1 "Guardiano delle Porte"
-  GATEWAY_COVENANT_L_GATE_GUARDIAN_DESC: 2 "Avere tre §YL-Gates§ all'interno dei nostri confini soddisferanno il [Root.GetName]!".
+  GATEWAY_COVENANT_L_GATE_GUARDIAN_DESC: 2 "Avere tre §YL-Gates§ all'interno dei nostri confini soddisferanno il [Root.GetName]!"
   GATEWAY_COVENANT_NOT_L_GATE_GUARDIAN:0 "$GATEWAY_COVENANT_L_GATE_GUARDIAN$"
   GATEWAY_COVENANT_L_GATE_SEALED:0 "Porta a L sigillata"
   GATEWAY_COVENANT_NO_L_GATE_SEALED:0 "L-gate aperto"

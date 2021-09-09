@@ -94,7 +94,7 @@ country_event = {
 	hide_window = no
 
 	is_triggered_only = yes
-	
+
 	#Suggests Blowing it Up
 	option = {
 		name = harvest_nanite_gaia.2.a
@@ -246,8 +246,8 @@ ship_event = {
 	desc = "graygoo.550.desc"
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
-	location = FROM
-
+	trackable = yes
+	location = fleet # FROM sometimes bugged
 	is_triggered_only = yes
 
 	trigger = {
@@ -751,8 +751,8 @@ country_event = {
 			remove_planet_flag = nanite_ecosystem_subterranean_invasion_planet
 			save_event_target_as = nanite_ecosystem_conquered_planet
 			set_owner = event_target:nanite_ecosystem_subterranean_empire
-			random_pop = { kill_pop = yes }
-			random_pop = { kill_pop = yes }
+			random_owned_pop = { kill_pop = yes }
+			random_owned_pop = { kill_pop = yes }
 			create_pop = { species = owner_main_species }
 			create_pop = { species = owner_main_species }
 			create_army = {

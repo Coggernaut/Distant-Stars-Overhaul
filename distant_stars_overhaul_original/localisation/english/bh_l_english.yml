@@ -115,7 +115,7 @@
  gaia_large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G112§! years before being completely harvested."
  gaia_medium_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G100§! years before being completely harvested."
  gaia_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G92§! years before being completely harvested."
- gaia_ ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G80§! years before being completely harvested."
+ gaia_ery_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G80§! years before being completely harvested."
 
  harvester_grey_goo_planet.1.name:0 "Intact Nanites found on Ember!"
  harvester_grey_goo_planet.1.desc:0 ""

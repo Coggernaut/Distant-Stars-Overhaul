@@ -64,7 +64,7 @@ planet_event = {
 			limit = {
 				owner = { is_country_type = swarm }
 			}
-			every_country = {
+			every_playable_country = {
 				limit = { has_event_chain = "prethoryn_scourge_chain" }
 				add_event_chain_counter = {
 					event_chain = "prethoryn_scourge_chain"
@@ -281,114 +281,114 @@ planet_event = {
 			create_mining_station = { owner = ROOT }
 		}
 	}
-	option = {
-		name = OK
-		#gaia_very_large
-		if = {
-			limit = {
-				is_planet_class = pc_gaia
-				OR = {
-					planet_size = 25
-					planet_size = 24
-					planet_size = 23
-				}
-			}
-			custom_tooltip = gaia_very_large_harvest.1.tooltip
-		}
-		#gaia_large
-		if = {
-			limit = {
-				is_planet_class = pc_gaia
-				OR = {
-					planet_size = 22
-					planet_size = 21
-					planet_size = 20
-				}
-			}
-			custom_tooltip = gaia_large_harvest.1.tooltip
-		}
-		#gaia_medium
-		if = {
-			limit = {
-				is_planet_class = pc_gaia
-				OR = {
-					planet_size = 19
-					planet_size = 18
-					planet_size = 17
-				}
-			}
-			custom_tooltip = gaia_medium_harvest.1.tooltip
-		}
-		#gaia_small
-		if = {
-			limit = {
-				is_planet_class = pc_gaia
-				OR = {
-					planet_size = 16
-					planet_size = 15
-					planet_size = 14
-				}
-			}
-			custom_tooltip = gaia_small_harvest.1.tooltip
-		}
-		#gaia_very_small
-		if = {
-			limit = {
-				is_planet_class = pc_gaia
-				planet_size < 14
-			}
-			custom_tooltip = gaia_very_small_harvest.1.tooltip
-		}
-		#very_large
-		if = {
-			limit = {
-				OR = {
-					planet_size = 25
-					planet_size = 24
-					planet_size = 23
-				}
-			}
-			custom_tooltip = very_large_harvest.1.tooltip
-		}
-		#large
-		if = {
-			limit = {
-				OR = {
-					planet_size = 22
-					planet_size = 21
-					planet_size = 20
-				}
-			}
-			custom_tooltip = large_harvest.1.tooltip
-		}
-		#medium
-		if = {
-			limit = {
-				OR = {
-					planet_size = 19
-					planet_size = 18
-					planet_size = 17
-				}
-			}
-			custom_tooltip = medium_harvest.1.tooltip
-		}
-		#small
-		if = {
-			limit = {
-				OR = {
-					planet_size = 16
-					planet_size = 15
-					planet_size = 14
-				}
-			}
-			custom_tooltip = small_harvest.1.tooltip
-		}
-		#very_small
-		if = {
-			limit = { planet_size < 14 }
-			custom_tooltip = very_small_harvest.1.tooltip
-		}
-	}
+	# option = {
+	# 	name = OK
+	# 	#gaia_very_large
+	# 	if = {
+	# 		limit = {
+	# 			is_planet_class = pc_gaia
+	# 			OR = {
+	# 				planet_size = 25
+	# 				planet_size = 24
+	# 				planet_size = 23
+	# 			}
+	# 		}
+	# 		custom_tooltip = gaia_very_large_harvest.1.tooltip
+	# 	}
+	# 	#gaia_large
+	# 	if = {
+	# 		limit = {
+	# 			is_planet_class = pc_gaia
+	# 			OR = {
+	# 				planet_size = 22
+	# 				planet_size = 21
+	# 				planet_size = 20
+	# 			}
+	# 		}
+	# 		custom_tooltip = gaia_large_harvest.1.tooltip
+	# 	}
+	# 	#gaia_medium
+	# 	if = {
+	# 		limit = {
+	# 			is_planet_class = pc_gaia
+	# 			OR = {
+	# 				planet_size = 19
+	# 				planet_size = 18
+	# 				planet_size = 17
+	# 			}
+	# 		}
+	# 		custom_tooltip = gaia_medium_harvest.1.tooltip
+	# 	}
+	# 	#gaia_small
+	# 	if = {
+	# 		limit = {
+	# 			is_planet_class = pc_gaia
+	# 			OR = {
+	# 				planet_size = 16
+	# 				planet_size = 15
+	# 				planet_size = 14
+	# 			}
+	# 		}
+	# 		custom_tooltip = gaia_small_harvest.1.tooltip
+	# 	}
+	# 	#gaia_very_small
+	# 	if = {
+	# 		limit = {
+	# 			is_planet_class = pc_gaia
+	# 			planet_size < 14
+	# 		}
+	# 		custom_tooltip = gaia_very_small_harvest.1.tooltip
+	# 	}
+	# 	#very_large
+	# 	if = {
+	# 		limit = {
+	# 			OR = {
+	# 				planet_size = 25
+	# 				planet_size = 24
+	# 				planet_size = 23
+	# 			}
+	# 		}
+	# 		custom_tooltip = very_large_harvest.1.tooltip
+	# 	}
+	# 	#large
+	# 	if = {
+	# 		limit = {
+	# 			OR = {
+	# 				planet_size = 22
+	# 				planet_size = 21
+	# 				planet_size = 20
+	# 			}
+	# 		}
+	# 		custom_tooltip = large_harvest.1.tooltip
+	# 	}
+	# 	#medium
+	# 	if = {
+	# 		limit = {
+	# 			OR = {
+	# 				planet_size = 19
+	# 				planet_size = 18
+	# 				planet_size = 17
+	# 			}
+	# 		}
+	# 		custom_tooltip = medium_harvest.1.tooltip
+	# 	}
+	# 	#small
+	# 	if = {
+	# 		limit = {
+	# 			OR = {
+	# 				planet_size = 16
+	# 				planet_size = 15
+	# 				planet_size = 14
+	# 			}
+	# 		}
+	# 		custom_tooltip = small_harvest.1.tooltip
+	# 	}
+	# 	#very_small
+	# 	if = {
+	# 		limit = { planet_size < 14 }
+	# 		custom_tooltip = very_small_harvest.1.tooltip
+	# 	}
+	# }
 }
 
 # ----------------------------------------------------------------------------------

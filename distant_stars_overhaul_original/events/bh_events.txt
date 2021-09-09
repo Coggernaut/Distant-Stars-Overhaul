@@ -45,8 +45,10 @@ event = {
 	#mean_time_to_happen = { months = 2 }
 	trigger = {
 		has_global_flag = l_cluster_opened
-		NOT = { has_country_flag = lcluster_opener }
-		NOT = { has_country_flag = distar_overhaul_insight_started_flag }
+		NOR = {
+			has_country_flag = lcluster_opener
+			has_country_flag = distar_overhaul_insight_started_flag
+		}
 	}
 	immediate = {
 		ROOT = { set_country_flag = distar_overhaul_insight_started_flag }
@@ -158,8 +160,10 @@ country_event = {
 	immediate = {
 		every_playable_country = {
 			limit = {
-				NOT = { has_country_flag = lcluster_opener }
-				NOT = { has_country_flag = distar_overhaul_insight_started_flag }
+				NOR = {
+					has_country_flag = lcluster_opener
+					has_country_flag = distar_overhaul_insight_started_flag
+				}
 			}
 			country_event = { id = distar_overhaul_insight_start.1 }
 		}
@@ -188,11 +192,9 @@ planet_event = {
 			NOT = { has_planet_flag = abandon_nanite_forgeworld_flag }
 		}
 		owner = {
-			NOT = {
-				OR = {
-					has_origin = civic_harvester_nanites
-					has_origin = civic_gateway_pursuer
-				}
+			NOR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
 			}
 		}
 	}
@@ -223,7 +225,7 @@ planet_event = {
 	desc = bio_harvest.1.desc
 	picture = GFX_evt_gray_gooed_planet
 	is_triggered_only = yes
-	
+
 	trigger = {
 		owner = {
 			OR = {

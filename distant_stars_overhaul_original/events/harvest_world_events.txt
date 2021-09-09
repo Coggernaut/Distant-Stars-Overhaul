@@ -384,8 +384,8 @@ country_event = {
 			remove_planet_flag = subterranean_harvester_invasion_planet
 			save_event_target_as = conquered_harvester_planet
 			set_owner = event_target:subterranean_harvester_empire
-			random_pop = { kill_pop = yes }
-			random_pop = { kill_pop = yes }
+			random_owned_pop = { kill_pop = yes }
+			random_owned_pop = { kill_pop = yes }
 			create_pop = { species = owner_main_species }
 			create_pop = { species = owner_main_species }
 			create_army = {

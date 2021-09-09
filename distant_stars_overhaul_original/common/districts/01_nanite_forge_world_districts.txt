@@ -69,7 +69,7 @@ dso_district_nexus = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_swapped_tradition = tr_prosperity_optimized_nexus }
+			owner = { has_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -81,20 +81,20 @@ district_nanite_forgeworld_industry = {
 	icon = district_nanite_forgeworld_industry
 	base_buildtime = 240
 	is_capped_by_modifier = no
-	
+
 	show_on_uncolonized = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-	
+
 	potential = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-	
+
 	conversion_ratio = 1
 	convert_to = {
 		district_nexus
-	}	
-	
+	}
+
 	resources = {
 		category = planet_districts
 		cost = {
@@ -103,9 +103,9 @@ district_nanite_forgeworld_industry = {
 		}
 		upkeep = {
 			energy = 2
-		}		
+		}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3
 	}
@@ -118,15 +118,15 @@ district_nanite_forgeworld_industry = {
 		modifier = {
 			job_fabricator_add = 3
 		}
-	}	
-	
+	}
+
 	triggered_desc = {
-		trigger = { 
+		trigger = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		text = job_fabricator_effect_desc
-	}	
+	}
 
 }
 
@@ -134,21 +134,21 @@ district_forgeworld_bio_reactor = {
 	icon = district_forgeworld_bio_reactor
 	base_buildtime = 240
 	is_capped_by_modifier = no
-	
+
 	show_on_uncolonized = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-	
+
 	potential = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-	
+
 	conversion_ratio = 1
 	convert_to = {
 		district_nexus
 		district_nanite_forgeworld_industry
-	}	
-	
+	}
+
 	resources = {
 		category = planet_districts
 		cost = {
@@ -159,7 +159,7 @@ district_forgeworld_bio_reactor = {
 		#	energy = 1
 		#}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 3
 	}
@@ -172,15 +172,15 @@ district_forgeworld_bio_reactor = {
 		modifier = {
 			job_bio_processor_drone_add = 3
 		}
-	}		
-	
+	}
+
 	triggered_desc = {
-		trigger = { 
+		trigger = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		text = bio_processor_drone_effect_desc
-	}	
+	}
 
 }
 

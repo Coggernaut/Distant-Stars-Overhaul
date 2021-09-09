@@ -5,9 +5,11 @@ building_nanite_weapons_lab = {
 	category = research
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
-		NOT = { is_planet_class = pc_habitat }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			is_planet_class = pc_habitat
+		}
 	}
 
 	allow = {
@@ -228,10 +230,10 @@ building_mineral_purification_plant = {
 	}
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { is_planet_class = pc_nanite_forgeworld }
-
-		NOR = { # Ringworlds don't have mines
+		NOR = {
+			has_modifier = resort_colony
+			is_planet_class = pc_nanite_forgeworld
+		 	# Ringworlds don't have mines
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_cybrex
 		}

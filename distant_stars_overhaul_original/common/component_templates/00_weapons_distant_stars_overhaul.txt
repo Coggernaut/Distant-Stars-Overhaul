@@ -48,6 +48,7 @@ strike_craft_component_template = {
 	size = LARGE
 	entity = "gatebuilder_01_strikecraft_entity"
 	resources = {
+		category = ship_components
 		cost = {
 			alloys = 60
 		}

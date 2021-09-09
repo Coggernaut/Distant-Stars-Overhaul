@@ -1,6 +1,4 @@
 namespace = distar_overhaul
-namespace = distar
-
 country_event = {
 	id = distar_overhaul.10950
 	hide_window = yes

@@ -1,6 +1,6 @@
 ﻿l_italian:
  # Events ---------------
-harvest_colony.50.name:0 "Disturbi sismici"
+ harvest_colony.50.name:0 "Disturbi sismici"
  Harvest_colony.50.desc:0 "Ci sono state molte segnalazioni di inspiegabili disturbi sismici su [Root.GetName]. Si possono avvertire tremori in tutta [Root.GetPlanetMoon], e molti dei nostri insediamenti hanno subito danni. Durante le indagini sui terremoti, i nostri scienziati hanno scoperto una vasta rete di caverne sotterranee.\n\nLa più profonda di queste caverne ospita una specie di civiltà indigena e sembra che stiano scavando tunnel verso la superficie! Le vibrazioni del suolo dei nostri insediamenti potrebbero aver innescato questo comportamento, ma noi non posso esserne certo. Non si sa come reagiranno questi alieni quando usciranno dai loro tunnel e incontreranno i nostri coloni!"
  harvest_colony.50.a:0 "Dobbiamo affrontare questa situazione."
  Harvest_colony.51.desc:0 "Una delle nostre sonde ha scavato nel terreno e ha intercettato gli alieni in galleria su [From.From.GetName]. Dopo che i lavoratori alieni si sono calmati, la sonda è riuscita a stabilire comunicazioni con i loro leader."
@@ -82,15 +82,3 @@ harvest_colony.54.a:0 "Alle armi!"
  Harvest_colony.76.name: 0 "Messaggio"
  Harvest_colony.76.desc:0 "Surfacer. Abbiamo cercato di essere buoni vicini, ma è diventato chiaro che non hai intenzione di trattarci con il rispetto che la nostra gloriosa civiltà merita.\n\nIl nostro imperatore ha così decretato che dobbiamo rivendicare tutto questo mondo per noi stessi, come è nostro diritto. Ti riporteremo alle stelle da dove sei venuto!"
  harvest_colony.76.a:0 "Non va bene."
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
