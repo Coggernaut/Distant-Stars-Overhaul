@@ -31,7 +31,8 @@ dso_district_nexus = {
 	resources = {
 		category = planet_districts_cities
 		cost = {
-			minerals = @nanite_city_cost
+			minerals = @nanite_district_cost
+			nanites = 5
 		}
 		upkeep = {
 			energy = 2
@@ -39,8 +40,8 @@ dso_district_nexus = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 5
-		job_maintenance_drone_add = 3
+		planet_housing_add = 7
+		job_maintenance_drone_add = 5
 		planet_pop_assembly_mult = 0.05
 		planet_max_buildings_add = 1
 	}
@@ -69,7 +70,7 @@ dso_district_nexus = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_tradition = tr_prosperity_optimized_nexus }
+			owner = { has_swapped_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -81,20 +82,20 @@ district_nanite_forgeworld_industry = {
 	icon = district_nanite_forgeworld_industry
 	base_buildtime = 240
 	is_capped_by_modifier = no
-
+	
 	show_on_uncolonized = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-
+	
 	potential = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-
+	
 	conversion_ratio = 1
 	convert_to = {
 		district_nexus
-	}
-
+	}	
+	
 	resources = {
 		category = planet_districts
 		cost = {
@@ -103,11 +104,11 @@ district_nanite_forgeworld_industry = {
 		}
 		upkeep = {
 			energy = 2
-		}
+		}		
 	}
-
+	
 	planet_modifier = {
-		planet_housing_add = 3
+		planet_housing_add = 5
 	}
 
 	triggered_planet_modifier = {
@@ -116,17 +117,18 @@ district_nanite_forgeworld_industry = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_fabricator_add = 3
+			job_fabricator_add = 5
+			planet_jobs_alloys_produces_mult = 0.05
 		}
-	}
-
+	}	
+	
 	triggered_desc = {
-		trigger = {
+		trigger = { 
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		text = job_fabricator_effect_desc
-	}
+	}	
 
 }
 
@@ -134,21 +136,21 @@ district_forgeworld_bio_reactor = {
 	icon = district_forgeworld_bio_reactor
 	base_buildtime = 240
 	is_capped_by_modifier = no
-
+	
 	show_on_uncolonized = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-
+	
 	potential = {
 		uses_district_set = dso_nanite_forgeworld
 	}
-
+	
 	conversion_ratio = 1
 	convert_to = {
 		district_nexus
 		district_nanite_forgeworld_industry
-	}
-
+	}	
+	
 	resources = {
 		category = planet_districts
 		cost = {
@@ -159,9 +161,9 @@ district_forgeworld_bio_reactor = {
 		#	energy = 1
 		#}
 	}
-
+	
 	planet_modifier = {
-		planet_housing_add = 3
+		planet_housing_add = 5
 	}
 
 	triggered_planet_modifier = {
@@ -170,17 +172,18 @@ district_forgeworld_bio_reactor = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_bio_processor_drone_add = 3
+			job_bio_processor_drone_add = 5
+			planet_jobs_energy_produces_mult = 0.05
 		}
-	}
-
+	}		
+	
 	triggered_desc = {
-		trigger = {
+		trigger = { 
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
 		text = bio_processor_drone_effect_desc
-	}
+	}	
 
 }
 
@@ -213,7 +216,8 @@ dso_district_generator_uncapped = {
 	resources = {
 		category = planet_districts
 		cost = {
-			minerals = @base_cost
+			minerals = @nanite_district_cost
+			nanites = 5
 		}
 		upkeep = {
 			energy = 1
@@ -221,7 +225,7 @@ dso_district_generator_uncapped = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 2
+		planet_housing_add = 4
 	}
 
 	triggered_planet_modifier = {
@@ -252,8 +256,9 @@ dso_district_generator_uncapped = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_technician_drone_add = 2
+			job_technician_drone_add = 4
 			planet_housing_add = 1
+			planet_jobs_energy_produces_mult = 0.05
 		}
 	}
 
