@@ -6,7 +6,7 @@ wg_claim_lgates = {
 
 	# If used as attacker wargoal and set, defender will have their wargoal predetermined by this
 	# If not set, defender gets to pick their own wargoal
-	#set_defender_wargoal = 
+	#set_defender_wargoal =
 
 	# Defenders get this war goal if no war goal is picked in time. If multiple war goals are set to
 	# be defender default, the first one scripted in the file is chosen.
@@ -17,6 +17,12 @@ wg_claim_lgates = {
 
 	# Hide this wargoal if country doesn't have the requisite CB
 	hide_if_no_cb = no	# Default no
+
+	allowed_peace_offers = {
+		status_quo
+		surrender
+		demand_surrender
+	}
 
 	# Cede claims on peace?
 	cede_claims = occupied_only
@@ -30,44 +36,46 @@ wg_claim_lgates = {
 	# This decides whether claims should be listed in the description
 	show_claims_in_description = no # Default no
 
-	# FROM = The targeted country
-	# THIS = The acting country
+	# from = The targeted country
+	# this = The acting country
 	potential = {
-		THIS = { has_origin = civic_gateway_worshiper }
+		this = { has_origin = civic_gateway_worshiper }
 	}
 	possible = {
-		THIS = { has_origin = civic_gateway_worshiper }
+		this = { has_origin = civic_gateway_worshiper }
 	}
-	
+
 	on_wargoal_set = {
 		every_system = {
 			limit = {
 				has_megastructure = lgate_base
-				is_owned_by = FROM
+				is_owned_by = from
 			}
 			add_claims = {
-				who = PREV
+				who = prev
 				num_of_claims = 1
 				show_notification = yes
-			}
-		}	
-	}
-	
-	# Run when war ends in status quo
-	on_status_quo = {
-		
-	}
-	# Run when target surrenders after claims are ceded
-	on_accept = {	
-		every_system = {
-			limit = {
-				has_megastructure = lgate_base
-				is_owned_by = FROM
-			}
-			starbase = {
-				set_owner = PREVPREV
 			}
 		}
 	}
 
+	# Run when war ends in status quo
+	on_status_quo = {
+
+	}
+	# Run when target surrenders after claims are ceded
+	on_accept = {
+		every_system = {
+			limit = {
+				has_megastructure = lgate_base
+				is_owned_by = from
+			}
+			starbase = {
+				set_owner = prevprev
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
 }

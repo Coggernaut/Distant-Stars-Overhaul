@@ -306,11 +306,11 @@ gateway_covenant = {
 			}
 			if = {
 				limit = {
-					Any_country = {
+					any_country = {
 						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
-						NOT = { is_same_empire = ROOT.OWNER }
-						NOT = { has_migration_access = ROOT.OWNER }
-						has_communications = ROOT.OWNER
+						NOT = { is_same_empire = root.owner }
+						NOT = { has_migration_access = root.owner }
+						has_communications = root.owner
 					}
 				}
 				always = yes
@@ -323,9 +323,9 @@ gateway_covenant = {
 		trigger = {
 			if = {
 				limit = {
-					Any_country = {
+					any_country = {
 						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
-						has_migration_access = ROOT.OWNER
+						has_migration_access = root.owner
 					}
 				}
 				always = yes
@@ -382,7 +382,7 @@ gateway_covenant = {
 						is_megastructure_type = lgate_base
 						owner = {
 							NOT = { has_government = gov_spiritualist_gateway_worshiper }
-							has_communications = ROOT.OWNER
+							has_communications = root.owner
 						}
 					}
 				}
@@ -400,7 +400,7 @@ gateway_covenant = {
 						is_megastructure_type = lgate_base
 						owner = {
 							NOT = { has_government = gov_spiritualist_gateway_worshiper }
-							has_communications = ROOT.OWNER
+							has_communications = root.owner
 						}
 					}
 				}

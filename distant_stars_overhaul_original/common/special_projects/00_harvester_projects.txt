@@ -58,7 +58,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-		ROOT = { change_pc = pc_bh_harvest_colony }
+		root = { change_pc = pc_bh_harvest_colony }
 		space_owner = { country_event = { id = harvest_colony.510 } }
 		space_owner = { end_event_chain = "harvest_subterranean_civilization_chain" }
 	}
@@ -67,10 +67,10 @@ special_project = {
 		end_event_chain = "harvest_subterranean_civilization_chain"
 		random_list = {
 			60 = {
-				ROOT = { planet_event = { id = harvest_colony.54 } }
+				root = { planet_event = { id = harvest_colony.54 } }
 			}
 			40 = {
-				ROOT = { planet_event = { id = harvest_colony.59 } }
+				root = { planet_event = { id = harvest_colony.59 } }
 			}
 		}
 	}
@@ -97,13 +97,13 @@ special_project = {
 		end_event_chain = "harvest_subterranean_civilization_chain"
 		if = {
 			limit = {
-				ROOT = {
+				root = {
 					space_owner = {
 						is_homicidal = yes
 					}
 				}
 			}
-			ROOT = { planet_event = { id = harvest_colony.54 } }
+			root = { planet_event = { id = harvest_colony.54 } }
 		}
 	}
 }
