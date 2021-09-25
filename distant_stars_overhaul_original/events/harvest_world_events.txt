@@ -77,7 +77,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		FROMFROM = { planet_event = { id = harvest_colony.51 } }
+		FROM = { planet_event = { id = harvest_colony.51 } }
 	}
 }
 
