@@ -110,7 +110,91 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "DCV_CORE"
+	key = "DCV_CORE_SWARM"
+	size = medium
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 10
+		}
+	}
+	prerequisites = { tech_repeatable_nanite_technology_insight }
+	class_restriction = { shipclass_military }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 1
+		weapon_type_strike_craft_speed_mult = 1
+		ship_hull_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.9
+		ship_armor_regen_add_perc = 0.7
+		ship_tracking_add = 15
+	}
+}
+
+utility_component_template = {
+	key = "DCV_CORE_PICKET"
+	size = medium
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 10
+		}
+	}
+	prerequisites = { tech_repeatable_nanite_technology_insight }
+	class_restriction = { shipclass_military }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 1
+		weapon_type_strike_craft_speed_mult = 1
+		ship_hull_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.9
+		ship_armor_regen_add_perc = 0.7
+		ship_tracking_add = 15
+	}
+}
+
+utility_component_template = {
+	key = "DCV_CORE_LINE"
+	size = medium
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			nanites = 10
+		}
+	}
+	prerequisites = { tech_repeatable_nanite_technology_insight }
+	class_restriction = { shipclass_military }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	component_set = "combat_computers"
+	ship_behavior = "line"
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 1
+		weapon_type_strike_craft_speed_mult = 1
+		ship_hull_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.9
+		ship_armor_regen_add_perc = 0.7
+		ship_tracking_add = 15
+	}
+}
+
+utility_component_template = {
+	key = "DCV_CORE_ARTILLERY"
 	size = medium
 	icon = "GFX_ship_part_computer_artillery_sapient"
 	icon_frame = 1
