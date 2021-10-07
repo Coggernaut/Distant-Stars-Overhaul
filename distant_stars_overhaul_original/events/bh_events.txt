@@ -992,9 +992,10 @@ planet_event = {
 		hidden_effect = {
 			add_modifier = { modifier = "bh_harvested_modifier" days = -1 }
 			remove_modifier = "bh_harvest_modifier"
-			change_pc = pc_nanite_forgeworld
+			change_pc = pc_gray_goo
 			add_deposit = d_nanosands
-			set_planet_flag = pc_nanite_forgeworld
+			remove_planet_flag = pc_bh_harvest
+			add_modifier = { modifier = "terraforming_candidate" days = -1 }
 		}
 	}
 }
