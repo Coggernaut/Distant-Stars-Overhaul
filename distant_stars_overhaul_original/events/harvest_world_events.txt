@@ -96,10 +96,11 @@ planet_event = {
 			portrait = random
 			traits = random
 			homeworld = root
+			effect = { save_global_event_target_as = harvester_subterranean_species }
 		}
 		create_country = {
 			name = "NAME_Subterranean_Nation"
-			species = last_created_species
+			species = event_target:harvester_subterranean_species
 			type = adversary
 			ethos = random
 			auto_delete = no
@@ -114,17 +115,16 @@ planet_event = {
 				}
 				colors = { "red" "black" "null" "null" }
 			}
-		}
-		last_created_country = {
-			set_relation_flag = { who = root.owner flag = subterror }
-			set_country_flag = harvester_subterranean_nation
-			establish_contact = {
-				who = event_target:harvester_subterranean_planet_owner
-				location = root
+			effect = {
+				set_relation_flag = { who = root.owner flag = subterror }
+				set_country_flag = harvester_subterranean_nation
+				establish_contact = {
+					who = event_target:harvester_subterranean_planet_owner
+					location = root
+				}
+				establish_communications_no_message = event_target:harvester_subterranean_planet_owner
+				save_global_event_target_as = harvester_subterranean_nation
 			}
-			establish_communications_no_message = event_target:harvester_subterranean_planet_owner
-			save_event_target_as = harvester_subterranean_nation
-			owner_species = { save_event_target_as = harvester_subterranean_species }
 		}
 	}
 	option = {

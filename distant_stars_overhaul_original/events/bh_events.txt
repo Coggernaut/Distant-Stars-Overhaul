@@ -567,9 +567,11 @@ country_event = {
 		random_system_within_border = {
 			if = {
 				limit = {
-					OR = {
-						has_origin = civic_gateway_pursuer
-						has_origin = civic_gateway_worshiper
+					root = {
+						OR = {
+							has_origin = civic_gateway_pursuer
+							has_origin = civic_gateway_worshiper
+						}
 					}
 				}
 				set_star_flag = lgate
@@ -581,9 +583,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_origin = civic_harvester_nanites
-						has_origin = civic_gateway_pursuer
+					root = {
+						OR = {
+							has_origin = civic_harvester_nanites
+							has_origin = civic_gateway_pursuer
+						}
 					}
 				}
 				spawn_planet = {

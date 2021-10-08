@@ -1,30 +1,24 @@
 # see README.txt for example
-
 nanite_factory_station_0 = {
 	entity = "gatebuilder_01_space_station_section_entity"
 	construction_entity = "gatebuilder_01_space_station_section_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
-	entity_offset = { x = -15 y = -15 }
+	entity_offset = {
+		x = -15
+		y = -15
+	}
 	build_time = 1500
-
 	resources = {
 		category = megastructures
-		cost = {
-			alloys = 15000
-		}
-
+		cost = { alloys = 15000 }
 		upkeep = {
 			energy = 100
 			alloys = 50
 		}
-
-		produces = {
-			nanites = 10
-		}
+		produces = { nanites = 10 }
 	}
 	construction_blocks_others = yes
-
 	potential = {
 		OR = {
 			has_technology = tech_harvester_advanced_nanites
@@ -32,7 +26,6 @@ nanite_factory_station_0 = {
 			has_technology = tech_machine_advanced_nanites
 		}
 	}
-
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
@@ -90,37 +83,45 @@ nanite_factory_station_0 = {
 			}
 		}
 	}
-
-	 #root = system
-	 #from = country
+	#root = system
+	#from = country
 	ai_weight = {
 		factor = 10
-
 		modifier = {
 			factor = 0
-			starbase = { NOT = { has_starbase_size >= starbase_starport } }
+			starbase = {
+				NOT = { has_starbase_size >= starbase_starport }
+			}
 		}
-
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				owner = { NOT = { is_same_value = from } }
+				owner = {
+					NOT = { is_same_empire = from }
+				}
 			}
 		}
 		modifier = {
 			factor = 0.2
-			AND = {
-				has_monthly_income = { resource = nanites value <= 0 }
-				NOT = { has_origin = civic_harvester_nanites }
-				NOT = { has_origin = civic_gateway_pursuer }
+			from = {
+				has_monthly_income = {
+					resource = nanites
+					value <= 0
+				}
+				NOR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
 			}
-
 		}
 		modifier = {
 			factor = 1
-			AND = {
-				has_monthly_income = { resource = nanites value <= 0 }
+			from = {
+				has_monthly_income = {
+					resource = nanites
+					value <= 0
+				}
 				OR = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
@@ -128,13 +129,7 @@ nanite_factory_station_0 = {
 			}
 		}
 	}
-
-	on_build_start = {}
-	on_build_cancel = {}
-
-	on_build_complete = {
-
-
-
-	}
+	on_build_start = {  }
+	on_build_cancel = {  }
+	on_build_complete = {  }
 }
