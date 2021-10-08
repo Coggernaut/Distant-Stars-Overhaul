@@ -46,9 +46,9 @@ on_entering_system_first_time = {
 }
 
 # Called upon entering FTL (on-action name scripted on the Bypass type)
-# THIS = Fleet
-# FROM = System jumping to
-# FROMFROM = System jumped from
+# this = Fleet
+# from = System jumping to
+# fromfrom = System jumped from
 on_entering_lgate = {
 	events = {
 		ldragon_country_starts_nanite_ecosystem.1

@@ -30,7 +30,7 @@ generate_l_tiyanki_herd = {
 				prefix = no
 				upgradable = no
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self #or return_point
 			set_aggro_range = 300
@@ -72,7 +72,7 @@ create_l_tiyanki_fleet_1 = {
 				name = "Cow"
 				design = "L_Tiyanki_Cow"
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -131,7 +131,7 @@ create_l_tiyanki_fleet_2 = {
 				name = "Cow"
 				design = "L_Tiyanki_Cow"
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -190,7 +190,7 @@ create_l_tiyanki_fleet_3 = {
 				name = "Cow"
 				design = "L_Tiyanki_Cow"
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -257,7 +257,7 @@ create_l_tiyanki_fleet_4 = {
 				name = "Bull"
 				design = "L_Tiyanki_Bull"
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -312,7 +312,7 @@ create_l_tiyanki_fleet_5 = {
 				name = "Bull"
 				design = "L_Tiyanki_Bull"
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -936,7 +936,7 @@ generate_l_amoeba_herd = {
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self #or return_point
 			set_aggro_range = 300
@@ -968,7 +968,7 @@ create_l_amoeba_fleet_1 = {
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -1021,7 +1021,7 @@ create_l_amoeba_fleet_2 = {
 					design = "L_Small_Space_Organism_Teal"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -1067,7 +1067,7 @@ create_l_amoeba_fleet_3 = {
 					design = "L_Large_Space_Organism_Zebra"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -1120,7 +1120,7 @@ create_l_amoeba_fleet_4 = {
 					design = "L_Small_Space_Organism_Orange"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100
@@ -1173,7 +1173,7 @@ create_l_amoeba_fleet_5 = {
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
-			set_location = PREV
+			set_location = prev
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 100

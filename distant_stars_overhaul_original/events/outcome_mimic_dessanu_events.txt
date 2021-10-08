@@ -12,7 +12,7 @@ fleet_event = {
 	immediate = {
 		# log = "Mimic Dessanu is owner"
 		# log = "Mimic Dessanu spawned"
-		THIS = {
+		this = {
 			owner = {
 				country_event = { id = distar_mimic_dessanu_flavour.1 }
 				# log = "Mimic Dessanu got event"

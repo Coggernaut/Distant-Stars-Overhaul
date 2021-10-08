@@ -1,6 +1,6 @@
 pc_nanite_habitat_shielded = {
 	picture = pc_habitat
-	icon_frame = 22
+	icon = GFX_planet_type_habitat
 	entity_scale = 6
 	enable_tilt = no
 	fixed_entity_scale = no
@@ -9,7 +9,7 @@ pc_nanite_habitat_shielded = {
 	chance_of_ring = 0.0
 	planet_size = 25
 	moon_size = 6
-	ideal = yes
+	# ideal = yes
 	orbit_lines = no
 	has_colonization_influence_cost = no
 
@@ -39,7 +39,7 @@ pc_nanite_habitat_shielded = {
 pc_bh_harvest = {
 	entity = "harvest_planet_entity"
 	entity_scale = @planet_standard_scale
-	icon_frame = 11
+	icon = GFX_planet_type_toxic
 
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
@@ -63,7 +63,7 @@ pc_bh_harvest = {
 pc_bh_harvest_colony = {
 	entity = "harvest_planet_entity"
 	entity_scale = @planet_standard_scale
-	icon_frame = 11
+	icon = GFX_planet_type_toxic
 
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
@@ -87,7 +87,7 @@ pc_bh_harvest_colony = {
 pc_bh_harvested = {
 	entity = "harvest_planet_entity"
 	entity_scale = @planet_standard_scale
-	icon_frame = 11
+	icon = GFX_planet_type_toxic
 
 	atmosphere_color 		= hsv { 0.19 0.0 0.9 }		#DONE
 	atmosphere_intensity 	= 0.1
@@ -114,7 +114,7 @@ pc_nanite_forgeworld = {
 	#picture = pc_ai	#The is in the machienworlds data
 	#tile_set = pc_ai	#the location to define these may have moved here
 
-	icon_frame = 11
+	icon = GFX_planet_type_toxic
 
 	atmosphere_color 		= hsv { 0.19 0.45 0.9 }
 	atmosphere_intensity 	= 0.1
@@ -149,14 +149,14 @@ pc_nanite_forgeworld = {
 	district_set = dso_nanite_forgeworld
 	starting_planet = no
 	show_city = no
-	
+
 	carry_cap_per_free_district = @carry_cap_low
 }
 
 pc_nanite_gaia = {
 	entity = "gaia_planet"
 	entity_scale = @planet_standard_scale
-	icon_frame = 8
+	icon = GFX_planet_type_gaia
 
 	atmosphere_color 		= hsv { 0.58	0.3 0.7 }
 	atmosphere_intensity 	= 1.0
@@ -198,7 +198,7 @@ pc_nanite_gaia = {
 pc_nanite_gas_giant = {
 	entity = "gas_giant"
 	entity_scale = 14
-	icon_frame = 14
+	icon = GFX_planet_type_gas_giant
 
 	atmosphere_color 		= hsv { 0.1 0.15 1.1 }		#DONE
 	atmosphere_intensity 	= 1.1

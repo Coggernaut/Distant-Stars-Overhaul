@@ -12,23 +12,23 @@ cb_lgate_containment = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-		THIS = {
+		this = {
 			has_civic = civic_gateway_worshiper
 		}
 	}
 	is_valid = {
 		has_total_war_cb = no
-		NOT = { is_overlord_to = FROM }
+		NOT = { is_overlord_to = from }
 		OR = {
 			is_subject = no
 			overlord = { NOT = { is_same_value = from } }
 		}
-		FROM = {
+		from = {
 			any_owned_megastructure = {
 				is_megastructure_type = lgate_base
 			}
 		}
-		FROM = {
+		from = {
 			NOT = { has_civic = civic_gateway_worshiper }
 		}
 	}

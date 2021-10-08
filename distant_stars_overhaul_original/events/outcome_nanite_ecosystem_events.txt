@@ -183,9 +183,10 @@ planet_event = {
 			}
 			else = {
 				create_country = {
-					name = "NAME_L_Gaia_Incarnation"
+					# name = "NAME_L_Gaia_Incarnation"
 					type = lgaia_incarnation_country
 					effect = {
+						set_name = "NAME_L_Gaia_Incarnation"
 						save_global_event_target_as = l_gaia_incarnation
 						every_playable_country = { establish_communications_no_message = prev }
 						set_faction_hostility = {
@@ -277,8 +278,8 @@ planet_event = {
 	id = ldragon_country_starts_nanite_ecosystem.2
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_star_flag = nanite_ecosystem_presapient_system }
-	immediate = {  }
+	trigger = { has_planet_flag = nanite_ecosystem_presapient_system }
+	immediate = { }
 }
 
 ####################
@@ -446,10 +447,11 @@ planet_event = {
 			portrait = random
 			traits = random
 			homeworld = root
+			effect = { save_global_event_target_as = nanite_ecosystem_subterranean_species }
 		}
 		create_country = {
-			name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
-			species = last_created_species
+			# name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
+			species = event_target:nanite_ecosystem_subterranean_species
 			type = adversary
 			ethos = random
 			auto_delete = no
@@ -464,18 +466,19 @@ planet_event = {
 				}
 				colors = { "red" "black" "null" "null" }
 			}
-		}
-		last_created_country = {
-			set_relation_flag = { who = root.owner flag = nanite_ecosystem_subterror }
-			set_country_flag = nanite_ecosystem_subterranean_nation
-			establish_contact = {
-				who = event_target:nanite_ecosystem_subterranean_planet_owner
-				location = root
+			effect = {
+				set_name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
+				set_relation_flag = { who = root.owner flag = nanite_ecosystem_subterror }
+				set_country_flag = nanite_ecosystem_subterranean_nation
+				establish_contact = {
+					who = event_target:nanite_ecosystem_subterranean_planet_owner
+					location = root
+				}
+				establish_communications_no_message = event_target:nanite_ecosystem_subterranean_planet_owner
+				save_global_event_target_as = nanite_ecosystem_subterranean_nation
 			}
-			establish_communications_no_message = event_target:nanite_ecosystem_subterranean_planet_owner
-			save_event_target_as = nanite_ecosystem_subterranean_nation
-			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 		}
+
 	}
 	option = {
 		name = nanite_ecosystem_colony.51.a
@@ -669,7 +672,7 @@ country_event = {
 		}
 		fromfrom = {
 			create_country = {
-				name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+				# name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
 				species = event_target:nanite_ecosystem_subterranean_species
 				type = default
 				auto_delete = yes
@@ -688,21 +691,18 @@ country_event = {
 						category = "backgrounds"
 						file = "new_dawn.dds"
 					}
-					colors = {
-						"red"
-						"black"
-						"null"
-						"null"
-					}
+					colors = { "red" "black" "null" "null" }
+				}
+				effect = {
+					set_name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+					set_relation_flag = { who = event_target:nanite_ecosystem_subterranean_former_planet_owner flag = subwar }
+					set_country_flag = nanite_ecosystem_subterranean_empire
+					establish_communications_no_message = event_target:nanite_ecosystem_subterranean_former_planet_owner
+					save_event_target_as = nanite_ecosystem_subterranean_empire
+					owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 				}
 			}
-			last_created_country = {
-				set_relation_flag = { who = event_target:nanite_ecosystem_subterranean_former_planet_owner flag = subwar }
-				set_country_flag = nanite_ecosystem_subterranean_empire
-				establish_communications_no_message = event_target:nanite_ecosystem_subterranean_former_planet_owner
-				save_event_target_as = nanite_ecosystem_subterranean_empire
-				owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
-			}
+
 		}
 		from = { destroy_country = yes }
 		fromfrom = {
@@ -751,7 +751,6 @@ country_event = {
 	picture_event_data = {
 		portrait = event_target:nanite_ecosystem_subterranean_empire
 		planet_background = event_target:nanite_ecosystem_conquered_planet
-		graphical_culture = event_target:nanite_ecosystem_conquered_planet
 		graphical_culture = event_target:nanite_ecosystem_conquered_planet
 		room = event_target:nanite_ecosystem_subterranean_empire.ruler
 	}
@@ -1060,8 +1059,8 @@ planet_event = {
 			portrait = random
 			traits = random
 			homeworld = planet
+			effect = { save_event_target_as = nanite_ecosystem_subterranean_species }
 		}
-		last_created_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 	}
 	option = { name = nanite_ecosystem_colony.64.a }
 	option = {
