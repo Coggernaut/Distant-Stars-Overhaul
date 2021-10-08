@@ -274,13 +274,13 @@ ship_event = {
 	option = { name = nanite_ecosystem_enter.550.a }
 }
 
-planet_event = {
-	id = ldragon_country_starts_nanite_ecosystem.2
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_planet_flag = nanite_ecosystem_presapient_system }
-	immediate = { }
-}
+# system_event = {
+# 	id = ldragon_country_starts_nanite_ecosystem.2
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = { has_star_flag = nanite_ecosystem_presapient_system }
+# 	immediate = { }
+# }
 
 ####################
 # Presapient Chain #

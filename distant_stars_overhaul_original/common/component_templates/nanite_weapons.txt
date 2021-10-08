@@ -38,12 +38,8 @@ weapon_component_template = { # Nanobot Assimilation
 
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 250
-		}
-		upkeep = {
-			energy = 10
-		}
+		cost = { nanites = 250 }
+		upkeep = { energy = 10 }
 	}
 	ai_weight = {
 		weight = 1
@@ -60,12 +56,8 @@ strike_craft_component_template = {
 	entity = "gatebuilder_01_strikecraft_entity"
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 50
-		}
-		upkeep = {
-			energy = 1
-		}
+		cost = { nanites = 50 }
+		upkeep = { energy = 1 }
 	}
 
 	ai_weight = {
@@ -77,8 +69,11 @@ strike_craft_component_template = {
 	}
 
 	prerequisites = { "tech_nanite_lancers" }
-
 	component_set = "GG_STRIKE_CRAFT_NANITE"
+	icon = "GFX_ship_part_nanite_strike_craft_fighter"
+	icon_frame = 1
+
+	tags = { weapon_type_strike_craft }
 	size_restriction = { dso_nanite_core dso_nanite_mothership }
 
 	power = -60
@@ -110,10 +105,7 @@ strike_craft_component_template = {
 	weapon_type = instant
 	projectile_gfx = "strike_craft_laser_3"
 
-	component_set = "GG_STRIKE_CRAFT_NANITE"
-	icon = "GFX_ship_part_nanite_strike_craft_fighter"
-	icon_frame = 1
-	tags = { weapon_type_strike_craft }
+
 }
 
 weapon_component_template = {
@@ -136,12 +128,8 @@ weapon_component_template = {
 
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 25
-		}
-		upkeep = {
-			energy = 1
-		}
+		cost = { nanites = 25 }
+		upkeep = { energy = 1 }
 	}
 	ai_weight = {
 		weight = 1
@@ -177,14 +165,8 @@ weapon_component_template = {
 
 	resources = {
 		category = ship_components
-		cost = {
-			nanites = 150
-		}
-		upkeep = {
-			energy = 5
-		}
+		cost = { nanites = 150 }
+		upkeep = { energy = 5 }
 	}
-	ai_weight = {
-		weight = 1
-	}
+	ai_weight = { weight = 1 }
 }

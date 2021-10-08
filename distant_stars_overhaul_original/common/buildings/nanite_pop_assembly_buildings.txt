@@ -12,13 +12,9 @@ building_nanite_weapons_lab = {
 		}
 	}
 
-	allow = {
-		has_upgraded_capital = yes
-	}
+	allow = { has_upgraded_capital = yes }
 
-	planet_modifier = {
-		job_nanite_researcher_add = 1
-	}
+	planet_modifier = { job_nanite_researcher_add = 1 }
 
 	resources = {
 		category = planet_buildings
@@ -26,24 +22,18 @@ building_nanite_weapons_lab = {
 			minerals = 300
 			nanites = 100
 		}
-		upkeep = {
-			energy = 2
-		}
+		upkeep = { energy = 2 }
 	}
 
-	triggered_desc = {
-		text = job_nanite_researcher_effect_desc
-	}
+	triggered_desc = { text = job_nanite_researcher_effect_desc }
 
-	prerequisites = {
-		"tech_nanite_weaponry"
-	}
+	prerequisites = { "tech_nanite_weaponry" }
 
 	ai_weight = {
 		weight = 1
 		modifier = {
 			factor = 0.0
-			has_monthly_income = { resource = nanites value <= 0 }
+			owner = { has_monthly_income = { resource = nanites value <= 0 } }
 		}
 	}
 }
@@ -63,9 +53,7 @@ building_machine_assembly_complex = {
 		owner = { is_machine_empire = yes }
 	}
 
-	convert_to = {
-		building_robot_assembly_plant
-	}
+	convert_to = { building_robot_assembly_plant }
 
 	allow = {
 		OR = {
@@ -81,9 +69,7 @@ building_machine_assembly_complex = {
 		exists = owner
 		OR = {
 			buildings_no_crystals = yes
-			owner = {
-				is_robot_empire = no
-			}
+			owner = { is_robot_empire = no }
 			AND = {
 				owner = { is_ai = yes }
 				free_jobs < 1
@@ -95,9 +81,7 @@ building_machine_assembly_complex = {
 		}
 	}
 
-	planet_modifier = {
-		job_replicator_add = 3
-	}
+	planet_modifier = { job_replicator_add = 3 }
 
 	resources = {
 		category = planet_buildings
@@ -111,17 +95,11 @@ building_machine_assembly_complex = {
 		}
 	}
 
-	upgrades = {
-		building_nanite_assembly_plant
-	}
+	upgrades = { building_nanite_assembly_plant }
 
-	prerequisites = {
-		tech_mega_assembly
-	}
+	prerequisites = { tech_mega_assembly }
 
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
+	triggered_desc = { text = job_replicator_effect_desc }
 
 	ai_weight = {
 		weight = 50000
@@ -152,9 +130,7 @@ building_nanite_assembly_plant = {
 		owner = { is_machine_empire = yes }
 	}
 
-	convert_to = {
-		building_machine_assembly_complex
-	}
+	convert_to = { building_machine_assembly_complex }
 
 	allow = {
 		OR = {
@@ -170,9 +146,7 @@ building_nanite_assembly_plant = {
 		exists = owner
 		OR = {
 			#buildings_no_crystals = yes
-			owner = {
-				is_robot_empire = no
-			}
+			owner = { is_robot_empire = no }
 			AND = {
 				owner = { is_ai = yes }
 				free_jobs < 1
@@ -184,9 +158,7 @@ building_nanite_assembly_plant = {
 		}
 	}
 
-	planet_modifier = {
-		job_replicator_add = 5
-	}
+	planet_modifier = { job_replicator_add = 5 }
 
 	resources = {
 		category = planet_buildings
@@ -200,9 +172,7 @@ building_nanite_assembly_plant = {
 		}
 	}
 
-	triggered_desc = {
-		text = job_replicator_effect_desc
-	}
+	triggered_desc = { text = job_replicator_effect_desc }
 
 	ai_weight = {
 		weight = 50000
@@ -225,9 +195,7 @@ building_mineral_purification_plant = {
 	base_cap_amount = 1
 	category = resource
 
-	destroy_trigger = {
-		has_modifier = resort_colony
-	}
+	destroy_trigger = { has_modifier = resort_colony }
 
 	potential = {
 		NOR = {
@@ -243,22 +211,16 @@ building_mineral_purification_plant = {
 		}
 	}
 
-	allow = {
-		buildings_simple_allow = yes
-	}
+	allow = { buildings_simple_allow = yes }
 
-	planet_modifier = {
-		planet_miners_minerals_produces_mult = 0.15
-	}
+	planet_modifier = { planet_miners_minerals_produces_mult = 0.15 }
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_regular_empire = yes }
 		}
-		modifier = {
-			job_miner_add = 1
-		}
+		modifier = { job_miner_add = 1 }
 	}
 
 	triggered_planet_modifier = {
@@ -266,28 +228,20 @@ building_mineral_purification_plant = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
-		modifier = {
-			job_mining_drone_add = 1
-		}
+		modifier = { job_mining_drone_add = 1 }
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 		}
-		modifier = {
-			planet_miners_minerals_produces_mult = 0.05
-		}
+		modifier = { planet_miners_minerals_produces_mult = 0.05 }
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
@@ -295,37 +249,25 @@ building_mineral_purification_plant = {
 				is_planet_class = pc_city
 			}
 		}
-		modifier = {
-			district_mining_max = 2
-		}
+		modifier = { district_mining_max = 2 }
 	}
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = 200
-		}
+		cost = { minerals = 200 }
 		cost = {
 			trigger = {
-				owner = {
-					is_robot_empire = yes
-				}
+				owner = { is_robot_empire = yes }
 			}
 			minerals = 100
 			alloys = 100
 		}
-		upkeep = {
-			energy = 2
-		}
+		upkeep = { energy = 2 }
 	}
 
-	prerequisites = {
-		tech_mineral_purification_1
-	}
+	prerequisites = { tech_mineral_purification_1 }
 
-	upgrades = {
-		building_mineral_purification_hub
-	}
+	upgrades = { building_mineral_purification_hub }
 
 	triggered_desc = {
 		trigger = {
@@ -377,9 +319,7 @@ building_mineral_purification_plant = {
 
 	ai_resource_production = {
 		minerals = 1
-		trigger = {
-			always = yes
-		}
+		trigger = { always = yes }
 	}
 }
 
@@ -388,9 +328,7 @@ building_energy_grid = {
 	base_cap_amount = 1
 	category = resource
 
-	destroy_trigger = {
-		has_modifier = resort_colony
-	}
+	destroy_trigger = { has_modifier = resort_colony }
 
 	potential = {
 		NOT = { has_modifier = resort_colony }
@@ -404,22 +342,16 @@ building_energy_grid = {
 		}
 	}
 
-	allow = {
-		buildings_simple_allow = yes
-	}
+	allow = { buildings_simple_allow = yes }
 
-	planet_modifier = {
-		planet_technician_energy_produces_mult = 0.15
-	}
+	planet_modifier = { planet_technician_energy_produces_mult = 0.15 }
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_regular_empire = yes }
 		}
-		modifier = {
-			job_technician_add = 1
-		}
+		modifier = { job_technician_add = 1 }
 	}
 
 	triggered_planet_modifier = {
@@ -427,28 +359,20 @@ building_energy_grid = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
-		modifier = {
-			job_technician_drone_add = 1
-		}
+		modifier = { job_technician_drone_add = 1 }
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 		}
-		modifier = {
-			planet_technician_energy_produces_mult = 0.05
-		}
+		modifier = { planet_technician_energy_produces_mult = 0.05 }
 	}
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
@@ -457,37 +381,25 @@ building_energy_grid = {
 				is_planet_class = pc_nanite_forgeworld
 			}
 		}
-		modifier = {
-			district_generator_max = 2
-		}
+		modifier = { district_generator_max = 2 }
 	}
 
 	resources = {
 		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
+		cost = { minerals = @b1_minerals }
 		cost = {
 			trigger = {
-				owner = {
-					is_robot_empire = yes
-				}
+				owner = { is_robot_empire = yes }
 			}
 			minerals = 100
 			alloys = 100
 		}
-		upkeep = {
-			energy = 2
-		}
+		upkeep = { energy = 2 }
 	}
 
-	prerequisites = {
-		tech_power_hub_1
-	}
+	prerequisites = { tech_power_hub_1 }
 
-	upgrades = {
-		building_energy_nexus
-	}
+	upgrades = { building_energy_nexus }
 
 	triggered_desc = {
 		trigger = {
@@ -543,9 +455,7 @@ building_energy_grid = {
 
 	ai_resource_production = {
 		energy = 1
-		trigger = {
-			always = yes
-		}
+		trigger = { always = yes }
 	}
 }
 
@@ -554,9 +464,7 @@ building_energy_nexus = {
 	can_build = no
 	category = resource
 
-	allow = {
-		has_upgraded_capital = yes
-	}
+	allow = { has_upgraded_capital = yes }
 
 	destroy_trigger = {
 		OR = {
@@ -565,18 +473,14 @@ building_energy_nexus = {
 		}
 	}
 
-	planet_modifier = {
-		planet_technician_energy_produces_mult = 0.25
-	}
+	planet_modifier = { planet_technician_energy_produces_mult = 0.25 }
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_regular_empire = yes }
 		}
-		modifier = {
-			job_technician_add = 2
-		}
+		modifier = { job_technician_add = 2 }
 	}
 
 	triggered_planet_modifier = {
@@ -584,29 +488,21 @@ building_energy_nexus = {
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
-		modifier = {
-			job_technician_drone_add = 2
-		}
+		modifier = { job_technician_drone_add = 2 }
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 		}
-		modifier = {
-			planet_technician_energy_produces_mult = 0.05
-		}
+		modifier = { planet_technician_energy_produces_mult = 0.05 }
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_robot_empire = yes
-			}
+			owner = { is_robot_empire = yes }
 			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
@@ -615,9 +511,7 @@ building_energy_nexus = {
 				is_planet_class = pc_nanite_forgeworld
 			}
 		}
-		modifier = {
-			district_generator_max = 4
-		}
+		modifier = { district_generator_max = 4 }
 	}
 
 	resources = {
@@ -628,9 +522,7 @@ building_energy_nexus = {
 		}
 		cost = {
 			trigger = {
-				owner = {
-					is_robot_empire = yes
-				}
+				owner = { is_robot_empire = yes }
 			}
 			minerals = 300
 			alloys = 150
@@ -641,9 +533,7 @@ building_energy_nexus = {
 		}
 	}
 
-	prerequisites = {
-		tech_power_hub_2
-	}
+	prerequisites = { tech_power_hub_2 }
 
 	triggered_desc = {
 		trigger = {
@@ -680,8 +570,6 @@ building_energy_nexus = {
 
 	ai_resource_production = {
 		energy = 1
-		trigger = {
-			always = yes
-		}
+		trigger = { always = yes }
 	}
 }
