@@ -221,7 +221,7 @@ planet_event = {
 			add_deposit = harvester_engine_harvested_planet_deposit_large
 			add_deposit = d_nanosands
 		}
-		create_mining_station = { owner = root.planet_owner }
+		create_mining_station = { owner = owner }
 	}
 	# option = {
 	# 	name = OK

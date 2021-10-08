@@ -18,9 +18,7 @@ nanite_habitat_0 = {
 	construction_blocks_others = no
 	construction_blocked_by_others = no
 
-	potential = {
-		always = no
-	}
+	potential = { always = no }
 
 	possible = {
 		exists = starbase
@@ -33,9 +31,7 @@ nanite_habitat_0 = {
 	placement_rules = {
 		planet_possible = {
 			if = {
-				limit = {
-					has_planet_flag = shattered_planet_habitat
-				}
+				limit = { has_planet_flag = shattered_planet_habitat }
 				always = yes
 			}
 			else = {
@@ -56,9 +52,7 @@ nanite_habitat_0 = {
 					NOR = {
 						has_planet_flag = megastructure
 						has_planet_flag = has_megastructure
-						solar_system = {
-							has_star_flag = ring_world_built
-						}
+						solar_system = { has_star_flag = ring_world_built }
 						is_planet_class = pc_ringworld_habitable
 						is_planet_class = pc_ringworld_habitable_damaged
 						is_planet_class = pc_ringworld_tech
@@ -90,10 +84,10 @@ nanite_habitat_0 = {
 	}
 
 	# root = system
-	# from = country	
+	# from = country
 	ai_weight = {
 		factor = 10
-	
+
 		modifier = {
 			factor = 0
 			starbase = { NOT = { has_starbase_size >= starbase_starport } }
@@ -107,10 +101,10 @@ nanite_habitat_0 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
-	
+
 	on_build_complete = {
 		spawn_planet = {
 			class = "pc_habitat"
@@ -120,8 +114,8 @@ nanite_habitat_0 = {
 			orbit_distance_offset = 9.899
 			size = 6
 			has_ring = no
-			
-			init_effect = {			
+
+			init_effect = {
 				set_name = "HABITAT_PLANET_NAME"
 				set_planet_entity = {
 					entity = "shielded_planet"
@@ -268,7 +262,7 @@ nanite_habitat_0 = {
 					}
 					add_deposit = d_hab_crystal_5
 				}
-				
+
 				if = {
 					limit = {
 						fromfrom.planet = { has_deposit = d_volatile_motes_1 }
@@ -344,7 +338,7 @@ nanite_habitat_0 = {
 					}
 					add_deposit = d_hab_living_metal_1
 				}
-				
+
 				if = {
 					limit = {
 						fromfrom.planet = { has_deposit = d_alloys_1 }
@@ -381,15 +375,14 @@ nanite_habitat_0 = {
 					set_planet_flag = mining_habitat
 				}
 			}
-			
+
 		}
-		event_target:nanite_habitat_target = { planet_event = { id = harvester_grey_goo_planet.3 }}
+		# TODO?
+		# event_target:nanite_habitat_target = { planet_event = { id = harvester_grey_goo_planet.3 } }
 		every_system_megastructure = {
 			limit = { is_megastructure_type = nanite_habitat_0 }
 			remove_megastructure = THIS
 		}
-		fromfrom.planet = {
-			set_planet_flag = has_megastructure
-		}
+		fromfrom.planet = { set_planet_flag = has_megastructure }
 	}
 }
