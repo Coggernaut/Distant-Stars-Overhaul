@@ -6,27 +6,35 @@ spriteTypes = {
 		name = "GFX_ship_part_nanite_strike_craft_fighter"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_strike_craft_fighter.dds"
 	}
-	
+
 	spriteType = {
 		name = "GFX_ship_part_nanite_torpedo"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_torpedo.dds"
 	}
-	
+
 	spriteType = {
 		name = "GFX_origin_harvester_nanites"
 		texturefile = "gfx/event_pictures/origins/origin_harvester_nanites.dds"
 		alwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_origin_lgate_pursuer"
 		texturefile = "gfx/event_pictures/origins/origin_lgate_pursuer.dds"
 		alwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_origin_gateway_guardian"
 		texturefile = "gfx/event_pictures/origins/origin_gateway_guardian.dds"
 		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_planet_modifier_ground_support_nanite_sterilization"
+		# sprite_sheet_sprite_type = "GFX_planet_view_bombarded"
+		texturefile = "gfx/interface/icons/planet_modifiers/pm_under_orbital_bombardment3.dds"
+		default_frame = 3
+		noOfFrames = 3
 	}
 }

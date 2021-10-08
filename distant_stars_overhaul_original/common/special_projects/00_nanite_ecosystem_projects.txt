@@ -16,10 +16,10 @@ special_project = {
 	on_fail = {
 		random_list = {
 			60 = {
-				FROM = { planet_event = { id = nanite_ecosystem_colony.54 } }
+				from = { planet_event = { id = nanite_ecosystem_colony.54 } }
 			}
 			40 = {
-				FROM = { planet_event = { id = nanite_ecosystem_colony.59 } }
+				from = { planet_event = { id = nanite_ecosystem_colony.59 } }
 				modifier = {
 					factor = 0
 					owner = { is_homicidal = yes }
@@ -50,10 +50,10 @@ special_project = {
 		end_event_chain = "nanite_ecosystem_subterranean_civilization_chain"
 		random_list = {
 			60 = {
-				FROM = { planet_event = { id = nanite_ecosystem_colony.54 } }
+				from = { planet_event = { id = nanite_ecosystem_colony.54 } }
 			}
 			40 = {
-				FROM = { planet_event = { id = nanite_ecosystem_colony.59 } }
+				from = { planet_event = { id = nanite_ecosystem_colony.59 } }
 				modifier = {
 					factor = 0
 					owner = { is_homicidal = yes }

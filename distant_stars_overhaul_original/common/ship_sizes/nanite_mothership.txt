@@ -15,7 +15,7 @@ dso_nanite_interdictor = {
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 8
 	is_space_station = no
-	icon_frame = 4
+	icon = ship_size_military_4
 	base_buildtime = 240
 	can_have_federation_design = no
 	enable_default_design = yes
@@ -67,7 +67,7 @@ dso_nanite_mothership = {
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 8
 	is_space_station = no
-	icon_frame = 6
+	icon = ship_size_military_16
 	base_buildtime = 480
 	can_have_federation_design = no
 	enable_default_design = yes
@@ -124,7 +124,7 @@ dso_nanite_core = {
 	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } "stern" = { locator = "part4" } }
 	num_target_locators = 8
 	is_space_station = no
-	icon_frame = 6
+	icon = ship_size_military_16
 	base_buildtime = 1800
 	can_have_federation_design = no
 	enable_default_design = yes

@@ -4,7 +4,7 @@
 #		always = yes
 #	}
 #
-#	icon_frame = 1	# This is the frame for the shared icon file, will also need a GFX_fleet_order_button_ground_support_NAME entry
+#	# icon_frame = 1	# this is the frame for the shared icon file, will also need a GFX_fleet_order_button_ground_support_NAME entry
 #	default = yes	# Is this the default stance that new fleets will use?
 #
 #	stop_when_armies_dead = yes	# Will this stance continue to bombard planets where all defensive armies are dead? default = no
@@ -13,10 +13,8 @@
 #	planet_damage = 0.5		# General scale of damage to planet, default = 1.0
 #	army_damage = 1.0		# General scale of damage to armies, default = 1.0
 #
-#	kill_pop_chance = {		# Chance that a pop is killed when planetary damage reaches 100%, default = 0
-#		base = 0.25
-#	}
-#	min_pops_to_kill_pop = 8	# Will not kill/abduct pops if pops <= this number already, default = 0. Doesn't work for nations that doesn't have diplomatic wars!
+#	kill_pop_chance = 0.2		# Chance that a pop is killed when planetary damage reaches 100%, default = 0
+#	min_pops_to_kill_pop = 8	# Will not kill/abduct pops if pops < this number already, default = 0
 #
 #	# root = fleet
 #	# from = planet
@@ -32,7 +30,7 @@ nanite_sterilization = {
 		}
 	}
 
-	icon_frame = 3
+	# icon_frame = 3
 	default = no
 
 	stop_when_armies_dead = no
@@ -57,18 +55,17 @@ nanite_sterilization = {
 		}
 		modifier = {
 			factor = 20
-				has_civic = civic_fanatic_purifiers
+			exists = owner
+			owner = { has_civic = civic_fanatic_purifiers }
 		}
 		modifier = {
 			factor = 20
-			exists = from
+			exists = from.owner
+			exists = owner
 			AND = {
-				from = {
-					owner = { NOT = { has_authority = auth_machine_intelligence } }
-				}
-				has_civic = civic_machine_terminator
+				from.owner = { NOT = { has_authority = auth_machine_intelligence } }
+				owner = { has_civic = civic_machine_terminator }
 			}
 		}
 	}
 }
-
