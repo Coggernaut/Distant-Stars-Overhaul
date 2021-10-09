@@ -249,7 +249,6 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			add_modifier = { modifier = "terraforming_candidate" days = -1 }
 			set_planet_flag = pc_bh_harvest
 			#space_owner = { country_event = { id = harvest_colony.50 } }
 			#If it is Nanite Gaia World
@@ -477,19 +476,6 @@ planet_event = {
 	}
 }
 
-# Harvested Planet is Terraformed
-planet_event = {
-	id = bio_harvest.2
-	is_triggered_only = yes
-	hide_window = yes
-	trigger = { is_planet_class = pc_bh_harvest }
-	immediate = {
-		remove_modifier = "bh_harvested_modifier"
-		clear_deposits = yes
-		remove_planet_flag = pc_bh_harvest
-	}
-}
-
 # Prepare capital world for game start
 country_event = {
 	id = bio_harvest.3
@@ -711,15 +697,6 @@ country_event = {
 			}
 		}
 		#custom_tooltip = harvester_grey_goo_planet.1.tooltip
-	}
-}
-
-planet_event = {
-	id = harvester_grey_goo_planet.2
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		add_modifier = { modifier = "terraforming_candidate" days = -1 }
 	}
 }
 
