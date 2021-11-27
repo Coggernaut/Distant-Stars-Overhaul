@@ -448,7 +448,7 @@ tech_nanite_networking_protocols = {
 			OR = {
 				research_leader = {
 					area = physics
-					has_trait = "leader_trait_expertise_propulsion"
+					has_trait = "leader_trait_expertise_computing"
 				}
 				research_leader = {
 					area = physics
