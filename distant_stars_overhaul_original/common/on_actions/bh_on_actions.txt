@@ -15,6 +15,7 @@ on_save_game_load = {
 on_tech_increased = {
 	events = {
 		distar_overhaul.12000
+		distar_overhaul.1
 		distar_overhaul.2
 	}
 }
@@ -55,11 +56,10 @@ on_entering_lgate = {
 	}
 }
 
-on_terraforming_complete = {
-	events = {
-		bio_harvest.2		# Remove the deposits and whatnot
-	}
-}
+# on_terraforming_complete = {
+# 	events = {
+# 	}
+# }
 
 on_colonized = {
 	events = {

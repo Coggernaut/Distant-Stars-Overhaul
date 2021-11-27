@@ -379,8 +379,7 @@ planet_event = {
 			has_global_flag = nanite_ecosystem_seismic_disturbance_global
 			has_planet_flag = colony_event
 			is_planet_class = pc_nuked
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_habitat
+			is_artificial = yes
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
 		}

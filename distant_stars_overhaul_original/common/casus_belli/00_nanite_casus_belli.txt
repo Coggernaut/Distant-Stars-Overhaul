@@ -12,9 +12,7 @@ cb_lgate_containment = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-		this = {
-			has_civic = civic_gateway_worshiper
-		}
+		has_origin = civic_gateway_worshiper
 	}
 	is_valid = {
 		has_total_war_cb = no
@@ -29,7 +27,7 @@ cb_lgate_containment = {
 			}
 		}
 		from = {
-			NOT = { has_civic = civic_gateway_worshiper }
+			NOT = { has_origin = civic_gateway_worshiper }
 		}
 	}
 }

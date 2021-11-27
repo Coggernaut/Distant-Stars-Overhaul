@@ -1,23 +1,23 @@
-namespace = mimic_dessanu_country_spawned
-namespace = distar_mimic_dessanu_flavour
-fleet_event = {
-	id = mimic_dessanu_country_spawned.1
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		NOT = { has_global_flag = mimic_dessanu_country_spawned_flag }
-		any_country = { is_country_type = gate_builders }
-		#FROM = { has_star_flag = lcluster1 }
-	}
-	immediate = {
-		# log = "Mimic Dessanu is owner"
-		# log = "Mimic Dessanu spawned"
-		this = {
-			owner = {
-				country_event = { id = distar_mimic_dessanu_flavour.1 }
-				# log = "Mimic Dessanu got event"
-			}
-		}
-		set_global_flag = mimic_dessanu_country_spawned_flag
-	}
-}
+# namespace = mimic_dessanu_country_spawned
+# namespace = distar_mimic_dessanu_flavour
+# fleet_event = {
+# 	id = mimic_dessanu_country_spawned.1
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		NOT = { has_global_flag = mimic_dessanu_country_spawned_flag }
+# 		any_country = { is_country_type = gate_builders }
+# 		#FROM = { has_star_flag = lcluster1 }
+# 	}
+# 	immediate = {
+# 		# log = "Mimic Dessanu is owner"
+# 		# log = "Mimic Dessanu spawned"
+# 		this = {
+# 			owner = {
+# 				country_event = { id = distar_mimic_dessanu_flavour.1 }
+# 				# log = "Mimic Dessanu got event"
+# 			}
+# 		}
+# 		set_global_flag = mimic_dessanu_country_spawned_flag
+# 	}
+# }

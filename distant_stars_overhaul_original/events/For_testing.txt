@@ -59,7 +59,7 @@ country_event = {
 			#		NOT = { has_megastructure_flag = lgate_activated }
 			#	}
 			#	activate_gateway = this
-			set_megastructure_flag = lgate_activated
+			# set_megastructure_flag = lgate_activated
 			#}
 		#}
 		#else_if = {

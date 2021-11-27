@@ -2,7 +2,10 @@ terraform_link = {
 	from = "pc_bh_harvest"
 	to = "pc_nuked"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+		cost = { energy = 10000 }
+	}
 	duration = 1800
 
 	condition = {
@@ -18,7 +21,10 @@ terraform_link = {
 	from = "pc_bh_harvest"
 	to = "pc_machine"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+		cost = { energy = 10000 }
+	}
 	duration = 1800
 
 	condition = {
@@ -34,7 +40,10 @@ terraform_link = {
 	from = "pc_bh_harvested"
 	to = "pc_city"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+		cost = { energy = 10000 }
+	}
 	duration = 3600
 
 	condition = {
@@ -50,7 +59,10 @@ terraform_link = {
 	from = "pc_bh_harvested"
 	to = "pc_machine"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+		cost = { energy = 10000 }
+	}
 	duration = 3600
 
 	condition = {

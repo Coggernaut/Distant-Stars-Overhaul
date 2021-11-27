@@ -232,8 +232,6 @@ tech_advanced_nanites = {
 		}
 	}
 
-
-
 	ai_weight = {
 		modifier = {
 			factor = 0.25
@@ -260,7 +258,7 @@ tech_advanced_nanites = {
 				has_origin = civic_gateway_pursuer
 				is_spiritualist = no
 				is_materialist = yes
-				has_origin = civic_machine_worshipers
+				has_origin = civic_gateway_worshiper  # civic_machine_worshipers?
 			}
 		}
 		modifier = {
@@ -271,7 +269,7 @@ tech_advanced_nanites = {
 				is_spiritualist = no
 				is_materialist = yes
 			}
-			has_origin = civic_machine_worshipers
+			has_origin = civic_gateway_worshiper  # civic_machine_worshipers?
 		}
 	}
 }
@@ -371,7 +369,7 @@ tech_nanites_assembler_factory = {
 		factor = 0.5
 		modifier = {
 			factor = 0
-			NOR = {
+			OR = {
 				has_authority = auth_hive_mind
 				is_spiritualist = yes
 			}
@@ -396,7 +394,6 @@ tech_orbital_nanite_shipyard = {
 	is_reverse_engineerable = no
 
 	prerequisites = { "tech_nanites_assembler_factory" }
-
 
 	ai_weight = {
 		factor = 0.25
@@ -436,7 +433,7 @@ tech_orbital_nanite_shipyard = {
 }
 
 tech_nanite_networking_protocols = {
-	area = engineering
+	area = physics
 	cost = 35000
 	tier = 4
 	is_dangerous = yes
@@ -445,13 +442,13 @@ tech_nanite_networking_protocols = {
 	is_reverse_engineerable = no
 
 	weight_modifier = {
-		factor = 1.5
+		factor = 0.25
 		modifier = {
-			factor = 0.25
-			NOR = {
+			factor = 1.5
+			OR = {
 				research_leader = {
 					area = physics
-					has_trait = "leader_trait_expertise_computing"
+					has_trait = "leader_trait_expertise_propulsion"
 				}
 				research_leader = {
 					area = physics
@@ -459,15 +456,7 @@ tech_nanite_networking_protocols = {
 				}
 			}
 		}
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
-
 
 	prerequisites = { "tech_nanite_clouds" }
 
@@ -680,11 +669,9 @@ tech_nanite_interdictor = {
 	prerequisites = { "tech_orbital_nanite_shipyard" }
 
 	potential = {
-		AND = {
-			has_technology = tech_nanite_networking_protocols
-			has_technology = tech_nanite_titanic_weapon
-			has_technology = tech_nanite_torpedo
-		}
+		has_technology = tech_nanite_networking_protocols
+		has_technology = tech_nanite_titanic_weapon
+		has_technology = tech_nanite_torpedo
 	}
 
 	ai_weight = {
@@ -806,8 +793,10 @@ tech_nanite_core = {
 				has_authority = auth_machine_intelligence
 				is_materialist = yes
 			}
-			NOT = { has_origin = civic_harvester_nanites }
-			NOT = { has_origin = civic_gateway_pursuer }
+			NOR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
 		}
 		modifier = {
 			factor = 1

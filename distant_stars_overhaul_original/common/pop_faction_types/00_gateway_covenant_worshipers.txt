@@ -307,10 +307,10 @@ gateway_covenant = {
 			if = {
 				limit = {
 					any_country = {
-						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
 						NOT = { is_same_empire = root.owner }
 						NOT = { has_migration_access = root.owner }
 						has_communications = root.owner
+						any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
 					}
 				}
 				always = yes
@@ -324,8 +324,8 @@ gateway_covenant = {
 			if = {
 				limit = {
 					any_country = {
-						any_owned_planet = { has_planet_modifier = DSO_dessanu_heritage_world }
 						has_migration_access = root.owner
+						any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
 					}
 				}
 				always = yes

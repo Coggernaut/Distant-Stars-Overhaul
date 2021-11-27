@@ -140,6 +140,7 @@ country_event = {
 	}
 }
 
+# Triggered via distar.10903 (researched tech_lgate_activation)
 country_event = {
 	id = distar_overhaul_opener.10904
 	title = "distar_overhaul.10904.name"
@@ -150,7 +151,7 @@ country_event = {
 	is_triggered_only = no
 	#mean_time_to_happen = { months = 2 }
 	trigger = {
-		has_country_flag = lcluster_opener
+		# has_country_flag = lcluster_opener
 		NOT = { has_country_flag = distar_overhaul_opener_flag }
 	}
 	immediate = {
@@ -225,8 +226,7 @@ planet_event = {
 			is_planet_class = pc_nuked
 			is_planet_class = pc_machine
 			is_planet_class = pc_nanite_forgeworld
-			is_planet_class = pc_habitat
-			is_planet_class = pc_ringworld_habitable
+			is_artificial = yes
 			is_planet_class = pc_relic
 			is_planet_class = pc_bh_harvest_colony
 		}
@@ -482,13 +482,12 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		owner = {
-			OR = {
-				has_origin = civic_harvester_nanites
-				has_origin = civic_gateway_pursuer
-				has_origin = civic_gateway_worshiper
-			}
+		OR = {
+			has_origin = civic_harvester_nanites
+			has_origin = civic_gateway_pursuer
+			has_origin = civic_gateway_worshiper
 		}
+		exists = capital_scope
 	}
 	immediate = {
 		if = {
@@ -497,9 +496,9 @@ country_event = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
 				}
+
 			}
-			random_owned_planet = {
-				limit = { is_capital = yes }
+			capital_scope = {
 				set_planet_flag = pc_nanite_forgeworld
 				change_pc = pc_nanite_forgeworld
 				clear_deposits = yes
@@ -521,8 +520,7 @@ country_event = {
 		}
 		if = {
 			limit = { has_origin = civic_gateway_worshiper }
-			random_owned_planet = {
-				limit = { is_capital = yes }
+			capital_scope = {
 				set_planet_size = 25
 				reroll_deposits = yes
 				every_deposit = {
@@ -655,9 +653,9 @@ country_event = {
 	id = bio_harvest_fix_capital.1
 	is_triggered_only = yes
 	hide_window = yes
+	trigger = { exists = capital_scope }
 	immediate = {
-		random_owned_planet = {
-			limit = { is_capital = yes }
+		capital_scope = {
 			add_district = dso_district_generator_uncapped
 			add_district = dso_district_generator_uncapped
 			add_district = dso_district_generator_uncapped

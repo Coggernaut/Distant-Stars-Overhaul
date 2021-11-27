@@ -32,22 +32,13 @@ generate_add_nanite_insight = {
 					event_chain = nanite_technology_mastery_chain
 					counter = nanite_insight
 				}
-				NOT = { has_origin = civic_gateway_worshiper }
 			}
 			custom_tooltip = nanite_technology_mastery_finish_tooltip
 			set_country_flag = completed_nanite_technology_mastery_chain
-			country_event = { id = distar_overhaul.10904 }
-		}
-		if = {
-			limit = {
-				has_completed_event_chain_counter = {
-					event_chain = nanite_technology_mastery_chain
-					counter = nanite_insight
-				}
-				has_origin = civic_gateway_worshiper
+			if = {
+				limit = { NOT = { has_origin = civic_gateway_worshiper } }
+				country_event = { id = distar_overhaul.10904 }
 			}
-			custom_tooltip = nanite_technology_mastery_finish_tooltip
-			set_country_flag = completed_nanite_technology_mastery_chain
 		}
 	}
 }

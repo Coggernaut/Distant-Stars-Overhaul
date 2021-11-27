@@ -45,7 +45,7 @@ nanite_sterilization = {
 	# root = fleet
 	# from = planet
 	ai_weight = {
-		weight = 0.1
+		weight = 1
 		modifier = {
 			factor = 0
 			exists = from
@@ -62,10 +62,8 @@ nanite_sterilization = {
 			factor = 20
 			exists = from.owner
 			exists = owner
-			AND = {
-				from.owner = { NOT = { has_authority = auth_machine_intelligence } }
-				owner = { has_civic = civic_machine_terminator }
-			}
+			from.owner = { NOT = { has_authority = auth_machine_intelligence } }
+			owner = { has_civic = civic_machine_terminator }
 		}
 	}
 }

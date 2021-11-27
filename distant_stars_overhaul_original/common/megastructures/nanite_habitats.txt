@@ -44,7 +44,7 @@ nanite_habitat_0 = {
 				}
 				custom_tooltip = {
 					fail_text = "requires_no_anomaly"
-					NOT = { has_anomaly = yes }
+					has_anomaly = no
 				}
 				custom_tooltip = {
 					fail_text = "requires_no_existing_megastructure"
@@ -124,7 +124,7 @@ nanite_habitat_0 = {
 				}
 				save_event_target_as = nanite_habitat_target
 				#surveyed = {
-				#	set_surveyed = yes
+				#	surveyed = yes
 				#	surveyor = FROM
 				#}
 				#set_all_comms_surveyed = yes

@@ -617,10 +617,7 @@ country_event = {
 	trigger = {
 		NOT = { has_country_flag = fired_cracker }
 		from = {
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
-			}
+			is_artificial = no
 		}
 	}
 	immediate = { set_country_flag = fired_cracker }

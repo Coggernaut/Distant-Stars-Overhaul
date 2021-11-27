@@ -1,0 +1,27 @@
+
+# Researched L-Gate tech
+# DSO Nanite Technology Mastery available upon gaining all insights
+country_event = {
+	id = distar.10903
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		last_increased_tech = tech_lgate_activation
+		NOT = { has_global_flag = l_cluster_opened }
+	}
+
+	immediate = {
+		country_event = { id = distar.10900 }
+		if = {
+			limit = {
+				any_owned_megastructure = {
+					is_megastructure_type = lgate_base
+				}
+				has_technology = tech_lgate_activation
+			}
+			country_event = { id = distar_overhaul_opener.10904	days = 7 }
+		}
+	}
+}
