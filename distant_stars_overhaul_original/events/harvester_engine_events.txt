@@ -206,8 +206,7 @@ planet_event = {
 			limit = {
 				has_communications = prev.owner
 				OR = {
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophile
+					is_xenophile = yes
 					has_civic = civic_machine_servitor
 				}
 			}

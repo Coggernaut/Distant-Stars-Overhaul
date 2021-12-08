@@ -148,7 +148,7 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	#can be triggered via outcome ship_events
-	is_triggered_only = no
+	is_triggered_only = yes
 	#mean_time_to_happen = { months = 2 }
 	trigger = {
 		# has_country_flag = lcluster_opener
@@ -357,8 +357,7 @@ planet_event = {
 				limit = {
 					has_communications = prev.owner
 					OR = {
-						has_ethic = ethic_fanatic_xenophile
-						has_ethic = ethic_xenophile
+						is_xenophile = yes
 						has_civic = civic_machine_servitor
 					}
 				}

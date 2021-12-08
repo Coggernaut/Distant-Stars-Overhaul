@@ -121,6 +121,7 @@ tech_repeatable_nanite_technology_insight = {
 }
 
 tech_nanite_technology_mastery = {
+	icon = tech_nanite
 	cost = @tier3cost3
 	area = engineering
 	tier = 5

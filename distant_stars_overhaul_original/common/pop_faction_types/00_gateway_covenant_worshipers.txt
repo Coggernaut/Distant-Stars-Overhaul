@@ -186,10 +186,7 @@ gateway_covenant = {
 
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_fanatic_spiritualist
-					has_ethic = ethic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 		}
 	}
@@ -307,8 +304,10 @@ gateway_covenant = {
 			if = {
 				limit = {
 					any_country = {
-						NOT = { is_same_empire = root.owner }
-						NOT = { has_migration_access = root.owner }
+						NOR = {
+							is_same_empire = root.owner
+							has_migration_access = root.owner
+						}
 						has_communications = root.owner
 						any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
 					}
