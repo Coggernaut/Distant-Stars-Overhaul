@@ -119,8 +119,11 @@ nanite_habitat_0 = {
 				set_name = "HABITAT_PLANET_NAME"
 				set_planet_entity = {
 					entity = "shielded_planet"
-					overlay_entity = "planet_shield_effect_entity"
-					graphical_culture = fromfrom
+					overlay_entity = "planet_shield_effect_entity" # TODO test is this working?
+					graphical_culture = from
+					# atmosphere_color = <color from 3 components>
+					# atmosphere_intensity = <0.0 - 1.0>
+					# atmosphere_width = <0.0 - 1.0>
 				}
 				save_event_target_as = nanite_habitat_target
 				#surveyed = {
@@ -128,7 +131,7 @@ nanite_habitat_0 = {
 				#	surveyor = FROM
 				#}
 				#set_all_comms_surveyed = yes
-				clear_blockers = no
+				# clear_blockers = yes
 				#if = {
 				#	limit = {
 				#		from = { has_ascension_perk = ap_voidborn }
@@ -144,17 +147,19 @@ nanite_habitat_0 = {
 
 				if = {
 					limit = {
-						OR = {
-							fromfrom.planet = { has_deposit = d_minerals_1 }
-							fromfrom.planet = { has_deposit = d_minerals_2 }
-							fromfrom.planet = { has_deposit = d_minerals_3 }
-							fromfrom.planet = { has_deposit = d_minerals_4 }
-							fromfrom.planet = { has_deposit = d_minerals_5 }
-							fromfrom.planet = { has_deposit = d_minerals_6 }
-							fromfrom.planet = { has_deposit = d_minerals_7 }
-							fromfrom.planet = { has_deposit = d_minerals_8 }
-							fromfrom.planet = { has_deposit = d_minerals_9 }
-							fromfrom.planet = { has_deposit = d_minerals_10 }
+						fromfrom.planet = {
+							OR = {
+								has_deposit = d_minerals_1
+								has_deposit = d_minerals_2
+								has_deposit = d_minerals_3
+								has_deposit = d_minerals_4
+								has_deposit = d_minerals_5
+								has_deposit = d_minerals_6
+								has_deposit = d_minerals_7
+								has_deposit = d_minerals_8
+								has_deposit = d_minerals_9
+								has_deposit = d_minerals_10
+							}
 						}
 					}
 					set_planet_flag = mining_habitat
@@ -162,17 +167,19 @@ nanite_habitat_0 = {
 
 				if = {
 					limit = {
-						OR = {
-							fromfrom.planet = { has_deposit = d_energy_1 }
-							fromfrom.planet = { has_deposit = d_energy_2 }
-							fromfrom.planet = { has_deposit = d_energy_3 }
-							fromfrom.planet = { has_deposit = d_energy_4 }
-							fromfrom.planet = { has_deposit = d_energy_5 }
-							fromfrom.planet = { has_deposit = d_energy_6 }
-							fromfrom.planet = { has_deposit = d_energy_7 }
-							fromfrom.planet = { has_deposit = d_energy_8 }
-							fromfrom.planet = { has_deposit = d_energy_9 }
-							fromfrom.planet = { has_deposit = d_energy_10 }
+						fromfrom.planet = {
+							OR = {
+								has_deposit = d_energy_1
+								has_deposit = d_energy_2
+								has_deposit = d_energy_3
+								has_deposit = d_energy_4
+								has_deposit = d_energy_5
+								has_deposit = d_energy_6
+								has_deposit = d_energy_7
+								has_deposit = d_energy_8
+								has_deposit = d_energy_9
+								has_deposit = d_energy_10
+							}
 						}
 					}
 					set_planet_flag = energy_habitat
@@ -185,17 +192,19 @@ nanite_habitat_0 = {
 
 				if = {
 					limit = {
-						OR = {
-							fromfrom.planet = { has_deposit = d_trade_value_1 }
-							fromfrom.planet = { has_deposit = d_trade_value_2 }
-							fromfrom.planet = { has_deposit = d_trade_value_3 }
-							fromfrom.planet = { has_deposit = d_trade_value_4 }
-							fromfrom.planet = { has_deposit = d_trade_value_5 }
-							fromfrom.planet = { has_deposit = d_trade_value_6 }
-							fromfrom.planet = { has_deposit = d_trade_value_7 }
-							fromfrom.planet = { has_deposit = d_trade_value_8 }
-							fromfrom.planet = { has_deposit = d_trade_value_9 }
-							fromfrom.planet = { has_deposit = d_trade_value_10 }
+						fromfrom.planet = {
+							OR = {
+								has_deposit = d_trade_value_1
+								has_deposit = d_trade_value_2
+								has_deposit = d_trade_value_3
+								has_deposit = d_trade_value_4
+								has_deposit = d_trade_value_5
+								has_deposit = d_trade_value_6
+								has_deposit = d_trade_value_7
+								has_deposit = d_trade_value_8
+								has_deposit = d_trade_value_9
+								has_deposit = d_trade_value_10
+							}
 						}
 					}
 					set_planet_flag = commercial_habitat

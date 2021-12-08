@@ -9,6 +9,7 @@
 @EdictDuration = 3600
 
 consecrate_lgate = {
+	icon = GFX_edict_type_policy
 	length = @EdictDuration
 	resources = {
 		category = edicts
@@ -49,6 +50,7 @@ consecrate_lgate = {
 }
 
 lgate_guardian = {
+	icon = GFX_edict_type_policy
 	length = @EdictDuration
 	resources = {
 		category = edicts
@@ -80,4 +82,3 @@ lgate_guardian = {
 		weight = @EdictHighPrio
 	}
 }
-

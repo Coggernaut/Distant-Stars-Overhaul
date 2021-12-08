@@ -1,12 +1,12 @@
-﻿l_english:
+﻿l_braz_por:
  # Events ---------------
- 
+
  # Start of L-Subterranean Colony Localization
- 
+
  nanite_ecosystem_subterranean_civilization_chain:0 "L-Vault Containment Site"
  NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT:0 "Disable the Containment Shield"
  NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT:0 "Strengthen the Containment Shield"
- 
+
  nanite_ecosystem_colony.50.name:0 "Seismic Disturbances"
  nanite_ecosystem_colony.50.desc:0 "There have been many reports of unexplainable seismic disturbances on [Root.GetName]. Tremors can be felt across the [Root.GetPlanetMoon], and many of our settlements have suffered damage. While investigating the earthquakes, our scientists discovered a vast network of subterranean caverns.\n\nAs our scientists venture deeper, the architecture becomes far too intricate for it to be excavated by mere wild life. The scientists reach a dead end, but what lies before them is a massive stone gate dubbed the L-Vault. The L-Vault's surface seems to be surrounded by a containment shield preventing any further access, but our scientists are confident they can neutralize it. The scientific community is split between the idea that this is to prevent what's inside getting out or prevent the outside from getting in. Regardless it's uncertain if this strange containment site is the source of the seismic disturbances. Building our settlements ontop of these cavarns may be the cause of these seismic disturbances, but we cannot be certain. Shall we attempt to disable the containment shield or collapse the caverns?"
  nanite_ecosystem_colony.50.a:0 "A vault to contain what's inside... or to contain what's outside..."
@@ -90,13 +90,3 @@
  nanite_ecosystem_colony.76.desc:0 "Outsider. We tried to be good neighbors, but it has become clear that you have no intention of treating us or the Dessanu's cluster with the respect it deserves.\n\nOur eldars have decreed that we must claim all that was lost from them, for we are their Inheritors. We shall drive you back through the Great Gates!"
  nanite_ecosystem_colony.76.a:0 "That's not good."
  # End of L-Subterranean Colony Localization
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
