@@ -17,10 +17,7 @@ generate_add_nanite_insight = {
 				amount = 1
 			}
 			# increment variable
-			change_variable = {
-				which = num_nanite_insight
-				value = 1
-			}
+			change_variable = { which = num_nanite_insight value = 1 }
 		}
 		#else = {
 		#	# failsafe, do nothing
@@ -50,9 +47,6 @@ start_nanite_technology_mastery_chain = {
 			event_chain = nanite_technology_mastery_chain
 			target = this
 		}
-		set_variable = {
-			which = num_nanite_insight
-			value = 0
-		}
+		set_variable = { which = num_nanite_insight value = 0 }
 	}
 }

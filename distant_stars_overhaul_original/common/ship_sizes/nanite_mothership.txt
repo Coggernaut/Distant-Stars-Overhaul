@@ -1,6 +1,6 @@
 dso_nanite_interdictor = {
 	formation_priority = @cruiser_formation_priority
-	entity = gatebuilder_01_cruiser_entity
+	entity = "gatebuilder_01_cruiser_entity"
 	max_speed = 140
 	acceleration = 0.25
 	rotation_speed = 0.175
@@ -104,7 +104,7 @@ dso_nanite_mothership = {
 
 dso_nanite_core = {
 	formation_priority = @titan_formation_priority
-	entity = "gatebuilder_01_mothership_entity"
+	entity = "gatebuilder_01_core_ship_entity"
 	max_speed = 100
 	acceleration = 0.16
 	rotation_speed = 0.09

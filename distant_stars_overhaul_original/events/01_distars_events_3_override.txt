@@ -16,12 +16,11 @@ country_event = {
 		country_event = { id = distar.10900 }
 		if = {
 			limit = {
-				any_owned_megastructure = {
-					is_megastructure_type = lgate_base
-				}
-				has_technology = tech_lgate_activation
+				# any_owned_megastructure = { is_megastructure_type = lgate_base } needs fallback
+				NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
+				can_research_technology = tech_nanite_technology_mastery
 			}
-			country_event = { id = distar_overhaul_opener.10904	days = 7 }
+			country_event = { id = distar_overhaul.10904 days = 7 }
 		}
 	}
 }

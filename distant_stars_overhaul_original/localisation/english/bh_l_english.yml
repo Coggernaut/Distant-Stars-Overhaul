@@ -21,7 +21,7 @@
  distar_overhaul_insight_finished.1.desc:0 "Our scientists have already gained what they could from Nanite Technology. Any remaining insight into the technology will be redundant to research further."
  distar_overhaul_insight_finished.1.a:0 "These insights have become redundant to research."
 
- distar_overhaul.10904.name:0 "Nanite Technological Mastery"
+ # distar_overhaul.10904.name:0 "Nanite Technological Mastery"
  distar_overhaul.10904.desc:0 "These insights into Nanite Technology have created a vast understanding of nano-machinery. It is now possible to replicate the machinery the Dessanu mastered. Hopefully nothing bad comes from this mastery."
  distar_overhaul.10904.a:0 "Nanite Technology is now within our grasp!"
 

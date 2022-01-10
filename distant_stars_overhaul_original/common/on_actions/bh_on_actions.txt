@@ -1,12 +1,18 @@
 on_game_start = {
 	events = {
-		distar_overhaul_compatibility.1
+		distar_overhaul.999
 	}
 }
 
 on_save_game_load = {
 	events = {
-		distar_overhaul_compatibility.1
+		distar_overhaul.999
+	}
+}
+
+on_game_start_country = {
+	events = {
+		bio_harvest.3		# Setup the machine world correctly
 	}
 }
 
@@ -14,15 +20,9 @@ on_save_game_load = {
 # This = Country
 on_tech_increased = {
 	events = {
-		distar_overhaul.12000
-		distar_overhaul.1
-		distar_overhaul.2
-	}
-}
-
-on_game_start_country = {
-	events = {
-		bio_harvest.3		# Setup the machine world correctly
+		distar_overhaul.12000 # generate_nanite_insight
+		distar_overhaul.10001 # finish insight (alternate)
+		distar_overhaul.10002 # start insight (alternate)
 	}
 }
 

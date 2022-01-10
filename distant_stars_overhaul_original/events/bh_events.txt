@@ -2,30 +2,15 @@ namespace = bio_harvest
 namespace = bio_harvest_fix_capital
 namespace = bio_harvest_planet_stages
 namespace = bio_harvest_planet_depleted
-namespace = test_action
-namespace = very_large_harvest
-namespace = large_harvest
-namespace = medium_harvest
-namespace = small_harvest
-namespace = very_small_harvest
-namespace = gaia_very_large_harvest
-namespace = gaia_large_harvest
-namespace = gaia_medium_harvest
-namespace = gaia_small_harvest
-namespace = gaia_very_small_harvest
-namespace = gateway_pursuer
-namespace = gateway_pursuer_gateway
 namespace = harvester_grey_goo_planet
 namespace = nanite_forgeworld_lost
 namespace = harvest_nanite_gaia
 namespace = distar_overhaul
-namespace = distar_overhaul_insight_start
-namespace = distar_overhaul_opener
-namespace = distar_overhaul_insight_finished
-namespace = distar_overhaul_compatibility
 #has_global_flag = a_deadly_tempest_mod_active
+
+# distar_overhaul_compatibility
 event = {
-	id = distar_overhaul_compatibility.1
+	id = distar_overhaul.999
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
@@ -34,8 +19,10 @@ event = {
 	}
 }
 
-event = {
-	id = distar_overhaul_insight_start.1
+# distar_overhaul_insight_start
+# Nanite Mastery for everyone
+country_event = {
+	id = distar_overhaul.1
 	title = "distar_overhaul_insight_start.1.name"
 	desc = "distar_overhaul_insight_start.1.desc"
 	picture = GFX_evt_drifting_gateway
@@ -44,7 +31,7 @@ event = {
 	is_triggered_only = yes
 	#mean_time_to_happen = { months = 2 }
 	trigger = {
-		has_global_flag = l_cluster_opened
+		# has_global_flag = l_cluster_opened there is a gap and no fallback
 		NOR = {
 			has_country_flag = lcluster_opener
 			has_country_flag = distar_overhaul_insight_started_flag
@@ -69,36 +56,39 @@ country_event = {
 	immediate = { generate_add_nanite_insight = yes }
 }
 
+# insight_finished (alternate)
 country_event = {
-	id = distar_overhaul_insight_finished.1
+	id = distar_overhaul.10000
 	title = "distar_overhaul_insight_finished.1.name"
 	desc = "distar_overhaul_insight_finished.1.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-	trigger = {
-		last_increased_tech = tech_repeatable_nanite_technology_insight
-		has_country_flag = completed_nanite_technology_mastery_chain
-	}
+	# trigger = {	}
 	option = { name = OK }
 }
 
+# finish nanite mastery (alternate)
 country_event = {
-	id = distar_overhaul.1
+	id = distar_overhaul.10001
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		last_increased_tech = tech_nanite_technology_mastery
-		NOT = { has_technology = tech_repeatable_nanite_technology_insight }
+		NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
+		# NOT = { has_technology = tech_repeatable_nanite_technology_insight }
 	}
 	immediate = {
+		# if = { limit = { NOT = { has_country_flag = completed_nanite_technology_mastery_chain } }
 		set_country_flag = completed_nanite_technology_mastery_chain
-		give_technology = { tech = tech_repeatable_nanite_technology_insight message = yes }
+		# give_technology = { tech = tech_repeatable_nanite_technology_insight message = yes }
+		country_event = { id = distar_overhaul.10000 }
 	}
 }
 
+# start insight (alternate)
 country_event = {
-	id = distar_overhaul.2
+	id = distar_overhaul.10002
 	title = "distar_overhaul.2.name"
 	desc = "distar_overhaul.2.desc"
 	picture = GFX_evt_drifting_gateway
@@ -123,49 +113,43 @@ country_event = {
 	}
 }
 
-# Technology available upon gaining all insights
+# Finish Nanite Mastery
+# Technology available upon gaining all insights (finishing project/lcluster_opener)
 country_event = {
 	id = distar_overhaul.10904
-	title = "distar_overhaul.10904.name"
-	desc = "distar_overhaul.10904.desc"
-	picture = GFX_evt_drifting_gateway
-	show_sound = event_mystic_reveal
-	is_triggered_only = yes
-	#immediate = {
-	#observer_event = { id = observer.61 }
-	#}
-	option = {
-		name = GOOD
-		add_research_option = tech_nanite_technology_mastery
-	}
-}
-
-# Triggered via distar.10903 (researched tech_lgate_activation)
-country_event = {
-	id = distar_overhaul_opener.10904
-	title = "distar_overhaul.10904.name"
+	title = "distar_overhaul_insight_finished.1.name"
 	desc = "distar_overhaul.10904.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	#can be triggered via outcome ship_events
 	is_triggered_only = yes
 	#mean_time_to_happen = { months = 2 }
-	trigger = {
-		# has_country_flag = lcluster_opener
-		NOT = { has_country_flag = distar_overhaul_opener_flag }
-	}
+	# trigger = {	}
 	immediate = {
-		every_playable_country = {
+		# observer_event = { id = observer.61 }
+		# Give nanite_technology_mastery alt if researched tech_lgate_activation
+		# distar_overhaul_opener triggered via distar.10903
+		if = {
 			limit = {
+				has_technology = tech_lgate_activation
 				NOR = {
-					has_country_flag = lcluster_opener
-					has_country_flag = distar_overhaul_insight_started_flag
+					has_country_flag = completed_nanite_technology_mastery_chain
+					has_country_flag = distar_overhaul_opener_flag
 				}
 			}
-			country_event = { id = distar_overhaul_insight_start.1 }
+			# Start Nanite Mastery for everyone
+			every_playable_country = {
+				limit = {
+					NOR = {
+						has_country_flag = lcluster_opener
+						has_country_flag = distar_overhaul_insight_started_flag
+					}
+				}
+				country_event = { id = distar_overhaul.1 }
+			}
+			set_country_flag = distar_overhaul_opener_flag
+			give_technology = { tech = tech_repeatable_nanite_technology_insight message = no }
 		}
-		set_country_flag = distar_overhaul_opener_flag
-		give_technology = { tech = tech_repeatable_nanite_technology_insight message = no }
 	}
 	option = {
 		name = GOOD
@@ -173,6 +157,7 @@ country_event = {
 	}
 }
 
+# nanite_forgeworld_lost
 planet_event = {
 	id = nanite_forgeworld_lost.1
 	title = nanite_forgeworld_lost.1.title
@@ -229,9 +214,9 @@ planet_event = {
 			is_artificial = yes
 			is_planet_class = pc_relic
 			is_planet_class = pc_bh_harvest_colony
+			exists = archaeological_site
+			has_planet_flag = apsr_planet
 		}
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = apsr_planet }
 	}
 	#from.owner = {
 	#	if = {
@@ -732,6 +717,7 @@ planet_event = {
 # Depreciate Level Medium Stage_2
 planet_event = {
 	id = bio_harvest_planet_stages.1
+	hide_window = yes # TODO: Make as notify event!?
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
@@ -830,21 +816,22 @@ planet_event = {
 			limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_stages.2 days = 5200 }
 		}
+		clear_deposits = yes
+		add_deposit = bh_harvested_planet_deposit_moderate
+		add_deposit = d_nanosands
 	}
-	option = {
-		name = OK
-		custom_tooltip = bio_harvest.1.tooltip
-		hidden_effect = {
-			clear_deposits = yes
-			add_deposit = bh_harvested_planet_deposit_moderate
-			add_deposit = d_nanosands
-		}
-	}
+	# option = {
+	# 	name = OK
+	# 	custom_tooltip = bio_harvest.1.tooltip
+	# 	hidden_effect = {
+	# 	}
+	# }
 }
 
-#Depreciate Level Low Stage_3
+# Depreciate Level Low Stage_3
 planet_event = {
 	id = bio_harvest_planet_stages.2
+	hide_window = yes # TODO: Make as notify event!?
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
@@ -943,16 +930,16 @@ planet_event = {
 			limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 2600 }
 		}
-		hidden_effect = {
-			clear_deposits = yes
-			add_deposit = bh_harvested_planet_deposit_small
-			add_deposit = d_nanosands
-		}
+		clear_deposits = yes
+		add_deposit = bh_harvested_planet_deposit_small
+		add_deposit = d_nanosands
 	}
-	option = {
-		name = OK
-		custom_tooltip = bio_harvest.1.tooltip
-	}
+	# option = {
+	# 	name = OK
+	# 	custom_tooltip = bio_harvest.1.tooltip
+	# 	hidden_effect = {
+	# 	}
+	# }
 }
 
 # ----------------------------------------------------------------------------------
@@ -961,19 +948,22 @@ planet_event = {
 # Depleted
 planet_event = {
 	id = bio_harvest_planet_depleted.1
+	hide_window = yes # TODO: Make as notify event!?
 	is_triggered_only = yes
 	trigger = { is_planet_class = pc_bh_harvest }
-	immediate = { remove_planet_flag = pc_bh_harvest }
-	option = {
-		name = OK
-		custom_tooltip = bio_harvest.1.tooltip
-		hidden_effect = {
-			add_modifier = { modifier = "bh_harvested_modifier" days = -1 }
-			remove_modifier = "bh_harvest_modifier"
-			change_pc = pc_gray_goo
-			add_deposit = d_nanosands
-			remove_planet_flag = pc_bh_harvest
-			add_modifier = { modifier = "terraforming_candidate" days = -1 }
-		}
+	immediate = {
+		remove_planet_flag = pc_bh_harvest
+		add_modifier = { modifier = "bh_harvested_modifier" days = -1 }
+		remove_modifier = "bh_harvest_modifier"
+		change_pc = pc_gray_goo
+		add_deposit = d_nanosands
+		remove_planet_flag = pc_bh_harvest
+		add_modifier = { modifier = "terraforming_candidate" days = -1 }
 	}
+	# option = {
+	# 	name = OK
+	# 	custom_tooltip = bio_harvest.1.tooltip
+	# 	hidden_effect = {
+	# 	}
+	# }
 }
