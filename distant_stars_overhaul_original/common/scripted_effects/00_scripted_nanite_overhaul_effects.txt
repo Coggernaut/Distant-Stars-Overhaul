@@ -48,5 +48,22 @@ start_nanite_technology_mastery_chain = {
 			target = this
 		}
 		set_variable = { which = num_nanite_insight value = 0 }
+
+		if = { #  already get some insight
+			limit = {
+				check_variable = { which = num_lcluster_clues value > 0 }
+			}
+			set_variable = { which = num_nanite_insight value = num_lcluster_clues }
+			divide_variable = { which = num_nanite_insight value = 3 }
+			round_variable = num_nanite_insight
+			while = {
+				count = num_nanite_insight
+				add_event_chain_counter = {
+					event_chain = nanite_technology_mastery_chain
+					counter = nanite_insight
+					amount = 1
+				}
+			}
+		}
 	}
 }

@@ -6,37 +6,41 @@ nanite_researcher = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_research_lab_1
 	clothes_texture_index = 3
-
+	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
-	
 	resources = {
 		category = planet_researchers
 		produces = {
 			engineering_research = 10
 		}
 		produces = {
-			trigger = { 
-				owner = { has_valid_civic = civic_technocracy }
+			trigger = {
+				owner = {
+					has_valid_civic = civic_technocracy
+				}
 			}
 			unity = 1
 		}
 		upkeep = {
 			nanites = 1
-		}		
+		}
 	}
-	
 	weight = {
 		weight = 100
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			has_living_standard = { type = living_standard_academic_privilege }
+			has_living_standard = {
+				type = living_standard_academic_privilege
+			}
 		}
 		modifier = {
 			factor = 3
@@ -64,21 +68,20 @@ nanite_researcher = {
 		modifier = {
 			factor = 1.25
 			has_trait = trait_latent_psionic
-		} 
+		}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_psionic
-		} 
+		}
 		modifier = {
 			factor = 0.2
 			has_trait = trait_enigmatic_intelligence_failed
-		} 
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
 				has_trait = trait_enigmatic_intelligence_poor
 				has_trait = trait_enigmatic_intelligence
-				
 			}
 		}
 		modifier = {
@@ -92,13 +95,13 @@ nanite_researcher = {
 		modifier = {
 			factor = 0.65
 			OR = {
-				has_trait = trait_presapient_proles	
+				has_trait = trait_presapient_proles
 			}
 		}
 		modifier = {
 			factor = 1.5
 			has_job = nanite_researcher
-		}		
+		}
 	}
 }
 
@@ -106,19 +109,14 @@ bio_processor_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_bio_reactor
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible_precalc = can_fill_drone_job
-
-	possible = {
-		}
-
+	# possible = { }
 	resources = {
 		category = planet_technician
 		produces = {
@@ -128,7 +126,6 @@ bio_processor_drone = {
 			food = 8
 		}
 	}
-
 	weight = {
 		weight = @simple_drone_job_weight
 		modifier = {
@@ -140,7 +137,9 @@ bio_processor_drone = {
 		}
 		modifier = {
 			factor = 0.9
-			NOT = { has_job = mining_drone }
+			NOT = {
+				has_job = mining_drone
+			}
 			owner = {
 				has_monthly_income = {
 					resource = energy
@@ -156,7 +155,9 @@ bio_processor_drone = {
 			factor = 1.1
 			exists = owner
 			years_passed < 1
-			owner = { has_valid_civic = civic_machine_assimilator }
+			owner = {
+				has_valid_civic = civic_machine_assimilator
+			}
 			has_trait = trait_cybernetic
 		}
 	}
