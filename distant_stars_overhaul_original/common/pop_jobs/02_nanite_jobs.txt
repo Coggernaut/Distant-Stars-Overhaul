@@ -94,9 +94,7 @@ nanite_researcher = {
 		}
 		modifier = {
 			factor = 0.65
-			OR = {
-				has_trait = trait_presapient_proles
-			}
+			has_trait = trait_presapient_proles
 		}
 		modifier = {
 			factor = 1.5

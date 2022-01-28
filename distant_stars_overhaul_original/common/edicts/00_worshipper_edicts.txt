@@ -39,7 +39,6 @@ consecrate_lgate = {
 			fail_text = "requires_1_lgate"
 			any_owned_megastructure = {
 				is_megastructure_type = lgate_base
-				count >= 1
 			}
 		}
 	}
@@ -71,7 +70,7 @@ lgate_guardian = {
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
-			any_owned_megastructure = {
+			count_owned_megastructure = {
 				is_megastructure_type = lgate_base
 				count >= 3
 			}
