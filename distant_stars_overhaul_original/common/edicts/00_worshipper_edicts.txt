@@ -71,7 +71,7 @@ lgate_guardian = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
 			count_owned_megastructure = {
-				is_megastructure_type = lgate_base
+				limit = { is_megastructure_type = lgate_base }
 				count >= 3
 			}
 		}
