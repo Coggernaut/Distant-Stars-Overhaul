@@ -412,8 +412,10 @@ tech_orbital_nanite_shipyard = {
 					has_authority = auth_machine_intelligence
 					is_materialist = yes
 				}
-				NOT = { has_origin = civic_harvester_nanites }
-				NOT = { has_origin = civic_gateway_pursuer }
+				NOR = {
+					has_origin = civic_harvester_nanites 
+					has_origin = civic_gateway_pursuer 
+				}
 			}
 		}
 		modifier = {
@@ -484,8 +486,10 @@ tech_nanite_networking_protocols = {
 					has_authority = auth_machine_intelligence
 					is_materialist = yes
 				}
-				NOT = { has_origin = civic_harvester_nanites }
-				NOT = { has_origin = civic_gateway_pursuer }
+				NOR = {
+					has_origin = civic_harvester_nanites 
+					has_origin = civic_gateway_pursuer 
+				}
 			}
 		}
 		modifier = {
@@ -637,8 +641,10 @@ tech_nanite_titanic_weapon = {
 					has_authority = auth_machine_intelligence
 					is_materialist = yes
 				}
-				NOT = { has_origin = civic_harvester_nanites }
-				NOT = { has_origin = civic_gateway_pursuer }
+				NOR = {
+					has_origin = civic_harvester_nanites 
+					has_origin = civic_gateway_pursuer 
+				}
 			}
 		}
 		modifier = {
@@ -691,8 +697,10 @@ tech_nanite_interdictor = {
 					has_authority = auth_machine_intelligence
 					is_materialist = yes
 				}
-				NOT = { has_origin = civic_harvester_nanites }
-				NOT = { has_origin = civic_gateway_pursuer }
+				NOR = {
+					has_origin = civic_harvester_nanites 
+					has_origin = civic_gateway_pursuer 
+				}
 			}
 		}
 		modifier = {
@@ -744,8 +752,10 @@ tech_nanite_mothership = {
 				has_authority = auth_machine_intelligence
 				is_materialist = yes
 			}
-			NOT = { has_origin = civic_harvester_nanites }
-			NOT = { has_origin = civic_gateway_pursuer }
+			NOR = {
+				has_origin = civic_harvester_nanites 
+				has_origin = civic_gateway_pursuer 
+			}
 		}
 		modifier = {
 			factor = 1

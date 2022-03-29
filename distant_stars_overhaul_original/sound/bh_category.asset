@@ -1,34 +1,31 @@
-category = {
- name = "Effects"
- soundeffects = {
-	pc_bh_harvested
-}
- compressor = 
- {
- enabled = yes
- pregain = 2.0
- postgain = 1.5
- ratio = 10.0
- threshold = -8.0
- attacktime = 0.30
- releasetime = 0.020
- }
-}
+# category = {
+# 	name = "Effects"
+# 	soundeffects = {
+# 		pc_bh_harvested
+# 	}
+# 	compressor = {
+# 		enabled = yes
+# 		pregain = 2
+# 		postgain = 1.5
+# 		ratio = 10
+# 		threshold = -8
+# 		attacktime = 0.3
+# 		releasetime = 0.02
+# 	}
+# }
 
 category = {
- name = "Ambient"
- soundeffects = {
-	pc_bh_harvested
- }
- 
- compressor = 
- {
- enabled = yes
- pregain = 7.0
- postgain = 5.0
- ratio = 5.0
- threshold = -15.0
- attacktime = 0.030
- releasetime = 1.2
- }
+	name = "Ambient"
+	soundeffects = {
+		pc_bh_harvested
+	}
+	compressor = {
+		enabled = yes
+		pregain = 7
+		postgain = 5
+		ratio = 5
+		threshold = -15
+		attacktime = 0.03
+		releasetime = 1.2
+	}
 }

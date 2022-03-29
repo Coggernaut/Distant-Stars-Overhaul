@@ -1,7 +1,7 @@
 # see README.txt for example
 
 nanite_habitat_0 = {
-	entity = ""
+	entity = "nanite_habitat_shielded_entity_01_entity"
 	construction_entity = "orbital_habitat_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
@@ -31,10 +31,7 @@ nanite_habitat_0 = {
 	placement_rules = {
 		planet_possible = {
 			if = {
-				limit = { has_planet_flag = shattered_planet_habitat }
-				always = yes
-			}
-			else = {
+				limit = { NOT = { has_planet_flag = shattered_planet_habitat } }
 				custom_tooltip = {
 					fail_text = "requires_surveyed_planet"
 					is_surveyed = {			# prevent leaking habitability information
@@ -53,14 +50,15 @@ nanite_habitat_0 = {
 						has_planet_flag = megastructure
 						has_planet_flag = has_megastructure
 						solar_system = { has_star_flag = ring_world_built }
-						is_planet_class = pc_ringworld_habitable
-						is_planet_class = pc_ringworld_habitable_damaged
-						is_planet_class = pc_ringworld_tech
-						is_planet_class = pc_ringworld_tech_damaged
-						is_planet_class = pc_ringworld_seam
-						is_planet_class = pc_ringworld_seam_damaged
-						is_planet_class = pc_habitat
+						# is_planet_class = pc_ringworld_habitable
+						# is_planet_class = pc_ringworld_habitable_damaged
+						# is_planet_class = pc_ringworld_tech
+						# is_planet_class = pc_ringworld_tech_damaged
+						# is_planet_class = pc_ringworld_seam
+						# is_planet_class = pc_ringworld_seam_damaged
+						# is_planet_class = pc_habitat
 					}
+					is_artificial = no
 				}
 				custom_tooltip = {
 					fail_text = "requires_no_orbital_station"
@@ -126,7 +124,7 @@ nanite_habitat_0 = {
 					# atmosphere_width = <0.0 - 1.0>
 				}
 				save_event_target_as = nanite_habitat_target
-				#surveyed = {
+				#set_surveyed = {
 				#	surveyed = yes
 				#	surveyor = FROM
 				#}

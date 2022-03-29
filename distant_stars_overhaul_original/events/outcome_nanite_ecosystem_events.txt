@@ -1719,8 +1719,10 @@ country_event = {
 					limit = { is_planet_class = pc_nanite_gaia }
 					count < 2
 				}
-				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = nanite_ecosystem_presapient_system 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 			}
 			every_system_planet = {
 				limit = { is_star = yes }
@@ -1920,8 +1922,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 1
 				}
-				NOT = { has_star_flag = l_tiyanki_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_tiyanki_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
@@ -1944,8 +1948,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 2
 				}
-				NOT = { has_star_flag = l_tiyanki_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_tiyanki_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
@@ -1968,8 +1974,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 2
 				}
-				NOT = { has_star_flag = l_tiyanki_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_tiyanki_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_tiyanki_territory_flag
@@ -2169,8 +2177,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 1
 				}
-				NOT = { has_star_flag = l_amoeba_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_amoeba_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_amoeba_territory_flag
@@ -2193,8 +2203,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 2
 				}
-				NOT = { has_star_flag = l_amoeba_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_amoeba_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_amoeba_territory_flag
@@ -2217,8 +2229,10 @@ country_event = {
 					min_jumps = 1
 					max_jumps = 2
 				}
-				NOT = { has_star_flag = l_amoeba_territory_flag }
-				NOT = { has_star_flag = nanite_ecosystem_elder_tiyanki_system }
+				NOR = {
+					has_star_flag = l_amoeba_territory_flag 
+					has_star_flag = nanite_ecosystem_elder_tiyanki_system 
+				}
 				NOT = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			}
 			set_star_flag = l_amoeba_territory_flag
