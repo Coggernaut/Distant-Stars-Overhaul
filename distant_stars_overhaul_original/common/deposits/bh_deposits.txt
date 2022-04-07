@@ -2,12 +2,12 @@ bh_harvested_planet_deposit_small = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
-			physics_research = 6
-			society_research = 6
-			engineering_research = 6
-			unity = 10
-			minerals = 10
-			food = 20
+			physics_research = 3
+			society_research = 3
+			engineering_research = 3
+			unity = 5
+			minerals = 5
+			food = 10
 
 		}
  }
@@ -22,12 +22,12 @@ bh_harvested_planet_deposit_moderate = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
-  	physics_research = 8
-			society_research = 8
-			engineering_research = 8
-			unity = 10
-			minerals = 20
-			food = 40
+			physics_research = 4
+			society_research = 4
+			engineering_research = 4
+			unity = 5
+			minerals = 10
+			food = 20
 		}
  }
 	station = shipclass_mining_station
@@ -41,12 +41,12 @@ bh_harvested_planet_deposit_large = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
-			physics_research = 15
-			society_research = 15
-			engineering_research = 15
-			unity = 10
-			minerals = 40
-			food = 80
+			physics_research = 7
+			society_research = 7
+			engineering_research = 7
+			unity = 5
+			minerals = 20
+			food = 40
 		}
  }
 	station = shipclass_mining_station
