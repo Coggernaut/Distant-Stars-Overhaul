@@ -74,7 +74,7 @@ strike_craft_component_template = {
 	icon_frame = 1
 
 	tags = { weapon_type_strike_craft }
-	size_restriction = { dso_nanite_core dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
 
 	power = -60
 
@@ -121,7 +121,7 @@ weapon_component_template = {
 	icon_frame = 1
 
 	component_set = "GG_ENERGY_MISSILE_NANITE"
-	size_restriction = { dso_nanite_core dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
 
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"
