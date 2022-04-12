@@ -18,6 +18,12 @@ component_set = {
 }
 
 component_set = {
+	key = "GG_BEAM_STATIC_X_NANITE"
+	icon = "GFX_ship_part_global_pacifier"
+	icon_frame = 1
+}
+
+component_set = {
 	key = "GG_STRIKE_CRAFT_NANITE"
 	icon = "GFX_ship_part_nanite_strike_craft_fighter"
 	icon_frame = 1

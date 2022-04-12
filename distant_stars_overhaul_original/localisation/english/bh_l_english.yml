@@ -245,9 +245,9 @@
  tech_advanced_nanite_factory_effect_desc:0 "Utilizing the technology acquires from opening the L-Gates, Advanced Nanite Technology is once again available to the galaxy. This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!."
  tech_advanced_nanite_factory_nanite_effect_desc:0 "Utilizing §YEngineer§! technology, we are once again able to produce Nanites. This megastructure turns §YAlloys§! and §YEnergy§! into §GNanites§!."
 
- tech_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ tech_orbital_nanite_shipyard:0 "Nanite Assembly Yards"
  tech_orbital_nanite_shipyard_desc:0 "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
-
+ 
  tech_nanite_weaponry:0 "Nanite Military Applications"
  tech_nanite_weaponry_desc:0 "Researchers have theorized it may be possible to recreate the military applications of nanites. While some have protested the dangerous it could pose, the potential possibilities are widespread."
  tech_nanite_weaponry_effect:0 "§HUnlocks Research Path:§! Nanite Weaponry"
@@ -312,12 +312,14 @@
  building_nanite_research_center:0 "Nanite Research Center"
  building_nanite_research_center_desc:0 "After opening the L-Gate, nanite technology have become available to the galaxy once again. Scientists are researching new ways to harness the military applications of nanites."
 
- orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ orbital_nanite_shipyard:0 "Nanite Assembly Yards"
  orbital_nanite_shipyard_desc:0 "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
- sm_orbital_nanite_shipyard:0 "Orbital Nanite Shipyard"
+ sm_orbital_nanite_shipyard:0 "Nanite Assembly Yards"
  sm_orbital_nanite_shipyard_desc:0 "All station shipyards are outfitted with nanite cloud vents to optimize shipyard production."
  sm_orbital_nanite_shipyard_desc_modifier:0 "§YNanite Core Construction Enabled§!\nStarbase Modifier\n  Shipyard Capacity: §G+2§!\n  Ship Build Speed §G+10.00%§!"
-
+ starbase_nanite_yards_trigger:0 "£trigger_no£  Starbase needs §YNanite Assembly Yards§! building"
+ 
+ 
  # Nanite Core Stuff -----------
  dso_nanite_core:0 "Nanite Core"
  dso_nanite_core_desc:0 "Trillions of nanomachines have coalesced into a single Nanite Core. Utalizing a massively networked intelligence to command every aspect of it's being."
@@ -342,8 +344,8 @@
  DCV_CORE_LINE_DESC:0 "Sentient Nanite Line Computer"
  DCV_CORE_ARTILLERY:0 "Sentient Nanite Artillery Computer"
  DCV_CORE_ARTILLERY_DESC:0 "Sentient Nanite Artillery Computer"
- DCV_MAINTENANCE_CREW:0 "Nanite Repair Clouds"
- DCV_MAINTENANCE_CREW_DESC:0 "Nanite Repair Clouds"
+ DCV_MAINTENANCE_CREW:0 "Nanite Assembly Yards"
+ DCV_MAINTENANCE_CREW_DESC:0 "The Nanite Core comes stock with Nanite Assembly Yards, allowing this juggernaut to assemble nanite ships and titans."
  DCV_PILOT_CREW:0 "Nanite Targeting Computer Uplink"
  DCV_PILOT_CREW_DESC:0 "Nanite Targeting Computer Uplink"
 
@@ -380,15 +382,17 @@
  NANITE_INTERDICTOR_STERN_S1P2:0 "Interdictor Interdiction"
 
  #Nanite Weapons
+ GG_BEAM_STATIC_X_NANITE:0 "Nanite Lance"
+ GG_BEAM_STATIC_X_NANITE_DESC:0 "The Nanite Lance is a larger form of the weapon found on Nanite Lancers. Nanites rapidly coalesce into the shape of a lance and pierce the enemy ship's hull from afar by accelerating toward it."
  GG_BEAM_STATIC_NANITE:0 "Titanic Nanite Lance"
- GG_BEAM_STATIC_NANITE_DESC:0 "Nanites coalesce into a lance that mimics the weapons found on Nanite Lancers. The nanite lance does it's damage by accelerate the lance into the hull of the enemy ship."
+ GG_BEAM_STATIC_NANITE_DESC:0 "The Titanic Nanite Lance is a massive amalgamation of nanites that assemble together at impossible speeds to maximize the lance's range. This lance then combines the ship's inertia to inflict massive haul damage onto enemies."
  PLANET_KILLER_HARVESTER:0 "Harvester Engine"
  PLANET_KILLER_HARVESTER_DESC:0 "Once the Harvester Engine fires, all organic material upon the surface of the planet is catalogued, broken down, and processed into neat resource packets. The Harvester Engine only works on organic worlds with sufficient biomass."
  PLANET_KILLER_HARVESTER_ACTION:0 "Activate Harvester Engine"
  GG_ENERGY_MISSILE_NANITE:0 "Nanite Capsule Torpedo"
  GG_ENERGY_MISSILE_NANITE_DESC:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
  GG_STRIKE_CRAFT_NANITE:0 "Nanite Lancers"
- GG_STRIKE_CRAFT_NANITE_DESC:0 "Nanites coalesce into fighter squadrons, that then utalize a lance-like weapon made of nanites. Swarms of lancers work as one to skewer the haul of an enemy ship from all angles."
+ GG_STRIKE_CRAFT_NANITE_DESC:0 "Nanites coalesce into fighter squadrons, that then utilize a lance-like weapon made of nanites. Swarms of lancers work as one to skewer the haul of an enemy ship by accelerating toward it to pierce the hull of the ship."
 
  # Edicts --------
  edict_consecrate_lgate:0 "Consecrate L-Gate"

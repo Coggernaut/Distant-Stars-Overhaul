@@ -18,7 +18,7 @@ dso_nanite_interdictor = {
 	icon = ship_size_military_4
 	base_buildtime = 240
 	can_have_federation_design = no
-	enable_default_design = yes
+	enable_default_design = no
 
 	default_behavior = line
 
@@ -36,6 +36,37 @@ dso_nanite_interdictor = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
+	
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_nanite_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = orbital_nanite_shipyard
+				}
+				AND = {
+					is_scope_type = starbase 
+					OWNER = {
+						any_owned_ship = { 
+							has_component = DCV_MAINTENANCE_CREW
+							distance = {
+								source = ROOT
+								same_solar_system = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
 	resources = {
 		category = ships
@@ -46,31 +77,31 @@ dso_nanite_interdictor = {
 	}
 
 	min_upgrade_cost = {
-		nanites = 4
+		nanites = 5
 	}
 }
 
 dso_nanite_mothership = {
-	formation_priority = @battleship_formation_priority
+	formation_priority = @titan_formation_priority
 	entity = "gatebuilder_01_mothership_entity"
-	max_speed = 120
+	max_speed = @speed_slow
 	acceleration = 0.2
 	rotation_speed = 0.15
-	collision_radius = 5
-	max_hitpoints = 20000
+	collision_radius = @titan_collision_radius
+	max_hitpoints = @titan_hp
 	modifier = {
-		ship_evasion_add = 10
+		ship_evasion_add = @titan_evasion
 		ship_piracy_suppression_add = 4
 	}
-	size_multiplier = 8
+	size_multiplier = 16
 	fleet_slot_size = 8
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
 	num_target_locators = 8
 	is_space_station = no
 	icon = ship_size_military_16
-	base_buildtime = 480
+	base_buildtime = @titan_build_time
 	can_have_federation_design = no
-	enable_default_design = yes
+	enable_default_design = no
 
 	default_behavior = artillery
 
@@ -81,6 +112,7 @@ dso_nanite_mothership = {
 	class = shipclass_military
 
 	is_designable = yes
+	selectable = { host_has_dlc = "Apocalypse" }
 
 	construction_type = starbase_shipyard
 	required_component_set = "power_core"
@@ -88,30 +120,156 @@ dso_nanite_mothership = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
+	
+	potential_construction = {
+		OR = {
+			AND = {
+				is_scope_type = starbase
+				NOT = { has_starbase_size = juggernaut }
+			}
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+			AND = {
+					is_scope_type = starbase 
+					OWNER = {
+						any_owned_ship = { 
+							has_component = DCV_MAINTENANCE_CREW
+							distance = {
+								source = ROOT
+								same_solar_system = yes
+							}
+						}
+					}
+				}
+		}
+	}
+	
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size >= starbase_citadel
+				}
+				AND = {
+					is_scope_type = starbase 
+					OWNER = {
+						any_owned_ship = { 
+							has_component = DCV_MAINTENANCE_CREW
+							distance = {
+								source = ROOT
+								same_solar_system = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_nanite_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = orbital_nanite_shipyard
+				}
+				AND = {
+					is_scope_type = starbase 
+					OWNER = {
+						any_owned_ship = { 
+							has_component = DCV_MAINTENANCE_CREW
+							distance = {
+								source = ROOT
+								same_solar_system = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_titan_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = titan_yards
+				}
+				AND = {
+					is_scope_type = starbase 
+					OWNER = {
+						any_owned_ship = { 
+							has_component = DCV_MAINTENANCE_CREW
+							distance = {
+								source = ROOT
+								same_solar_system = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	empire_limit = {
+		base = 1
+		max = 20
+		naval_cap_div = 200
+		show = {
+			is_scope_valid = yes
+			has_technology = tech_titans
+		}
+	}
 
 	resources = {
 		category = ships
 		upkeep = {
 			energy = 10
-			nanites = 0.01
+			nanites = 1
 		}
 	}
 
 	min_upgrade_cost = {
-		nanites = 8
+		nanites = 15
 	}
 }
 
 dso_nanite_core = {
-	formation_priority = @titan_formation_priority
+	formation_priority = @juggernaut_formation_priority
 	entity = "gatebuilder_01_core_ship_entity"
-	max_speed = 100
+	max_speed = @speed_very_slow
 	acceleration = 0.16
 	rotation_speed = 0.09
 	collision_radius = 18
-	max_hitpoints = 50000
+	max_hitpoints = @juggernaut_hp
 	modifier = {
-		ship_evasion_add = 10
+		ship_evasion_add = @juggernaut_evasion
+		starbase_shipyard_capacity_add = 2
 		ship_shield_add = 10000
 		ship_armor_add = 10000
 		ship_hull_regen_add_perc = 0.1
@@ -119,25 +277,26 @@ dso_nanite_core = {
 		ship_shield_regen_add_perc = 0.25
 		ship_piracy_suppression_add = 4
 	}
+	combat_size_multiplier = 5
 	size_multiplier = 64
 	fleet_slot_size = 32
 	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } "stern" = { locator = "part4" } }
 	num_target_locators = 8
-	is_space_station = no
+	#is_space_station = no
 	icon = ship_size_military_16
-	base_buildtime = 1800
+	base_buildtime = @juggernaut_build_time
 	can_have_federation_design = no
-	enable_default_design = yes
-
-	default_behavior = artillery
+	enable_default_design = no
+	selectable = { host_has_dlc = "Federations" }
+	default_behavior = carrier
 
 	prerequisites = { "tech_nanite_core" }
 
 	combat_disengage_chance = 2.00
 
-	class = shipclass_military
+	class = shipclass_starbase
 	construction_type = starbase_shipyard
-	# required_component_set = "PLANET_KILLER_HARVESTER"
+	required_component_set = "PLANET_KILLER_HARVESTER"
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -147,7 +306,10 @@ dso_nanite_core = {
 
 	potential_construction = {
 		OR = {
-			is_scope_type = starbase
+			AND = {
+				is_scope_type = starbase
+				NOT = { has_starbase_size = juggernaut }
+			}
 			AND = {
 				is_scope_type = megastructure
 				OR = {
@@ -176,7 +338,7 @@ dso_nanite_core = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = starbase_titan_yards_trigger
+			fail_text = starbase_nanite_yards_trigger
 			OR = {
 				AND = {
 					is_scope_type = megastructure
@@ -191,23 +353,42 @@ dso_nanite_core = {
 				}
 			}
 		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
 	}
 
 	empire_limit = {
 		base = 1
 		max = 1
-		naval_cap_div = 200
+		show = {
+			is_scope_valid = yes
+			has_technology = tech_juggernaut
+		}
 	}
 
 	resources = {
 		category = ships
 		upkeep = {
 			energy = 15
-			nanites = 0.01
+			nanites = 2
 		}
 	}
 
 	min_upgrade_cost = {
-		nanites = 16
+		nanites = 25
 	}
 }

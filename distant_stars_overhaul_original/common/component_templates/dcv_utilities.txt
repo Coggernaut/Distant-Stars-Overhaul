@@ -122,7 +122,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
-	class_restriction = { shipclass_military }
+	class_restriction = { shipclass_military shipclass_starbase }
 	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
@@ -150,7 +150,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
-	class_restriction = { shipclass_military }
+	class_restriction = { shipclass_military shipclass_starbase }
 	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "picket"
@@ -178,7 +178,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
-	class_restriction = { shipclass_military }
+	class_restriction = { shipclass_military shipclass_starbase }
 	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "line"
@@ -206,7 +206,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
-	class_restriction = { shipclass_military }
+	class_restriction = { shipclass_military shipclass_starbase }
 	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
@@ -224,13 +224,13 @@ utility_component_template = {
 utility_component_template = {
 	key = "DCV_MAINTENANCE_CREW"
 	size = aux
-	icon = "GFX_elite_maintenance_crew"
+	icon = "GFX_spaceport_module_titan_assembly_yard"
 	icon_frame = 1
 	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			nanites = 10
+			nanites = 25
 		}
 		
 	}
@@ -243,24 +243,24 @@ utility_component_template = {
 	
 }
 
-utility_component_template = {
-	key = "DCV_PILOT_CREW"
-	size = aux
-	icon = "GFX_elite_pilot_crew"
-	icon_frame = 1
-	power = -20
-	resources = {
-		category = ship_components
-		cost = {
-			nanites = 10
-		}
-		
-	}
-	prerequisites = { tech_repeatable_nanite_technology_insight }
-	ship_modifier = {
-
-	}
-	
-	component_set = "dcv_crew"
-	
-}
+#utility_component_template = {
+#	key = "DCV_PILOT_CREW"
+#	size = aux
+#	icon = "GFX_elite_pilot_crew"
+#	icon_frame = 1
+#	power = -20
+#	resources = {
+#		category = ship_components
+#		cost = {
+#			nanites = 10
+#		}
+#		
+#	}
+#	prerequisites = { tech_repeatable_nanite_technology_insight }
+#	ship_modifier = {
+#
+#	}
+#	
+#	component_set = "dcv_crew"
+#	
+#}

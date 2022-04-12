@@ -316,10 +316,10 @@ ship_section_template = {
 	fits_on_slot = bow
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_bow"
-
+	
 	component_slot = {
-		name = "EXTRA_LARGE_01"
-		template = "invisible_extra_large_fixed"
+		name = "TITANIC_01"
+		template = "invisible_titanic_fixed"
 		locatorname = "xl_gun_01"
 	}
 
@@ -341,15 +341,15 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 
 	component_slot = {
-		name = "LARGE_GUN_01"
-		template = "large_turret"
-		locatorname = "large_gun_01"
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_02"
-		template = "large_turret"
-		locatorname = "large_gun_02"
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
 	}
 
 	large_utility_slots = 3
