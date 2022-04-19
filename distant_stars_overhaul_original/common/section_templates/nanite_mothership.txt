@@ -609,14 +609,14 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_bow"
 
 	component_slot = {
-		name = "MEDIUM_GUN_01"
-		template = "medium_turret"
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
 		locatorname = "medium_gun_01"
 	}
 
 	component_slot = {
-		name = "MEDIUM_GUN_02"
-		template = "medium_turret"
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
 		locatorname = "medium_gun_02"
 	}
 
@@ -816,8 +816,8 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_stern"
 
 	component_slot = {
-		name = "MEDIUM_GUN_01"
-		template = "medium_turret"
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
 		locatorname = "medium_gun_01"
 	}
 

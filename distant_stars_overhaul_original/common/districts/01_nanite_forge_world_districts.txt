@@ -118,7 +118,7 @@ district_nanite_forgeworld_industry = {
 		}
 		modifier = {
 			job_fabricator_add = 5
-			planet_jobs_alloys_produces_mult = 0.05
+			planet_jobs_alloys_produces_mult = 0.01
 		}
 	}
 

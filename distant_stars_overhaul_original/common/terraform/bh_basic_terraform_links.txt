@@ -80,7 +80,7 @@ terraform_link = {
 
 	resources = {
 		category = terraforming
-		cost = { nanite = 50 }
+		cost = { nanites = 500 }
 	}
 	duration = 1800
 
