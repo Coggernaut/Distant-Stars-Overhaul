@@ -173,7 +173,7 @@ district_forgeworld_bio_reactor = {
 		}
 		modifier = {
 			job_bio_processor_drone_add = 5
-			planet_jobs_energy_produces_mult = 0.05
+			planet_jobs_energy_produces_mult = 0.01
 		}
 	}
 
@@ -258,7 +258,7 @@ dso_district_generator_uncapped = {
 		modifier = {
 			job_technician_drone_add = 4
 			planet_housing_add = 1
-			planet_jobs_energy_produces_mult = 0.05
+			planet_jobs_energy_produces_mult = 0.01
 		}
 	}
 
