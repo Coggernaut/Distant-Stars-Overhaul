@@ -13,6 +13,7 @@ DSO_dessanu_heritage_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 2
 	planet_immigration_pull_mult = 0.25
+	#pop_ethic_spiritualist_attraction_mult = 0.15
 	important = yes
 }
 

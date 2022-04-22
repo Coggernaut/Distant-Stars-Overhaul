@@ -86,7 +86,7 @@ colonizer = {
 				}
 			}
 			energy = 300
-			nanites = 10
+			nanites = 20
 		}
 		cost = {
 			trigger = {

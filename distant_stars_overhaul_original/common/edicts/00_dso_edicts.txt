@@ -1,0 +1,42 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict1Cost = 20
+@Edict2Cost = 25
+@Edict3Cost = 30
+
+@EdictDuration = -1
+
+# Sets the cost for all campaigns with this variable
+@campaignCost = 15
+@hiveFood = 15
+@campaignDuration = -1
+
+nanite_actuators = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		upkeep = {
+			nanites = 0.5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		OR = {
+			has_resource = { type = nanites amount > 0 }
+			has_edict = nanite_actuators
+		}
+	}
+
+	modifier = {
+		all_technology_research_speed = 0.10
+		megastructure_build_speed_mult = 0.10
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
