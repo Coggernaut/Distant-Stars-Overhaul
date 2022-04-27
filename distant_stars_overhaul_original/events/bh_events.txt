@@ -531,6 +531,62 @@ country_event = {
 				}
 				#random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
 			}
+			random_system_within_border = {
+				random_system = {
+					limit = { 
+						distance = {
+							source = PREV
+							type= hyperlane 
+							min_jumps = 2
+							max_jumps = 5
+						}
+					}
+					spawn_planet = {
+						class = "pc_gray_goo"
+						location = solar_system
+						orbit_location = yes
+						orbit_angle_offset = 50
+						orbit_distance_offset = 100
+						size = 11
+						has_ring = yes
+						init_effect = {
+							set_name = "Sunder"
+							create_archaeological_site = dso_ancient_dessanu_battle_site
+							add_deposit = d_nanosands
+						}
+					}
+					create_ambient_object = {
+						type = ancient_battlefield_02_object
+						scale = 1
+						location = solar_system
+						entity_offset = 35
+						entity_offset_angle = 210
+						entity_offset_height = 10
+						entity_face_object = star
+						entity_scale_to_size = no
+					}
+					create_ambient_object = {
+						type = ancient_battlefield_02_object
+						scale = 1
+						location = solar_system
+						entity_offset = 45
+						entity_offset_angle = 260
+						entity_offset_height = 14
+						entity_face_object = star
+						entity_scale_to_size = no
+					}
+					create_ambient_object = {
+						type = ancient_battlefield_02_object
+						scale = 1
+						location = solar_system
+						entity_offset = 50
+						entity_offset_angle = 115
+						entity_offset_height = 8
+						entity_face_object = star
+						entity_scale_to_size = no
+					}
+				}
+			}
 		}
 		random_system_within_border = {
 			if = {
