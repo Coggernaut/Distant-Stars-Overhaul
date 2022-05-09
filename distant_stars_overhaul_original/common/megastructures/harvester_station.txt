@@ -11,7 +11,7 @@ nanite_factory_station_0 = {
 	build_time = 1500
 	resources = {
 		category = megastructures
-		cost = { alloys = 15000 }
+		cost = { alloys = 10000 }
 		upkeep = {
 			energy = 100
 			alloys = 50

@@ -105,9 +105,8 @@ tech_repeatable_nanite_technology_insight = {
 	is_reverse_engineerable = yes
 
 	ai_weight = {
-		factor = 1
 		modifier = {
-			factor = 0
+			factor = 100
 			has_origin = civic_gateway_pursuer
 		}
 	}
@@ -160,6 +159,30 @@ tech_harvester_advanced_nanites = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
@@ -205,6 +228,23 @@ tech_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+	}
 
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
@@ -283,6 +323,23 @@ tech_machine_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+	}
 
 	modifier = {
 		ship_hull_regen_add_perc = 0.2
@@ -310,7 +367,6 @@ tech_machine_advanced_nanites = {
 	}
 
 	ai_weight = {
-		factor = 2.00
 		modifier = {
 			factor = 0.50
 			NOR = {
@@ -333,6 +389,30 @@ tech_nanite_clouds = {
 	category = { industry }
 	weight = 75
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prereqfor_desc = {
 		custom = {
@@ -363,11 +443,34 @@ tech_nanites_assembler_factory = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_clouds" }
 
 	ai_weight = {
-		factor = 0.5
 		modifier = {
 			factor = 0
 			OR = {
@@ -393,11 +496,34 @@ tech_orbital_nanite_shipyard = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanites_assembler_factory" }
 
 	ai_weight = {
-		factor = 0.25
 		modifier = {
 			factor = 0
 			OR = {
@@ -445,18 +571,25 @@ tech_nanite_networking_protocols = {
 	is_reverse_engineerable = no
 
 	weight_modifier = {
-		factor = 0.25
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
 		modifier = {
 			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
 			OR = {
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_expertise_computing"
-				}
-				research_leader = {
-					area = physics
-					has_trait = "leader_trait_curator"
-				}
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
 			}
 		}
 	}
@@ -471,7 +604,6 @@ tech_nanite_networking_protocols = {
 	}
 
 	ai_weight = {
-		factor = 0.35
 		modifier = {
 			factor = 0
 			OR = {
@@ -517,6 +649,30 @@ tech_nanite_weaponry = {
 	category = { computing }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_orbital_nanite_shipyard" }
 
@@ -528,7 +684,6 @@ tech_nanite_weaponry = {
 	}
 
 	ai_weight = {
-		factor = 0.1
 		modifier = {
 			factor = 0
 			OR = {
@@ -574,6 +729,30 @@ tech_nanite_torpedo = {
 	category = { propulsion }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_weaponry" }
 
@@ -598,6 +777,30 @@ tech_nanite_lancers = {
 	category = { voidcraft }
 	weight = 25
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_weaponry" }
 
@@ -615,6 +818,30 @@ tech_nanite_titanic_weapon = {
 	category = { particles }
 	weight = 15
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_lancers" }
 
@@ -672,6 +899,30 @@ tech_nanite_interdictor = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_orbital_nanite_shipyard" }
 
@@ -728,6 +979,30 @@ tech_nanite_mothership = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_interdictor" }
 
@@ -780,6 +1055,30 @@ tech_nanite_core = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
 
 	prerequisites = { "tech_nanite_mothership" }
 

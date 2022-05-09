@@ -38,7 +38,7 @@ weapon_component_template = { # Nanobot Assimilation
 
 	resources = {
 		category = ship_components
-		cost = { nanites = 250 }
+		cost = { nanites = 125 }
 		upkeep = { energy = 10 }
 	}
 	ai_weight = {
@@ -56,7 +56,7 @@ strike_craft_component_template = {
 	entity = "gatebuilder_01_strikecraft_entity"
 	resources = {
 		category = ship_components
-		cost = { nanites = 50 }
+		cost = { nanites = 25 }
 		upkeep = { energy = 1 }
 	}
 
@@ -128,7 +128,7 @@ weapon_component_template = {
 
 	resources = {
 		category = ship_components
-		cost = { nanites = 25 }
+		cost = { nanites = 12 }
 		upkeep = { energy = 1 }
 	}
 	ai_weight = {
@@ -165,7 +165,7 @@ weapon_component_template = {
 
 	resources = {
 		category = ship_components
-		cost = { nanites = 100 }
+		cost = { nanites = 50 }
 		upkeep = { energy = 2 }
 	}
 	ai_weight = { weight = 1 }
@@ -196,7 +196,7 @@ weapon_component_template = {
 
 	resources = {
 		category = ship_components
-		cost = { nanites = 150 }
+		cost = { nanites = 75 }
 		upkeep = { energy = 5 }
 	}
 	ai_weight = { weight = 1 }

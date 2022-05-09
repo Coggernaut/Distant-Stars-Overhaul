@@ -20,6 +20,10 @@ d_vast_unity_deposit = {
 ### L-Cluster
 d_nanites_deposit = {
 	resources = {
+		upkeep = {
+			energy = 10
+			alloys = 5
+		}
 		produces = { nanites = 1 }
 	}
 	icon = d_mining_tunnels

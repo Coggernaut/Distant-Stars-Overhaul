@@ -32,7 +32,7 @@ dso_district_nexus = {
 		category = planet_districts_cities
 		cost = {
 			minerals = @nanite_district_cost
-			nanites = 5
+			nanites = 10
 		}
 		upkeep = {
 			energy = 2
@@ -100,7 +100,7 @@ district_nanite_forgeworld_industry = {
 		category = planet_districts
 		cost = {
 			minerals = @nanite_district_cost
-			nanites = 5
+			nanites = 10
 		}
 		upkeep = {
 			energy = 2
@@ -155,7 +155,7 @@ district_forgeworld_bio_reactor = {
 		category = planet_districts
 		cost = {
 			minerals = @nanite_district_cost
-			nanites = 5
+			nanites = 10
 		}
 		#upkeep = {
 		#	energy = 1
@@ -217,7 +217,7 @@ dso_district_generator_uncapped = {
 		category = planet_districts
 		cost = {
 			minerals = @nanite_district_cost
-			nanites = 5
+			nanites = 10
 		}
 		upkeep = {
 			energy = 1

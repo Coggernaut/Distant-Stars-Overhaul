@@ -1,0 +1,10 @@
+has_any_industry_district = {
+	OR = {
+		has_district = district_industrial
+		has_district = district_hab_industrial
+		has_district = district_rw_industrial
+		has_district = district_arcology_arms_industry
+		has_district = district_arcology_civilian_industry
+		has_district = district_nanite_forgeworld_industry
+	}
+}
