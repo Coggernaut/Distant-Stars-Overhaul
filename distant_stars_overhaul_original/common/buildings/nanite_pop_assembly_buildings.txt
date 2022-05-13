@@ -202,8 +202,7 @@ building_mineral_purification_plant = {
 			has_modifier = resort_colony
 			is_planet_class = pc_nanite_forgeworld
 		 	# Ringworlds don't have mines
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_cybrex
+			is_artificial = yes
 		}
 		OR = { # Habitats only have mines if they're built on an appropriate deposit
 			NOT = { is_planet_class = pc_habitat }

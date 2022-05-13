@@ -1,5 +1,4 @@
 namespace = gray_tempest_country_spawned
-namespace = graygoo
 fleet_event = {
 	id = gray_tempest_country_spawned.1
 	hide_window = yes

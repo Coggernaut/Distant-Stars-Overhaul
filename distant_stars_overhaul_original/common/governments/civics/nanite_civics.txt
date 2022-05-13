@@ -106,7 +106,7 @@ civic_gateway_worshiper = {
 		}
 	}
 	modifier = {
-		damage_vs_country_type_gray_goo_mult = 0.3
+		damage_vs_country_type_gray_goo_mult = 0.25
 	}
 	# modification = no
 	random_weight = {

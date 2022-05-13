@@ -20,9 +20,7 @@ consecrate_lgate = {
 
 	effect = {
 		set_timed_country_flag = {
-			flag = DSO_consecrated_lgate
-			days = 3600
-		}
+			flag = DSO_consecrated_lgate years = 10 }
 	}
 
 	modifier = {
