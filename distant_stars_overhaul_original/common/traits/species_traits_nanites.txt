@@ -2,6 +2,7 @@ trait_robot_advanced_nanites = {
 	cost = 0
 	initial = no
 	randomized = no
+	modification = no
 	species_potential_add = { always = no }
 	allowed_archetypes = {
 		ROBOT
@@ -26,6 +27,7 @@ trait_dessanu_nanites = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
+	modification = no
 	randomized = no
 	species_potential_add = { always = no }
 	allowed_archetypes = { MACHINE }
@@ -37,6 +39,7 @@ trait_dessanu_uplifted = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
+	modification = no
 	species_potential_add = { always = no }
 	randomized = no
 	allowed_archetypes = {

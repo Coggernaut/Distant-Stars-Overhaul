@@ -32,13 +32,13 @@ d_nanites_deposit = {
 	drop_weight = {
 		weight = 0
 		modifier = {
-			weight = 2
+			add = 2
 			solar_system = { has_star_flag = lcluster }
 			is_star = no
 			is_colonizable = no
 		}
 		modifier = {
-			factor = 5
+			add = 10
 			is_planet_class = pc_gray_goo
 		}
 	}
