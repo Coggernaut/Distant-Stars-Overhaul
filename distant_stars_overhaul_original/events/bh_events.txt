@@ -492,6 +492,7 @@ country_event = {
 					clear_blocker = yes
 				}
 				add_deposit = d_nanites_deposit
+				add_district = district_nanite_forgeworld_industry
 			}
 			country_event = { id = bio_harvest_fix_capital.1 }
 			country_event = { id = harvester_grey_goo_planet.1 days = 30 }
