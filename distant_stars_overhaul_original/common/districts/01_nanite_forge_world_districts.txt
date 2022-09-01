@@ -157,9 +157,9 @@ district_forgeworld_bio_reactor = {
 			minerals = @nanite_district_cost
 			nanites = 10
 		}
-		#upkeep = {
-		#	energy = 1
-		#}
+		upkeep = {
+			energy = 1
+		}
 	}
 
 	planet_modifier = {
