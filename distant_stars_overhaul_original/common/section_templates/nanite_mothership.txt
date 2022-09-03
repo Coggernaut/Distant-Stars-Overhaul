@@ -347,9 +347,9 @@ ship_section_template = {
 	}
 
 	component_slot = {
-		name = "EXTRA_LARGE_01"
+		name = "EXTRA_LARGE_02"
 		template = "invisible_extra_large_fixed"
-		locatorname = "xl_gun_01"
+		locatorname = "xl_gun_02"
 	}
 
 	large_utility_slots = 3

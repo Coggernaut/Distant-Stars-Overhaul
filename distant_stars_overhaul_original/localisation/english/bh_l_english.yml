@@ -299,7 +299,7 @@
  building_nanite_weapons_lab_desc:0 "After opening access to the L-Cluster all sorts of applications for nanites have been discovered. Top scientists are working night and day to reverse engineer nanite weapons and build a production model."
 
  mod_job_nanite_researcher_add:0 "Nanite Researcher Jobs"
- job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies and §Ggives research access to Nanite Weapons§!"
+ job_nanite_researcher_effect_desc:0 "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies."
 
  #Districts
  district_forgeworld_bio_reactor:0 "Bio-Processing Foundry"
