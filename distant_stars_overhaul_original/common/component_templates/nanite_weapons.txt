@@ -170,7 +170,13 @@ weapon_component_template = {
 		cost = { nanites = 50 }
 		upkeep = { energy = 2 }
 	}
-	ai_weight = { weight = 1 }
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
 }
 
 weapon_component_template = {
@@ -201,5 +207,107 @@ weapon_component_template = {
 		cost = { nanites = 75 }
 		upkeep = { energy = 5 }
 	}
-	ai_weight = { weight = 1 }
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "GG_NANITE_GUN_SMALL"
+	size = small
+	entity = "invisible_turret_entity"
+
+	icon = "GFX_ship_part_mass_driver_1"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_torpedo" }
+	component_set = "GG_NANITE_GUNS"
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	
+	projectile_gfx = "mass_driver_s"
+	tags = { weapon_type_kinetic }
+	
+	resources = {
+		category = ship_components
+		cost = { nanites = 3 }
+		upkeep = { energy = 1 }
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "GG_NANITE_GUN_MEDIUM"
+	size = medium
+	entity = "invisible_turret_entity"
+
+	icon = "GFX_ship_part_mass_driver_1"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_torpedo" }
+	component_set = "GG_NANITE_GUNS"
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	
+	projectile_gfx = "mass_driver_m"
+	tags = { weapon_type_kinetic }
+	
+	resources = {
+		category = ship_components
+		cost = { nanites = 6 }
+		upkeep = { energy = 1 }
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "GG_NANITE_GUN_LARGE"
+	size = large
+	entity = "invisible_turret_entity"
+
+	icon = "GFX_ship_part_mass_driver_1"
+	icon_frame = 1
+
+	prerequisites = { "tech_nanite_torpedo" }
+	component_set = "GG_NANITE_GUNS"
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	
+	projectile_gfx = "mass_driver_l"
+	tags = { weapon_type_kinetic }
+	
+	resources = {
+		category = ship_components
+		cost = { nanites = 12 }
+		upkeep = { energy = 1 }
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = nanites value <= 0 }
+		}
+	}
 }
