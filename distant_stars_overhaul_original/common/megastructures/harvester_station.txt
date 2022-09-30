@@ -67,7 +67,7 @@ nanite_factory_station_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
-			#NOT = { has_any_megastructure = yes }
+			#has_any_megastructure = no
 			has_no_non_gate_megastructure = yes
 		}
 	}

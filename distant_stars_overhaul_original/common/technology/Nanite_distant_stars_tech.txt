@@ -91,7 +91,7 @@ tech_repeatable_nanite_technology_insight = {
 	#	NOT = { has_technology = tech_nanite_technology_mastery }
 	#	NOT = { has_origin = civic_gateway_worshiper }
 	#	if = {
-	#		limit = { NOT = { has_authority = auth_machine_intelligence } }
+	#		limit = { is_machine_empire = no }
 	#		has_technology = tech_synthetic_workers
 	#	}
 	#}
@@ -195,7 +195,7 @@ tech_harvester_advanced_nanites = {
 			has_origin = civic_harvester_nanites
 			has_origin = civic_gateway_pursuer
 		}
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 
 	prereqfor_desc = {
@@ -254,8 +254,8 @@ tech_advanced_nanites = {
 		NOR = {
 			has_origin = civic_harvester_nanites
 			has_origin = civic_gateway_pursuer
-			has_authority = auth_machine_intelligence
-			has_authority = auth_hive_mind
+			is_machine_empire = yes
+			is_hive_empire = yes
 		}
 	}
 
@@ -352,7 +352,7 @@ tech_machine_advanced_nanites = {
 			has_origin = civic_harvester_nanites
 			has_origin = civic_gateway_pursuer
 		}
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 
 	prereqfor_desc = {
@@ -474,14 +474,14 @@ tech_nanites_assembler_factory = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
 		modifier = {
 			factor = 2
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				is_materialist = yes
 			}
 		}
@@ -527,7 +527,7 @@ tech_orbital_nanite_shipyard = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
@@ -535,7 +535,7 @@ tech_orbital_nanite_shipyard = {
 			factor = 1
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				NOR = {
@@ -548,7 +548,7 @@ tech_orbital_nanite_shipyard = {
 			factor = 2
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				OR = {
@@ -607,7 +607,7 @@ tech_nanite_networking_protocols = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
@@ -615,7 +615,7 @@ tech_nanite_networking_protocols = {
 			factor = 1
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				NOR = {
@@ -628,7 +628,7 @@ tech_nanite_networking_protocols = {
 			factor = 2
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				OR = {
@@ -687,7 +687,7 @@ tech_nanite_weaponry = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
@@ -700,7 +700,7 @@ tech_nanite_weaponry = {
 		modifier = {
 			factor = 1
 			AND = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				NOR = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
@@ -710,7 +710,7 @@ tech_nanite_weaponry = {
 		modifier = {
 			factor = 2
 			AND = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				OR = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
@@ -857,7 +857,7 @@ tech_nanite_titanic_weapon = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
@@ -865,7 +865,7 @@ tech_nanite_titanic_weapon = {
 			factor = 0.75
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				NOR = {
@@ -878,7 +878,7 @@ tech_nanite_titanic_weapon = {
 			factor = 2
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				OR = {
@@ -937,7 +937,7 @@ tech_nanite_interdictor = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
@@ -945,7 +945,7 @@ tech_nanite_interdictor = {
 			factor = 0.5
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				NOR = {
@@ -958,7 +958,7 @@ tech_nanite_interdictor = {
 			factor = 1
 			AND = {
 				OR = {
-					has_authority = auth_machine_intelligence
+					is_machine_empire = yes
 					is_materialist = yes
 				}
 				OR = {
@@ -1017,14 +1017,14 @@ tech_nanite_mothership = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
 		modifier = {
 			factor = 0.5
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				is_materialist = yes
 			}
 			NOR = {
@@ -1035,7 +1035,7 @@ tech_nanite_mothership = {
 		modifier = {
 			factor = 1
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				is_materialist = yes
 			}
 			OR = {
@@ -1093,14 +1093,14 @@ tech_nanite_core = {
 		modifier = {
 			factor = 0
 			OR = {
-				has_authority = auth_hive_mind
+				is_hive_empire = yes
 				is_spiritualist = yes
 			}
 		}
 		modifier = {
 			factor = 0.5
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				is_materialist = yes
 			}
 			NOR = {
@@ -1111,7 +1111,7 @@ tech_nanite_core = {
 		modifier = {
 			factor = 1
 			OR = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 				is_materialist = yes
 			}
 			OR = {

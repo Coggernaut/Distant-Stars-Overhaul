@@ -245,6 +245,10 @@ dso_nanite_mothership = {
 	#		has_technology = tech_titans
 	#	}
 	#}
+	ai_ship_data = {
+		min = 1
+		max = 20
+	}
 
 	resources = {
 		category = ships
@@ -379,6 +383,10 @@ dso_nanite_core = {
 	#		has_technology = tech_juggernaut
 	#	}
 	#}
+	ai_ship_data = {
+		min = 1
+		max = 1
+	}
 
 	resources = {
 		category = ships

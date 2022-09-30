@@ -10,17 +10,17 @@ country_event = {
 	}
 	# Gestalt Consciousness
 	desc = {
-		trigger = { has_ethic = ethic_gestalt_consciousness }
+		trigger = { is_gestalt = yes }
 		text = story.5.desc.gesta
 	}
 	# Xenophobe
 	desc = {
-		trigger = { OR = { has_ethic = ethic_fanatic_xenophobe has_ethic = ethic_xenophobe } }
+		trigger = {  is_xenophobe = yes }
 		text = story.5.desc.phobe
 	}
 	# Xenophile
 	desc = {
-		trigger = { OR = { has_ethic = ethic_fanatic_xenophile has_ethic = ethic_xenophile } }
+		trigger = {  is_xenophile = yes }
 		text = story.5.desc.phile
 	}
 	# Followup

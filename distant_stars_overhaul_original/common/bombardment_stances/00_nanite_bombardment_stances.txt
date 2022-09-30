@@ -62,7 +62,7 @@ nanite_sterilization = {
 			factor = 20
 			exists = from.owner
 			exists = owner
-			from.owner = { NOT = { has_authority = auth_machine_intelligence } }
+			from.owner = { is_machine_empire = no }
 			owner = { has_civic = civic_machine_terminator }
 		}
 	}
