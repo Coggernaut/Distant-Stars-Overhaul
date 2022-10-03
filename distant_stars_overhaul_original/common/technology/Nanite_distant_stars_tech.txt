@@ -1122,3 +1122,44 @@ tech_nanite_core = {
 	}
 
 }
+
+tech_nanite_guns = {
+	area = engineering
+	cost = 25000
+	tier = 3
+	is_dangerous = yes
+	category = { propulsion }
+	weight = 25
+	is_reverse_engineerable = no
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_curator"
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+			}
+		}
+	}
+
+	prerequisites = { "tech_nanite_weaponry" }
+
+	ai_weight = {
+		factor = 0.75
+	}
+
+}

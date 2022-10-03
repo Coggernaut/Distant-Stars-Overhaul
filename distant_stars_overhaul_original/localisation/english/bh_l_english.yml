@@ -261,6 +261,8 @@
  tech_nanite_torpedo_desc:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
  tech_nanite_torpedo_effect:0 "§HAcquires:§! Nanite Core Component"
  tech_nanite_torpedo_effect_desc:0 "Arming the Nanite Core with powerful weaponry is crucial. Every design must be thoroughly checked before the project can be started."
+ tech_nanite_guns:0 "Nanite Projector Weapon"
+ tech_nanite_guns_desc:0 "These projectors accelerate a solidified mass of nanites directly at an enemy ship.  Once contact is made, they seek every weakness in armour and hull to invade the enemy ship and consume its systems."
  tech_nanite_lancers:0 "Nanite Lancers"
  tech_nanite_lancers_desc:0 "Nanites coalesce into fighter squadrons, that then utilize a lance-like weapon made of nanites. Swarms of these lancers work in unison to skewer the haul of enemy ships from all angles."
  tech_nanite_titanic_weapon:0 "Titanic Nanite Lance"
@@ -394,6 +396,11 @@
  GG_ENERGY_MISSILE_NANITE_DESC:0 "These nanites coalesce into a nimble, yet effective, capsule-like torpedo that is detonated near the haul of an enemy ship. If successful, the torpedo exposes the haul to a nanite cloud that decays any armor on contact."
  GG_STRIKE_CRAFT_NANITE:0 "Nanite Lancers"
  GG_STRIKE_CRAFT_NANITE_DESC:0 "Nanites coalesce into fighter squadrons, that then utilize a lance-like weapon made of nanites. Swarms of lancers work as one to skewer the haul of an enemy ship by accelerating toward it to pierce the hull of the ship."
+ GG_NANITE_GUNS:0 "Nanite Projector"
+ GG_NANITE_GUNS_DESC:0 "These projectors accelerate a solidified mass of nanites directly at an enemy ship.  Once contact is made, they seek every weakness in armour and hull to invade the enemy ship and consume its systems."
+ GG_NANITE_GUN_LARGE:0 "Nanite Projector Large"
+ GG_NANITE_GUN_MEDIUM:0 "Nanite Projector Medium"
+ GG_NANITE_GUN_SMALL:0 "Nanite Projector Small"
 
  # Edicts --------
  edict_consecrate_lgate:0 "Consecrate L-Gate"

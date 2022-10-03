@@ -226,7 +226,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_1"
 	icon_frame = 1
 
-	prerequisites = { "tech_nanite_torpedo" }
+	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
 	
@@ -258,7 +258,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_1"
 	icon_frame = 1
 
-	prerequisites = { "tech_nanite_torpedo" }
+	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
 	
@@ -290,7 +290,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_mass_driver_1"
 	icon_frame = 1
 
-	prerequisites = { "tech_nanite_torpedo" }
+	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
 	
