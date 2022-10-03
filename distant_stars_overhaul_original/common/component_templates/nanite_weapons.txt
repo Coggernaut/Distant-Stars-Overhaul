@@ -223,7 +223,7 @@ weapon_component_template = {
 	size = small
 	entity = "invisible_turret_entity"
 
-	icon = "GFX_ship_part_mass_driver_1"
+	icon = "GFX_ship_part_nanite_cannon_1"
 	icon_frame = 1
 
 	prerequisites = { "tech_nanite_guns" }
@@ -255,7 +255,7 @@ weapon_component_template = {
 	size = medium
 	entity = "invisible_turret_entity"
 
-	icon = "GFX_ship_part_mass_driver_1"
+	icon = "GFX_ship_part_nanite_cannon_1"
 	icon_frame = 1
 
 	prerequisites = { "tech_nanite_guns" }
@@ -287,7 +287,7 @@ weapon_component_template = {
 	size = large
 	entity = "invisible_turret_entity"
 
-	icon = "GFX_ship_part_mass_driver_1"
+	icon = "GFX_ship_part_nanite_cannon_1"
 	icon_frame = 1
 
 	prerequisites = { "tech_nanite_guns" }
