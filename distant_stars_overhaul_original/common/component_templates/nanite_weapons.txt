@@ -233,6 +233,9 @@ weapon_component_template = {
 	projectile_gfx = "mass_driver_s"
 	tags = { weapon_type_kinetic }
 	
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield gunship }
+	
 	resources = {
 		category = ship_components
 		cost = { nanites = 3 }
@@ -265,6 +268,9 @@ weapon_component_template = {
 	projectile_gfx = "mass_driver_m"
 	tags = { weapon_type_kinetic }
 	
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield gunship }
+	
 	resources = {
 		category = ship_components
 		cost = { nanites = 6 }
@@ -296,6 +302,9 @@ weapon_component_template = {
 	
 	projectile_gfx = "mass_driver_l"
 	tags = { weapon_type_kinetic }
+	
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield gunship }
 	
 	resources = {
 		category = ship_components
