@@ -19,7 +19,7 @@ generate_add_nanite_insight = {
 			# increment variable
 			change_variable = { which = num_nanite_insight value = 1 }
 		}
-		#else = {
+		# else = {
 		#	# failsafe, do nothing
 		#}
 		# check if completed
@@ -42,7 +42,7 @@ generate_add_nanite_insight = {
 
 start_nanite_technology_mastery_chain = {
 	hidden_effect = {
-		custom_tooltip = begin_nanite_technology_mastery_chain
+		custom_tooltip = start_nanite_technology_mastery_chain_tooltip
 		begin_event_chain = {
 			event_chain = nanite_technology_mastery_chain
 			target = this

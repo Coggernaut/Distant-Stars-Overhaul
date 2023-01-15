@@ -150,7 +150,6 @@ ship_section_template = {
 	}
 }
 
-
 #MID2
 ship_section_template = {
 	key = "NANITE_CORE_MID2_L4"
@@ -419,7 +418,6 @@ ship_section_template = {
 		}
 	}
 }
-
 
 #Mid
 ship_section_template = {

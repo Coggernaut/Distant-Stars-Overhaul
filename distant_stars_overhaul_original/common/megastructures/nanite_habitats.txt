@@ -44,7 +44,7 @@ nanite_habitat_0 = {
 				}
 				custom_tooltip = {
 					fail_text = "requires_no_existing_megastructure"
-					#can_build_megastructure_on_planet = yes
+					# can_build_megastructure_on_planet = yes
 					NOR = {
 						has_planet_flag = megastructure
 						has_planet_flag = has_megastructure
@@ -55,7 +55,7 @@ nanite_habitat_0 = {
 						# is_planet_class = pc_ringworld_tech_damaged
 						# is_planet_class = pc_ringworld_seam
 						# is_planet_class = pc_ringworld_seam_damaged
-						# is_planet_class = pc_habitat
+						# merg_is_habitat = yes
 					}
 					is_artificial = no
 				}
@@ -113,7 +113,10 @@ nanite_habitat_0 = {
 			has_ring = no
 
 			init_effect = {
-				set_name = "HABITAT_PLANET_NAME"
+				set_name = {
+					key = HABITAT_PLANET_NAME
+					variable_string = "FROM.from.planet.GetName"
+				}
 				set_planet_entity = {
 					entity = "shielded_planet"
 					overlay_entity = "planet_shield_effect_entity" # TODO test is this working?
@@ -123,13 +126,13 @@ nanite_habitat_0 = {
 					# atmosphere_width = <0.0 - 1.0>
 				}
 				save_event_target_as = nanite_habitat_target
-				#set_surveyed = {
+				# set_surveyed = {
 				#	surveyed = yes
-				#	surveyor = FROM
+				#	surveyor = from
 				#}
-				#set_all_comms_surveyed = yes
+				# set_all_comms_surveyed = yes
 				# clear_blockers = yes
-				#if = {
+				# if = {
 				#	limit = {
 				#		from = { has_ascension_perk = ap_voidborn }
 				#		NOT = { has_modifier = master_builders_habitats }
@@ -387,7 +390,7 @@ nanite_habitat_0 = {
 		# event_target:nanite_habitat_target = { planet_event = { id = harvester_grey_goo_planet.3 } }
 		every_system_megastructure = {
 			limit = { is_megastructure_type = nanite_habitat_0 }
-			remove_megastructure = THIS
+			remove_megastructure = this
 		}
 		fromfrom.planet = { set_planet_flag = has_megastructure }
 	}

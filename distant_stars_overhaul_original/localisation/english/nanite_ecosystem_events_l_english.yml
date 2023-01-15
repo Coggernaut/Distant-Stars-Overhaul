@@ -3,7 +3,8 @@
 
  # Start of L-Subterranean Colony Localization
 
- nanite_ecosystem_subterranean_civilization_chain:0 "L-Vault Containment Site"
+ nanite_ecosystem_subterranean_civilization_chain_title:0 "L-Vault Containment Site"
+ nanite_ecosystem_subterranean_civilization_chain_desc: ""
  NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT:0 "Disable the Containment Shield"
  NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT:0 "Strengthen the Containment Shield"
 

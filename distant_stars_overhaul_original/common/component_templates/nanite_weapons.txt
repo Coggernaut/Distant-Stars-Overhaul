@@ -2,7 +2,7 @@
 # Planet killer beam?
 # ####################
 
-#weapon_component_template = {
+# weapon_component_template = {
 #	key = "PLANET_DESTRUCTION_COMPONENT"
 #	size = planet_killer
 #	entity = "invisible_turret_entity"
@@ -106,7 +106,6 @@ strike_craft_component_template = {
 
 	weapon_type = instant
 	projectile_gfx = "strike_craft_laser_3"
-
 
 }
 

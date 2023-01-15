@@ -65,10 +65,10 @@ tech_repeatable_lcluster_clue = {
 	}
 
 	weight_groups = {
-		#repeatable
+		# repeatable
 	}
 	mod_weight_if_group_picked = {
-		#repeatable = 0.01
+		# repeatable = 0.01
 	}
 }
 
@@ -84,7 +84,7 @@ tech_repeatable_nanite_technology_insight = {
 	levels = -1
 	weight = 0
 
-	#potential = {
+	# potential = {
 	#	has_global_flag = l_cluster_opened
 	#	NOT = { has_country_flag = lcluster_opener }
 	#	NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
@@ -112,10 +112,10 @@ tech_repeatable_nanite_technology_insight = {
 	}
 
 	weight_groups = {
-		#repeatable
+		# repeatable
 	}
 	mod_weight_if_group_picked = {
-		#repeatable = 0.01
+		# repeatable = 0.01
 	}
 }
 
@@ -128,7 +128,7 @@ tech_nanite_technology_mastery = {
 	category = { industry }
 	weight = 0
 
-	#potential = {
+	# potential = {
 	#	OR = {
 	#		has_country_flag = completed_nanite_technology_mastery_chain
 	#		has_country_flag = lcluster_opener

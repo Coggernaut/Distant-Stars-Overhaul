@@ -2,7 +2,7 @@ civic_harvester_nanites = {
 	picture = GFX_origin_harvester_nanites
 	is_origin = yes
 	description = "civic_harvester_nanites_effects"
-	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	playable = { has_synthethic_dawn = yes }
 	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nuked
 	preferred_planet_class_neighbor = no
@@ -28,7 +28,7 @@ civic_harvester_nanites = {
 		modifier = {
 			# civic is not spawned if user does not have DLC
 			factor = 0
-			NOT = { host_has_dlc = "Distant Stars Story Pack" }
+			has_distar = no
 		}
 	}
 }
@@ -39,15 +39,15 @@ civic_gateway_pursuer = {
 	max_once_global = no
 	description = "civic_gateway_pursuer_effects"
 	playable = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
-		host_has_dlc = "Distant Stars Story Pack"
+		has_synthethic_dawn = yes
+		has_distar = yes
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nuked
 	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {
-			#value = civic_harvester_nanites
+			# value = civic_harvester_nanites
 			NOR = {
 				value = civic_machine_terminator
 				value = civic_machine_assimilator
@@ -68,7 +68,7 @@ civic_gateway_pursuer = {
 		modifier = {
 			# civic is not spawned if user does not have DLC
 			factor = 0
-			NOT = { host_has_dlc = "Distant Stars Story Pack" }
+			has_distar = no
 		}
 	}
 }
@@ -80,7 +80,7 @@ civic_gateway_worshiper = {
 	max_once_global = no
 	description = "civic_gateway_worshiper_effects"
 	playable = {
-		host_has_dlc = "Distant Stars Story Pack"
+		has_distar = yes
 	}
 	starting_colony = pc_gaia
 	habitability_preference = pc_gaia
@@ -119,7 +119,7 @@ civic_gateway_worshiper = {
 		modifier = {
 			# civic is not spawned if user does not have DLC
 			factor = 0
-			NOT = { host_has_dlc = "Distant Stars Story Pack" }
+			has_distar = no
 		}
 	}
 }

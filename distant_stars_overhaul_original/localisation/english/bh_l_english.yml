@@ -107,6 +107,7 @@
  bio_harvest.1.desc:0 "With the acquisition of §Y[From.GetName]§!, drones are standing by to either initiate colonization protocols or material acquisition protocols. Upon initiation of material acquisition protocols, all organic material will be catalogued, broken down, and processed into neat resource packets. Then, upon installation of a mining station, resources will be ready to collect en-masse."
  bio_harvest.1.a:0 "Initiate material acquisition protocols."
  bio_harvest.1.b:0 "Initiate colonization protocols."
+ bio_harvest.1.tooltip: ""
  format.bio_harvesters.1: "[This.GetSpeciesName] <bio_harvesters>"
 
  very_large_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing a deposit of resources and research. We expect this planet's biomass to last for roughly §G60§! years before it is completely harvested."

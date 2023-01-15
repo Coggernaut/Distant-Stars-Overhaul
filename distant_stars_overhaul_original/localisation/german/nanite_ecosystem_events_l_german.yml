@@ -83,4 +83,5 @@
  nanite_ecosystem_colony.76.a: "That's not good."
  nanite_ecosystem_colony.76.desc: "Outsider. We tried to be good neighbors, but it has become clear that you have no intention of treating us or the Dessanu's cluster with the respect it deserves.\n\nOur eldars have decreed that we must claim all that was lost from them, for we are their Inheritors. We shall drive you back through the Great Gates!"
  nanite_ecosystem_colony.76.name: "Message"
- nanite_ecosystem_subterranean_civilization_chain: "L-Vault Containment Site"
+ nanite_ecosystem_subterranean_civilization_chain_desc: ""
+ nanite_ecosystem_subterranean_civilization_chain_title: "L-Vault Containment Site"

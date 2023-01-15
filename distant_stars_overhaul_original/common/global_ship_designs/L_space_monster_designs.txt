@@ -143,7 +143,7 @@ ship_design = {
 	name = "L_Small_Space_Organism_Teal"
 	ship_size = L_space_amoeba
 	hide_size = yes
-	is_event_design = yes #For Lost Amoeba Chain
+	is_event_design = yes # For Lost Amoeba Chain
 
 	section = {
 		template = "L_space_amoeba_small_yellow_teal"

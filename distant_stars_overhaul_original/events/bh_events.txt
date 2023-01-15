@@ -6,7 +6,7 @@ namespace = harvester_grey_goo_planet
 namespace = nanite_forgeworld_lost
 namespace = harvest_nanite_gaia
 namespace = distar_overhaul
-#has_global_flag = a_deadly_tempest_mod_active
+# has_global_flag = a_deadly_tempest_mod_active
 
 # distar_overhaul_compatibility
 event = {
@@ -27,9 +27,9 @@ country_event = {
 	desc = "distar_overhaul_insight_start.1.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
-	#can be triggered via outcome ship_events
+	# can be triggered via outcome ship_events
 	is_triggered_only = yes
-	#mean_time_to_happen = { months = 2 }
+	# mean_time_to_happen = { months = 2 }
 	trigger = {
 		# has_global_flag = l_cluster_opened there is a gap and no fallback
 		NOR = {
@@ -121,9 +121,9 @@ country_event = {
 	desc = "distar_overhaul.10904.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
-	#can be triggered via outcome ship_events
+	# can be triggered via outcome ship_events
 	is_triggered_only = yes
-	#mean_time_to_happen = { months = 2 }
+	# mean_time_to_happen = { months = 2 }
 	# trigger = {	}
 	immediate = {
 		# observer_event = { id = observer.61 }
@@ -193,7 +193,7 @@ planet_event = {
 	}
 }
 
-#Begin Harvesting Planet
+# Begin Harvesting Planet
 planet_event = {
 	id = bio_harvest.1
 	title = bio_harvest.1.title
@@ -218,7 +218,7 @@ planet_event = {
 			has_planet_flag = apsr_planet
 		}
 	}
-	#from.owner = {
+	# from.owner = {
 	#	if = {
 	#		limit = { has_ascension_perk = ap_become_the_crisis }
 	#		complete_crisis_objective = crisobj_destroy_worlds
@@ -227,7 +227,7 @@ planet_event = {
 	option = {
 		name = bio_harvest.1.a
 		ai_chance = {
-			factor = 50
+			factor = 5
 			modifier = {
 				factor = 0
 				owner = { has_country_flag = avoid_harvesting_nanite_gaia_worlds }
@@ -235,15 +235,15 @@ planet_event = {
 		}
 		hidden_effect = {
 			set_planet_flag = pc_bh_harvest
-			#space_owner = { country_event = { id = harvest_colony.50 } }
-			#If it is Nanite Gaia World
+			# space_owner = { country_event = { id = harvest_colony.50 } }
+			# If it is Nanite Gaia World
 			if = {
 				limit = { is_planet_class = pc_nanite_gaia }
 				space_owner = {
 					country_event = { id = harvest_nanite_gaia.1 days = 90 }
 				}
 			}
-			#gaia_very_large
+			# gaia_very_large
 			if = {
 				limit = {
 					is_planet_class = pc_gaia
@@ -251,7 +251,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 21600 }
 			}
-			#gaia_large
+			# gaia_large
 			if = {
 				limit = {
 					is_planet_class = pc_gaia
@@ -263,7 +263,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 20000 }
 			}
-			#gaia_medium
+			# gaia_medium
 			if = {
 				limit = {
 					is_planet_class = pc_gaia
@@ -275,7 +275,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 18000 }
 			}
-			#gaia_small
+			# gaia_small
 			if = {
 				limit = {
 					is_planet_class = pc_gaia
@@ -287,7 +287,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 16000 }
 			}
-			#gaia_very_small
+			# gaia_very_small
 			if = {
 				limit = {
 					is_planet_class = pc_gaia
@@ -295,12 +295,12 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 14000 }
 			}
-			#very_large
+			# very_large
 			if = {
 				limit = { planet_size > 22 }
 				planet_event = { id = bio_harvest_planet_stages.1 days = 10800 }
 			}
-			#large
+			# large
 			if = {
 				limit = {
 					OR = {
@@ -311,7 +311,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 10000 }
 			}
-			#medium
+			# medium
 			if = {
 				limit = {
 					OR = {
@@ -322,7 +322,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 9000 }
 			}
-			#small
+			# small
 			if = {
 				limit = {
 					OR = {
@@ -333,7 +333,7 @@ planet_event = {
 				}
 				planet_event = { id = bio_harvest_planet_stages.1 days = 8000 }
 			}
-			#very_small
+			# very_small
 			if = {
 				limit = { planet_size < 14 }
 				planet_event = { id = bio_harvest_planet_stages.1 days = 7000 }
@@ -358,7 +358,7 @@ planet_event = {
 			add_deposit = d_nanosands
 			create_mining_station = { owner = owner }
 		}
-		#gaia_very_large
+		# gaia_very_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -366,7 +366,7 @@ planet_event = {
 			}
 			custom_tooltip = gaia_very_large_harvest.1.tooltip
 		}
-		#gaia_large
+		# gaia_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -378,7 +378,7 @@ planet_event = {
 			}
 			custom_tooltip = gaia_large_harvest.1.tooltip
 		}
-		#gaia_medium
+		# gaia_medium
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -390,7 +390,7 @@ planet_event = {
 			}
 			custom_tooltip = gaia_medium_harvest.1.tooltip
 		}
-		#gaia_small
+		# gaia_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -402,7 +402,7 @@ planet_event = {
 			}
 			custom_tooltip = gaia_small_harvest.1.tooltip
 		}
-		#gaia_very_small
+		# gaia_very_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -410,12 +410,12 @@ planet_event = {
 			}
 			custom_tooltip = gaia_very_small_harvest.1.tooltip
 		}
-		#very_large
+		# very_large
 		if = {
 			limit = { planet_size > 22 }
 			custom_tooltip = very_large_harvest.1.tooltip
 		}
-		#large
+		# large
 		if = {
 			limit = {
 				OR = {
@@ -426,7 +426,7 @@ planet_event = {
 			}
 			custom_tooltip = large_harvest.1.tooltip
 		}
-		#medium
+		# medium
 		if = {
 			limit = {
 				OR = {
@@ -437,7 +437,7 @@ planet_event = {
 			}
 			custom_tooltip = medium_harvest.1.tooltip
 		}
-		#small
+		# small
 		if = {
 			limit = {
 				OR = {
@@ -448,7 +448,7 @@ planet_event = {
 			}
 			custom_tooltip = small_harvest.1.tooltip
 		}
-		#very_small
+		# very_small
 		if = {
 			limit = { planet_size < 14 }
 			custom_tooltip = very_small_harvest.1.tooltip
@@ -456,7 +456,7 @@ planet_event = {
 	}
 	option = {
 		name = bio_harvest.1.b
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 4 }
 	}
 }
 
@@ -530,14 +530,14 @@ country_event = {
 					}
 					give_technology = { tech = tech_starbase_3 message = no }
 				}
-				#random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
+				# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
 			}
 			random_system_within_border = {
 				random_system = {
-					limit = { 
+					limit = {
 						distance = {
-							source = PREV
-							type= hyperlane 
+							source = prev
+							type= hyperlane
 							min_jumps = 2
 							max_jumps = 5
 						}
@@ -671,7 +671,7 @@ country_event = {
 				}
 			}
 		}
-		#if = {
+		# if = {
 		#	limit = {
 		#		has_origin = civic_harvester_nanites
 		#	}
@@ -735,7 +735,7 @@ country_event = {
 				add_modifier = { modifier = "terraforming_candidate" days = -1 }
 			}
 		}
-		#custom_tooltip = harvester_grey_goo_planet.1.tooltip
+		# custom_tooltip = harvester_grey_goo_planet.1.tooltip
 	}
 }
 
@@ -778,7 +778,7 @@ planet_event = {
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
-		#gaia_very_large
+		# gaia_very_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -786,7 +786,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 14400 }
 		}
-		#gaia_large
+		# gaia_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -798,7 +798,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 13400 }
 		}
-		#gaia_medium
+		# gaia_medium
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -810,7 +810,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 12400 }
 		}
-		#gaia_small
+		# gaia_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -822,7 +822,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 11400 }
 		}
-		#gaia_very_small
+		# gaia_very_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -830,12 +830,12 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 10400 }
 		}
-		#very_large
+		# very_large
 		if = {
 			limit = { planet_size > 22 }
 			planet_event = { id = bio_harvest_planet_stages.2 days = 7200 }
 		}
-		#large
+		# large
 		if = {
 			limit = {
 				OR = {
@@ -846,7 +846,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 6700 }
 		}
-		#medium
+		# medium
 		if = {
 			limit = {
 				OR = {
@@ -857,7 +857,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 6200 }
 		}
-		#small
+		# small
 		if = {
 			limit = {
 				OR = {
@@ -868,7 +868,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_stages.2 days = 5700 }
 		}
-		#very_small
+		# very_small
 		if = {
 			limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_stages.2 days = 5200 }
@@ -892,7 +892,7 @@ planet_event = {
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
-		#gaia_very_large
+		# gaia_very_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -900,7 +900,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 7200 }
 		}
-		#gaia_large
+		# gaia_large
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -912,7 +912,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 6500 }
 		}
-		#gaia_medium
+		# gaia_medium
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -924,7 +924,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 6200 }
 		}
-		#gaia_small
+		# gaia_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -936,7 +936,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 5700 }
 		}
-		#gaia_very_small
+		# gaia_very_small
 		if = {
 			limit = {
 				is_planet_class = pc_gaia
@@ -944,12 +944,12 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 5200 }
 		}
-		#very_large
+		# very_large
 		if = {
 			limit = { planet_size > 22 }
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 3600 }
 		}
-		#large
+		# large
 		if = {
 			limit = {
 				OR = {
@@ -960,7 +960,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 3350 }
 		}
-		#medium
+		# medium
 		if = {
 			limit = {
 				OR = {
@@ -971,7 +971,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 3100 }
 		}
-		#small
+		# small
 		if = {
 			limit = {
 				OR = {
@@ -982,7 +982,7 @@ planet_event = {
 			}
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 2850 }
 		}
-		#very_small
+		# very_small
 		if = {
 			limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 2600 }

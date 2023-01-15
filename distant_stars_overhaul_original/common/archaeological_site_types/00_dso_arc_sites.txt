@@ -1,5 +1,5 @@
-#Random Arc sites
-#Ancient Dessanu battle site
+# Random Arc sites
+# Ancient Dessanu battle site
 dso_ancient_dessanu_battle_site = {
 	desc = dso_ancient_dessanu_battle_site_desc
 	picture = GFX_evt_landing_ship

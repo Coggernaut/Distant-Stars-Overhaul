@@ -1,7 +1,4 @@
-#namespace = gateway_pursuer
-
-
-
+# namespace = gateway_pursuer
 
 # ----------------------------------------------------------------------------------
 #								Questline

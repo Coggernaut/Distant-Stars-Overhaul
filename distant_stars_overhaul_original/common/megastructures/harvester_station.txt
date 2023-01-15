@@ -67,7 +67,7 @@ nanite_factory_station_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
-			#has_any_megastructure = no
+			# has_any_megastructure = no
 			has_no_non_gate_megastructure = yes
 		}
 	}
@@ -83,8 +83,8 @@ nanite_factory_station_0 = {
 			}
 		}
 	}
-	#root = system
-	#from = country
+	# root = system
+	# from = country
 	ai_weight = {
 		factor = 10
 		modifier = {

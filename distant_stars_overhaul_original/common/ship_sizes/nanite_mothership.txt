@@ -58,7 +58,7 @@ dso_nanite_interdictor = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
-								source = ROOT
+								source = root
 								same_solar_system = yes
 							}
 						}
@@ -140,7 +140,7 @@ dso_nanite_mothership = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
-								source = ROOT
+								source = root
 								same_solar_system = yes
 							}
 						}
@@ -170,7 +170,7 @@ dso_nanite_mothership = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
-								source = ROOT
+								source = root
 								same_solar_system = yes
 							}
 						}
@@ -198,7 +198,7 @@ dso_nanite_mothership = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
-								source = ROOT
+								source = root
 								same_solar_system = yes
 							}
 						}
@@ -226,7 +226,7 @@ dso_nanite_mothership = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
-								source = ROOT
+								source = root
 								same_solar_system = yes
 							}
 						}
@@ -236,7 +236,7 @@ dso_nanite_mothership = {
 		}
 	}
 	
-	#empire_limit = {
+	# empire_limit = {
 	#	base = 1
 	#	max = 20
 	#	naval_cap_div = 200
@@ -286,12 +286,12 @@ dso_nanite_core = {
 	fleet_slot_size = 32
 	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } "stern" = { locator = "part4" } }
 	num_target_locators = 8
-	#is_space_station = no
+	# is_space_station = no
 	icon = ship_size_military_16
 	base_buildtime = @juggernaut_build_time
 	can_have_federation_design = no
 	enable_default_design = no
-	selectable = { host_has_dlc = "Federations" }
+	selectable = { has_federations_dlc = yes }
 	default_behavior = carrier
 
 	prerequisites = { "tech_nanite_core" }
@@ -375,7 +375,7 @@ dso_nanite_core = {
 		}
 	}
 
-	#empire_limit = {
+	# empire_limit = {
 	#	base = 1
 	#	max = 1
 	#	show = {

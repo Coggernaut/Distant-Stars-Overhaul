@@ -26,7 +26,7 @@ country_event = {
 	}
 }
 
-#Overwrite of vanilla events
+# Overwrite of vanilla events
 
 # The Gray Tempest (Instigator)
 country_event = {
@@ -45,32 +45,29 @@ country_event = {
 	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
-	
+
 	immediate = {
-		hidden_effect = {
-			every_country = { 
-				limit = { is_country_type = gray_goo }
-				every_playable_country = { establish_communications_no_message = PREV }
-			}
-			if = {
-				limit = {
-					ROOT = { 
-						OR = {
-							has_origin = civic_harvester_nanites
-							has_origin = civic_gateway_pursuer
-						}
+		every_country = {
+			limit = { is_country_type = gray_goo }
+			every_playable_country = { establish_communications_no_message = prev }
+		}
+		if = {
+			limit = {
+				ROOT = {
+					OR = {
+						has_origin = civic_harvester_nanites
+						has_origin = civic_gateway_pursuer
 					}
 				}
-				every_country = { 
-					limit = { is_country_type = gray_goo }
-					every_playable_country = { establish_communications_no_message = PREV }
-					set_faction_hostility = {
-						target = ROOT
-						set_hostile = no
-						set_neutral = yes
-						set_friendly = no
-					}
-					set_neutral = ROOT
+			}
+			every_country = {
+				limit = { is_country_type = gray_goo }
+				every_playable_country = { establish_communications_no_message = prev }
+				set_faction_hostility = {
+					target = root
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no
 				}
 			}
 		}
@@ -81,9 +78,6 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = graygoo.12 }
 		}
-		#hidden_effect = {
-			
-		#}
 	}
 }
 
@@ -96,28 +90,27 @@ country_event = {
 	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			if = {
 				limit = {
-					ROOT = { 
+					ROOT = {
 						OR = {
 							has_origin = civic_harvester_nanites
 							has_origin = civic_gateway_pursuer
 						}
 					}
 				}
-				every_country = { 
+				every_country = {
 					limit = { is_country_type = gray_goo }
-					every_playable_country = { establish_communications_no_message = PREV }
+					every_playable_country = { establish_communications_no_message = prev }
 					set_faction_hostility = {
-						target = ROOT
+						target = root
 						set_hostile = no
 						set_neutral = yes
 						set_friendly = no
 					}
-					set_neutral = ROOT
 				}
 			}
 		}
@@ -140,28 +133,27 @@ country_event = {
 	show_sound = event_radio_chatter
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			if = {
 				limit = {
-					ROOT = { 
+					ROOT = {
 						OR = {
 							has_origin = civic_harvester_nanites
 							has_origin = civic_gateway_pursuer
 						}
 					}
 				}
-				every_country = { 
+				every_country = {
 					limit = { is_country_type = gray_goo }
-					every_playable_country = { establish_communications_no_message = PREV }
+					every_playable_country = { establish_communications_no_message = prev }
 					set_faction_hostility = {
-						target = ROOT
+						target = root
 						set_hostile = no
 						set_neutral = yes
 						set_friendly = no
 					}
-					set_neutral = ROOT
 				}
 			}
 		}

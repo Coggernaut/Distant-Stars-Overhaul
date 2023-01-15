@@ -18,7 +18,7 @@ gateway_covenant = {
 
 	is_potential = {
 		years_passed > 10
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		is_gestalt = no
 		count_owned_pop = {
 			count > 4
 			limit = {
@@ -359,10 +359,10 @@ gateway_covenant = {
 		}
 	}
 
-	#Another Non-Covenant Empire owens an L-Gateway
-	#L-Gates have been Kept Closed
-	#Sending Missionaries to spread religion
-	#No diplomacy with nanites
+	# Another Non-Covenant Empire owens an L-Gateway
+	# L-Gates have been Kept Closed
+	# Sending Missionaries to spread religion
+	# No diplomacy with nanites
 
 	demand = { # "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
 		title = "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
@@ -480,7 +480,7 @@ gateway_covenant = {
 						every_relation = {
 							limit = {
 								is_ai = no
-								is_country_type = default
+								merg_is_default_empire = yes
 								has_communications = prev
 							}
 							country_event = { id = factions.2000 }

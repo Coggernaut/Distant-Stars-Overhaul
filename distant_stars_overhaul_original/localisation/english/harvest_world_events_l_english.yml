@@ -85,4 +85,11 @@
  harvest_colony.76.name:0 "Message"
  harvest_colony.76.desc:0 "Surfacer. We tried to be good neighbors, but it has become clear that you have no intention of treating us with the respect our glorious civilization deserves.\n\nOur emperor has thus decreed that we must claim this entire world for ourselves, as is our right. We shall drive you back to the stars from whence you came!"
  harvest_colony.76.a:0 "That's not good."
+# TODO
+ # harvest_subterranean_civilization_chain_title: ""
+ # harvest_subterranean_civilization_chain_desc: ""
+ # HARVESTER_DISTURBANCE_1_PROJECT:0 ""
+ # HARVESTER_DISTURBANCE_2_PROJECT:0 ""
+ # HARVESTER_DISTURBANCE_3_PROJECT:0 ""
+ NAME_Loot-Equipped_Army: "L-Subterranean"
  # End of Subterranean Colony Localization

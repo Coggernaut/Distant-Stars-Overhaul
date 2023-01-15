@@ -4,7 +4,6 @@ tags={
 	"Events"
 	"Economy"
 	"Diplomacy"
-	"Buildings"
 	"Military"
 	"Spaceships"
 	"Species"
@@ -13,5 +12,5 @@ tags={
 	"Galaxy Generation"
 }
 name="Nanite Machines & Distant Stars Overhaul"
-supported_version="3.4.*"
+supported_version="3.6.1"
 remote_file_id="1971940221"

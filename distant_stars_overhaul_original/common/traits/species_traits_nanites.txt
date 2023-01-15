@@ -2,7 +2,7 @@ trait_robot_advanced_nanites = {
 	cost = 0
 	initial = no
 	randomized = no
-	modification = no
+	# modification = no
 	species_potential_add = { always = no }
 	allowed_archetypes = {
 		ROBOT
@@ -27,26 +27,26 @@ trait_dessanu_nanites = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
-	modification = no
+	# modification = no
 	randomized = no
 	species_potential_add = { always = no }
 	allowed_archetypes = { MACHINE }
 	# Machines only
-	modifier = { pop_assembly_speed = 0.1 }
+	modifier = { planet_pop_assembly_mult = 0.1 }
 }
 
 trait_dessanu_uplifted = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
-	modification = no
+	# modification = no
 	species_potential_add = { always = no }
 	randomized = no
 	allowed_archetypes = {
 		BIOLOGICAL
 		LITHOID
 	}
-	#custom_tooltip = TRAIT_DESSANU_UPLIFTED_EFFECT
+	# custom_tooltip = TRAIT_DESSANU_UPLIFTED_EFFECT
 	modifier = { planet_jobs_unity_produces_mult = 0.05 }
 	ai_weight = { weight = 0 }
 }

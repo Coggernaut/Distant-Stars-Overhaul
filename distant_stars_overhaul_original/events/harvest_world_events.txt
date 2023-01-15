@@ -25,12 +25,12 @@ country_event = {
 			target = root
 		}
 		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_1_PROJECT"			#Establish Communications
+			name = "HARVESTER_DISTURBANCE_1_PROJECT"			# Establish Communications
 			location = from
 			owner = root
 		}
 		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_2_PROJECT"			#Preemptive Strike
+			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
 			location = from
 			owner = root
 		}
@@ -45,7 +45,7 @@ country_event = {
 			target = root
 		}
 		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_2_PROJECT"			#Preemptive Strike
+			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
 			location = from
 			owner = root
 		}
@@ -184,7 +184,7 @@ country_event = {
 		from = {
 			add_modifier = { modifier = "subterranean_civilization" days = -1 }
 			add_deposit = d_underground_contact_zone
-			#set_planet_flag = trade_size_increase
+			# set_planet_flag = trade_size_increase
 		}
 		custom_tooltip = underground_expansion_tooltip
 	}
@@ -287,7 +287,7 @@ country_event = {
 	option = {
 		name = harvest_colony.56.a
 		enable_special_project = {
-			name = "SEISMIC_DISTURBANCE_3_PROJECT"			#Destroy them
+			name = "SEISMIC_DISTURBANCE_3_PROJECT"			# Destroy them
 			location = fromfrom
 			owner = root
 		}
@@ -709,7 +709,7 @@ planet_event = {
 	option = {
 		name = harvest_colony.64.b
 		trigger = {
-			#free_housing > 5
+			# free_housing > 5
 			owner = {
 				OR = {
 					is_authoritarian = yes
@@ -753,16 +753,16 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_expansion }
-		#has_any_strategic_resource = no
+		# has_any_strategic_resource = no
 		num_pops > 0
-		#planet_size < 25
+		# planet_size < 25
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_expansion }
 	option = {
 		name = EXCELLENT
 		add_modifier = { modifier = "subterranean_expansion" days = -1 }
-		#change_planet_size = +1
+		# change_planet_size = +1
 	}
 }
 
@@ -964,7 +964,7 @@ planet_event = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_refugees }
 		num_pops > 0
-		#free_housing > 0
+		# free_housing > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -980,7 +980,7 @@ planet_event = {
 	option = {
 		name = harvest_colony.71.a
 		trigger = {
-			#free_housing > 0
+			# free_housing > 0
 		}
 		create_pop = {
 			species = event_target:harvester_subterranean_species

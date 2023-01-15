@@ -90,7 +90,7 @@ harvester_nanites = {
 	}
 
 	allow = {
-		is_country_type = default
+		merg_is_default_empire = yes
 		has_authority = "auth_machine_intelligence"
 		has_origin = civic_harvester_nanites
 	}
@@ -147,7 +147,7 @@ gateway_pursuers = {
 	}
 
 	allow = {
-		is_country_type = default
+		merg_is_default_empire = yes
 		has_authority = "auth_machine_intelligence"
 		has_origin = civic_gateway_pursuer
 	}
@@ -205,7 +205,7 @@ gateway_worshipers = {
 	}
 
 	allow = {
-		is_country_type = default
+		merg_is_default_empire = yes
 		has_origin = civic_gateway_worshiper
 	}
 

@@ -87,7 +87,7 @@ country_event = {
 	location = fromfrom
 	hide_window = no
 	is_triggered_only = yes
-	#Suggests Blowing it Up
+	# Suggests Blowing it Up
 	option = {
 		name = harvest_nanite_gaia.2.a
 		trigger = {
@@ -107,7 +107,7 @@ country_event = {
 			owner = root
 		}
 	}
-	#Prepare for doom
+	# Prepare for doom
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
@@ -129,7 +129,7 @@ country_event = {
 	}
 }
 
-#Establish Scope for Planet Event
+# Establish Scope for Planet Event
 country_event = {
 	id = harvest_nanite_gaia.3
 	title = "harvest_nanite_gaia.3.name"
@@ -148,7 +148,7 @@ country_event = {
 	}
 }
 
-#Spawns L-Gaia Incarnation & New Critter Faction
+# Spawns L-Gaia Incarnation & New Critter Faction
 planet_event = {
 	id = harvest_nanite_gaia.31
 	title = "harvest_nanite_gaia.31.name"
@@ -220,12 +220,12 @@ planet_event = {
 						}
 						set_location = root
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						#or return_point
+						set_aggro_range_measure_from = self						# or return_point
 						set_aggro_range = 300
-						#auto_move_to_planet = {
+						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
 						#	clear_auto_move_on_arrival = yes # hang around
-						#}
+						# }
 					}
 				}
 			}
@@ -234,7 +234,7 @@ planet_event = {
 }
 
 #########################
-#Entering Empty Cluster #
+# Entering Empty Cluster #
 #########################
 ship_event = {
 	id = graygoo.550
@@ -248,7 +248,7 @@ ship_event = {
 	trigger = {
 		NOR = {
 			has_global_flag = gray_goo_crisis_set
-			#has_global_flag = dragon_season
+			# has_global_flag = dragon_season
 			has_global_flag = gray_goo_empire_set
 		}
 		root.from = { has_star_flag = lcluster1 }
@@ -401,12 +401,12 @@ planet_event = {
 			target = root
 		}
 		enable_special_project = {
-			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT"			#Establish Communications
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_1_PROJECT"			# Establish Communications
 			location = this
 			owner = root
 		}
 		enable_special_project = {
-			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT"			#Preemptive Strike
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT"			# Preemptive Strike
 			location = this
 			owner = root
 		}
@@ -421,7 +421,7 @@ planet_event = {
 			target = root
 		}
 		enable_special_project = {
-			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT"			#Preemptive Strike
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_2_PROJECT"			# Preemptive Strike
 			location = this
 			owner = root
 		}
@@ -537,7 +537,7 @@ country_event = {
 		from = {
 			add_modifier = { modifier = "subterranean_civilization" days = -1 }
 			add_deposit = d_underground_contact_zone
-			#set_planet_flag = trade_size_increase
+			# set_planet_flag = trade_size_increase
 		}
 		custom_tooltip = underground_expansion_tooltip
 	}
@@ -641,7 +641,7 @@ country_event = {
 	option = {
 		name = nanite_ecosystem_colony.56.a
 		enable_special_project = {
-			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_3_PROJECT"			#Destroy them
+			name = "NANITE_ECOSYSTEM_SEISMIC_DISTURBANCE_3_PROJECT"			# Destroy them
 			location = fromfrom
 			owner = root
 		}
@@ -1065,7 +1065,7 @@ planet_event = {
 	option = {
 		name = nanite_ecosystem_colony.64.b
 		trigger = {
-			#free_housing > 5
+			# free_housing > 5
 			owner = {
 				OR = {
 					is_authoritarian = yes
@@ -1109,16 +1109,16 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_expansion }
-		#has_any_strategic_resource = no
+		# has_any_strategic_resource = no
 		num_pops > 0
-		#planet_size < 25
+		# planet_size < 25
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = nanite_ecosystem_seismic_disturbance_expansion }
 	option = {
 		name = EXCELLENT
 		add_modifier = { modifier = "subterranean_expansion" days = -1 }
-		#change_planet_size = +1
+		# change_planet_size = +1
 	}
 }
 
@@ -1320,7 +1320,7 @@ planet_event = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_refugees }
 		num_pops > 0
-		#free_housing > 0
+		# free_housing > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -1336,7 +1336,7 @@ planet_event = {
 	option = {
 		name = nanite_ecosystem_colony.71.a
 		trigger = {
-			#free_housing > 0
+			# free_housing > 0
 		}
 		create_pop = {
 			species = event_target:nanite_ecosystem_subterranean_species
@@ -1550,13 +1550,13 @@ fleet_event = {
 	trigger = {
 		NOT = { has_global_flag = ldragon_country_starts_nanite_ecosystem_flag }
 		any_country = {
-			#owner = {
+			# owner = {
 			is_country_type = ldragon_country
-			#log = "L-Drake is owner and L-Drake"
+			# log = "L-Drake is owner and L-Drake"
 			#}
 			log = "L-Drake has entered System"
 		}
-		#FROM = { has_star_flag = lcluster1 }
+		# FROM = { has_star_flag = lcluster1 }
 	}
 	immediate = {
 		this = {
@@ -1848,7 +1848,7 @@ country_event = {
 			}
 			random_system_planet = {
 				limit = { is_planet_class = pc_nanite_gas_giant }
-				#change_pc = pc_nanite_gas_giant
+				# change_pc = pc_nanite_gas_giant
 				clear_deposits = yes
 				set_deposit = d_society_10
 				add_deposit = d_exotic_gases_3
@@ -1898,12 +1898,12 @@ country_event = {
 						}
 						set_location = prev
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						#or return_point
+						set_aggro_range_measure_from = self						# or return_point
 						set_aggro_range = 300
-						#auto_move_to_planet = {
+						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
 						#	clear_auto_move_on_arrival = yes # hang around
-						#}
+						# }
 					}
 				}
 			}
@@ -1915,7 +1915,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type = hyperlane
@@ -1941,7 +1941,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type = hyperlane
@@ -1967,7 +1967,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Tiyanki_HomeSystem
 					type = hyperlane
@@ -1991,7 +1991,7 @@ country_event = {
 				}
 			}
 		}
-		#Amoeba
+		# Amoeba
 		random_system = {
 			limit = { has_star_flag = nanite_ecosystem_elder_amoeba_system }
 			save_global_event_target_as = L_Amoeba_HomeSystem
@@ -2108,7 +2108,7 @@ country_event = {
 			}
 			random_system_planet = {
 				limit = { is_planet_class = pc_nanite_gas_giant }
-				#change_pc = pc_nanite_gas_giant
+				# change_pc = pc_nanite_gas_giant
 				clear_deposits = yes
 				set_deposit = d_society_10
 				add_deposit = d_exotic_gases_3
@@ -2153,12 +2153,12 @@ country_event = {
 						}
 						set_location = prev
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						#or return_point
+						set_aggro_range_measure_from = self						# or return_point
 						set_aggro_range = 300
-						#auto_move_to_planet = {
+						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
 						#	clear_auto_move_on_arrival = yes # hang around
-						#}
+						# }
 					}
 				}
 			}
@@ -2170,7 +2170,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type = hyperlane
@@ -2196,7 +2196,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type = hyperlane
@@ -2222,7 +2222,7 @@ country_event = {
 		}
 		random_system = {
 			limit = {
-				#has_any_lcluster_star_flag = yes
+				# has_any_lcluster_star_flag = yes
 				distance = {
 					source = event_target:L_Amoeba_HomeSystem
 					type = hyperlane

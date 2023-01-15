@@ -1,7 +1,6 @@
 @base_moon_distance = 10
 #### README: On changing and saving file, game must be restarted from desktop to prevent crash.
 
-
 # Scavenger Bot System
 dessanu_war_system = {
 	class = "sc_m_giant"
@@ -14,7 +13,7 @@ dessanu_war_system = {
 		base = 90000
 	}
 	scaled_spawn_chance = 0
-	#max_instances = 1
+	# max_instances = 1
 
 	flags = { nanite_harvester_neighbor_system }
 
@@ -363,7 +362,6 @@ dessanu_war_system = {
 		}
 	}
 
-
 	change_orbit = 40
 
 	planet = {
@@ -422,7 +420,6 @@ dessanu_war_system = {
 			prevent_anomaly = yes
 		}
 	}
-
 
 }
 

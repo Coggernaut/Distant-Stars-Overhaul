@@ -15,3 +15,12 @@ nanite_technology_mastery_chain = {
 		}
 	}
 }
+
+nanite_ecosystem_subterranean_civilization_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_surreal_visions
+	# counter = { ?
+}
+
+# harvest_subterranean_civilization_chain = {
+# }

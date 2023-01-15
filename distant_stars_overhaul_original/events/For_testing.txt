@@ -36,24 +36,24 @@ country_event = {
 			}
 		}
 		# outcome, to be determined at game start
-		#if = {
-			#limit = { has_global_flag = gray_goo_crisis_set }
-				#set_global_flag = gray_goo_crisis_set
-				#country_event = {
+		# if = {
+			# limit = { has_global_flag = gray_goo_crisis_set }
+				# set_global_flag = gray_goo_crisis_set
+				# country_event = {
 				#	id = graygoo.1
 				#	days = 1
 				#}
 				# Make friendly
-				#country_event = {
+				# country_event = {
 				#	id = distar.13006
 				#	days = 1
 				#}
-				#country_event = {
+				# country_event = {
 				#	id = a_deadly_tempest.137
 				#	days = 24
 				#}
-			#country_event = { id = graygoo.1 }
-			#every_megastructure = {
+			# country_event = { id = graygoo.1 }
+			# every_megastructure = {
 			#	limit = {
 			#		is_megastructure_type = lgate_base
 			#		NOT = { has_megastructure_flag = lgate_activated }
@@ -62,18 +62,18 @@ country_event = {
 			# set_megastructure_flag = lgate_activated
 			#}
 		#}
-		#else_if = {
-		#	#limit = { has_global_flag = dragon_season }
+		# else_if = {
+		#	# limit = { has_global_flag = dragon_season }
 			remove_global_flag = gray_goo_crisis_set
 			remove_global_flag = gray_goo_empire_set
 			country_event = { id = distar.13000 }
 			set_global_flag = dragon_season
 		#}
-		#else_if = {
+		# else_if = {
 		#	limit = { has_global_flag = gray_goo_empire_set }
 		#	country_event = { id = graygoo.100 }
 		#}
-		#else = {
+		# else = {
 		#	country_event = { id = distar.10951 }
 			# enable other L-Gates over time
 		#	random_country = {

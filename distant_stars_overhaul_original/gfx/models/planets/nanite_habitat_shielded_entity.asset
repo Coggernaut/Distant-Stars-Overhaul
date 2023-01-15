@@ -7,13 +7,13 @@ entity = {
 	name = "nanite_habitat_shielded_entity_01_entity"
 	pdxmesh = "nanite_orbital_station_frame_mesh"
 
-	attach = { "part1" = "humanoid_01_orbital_station_core_entity" }
-	attach = { "part2" = "humanoid_01_orbital_station_habitat_section_entity" }
-	attach = { "part3" = "humanoid_01_orbital_station_habitat_section_entity" }
-	attach = { "part4" = "humanoid_01_orbital_station_habitat_section_entity" }
-	attach = { "part5" = "humanoid_01_orbital_station_habitat_section_entity" }
-	attach = { "part6" = "humanoid_01_orbital_station_habitat_section_entity" }
-	attach = { "part7" = "humanoid_01_orbital_station_habitat_section_entity" }
+	attach = { "part1" = "humanoid_01_orbital_ring_tier_1_section_entity" }
+	attach = { "part2" = "humanoid_01_orbital_ring_habitat_section_entity" }
+	attach = { "part3" = "humanoid_01_orbital_ring_habitat_section_entity" }
+	attach = { "part4" = "humanoid_01_orbital_ring_habitat_section_entity" }
+	attach = { "part5" = "humanoid_01_orbital_ring_habitat_section_entity" }
+	attach = { "part6" = "humanoid_01_orbital_ring_habitat_section_entity" }
+	attach = { "part7" = "humanoid_01_orbital_ring_habitat_section_entity" }
 	attach = { "part8" = "nanite_habitat_shield_effect_entity" }
 	attach = { "part9" = "nanite_shielded_planet_01_entity" }
 

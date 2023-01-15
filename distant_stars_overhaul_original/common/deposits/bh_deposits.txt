@@ -8,11 +8,9 @@ bh_harvested_planet_deposit_small = {
 			unity = 5
 			minerals = 10
 			food = 15
-
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
@@ -29,9 +27,8 @@ bh_harvested_planet_deposit_moderate = {
 			minerals = 20
 			food = 30
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
@@ -48,9 +45,8 @@ bh_harvested_planet_deposit_large = {
 			minerals = 40
 			food = 60
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
@@ -63,11 +59,9 @@ harvester_engine_harvested_planet_deposit_small = {
 			alloys = 3
 			minerals = 10
 			food = 20
-
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
@@ -81,9 +75,8 @@ harvester_engine_harvested_planet_deposit_moderate = {
 			minerals = 20
 			food = 40
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
@@ -97,9 +90,8 @@ harvester_engine_harvested_planet_deposit_large = {
 			minerals = 40
 			food = 80
 		}
- }
+	}
 	station = shipclass_mining_station
-
 	drop_weight = {
 		weight = 0
 	}
