@@ -1,5 +1,4 @@
-namespace = planet_destruction
-namespace = bio_harvest
+# namespace = planet_destruction
 namespace = harvester_engine
 namespace = harvester_engine_planet_stages
 namespace = harvester_engine_planet_depleted

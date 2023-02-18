@@ -1,15 +1,17 @@
 spriteTypes = {
 
-	#Nanites
-
+	## Nanites
 	spriteType = {
 		name = "GFX_ship_part_nanite_strike_craft_fighter"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_strike_craft_fighter.dds"
 	}
-
 	spriteType = {
 		name = "GFX_ship_part_nanite_torpedo"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_torpedo.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_nanite_cannon_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_nanite_cannon_1.dds"
 	}
 
 	spriteType = {

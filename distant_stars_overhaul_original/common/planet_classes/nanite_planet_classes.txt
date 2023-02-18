@@ -112,7 +112,6 @@ pc_nanite_forgeworld = {
 	entity = "nanite_forgeworld"
 	entity_scale = @planet_standard_scale
 	# picture = pc_ai	# The is in the machienworlds data
-	# tile_set = pc_ai	# the location to define these may have moved here
 
 	icon = GFX_planet_type_toxic
 

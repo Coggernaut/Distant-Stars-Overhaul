@@ -1,3 +1,5 @@
+@lClusterCost = 1000
+
 terraform_link = {
 	from = "pc_bh_harvest"
 	to = "pc_nuked"
@@ -107,8 +109,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_gaia
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -132,8 +134,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_desert
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -157,8 +159,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_arid
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -183,8 +185,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_savannah
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -209,8 +211,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_ocean
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -239,8 +241,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_continental
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -265,8 +267,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_tropical
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -291,8 +293,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_arctic
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -317,8 +319,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_alpine
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 
@@ -343,8 +345,8 @@ terraform_link = {
 	from = pc_gray_goo
 	to = pc_tundra
 
-	condition = { 
-		has_technology = "tech_climate_restoration" 
+	condition = {
+		has_technology = "tech_climate_restoration"
 		has_origin = civic_gateway_worshiper
 	}
 

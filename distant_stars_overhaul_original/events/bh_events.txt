@@ -64,7 +64,7 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-	# trigger = {	}
+	# trigger = {  }
 	option = { name = OK }
 }
 
@@ -237,8 +237,7 @@ planet_event = {
 			set_planet_flag = pc_bh_harvest
 			# space_owner = { country_event = { id = harvest_colony.50 } }
 			# If it is Nanite Gaia World
-			if = {
-				limit = { is_planet_class = pc_nanite_gaia }
+			if = { limit = { is_planet_class = pc_nanite_gaia }
 				space_owner = {
 					country_event = { id = harvest_nanite_gaia.1 days = 90 }
 				}
@@ -296,8 +295,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet_stages.1 days = 14000 }
 			}
 			# very_large
-			if = {
-				limit = { planet_size > 22 }
+			if = { limit = { planet_size > 22 }
 				planet_event = { id = bio_harvest_planet_stages.1 days = 10800 }
 			}
 			# large
@@ -334,8 +332,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet_stages.1 days = 8000 }
 			}
 			# very_small
-			if = {
-				limit = { planet_size < 14 }
+			if = { limit = { planet_size < 14 }
 				planet_event = { id = bio_harvest_planet_stages.1 days = 7000 }
 			}
 			every_country = {
@@ -411,8 +408,7 @@ planet_event = {
 			custom_tooltip = gaia_very_small_harvest.1.tooltip
 		}
 		# very_large
-		if = {
-			limit = { planet_size > 22 }
+		if = { limit = { planet_size > 22 }
 			custom_tooltip = very_large_harvest.1.tooltip
 		}
 		# large
@@ -449,8 +445,7 @@ planet_event = {
 			custom_tooltip = small_harvest.1.tooltip
 		}
 		# very_small
-		if = {
-			limit = { planet_size < 14 }
+		if = { limit = { planet_size < 14 }
 			custom_tooltip = very_small_harvest.1.tooltip
 		}
 	}
@@ -466,12 +461,12 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
+		exists = capital_scope
 		OR = {
 			has_origin = civic_harvester_nanites
 			has_origin = civic_gateway_pursuer
 			has_origin = civic_gateway_worshiper
 		}
-		exists = capital_scope
 	}
 	immediate = {
 		if = {
@@ -480,7 +475,6 @@ country_event = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
 				}
-
 			}
 			capital_scope = {
 				set_planet_flag = pc_nanite_forgeworld
@@ -493,112 +487,24 @@ country_event = {
 				}
 				add_deposit = d_nanites_deposit
 				add_district = district_nanite_forgeworld_industry
+				planet_event = { id = bio_harvest_fix_capital.1 days = 3 }
 			}
-			country_event = { id = bio_harvest_fix_capital.1 }
 			country_event = { id = harvester_grey_goo_planet.1 days = 30 }
 		}
 		if = {
-			limit = { has_origin = civic_gateway_pursuer }
-			start_lcluster_chain = yes
-			random_system_within_border = { save_event_target_as = gateway_system }
-			set_country_flag = encountered_first_lgate
-		}
-		if = {
-			limit = { has_origin = civic_gateway_worshiper }
-			capital_scope = {
-				set_planet_size = 25
-				reroll_deposits = yes
-				every_deposit = {
-					limit = { is_blocker = yes }
-					clear_blocker = yes
+			limit = {
+				OR = {
+					has_origin = civic_gateway_pursuer
+					has_origin = civic_gateway_worshiper
 				}
-				add_modifier = { modifier = "DSO_dessanu_heritage_world" days = -1 }
-			}
-			owner_species = { set_species_flag = DSO_dessanu_heritage }
-			start_lcluster_chain = no
-			random_system_within_border = { save_event_target_as = gateway_system }
-			set_country_flag = encountered_first_lgate
-			if = {
-				limit = {
-					has_country_flag = is_cult_of_the_gateway_flag
-					is_ai = yes
-				}
-				if = {
-					limit = {
-						has_technology = tech_starbase_2
-						NOT = { has_technology = tech_starbase_3 }
-					}
-					give_technology = { tech = tech_starbase_3 message = no }
-				}
-				# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
 			}
 			random_system_within_border = {
-				random_system = {
-					limit = {
-						distance = {
-							source = prev
-							type= hyperlane
-							min_jumps = 2
-							max_jumps = 5
-						}
-					}
-					spawn_planet = {
-						class = "pc_gray_goo"
-						location = solar_system
-						orbit_location = yes
-						orbit_angle_offset = 50
-						orbit_distance_offset = 100
-						size = 11
-						has_ring = yes
-						init_effect = {
-							set_name = "Sunder"
-							create_archaeological_site = dso_ancient_dessanu_battle_site
-							add_deposit = d_nanosands
-						}
-					}
-					create_ambient_object = {
-						type = ancient_battlefield_02_object
-						scale = 1
-						location = solar_system
-						entity_offset = 35
-						entity_offset_angle = 210
-						entity_offset_height = 10
-						entity_face_object = star
-						entity_scale_to_size = no
-					}
-					create_ambient_object = {
-						type = ancient_battlefield_02_object
-						scale = 1
-						location = solar_system
-						entity_offset = 45
-						entity_offset_angle = 260
-						entity_offset_height = 14
-						entity_face_object = star
-						entity_scale_to_size = no
-					}
-					create_ambient_object = {
-						type = ancient_battlefield_02_object
-						scale = 1
-						location = solar_system
-						entity_offset = 50
-						entity_offset_angle = 115
-						entity_offset_height = 8
-						entity_face_object = star
-						entity_scale_to_size = no
-					}
+				limit = { NOT = { has_star_flag = lgate } }
+				weights = {
+					base = 1
+					modifier = { add = 100 star = { is_star_class = sc_black_hole } }
 				}
-			}
-		}
-		random_system_within_border = {
-			if = {
-				limit = {
-					root = {
-						OR = {
-							has_origin = civic_gateway_pursuer
-							has_origin = civic_gateway_worshiper
-						}
-					}
-				}
+				save_event_target_as = gateway_system
 				set_star_flag = lgate
 				spawn_megastructure = {
 					type = lgate_base
@@ -606,38 +512,124 @@ country_event = {
 					orbit_distance = 40
 				}
 			}
-			if = {
-				limit = {
-					root = {
-						OR = {
-							has_origin = civic_harvester_nanites
-							has_origin = civic_gateway_pursuer
+
+			if = { limit = { has_origin = civic_gateway_pursuer }
+				start_lcluster_chain = yes
+				set_country_flag = encountered_first_lgate
+			} else_if = { limit = { has_origin = civic_gateway_worshiper }
+				capital_scope = {
+					set_planet_size = 25
+					reroll_deposits = yes
+					every_deposit = {
+						limit = { is_blocker = yes }
+						clear_blocker = yes
+					}
+					add_modifier = { modifier = "DSO_dessanu_heritage_world" days = -1 }
+				}
+				owner_species = { set_species_flag = DSO_dessanu_heritage }
+				start_lcluster_chain = yes
+				set_country_flag = encountered_first_lgate
+				if = {
+					limit = {
+						has_country_flag = is_cult_of_the_gateway_flag
+						is_ai = yes
+					}
+					if = {
+						limit = {
+							has_technology = tech_starbase_2
+							NOT = { has_technology = tech_starbase_3 }
+						}
+						give_technology = { tech = tech_starbase_3 message = no }
+					}
+					# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
+				}
+				event_target:gateway_system = {
+					closest_system = {
+						limit = { is_valid_drone_expansion_destination_system = yes }
+						min_steps = 2
+						max_steps = 5
+						spawn_planet = {
+							class = "pc_gray_goo"
+							name = "Sunder"
+							location = solar_system
+							orbit_location = yes
+							orbit_angle_offset = 50
+							orbit_distance_offset = 100
+							size = 11
+							has_ring = yes
+							init_effect = {
+								# set_name = "Sunder"
+								create_archaeological_site = dso_ancient_dessanu_battle_site
+								add_deposit = d_nanosands
+							}
+						}
+						create_ambient_object = {
+							type = ancient_battlefield_02_object
+							scale = 1
+							location = solar_system
+							entity_offset = 35
+							entity_offset_angle = 210
+							entity_offset_height = 10
+							entity_face_object = star
+							entity_scale_to_size = no
+						}
+						create_ambient_object = {
+							type = ancient_battlefield_02_object
+							scale = 1
+							location = solar_system
+							entity_offset = 45
+							entity_offset_angle = 260
+							entity_offset_height = 14
+							entity_face_object = star
+							entity_scale_to_size = no
+						}
+						create_ambient_object = {
+							type = ancient_battlefield_02_object
+							scale = 1
+							location = solar_system
+							entity_offset = 50
+							entity_offset_angle = 115
+							entity_offset_height = 8
+							entity_face_object = star
+							entity_scale_to_size = no
 						}
 					}
 				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
+			}
+			random_system_within_border = {
+				# limit = { NOT = { has_star_flag = lgate } }
+				weights = {
+					base = 1
+					modifier = { add = 100 is_valid_drone_expansion_destination_system = yes }
+				}
 				spawn_planet = {
 					class = "pc_shattered"
+					name = "Exodus"
 					location = solar_system
 					orbit_location = yes
 					orbit_angle_offset = 225
 					orbit_distance_offset = 50
 					size = 25
 					has_ring = yes
-					init_effect = {
-						set_name = "Exodus"
-					}
+
 				}
 				spawn_planet = {
 					class = "pc_gray_goo"
+					name = "Ember"
 					location = solar_system
 					orbit_location = yes
 					orbit_angle_offset = 50
 					orbit_distance_offset = 100
 					size = 25
 					has_ring = yes
-					init_effect = {
-						set_name = "Ember"
-					}
 				}
 				create_ambient_object = {
 					type = ancient_battlefield_02_object
@@ -690,21 +682,19 @@ country_event = {
 	}
 }
 
-country_event = {
+planet_event = {
 	id = bio_harvest_fix_capital.1
 	is_triggered_only = yes
 	hide_window = yes
-	trigger = { exists = capital_scope }
+	pre_triggers = { has_owner = yes }
 	immediate = {
-		capital_scope = {
-			add_district = dso_district_generator_uncapped
-			add_district = dso_district_generator_uncapped
-			add_district = dso_district_generator_uncapped
-			add_district = dso_district_generator_uncapped
-			add_district = dso_district_nexus
-			add_district = dso_district_nexus
-			add_district = dso_district_nexus
-		}
+		add_district = dso_district_generator_uncapped
+		add_district = dso_district_generator_uncapped
+		add_district = dso_district_generator_uncapped
+		add_district = dso_district_generator_uncapped
+		add_district = dso_district_nexus
+		add_district = dso_district_nexus
+		add_district = dso_district_nexus
 	}
 }
 
@@ -714,7 +704,7 @@ country_event = {
 	desc = harvester_grey_goo_planet.1.desc
 	picture = GFX_evt_gray_gooed_planet
 	show_sound = event_laboratory_sound
-	location = root
+	# location = root
 	is_triggered_only = yes
 	trigger = {
 		any_planet_within_border = {
@@ -724,18 +714,18 @@ country_event = {
 	}
 	option = {
 		name = harvester_grey_goo_planet.1.a
+		# custom_tooltip = harvester_grey_goo_planet.1.a.tooltip
 		add_resource = { nanites = 50 }
-		random_planet_within_border = {
-			limit = {
-				is_capital = no
-				is_planet_class = pc_gray_goo
-			}
-			custom_tooltip = terraforming_candidate
-			hidden_effect = {
-				add_modifier = { modifier = "terraforming_candidate" days = -1 }
+		custom_tooltip = terraforming_candidate
+		hidden_effect = {
+			random_planet_within_border = {
+				limit = {
+					is_capital = no
+					is_planet_class = pc_gray_goo
+				}
+				add_modifier = { modifier = "terraforming_candidate" }
 			}
 		}
-		# custom_tooltip = harvester_grey_goo_planet.1.tooltip
 	}
 }
 
@@ -831,8 +821,7 @@ planet_event = {
 			planet_event = { id = bio_harvest_planet_stages.2 days = 10400 }
 		}
 		# very_large
-		if = {
-			limit = { planet_size > 22 }
+		if = { limit = { planet_size > 22 }
 			planet_event = { id = bio_harvest_planet_stages.2 days = 7200 }
 		}
 		# large
@@ -869,8 +858,7 @@ planet_event = {
 			planet_event = { id = bio_harvest_planet_stages.2 days = 5700 }
 		}
 		# very_small
-		if = {
-			limit = { planet_size < 14 }
+		if = { limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_stages.2 days = 5200 }
 		}
 		clear_deposits = yes
@@ -945,8 +933,7 @@ planet_event = {
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 5200 }
 		}
 		# very_large
-		if = {
-			limit = { planet_size > 22 }
+		if = { limit = { planet_size > 22 }
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 3600 }
 		}
 		# large
@@ -983,8 +970,7 @@ planet_event = {
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 2850 }
 		}
 		# very_small
-		if = {
-			limit = { planet_size < 14 }
+		if = { limit = { planet_size < 14 }
 			planet_event = { id = bio_harvest_planet_depleted.1 days = 2600 }
 		}
 		clear_deposits = yes

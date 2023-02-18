@@ -1,4 +1,5 @@
 namespace = harvest_colony
+# TODO
 country_event = {
 	id = harvest_colony.50
 	title = "harvest_colony.50.name"

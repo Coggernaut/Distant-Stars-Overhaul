@@ -20,6 +20,7 @@ d_vast_unity_deposit = {
 ### L-Cluster
 d_nanites_deposit = {
 	resources = {
+		category = orbital_mining_deposits
 		upkeep = {
 			energy = 10
 			alloys = 5

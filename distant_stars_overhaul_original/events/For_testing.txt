@@ -2,7 +2,7 @@ namespace = distar_overhaul
 country_event = {
 	id = distar_overhaul.10950
 	hide_window = yes
-
+	is_test_event = yes
 	is_triggered_only = yes
 
 	immediate = {

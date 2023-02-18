@@ -228,19 +228,17 @@ weapon_component_template = {
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
-	
+
 	projectile_gfx = "mass_driver_s"
 	tags = { weapon_type_kinetic }
-	
-	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
-	
+
 	resources = {
 		category = ship_components
 		cost = { nanites = 3 }
 		upkeep = { energy = 1 }
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -263,19 +261,17 @@ weapon_component_template = {
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
-	
+
 	projectile_gfx = "mass_driver_m"
 	tags = { weapon_type_kinetic }
-	
-	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
-	
+
 	resources = {
 		category = ship_components
 		cost = { nanites = 6 }
 		upkeep = { energy = 1 }
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -298,19 +294,17 @@ weapon_component_template = {
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
 	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
-	
+
 	projectile_gfx = "mass_driver_l"
 	tags = { weapon_type_kinetic }
-	
-	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
-	
+
 	resources = {
 		category = ship_components
 		cost = { nanites = 12 }
 		upkeep = { energy = 1 }
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
