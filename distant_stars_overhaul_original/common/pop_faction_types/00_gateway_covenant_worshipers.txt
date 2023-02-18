@@ -12,18 +12,19 @@ gateway_covenant = {
 	resources = {
 		category = pop_factions
 		produces = {
-			influence = 2
+			unity = 0.5 # influence = 2
 		}
 	}
 
 	is_potential = {
-		years_passed > 10
-		is_gestalt = no
+		# years_passed > 10
+		# is_gestalt = no
+		is_faction_allowed = yes
 		count_owned_pop = {
 			count > 4
 			limit = {
-				species = { has_species_flag = DSO_dessanu_heritage }
 				pop_has_ethic = ethic_spiritualist
+				species = { has_species_flag = DSO_dessanu_heritage }
 			}
 		}
 	}
@@ -31,9 +32,7 @@ gateway_covenant = {
 	parameters = {
 		empire = {
 			type = country
-			valid_objects = {
-				is_same_value = root
-			}
+			valid_objects = { is_same_value = root }
 		}
 	}
 
@@ -45,7 +44,7 @@ gateway_covenant = {
 
 	can_join_faction = {
 		has_culture_shock = no
-		NOT = { has_trait = trait_nerve_stapled }
+		can_think = yes
 		is_spiritualist = yes
 	}
 
@@ -63,9 +62,9 @@ gateway_covenant = {
 
 		modifier = {
 			factor = 0.75
-			exists = from
-			from = {
-				NOT = { exists = leader }
+			NAND = {
+				exists = from
+				from = { exists = leader }
 			}
 		}
 	}
@@ -74,15 +73,9 @@ gateway_covenant = {
 		base = 100
 		modifier = {
 			factor = 0
-			species = {
-				has_trait = "trait_mechanical"
-			}
+			species = { has_trait = "trait_mechanical" }
 		}
-
-		modifier = {
-			factor = 0.0
-			is_event_leader = yes
-		}
+		modifier = { factor = 0 is_event_leader = yes }
 	}
 
 	demand = {
@@ -95,19 +88,15 @@ gateway_covenant = {
 
 		potential = {
 			exists = owner
-			owner = {
-				has_country_flag = faction_spiritualist_outraged_gc
-			}
+			owner = { has_country_flag = faction_spiritualist_outraged_gc }
 		}
 
 		trigger = {
-			owner = {
-				has_country_flag = faction_spiritualist_outraged_gc
-			}
+			owner = { has_country_flag = faction_spiritualist_outraged_gc }
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_NO_ROBOTS"
+	demand = {
 		title = "GATEWAY_COVENANT_NO_ROBOTS"
 		unfulfilled_title = "GATEWAY_COVENANT_ROBOTS"
 		desc = "GATEWAY_COVENANT_NO_ROBOTS_DESC"
@@ -115,18 +104,14 @@ gateway_covenant = {
 		unfulfilled_effect = -5
 		fulfilled_effect = 0.001
 
-		potential = {
-			exists = owner
-		}
+		potential = { exists = owner }
 
 		trigger = {
-			owner = {
-				has_policy_flag = robots_outlawed
-			}
+			owner = { has_policy_flag = robots_outlawed }
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_NO_ROBOT_RIGHTS"
+	demand = {
 		title = "GATEWAY_COVENANT_NO_ROBOT_RIGHTS"
 		unfulfilled_title = "GATEWAY_COVENANT_ROBOT_RIGHTS"
 		desc = "GATEWAY_COVENANT_NO_ROBOT_RIGHTS_DESC"
@@ -149,7 +134,7 @@ gateway_covenant = {
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS"
+	demand = {
 		title = "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS"
 		unfulfilled_title = "GATEWAY_COVENANT_FULL_ROBOT_RIGHTS"
 		desc = "GATEWAY_COVENANT_NO_FULL_ROBOT_RIGHTS_DESC"
@@ -172,7 +157,7 @@ gateway_covenant = {
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT"
+	demand = {
 		title = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT"
 		unfulfilled_title = "GATEWAY_COVENANT_SECULAR_GOVERNMENT"
 		desc = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT_DESC"
@@ -180,18 +165,14 @@ gateway_covenant = {
 		fulfilled_effect = 5
 		unfulfilled_effect = -5
 
-		potential = {
-			exists = owner
-		}
+		potential = { exists = owner }
 
 		trigger = {
-			owner = {
-				is_spiritualist = yes
-			}
+			owner = { is_spiritualist = yes }
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_CONSECRATE_L_GATE"
+	demand = {
 		title = "GATEWAY_COVENANT_CONSECRATE_L_GATE"
 		unfulfilled_title = "GATEWAY_COVENANT_NO_CONSECRATED_L_GATE"
 		desc = "GATEWAY_COVENANT_CONSECRATE_L_GATE_DESC"
@@ -201,19 +182,15 @@ gateway_covenant = {
 
 		potential = {
 			exists = owner
-			owner = {
-				has_government = gov_spiritualist_gateway_worshiper
-			}
+			owner = { has_government = gov_spiritualist_gateway_worshiper }
 		}
 
 		trigger = {
-			owner = {
-				has_country_flag = DSO_consecrated_lgate
-			}
+			owner = { has_country_flag = DSO_consecrated_lgate }
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_L_GATE_GUARDIAN"
+	demand = {
 		title = "GATEWAY_COVENANT_L_GATE_GUARDIAN"
 		unfulfilled_title = "GATEWAY_COVENANT_NOT_L_GATE_GUARDIAN"
 		desc = "GATEWAY_COVENANT_L_GATE_GUARDIAN_DESC"
@@ -223,9 +200,7 @@ gateway_covenant = {
 
 		potential = {
 			exists = owner
-			owner = {
-				has_government = gov_spiritualist_gateway_worshiper
-			}
+			owner = { has_government = gov_spiritualist_gateway_worshiper }
 			NOT = { has_global_flag = l_cluster_opened }
 		}
 		# add_modifier = {
@@ -244,7 +219,7 @@ gateway_covenant = {
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_L_GATE_SEALED"
+	demand = {
 		title = "GATEWAY_COVENANT_L_GATE_SEALED"
 		unfulfilled_title = "GATEWAY_COVENANT_NO_L_GATE_SEALED"
 		desc = "GATEWAY_COVENANT_L_GATE_SEALED_DESC"
@@ -254,6 +229,7 @@ gateway_covenant = {
 
 		potential = {
 			exists = owner
+			NOT = { has_global_flag = l_cluster_opened }
 		}
 
 		trigger = {
@@ -261,7 +237,7 @@ gateway_covenant = {
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_FLESH_IS_STRONG"
+	demand = {
 		title = "GATEWAY_COVENANT_FLESH_IS_STRONG"
 		unfulfilled_title = "GATEWAY_COVENANT_FLESH_IS_WEAK"
 		desc = "GATEWAY_COVENANT_FLESH_IS_STRONG_DESC"
@@ -271,21 +247,21 @@ gateway_covenant = {
 
 		potential = {
 			exists = owner
-			owner = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
+			owner = { has_ascension_perk = ap_the_flesh_is_weak }
 		}
 
 		trigger = {
 			owner = {
-				NOT = {
-					has_country_flag = flesh_weakened
+				NOR = {
+					# has_country_flag = flesh_weakened removed in 3.6
+					has_country_flag = cyborg_empire
+					has_tradition = tr_cybernetics_transubstantiation_synthesis
 				}
 			}
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
+	demand = {
 		title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE"
 		unfulfilled_title = "GATEWAY_COVENANT_HOLY_PILGRIMAGE_BANNED"
 		desc = "GATEWAY_COVENANT_HOLY_PILGRIMAGE_DESC"
@@ -300,42 +276,26 @@ gateway_covenant = {
 					percentage > 0.09
 					limit = { pop_has_ethic = ethic_spiritualist }
 				}
-			}
-			if = {
-				limit = {
-					any_country = {
-						NOR = {
-							is_same_empire = root.owner
-							has_migration_access = root.owner
-						}
-						has_communications = root.owner
-						any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
+				any_playable_country = {
+					has_communications = prev
+					NOR = {
+						is_same_empire = prev
+						has_migration_access = prev
 					}
+					any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
 				}
-				always = yes
-			}
-			else = {
-				always = no
 			}
 		}
 
 		trigger = {
-			if = {
-				limit = {
-					any_country = {
-						has_migration_access = root.owner
-						any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
-					}
-				}
-				always = yes
-			}
-			else = {
-				always = no
+			any_playable_country = {
+				has_migration_access = root.owner
+				any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
 			}
 		}
 	}
 
-	demand = { # "GATEWAY_COVENANT_NO_NANITES"
+	demand = {
 		title = "GATEWAY_COVENANT_NO_NANITES"
 		unfulfilled_title = "GATEWAY_COVENANT_NANITES"
 		desc = "GATEWAY_COVENANT_NANITES_DESC"
@@ -349,8 +309,9 @@ gateway_covenant = {
 		}
 
 		trigger = {
+			has_global_flag = l_cluster_opened
 			owner = {
-				NOT = {
+				NOR = {
 					has_technology = tech_harvester_advanced_nanites
 					has_technology = tech_advanced_nanites
 					has_technology = tech_machine_advanced_nanites
@@ -364,7 +325,7 @@ gateway_covenant = {
 	# Sending Missionaries to spread religion
 	# No diplomacy with nanites
 
-	demand = { # "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
+	demand = {
 		title = "GATEWAY_COVENANT_NO_HERETIC_OWNS_L_GATE"
 		unfulfilled_title = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE"
 		desc = "GATEWAY_COVENANT_HERETIC_OWNS_L_GATE_DESC"
@@ -375,38 +336,25 @@ gateway_covenant = {
 		potential = {
 			exists = owner
 			NOT = { has_global_flag = l_cluster_opened }
-			if = {
-				limit = {
-					any_megastructure = {
-						is_megastructure_type = lgate_base
-						owner = {
-							NOT = { has_government = gov_spiritualist_gateway_worshiper }
-							has_communications = root.owner
-						}
-					}
+			any_megastructure = {
+				is_megastructure_type = lgate_base
+				exists = owner
+				owner = {
+					NOT = { has_government = gov_spiritualist_gateway_worshiper }
+					has_communications = root.owner
 				}
-				always = yes
-			}
-			else = {
-				always = no
 			}
 		}
 
 		trigger = {
-			if = {
-				limit = {
-					any_megastructure = {
-						is_megastructure_type = lgate_base
-						owner = {
-							NOT = { has_government = gov_spiritualist_gateway_worshiper }
-							has_communications = root.owner
-						}
-					}
+			NOT = { has_global_flag = l_cluster_opened }
+			any_megastructure = {
+				is_megastructure_type = lgate_base
+				exists = owner
+				owner = {
+					NOT = { has_government = gov_spiritualist_gateway_worshiper }
+					has_communications = root.owner
 				}
-				always = no
-			}
-			else = {
-				always = yes
 			}
 		}
 	}
@@ -416,16 +364,10 @@ gateway_covenant = {
 	}
 
 	on_destroy = {
-		if = {
-			limit = {
-				has_modifier = promoted_spiritualist
-			}
+		if = { limit = { has_modifier = promoted_spiritualist }
 			remove_modifier = promoted_spiritualist
 		}
-		if = {
-			limit = {
-				has_modifier = suppressed_spiritualist
-			}
+		else_if = { limit = { has_modifier = suppressed_spiritualist }
 			remove_modifier = suppressed_spiritualist
 		}
 	}
@@ -436,15 +378,15 @@ gateway_covenant = {
 			description = "EMBRACE_FACTION_DESC"
 
 			cost = {
-				influence = 500
+				unity = 5000 # influence = 500
 			}
 
 			potential = {
 				exists = owner
 				owner = {
-					OR = {
-						is_subject = no
-						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					NAND = {
+						is_subject = yes
+						any_agreement = { agreement_preset = preset_dominion }
 					}
 				}
 			}
@@ -482,6 +424,11 @@ gateway_covenant = {
 								is_ai = no
 								merg_is_default_empire = yes
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}
@@ -493,31 +440,20 @@ gateway_covenant = {
 				base = 1
 				modifier = {
 					factor = 0
-					support < 0.50
-					owner = {
-						has_ethic = ethic_spiritualist
-					}
-				}
-				modifier = {
-					factor = 0
-					owner = { has_valid_civic = civic_fanatic_purifiers }
-				}
-				modifier = {
-					factor = 0
-					NOT = {
+					OR = {
+						AND = {
+							support < 0.50
+							owner = { has_ethic = ethic_spiritualist }
+						}
+						owner = { has_valid_civic = civic_fanatic_purifiers }
 						owner = {
-							exists = ruler
-							ruler = {
-								leader_of_faction = traditionalist
+							NAND = {
+								exists = ruler
+								ruler = { leader_of_faction = traditionalist }
 							}
 						}
-					}
-				}
-				modifier = {
-					factor = 0
-					owner = {
-						count_pop_faction = {
-							count < 4
+						owner = {
+							count_pop_faction = { count < 4 }
 						}
 					}
 				}
@@ -539,13 +475,11 @@ gateway_covenant = {
 
 			effect = {
 				parameter:empire = {
-					add_modifier = { modifier = promoted_spiritualist days = -1 }
+					add_modifier = { modifier = promoted_spiritualist }
 				}
 			}
 
-			ai_weight = {
-				base = 0
-			}
+			ai_weight = { base = 0 }
 		}
 		cancel_promote_faction = {
 			title = "CANCEL_PROMOTE_FACTION"
@@ -553,20 +487,14 @@ gateway_covenant = {
 
 			potential = {
 				exists = owner
-				parameter:empire = {
-					has_modifier = promoted_spiritualist
-				}
+				parameter:empire = { has_modifier = promoted_spiritualist }
 			}
 
 			effect = {
-				parameter:empire = {
-					remove_modifier = promoted_spiritualist
-				}
+				parameter:empire = { remove_modifier = promoted_spiritualist }
 			}
 
-			ai_weight = {
-				base = 0
-			}
+			ai_weight = { base = 0 }
 		}
 		suppress_faction = {
 			title = "SUPPRESS_FACTION"
@@ -583,15 +511,13 @@ gateway_covenant = {
 			}
 
 			effect = {
-				add_modifier = { modifier = suppressed_faction days = -1 }
+				add_modifier = { modifier = suppressed_faction }
 				parameter:empire = {
-					add_modifier = { modifier = suppressed_spiritualist days = -1 }
+					add_modifier = { modifier = suppressed_spiritualist }
 				}
 			}
 
-			ai_weight = {
-				base = 0
-			}
+			ai_weight = { base = 0 }
 		}
 		cancel_suppress_faction = {
 			title = "CANCEL_SUPPRESS_FACTION"
@@ -599,21 +525,15 @@ gateway_covenant = {
 
 			potential = {
 				exists = owner
-				parameter:empire = {
-					has_modifier = suppressed_spiritualist
-				}
+				parameter:empire = { has_modifier = suppressed_spiritualist }
 			}
 
 			effect = {
 				remove_modifier = suppressed_faction
-				parameter:empire = {
-					remove_modifier = suppressed_spiritualist
-				}
+				parameter:empire = { remove_modifier = suppressed_spiritualist }
 			}
 
-			ai_weight = {
-				base = 0
-			}
+			ai_weight = { base = 0 }
 		}
 	}
 }
