@@ -6,15 +6,9 @@ fareen={
 	species={
 		class="FUN"
 		portrait="fun10"
-		species_name={
-			key=PRESCRIPTED_species_name_fareen
-		}
-		species_plural={
-			key=PRESCRIPTED_species_plural_fareen
-		}
-		species_adjective={
-			key=PRESCRIPTED_species_adjective_fareen
-		}
+		name="PRESCRIPTED_species_name_fareen"
+		plural="PRESCRIPTED_species_plural_fareen"
+		adjective="PRESCRIPTED_species_adjective_fareen"
 		name_list="MOL3"
 		gender=not_set
 		trait="trait_dessanu_uplifted"
@@ -29,12 +23,12 @@ fareen={
 	}
 	government="gov_spiritualist_gateway_worshiper"
 	planet_name={
-		key=PRESCRIPTED_planet_name_fareen
+		key="Gridaar"
 		literal=yes
 	}
 	planet_class="pc_continental" # "pc_gaia" log claims invalid
 	system_name={
-		key=PRESCRIPTED_system_name_fareen
+		key="Gridaar"
 		literal=yes
 	}
 	initializer=""
@@ -70,9 +64,7 @@ fareen={
 		ruler_title={
 			key="High Guardian"
 		}
-		heir_title={
-			key="RT_IMPERATRIX"
-		}
+		heir_title="RT_IMPERATRIX"
 		leader_class="ruler"
 	}
 	spawn_as_fallen=no
