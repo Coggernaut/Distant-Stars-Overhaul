@@ -115,19 +115,6 @@ nanite_factory_station_0 = {
 				}
 			}
 		}
-		modifier = {
-			factor = 1
-			from = {
-				has_monthly_income = {
-					resource = nanites
-					value <= 0
-				}
-				OR = {
-					has_origin = civic_harvester_nanites
-					has_origin = civic_gateway_pursuer
-				}
-			}
-		}
 	}
 	on_build_start = {  }
 	on_build_cancel = {  }

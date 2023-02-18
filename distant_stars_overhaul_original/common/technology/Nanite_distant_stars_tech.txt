@@ -1,7 +1,6 @@
 # ##################
 # L-GATE TECH
 # ##################
-
 tech_lgate_activation = {
 	cost = @tier3cost3
 	area = physics
@@ -9,21 +8,16 @@ tech_lgate_activation = {
 	is_dangerous = yes
 	category = { particles }
 	weight = 0
-
 	potential = {
 		NOT = { has_global_flag = l_cluster_opened }
 	}
-
 	prereqfor_desc = {
 		custom = {
 			title = lgate_activation_title
 			desc = lgate_activation_desc
 		}
 	}
-
-	weight_modifier = {
-		factor = 0
-	}
+	weight_modifier = { factor = 0 }
 }
 
 tech_repeatable_lcluster_clue = {
@@ -35,7 +29,6 @@ tech_repeatable_lcluster_clue = {
 	category = { voidcraft }
 	levels = -1
 	weight = 70
-
 	potential = {
 		has_country_flag = encountered_first_lgate
 		NOR = {
@@ -44,26 +37,19 @@ tech_repeatable_lcluster_clue = {
 			has_global_flag = l_cluster_opened
 		}
 	}
-
 	prereqfor_desc = {
 		custom = {
 			title = add_lcluster_clue
 			desc = tech_repeatable_lcluster_clue_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
-			factor = 1.00
+			factor = 2
 			NOT = { has_origin = civic_gateway_pursuer }
-
 		}
-		modifier = {
-			factor = 100.00
-			has_origin = civic_gateway_pursuer
-		}
+		modifier = { factor = 100 has_origin = civic_gateway_pursuer }
 	}
-
 	weight_groups = {
 		# repeatable
 	}
@@ -73,7 +59,6 @@ tech_repeatable_lcluster_clue = {
 }
 
 # =================================================================================
-
 tech_repeatable_nanite_technology_insight = {
 	area = engineering
 	cost = 10000
@@ -83,7 +68,6 @@ tech_repeatable_nanite_technology_insight = {
 	category = { voidcraft }
 	levels = -1
 	weight = 0
-
 	# potential = {
 	#	has_global_flag = l_cluster_opened
 	#	NOT = { has_country_flag = lcluster_opener }
@@ -95,7 +79,6 @@ tech_repeatable_nanite_technology_insight = {
 	#		has_technology = tech_synthetic_workers
 	#	}
 	#}
-
 	prereqfor_desc = {
 		custom = {
 			title = add_nanite_insight
@@ -103,14 +86,9 @@ tech_repeatable_nanite_technology_insight = {
 		}
 	}
 	is_reverse_engineerable = yes
-
 	ai_weight = {
-		modifier = {
-			factor = 100
-			has_origin = civic_gateway_pursuer
-		}
+		modifier = { factor = 100 has_origin = civic_gateway_pursuer }
 	}
-
 	weight_groups = {
 		# repeatable
 	}
@@ -127,27 +105,23 @@ tech_nanite_technology_mastery = {
 	is_rare = yes
 	category = { industry }
 	weight = 0
-
 	# potential = {
 	#	OR = {
 	#		has_country_flag = completed_nanite_technology_mastery_chain
 	#		has_country_flag = lcluster_opener
 	#	}
 	#}
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_technology_mastery
 			desc = tech_nanite_technology_mastery_desc
 		}
 	}
-
 	ai_weight = {
-		modifier = {
-			factor = 1.00
-			NOT = { has_origin = civic_gateway_pursuer }
-
-		}
+		# modifier = {
+		# 	factor = 1
+		# 	NOT = { has_origin = civic_gateway_pursuer }
+		# }
 	}
 }
 
@@ -159,7 +133,6 @@ tech_harvester_advanced_nanites = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -183,13 +156,8 @@ tech_harvester_advanced_nanites = {
 			}
 		}
 	}
-
-	modifier = {
-		ship_hull_regen_add_perc = 0.2
-	}
-
+	modifier = { ship_hull_regen_add_perc = 0.2 }
 	prerequisites = { "tech_nanite_technology_mastery" }
-
 	potential = {
 		OR = {
 			has_origin = civic_harvester_nanites
@@ -197,7 +165,6 @@ tech_harvester_advanced_nanites = {
 		}
 		is_machine_empire = yes
 	}
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_harvester_advanced_nanites_effect
@@ -208,10 +175,9 @@ tech_harvester_advanced_nanites = {
 			desc = tech_advanced_nanite_factory_nanite_effect_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
-			factor = 2.00
+			factor = 2
 			OR = {
 				has_origin = civic_harvester_nanites
 				has_origin = civic_gateway_pursuer
@@ -228,7 +194,6 @@ tech_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -245,11 +210,7 @@ tech_advanced_nanites = {
 			}
 		}
 	}
-
-	modifier = {
-		ship_hull_regen_add_perc = 0.2
-	}
-
+	modifier = { ship_hull_regen_add_perc = 0.2 }
 	potential = {
 		NOR = {
 			has_origin = civic_harvester_nanites
@@ -258,21 +219,17 @@ tech_advanced_nanites = {
 			is_hive_empire = yes
 		}
 	}
-
 	prerequisites = { "tech_nanite_technology_mastery" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_advanced_nanites_effect
 			desc = tech_advanced_nanites_effect_desc
 		}
-
 		custom = {
 			title = tech_advanced_nanite_factory_effect
 			desc = tech_advanced_nanite_factory_effect_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
 			factor = 0.25
@@ -284,7 +241,7 @@ tech_advanced_nanites = {
 			}
 		}
 		modifier = {
-			factor = 0.50
+			factor = 0.5
 			NOR = {
 				has_origin = civic_harvester_nanites
 				has_origin = civic_gateway_pursuer
@@ -299,18 +256,18 @@ tech_advanced_nanites = {
 				has_origin = civic_gateway_pursuer
 				is_spiritualist = no
 				is_materialist = yes
-				has_origin = civic_gateway_worshiper  # civic_machine_worshipers?
+				has_origin = civic_gateway_worshiper				# civic_machine_worshipers?
 			}
 		}
 		modifier = {
-			factor = 0.50
+			factor = 0.5
 			NOR = {
 				has_origin = civic_harvester_nanites
 				has_origin = civic_gateway_pursuer
 				is_spiritualist = no
 				is_materialist = yes
 			}
-			has_origin = civic_gateway_worshiper  # civic_machine_worshipers?
+			has_origin = civic_gateway_worshiper			# civic_machine_worshipers?
 		}
 	}
 }
@@ -323,7 +280,6 @@ tech_machine_advanced_nanites = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -340,13 +296,8 @@ tech_machine_advanced_nanites = {
 			}
 		}
 	}
-
-	modifier = {
-		ship_hull_regen_add_perc = 0.2
-	}
-
+	modifier = { ship_hull_regen_add_perc = 0.2 }
 	prerequisites = { "tech_nanite_technology_mastery" }
-
 	potential = {
 		NOR = {
 			has_origin = civic_harvester_nanites
@@ -354,7 +305,6 @@ tech_machine_advanced_nanites = {
 		}
 		is_machine_empire = yes
 	}
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_machine_advanced_nanites_effect
@@ -365,10 +315,9 @@ tech_machine_advanced_nanites = {
 			desc = tech_advanced_nanite_factory_effect_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
-			factor = 0.50
+			factor = 0.5
 			NOR = {
 				has_origin = civic_harvester_nanites
 				has_origin = civic_gateway_pursuer
@@ -380,7 +329,6 @@ tech_machine_advanced_nanites = {
 # ##################
 # NANITE TECH
 # ##################
-
 tech_nanite_clouds = {
 	area = engineering
 	cost = 25000
@@ -389,7 +337,6 @@ tech_nanite_clouds = {
 	category = { industry }
 	weight = 75
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -413,14 +360,12 @@ tech_nanite_clouds = {
 			}
 		}
 	}
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_clouds_effect
 			desc = tech_nanite_clouds_effect_desc
 		}
 	}
-
 	potential = {
 		OR = {
 			has_technology = tech_harvester_advanced_nanites
@@ -428,11 +373,7 @@ tech_nanite_clouds = {
 			has_technology = tech_machine_advanced_nanites
 		}
 	}
-
-	ai_weight = {
-		factor = 0.75
-	}
-
+	ai_weight = { factor = 0.75 }
 }
 
 tech_nanites_assembler_factory = {
@@ -443,7 +384,6 @@ tech_nanites_assembler_factory = {
 	category = { industry }
 	weight = 50
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -467,9 +407,7 @@ tech_nanites_assembler_factory = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_clouds" }
-
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -496,7 +434,6 @@ tech_orbital_nanite_shipyard = {
 	category = { industry }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -520,28 +457,13 @@ tech_orbital_nanite_shipyard = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanites_assembler_factory" }
-
 	ai_weight = {
 		modifier = {
 			factor = 0
 			OR = {
 				is_hive_empire = yes
 				is_spiritualist = yes
-			}
-		}
-		modifier = {
-			factor = 1
-			AND = {
-				OR = {
-					is_machine_empire = yes
-					is_materialist = yes
-				}
-				NOR = {
-					has_origin = civic_harvester_nanites 
-					has_origin = civic_gateway_pursuer 
-				}
 			}
 		}
 		modifier = {
@@ -558,7 +480,6 @@ tech_orbital_nanite_shipyard = {
 			}
 		}
 	}
-
 }
 
 tech_nanite_networking_protocols = {
@@ -569,7 +490,6 @@ tech_nanite_networking_protocols = {
 	category = { computing }
 	weight = 15
 	is_reverse_engineerable = no
-
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -593,35 +513,19 @@ tech_nanite_networking_protocols = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_clouds" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_networking_protocols_effect
 			desc = tech_nanite_networking_protocols_effect_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
 			factor = 0
 			OR = {
 				is_hive_empire = yes
 				is_spiritualist = yes
-			}
-		}
-		modifier = {
-			factor = 1
-			AND = {
-				OR = {
-					is_machine_empire = yes
-					is_materialist = yes
-				}
-				NOR = {
-					has_origin = civic_harvester_nanites 
-					has_origin = civic_gateway_pursuer 
-				}
 			}
 		}
 		modifier = {
@@ -638,7 +542,6 @@ tech_nanite_networking_protocols = {
 			}
 		}
 	}
-
 }
 
 tech_nanite_weaponry = {
@@ -649,7 +552,6 @@ tech_nanite_weaponry = {
 	category = { computing }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -673,16 +575,13 @@ tech_nanite_weaponry = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_orbital_nanite_shipyard" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_weaponry_effect
 			desc = tech_nanite_weaponry_effect_desc
 		}
 	}
-
 	ai_weight = {
 		modifier = {
 			factor = 0
@@ -693,19 +592,7 @@ tech_nanite_weaponry = {
 		}
 		modifier = {
 			factor = 0.35
-			OR = {
-				is_materialist = yes
-			}
-		}
-		modifier = {
-			factor = 1
-			AND = {
-				is_machine_empire = yes
-				NOR = {
-					has_origin = civic_harvester_nanites
-					has_origin = civic_gateway_pursuer
-				}
-			}
+			OR = { is_materialist = yes }
 		}
 		modifier = {
 			factor = 2
@@ -718,7 +605,6 @@ tech_nanite_weaponry = {
 			}
 		}
 	}
-
 }
 
 tech_nanite_torpedo = {
@@ -729,7 +615,6 @@ tech_nanite_torpedo = {
 	category = { propulsion }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -753,20 +638,14 @@ tech_nanite_torpedo = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_weaponry" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_torpedo_effect
 			desc = tech_nanite_torpedo_effect_desc
 		}
 	}
-
-	ai_weight = {
-		factor = 0.75
-	}
-
+	ai_weight = { factor = 0.75 }
 }
 
 tech_nanite_lancers = {
@@ -777,7 +656,6 @@ tech_nanite_lancers = {
 	category = { voidcraft }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -801,13 +679,8 @@ tech_nanite_lancers = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_weaponry" }
-
-	ai_weight = {
-		factor = 0.75
-	}
-
+	ai_weight = { factor = 0.75 }
 }
 
 tech_nanite_titanic_weapon = {
@@ -818,7 +691,6 @@ tech_nanite_titanic_weapon = {
 	category = { particles }
 	weight = 15
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -842,16 +714,13 @@ tech_nanite_titanic_weapon = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_lancers" }
-
 	prereqfor_desc = {
 		custom = {
 			title = tech_nanite_titanic_weapon_effect
 			desc = tech_nanite_titanic_weapon_effect_desc
 		}
 	}
-
 	ai_weight = {
 		factor = 0.1
 		modifier = {
@@ -869,8 +738,8 @@ tech_nanite_titanic_weapon = {
 					is_materialist = yes
 				}
 				NOR = {
-					has_origin = civic_harvester_nanites 
-					has_origin = civic_gateway_pursuer 
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
 				}
 			}
 		}
@@ -888,7 +757,6 @@ tech_nanite_titanic_weapon = {
 			}
 		}
 	}
-
 }
 
 tech_nanite_interdictor = {
@@ -899,7 +767,6 @@ tech_nanite_interdictor = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -923,15 +790,12 @@ tech_nanite_interdictor = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_orbital_nanite_shipyard" }
-
 	potential = {
 		has_technology = tech_nanite_networking_protocols
 		has_technology = tech_nanite_titanic_weapon
 		has_technology = tech_nanite_torpedo
 	}
-
 	ai_weight = {
 		factor = 0.1
 		modifier = {
@@ -949,26 +813,12 @@ tech_nanite_interdictor = {
 					is_materialist = yes
 				}
 				NOR = {
-					has_origin = civic_harvester_nanites 
-					has_origin = civic_gateway_pursuer 
-				}
-			}
-		}
-		modifier = {
-			factor = 1
-			AND = {
-				OR = {
-					is_machine_empire = yes
-					is_materialist = yes
-				}
-				OR = {
 					has_origin = civic_harvester_nanites
 					has_origin = civic_gateway_pursuer
 				}
 			}
 		}
 	}
-
 }
 
 tech_nanite_mothership = {
@@ -979,7 +829,6 @@ tech_nanite_mothership = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -1003,15 +852,12 @@ tech_nanite_mothership = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_interdictor" }
-
 	potential = {
 		has_technology = tech_nanite_networking_protocols
 		has_technology = tech_nanite_titanic_weapon
 		has_technology = tech_nanite_torpedo
 	}
-
 	ai_weight = {
 		factor = 0.1
 		modifier = {
@@ -1028,23 +874,11 @@ tech_nanite_mothership = {
 				is_materialist = yes
 			}
 			NOR = {
-				has_origin = civic_harvester_nanites 
-				has_origin = civic_gateway_pursuer 
-			}
-		}
-		modifier = {
-			factor = 1
-			OR = {
-				is_machine_empire = yes
-				is_materialist = yes
-			}
-			OR = {
 				has_origin = civic_harvester_nanites
 				has_origin = civic_gateway_pursuer
 			}
 		}
 	}
-
 }
 
 tech_nanite_core = {
@@ -1055,7 +889,6 @@ tech_nanite_core = {
 	category = { voidcraft }
 	weight = 15
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -1079,15 +912,12 @@ tech_nanite_core = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_mothership" }
-
 	potential = {
 		has_technology = tech_nanite_networking_protocols
 		has_technology = tech_nanite_titanic_weapon
 		has_technology = tech_nanite_torpedo
 	}
-
 	ai_weight = {
 		factor = 0.1
 		modifier = {
@@ -1108,19 +938,7 @@ tech_nanite_core = {
 				has_origin = civic_gateway_pursuer
 			}
 		}
-		modifier = {
-			factor = 1
-			OR = {
-				is_machine_empire = yes
-				is_materialist = yes
-			}
-			OR = {
-				has_origin = civic_harvester_nanites
-				has_origin = civic_gateway_pursuer
-			}
-		}
 	}
-
 }
 
 tech_nanite_guns = {
@@ -1131,7 +949,6 @@ tech_nanite_guns = {
 	category = { propulsion }
 	weight = 25
 	is_reverse_engineerable = no
-	
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
@@ -1155,11 +972,6 @@ tech_nanite_guns = {
 			}
 		}
 	}
-
 	prerequisites = { "tech_nanite_weaponry" }
-
-	ai_weight = {
-		factor = 0.75
-	}
-
+	ai_weight = { factor = 0.75 }
 }

@@ -39,10 +39,10 @@ wg_claim_lgates = {
 	# from = The targeted country
 	# this = The acting country
 	potential = {
-		this = { has_origin = civic_gateway_worshiper }
+		has_origin = civic_gateway_worshiper
 	}
 	possible = {
-		this = { has_origin = civic_gateway_worshiper }
+		has_origin = civic_gateway_worshiper
 	}
 
 	on_wargoal_set = {
@@ -61,7 +61,6 @@ wg_claim_lgates = {
 
 	# Run when war ends in status quo
 	on_status_quo = {
-
 	}
 	# Run when target surrenders after claims are ceded
 	on_accept = {

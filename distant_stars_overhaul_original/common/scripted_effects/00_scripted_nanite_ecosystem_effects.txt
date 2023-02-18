@@ -916,14 +916,14 @@ generate_l_amoeba_herd = {
 			while = {
 				count = 6
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Blue"
 				}
 			}
 			while = {
 				count = 8
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -948,14 +948,14 @@ create_l_amoeba_fleet_1 = {
 			while = {
 				count = 8
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Blue"
 				}
 			}
 			while = {
 				count = 4
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1001,14 +1001,14 @@ create_l_amoeba_fleet_2 = {
 			while = {
 				count = 7
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Teal"
 				}
 			}
 			while = {
 				count = 3
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Teal"
 				}
 			}
@@ -1054,7 +1054,7 @@ create_l_amoeba_fleet_3 = {
 			while = {
 				count = 10
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Zebra"
 				}
 			}
@@ -1100,14 +1100,14 @@ create_l_amoeba_fleet_4 = {
 			while = {
 				count = 8
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Orange"
 				}
 			}
 			while = {
 				count = 4
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Orange"
 				}
 			}
@@ -1153,14 +1153,14 @@ create_l_amoeba_fleet_5 = {
 			while = {
 				count = 6
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Blue"
 				}
 			}
 			while = {
 				count = 3
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1206,14 +1206,14 @@ create_l_amoeba_home_fleet_1 = {
 			while = {
 				count = 3
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Blue"
 				}
 			}
 			while = {
 				count = 8
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1231,14 +1231,14 @@ create_l_amoeba_home_fleet_1 = {
 			while = {
 				count = 5
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Zebra"
 				}
 			}
 			while = {
 				count = 6
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Zebra"
 				}
 			}
@@ -1262,14 +1262,14 @@ create_l_amoeba_home_fleet_2 = {
 			while = {
 				count = 5
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Zebra"
 				}
 			}
 			while = {
 				count = 21
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Zebra"
 				}
 			}
@@ -1287,14 +1287,14 @@ create_l_amoeba_home_fleet_2 = {
 			while = {
 				count = 3
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Blue"
 				}
 			}
 			while = {
 				count = 14
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1318,14 +1318,14 @@ create_l_amoeba_home_fleet_3 = {
 			while = {
 				count = 5
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Orange"
 				}
 			}
 			while = {
 				count = 3
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Orange"
 				}
 			}
@@ -1343,14 +1343,14 @@ create_l_amoeba_home_fleet_3 = {
 			while = {
 				count = 9
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Zebra"
 				}
 			}
 			while = {
 				count = 5
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Zebra"
 				}
 			}
@@ -1374,14 +1374,14 @@ create_l_amoeba_home_fleet_4 = {
 			while = {
 				count = 7
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Teal"
 				}
 			}
 			while = {
 				count = 5
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Teal"
 				}
 			}
@@ -1399,7 +1399,7 @@ create_l_amoeba_home_fleet_4 = {
 			while = {
 				count = 10
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Large_Space_Organism_Orange"
 				}
 			}
@@ -1423,7 +1423,7 @@ create_l_amoeba_home_roaming_fleets = {
 			while = {
 				count = 20
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1489,7 +1489,7 @@ create_l_amoeba_home_roaming_fleets = {
 			while = {
 				count = 20
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}
@@ -1555,7 +1555,7 @@ create_l_amoeba_home_roaming_fleets = {
 			while = {
 				count = 20
 				create_ship = {
-					name = ""
+					name = " "
 					design = "L_Small_Space_Organism_Blue"
 				}
 			}

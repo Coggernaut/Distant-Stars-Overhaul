@@ -415,52 +415,52 @@ ship_design = {
 }
 
 # Matriarch (Unused)
-ship_design = {
-	name = "L_The_Matriarch"
-	ship_size = L_space_whale_4
-	hide_size = yes
+# ship_design = {
+# 	name = "L_The_Matriarch"
+# 	ship_size = L_space_whale_4
+# 	hide_size = yes
 
-	section = {
-		template = "L_space_whale_4_section"
-		slot = "mid"
+# 	section = {
+# 		template = "L_space_whale_4_section"
+# 		slot = "mid"
 
-		component = {
-			slot = "SMALL_GUN_01"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_02"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_03"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_04"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_05"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "SMALL_GUN_06"
-			template = "L_SPACE_WHALE_WEAPON"
-		}
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR"
-		}
-	}
-	required_component="BIO_DRIVE"
-	required_component="BIO_PROPULSION"
-	required_component="BIO_SENSORS"
-}
+# 		component = {
+# 			slot = "SMALL_GUN_01"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "SMALL_GUN_02"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "SMALL_GUN_03"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "SMALL_GUN_04"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "SMALL_GUN_05"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "SMALL_GUN_06"
+# 			template = "L_SPACE_WHALE_WEAPON"
+# 		}
+# 		component = {
+# 			slot = "AUX_UTILITY_1"
+# 			template = "AUTO_REPAIR"
+# 		}
+# 	}
+# 	required_component="BIO_DRIVE"
+# 	required_component="BIO_PROPULSION"
+# 	required_component="BIO_SENSORS"
+# }
 
 #####################################
 #									#
-# 	  Tiyanki Matriarch 		#
+#			Tiyanki Matriarch		#
 #									#
 #####################################
 

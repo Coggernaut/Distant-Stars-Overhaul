@@ -4,7 +4,7 @@ cult_of_the_gateway = {
 	spawn_enabled = always
 	spawn_as_fallen = no
 	ship_prefix="ISS"
-	
+
 	species={
 		class="FUN"
 		portrait="fun10"
@@ -18,20 +18,20 @@ cult_of_the_gateway = {
 		trait="trait_adaptive"
 	}
 	room="personality_evangelizing_zealots_room"
-	
+
 	authority="auth_oligarchic"
 	ethic="ethic_militarist"
 	ethic="ethic_fanatic_spiritualist"
 	origin = "civic_gateway_worshiper"
 	civics = { "civic_exalted_priesthood" "civic_distinguished_admiralty" }
 	government = gov_spiritualist_gateway_worshiper
-	
+
 	planet_name = "Gridaar"
 	system_name = "Gridaar"
 	planet_class="pc_gaia"
 	graphical_culture="fungoid_01"
 	city_graphical_culture="fungoid_01"
-	
+
 	empire_flag={
 		icon={
 			category="ornate"
@@ -48,9 +48,9 @@ cult_of_the_gateway = {
 			"null"
 		}
 	}
-	
+
 	flags = { is_cult_of_the_gateway_flag }
-	
+
 	ruler={
 		gender=female
 		name="Forthi"
@@ -59,7 +59,7 @@ cult_of_the_gateway = {
 		attachment=0
 		clothes=4
 		ruler_title="High Guardian"
-		heir_title="Imperator"
+		heir_title="RT_IMPERATRIX"
 		leader_class="ruler"
 	}
 }

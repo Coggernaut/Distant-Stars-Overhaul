@@ -183,7 +183,7 @@ planet_event = {
 			}
 			else = {
 				create_country = {
-					# name = "NAME_L_Gaia_Incarnation"
+					name = "NAME_L_Gaia_Incarnation"
 					type = lgaia_incarnation_country
 					effect = {
 						set_name = "NAME_L_Gaia_Incarnation"
@@ -449,7 +449,7 @@ planet_event = {
 			effect = { save_global_event_target_as = nanite_ecosystem_subterranean_species }
 		}
 		create_country = {
-			# name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
+			name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
 			species = event_target:nanite_ecosystem_subterranean_species
 			type = adversary
 			ethos = random
@@ -671,7 +671,7 @@ country_event = {
 		}
 		fromfrom = {
 			create_country = {
-				# name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+				name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
 				species = event_target:nanite_ecosystem_subterranean_species
 				type = default
 				auto_delete = yes
@@ -1776,7 +1776,7 @@ country_event = {
 			save_global_event_target_as = L_Tiyanki_HomeSystem
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Zathika Mev"
+				name = "Zathika Mev"
 				orbit_distance = 55
 				orbit_angle = 35
 				size = 30
@@ -1794,7 +1794,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Surribzha"
+				name = "Surribzha"
 				orbit_distance = 65
 				orbit_angle = 85
 				size = 25
@@ -1812,7 +1812,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Yllarv"
+				name = "Yllarv"
 				orbit_distance = 85
 				orbit_angle = 195
 				size = 35
@@ -1830,7 +1830,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Khetzhavu"
+				name = "Khetzhavu"
 				orbit_distance = 45
 				orbit_angle = 300
 				size = 31
@@ -1997,7 +1997,7 @@ country_event = {
 			save_global_event_target_as = L_Amoeba_HomeSystem
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Zathika Mev"
+				name = "Zathika Mev"
 				orbit_distance = 55
 				orbit_angle = 35
 				size = 30
@@ -2015,7 +2015,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Surribzha"
+				name = "Surribzha"
 				orbit_distance = 65
 				orbit_angle = 85
 				size = 25
@@ -2033,7 +2033,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = pc_nanite_gas_giant
-				# name = "Veronax"
+				name = "Veronax"
 				orbit_distance = 85
 				orbit_angle = 195
 				size = 42
@@ -2090,7 +2090,7 @@ country_event = {
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
-				# name = "Khetzhavu"
+				name = "Khetzhavu"
 				orbit_distance = 45
 				orbit_angle = 300
 				size = 31

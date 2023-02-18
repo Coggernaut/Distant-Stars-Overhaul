@@ -56,7 +56,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6S
+		ship_armor_add = @armor_S6
 	}
 
 	component_set = "TIYANKI_ARMOR"
@@ -81,7 +81,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6M
+		ship_armor_add = @armor_M6
 	}
 
 	component_set = "TIYANKI_ARMOR"
@@ -106,7 +106,7 @@ utility_component_template = {
 	hidden = yes
 
 	modifier = {
-		ship_armor_add = @armor_6L
+		ship_armor_add = @armor_L6
 	}
 
 	component_set = "TIYANKI_ARMOR"

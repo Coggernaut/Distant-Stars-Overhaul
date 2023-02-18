@@ -352,7 +352,6 @@ terraform_link = {
 
 	resources = {
 		category = terraforming
-
 		cost = {
 			energy = @lClusterCost
 		}
