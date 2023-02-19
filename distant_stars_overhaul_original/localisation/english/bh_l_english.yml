@@ -30,15 +30,15 @@
 
  # Events ---------------
 
- nanite_ecosystem_uplift.6080.name:0 "Pre-Sapient L-Species Found"
- nanite_ecosystem_uplift.6080.desc:0 "Numerous rapidly evolving L-Species have been observed within the L-Cluster, But Scientists aboard the [Root.GetName] where not expecting this finding. The L-Species native to the [From.GetName] system have achieved a tentative mastery of local environment. Scientists have observed a proto-society amongst the natives with use of primitive social behaviors.\n\nScience Officer [Root.GetLeaderName] wants to conduct research on this Pre-Sapient L-Species. They propose we monitor their societal and biological development closely, and maybe even help them along if possible. The L-Cluster has given us many questions, and the origin of these L-Species seem increasingly unnatural."
- nanite_ecosystem_uplift.6081.name:0 "L-Species Uplift Successful"
- nanite_ecosystem_uplift.6081.desc:0 "Our scientists conducted extensive genetic modification upon the [From.GetName]. During the uplifting process, the organs of the Pre-Sapient L-Species would shrivel as they where separated. Scientists where concerned that organic genetic theory wouldn't apply to synthetically constructed DNA. Though after many trials genetic splicing was successful and the synthetic organisms where reacting positively to our mutagen. It was after uplifting them our scientist's understood the biology of the L-Species."
- nanite_ecosystem_uplift.6081.a:0 "We still have much to learn from the L-Species and their Origin."
+ nanite_ecosystem.6080.name:0 "Pre-Sapient L-Species Found"
+ nanite_ecosystem.6080.desc:0 "Numerous rapidly evolving L-Species have been observed within the L-Cluster, But Scientists aboard the [Root.GetName] where not expecting this finding. The L-Species native to the [From.GetName] system have achieved a tentative mastery of local environment. Scientists have observed a proto-society amongst the natives with use of primitive social behaviors.\n\nScience Officer [Root.GetLeaderName] wants to conduct research on this Pre-Sapient L-Species. They propose we monitor their societal and biological development closely, and maybe even help them along if possible. The L-Cluster has given us many questions, and the origin of these L-Species seem increasingly unnatural."
+ nanite_ecosystem.6081.name:0 "L-Species Uplift Successful"
+ nanite_ecosystem.6081.desc:0 "Our scientists conducted extensive genetic modification upon the [From.GetName]. During the uplifting process, the organs of the Pre-Sapient L-Species would shrivel as they where separated. Scientists where concerned that organic genetic theory wouldn't apply to synthetically constructed DNA. Though after many trials genetic splicing was successful and the synthetic organisms where reacting positively to our mutagen. It was after uplifting them our scientist's understood the biology of the L-Species."
+ nanite_ecosystem.6081.a:0 "We still have much to learn from the L-Species and their Origin."
 
- nanite_ecosystem_enter.550.name:0 "A Flourishing Ecosystem"
- nanite_ecosystem_enter.550.desc:0 "Upon entering the [From.GetName] system in the L-Cluster, the Scientists aboard the the [Root.GetName] never expected this. The L-Cluster is supporting an entire ecosystem flourishing with life that our scientists have dubbed §YL-Species§!. Scans reveal planets with near-perfect conditions for life. These planets are now being referred to as §YL-Gaia Worlds§!. Paradoxically the system has an unnaturally high amount of planets that have been shattered beyond recognition.\n\nOur lead scientist theorizes the L-Cluster may be plagued by rogue planets, but this theory is still debated. The scientific community is eager to explore the L-Cluster and learn more about these L-Species. Though this still leaves the question of who or what built the L-Gates in the first place."
- nanite_ecosystem_enter.550.a:0 "What a surreal ecosystem!"
+ nanite_ecosystem.550.name:0 "A Flourishing Ecosystem"
+ nanite_ecosystem.550.desc:0 "Upon entering the [From.GetName] system in the L-Cluster, the Scientists aboard the the [Root.GetName] never expected this. The L-Cluster is supporting an entire ecosystem flourishing with life that our scientists have dubbed §YL-Species§!. Scans reveal planets with near-perfect conditions for life. These planets are now being referred to as §YL-Gaia Worlds§!. Paradoxically the system has an unnaturally high amount of planets that have been shattered beyond recognition.\n\nOur lead scientist theorizes the L-Cluster may be plagued by rogue planets, but this theory is still debated. The scientific community is eager to explore the L-Cluster and learn more about these L-Species. Though this still leaves the question of who or what built the L-Gates in the first place."
+ nanite_ecosystem.550.a:0 "What a surreal ecosystem!"
 
  pc_nanite_gas_giant:0 "L-Gas Giant"
  pc_nanite_gas_giant_desc:0 "Gaseous planet with an atmosphere primarily composed of hydrogen and helium surrounding a dense core of various gases. Though this planet seems to have a strange ecology of L-Species thriving within the low pressure of the atmosphere."
@@ -46,14 +46,14 @@
  l_tiyanki_spawn_modifier:0 "L-Tiyanki Spawning Grounds"
  l_tiyanki_spawn_modifier_desc:0 "Normally L-Gas Giants only support L-Species on a microscopic level, but this ecosystem seems to be thriving with organisms on massive scales.\n\nDue to this, the planet supports a thriving ecology of L-Tiyanki that spawn within the upper atmospheric layers."
 
- nanite_ecosystem_anomaly.1.name:0 "Unusual L-Tiyanki Clustering"
- nanite_ecosystem_anomaly.1.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Tiyanki-like L-Species dubbed the L-Tiyanki Matriarch. The L-Tiyanki species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants will greatly increase our knowledge of the strange biology of L-Species."
+ nanite_ecosystem.1.name:0 "Unusual L-Tiyanki Clustering"
+ nanite_ecosystem.1.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Tiyanki-like L-Species dubbed the L-Tiyanki Matriarch. The L-Tiyanki species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants will greatly increase our knowledge of the strange biology of L-Species."
 
  l_amoeba_spawn_modifier:0 "L-Amoeba Spawning Grounds"
  l_amoeba_spawn_modifier_desc:0 "Normally L-Gas Giants only support L-Species on a microscopic level, but this ecosystem seems to be thriving with organisms on massive scale.\n\nDue to this, the planet supports a thriving ecology of L-Amoeba that spawn within the upper atmospheric layers."
 
- nanite_ecosystem_anomaly.2.name:0 "Unusual L-Amoeba Swarm"
- nanite_ecosystem_anomaly.2.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Amoeba-like L-Species dubbed the L-Amoeba Overlord. The L-Amoeba species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants will greatly increase our knowledge of the strange biology of the L-Species."
+ nanite_ecosystem.2.name:0 "Unusual L-Amoeba Swarm"
+ nanite_ecosystem.2.desc:0 "Upon entering the [FROM.GetName] system scientists aboard the [ROOT.GetName] found a massive Amoeba-like L-Species dubbed the L-Amoeba Overlord. The L-Amoeba species seem to be orbiting a Gas Giant, which is theorized to be a spawning ground of some sort.\n\nDue to the strange ecosystem of these Gas Giants, they are now classified as L-Gas Giants. The study of these L-Gas Giants will greatly increase our knowledge of the strange biology of the L-Species."
 
  L_Tiyanki_Herd:0 "L-Tiyanki Herd"
  L_Progenitor:0 "L-Tiyanki Progenitor"
@@ -405,8 +405,10 @@
 
  # Edicts --------
  edict_consecrate_lgate:0 "Consecrate L-Gate"
+ edict_consecrate_lgate_desc:0 ""
  requires_1_lgate:0 "§RRequires 1§! §YL-Gate§!"
  edict_lgate_guardian:0 "Guardian of the L-Gate"
+ edict_lgate_guardian_desc:0 ""
  requires_3_lgate:0 "§RRequires 3§! §YL-Gates§!"
 
  # Diplomacy --------

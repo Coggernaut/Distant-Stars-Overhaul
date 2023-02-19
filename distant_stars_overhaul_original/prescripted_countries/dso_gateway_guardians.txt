@@ -8,7 +8,7 @@ fareen={
 		portrait="fun10"
 		name="PRESCRIPTED_species_name_fareen"
 		plural="PRESCRIPTED_species_plural_fareen"
-		adjective="PRESCRIPTED_species_adjective_fareen"
+		adjective="PRESCRIPTED_adjective_fareen"
 		name_list="MOL3"
 		gender=not_set
 		trait="trait_dessanu_uplifted"
@@ -16,7 +16,7 @@ fareen={
 		trait="trait_deviants"
 		trait="trait_adaptive"
 	}
-	adjective=PRESCRIPTED_adjective_fareen
+	adjective="PRESCRIPTED_adjective_fareen"
 	authority="auth_oligarchic"
 	flags={
 		"is_cult_of_the_gateway_flag"
@@ -62,6 +62,9 @@ fareen={
 		attachment=0
 		clothes=4
 		ruler_title={
+			key="High Guardian"
+		}
+		ruler_title_female={
 			key="High Guardian"
 		}
 		heir_title="RT_IMPERATRIX"

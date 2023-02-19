@@ -44,10 +44,7 @@ tech_repeatable_lcluster_clue = {
 		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = 2
-			NOT = { has_origin = civic_gateway_pursuer }
-		}
+		factor = 1
 		modifier = { factor = 100 has_origin = civic_gateway_pursuer }
 	}
 	weight_groups = {
@@ -256,7 +253,7 @@ tech_advanced_nanites = {
 				has_origin = civic_gateway_pursuer
 				is_spiritualist = no
 				is_materialist = yes
-				has_origin = civic_gateway_worshiper				# civic_machine_worshipers?
+				has_origin = civic_gateway_worshiper
 			}
 		}
 		modifier = {
@@ -267,7 +264,7 @@ tech_advanced_nanites = {
 				is_spiritualist = no
 				is_materialist = yes
 			}
-			has_origin = civic_gateway_worshiper			# civic_machine_worshipers?
+			has_origin = civic_gateway_worshiper
 		}
 	}
 }

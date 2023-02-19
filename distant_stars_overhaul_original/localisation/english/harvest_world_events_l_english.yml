@@ -89,12 +89,7 @@
  PRESCRIPTED_adjective_fareen:0 "Gateway Cult"
  PRESCRIPTED_species_name_fareen:0 "Fareen"
  PRESCRIPTED_species_plural_fareen:0 "Fareens"
- PRESCRIPTED_species_adjective_fareen:0 "Fareen"
  PRESCRIPTED_adjective_fareen:0 "Fareen"
- PRESCRIPTED_planet_name_fareen:0 "Gridaar"
- PRESCRIPTED_system_name_fareen:0 "Gridaar"
- # PRESCRIPTED_ruler_first_name_fareen:0 "Hapless"
- # PRESCRIPTED_ruler_second_name_fareen:0 "Leap of Faith"
 
 # TODO
  # harvest_subterranean_civilization_chain_title: ""
@@ -102,5 +97,4 @@
  # HARVESTER_DISTURBANCE_1_PROJECT:0 ""
  # HARVESTER_DISTURBANCE_2_PROJECT:0 ""
  # HARVESTER_DISTURBANCE_3_PROJECT:0 ""
- NAME_Loot-Equipped_Army: "L-Subterranean"
  # End of Subterranean Colony Localization

@@ -28,7 +28,7 @@ on_tech_increased = {
 
 on_uplift_completion = {
 	events = {
-		nanite_ecosystem_uplift.6081
+		nanite_ecosystem.6081
 	}
 }
 
@@ -38,11 +38,11 @@ on_uplift_completion = {
 # fromfrom = Country
 on_entering_system_first_time = {
 	events = {
-		nanite_ecosystem_anomaly.1
-		nanite_ecosystem_anomaly.2
-		nanite_ecosystem_uplift.6080
-		# ldragon_country_starts_nanite_ecosystem.1
-		nanite_ecosystem_enter.550
+		nanite_ecosystem.1
+		nanite_ecosystem.2
+		nanite_ecosystem.6080
+		# distar_nanite_ecosystem.0
+		nanite_ecosystem.550
 	}
 }
 
@@ -52,7 +52,7 @@ on_entering_system_first_time = {
 # fromfrom = System jumped from
 on_entering_lgate = {
 	events = {
-		ldragon_country_starts_nanite_ecosystem.1
+		distar_nanite_ecosystem.0
 	}
 }
 
@@ -65,7 +65,7 @@ on_colonized = {
 	events = {
 		bio_harvest.1		# Turn the planet into a harvesting world
 		nanite_forgeworld_lost.1
-		nanite_ecosystem_colony.50
+		nanite_ecosystem.50
 	}
 }
 
@@ -80,3 +80,10 @@ on_destroy_planet_with_PLANET_KILLER_HARVESTER = {
 #		distar_nanite_ecosystem.1
 #	}
 #}
+
+# No scope, like on_game_start
+on_decade_pulse = {
+	events = {
+		nanite_ecosystem.10
+	}
+}
