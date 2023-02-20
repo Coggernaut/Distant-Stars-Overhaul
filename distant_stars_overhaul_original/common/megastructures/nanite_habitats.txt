@@ -387,7 +387,7 @@ nanite_habitat_0 = {
 
 		}
 		# TODO?
-		# event_target:nanite_habitat_target = { planet_event = { id = harvester_grey_goo_planet.3 } }
+		# event_target:nanite_habitat_target = { planet_event = { id = harvest_nanite_planet.3 } }
 		every_system_megastructure = {
 			limit = { is_megastructure_type = nanite_habitat_0 }
 			remove_megastructure = this

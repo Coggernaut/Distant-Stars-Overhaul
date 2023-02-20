@@ -1,8 +1,6 @@
 namespace = bio_harvest
-namespace = bio_harvest_fix_capital
-namespace = bio_harvest_planet_stages
-namespace = bio_harvest_planet_depleted
-namespace = harvester_grey_goo_planet
+namespace = bio_harvest_planet
+namespace = harvest_nanite_planet
 namespace = nanite_forgeworld_lost
 namespace = harvest_nanite_gaia
 namespace = distar_overhaul
@@ -89,7 +87,7 @@ country_event = {
 # start insight (alternate)
 country_event = {
 	id = distar_overhaul.10002
-	title = "distar_overhaul.2.name"
+	title = "nanite_insight"
 	desc = "distar_overhaul.2.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
@@ -108,7 +106,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = GOOD
+		name = GOOD # anomaly.3025.a
 		give_technology = { tech = tech_repeatable_nanite_technology_insight message = no }
 	}
 }
@@ -248,7 +246,7 @@ planet_event = {
 					is_planet_class = pc_gaia
 					planet_size > 22
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 21600 }
+				planet_event = { id = bio_harvest_planet.1 days = 21600 }
 			}
 			# gaia_large
 			if = {
@@ -260,7 +258,7 @@ planet_event = {
 						planet_size = 20
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 20000 }
+				planet_event = { id = bio_harvest_planet.1 days = 20000 }
 			}
 			# gaia_medium
 			if = {
@@ -272,7 +270,7 @@ planet_event = {
 						planet_size = 17
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 18000 }
+				planet_event = { id = bio_harvest_planet.1 days = 18000 }
 			}
 			# gaia_small
 			if = {
@@ -284,7 +282,7 @@ planet_event = {
 						planet_size = 14
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 16000 }
+				planet_event = { id = bio_harvest_planet.1 days = 16000 }
 			}
 			# gaia_very_small
 			if = {
@@ -292,11 +290,11 @@ planet_event = {
 					is_planet_class = pc_gaia
 					planet_size < 14
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 14000 }
+				planet_event = { id = bio_harvest_planet.1 days = 14000 }
 			}
 			# very_large
 			if = { limit = { planet_size > 22 }
-				planet_event = { id = bio_harvest_planet_stages.1 days = 10800 }
+				planet_event = { id = bio_harvest_planet.1 days = 10800 }
 			}
 			# large
 			if = {
@@ -307,7 +305,7 @@ planet_event = {
 						planet_size = 20
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 10000 }
+				planet_event = { id = bio_harvest_planet.1 days = 10000 }
 			}
 			# medium
 			if = {
@@ -318,7 +316,7 @@ planet_event = {
 						planet_size = 17
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 9000 }
+				planet_event = { id = bio_harvest_planet.1 days = 9000 }
 			}
 			# small
 			if = {
@@ -329,11 +327,11 @@ planet_event = {
 						planet_size = 14
 					}
 				}
-				planet_event = { id = bio_harvest_planet_stages.1 days = 8000 }
+				planet_event = { id = bio_harvest_planet.1 days = 8000 }
 			}
 			# very_small
 			if = { limit = { planet_size < 14 }
-				planet_event = { id = bio_harvest_planet_stages.1 days = 7000 }
+				planet_event = { id = bio_harvest_planet.1 days = 7000 }
 			}
 			every_country = {
 				limit = {
@@ -487,9 +485,9 @@ country_event = {
 				}
 				add_deposit = d_nanites_deposit
 				add_district = district_nanite_forgeworld_industry
-				planet_event = { id = bio_harvest_fix_capital.1 days = 3 }
+				planet_event = { id = bio_harvest.4 days = 3 }
 			}
-			country_event = { id = harvester_grey_goo_planet.1 days = 30 }
+			country_event = { id = harvest_nanite_planet.1 days = 30 }
 		}
 		if = {
 			limit = {
@@ -682,8 +680,9 @@ country_event = {
 	}
 }
 
+# Fix Capital
 planet_event = {
-	id = bio_harvest_fix_capital.1
+	id = bio_harvest.4
 	is_triggered_only = yes
 	hide_window = yes
 	pre_triggers = { has_owner = yes }
@@ -698,10 +697,11 @@ planet_event = {
 	}
 }
 
+# Harvester grey_goo planet
 country_event = {
-	id = harvester_grey_goo_planet.1
-	title = harvester_grey_goo_planet.1.name
-	desc = harvester_grey_goo_planet.1.desc
+	id = harvest_nanite_planet.1
+	title = harvest_nanite_planet.1.name
+	desc = harvest_nanite_planet.1.desc
 	picture = GFX_evt_gray_gooed_planet
 	show_sound = event_laboratory_sound
 	# location = root
@@ -713,8 +713,8 @@ country_event = {
 		}
 	}
 	option = {
-		name = harvester_grey_goo_planet.1.a
-		# custom_tooltip = harvester_grey_goo_planet.1.a.tooltip
+		name = harvest_nanite_planet.1.a
+		# custom_tooltip = harvest_nanite_planet.1.a.tooltip
 		add_resource = { nanites = 50 }
 		custom_tooltip = terraforming_candidate
 		hidden_effect = {
@@ -763,7 +763,7 @@ planet_event = {
 # ----------------------------------------------------------------------------------
 # Depreciate Level Medium Stage_2
 planet_event = {
-	id = bio_harvest_planet_stages.1
+	id = bio_harvest_planet.1
 	hide_window = yes # TODO: Make as notify event!?
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
@@ -774,7 +774,7 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size > 22
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 14400 }
+			planet_event = { id = bio_harvest_planet.2 days = 14400 }
 		}
 		# gaia_large
 		if = {
@@ -786,7 +786,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 13400 }
+			planet_event = { id = bio_harvest_planet.2 days = 13400 }
 		}
 		# gaia_medium
 		if = {
@@ -798,7 +798,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 12400 }
+			planet_event = { id = bio_harvest_planet.2 days = 12400 }
 		}
 		# gaia_small
 		if = {
@@ -810,7 +810,7 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 11400 }
+			planet_event = { id = bio_harvest_planet.2 days = 11400 }
 		}
 		# gaia_very_small
 		if = {
@@ -818,11 +818,11 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size < 14
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 10400 }
+			planet_event = { id = bio_harvest_planet.2 days = 10400 }
 		}
 		# very_large
 		if = { limit = { planet_size > 22 }
-			planet_event = { id = bio_harvest_planet_stages.2 days = 7200 }
+			planet_event = { id = bio_harvest_planet.2 days = 7200 }
 		}
 		# large
 		if = {
@@ -833,7 +833,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 6700 }
+			planet_event = { id = bio_harvest_planet.2 days = 6700 }
 		}
 		# medium
 		if = {
@@ -844,7 +844,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 6200 }
+			planet_event = { id = bio_harvest_planet.2 days = 6200 }
 		}
 		# small
 		if = {
@@ -855,11 +855,11 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = bio_harvest_planet_stages.2 days = 5700 }
+			planet_event = { id = bio_harvest_planet.2 days = 5700 }
 		}
 		# very_small
 		if = { limit = { planet_size < 14 }
-			planet_event = { id = bio_harvest_planet_stages.2 days = 5200 }
+			planet_event = { id = bio_harvest_planet.2 days = 5200 }
 		}
 		clear_deposits = yes
 		add_deposit = bh_harvested_planet_deposit_moderate
@@ -875,7 +875,7 @@ planet_event = {
 
 # Depreciate Level Low Stage_3
 planet_event = {
-	id = bio_harvest_planet_stages.2
+	id = bio_harvest_planet.2
 	hide_window = yes # TODO: Make as notify event!?
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
@@ -886,7 +886,7 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size > 22
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 7200 }
+			planet_event = { id = bio_harvest_planet.3 days = 7200 }
 		}
 		# gaia_large
 		if = {
@@ -898,7 +898,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 6500 }
+			planet_event = { id = bio_harvest_planet.3 days = 6500 }
 		}
 		# gaia_medium
 		if = {
@@ -910,7 +910,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 6200 }
+			planet_event = { id = bio_harvest_planet.3 days = 6200 }
 		}
 		# gaia_small
 		if = {
@@ -922,7 +922,7 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 5700 }
+			planet_event = { id = bio_harvest_planet.3 days = 5700 }
 		}
 		# gaia_very_small
 		if = {
@@ -930,11 +930,11 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size < 14
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 5200 }
+			planet_event = { id = bio_harvest_planet.3 days = 5200 }
 		}
 		# very_large
 		if = { limit = { planet_size > 22 }
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 3600 }
+			planet_event = { id = bio_harvest_planet.3 days = 3600 }
 		}
 		# large
 		if = {
@@ -945,7 +945,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 3350 }
+			planet_event = { id = bio_harvest_planet.3 days = 3350 }
 		}
 		# medium
 		if = {
@@ -956,7 +956,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 3100 }
+			planet_event = { id = bio_harvest_planet.3 days = 3100 }
 		}
 		# small
 		if = {
@@ -967,11 +967,11 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 2850 }
+			planet_event = { id = bio_harvest_planet.3 days = 2850 }
 		}
 		# very_small
 		if = { limit = { planet_size < 14 }
-			planet_event = { id = bio_harvest_planet_depleted.1 days = 2600 }
+			planet_event = { id = bio_harvest_planet.3 days = 2600 }
 		}
 		clear_deposits = yes
 		add_deposit = bh_harvested_planet_deposit_small
@@ -990,7 +990,7 @@ planet_event = {
 # ----------------------------------------------------------------------------------
 # Depleted
 planet_event = {
-	id = bio_harvest_planet_depleted.1
+	id = bio_harvest_planet.3
 	hide_window = yes # TODO: Make as notify event!?
 	is_triggered_only = yes
 	trigger = { is_planet_class = pc_bh_harvest }

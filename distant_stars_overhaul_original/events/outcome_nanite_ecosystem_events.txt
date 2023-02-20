@@ -85,12 +85,7 @@ country_event = {
 	option = {
 		name = harvest_nanite_gaia.2.a
 		trigger = {
-			root = {
-				count_owned_ship = {
-					limit = { is_ship_size = colossus }
-					count > 0
-				}
-			}
+			any_owned_fleet = { is_ship_size = colossus }
 		}
 		hidden_effect = {
 			country_event = { id = harvest_nanite_gaia.3 days = 90 }
@@ -105,12 +100,7 @@ country_event = {
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
-			root = {
-				count_owned_ship = {
-					limit = { is_ship_size = colossus }
-					count < 1
-				}
-			}
+			NOT = { any_owned_fleet = { is_ship_size = colossus } }
 		}
 		hidden_effect = {
 			country_event = { id = harvest_nanite_gaia.3 days = 90 }
@@ -365,13 +355,15 @@ country_event = {
 						has_technology = tech_nanite_technology_mastery
 					}
 				}
-				every_owned_planet = {
+				random_owned_planet = {
 					limit = {
 						has_owner = yes
 						is_homeworld = no
 						original_owner = yes
 						has_ground_combat = no
 						num_pops > 0
+						 # solar_system = { has_star_flag = lcluster }
+						has_planet_flag = nanite_ecosystem_seismic_disturbance
 						OR = {
 							has_planet_flag = nanite_ecosystem_seismic_disturbance_war
 							has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
@@ -1455,11 +1447,12 @@ planet_event = {
 		is_homeworld = no
 		original_owner = yes
 	}
+	is_triggered_only = yes
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		check_variable = { which = "angry_subterraneans" value > 2 }
 	}
-	mean_time_to_happen = { days = 20 }
+	# mean_time_to_happen = { days = 20 }
 	immediate = {
 		hidden_effect = { remove_planet_flag = nanite_ecosystem_seismic_disturbance_friendly }
 	}
@@ -1494,6 +1487,37 @@ country_event = {
 		hidden_effect = {
 			from = {
 				planet_event = { id = nanite_ecosystem.54 days = 35 random = 40 }
+			}
+		}
+	}
+}
+
+# on_monthly_pulse
+event = {
+	id = nanite_ecosystem.77
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = nanite_ecosystem_seismic_disturbance_global
+	}
+	immediate = {
+		every_playable_country = {
+			limit = {
+				any_owned_planet = {
+					is_homeworld = no
+					original_owner = yes
+					has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+					check_variable = { which = "angry_subterraneans" value > 2 }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_homeworld = no
+					original_owner = yes
+					has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
+					check_variable = { which = "angry_subterraneans" value > 2 }
+				}
+				planet_event = { id = nanite_ecosystem.75 days = 5 random = 10 }
 			}
 		}
 	}

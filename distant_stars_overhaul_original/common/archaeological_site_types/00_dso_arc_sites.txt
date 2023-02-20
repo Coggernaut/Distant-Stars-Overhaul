@@ -1,7 +1,7 @@
 # Random Arc sites
 # Ancient Dessanu battle site
 dso_ancient_dessanu_battle_site = {
-	desc = dso_ancient_dessanu_battle_site_desc
+	desc = ancient_battle_site_desc # dso_ancient_dessanu_battle_site_desc
 	picture = GFX_evt_landing_ship
 	stages = 2
 	max_instances = 1

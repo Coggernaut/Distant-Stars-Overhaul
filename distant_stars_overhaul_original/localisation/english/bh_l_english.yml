@@ -1,6 +1,7 @@
 ﻿l_english:
 
  DSO_not_nanite_empire_trigger:0 "§ROnly available for§! §YNanite Empires§!"
+ dso_ancient_dessanu_battle_site:0 "$ancrel.108.name$"
 
  # Insight Events ---------------
  nanite_technology_mastery_chain_title:1 "The Flood of Nanite Technology"
@@ -16,9 +17,8 @@
  distar_overhaul_insight_start.1.a:0 "Nanite Technology is a mystery, for now."
  start_nanite_technology_mastery_chain_tooltip:0 "Begins the §YNanite Technological Mastery§! event chain."
 
- distar_overhaul.2.name:0 "Nanite Technological Insight"
+ # distar_overhaul.2.name:0 "Nanite Technological Insight"
  distar_overhaul.2.desc:0 "After reverse engineering the Scavanger Bot's auto repair system it gave our scientists a better insight into Nanite Technology."
- distar_overhaul.2.a:0 "Very interesting!"
 
  distar_overhaul_insight_finished.1.name:0 "Nanite Technological Mastery"
  distar_overhaul_insight_finished.1.desc:0 "Our scientists have already gained what they could from Nanite Technology. Any remaining insight into the technology will be redundant to research further."
@@ -122,9 +122,9 @@
  gaia_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G92§! years before being completely harvested."
  gaia_very_small_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvest$§!, providing raw resources and research. Due to it being a §G$pc_gaia$§!, we expect the biomass to last for roughly §G80§! years before being completely harvested."
 
- harvester_grey_goo_planet.1.name:0 "Intact Nanites found on Ember!"
- harvester_grey_goo_planet.1.desc:0 ""
- harvester_grey_goo_planet.1.a:0 "Prepare a replicator, harvest a new world soon!"
+ harvest_nanite_planet.1.name:0 "Intact Nanites found on Ember!"
+ harvest_nanite_planet.1.desc:0 ""
+ harvest_nanite_planet.1.a:0 "Prepare a replicator, harvest a new world soon!"
 
  # Planets --------------
  district_nanite_forgeworld_industry:0 "Alloy Foundry"
@@ -309,6 +309,8 @@
  district_forgeworld_bio_reactor_plural:0 "Bio-Processing Foundries"
  district_forgeworld_bio_reactor_desc:0 "Nanite Forgeworlds regularly process biomass into energy. These sectors of the Forgeworld are called Bio-Processing Foundries. Biological organisms find them extremely disturbing."
  dso_district_nexus:0 "Nexus District"
+ dso_district_nexus_plural:0 "Nexus Districts"
+ dso_district_nexus_desc:0 ""
  job_bio_processor_drone:0 "Bio-Processor Job"
  mod_job_bio_processor_drone_add:0 "Bio-Processor Jobs"
  bio_processor_drone_effect_desc:0 "Bio-Processors turn §YFood§! into £energy£ §YCredits§!"
@@ -424,7 +426,9 @@
  trait_dessanu_nanites_desc:0 "§LThis species is made entirely of nano machines created by the Dessanu Precursors. Though their creators have mysteriously disappeared long ago.§!"
 
  # Districts
- dso_district_generator_uncapped:0 "Energy Generator Districts"
+ dso_district_generator_uncapped:0 "Energy Generator District"
+ dso_district_generator_uncapped_plural:0 "Energy Generator Districts"
+ dso_district_generator_uncapped_desc:0 ""
 
  # Pop Faction
  gateway_covenant:0 "Gateway Covenant Orthodoxy"
