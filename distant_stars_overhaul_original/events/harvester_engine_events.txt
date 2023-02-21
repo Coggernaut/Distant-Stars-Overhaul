@@ -1,7 +1,4 @@
-# namespace = planet_destruction
 namespace = harvester_engine
-namespace = harvester_engine_planet_stages
-namespace = harvester_engine_planet_depleted
 # planet_event = {
 #	id = planet_destruction.1
 #	is_triggered_only = yes
@@ -106,7 +103,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-				planet_event = { id = harvester_engine_planet_stages.1 days = 21600 }
+				planet_event = { id = harvester_engine.1 days = 21600 }
 		}
 		# gaia_large
 		if = {
@@ -118,7 +115,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 20000 }
+			planet_event = { id = harvester_engine.1 days = 20000 }
 		}
 		# gaia_medium
 		if = {
@@ -130,7 +127,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 18000 }
+			planet_event = { id = harvester_engine.1 days = 18000 }
 		}
 		# gaia_small
 		if = {
@@ -142,7 +139,7 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 16000 }
+			planet_event = { id = harvester_engine.1 days = 16000 }
 		}
 		# gaia_very_small
 		if = {
@@ -150,7 +147,7 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size < 14
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 14000 }
+			planet_event = { id = harvester_engine.1 days = 14000 }
 		}
 		# very_large
 		if = {
@@ -161,7 +158,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 10800 }
+			planet_event = { id = harvester_engine.1 days = 10800 }
 		}
 		# large
 		if = {
@@ -172,7 +169,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 10000 }
+			planet_event = { id = harvester_engine.1 days = 10000 }
 		}
 		# medium
 		if = {
@@ -183,7 +180,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 9000 }
+			planet_event = { id = harvester_engine.1 days = 9000 }
 		}
 		# small
 		if = {
@@ -194,12 +191,12 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 8000 }
+			planet_event = { id = harvester_engine.1 days = 8000 }
 		}
 		# very_small
 		if = {
 			limit = { planet_size < 14 }
-			planet_event = { id = harvester_engine_planet_stages.1 days = 7000 }
+			planet_event = { id = harvester_engine.1 days = 7000 }
 		}
 		every_country = {
 			limit = {
@@ -221,114 +218,6 @@ planet_event = {
 		}
 		create_mining_station = { owner = owner }
 	}
-	# option = {
-	# 	name = OK
-	# 	# gaia_very_large
-	# 	if = {
-	# 		limit = {
-	# 			is_planet_class = pc_gaia
-	# 			OR = {
-	# 				planet_size = 25
-	# 				planet_size = 24
-	# 				planet_size = 23
-	# 			}
-	# 		}
-	# 		custom_tooltip = gaia_very_large_harvest.1.tooltip
-	# 	}
-	# 	# gaia_large
-	# 	if = {
-	# 		limit = {
-	# 			is_planet_class = pc_gaia
-	# 			OR = {
-	# 				planet_size = 22
-	# 				planet_size = 21
-	# 				planet_size = 20
-	# 			}
-	# 		}
-	# 		custom_tooltip = gaia_large_harvest.1.tooltip
-	# 	}
-	# 	# gaia_medium
-	# 	if = {
-	# 		limit = {
-	# 			is_planet_class = pc_gaia
-	# 			OR = {
-	# 				planet_size = 19
-	# 				planet_size = 18
-	# 				planet_size = 17
-	# 			}
-	# 		}
-	# 		custom_tooltip = gaia_medium_harvest.1.tooltip
-	# 	}
-	# 	# gaia_small
-	# 	if = {
-	# 		limit = {
-	# 			is_planet_class = pc_gaia
-	# 			OR = {
-	# 				planet_size = 16
-	# 				planet_size = 15
-	# 				planet_size = 14
-	# 			}
-	# 		}
-	# 		custom_tooltip = gaia_small_harvest.1.tooltip
-	# 	}
-	# 	# gaia_very_small
-	# 	if = {
-	# 		limit = {
-	# 			is_planet_class = pc_gaia
-	# 			planet_size < 14
-	# 		}
-	# 		custom_tooltip = gaia_very_small_harvest.1.tooltip
-	# 	}
-	# 	# very_large
-	# 	if = {
-	# 		limit = {
-	# 			OR = {
-	# 				planet_size = 25
-	# 				planet_size = 24
-	# 				planet_size = 23
-	# 			}
-	# 		}
-	# 		custom_tooltip = very_large_harvest.1.tooltip
-	# 	}
-	# 	# large
-	# 	if = {
-	# 		limit = {
-	# 			OR = {
-	# 				planet_size = 22
-	# 				planet_size = 21
-	# 				planet_size = 20
-	# 			}
-	# 		}
-	# 		custom_tooltip = large_harvest.1.tooltip
-	# 	}
-	# 	# medium
-	# 	if = {
-	# 		limit = {
-	# 			OR = {
-	# 				planet_size = 19
-	# 				planet_size = 18
-	# 				planet_size = 17
-	# 			}
-	# 		}
-	# 		custom_tooltip = medium_harvest.1.tooltip
-	# 	}
-	# 	# small
-	# 	if = {
-	# 		limit = {
-	# 			OR = {
-	# 				planet_size = 16
-	# 				planet_size = 15
-	# 				planet_size = 14
-	# 			}
-	# 		}
-	# 		custom_tooltip = small_harvest.1.tooltip
-	# 	}
-	# 	# very_small
-	# 	if = {
-	# 		limit = { planet_size < 14 }
-	# 		custom_tooltip = very_small_harvest.1.tooltip
-	# 	}
-	# }
 }
 
 # ----------------------------------------------------------------------------------
@@ -336,7 +225,7 @@ planet_event = {
 # ----------------------------------------------------------------------------------
 # Depreciate Level Medium Stage_2
 planet_event = {
-	id = harvester_engine_planet_stages.1
+	id = harvester_engine.1
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
@@ -350,7 +239,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 14400 }
+			planet_event = { id = harvester_engine.2 days = 14400 }
 		}
 		# gaia_large
 		if = {
@@ -362,7 +251,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 13400 }
+			planet_event = { id = harvester_engine.2 days = 13400 }
 		}
 		# gaia_medium
 		if = {
@@ -374,7 +263,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 12400 }
+			planet_event = { id = harvester_engine.2 days = 12400 }
 		}
 		# gaia_small
 		if = {
@@ -386,7 +275,7 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 11400 }
+			planet_event = { id = harvester_engine.2 days = 11400 }
 		}
 		# gaia_very_small
 		if = {
@@ -394,7 +283,7 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size < 14
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 10400 }
+			planet_event = { id = harvester_engine.2 days = 10400 }
 		}
 		# very_large
 		if = {
@@ -405,7 +294,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 7200 }
+			planet_event = { id = harvester_engine.2 days = 7200 }
 		}
 		# large
 		if = {
@@ -416,7 +305,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 6700 }
+			planet_event = { id = harvester_engine.2 days = 6700 }
 		}
 		# medium
 		if = {
@@ -427,7 +316,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 6200 }
+			planet_event = { id = harvester_engine.2 days = 6200 }
 		}
 		# small
 		if = {
@@ -438,12 +327,12 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 5700 }
+			planet_event = { id = harvester_engine.2 days = 5700 }
 		}
 		# very_small
 		if = {
 			limit = { planet_size < 14 }
-			planet_event = { id = harvester_engine_planet_stages.1 days = 5200 }
+			planet_event = { id = harvester_engine.2 days = 5200 }
 		}
 	}
 	option = {
@@ -459,7 +348,7 @@ planet_event = {
 
 # Depreciate Level Low Stage_3
 planet_event = {
-	id = harvester_engine_planet_stages.2
+	id = harvester_engine.2
 	trigger = { is_planet_class = pc_bh_harvest }
 	is_triggered_only = yes
 	immediate = {
@@ -473,7 +362,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 7200 }
+			planet_event = { id = harvester_engine.3 days = 7200 }
 		}
 		# gaia_large
 		if = {
@@ -485,7 +374,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 6500 }
+			planet_event = { id = harvester_engine.3 days = 6500 }
 		}
 		# gaia_medium
 		if = {
@@ -497,7 +386,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 6200 }
+			planet_event = { id = harvester_engine.3 days = 6200 }
 		}
 		# gaia_small
 		if = {
@@ -509,7 +398,7 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 5700 }
+			planet_event = { id = harvester_engine.3 days = 5700 }
 		}
 		# gaia_very_small
 		if = {
@@ -517,7 +406,7 @@ planet_event = {
 				is_planet_class = pc_gaia
 				planet_size < 14
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 5200 }
+			planet_event = { id = harvester_engine.3 days = 5200 }
 		}
 		# very_large
 		if = {
@@ -528,7 +417,7 @@ planet_event = {
 					planet_size = 23
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 3600 }
+			planet_event = { id = harvester_engine.3 days = 3600 }
 		}
 		# large
 		if = {
@@ -539,7 +428,7 @@ planet_event = {
 					planet_size = 20
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 3350 }
+			planet_event = { id = harvester_engine.3 days = 3350 }
 		}
 		# medium
 		if = {
@@ -550,7 +439,7 @@ planet_event = {
 					planet_size = 17
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 3100 }
+			planet_event = { id = harvester_engine.3 days = 3100 }
 		}
 		# small
 		if = {
@@ -561,12 +450,12 @@ planet_event = {
 					planet_size = 14
 				}
 			}
-			planet_event = { id = harvester_engine_planet_stages.1 days = 2850 }
+			planet_event = { id = harvester_engine.3 days = 2850 }
 		}
 		# very_small
 		if = {
 			limit = { planet_size < 14 }
-			planet_event = { id = harvester_engine_planet_stages.1 days = 2600 }
+			planet_event = { id = harvester_engine.3 days = 2600 }
 		}
 		hidden_effect = {
 			clear_deposits = yes
@@ -585,7 +474,7 @@ planet_event = {
 # ----------------------------------------------------------------------------------
 # Depleted
 planet_event = {
-	id = harvester_engine_planet_depleted.1
+	id = harvester_engine.3
 	is_triggered_only = yes
 	trigger = { is_planet_class = pc_bh_harvest }
 	option = {

@@ -57,7 +57,7 @@ country_event = {
 # insight_finished (alternate)
 country_event = {
 	id = distar_overhaul.10000
-	title = "distar_overhaul_insight_finished.1.name"
+	title = "nanite_technology_mastery_chain"
 	desc = "distar_overhaul_insight_finished.1.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
@@ -115,7 +115,7 @@ country_event = {
 # Technology available upon gaining all insights (finishing project/lcluster_opener)
 country_event = {
 	id = distar_overhaul.10904
-	title = "distar_overhaul_insight_finished.1.name"
+	title = "nanite_technology_mastery_chain"
 	desc = "distar_overhaul.10904.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
@@ -158,7 +158,7 @@ country_event = {
 # nanite_forgeworld_lost
 planet_event = {
 	id = nanite_forgeworld_lost.1
-	title = nanite_forgeworld_lost.1.title
+	title = "nanite_forgeworld_lost.1.title"
 	desc = nanite_forgeworld_lost.1.desc
 	picture = GFX_evt_gray_goo
 	location = this

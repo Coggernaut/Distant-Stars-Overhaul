@@ -18,7 +18,7 @@ nanite_factory_station_0 = {
 		}
 		produces = { nanites = 10 }
 	}
-	construction_blocks_others = yes
+	construction_blocks_and_blocked_by = multi_stage_type
 	potential = {
 		OR = {
 			has_technology = tech_harvester_advanced_nanites

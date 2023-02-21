@@ -33,9 +33,6 @@ wg_claim_lgates = {
 	# This affects how quickly war exhaustion builds up for this side in the war (2.0 = twice as fast)
 	war_exhaustion = 0.5 # Default 1.0
 
-	# This decides whether claims should be listed in the description
-	show_claims_in_description = no # Default no
-
 	# from = The targeted country
 	# this = The acting country
 	potential = {

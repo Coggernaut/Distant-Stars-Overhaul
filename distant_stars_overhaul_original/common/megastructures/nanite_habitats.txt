@@ -115,11 +115,11 @@ nanite_habitat_0 = {
 			init_effect = {
 				set_name = {
 					key = HABITAT_PLANET_NAME
-					variable_string = "FROM.from.planet.GetName"
+					variable_string = "[FROM.from.planet.GetName]"
 				}
 				set_planet_entity = {
 					entity = "shielded_planet"
-					overlay_entity = "planet_shield_effect_entity" # TODO test is this working?
+					# overlay_entity = "planet_shield_effect_entity" # TODO?
 					graphical_culture = from
 					# atmosphere_color = <color from 3 components>
 					# atmosphere_intensity = <0.0 - 1.0>
