@@ -17,6 +17,14 @@
 #	planet_destruction_gfx = "neutron_planet_gfx"
 #}
 
+# PLANET_KILLER_HARVESTER;0;-500;0;0;0;0;0;0;0;90;0;180;0;1.00;0;0;0;0;0;0;0;0;
+# GG_ENERGY_MISSILE_NANITE;0;-90;100;150;3.00;0.10;0.90;1.25;0;2.00;20;10;120;1.00;1.00;0.50;350;0.40;0;0;20;120;
+# GG_BEAM_STATIC_X_NANITE;0;-250;500;1500;3.00;0.10;0.90;1.25;0;2.00;20;115.00;150;1.00;0.20;0;0;0;0;0;0;0;
+# GG_BEAM_STATIC_NANITE;0;-500;1000;3000;3.00;1.00;1.00;1.00;1.00;2.00;20;115.00;250;1.00;0.20;0;0;0;0;0;0;0;
+# GG_NANITE_GUN_SMALL;0;-7;20;25.00;3.00;0.10;0.90;1.25;0;1.00;18.00;25.00;50;0.90;0.50;0;0;0;0;0;0;0;
+# GG_NANITE_GUN_MEDIUM;0;-13;40;50;3.00;0.10;0.90;1.25;0;1.00;18.00;25.00;75.00;0.90;0.30;0;0;0;0;0;0;0;
+# GG_NANITE_GUN_LARGE;0;-26;80;100;3.00;0.10;0.90;1.25;0;1.00;18.00;25.00;100;0.90;0.05;0;0;0;0;0;0;0;
+
 weapon_component_template = { # Nanobot Assimilation
 	key = "PLANET_KILLER_HARVESTER"
 	size = planet_killer
@@ -33,6 +41,20 @@ weapon_component_template = { # Nanobot Assimilation
 	size_restriction = { dso_nanite_core }
 
 	planet_destruction_gfx = "assimilation_nanobots_gfx"
+
+	# cost = 0
+	power = -500
+	damage = { min = 0 max = 0 }
+	hull_damage = 0
+	shield_damage = 0
+	shield_penetration = 0
+	armor_damage = 0
+	armor_penetration = 0
+	windup = { min = 90 max = 0 }
+	total_fire_time = 180
+	range = 0
+	accuracy = 1.00
+	tracking = 0
 
 	resources = {
 		category = ship_components
@@ -125,6 +147,20 @@ weapon_component_template = {
 	tags = { weapon_type_energy }
 	projectile_gfx = "gatebuilder_torpedo"
 
+	# cost = 0
+	power = -90
+	damage = { min = 100 max = 150 }
+	hull_damage = 3.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 2.00 max = 20 }
+	total_fire_time = 10
+	range = 120
+	accuracy = 1.00
+	tracking = 1.00
+
 	resources = {
 		category = ship_components
 		cost = { nanites = 12 }
@@ -153,13 +189,27 @@ weapon_component_template = {
 
 	firing_arc = 10.0
 	min_range = 15.0
-	
+
 	tags = { weapon_type_kinetic }
 
 	component_set = "GG_BEAM_STATIC_X_NANITE"
 	size_restriction = { dso_nanite_core dso_nanite_mothership }
 
 	projectile_gfx = "gatebuilder_titan_weapon"
+
+	# cost = 0
+	power = -250
+	damage = { min = 500 max = 1500 }
+	hull_damage = 3.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 2.00 max = 20 }
+	total_fire_time = 115.00
+	range = 150
+	accuracy = 1.00
+	tracking = 0.20
 
 	resources = {
 		category = ship_components
@@ -189,13 +239,27 @@ weapon_component_template = {
 
 	firing_arc = 20.0
 	min_range = 25.0
-	
+
 	tags = { weapon_type_kinetic }
 
 	component_set = "GG_BEAM_STATIC_NANITE"
 	size_restriction = { dso_nanite_core dso_nanite_mothership }
 
 	projectile_gfx = "gatebuilder_titan_weapon"
+
+	# cost = 0
+	power = -500
+	damage = { min = 1000 max = 3000 }
+	hull_damage = 3.00
+	shield_damage = 1.00
+	shield_penetration = 1.00
+	armor_damage = 1.00
+	armor_penetration = 1.00
+	windup = { min = 2.00 max = 20 }
+	total_fire_time = 115.00
+	range = 250
+	accuracy = 1.00
+	tracking = 0.20
 
 	resources = {
 		category = ship_components
@@ -228,6 +292,20 @@ weapon_component_template = {
 	projectile_gfx = "mass_driver_s"
 	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
+
+	# cost = 0
+	power = -7
+	damage = { min = 20 max = 25.00 }
+	hull_damage = 3.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 1.00 max = 18.00 }
+	total_fire_time = 25.00
+	range = 50
+	accuracy = 0.90
+	tracking = 0.50
 
 	resources = {
 		category = ship_components
@@ -262,6 +340,20 @@ weapon_component_template = {
 	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
 
+	# cost = 0
+	power = -13
+	damage = { min = 40 max = 50 }
+	hull_damage = 3.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 1.00 max = 18.00 }
+	total_fire_time = 25.00
+	range = 75.00
+	accuracy = 0.90
+	tracking = 0.30
+
 	resources = {
 		category = ship_components
 		cost = { nanites = 6 }
@@ -294,6 +386,20 @@ weapon_component_template = {
 	projectile_gfx = "mass_driver_l"
 	tags = { weapon_type_kinetic }
 	ai_tags = { weapon_role_anti_shield gunship }
+
+	# cost = 0
+	power = -26
+	damage = { min = 80 max = 100 }
+	hull_damage = 3.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 1.00 max = 18.00 }
+	total_fire_time = 25.00
+	range = 100
+	accuracy = 0.90
+	tracking = 0.05
 
 	resources = {
 		category = ship_components

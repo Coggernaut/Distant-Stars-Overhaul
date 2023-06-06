@@ -1,4 +1,4 @@
-version="3.4.5b"
+version="3.4.6"
 tags={
 	"Overhaul"
 	"Events"
@@ -12,5 +12,5 @@ tags={
 	"Galaxy Generation"
 }
 name="Nanite Machines & Distant Stars Overhaul"
-supported_version="3.6.1"
+supported_version="3.8.3"
 remote_file_id="1971940221"

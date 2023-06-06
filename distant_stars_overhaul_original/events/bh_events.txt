@@ -207,7 +207,7 @@ planet_event = {
 		}
 		NOR = {
 			is_planet_class = pc_nuked
-			is_planet_class = pc_machine
+			merg_is_machine_world = yes
 			is_planet_class = pc_nanite_forgeworld
 			is_artificial = yes
 			is_planet_class = pc_relic
@@ -233,7 +233,7 @@ planet_event = {
 		}
 		hidden_effect = {
 			set_planet_flag = pc_bh_harvest
-			# space_owner = { country_event = { id = harvest_colony.50 } }
+			# space_owner = { country_event = { id = harvest_colony.50 } } TODO
 			# If it is Nanite Gaia World
 			if = { limit = { is_planet_class = pc_nanite_gaia }
 				space_owner = {
@@ -241,7 +241,7 @@ planet_event = {
 				}
 			}
 			# gaia_very_large
-			if = {
+			else_if = {
 				limit = {
 					is_planet_class = pc_gaia
 					planet_size > 22
@@ -249,7 +249,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 21600 }
 			}
 			# gaia_large
-			if = {
+			else_if = {
 				limit = {
 					is_planet_class = pc_gaia
 					OR = {
@@ -261,7 +261,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 20000 }
 			}
 			# gaia_medium
-			if = {
+			else_if = {
 				limit = {
 					is_planet_class = pc_gaia
 					OR = {
@@ -273,7 +273,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 18000 }
 			}
 			# gaia_small
-			if = {
+			else_if = {
 				limit = {
 					is_planet_class = pc_gaia
 					OR = {
@@ -285,7 +285,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 16000 }
 			}
 			# gaia_very_small
-			if = {
+			else_if = {
 				limit = {
 					is_planet_class = pc_gaia
 					planet_size < 14
@@ -293,11 +293,11 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 14000 }
 			}
 			# very_large
-			if = { limit = { planet_size > 22 }
+			else_if = { limit = { planet_size > 22 }
 				planet_event = { id = bio_harvest_planet.1 days = 10800 }
 			}
 			# large
-			if = {
+			else_if = {
 				limit = {
 					OR = {
 						planet_size = 22
@@ -308,7 +308,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 10000 }
 			}
 			# medium
-			if = {
+			else_if = {
 				limit = {
 					OR = {
 						planet_size = 19
@@ -319,7 +319,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 9000 }
 			}
 			# small
-			if = {
+			else_if = {
 				limit = {
 					OR = {
 						planet_size = 16
@@ -330,7 +330,7 @@ planet_event = {
 				planet_event = { id = bio_harvest_planet.1 days = 8000 }
 			}
 			# very_small
-			if = { limit = { planet_size < 14 }
+			else_if = { limit = { planet_size < 14 }
 				planet_event = { id = bio_harvest_planet.1 days = 7000 }
 			}
 			every_country = {
@@ -362,7 +362,7 @@ planet_event = {
 			custom_tooltip = gaia_very_large_harvest.1.tooltip
 		}
 		# gaia_large
-		if = {
+		else_if = {
 			limit = {
 				is_planet_class = pc_gaia
 				OR = {
@@ -374,7 +374,7 @@ planet_event = {
 			custom_tooltip = gaia_large_harvest.1.tooltip
 		}
 		# gaia_medium
-		if = {
+		else_if = {
 			limit = {
 				is_planet_class = pc_gaia
 				OR = {
@@ -386,7 +386,7 @@ planet_event = {
 			custom_tooltip = gaia_medium_harvest.1.tooltip
 		}
 		# gaia_small
-		if = {
+		else_if = {
 			limit = {
 				is_planet_class = pc_gaia
 				OR = {
@@ -398,7 +398,7 @@ planet_event = {
 			custom_tooltip = gaia_small_harvest.1.tooltip
 		}
 		# gaia_very_small
-		if = {
+		else_if = {
 			limit = {
 				is_planet_class = pc_gaia
 				planet_size < 14
@@ -406,11 +406,11 @@ planet_event = {
 			custom_tooltip = gaia_very_small_harvest.1.tooltip
 		}
 		# very_large
-		if = { limit = { planet_size > 22 }
+		else_if = { limit = { planet_size > 22 }
 			custom_tooltip = very_large_harvest.1.tooltip
 		}
 		# large
-		if = {
+		else_if = {
 			limit = {
 				OR = {
 					planet_size = 22
@@ -421,7 +421,7 @@ planet_event = {
 			custom_tooltip = large_harvest.1.tooltip
 		}
 		# medium
-		if = {
+		else_if = {
 			limit = {
 				OR = {
 					planet_size = 19
@@ -432,7 +432,7 @@ planet_event = {
 			custom_tooltip = medium_harvest.1.tooltip
 		}
 		# small
-		if = {
+		else_if = {
 			limit = {
 				OR = {
 					planet_size = 16
@@ -443,7 +443,7 @@ planet_event = {
 			custom_tooltip = small_harvest.1.tooltip
 		}
 		# very_small
-		if = { limit = { planet_size < 14 }
+		else_if = { limit = { planet_size < 14 }
 			custom_tooltip = very_small_harvest.1.tooltip
 		}
 	}

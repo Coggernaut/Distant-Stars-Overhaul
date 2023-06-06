@@ -38,7 +38,7 @@ ship_event = {
 }
 
 #######################
-# L-Nanite Incarnation#
+# L-Nanite Incarnation #
 #######################
 ### Event Triggers Upon On_Action Harvesting
 country_event = {
@@ -49,29 +49,30 @@ country_event = {
 	location = from
 	hide_window = no
 	is_triggered_only = yes
+
+	# TODO
 	option = {
 		name = harvest_nanite_gaia.1.a
 		ai_chance = {
-			factor = 25
+			factor = 2.5
 			modifier = { factor = 0 has_country_flag = avoid_harvesting_nanite_gaia_worlds }
 		}
-		root = {
-			hidden_effect = {
-				country_event = { id = harvest_nanite_gaia.2 days = 120 }
-			}
+		hidden_effect = {
+			country_event = { id = harvest_nanite_gaia.2 days = 120 }
 		}
 	}
 	option = {
 		name = harvest_nanite_gaia.1.b
-		ai_chance = { factor = 75 }
+		ai_chance = { factor = 7.5 }
 		from = {
 			change_pc = pc_nanite_gaia
 			clear_deposits = yes
 		}
-		root = { set_country_flag = avoid_harvesting_nanite_gaia_worlds }
+		set_country_flag = avoid_harvesting_nanite_gaia_worlds
 	}
 }
 
+# TODO (both options are same and project does not exists)
 ### Final Warning
 country_event = {
 	id = harvest_nanite_gaia.2
@@ -96,7 +97,7 @@ country_event = {
 			owner = root
 		}
 	}
-	# Prepare for doom
+	# Prepare for Doom
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
@@ -431,7 +432,7 @@ planet_event = {
 			has_planet_flag = colony_event
 			is_planet_class = pc_nuked
 			is_artificial = yes
-			is_planet_class = pc_city
+			merg_is_arcology = yes
 			is_planet_class = pc_relic
 		}
 		has_planet_flag = nanite_ecosystem_subterranean_planet # from distar_nanite_ecosystem.4
@@ -650,7 +651,7 @@ planet_event = {
 		}
 	}
 	option = {
-		name = "henrik.20.a"
+		name = "colony.54.a"
 		custom_tooltip = subterranean_invasion
 	}
 }
@@ -795,7 +796,7 @@ planet_event = {
 	title = "nanite_ecosystem.59.name"
 	desc = "nanite_ecosystem.59.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	is_triggered_only = yes
 	option = {
@@ -1177,7 +1178,7 @@ planet_event = {
 	title = "colony.69.name"
 	desc = "nanite_ecosystem.69.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes
@@ -1223,7 +1224,7 @@ planet_event = {
 	title = "colony.70.name"
 	desc = "nanite_ecosystem.70.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes
@@ -1259,7 +1260,7 @@ planet_event = {
 	title = "nanite_ecosystem.71.name"
 	desc = "nanite_ecosystem.71.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes
@@ -1314,7 +1315,7 @@ planet_event = {
 	title = "colony.72.name"
 	desc = "nanite_ecosystem.72.desc"
 	picture = GFX_evt_underground_civilization
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes
@@ -1392,7 +1393,7 @@ planet_event = {
 	title = "colony.74.name"
 	desc = "nanite_ecosystem.74.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes
@@ -1440,7 +1441,7 @@ planet_event = {
 	title = "colony.75.name"
 	desc = "nanite_ecosystem.75.desc"
 	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
+	show_sound = event_pre_ftl_civilization
 	location = root
 	pre_triggers = {
 		has_owner = yes

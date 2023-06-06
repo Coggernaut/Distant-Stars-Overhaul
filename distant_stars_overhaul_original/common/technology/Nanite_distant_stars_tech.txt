@@ -133,17 +133,11 @@ tech_harvester_advanced_nanites = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -194,17 +188,11 @@ tech_advanced_nanites = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 	}
 	modifier = { ship_hull_regen_add_perc = 0.2 }
@@ -280,17 +268,11 @@ tech_machine_advanced_nanites = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 	}
 	modifier = { ship_hull_regen_add_perc = 0.2 }
@@ -337,17 +319,11 @@ tech_nanite_clouds = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -384,17 +360,11 @@ tech_nanites_assembler_factory = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -434,17 +404,11 @@ tech_orbital_nanite_shipyard = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_industry }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -490,17 +454,11 @@ tech_nanite_networking_protocols = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_computing }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -552,17 +510,11 @@ tech_nanite_weaponry = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_computing }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -615,17 +567,11 @@ tech_nanite_torpedo = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_propulsion"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_propulsion }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -656,17 +602,11 @@ tech_nanite_lancers = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -691,17 +631,11 @@ tech_nanite_titanic_weapon = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_particles"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_particles }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -767,17 +701,11 @@ tech_nanite_interdictor = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -829,17 +757,11 @@ tech_nanite_mothership = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -889,17 +811,11 @@ tech_nanite_core = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_voidcraft }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2
@@ -949,17 +865,11 @@ tech_nanite_guns = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.25
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_propulsion"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_expertise_propulsion }
 		}
 		modifier = {
 			factor = 1.5
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_curator"
-			}
+			has_trait_in_council = { TRAIT = leader_trait_curator }
 		}
 		modifier = {
 			factor = 2

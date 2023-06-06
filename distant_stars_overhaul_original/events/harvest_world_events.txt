@@ -1,1186 +1,1189 @@
-namespace = harvest_colony
-# TODO
-country_event = {
-	id = harvest_colony.50
-	title = "harvest_colony.50.name"
-	desc = "harvest_colony.50.desc"
-	picture = GFX_evt_in_the_dark
-	show_sound = event_air_raid_siren
-	location = from
-	trackable = yes
-	is_triggered_only = yes
-	immediate = {
-		save_event_target_as = harvester_subterranean_planet_owner
-		from = {
-			set_planet_flag = harvest_disturbance
-			set_planet_flag = colony_event
-			add_deposit = d_underground_farm_blocked
-			add_deposit = d_underground_mine_blocked
-			add_deposit = d_underground_generator_blocked
-		}
-	}
-	option = {
-		name = harvest_colony.50.a
-		begin_event_chain = {
-			event_chain = "harvest_subterranean_civilization_chain"
-			target = root
-		}
-		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_1_PROJECT"			# Establish Communications
-			location = from
-			owner = root
-		}
-		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
-			location = from
-			owner = root
-		}
-	}
-	option = {
-		name = distar.216.a.exter
-		exclusive_trigger = {
-			root = { is_homicidal = yes }
-		}
-		begin_event_chain = {
-			event_chain = "harvest_subterranean_civilization_chain"
-			target = root
-		}
-		enable_special_project = {
-			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
-			location = from
-			owner = root
-		}
-	}
-}
+# # TODO: The complete file is just an inactive copy of outcome_nanite_ecosystem_events.txt
+# # just all keys nanite_ecosystem are renamed to harvest_colony
 
-country_event = {
-	id = harvest_colony.510
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		from = {
-			create_colony = {
-				owner = root
-				species = owner_main_species
-				ethos = owner
-			}
-			planet_event = { id = harvest_colony.51 days = 10 }
-		}
-	}
-}
+# namespace = harvest_colony
 
-# planet_event = {
-# 	id = harvest_colony.511
-# 	hide_window = yes
+# country_event = {
+# 	id = harvest_colony.50
+# 	title = "harvest_colony.50.name"
+# 	desc = "harvest_colony.50.desc"
+# 	picture = GFX_evt_in_the_dark
+# 	show_sound = event_air_raid_siren
+# 	location = from
+# 	trackable = yes
 # 	is_triggered_only = yes
 # 	immediate = {
-# 		fromfrom = {
-# 			planet_event = { id = harvest_colony.51 }
+# 		save_event_target_as = harvester_subterranean_planet_owner
+# 		from = {
+# 			set_planet_flag = harvest_disturbance
+# 			set_planet_flag = colony_event
+# 			add_deposit = d_underground_farm_blocked
+# 			add_deposit = d_underground_mine_blocked
+# 			add_deposit = d_underground_generator_blocked
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.50.a
+# 		begin_event_chain = {
+# 			event_chain = "harvest_subterranean_civilization_chain"
+# 			target = root
+# 		}
+# 		enable_special_project = {
+# 			name = "HARVESTER_DISTURBANCE_1_PROJECT"			# Establish Communications
+# 			location = from
+# 			owner = root
+# 		}
+# 		enable_special_project = {
+# 			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
+# 			location = from
+# 			owner = root
+# 		}
+# 	}
+# 	option = {
+# 		name = distar.216.a.exter
+# 		exclusive_trigger = {
+# 			root = { is_homicidal = yes }
+# 		}
+# 		begin_event_chain = {
+# 			event_chain = "harvest_subterranean_civilization_chain"
+# 			target = root
+# 		}
+# 		enable_special_project = {
+# 			name = "HARVESTER_DISTURBANCE_2_PROJECT"			# Preemptive Strike
+# 			location = from
+# 			owner = root
 # 		}
 # 	}
 # }
 
-planet_event = {
-	id = harvest_colony.51
-	title = "PROJECT_COMPLETE"
-	desc = "harvest_colony.51.desc"
-	picture = GFX_evt_underground_civilization
-	show_sound = event_alien_signal
-	location = root
-	is_triggered_only = yes
-	immediate = {
-		owner = { save_event_target_as = harvester_subterranean_planet_owner }
-		set_planet_flag = seismic_disturbance_friendly
-		create_species = {
-			name = random
-			class = random_non_machine
-			portrait = random
-			traits = random
-			homeworld = root
-			effect = { save_global_event_target_as = harvester_subterranean_species }
-		}
-		create_country = {
-			name = "NAME_Subterranean_Nation"
-			species = event_target:harvester_subterranean_species
-			type = adversary
-			ethos = random
-			auto_delete = no
-			flag = {
-				icon = {
-					category = "zoological"
-					file = "flag_zoological_10.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "new_dawn.dds"
-				}
-				colors = { "red" "black" "null" "null" }
-			}
-			effect = {
-				set_relation_flag = { who = root.owner flag = subterror }
-				set_country_flag = harvester_subterranean_nation
-				establish_contact = {
-					who = event_target:harvester_subterranean_planet_owner
-					location = root
-				}
-				establish_communications_no_message = event_target:harvester_subterranean_planet_owner
-				save_global_event_target_as = harvester_subterranean_nation
-			}
-		}
-	}
-	option = {
-		name = harvest_colony.51.a
-		hidden_effect = {
-			owner = {
-				country_event = { id = harvest_colony.53 }
-			}
-		}
-	}
-}
+# country_event = {
+# 	id = harvest_colony.510
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		from = {
+# 			create_colony = {
+# 				owner = root
+# 				species = owner_main_species
+# 				ethos = owner
+# 			}
+# 			planet_event = { id = harvest_colony.51 days = 10 }
+# 		}
+# 	}
+# }
 
-# Special Project Completed 2 or 3
-planet_event = {
-	id = harvest_colony.52
-	title = "PROJECT_COMPLETE"
-	desc = "harvest_colony.52.desc"
-	picture = GFX_evt_underground_civilization
-	show_sound = event_structural_collapse
-	location = root
-	is_triggered_only = yes
-	immediate = {
-		set_planet_flag = harvest_disturbance_destroyed
-		remove_planet_flag = harvest_disturbance_war
-		remove_deposit = d_underground_farm_blocked
-		remove_deposit = d_underground_mine_blocked
-		remove_deposit = d_underground_generator_blocked
-		add_deposit = d_underground_farm_dead
-		add_deposit = d_underground_mine_dead
-		add_deposit = d_underground_generator_dead
-		remove_deposit = d_underground_contact_zone
-	}
-	option = {
-		name = harvest_colony.52.a
-		custom_tooltip = underground_expansion_tooltip
-	}
-}
+# # planet_event = {
+# # 	id = harvest_colony.511
+# # 	hide_window = yes
+# # 	is_triggered_only = yes
+# # 	immediate = {
+# # 		fromfrom = {
+# # 			planet_event = { id = harvest_colony.51 }
+# # 		}
+# # 	}
+# # }
 
-country_event = {
-	id = harvest_colony.53
-	title = "harvest_colony.53.name"
-	desc = "harvest_colony.53.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-	picture_event_data = { room = no_video_feed_room }
-	option = {
-		name = harvest_colony.53.a
-		response_text = harvest_colony.53.a.response
-		is_dialog_only = yes
-	}
-	option = {
-		name = harvest_colony.53.b
-		response_text = harvest_colony.53.b.response
-		hidden_effect = {
-			from = { set_planet_flag = harvest_disturbance_friendly }
-		}
-		from = {
-			add_modifier = { modifier = "subterranean_civilization" days = -1 }
-			add_deposit = d_underground_contact_zone
-			# set_planet_flag = trade_size_increase
-		}
-		custom_tooltip = underground_expansion_tooltip
-	}
-	option = {
-		name = harvest_colony.53.c
-		response_text = harvest_colony.53.c.response
-		hidden_effect = {
-			from = {
-				planet_event = {
-					id = harvest_colony.54
-					days = 35
-					random = 40
-				}
-			}
-		}
-	}
-}
+# planet_event = {
+# 	id = harvest_colony.51
+# 	title = "PROJECT_COMPLETE"
+# 	desc = "harvest_colony.51.desc"
+# 	picture = GFX_evt_underground_civilization
+# 	show_sound = event_alien_signal
+# 	location = root
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		owner = { save_event_target_as = harvester_subterranean_planet_owner }
+# 		set_planet_flag = seismic_disturbance_friendly
+# 		create_species = {
+# 			name = random
+# 			class = random_non_machine
+# 			portrait = random
+# 			traits = random
+# 			homeworld = root
+# 			effect = { save_global_event_target_as = harvester_subterranean_species }
+# 		}
+# 		create_country = {
+# 			name = "NAME_Subterranean_Nation"
+# 			species = event_target:harvester_subterranean_species
+# 			type = adversary
+# 			ethos = random
+# 			auto_delete = no
+# 			flag = {
+# 				icon = {
+# 					category = "zoological"
+# 					file = "flag_zoological_10.dds"
+# 				}
+# 				background = {
+# 					category = "backgrounds"
+# 					file = "new_dawn.dds"
+# 				}
+# 				colors = { "red" "black" "null" "null" }
+# 			}
+# 			effect = {
+# 				set_relation_flag = { who = root.owner flag = subterror }
+# 				set_country_flag = harvester_subterranean_nation
+# 				establish_contact = {
+# 					who = event_target:harvester_subterranean_planet_owner
+# 					location = root
+# 				}
+# 				establish_communications_no_message = event_target:harvester_subterranean_planet_owner
+# 				save_global_event_target_as = harvester_subterranean_nation
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.51.a
+# 		hidden_effect = {
+# 			owner = {
+# 				country_event = { id = harvest_colony.53 }
+# 			}
+# 		}
+# 	}
+# }
 
-planet_event = {
-	id = harvest_colony.54
-	title = "harvest_colony.54.name"
-	desc = "harvest_colony.54.desc"
-	picture = GFX_evt_ground_combat
-	show_sound = event_ground_battle
-	location = root
-	is_triggered_only = yes
-	immediate = {
-		owner = { set_country_flag = subterranean_harvester_invasion_country }
-		set_planet_flag = subterranean_harvester_invasion_planet
-		event_target:harvester_subterranean_nation = {
-			create_leader = {
-				class = general
-				species = owner_main_species
-				name = random
-				skill = 3
-			}
-		}
-		if = {
-			limit = {
-				event_target:harvester_subterranean_nation = {
-					NOT = { has_country_flag = tech_request_approved }
-				}
-			}
-			while = {
-				count = 6
-				create_army = {
-					name = "NAME_Invading_Horde"
-					owner = event_target:harvester_subterranean_nation
-					species = event_target:harvester_subterranean_species
-					type = "subterranean_industrial_army"
-					leader = last_created_leader
-				}
-			}
-		}
-		if = {
-			limit = {
-				event_target:harvester_subterranean_nation = { has_country_flag = tech_request_approved }
-			}
-			while = {
-				count = 6
-				create_army = {
-					name = "NAME_Invading_Horde"
-					owner = event_target:harvester_subterranean_nation
-					species = event_target:harvester_subterranean_species
-					type = "subterranean_postatomic_army"
-					leader = last_created_leader
-				}
-			}
-		}
-	}
-	option = {
-		name = harvest_colony.54.a
-		custom_tooltip = subterranean_invasion
-	}
-}
+# # Special Project Completed 2 or 3
+# planet_event = {
+# 	id = harvest_colony.52
+# 	title = "PROJECT_COMPLETE"
+# 	desc = "harvest_colony.52.desc"
+# 	picture = GFX_evt_underground_civilization
+# 	show_sound = event_structural_collapse
+# 	location = root
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_destroyed
+# 		remove_planet_flag = harvest_disturbance_war
+# 		remove_deposit = d_underground_farm_blocked
+# 		remove_deposit = d_underground_mine_blocked
+# 		remove_deposit = d_underground_generator_blocked
+# 		add_deposit = d_underground_farm_dead
+# 		add_deposit = d_underground_mine_dead
+# 		add_deposit = d_underground_generator_dead
+# 		remove_deposit = d_underground_contact_zone
+# 	}
+# 	option = {
+# 		name = harvest_colony.52.a
+# 		custom_tooltip = underground_expansion_tooltip
+# 	}
+# }
 
-# Victory
-country_event = {
-	id = harvest_colony.56
-	title = "harvest_colony.56.name"
-	desc = "harvest_colony.56.desc"
-	picture = GFX_evt_ground_combat
-	show_sound = event_ground_battle
-	location = fromfrom
-	trackable = yes
-	is_triggered_only = yes
-	trigger = {
-		has_country_flag = subterranean_harvester_invasion_country
-		NOT = { has_country_flag = subterraneans_harvesters_defeated_once }
-		fromfrom = { has_planet_flag = subterranean_harvester_invasion_planet }
-	}
-	immediate = {
-		remove_country_flag = subterranean_harvester_invasion_country
-		set_country_flag = subterraneans_harvesters_defeated_once
-		fromfrom = {
-			set_planet_flag = harvest_disturbance_war
-			remove_planet_flag = subterranean_harvester_invasion_planet
-		}
-	}
-	option = {
-		name = harvest_colony.56.a
-		enable_special_project = {
-			name = "SEISMIC_DISTURBANCE_3_PROJECT"			# Destroy them
-			location = fromfrom
-			owner = root
-		}
-	}
-}
+# country_event = {
+# 	id = harvest_colony.53
+# 	title = "harvest_colony.53.name"
+# 	desc = "harvest_colony.53.desc"
+# 	is_triggered_only = yes
+# 	diplomatic = yes
+# 	picture_event_data = { room = no_video_feed_room }
+# 	option = {
+# 		name = harvest_colony.53.a
+# 		response_text = harvest_colony.53.a.response
+# 		is_dialog_only = yes
+# 	}
+# 	option = {
+# 		name = harvest_colony.53.b
+# 		response_text = harvest_colony.53.b.response
+# 		hidden_effect = {
+# 			from = { set_planet_flag = harvest_disturbance_friendly }
+# 		}
+# 		from = {
+# 			add_modifier = { modifier = "subterranean_civilization" days = -1 }
+# 			add_deposit = d_underground_contact_zone
+# 			# set_planet_flag = trade_size_increase
+# 		}
+# 		custom_tooltip = underground_expansion_tooltip
+# 	}
+# 	option = {
+# 		name = harvest_colony.53.c
+# 		response_text = harvest_colony.53.c.response
+# 		hidden_effect = {
+# 			from = {
+# 				planet_event = {
+# 					id = harvest_colony.54
+# 					days = 35
+# 					random = 40
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 
-# Defeat
-country_event = {
-	id = harvest_colony.57
-	title = "harvest_colony.57.name"
-	desc = "harvest_colony.57.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_alien_signal
-	location = fromfrom
-	is_triggered_only = yes
-	trigger = {
-		has_country_flag = subterranean_harvester_invasion_country
-		fromfrom = { has_planet_flag = subterranean_harvester_invasion_planet }
-		from = { is_country_type = adversary }
-	}
-	immediate = {
-		remove_country_flag = subterranean_harvester_invasion_country
-		save_event_target_as = subterranean_harvester_former_planet_owner
-		from = {
-			save_event_target_as = harvester_subterranean_nation
-			owner_species = { save_event_target_as = harvester_subterranean_species }
-		}
-		fromfrom = {
-			create_country = {
-				name = "NAME_Subterranean_Empire"
-				species = event_target:harvester_subterranean_species
-				type = default
-				auto_delete = yes
-				ethos = {
-					ethic = ethic_fanatic_militarist
-					ethic = ethic_authoritarian
-				}
-				authority = random
-				civics = random
-				flag = {
-					icon = {
-						category = "zoological"
-						file = "flag_zoological_10.dds"
-					}
-					background = {
-						category = "backgrounds"
-						file = "new_dawn.dds"
-					}
-					colors = { "red" "black" "null" "null" }
-				}
-			}
-			last_created_country = {
-				set_relation_flag = { who = event_target:subterranean_harvester_former_planet_owner flag = subwar }
-				set_country_flag = subterranean_harvester_empire
-				establish_communications_no_message = event_target:subterranean_harvester_former_planet_owner
-				save_event_target_as = subterranean_harvester_empire
-				owner_species = { save_event_target_as = harvester_subterranean_species }
-			}
-		}
-		from = { destroy_country = yes }
-		fromfrom = {
-			remove_planet_flag = subterranean_harvester_invasion_planet
-			save_event_target_as = conquered_harvester_planet
-			set_owner = event_target:subterranean_harvester_empire
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
-			create_pop = { species = owner_main_species }
-			create_pop = { species = owner_main_species }
-			create_army = {
-				name = "NAME_Loot-Equipped_Army"
-				owner = event_target:subterranean_harvester_empire
-				species = event_target:harvester_subterranean_species
-				type = "defense_army"
-			}
-			create_army = {
-				name = "NAME_Loot-Equipped_Army"
-				owner = event_target:subterranean_harvester_empire
-				species = event_target:harvester_subterranean_species
-				type = "defense_army"
-			}
-			# flip starbase
-			solar_system = {
-				if = {
-					limit = { exists = starbase }
-					starbase = { set_owner = event_target:subterranean_harvester_empire }
-				}
-			}
-		}
-	}
-	option = {
-		name = "ONSCREEN"
-		end_event_chain = "harvest_subterranean_civilization_chain"
-		country_event = { id = harvest_colony.58 }
-	}
-}
+# planet_event = {
+# 	id = harvest_colony.54
+# 	title = "harvest_colony.54.name"
+# 	desc = "harvest_colony.54.desc"
+# 	picture = GFX_evt_ground_combat
+# 	show_sound = event_ground_battle
+# 	location = root
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		owner = { set_country_flag = subterranean_harvester_invasion_country }
+# 		set_planet_flag = subterranean_harvester_invasion_planet
+# 		event_target:harvester_subterranean_nation = {
+# 			create_leader = {
+# 				class = general
+# 				species = owner_main_species
+# 				name = random
+# 				skill = 3
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				event_target:harvester_subterranean_nation = {
+# 					NOT = { has_country_flag = tech_request_approved }
+# 				}
+# 			}
+# 			while = {
+# 				count = 6
+# 				create_army = {
+# 					name = "NAME_Invading_Horde"
+# 					owner = event_target:harvester_subterranean_nation
+# 					species = event_target:harvester_subterranean_species
+# 					type = "subterranean_industrial_army"
+# 					leader = last_created_leader
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				event_target:harvester_subterranean_nation = { has_country_flag = tech_request_approved }
+# 			}
+# 			while = {
+# 				count = 6
+# 				create_army = {
+# 					name = "NAME_Invading_Horde"
+# 					owner = event_target:harvester_subterranean_nation
+# 					species = event_target:harvester_subterranean_species
+# 					type = "subterranean_postatomic_army"
+# 					leader = last_created_leader
+# 				}
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.54.a
+# 		custom_tooltip = subterranean_invasion
+# 	}
+# }
 
-# Incoming Transmission
-country_event = {
-	id = harvest_colony.58
-	title = TRANSMISSION
-	desc = "harvest_colony.58.desc"
-	diplomatic = yes
-	is_triggered_only = yes
-	picture_event_data = {
-		portrait = event_target:subterranean_harvester_empire
-		planet_background = event_target:conquered_harvester_planet
-		graphical_culture = event_target:conquered_harvester_planet
-		room = event_target:subterranean_harvester_empire.ruler
-	}
-	option = { name = harvest_colony.58.a }
-}
+# # Victory
+# country_event = {
+# 	id = harvest_colony.56
+# 	title = "harvest_colony.56.name"
+# 	desc = "harvest_colony.56.desc"
+# 	picture = GFX_evt_ground_combat
+# 	show_sound = event_ground_battle
+# 	location = fromfrom
+# 	trackable = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		has_country_flag = subterranean_harvester_invasion_country
+# 		NOT = { has_country_flag = subterraneans_harvesters_defeated_once }
+# 		fromfrom = { has_planet_flag = subterranean_harvester_invasion_planet }
+# 	}
+# 	immediate = {
+# 		remove_country_flag = subterranean_harvester_invasion_country
+# 		set_country_flag = subterraneans_harvesters_defeated_once
+# 		fromfrom = {
+# 			set_planet_flag = harvest_disturbance_war
+# 			remove_planet_flag = subterranean_harvester_invasion_planet
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.56.a
+# 		enable_special_project = {
+# 			name = "SEISMIC_DISTURBANCE_3_PROJECT"			# Destroy them
+# 			location = fromfrom
+# 			owner = root
+# 		}
+# 	}
+# }
 
-# Aliens Surface
-planet_event = {
-	id = harvest_colony.59
-	title = "harvest_colony.59.name"
-	desc = "harvest_colony.59.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	is_triggered_only = yes
-	option = {
-		name = harvest_colony.59.a
-		owner = {
-			country_event = { id = harvest_colony.53 }
-		}
-	}
-}
+# # Defeat
+# country_event = {
+# 	id = harvest_colony.57
+# 	title = "harvest_colony.57.name"
+# 	desc = "harvest_colony.57.desc"
+# 	picture = GFX_evt_burning_settlement
+# 	show_sound = event_alien_signal
+# 	location = fromfrom
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		has_country_flag = subterranean_harvester_invasion_country
+# 		fromfrom = { has_planet_flag = subterranean_harvester_invasion_planet }
+# 		from = { is_country_type = adversary }
+# 	}
+# 	immediate = {
+# 		remove_country_flag = subterranean_harvester_invasion_country
+# 		save_event_target_as = subterranean_harvester_former_planet_owner
+# 		from = {
+# 			save_event_target_as = harvester_subterranean_nation
+# 			owner_species = { save_event_target_as = harvester_subterranean_species }
+# 		}
+# 		fromfrom = {
+# 			create_country = {
+# 				name = "NAME_Subterranean_Empire"
+# 				species = event_target:harvester_subterranean_species
+# 				type = default
+# 				auto_delete = yes
+# 				ethos = {
+# 					ethic = ethic_fanatic_militarist
+# 					ethic = ethic_authoritarian
+# 				}
+# 				authority = random
+# 				civics = random
+# 				flag = {
+# 					icon = {
+# 						category = "zoological"
+# 						file = "flag_zoological_10.dds"
+# 					}
+# 					background = {
+# 						category = "backgrounds"
+# 						file = "new_dawn.dds"
+# 					}
+# 					colors = { "red" "black" "null" "null" }
+# 				}
+# 			}
+# 			last_created_country = {
+# 				set_relation_flag = { who = event_target:subterranean_harvester_former_planet_owner flag = subwar }
+# 				set_country_flag = subterranean_harvester_empire
+# 				establish_communications_no_message = event_target:subterranean_harvester_former_planet_owner
+# 				save_event_target_as = subterranean_harvester_empire
+# 				owner_species = { save_event_target_as = harvester_subterranean_species }
+# 			}
+# 		}
+# 		from = { destroy_country = yes }
+# 		fromfrom = {
+# 			remove_planet_flag = subterranean_harvester_invasion_planet
+# 			save_event_target_as = conquered_harvester_planet
+# 			set_owner = event_target:subterranean_harvester_empire
+# 			random_owned_pop = { kill_pop = yes }
+# 			random_owned_pop = { kill_pop = yes }
+# 			create_pop = { species = owner_main_species }
+# 			create_pop = { species = owner_main_species }
+# 			create_army = {
+# 				name = "NAME_Loot-Equipped_Army"
+# 				owner = event_target:subterranean_harvester_empire
+# 				species = event_target:harvester_subterranean_species
+# 				type = "defense_army"
+# 			}
+# 			create_army = {
+# 				name = "NAME_Loot-Equipped_Army"
+# 				owner = event_target:subterranean_harvester_empire
+# 				species = event_target:harvester_subterranean_species
+# 				type = "defense_army"
+# 			}
+# 			# flip starbase
+# 			solar_system = {
+# 				if = {
+# 					limit = { exists = starbase }
+# 					starbase = { set_owner = event_target:subterranean_harvester_empire }
+# 				}
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = "ONSCREEN"
+# 		end_event_chain = "harvest_subterranean_civilization_chain"
+# 		country_event = { id = harvest_colony.58 }
+# 	}
+# }
 
-# Another Invasion
-planet_event = {
-	id = harvest_colony.60
-	title = "harvest_colony.54.name"
-	desc = "harvest_colony.60.desc"
-	picture = GFX_evt_ground_combat
-	show_sound = event_ground_battle
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_war
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		owner = { set_country_flag = subterranean_harvester_invasion_country }
-		set_planet_flag = subterranean_harvester_invasion_planet
-		random_country = {
-			limit = {
-				is_country_type = adversary
-				has_country_flag = harvester_subterranean_nation
-			}
-			save_event_target_as = harvester_subterranean_nation
-			owner_species = { save_event_target_as = harvester_subterranean_species }
-			create_leader = {
-				class = general
-				species = event_target:harvester_subterranean_species
-				name = random
-				skill = 3
-			}
-		}
-		if = {
-			limit = {
-				event_target:harvester_subterranean_nation = {
-					NOT = { has_country_flag = tech_request_approved }
-				}
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "industrial_army"
-				leader = last_created_leader
-			}
-			break = yes
-		}
-		if = {
-			limit = {
-				event_target:harvester_subterranean_nation = { has_country_flag = tech_request_approved }
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			create_army = {
-				name = "NAME_Invading_Horde"
-				owner = event_target:harvester_subterranean_nation
-				species = event_target:harvester_subterranean_species
-				type = "postatomic_army"
-				leader = last_created_leader
-			}
-			break = yes
-		}
-	}
-	option = {
-		name = harvest_colony.60.a
-		custom_tooltip = subterranean_invasion_2
-	}
-}
+# # Incoming Transmission
+# country_event = {
+# 	id = harvest_colony.58
+# 	title = TRANSMISSION
+# 	desc = "harvest_colony.58.desc"
+# 	diplomatic = yes
+# 	is_triggered_only = yes
+# 	picture_event_data = {
+# 		portrait = event_target:subterranean_harvester_empire
+# 		planet_background = event_target:conquered_harvester_planet
+# 		graphical_culture = event_target:conquered_harvester_planet
+# 		room = event_target:subterranean_harvester_empire.ruler
+# 	}
+# 	option = { name = harvest_colony.58.a }
+# }
 
-# Collapse
-planet_event = {
-	id = harvest_colony.61
-	title = "harvest_colony.61.name"
-	desc = "harvest_colony.61.desc"
-	picture = GFX_evt_underground_civilization
-	show_sound = event_structural_collapse
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_war
-		NOT = { has_planet_flag = harvest_disturbance_collapse }
-		has_army = yes
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_collapse }
-	option = {
-		name = harvest_colony.61.a
-		add_deposit = d_sinkhole_subterraneans
-		random_planet_army = { remove_army = yes }
-	}
-}
+# # Aliens Surface
+# planet_event = {
+# 	id = harvest_colony.59
+# 	title = "harvest_colony.59.name"
+# 	desc = "harvest_colony.59.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	is_triggered_only = yes
+# 	option = {
+# 		name = harvest_colony.59.a
+# 		owner = {
+# 			country_event = { id = harvest_colony.53 }
+# 		}
+# 	}
+# }
 
-# Raiding Parties
-planet_event = {
-	id = harvest_colony.62
-	title = "harvest_colony.62.name"
-	desc = "harvest_colony.62.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_war
-		NOT = { has_planet_flag = harvest_disturbance_raid }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		set_planet_flag = harvest_disturbance_raid
-		add_planet_devastation = 10
-	}
-	option = {
-		name = harvest_colony.62.a
-		tooltip = { add_planet_devastation = 10 }
-	}
-}
+# # Another Invasion
+# planet_event = {
+# 	id = harvest_colony.60
+# 	title = "harvest_colony.54.name"
+# 	desc = "harvest_colony.60.desc"
+# 	picture = GFX_evt_ground_combat
+# 	show_sound = event_ground_battle
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_war
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		owner = { set_country_flag = subterranean_harvester_invasion_country }
+# 		set_planet_flag = subterranean_harvester_invasion_planet
+# 		random_country = {
+# 			limit = {
+# 				is_country_type = adversary
+# 				has_country_flag = harvester_subterranean_nation
+# 			}
+# 			save_event_target_as = harvester_subterranean_nation
+# 			owner_species = { save_event_target_as = harvester_subterranean_species }
+# 			create_leader = {
+# 				class = general
+# 				species = event_target:harvester_subterranean_species
+# 				name = random
+# 				skill = 3
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				event_target:harvester_subterranean_nation = {
+# 					NOT = { has_country_flag = tech_request_approved }
+# 				}
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "industrial_army"
+# 				leader = last_created_leader
+# 			}
+# 			break = yes
+# 		}
+# 		if = {
+# 			limit = {
+# 				event_target:harvester_subterranean_nation = { has_country_flag = tech_request_approved }
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			create_army = {
+# 				name = "NAME_Invading_Horde"
+# 				owner = event_target:harvester_subterranean_nation
+# 				species = event_target:harvester_subterranean_species
+# 				type = "postatomic_army"
+# 				leader = last_created_leader
+# 			}
+# 			break = yes
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.60.a
+# 		custom_tooltip = subterranean_invasion_2
+# 	}
+# }
 
-# Surface Attack
-planet_event = {
-	id = harvest_colony.63
-	title = "harvest_colony.63.name"
-	desc = "harvest_colony.63.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_ground_battle
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_war
-		NOT = { has_planet_flag = harvest_disturbance_attack }
-		num_pops > 1
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_attack }
-	option = {
-		name = harvest_colony.63.a
-		add_planet_devastation = 10
-		random_owned_pop = { kill_pop = yes }
-		add_deposit = d_sinkhole_subterraneans
-	}
-}
+# # Collapse
+# planet_event = {
+# 	id = harvest_colony.61
+# 	title = "harvest_colony.61.name"
+# 	desc = "harvest_colony.61.desc"
+# 	picture = GFX_evt_underground_civilization
+# 	show_sound = event_structural_collapse
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_war
+# 		NOT = { has_planet_flag = harvest_disturbance_collapse }
+# 		has_army = yes
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_collapse }
+# 	option = {
+# 		name = harvest_colony.61.a
+# 		add_deposit = d_sinkhole_subterraneans
+# 		random_planet_army = { remove_army = yes }
+# 	}
+# }
 
-# Survivor Pocket
-planet_event = {
-	id = harvest_colony.64
-	title = "harvest_colony.64.name"
-	desc = "harvest_colony.64.desc"
-	picture = GFX_evt_in_the_dark
-	show_sound = event_scanner
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_destroyed
-		NOT = { has_planet_flag = harvest_disturbance_pocket }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		set_planet_flag = harvest_disturbance_pocket
-		create_species = {
-			name = random
-			class = random_non_machine
-			portrait = random
-			traits = random
-			homeworld = planet
-		}
-		last_created_species = { save_event_target_as = harvester_subterranean_species }
-	}
-	option = { name = harvest_colony.64.a }
-	option = {
-		name = harvest_colony.64.b
-		trigger = {
-			# free_housing > 5
-			owner = {
-				OR = {
-					is_authoritarian = yes
-					is_xenophobe = yes
-				}
-			}
-		}
-		hidden_effect = {
-			create_pop = {
-				species = event_target:harvester_subterranean_species
-				ethos = { ethic = "ethic_spiritualist" }
-			}
-			create_pop = {
-				species = event_target:harvester_subterranean_species
-				ethos = { ethic = "ethic_spiritualist" }
-			}
-			last_created_pop = {
-				set_citizenship_type = {
-					type = citizenship_slavery
-					cooldown = yes
-				}
-			}
-		}
-	}
-}
+# # Raiding Parties
+# planet_event = {
+# 	id = harvest_colony.62
+# 	title = "harvest_colony.62.name"
+# 	desc = "harvest_colony.62.desc"
+# 	picture = GFX_evt_burning_settlement
+# 	show_sound = event_ground_battle
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_war
+# 		NOT = { has_planet_flag = harvest_disturbance_raid }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_raid
+# 		add_planet_devastation = 10
+# 	}
+# 	option = {
+# 		name = harvest_colony.62.a
+# 		tooltip = { add_planet_devastation = 10 }
+# 	}
+# }
 
-# Subterranean Expansion
-planet_event = {
-	id = harvest_colony.65
-	title = "harvest_colony.65.name"
-	desc = "harvest_colony.65.desc"
-	picture = GFX_evt_in_the_dark
-	show_sound = event_construction
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_destroyed
-		NOT = { has_planet_flag = harvest_disturbance_expansion }
-		# has_any_strategic_resource = no
-		num_pops > 0
-		# planet_size < 25
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_expansion }
-	option = {
-		name = EXCELLENT
-		add_modifier = { modifier = "subterranean_expansion" days = -1 }
-		# change_planet_size = +1
-	}
-}
+# # Surface Attack
+# planet_event = {
+# 	id = harvest_colony.63
+# 	title = "harvest_colony.63.name"
+# 	desc = "harvest_colony.63.desc"
+# 	picture = GFX_evt_burning_settlement
+# 	show_sound = event_ground_battle
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_war
+# 		NOT = { has_planet_flag = harvest_disturbance_attack }
+# 		num_pops > 1
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_attack }
+# 	option = {
+# 		name = harvest_colony.63.a
+# 		add_planet_devastation = 10
+# 		random_owned_pop = { kill_pop = yes }
+# 		add_deposit = d_sinkhole_subterraneans
+# 	}
+# }
 
-# Gold!
-planet_event = {
-	id = harvest_colony.66
-	title = "harvest_colony.66.name"
-	desc = "harvest_colony.66.desc"
-	picture = GFX_evt_in_the_dark
-	show_sound = event_mystic_reveal
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_destroyed
-		NOT = { has_planet_flag = harvest_disturbance_gold }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		hidden_effect = { set_planet_flag = harvest_disturbance_gold }
-	}
-	option = {
-		name = EXCELLENT
-		owner = {
-			add_monthly_resource_mult = {
-				resource = energy
-				value = @tier1materialreward
-				min = @tier1materialmin
-				max = @tier1materialmax
-			}
-		}
-	}
-}
+# # Survivor Pocket
+# planet_event = {
+# 	id = harvest_colony.64
+# 	title = "harvest_colony.64.name"
+# 	desc = "harvest_colony.64.desc"
+# 	picture = GFX_evt_in_the_dark
+# 	show_sound = event_scanner
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_destroyed
+# 		NOT = { has_planet_flag = harvest_disturbance_pocket }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_pocket
+# 		create_species = {
+# 			name = random
+# 			class = random_non_machine
+# 			portrait = random
+# 			traits = random
+# 			homeworld = planet
+# 		}
+# 		last_created_species = { save_event_target_as = harvester_subterranean_species }
+# 	}
+# 	option = { name = harvest_colony.64.a }
+# 	option = {
+# 		name = harvest_colony.64.b
+# 		trigger = {
+# 			# free_housing > 5
+# 			owner = {
+# 				OR = {
+# 					is_authoritarian = yes
+# 					is_xenophobe = yes
+# 				}
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			create_pop = {
+# 				species = event_target:harvester_subterranean_species
+# 				ethos = { ethic = "ethic_spiritualist" }
+# 			}
+# 			create_pop = {
+# 				species = event_target:harvester_subterranean_species
+# 				ethos = { ethic = "ethic_spiritualist" }
+# 			}
+# 			last_created_pop = {
+# 				set_citizenship_type = {
+# 					type = citizenship_slavery
+# 					cooldown = yes
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 
-# Treasury
-planet_event = {
-	id = harvest_colony.67
-	title = "harvest_colony.67.name"
-	desc = "harvest_colony.67.desc"
-	picture = GFX_evt_in_the_dark
-	show_sound = event_radio_chatter
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_destroyed
-		NOT = { has_planet_flag = harvest_disturbance_treasury }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_treasury }
-	option = {
-		name = EXCELLENT
-		owner = {
-			add_monthly_resource_mult = {
-				resource = energy
-				value = @tier1materialreward
-				min = @tier1materialmin
-				max = @tier1materialmax
-			}
-		}
-	}
-}
+# # Subterranean Expansion
+# planet_event = {
+# 	id = harvest_colony.65
+# 	title = "harvest_colony.65.name"
+# 	desc = "harvest_colony.65.desc"
+# 	picture = GFX_evt_in_the_dark
+# 	show_sound = event_construction
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_destroyed
+# 		NOT = { has_planet_flag = harvest_disturbance_expansion }
+# 		# has_any_strategic_resource = no
+# 		num_pops > 0
+# 		# planet_size < 25
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_expansion }
+# 	option = {
+# 		name = EXCELLENT
+# 		add_modifier = { modifier = "subterranean_expansion" days = -1 }
+# 		# change_planet_size = +1
+# 	}
+# }
 
-# Earthquakes 1
-planet_event = {
-	id = harvest_colony.68
-	title = "harvest_colony.68.name"
-	desc = "harvest_colony.68.desc"
-	picture = GFX_evt_burning_settlement
-	show_sound = event_air_raid_siren
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_destroyed
-		NOT = { has_planet_flag = harvest_disturbance_quake }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		set_planet_flag = harvest_disturbance_quake
-		add_planet_devastation = 10
-	}
-	option = {
-		name = UNFORTUNATE
-		tooltip = { add_planet_devastation = 10 }
-	}
-}
+# # Gold!
+# planet_event = {
+# 	id = harvest_colony.66
+# 	title = "harvest_colony.66.name"
+# 	desc = "harvest_colony.66.desc"
+# 	picture = GFX_evt_in_the_dark
+# 	show_sound = event_mystic_reveal
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_destroyed
+# 		NOT = { has_planet_flag = harvest_disturbance_gold }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		hidden_effect = { set_planet_flag = harvest_disturbance_gold }
+# 	}
+# 	option = {
+# 		name = EXCELLENT
+# 		owner = {
+# 			add_monthly_resource_mult = {
+# 				resource = energy
+# 				value = @tier1materialreward
+# 				min = @tier1materialmin
+# 				max = @tier1materialmax
+# 			}
+# 		}
+# 	}
+# }
 
-# Famine
-planet_event = {
-	id = harvest_colony.69
-	title = "harvest_colony.69.name"
-	desc = "harvest_colony.69.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_famine }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_famine }
-	option = {
-		name = harvest_colony.69.a
-		allow = {
-			owner = {
-				resource_stockpile_compare = { resource = food value >= 50 }
-			}
-		}
-		owner = {
-			add_resource = { food = -50 }
-		}
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = -1 }
-		}
-		custom_tooltip = subterraneans_pleased
-	}
-	option = {
-		name = harvest_colony.69.b
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = 1 }
-		}
-		custom_tooltip = subterraneans_displeased
-	}
-}
+# # Treasury
+# planet_event = {
+# 	id = harvest_colony.67
+# 	title = "harvest_colony.67.name"
+# 	desc = "harvest_colony.67.desc"
+# 	picture = GFX_evt_in_the_dark
+# 	show_sound = event_radio_chatter
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_destroyed
+# 		NOT = { has_planet_flag = harvest_disturbance_treasury }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_treasury }
+# 	option = {
+# 		name = EXCELLENT
+# 		owner = {
+# 			add_monthly_resource_mult = {
+# 				resource = energy
+# 				value = @tier1materialreward
+# 				min = @tier1materialmin
+# 				max = @tier1materialmax
+# 			}
+# 		}
+# 	}
+# }
 
-# Gift
-planet_event = {
-	id = harvest_colony.70
-	title = "harvest_colony.70.name"
-	desc = "harvest_colony.70.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_gift }
-		num_pops > 0
-		check_variable = { which = "angry_subterraneans" value < 1 }
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_gift }
-	option = {
-		name = harvest_colony.70.a
-		owner = {
-			add_monthly_resource_mult = {
-				resource = minerals
-				value = @tier1materialreward
-				min = @tier1materialmin
-				max = @tier1materialmax
-			}
-		}
-	}
-}
+# # Earthquakes 1
+# planet_event = {
+# 	id = harvest_colony.68
+# 	title = "harvest_colony.68.name"
+# 	desc = "harvest_colony.68.desc"
+# 	picture = GFX_evt_burning_settlement
+# 	show_sound = event_air_raid_siren
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_destroyed
+# 		NOT = { has_planet_flag = harvest_disturbance_quake }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_quake
+# 		add_planet_devastation = 10
+# 	}
+# 	option = {
+# 		name = UNFORTUNATE
+# 		tooltip = { add_planet_devastation = 10 }
+# 	}
+# }
 
-# Subterranean Refugees
-planet_event = {
-	id = harvest_colony.71
-	title = "harvest_colony.71.name"
-	desc = "harvest_colony.71.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_refugees }
-		num_pops > 0
-		# free_housing > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		set_planet_flag = harvest_disturbance_refugees
-		random_country = {
-			limit = {
-				is_country_type = adversary
-				has_country_flag = harvester_subterranean_nation
-			}
-			owner_species = { save_event_target_as = harvester_subterranean_species }
-		}
-	}
-	option = {
-		name = harvest_colony.71.a
-		trigger = {
-			# free_housing > 0
-		}
-		create_pop = {
-			species = event_target:harvester_subterranean_species
-			ethos = { ethic = "ethic_spiritualist" }
-		}
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = 1 }
-		}
-		custom_tooltip = subterraneans_displeased
-	}
-	option = {
-		name = harvest_colony.71.b
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = -1 }
-		}
-		custom_tooltip = subterraneans_pleased
-	}
-}
+# # Famine
+# planet_event = {
+# 	id = harvest_colony.69
+# 	title = "harvest_colony.69.name"
+# 	desc = "harvest_colony.69.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_famine }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_famine }
+# 	option = {
+# 		name = harvest_colony.69.a
+# 		allow = {
+# 			owner = {
+# 				resource_stockpile_compare = { resource = food value >= 50 }
+# 			}
+# 		}
+# 		owner = {
+# 			add_resource = { food = -50 }
+# 		}
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = -1 }
+# 		}
+# 		custom_tooltip = subterraneans_pleased
+# 	}
+# 	option = {
+# 		name = harvest_colony.69.b
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = 1 }
+# 		}
+# 		custom_tooltip = subterraneans_displeased
+# 	}
+# }
 
-# Xeno Anthropologists
-planet_event = {
-	id = harvest_colony.72
-	title = "harvest_colony.72.name"
-	desc = "harvest_colony.72.desc"
-	picture = GFX_evt_underground_civilization
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_anthropologists }
-		num_pops > 0
-		check_variable = { which = "angry_subterraneans" value < 1 }
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_anthropologists }
-	option = {
-		name = EXCELLENT
-		owner = {
-			add_monthly_resource_mult = {
-				resource = society_research
-				value = @tier3researchreward
-				min = @tier3researchmin
-				max = @tier3researchmax
-			}
-		}
-	}
-}
+# # Gift
+# planet_event = {
+# 	id = harvest_colony.70
+# 	title = "harvest_colony.70.name"
+# 	desc = "harvest_colony.70.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_gift }
+# 		num_pops > 0
+# 		check_variable = { which = "angry_subterraneans" value < 1 }
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_gift }
+# 	option = {
+# 		name = harvest_colony.70.a
+# 		owner = {
+# 			add_monthly_resource_mult = {
+# 				resource = minerals
+# 				value = @tier1materialreward
+# 				min = @tier1materialmin
+# 				max = @tier1materialmax
+# 			}
+# 		}
+# 	}
+# }
 
-# Earthquakes 2
-planet_event = {
-	id = harvest_colony.73
-	title = "harvest_colony.68.name"
-	desc = "harvest_colony.73.desc"
-	picture = GFX_evt_underground_civilization
-	show_sound = event_air_raid_siren
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_quake2 }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = {
-		set_planet_flag = harvest_disturbance_quake2
-		add_planet_devastation = 10
-	}
-	option = {
-		name = harvest_colony.73.a
-		tooltip = { add_planet_devastation = 10 }
-		every_owned_pop = {
-			add_modifier = { modifier = "pop_angry_subterranean" years = 10 }
-		}
-	}
-	option = {
-		name = harvest_colony.73.b
-		tooltip = { add_planet_devastation = 10 }
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = 1 }
-		}
-		custom_tooltip = subterraneans_displeased
-	}
-}
+# # Subterranean Refugees
+# planet_event = {
+# 	id = harvest_colony.71
+# 	title = "harvest_colony.71.name"
+# 	desc = "harvest_colony.71.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_refugees }
+# 		num_pops > 0
+# 		# free_housing > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_refugees
+# 		random_country = {
+# 			limit = {
+# 				is_country_type = adversary
+# 				has_country_flag = harvester_subterranean_nation
+# 			}
+# 			owner_species = { save_event_target_as = harvester_subterranean_species }
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.71.a
+# 		trigger = {
+# 			# free_housing > 0
+# 		}
+# 		create_pop = {
+# 			species = event_target:harvester_subterranean_species
+# 			ethos = { ethic = "ethic_spiritualist" }
+# 		}
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = 1 }
+# 		}
+# 		custom_tooltip = subterraneans_displeased
+# 	}
+# 	option = {
+# 		name = harvest_colony.71.b
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = -1 }
+# 		}
+# 		custom_tooltip = subterraneans_pleased
+# 	}
+# }
 
-# Request for Technology
-planet_event = {
-	id = harvest_colony.74
-	title = "harvest_colony.74.name"
-	desc = "harvest_colony.74.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		NOT = { has_planet_flag = harvest_disturbance_tech }
-		num_pops > 0
-	}
-	mean_time_to_happen = { months = 240 }
-	immediate = { set_planet_flag = harvest_disturbance_tech }
-	option = {
-		name = harvest_colony.74.a
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = 1 }
-		}
-		custom_tooltip = subterraneans_displeased
-	}
-	option = {
-		name = harvest_colony.74.b
-		owner = {
-			add_modifier = { modifier = subterranean_tech_transaction years = 10 }
-		}
-		hidden_effect = {
-			change_variable = { which = "angry_subterraneans" value = -1 }
-			random_country = {
-				limit = {
-					is_country_type = adversary
-					has_country_flag = harvester_subterranean_nation
-				}
-				set_country_flag = tech_request_approved
-			}
-		}
-		custom_tooltip = subterraneans_pleased
-	}
-}
+# # Xeno Anthropologists
+# planet_event = {
+# 	id = harvest_colony.72
+# 	title = "harvest_colony.72.name"
+# 	desc = "harvest_colony.72.desc"
+# 	picture = GFX_evt_underground_civilization
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_anthropologists }
+# 		num_pops > 0
+# 		check_variable = { which = "angry_subterraneans" value < 1 }
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_anthropologists }
+# 	option = {
+# 		name = EXCELLENT
+# 		owner = {
+# 			add_monthly_resource_mult = {
+# 				resource = society_research
+# 				value = @tier3researchreward
+# 				min = @tier3researchmin
+# 				max = @tier3researchmax
+# 			}
+# 		}
+# 	}
+# }
 
-# Message Delivered
-planet_event = {
-	id = harvest_colony.75
-	title = "harvest_colony.75.name"
-	desc = "harvest_colony.75.desc"
-	picture = GFX_evt_alien_cavemen
-	show_sound = event_primitive_civilization
-	location = root
-	pre_triggers = {
-		has_owner = yes
-		is_homeworld = no
-		original_owner = yes
-	}
-	trigger = {
-		has_planet_flag = harvest_disturbance_friendly
-		check_variable = { which = "angry_subterraneans" value > 2 }
-	}
-	mean_time_to_happen = { days = 20 }
-	immediate = {
-		hidden_effect = { remove_planet_flag = harvest_disturbance_friendly }
-	}
-	option = {
-		name = harvest_colony.75.a
-		owner = {
-			country_event = { id = harvest_colony.76 }
-		}
-	}
-}
+# # Earthquakes 2
+# planet_event = {
+# 	id = harvest_colony.73
+# 	title = "harvest_colony.68.name"
+# 	desc = "harvest_colony.73.desc"
+# 	picture = GFX_evt_underground_civilization
+# 	show_sound = event_air_raid_siren
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_quake2 }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = {
+# 		set_planet_flag = harvest_disturbance_quake2
+# 		add_planet_devastation = 10
+# 	}
+# 	option = {
+# 		name = harvest_colony.73.a
+# 		tooltip = { add_planet_devastation = 10 }
+# 		every_owned_pop = {
+# 			add_modifier = { modifier = "pop_angry_subterranean" years = 10 }
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.73.b
+# 		tooltip = { add_planet_devastation = 10 }
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = 1 }
+# 		}
+# 		custom_tooltip = subterraneans_displeased
+# 	}
+# }
 
-# Message
-country_event = {
-	id = harvest_colony.76
-	title = "harvest_colony.76.name"
-	desc = "harvest_colony.76.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-	picture_event_data = { room = no_video_feed_room }
-	immediate = {
-		random_country = {
-			limit = {
-				has_country_flag = harvester_subterranean_nation
-				is_country_type = adversary
-			}
-			save_event_target_as = harvester_subterranean_nation
-		}
-	}
-	option = {
-		name = harvest_colony.76.a
-		from = { remove_modifier = "subterranean_civilization" }
-		hidden_effect = {
-			from = {
-				planet_event = {
-					id = harvest_colony.54
-					days = 35
-					random = 40
-				}
-			}
-		}
-	}
-}
+# # Request for Technology
+# planet_event = {
+# 	id = harvest_colony.74
+# 	title = "harvest_colony.74.name"
+# 	desc = "harvest_colony.74.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 		has_ground_combat = no
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		NOT = { has_planet_flag = harvest_disturbance_tech }
+# 		num_pops > 0
+# 	}
+# 	mean_time_to_happen = { months = 240 }
+# 	immediate = { set_planet_flag = harvest_disturbance_tech }
+# 	option = {
+# 		name = harvest_colony.74.a
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = 1 }
+# 		}
+# 		custom_tooltip = subterraneans_displeased
+# 	}
+# 	option = {
+# 		name = harvest_colony.74.b
+# 		owner = {
+# 			add_modifier = { modifier = subterranean_tech_transaction years = 10 }
+# 		}
+# 		hidden_effect = {
+# 			change_variable = { which = "angry_subterraneans" value = -1 }
+# 			random_country = {
+# 				limit = {
+# 					is_country_type = adversary
+# 					has_country_flag = harvester_subterranean_nation
+# 				}
+# 				set_country_flag = tech_request_approved
+# 			}
+# 		}
+# 		custom_tooltip = subterraneans_pleased
+# 	}
+# }
+
+# # Message Delivered
+# planet_event = {
+# 	id = harvest_colony.75
+# 	title = "harvest_colony.75.name"
+# 	desc = "harvest_colony.75.desc"
+# 	picture = GFX_evt_alien_cavemen
+# 	show_sound = event_primitive_civilization
+# 	location = root
+# 	pre_triggers = {
+# 		has_owner = yes
+# 		is_homeworld = no
+# 		original_owner = yes
+# 	}
+# 	trigger = {
+# 		has_planet_flag = harvest_disturbance_friendly
+# 		check_variable = { which = "angry_subterraneans" value > 2 }
+# 	}
+# 	mean_time_to_happen = { days = 20 }
+# 	immediate = {
+# 		hidden_effect = { remove_planet_flag = harvest_disturbance_friendly }
+# 	}
+# 	option = {
+# 		name = harvest_colony.75.a
+# 		owner = {
+# 			country_event = { id = harvest_colony.76 }
+# 		}
+# 	}
+# }
+
+# # Message
+# country_event = {
+# 	id = harvest_colony.76
+# 	title = "harvest_colony.76.name"
+# 	desc = "harvest_colony.76.desc"
+# 	is_triggered_only = yes
+# 	diplomatic = yes
+# 	picture_event_data = { room = no_video_feed_room }
+# 	immediate = {
+# 		random_country = {
+# 			limit = {
+# 				has_country_flag = harvester_subterranean_nation
+# 				is_country_type = adversary
+# 			}
+# 			save_event_target_as = harvester_subterranean_nation
+# 		}
+# 	}
+# 	option = {
+# 		name = harvest_colony.76.a
+# 		from = { remove_modifier = "subterranean_civilization" }
+# 		hidden_effect = {
+# 			from = {
+# 				planet_event = {
+# 					id = harvest_colony.54
+# 					days = 35
+# 					random = 40
+# 				}
+# 			}
+# 		}
+# 	}
+# }
