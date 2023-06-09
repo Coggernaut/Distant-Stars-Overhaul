@@ -36,6 +36,7 @@ colonizer = {
 	combat_disengage_chance = 0.5
 
 	enable_default_design = yes	# if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes # if yes, ship design will have a 3d view in the ship browser
 	prerequisites = { "tech_colonization_1" }
 	is_civilian = yes
 	is_designable = no
@@ -55,7 +56,7 @@ colonizer = {
 			trigger = {
 				from = {
 					is_lithoid_empire = no
-					is_machine_empire = no
+					is_robot_empire = no
 					is_hive_empire = no
 				}
 			}
@@ -78,6 +79,18 @@ colonizer = {
 		cost = {
 			trigger = {
 				from = {
+					NOR = {
+						has_origin = civic_harvester_nanites
+						has_origin = civic_gateway_pursuer
+					}
+					is_robot_empire = yes
+				}
+			}
+			alloys = 400
+		}
+		cost = {
+			trigger = {
+				from = {
 					OR = {
 						has_origin = civic_harvester_nanites
 						has_origin = civic_gateway_pursuer
@@ -91,20 +104,9 @@ colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					is_robot_empire = yes
-					NOR = {
-						has_origin = civic_harvester_nanites
-						has_origin = civic_gateway_pursuer
-					}
-				}
-			}
-			alloys = 400
-		}
-		cost = {
-			trigger = {
-				from = {
 					is_hive_empire = yes
 					is_lithoid_empire = no
+					NOT = { has_origin = origin_tree_of_life }
 				}
 			}
 			alloys = 200
@@ -114,7 +116,31 @@ colonizer = {
 			trigger = {
 				from = {
 					is_hive_empire = yes
+					is_lithoid_empire = no
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 1000
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
 					is_lithoid_empire = yes
+					has_origin = origin_tree_of_life
+				}
+			}
+			alloys = 50
+			food = 500
+			minerals = 500
+		}
+		cost = {
+			trigger = {
+				from = {
+					is_hive_empire = yes
+					is_lithoid_empire = yes
+					NOT = { has_origin = origin_tree_of_life }
 				}
 			}
 			alloys = 200
@@ -126,5 +152,18 @@ colonizer = {
 			alloys = @colony_upkeep_alloys
 		}
 	}
-}
 
+	potential_country = {
+		OR = {
+			has_technology = tech_hyper_drive_1
+			has_technology = tech_hyper_drive_2
+			has_technology = tech_hyper_drive_3
+			has_technology = tech_jump_drive_1
+			has_technology = tech_psi_jump_drive_1
+		}
+	}
+
+	ai_ship_data = {
+		min = value:desired_colonizers
+	}
+}

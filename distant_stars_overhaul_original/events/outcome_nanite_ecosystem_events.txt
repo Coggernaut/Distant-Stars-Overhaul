@@ -1,5 +1,4 @@
 namespace = distar_nanite_ecosystem
-namespace = graygoo
 namespace = harvest_nanite_gaia
 namespace = nanite_ecosystem
 
@@ -214,29 +213,6 @@ planet_event = {
 			}
 		}
 	}
-}
-
-#########################
-# Entering Empty Cluster #
-#########################
-ship_event = {
-	id = graygoo.550
-	title = "graygoo.550.name"
-	desc = "graygoo.550.desc"
-	picture = GFX_evt_ruined_system
-	show_sound = event_radio_chatter
-	trackable = yes
-	location = root.from
-	is_triggered_only = yes
-	trigger = {
-		NOR = {
-			has_global_flag = gray_goo_crisis_set
-			# has_global_flag = dragon_season
-			has_global_flag = gray_goo_empire_set
-		}
-		root.from = { has_star_flag = lcluster1 }
-	}
-	option = { name = graygoo.550.a }
 }
 
 #####################################

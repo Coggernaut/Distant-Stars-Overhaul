@@ -8,6 +8,7 @@
 #####################################################
 
 generate_lcluster_clue = {
+	optimize_memory
 	hidden_effect = {
 		if = {
 			limit = {
