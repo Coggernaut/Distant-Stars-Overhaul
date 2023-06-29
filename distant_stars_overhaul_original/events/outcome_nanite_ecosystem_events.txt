@@ -308,7 +308,7 @@ planet_event = {
 # L-Subterranean Colony Chain #
 ###############################
 
-country_event = {
+event = {
 	id = nanite_ecosystem.10
 	hide_window = yes
 	is_triggered_only = yes
