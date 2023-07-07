@@ -163,7 +163,8 @@ planet_event = {
 						set_friendly = no
 					}
 				}
-			} else = {
+			}
+			else = {
 				create_country = {
 					name = "L_Gaia_Incarnation"
 					type = lgaia_incarnation_country
@@ -321,7 +322,8 @@ event = {
 		# }
 	}
 	immediate = {
-		if = { limit = { has_global_flag = nanite_ecosystem_decade }
+		if = {
+			limit = { has_global_flag = nanite_ecosystem_decade }
 			remove_global_flag = nanite_ecosystem_decade
 			every_playable_country = {
 				limit = {
@@ -378,7 +380,8 @@ event = {
 					}
 				}
 			}
-		} else = { set_global_flag = nanite_ecosystem_decade }
+		}
+		else = { set_global_flag = nanite_ecosystem_decade }
 	}
 }
 
@@ -605,6 +608,7 @@ planet_event = {
 					owner = event_target:nanite_ecosystem_subterranean_nation
 					species = event_target:nanite_ecosystem_subterranean_species
 					type = "subterranean_industrial_army"
+					land_army = yes
 				}
 			}
 		}
@@ -619,12 +623,11 @@ planet_event = {
 					owner = event_target:nanite_ecosystem_subterranean_nation
 					species = event_target:nanite_ecosystem_subterranean_species
 					type = "subterranean_postatomic_army"
+					land_army = yes
 				}
 			}
 		}
-		last_created_army = {
-			assign_leader = last_created_leader
-		}
+		last_created_army = { assign_leader = last_created_leader }
 	}
 	option = {
 		name = "colony.54.a"
@@ -728,16 +731,19 @@ country_event = {
 				owner = event_target:nanite_ecosystem_subterranean_empire
 				species = event_target:nanite_ecosystem_subterranean_species
 				type = "defense_army"
+				land_army = yes
 			}
 			create_army = {
 				name = "NAME_Loot-Equipped_Army"
 				owner = event_target:nanite_ecosystem_subterranean_empire
 				species = event_target:nanite_ecosystem_subterranean_species
 				type = "defense_army"
+				land_army = yes
 			}
 			# flip starbase
 			solar_system = {
-				if = { limit = { exists = starbase }
+				if = {
+					limit = { exists = starbase }
 					starbase = { set_owner = event_target:nanite_ecosystem_subterranean_empire }
 				}
 			}
@@ -833,6 +839,7 @@ planet_event = {
 					owner = event_target:nanite_ecosystem_subterranean_nation
 					species = event_target:nanite_ecosystem_subterranean_species
 					type = "industrial_army"
+					land_army = yes
 				}
 			}
 		}
@@ -847,12 +854,11 @@ planet_event = {
 					owner = event_target:nanite_ecosystem_subterranean_nation
 					species = event_target:nanite_ecosystem_subterranean_species
 					type = "postatomic_army"
+					land_army = yes
 				}
 			}
 		}
-		last_created_army = {
-			assign_leader = last_created_leader
-		}
+		last_created_army = { assign_leader = last_created_leader }
 	}
 	option = {
 		name = "colony.60.a"
@@ -1474,9 +1480,7 @@ event = {
 	id = nanite_ecosystem.77
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		has_global_flag = nanite_ecosystem_seismic_disturbance_global
-	}
+	trigger = { has_global_flag = nanite_ecosystem_seismic_disturbance_global }
 	immediate = {
 		every_playable_country = {
 			limit = {
@@ -1526,7 +1530,8 @@ fleet_event = {
 		owner = {
 			country_event = { id = distar_nanite_ecosystem.1 }
 			log = "L-Drake got event"
-			if = { limit = { is_country_type = ldragon_country }
+			if = {
+				limit = { is_country_type = ldragon_country }
 				log = "L-Drake has entered System"
 			}
 		}

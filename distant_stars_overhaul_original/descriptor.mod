@@ -1,4 +1,4 @@
-version="3.4.7"
+version="3.4.8"
 tags={
 	"Overhaul"
 	"Events"
