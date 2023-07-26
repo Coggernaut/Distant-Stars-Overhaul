@@ -514,82 +514,124 @@ country_event = {
 			if = { limit = { has_origin = civic_gateway_pursuer }
 				start_lcluster_chain = yes
 				set_country_flag = encountered_first_lgate
-			} else_if = { limit = { has_origin = civic_gateway_worshiper }
+			} 
+			else_if = { limit = { has_origin = civic_gateway_worshiper }
 				capital_scope = {
-					set_planet_size = 25
+					set_planet_size = 30
 					reroll_deposits = yes
 					every_deposit = {
 						limit = { is_blocker = yes }
 						clear_blocker = yes
 					}
 					add_modifier = { modifier = "DSO_dessanu_heritage_world" days = -1 }
-				}
-				owner_species = { set_species_flag = DSO_dessanu_heritage }
-				start_lcluster_chain = yes
-				set_country_flag = encountered_first_lgate
-				if = {
-					limit = {
-						has_country_flag = is_cult_of_the_gateway_flag
-						is_ai = yes
-					}
-					if = {
-						limit = {
-							has_technology = tech_starbase_2
-							NOT = { has_technology = tech_starbase_3 }
-						}
-						give_technology = { tech = tech_starbase_3 message = no }
-					}
-					# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
-				}
-				event_target:gateway_system = {
-					closest_system = {
-						limit = { is_valid_drone_expansion_destination_system = yes }
-						min_steps = 2
-						max_steps = 5
-						spawn_planet = {
-							class = "pc_gray_goo"
-							name = "Sunder"
-							location = solar_system.star
-							orbit_location = yes
-							orbit_angle_offset = 50
-							orbit_distance_offset = 100
-							size = 11
-							has_ring = yes
-							init_effect = {
-								set_name = "Sunder"
-								create_archaeological_site = dso_ancient_dessanu_battle_site
-								add_deposit = d_nanosands
+					ROOT = { 
+						random_system_within_border = {
+							spawn_planet = {
+								class = "pc_relic"
+								name = "Sunder"
+								location = PREVPREV
+								orbit_location = yes
+								orbit_angle_offset = 25
+								orbit_distance_offset = 10
+								size = 10
+								has_ring = no
+								init_effect = {
+									#create_archaeological_site = dso_ancient_dessanu_battle_site
+									add_deposit = d_nanosands
+									add_modifier = { modifier = "DSO_ancient_dessanu_colony" days = -1 }
+									create_colony = {
+										owner = root
+										species = owner_main_species
+										ethos = owner
+									}
+								}
 							}
 						}
-						create_ambient_object = {
-							type = ancient_battlefield_02_object
-							scale = 1
-							location = solar_system
-							entity_offset = 35
-							entity_offset_angle = 210
-							entity_offset_height = 10
-							entity_face_object = star
-							entity_scale_to_size = no
+					}
+				}
+				ROOT = {
+					random_planet_within_border = {
+						limit = { is_planet_class = pc_relic }
+						set_name = "Abandonded Outpost"
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
 						}
-						create_ambient_object = {
-							type = ancient_battlefield_02_object
-							scale = 1
-							location = solar_system
-							entity_offset = 45
-							entity_offset_angle = 260
-							entity_offset_height = 14
-							entity_face_object = star
-							entity_scale_to_size = no
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
 						}
-						create_ambient_object = {
-							type = ancient_battlefield_02_object
-							scale = 1
-							location = solar_system
-							entity_offset = 50
-							entity_offset_angle = 115
-							entity_offset_height = 8
-							entity_face_object = star
-							entity_scale_to_size = no
+					}
+					country_event = { id = bio_harvest.5 days = 1 }
+				}
+					owner_species = { set_species_flag = DSO_dessanu_heritage }
+					start_lcluster_chain = yes
+					set_country_flag = encountered_first_lgate
+					if = {
+						limit = {
+							has_country_flag = is_cult_of_the_gateway_flag
+							is_ai = yes
+						}
+						if = {
+							limit = {
+								has_technology = tech_starbase_2
+								NOT = { has_technology = tech_starbase_3 }
+							}
+							give_technology = { tech = tech_starbase_3 message = no }
+						}
+						# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
+					}
+				ROOT = {
+					event_target:gateway_system = {
+						closest_system = {
+							limit = { is_valid_drone_expansion_destination_system = yes }
+							min_steps = 2
+							max_steps = 5
+							spawn_planet = {
+								class = "pc_gray_goo"
+								name = "Sunder"
+								location = solar_system.star
+								orbit_location = yes
+								orbit_angle_offset = 50
+								orbit_distance_offset = 100
+								size = 11
+								has_ring = yes
+								init_effect = {
+									set_name = "Sunder"
+									create_archaeological_site = dso_ancient_dessanu_battle_site
+									add_deposit = d_nanosands
+								}
+							}
+							create_ambient_object = {
+								type = ancient_battlefield_02_object
+								scale = 1
+								location = solar_system
+								entity_offset = 35
+								entity_offset_angle = 210
+								entity_offset_height = 10
+								entity_face_object = star
+								entity_scale_to_size = no
+							}
+							create_ambient_object = {
+								type = ancient_battlefield_02_object
+								scale = 1
+								location = solar_system
+								entity_offset = 45
+								entity_offset_angle = 260
+								entity_offset_height = 14
+								entity_face_object = star
+								entity_scale_to_size = no
+							}
+							create_ambient_object = {
+								type = ancient_battlefield_02_object
+								scale = 1
+								location = solar_system
+								entity_offset = 50
+								entity_offset_angle = 115
+								entity_offset_height = 8
+								entity_face_object = star
+								entity_scale_to_size = no
+							}
 						}
 					}
 				}
@@ -661,24 +703,108 @@ country_event = {
 				}
 			}
 		}
-		# if = {
-		#	limit = {
-		#		has_origin = civic_harvester_nanites
-		#	}
-		#	random_system_within_border = {
-		#		spawn_system = {
-		#			min_jumps = 0
-		#			max_jumps = 0
-		#			min_distance = 15
-		#			max_distance = 20
-		#			initializer = dessanu_war_system
-		#			hyperlane = yes
-		#			is_discovered = no
-		#		}
-		#	}
-		#}
 	}
 }
+
+#Lost Dessanu Colony System
+country_event = {
+	id = bio_harvest.5
+	is_triggered_only = yes
+	fire_only_once = yes
+	hide_window = yes
+	immediate = {
+		#Generates system for Lost Dessanu Colony.
+		random_country = {
+			limit = { has_origin = civic_gateway_worshiper }
+			weights = {
+				base = 1
+				modifier = { 
+					factor = 100 
+					is_ai = no
+				}
+			}
+			capital_scope = {
+				spawn_system = {
+					min_jumps = 5
+					max_jumps = 7
+					initializer = lost_dessanu_colony_system
+					hyperlane = yes
+					is_discovered = no
+				}
+			}
+		}
+		#If 2 Guardians exist, a non-player one is destroyed
+		if = {
+			limit = {
+				any_country = {
+					has_origin = civic_gateway_worshiper
+					NOT = { is_same_empire = ROOT }
+				}
+			}
+			random_country = {
+				limit = {
+					has_origin = civic_gateway_worshiper
+				}
+				if = { 
+					limit = { THIS = { is_ai = yes } }
+					capital_scope = {
+						planet_event = { id = bio_harvest.6 days = 1 }
+					}
+					random_planet_within_border = {
+						limit = { is_planet_class = pc_relic }
+						change_pc = pc_gray_goo
+						every_deposit = {
+							limit = { is_blocker = yes }
+							clear_blocker = yes
+						}
+						add_deposit = d_nanosands
+					}
+					destroy_country = yes
+				}
+				else = { 
+					random_country = {
+						limit = {
+							has_origin = civic_gateway_worshiper
+							is_ai = yes
+						}
+						capital_scope = {
+							planet_event = { id = bio_harvest.6 days = 1 }
+						}
+						random_planet_within_border = {
+							limit = { is_planet_class = pc_relic }
+							change_pc = pc_gray_goo
+							every_deposit = {
+								limit = { is_blocker = yes }
+								clear_blocker = yes
+							}
+							add_deposit = d_nanosands
+						}
+						destroy_country = yes
+					}
+				}
+			}
+		}
+	}
+}
+#Changes capital of destroyed empire into gray-goo world.
+planet_event = {
+	id = bio_harvest.6
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		set_planet_size = 30
+		change_pc = pc_shattered
+		every_deposit = {
+			limit = { is_blocker = yes }
+			clear_blocker = yes
+		}
+		add_deposit = d_minerals_4
+		add_deposit = d_minerals_4
+		remove_modifier = "DSO_dessanu_heritage_world"
+	}
+}
+
+
 
 # Fix Capital
 planet_event = {

@@ -44,19 +44,20 @@
 # NOTE: Weight is additive!
 
 harvester_nanites = {
-	aggressiveness = 1
+	aggressiveness = 2
 	trade_willingness = 1.0	# But only with fellow machines
 	bravery = 1.0
 	combat_bravery = 1.5
 
 	military_spending = 1
-	colony_spending = 3
+	colony_spending = 2
 
 	federation_acceptance = 0
 	nap_acceptance = 0
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = -20
 	defensive_pact_acceptance = -20
+	loyalty_acceptance = 0.50
 
 	advanced_start_chance = 50
 
@@ -86,13 +87,12 @@ harvester_nanites = {
 		propagator = no
 		multispecies = no
 		crisis_fighter = yes
-		attack_neutrals = yes
+		attack_neutrals = no
 	}
 
 	allow = {
-		merg_is_default_empire = yes
-		has_authority = "auth_machine_intelligence"
 		has_origin = civic_harvester_nanites
+		NOT = { has_origin = civic_gateway_pursuer }
 	}
 
 	weight_modifier = {
@@ -114,6 +114,7 @@ gateway_pursuers = {
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = 0
 	defensive_pact_acceptance = -10
+	loyalty_acceptance = 1.0
 
 	advanced_start_chance = 50
 
@@ -147,8 +148,6 @@ gateway_pursuers = {
 	}
 
 	allow = {
-		merg_is_default_empire = yes
-		has_authority = "auth_machine_intelligence"
 		has_origin = civic_gateway_pursuer
 	}
 
@@ -158,7 +157,7 @@ gateway_pursuers = {
 }
 
 gateway_worshipers = {
-	aggressiveness = 1
+	aggressiveness = 1.75
 	trade_willingness = 1.0	# But only with fellow machines
 	bravery = 1.5
 	combat_bravery = 1.5
@@ -171,7 +170,8 @@ gateway_worshipers = {
 	commercial_pact_acceptance = 0
 	research_agreement_acceptance = -20
 	defensive_pact_acceptance = 0
-	migration_pact_acceptance = 0
+	migration_pact_acceptance = 100
+	loyalty_acceptance = 1.0
 
 	advanced_start_chance = 75
 
@@ -186,26 +186,26 @@ gateway_worshipers = {
 	claims_modifier = 0
 
 	behaviour = {
-		conqueror = yes
+		conqueror = no
 		subjugator = no
-		liberator = no
+		liberator = yes
 		opportunist = yes
 		slaver = no
-		uplifter = no
+		uplifter = yes
 		purger = no
 		displacer = no
 		dominator = yes
-		infiltrator = no
+		infiltrator = yes
 		robot_exploiter = no
 		robot_liberator = no
 		propagator = no
 		multispecies = no
+		crisis_leader = yes
 		crisis_fighter = yes
 		attack_neutrals = no
 	}
 
 	allow = {
-		merg_is_default_empire = yes
 		has_origin = civic_gateway_worshiper
 	}
 
