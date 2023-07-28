@@ -124,3 +124,22 @@ civic_gateway_worshiper = {
 		}
 	}
 }
+
+origin_gate_builder = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_elder_race.dds"
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+		is_country_type = gate_builders
+	}
+
+	description = origin_no_effect
+
+	random_weight = {
+		base = 0
+	}
+}

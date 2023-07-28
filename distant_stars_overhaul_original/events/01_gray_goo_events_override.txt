@@ -1,0 +1,1452 @@
+############################
+#
+# Gray Goo Events
+#
+# Written by Henrik Thyrwall
+#
+############################
+
+namespace = graygoo
+
+### Gray Goo Fallen Empire
+
+# Set up Empire
+country_event = {
+	id = graygoo.100
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_megastructure = {
+			limit = {
+				is_megastructure_type = lgate_base
+			}
+			activate_gateway = this
+			set_megastructure_flag = lgate_activated
+		}
+		set_update_modifiers_batch = begin
+		event_target:graygoo_factory_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = main_star }
+				save_event_target_as = main_star
+			}
+			create_species = {
+				name = "NAME_Dessanu"
+				class = random_non_machine
+				portrait = random
+				traits = random
+				extra_trait_points = 5
+				allow_negative_traits = no
+				immortal = yes
+			}
+			create_country = {
+				name = "NAME_Dessanu_Consonance"
+				type = "gate_builders"
+				ignore_initial_colony_error = yes
+				species = last_created_species
+				ethos = {
+					ethic = "ethic_egalitarian"
+					ethic = "ethic_fanatic_xenophile"
+				}
+				civics = {
+				}
+				authority = "auth_democratic"
+				effect = {
+					save_event_target_as = graygoo_country
+					add_resource = { minerals = 5000 }
+					add_resource = { energy = 5000 }
+					add_resource = { influence = 5000 }
+					set_origin = "origin_gate_builder"
+					change_government = {
+						authority = auth_democratic
+						civics = { 
+						}
+						cooldown = yes
+						remove_invalid_civics = no
+					}
+					if = {
+						limit = { NOT ={ has_civic = civic_lethargic_leadership } }
+						force_add_civic = civic_lethargic_leadership
+					}
+					if = {
+						limit = { NOT ={ has_civic = civic_empire_in_decline } }
+						force_add_civic = civic_empire_in_decline
+					}
+					ruler = {
+						add_skill = 9
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_ship = {
+						name = random
+						design = "NAME_Nanite_Factory"
+						graphical_culture = "pirate_01"
+					}
+					set_location = {
+						target = event_target:main_star
+						distance = 55
+						angle = 270
+					}
+					save_event_target_as = nanite_factory
+				}
+			}
+			every_country = { establish_communications_no_message = event_target:graygoo_country }
+
+
+			event_target:graygoo_country = {
+				create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
+				add_ship_design = last_created_design
+				create_leader = {
+					class = admiral
+					species = owner_main_species
+					name = random
+					skill = 3
+					leader_age_min = 25
+					leader_age_max = 45
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dessanu_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_dessanu_ships_1 = yes
+					set_formation_scale = 2
+					#set_fleet_stance = aggressive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 0
+					}
+					assign_leader = last_created_leader
+				}
+				settings = {
+					#garrison = yes
+					uses_naval_capacity = no
+				}
+			}
+			event_target:graygoo_country = {
+				create_leader = {
+					class = admiral
+					species = owner_main_species
+					name = random
+					skill = 3
+					leader_age_min = 25
+					leader_age_max = 45
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dessanu_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_dessanu_ships_1 = yes
+					set_formation_scale = 2
+					#set_fleet_stance = aggressive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 90
+					}
+					assign_leader = last_created_leader
+				}
+				settings = {
+					#garrison = yes
+					uses_naval_capacity = no
+				}
+			}
+			event_target:graygoo_country = {
+				create_leader = {
+					class = admiral
+					species = owner_main_species
+					name = random
+					skill = 3
+					leader_age_min = 25
+					leader_age_max = 45
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dessanu_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_dessanu_ships_1 = yes
+					set_formation_scale = 2
+					#set_fleet_stance = aggressive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 180
+					}
+					assign_leader = last_created_leader
+				}
+				settings = {
+					#garrison = yes
+					uses_naval_capacity = no
+				}
+			}
+			event_target:graygoo_country = {
+				create_leader = {
+					class = admiral
+					species = owner_main_species
+					name = random
+					skill = 3
+					leader_age_min = 25
+					leader_age_max = 45
+				}
+			}
+			create_fleet = {
+				name = "NAME_Dessanu_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_dessanu_ships_1 = yes
+					set_formation_scale = 2
+					#set_fleet_stance = aggressive
+					#set_aggro_range_measure_from = self
+					#set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 270
+					}
+					assign_leader = last_created_leader
+				}
+				settings = {
+					#garrison = yes
+					uses_naval_capacity = no
+				}
+			}
+			every_system = {
+				limit = { has_star_flag = lcluster }
+				every_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					event_target:graygoo_country = {
+						create_leader = {
+							class = admiral
+							species = owner_main_species
+							name = random
+							skill = 3
+							leader_age_min = 25
+							leader_age_max = 45
+						}
+					}
+					create_fleet = {
+						name = "NAME_Dessanu_Fleet"
+						effect = {
+							set_owner = event_target:graygoo_country
+							create_dessanu_ships_1 = yes
+							set_formation_scale = 2
+							#set_fleet_stance = aggressive
+							#set_aggro_range_measure_from = self
+							#set_aggro_range = 250
+							set_location = {
+								target = prev
+								distance = 15
+								angle = random
+							}
+							assign_leader = last_created_leader
+						}
+						settings = {
+							#garrison = yes
+							uses_naval_capacity = no
+						}
+					}
+				}
+			}
+			event_target:lcluster1 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_1
+				}
+			}
+			event_target:lcluster2 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_2
+				}
+			}
+			event_target:lcluster3 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_3
+				}
+			}
+			event_target:lcluster4 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_4
+				}
+			}
+			event_target:lcluster5 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_5
+				}
+			}
+			event_target:lcluster1b = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_6
+				}
+			}
+			create_dessanu_roamers_1 = yes
+			create_dessanu_roamers_2 = yes
+			create_dessanu_roamers_3 = yes
+			create_dessanu_roamers_4 = yes
+			create_dessanu_roamers_5 = yes
+			create_dessanu_roamers_6 = yes
+			create_dessanu_roamers_7 = yes
+
+			every_system = {
+				limit = { has_star_flag = lcluster }
+				create_starbase = {
+					size = "starbase_gatebuilders"
+					owner = event_target:graygoo_country
+				}
+				every_system_planet = {
+					limit = {
+						has_deposit_for = shipclass_mining_station
+					}
+					create_mining_station = { owner = event_target:graygoo_country }
+				}
+				every_system_planet = {
+					limit = {
+						has_deposit_for = shipclass_research_station
+					}
+					create_research_station = { owner = event_target:graygoo_country }
+				}
+				every_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					change_pc = pc_gaia
+					reset_planet = yes
+					set_planet_flag = hidden_nanite_world
+					prevent_anomaly = yes
+					set_owner = event_target:graygoo_country
+					while = {
+						count = 30
+						create_pop = {
+							species = owner_main_species
+						}
+					}
+					while = {
+						count = 2
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_city
+						}
+					}
+					while = {
+						count = 3
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_mining
+						}
+					}
+					while = {
+						count = 4
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_generator
+						}
+					}
+					if = {
+						limit = {
+							event_target:graygoo_country.species = {
+								is_lithoid = yes
+							}
+						}
+						while = {
+							count = 2
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_mining
+							}
+						}
+						add_district_and_planet_size_if_needed_effect = {
+							district = district_generator
+						}
+					}
+					else = {
+						while = {
+							count = 3
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_farming
+							}
+						}
+					}
+					add_building = building_capital
+					add_building = building_mineral_purification_hub
+					add_building = building_energy_grid
+					add_building = building_stronghold
+					add_building = building_factory_1
+					add_building = building_holo_theatres
+					add_building = building_foundry_1
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+		country_event = { id = graygoo.110 }
+		observer_event = { id = observer.66 }
+	}
+}
+
+# The Dessanu Consonance
+country_event = {
+	id = graygoo.110
+	title = "distar.10951.name"
+	desc = "graygoo.110.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	after = {
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					OR = {
+						has_special_project = LCLUSTER_PROJECT
+						has_event_chain = l_cluster_chain
+					}
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = graygoo.111 }
+			}
+			every_playable_country = {
+				limit = {
+					NOR = {
+						has_event_chain = l_cluster_chain
+						has_special_project = LCLUSTER_PROJECT
+						is_same_value = root
+					}
+				}
+				country_event = { id = graygoo.112 }
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.10.a
+		hidden_effect = {
+			country_event = { id = graygoo.115 }
+		}
+	}
+}
+
+# Dessanu Introduction (Other, has project/chain)
+country_event = {
+	id = graygoo.111
+	title = "graygoo.111.name"
+	desc = "graygoo.111.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_communications = from }
+			}
+			establish_communications_no_message = from
+		}
+		establish_communications_no_message = event_target:graygoo_country
+	}
+
+	option = {
+		name = ONSCREEN
+		hidden_effect = {
+			country_event = { id = graygoo.116 }
+		}
+	}
+}
+
+# Dessanu Introduction (Other, has nothing)
+country_event = {
+	id = graygoo.112
+	title = "graygoo.111.name"
+	desc = "graygoo.112.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				NOT = { has_communications = from }
+			}
+			establish_communications_no_message = from
+		}
+		establish_communications_no_message = event_target:graygoo_country
+	}
+
+	option = {
+		name = ONSCREEN
+		hidden_effect = {
+			country_event = { id = graygoo.116 }
+		}
+	}
+}
+
+# Incoming Transmission
+country_event = {
+	id = graygoo.115
+	title = "TRANSMISSION"
+	desc = "graygoo.115.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:graygoo_country
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.115.a
+		response_text = graygoo.115.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.115.b
+		response_text = graygoo.115.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.115.c
+		response_text = graygoo.115.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.115.d
+		response_text = graygoo.115.d.response
+		default_hide_option = yes
+		add_modifier = {
+			modifier = "dessanu_gift"
+			days = -1
+		}
+		IF = {
+			limit = { NOT = { has_technology = tech_mine_living_metal } }
+			 give_technology = { tech = tech_mine_living_metal }
+		}
+		ELSE = {
+			#nothing
+		}
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			add_opinion_modifier = { modifier = opinion_fallen_empire_gift who = ROOT }
+			set_closed_borders = {
+				who = ROOT
+				status = no
+				forced = 500
+			}
+			add_opinion_modifier = { modifier = opinion_opened_lgate who = ROOT }
+		}
+	}
+}
+
+# Incoming Transmission (Everyone Else)
+country_event = {
+	id = graygoo.116
+	title = "TRANSMISSION"
+	desc = "graygoo.116.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:graygoo_country
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.116.d
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			set_closed_borders = {
+				who = ROOT
+				status = no
+				forced = 500
+			}
+		}
+	}
+}
+
+# Dessanu Diplomacy (Initial)
+country_event = {
+	id = graygoo.120
+	title = "graygoo.120_title"
+	desc = {
+		text = graygoo.120.desc_01
+	}
+	desc = {
+		text = graygoo.120.desc_02
+	}
+	desc = {
+		text = graygoo.120.desc_03
+	}
+	desc = {
+		text = graygoo.120.desc_04
+	}
+	desc = {
+		text = graygoo.120.desc_05
+	}
+	desc = {
+		text = graygoo.120.desc_06
+	}
+	desc = {
+		text = graygoo.120.desc_07
+	}
+
+	picture_event_data = {
+		portrait = from
+	}
+
+	diplomatic = yes
+	force_open = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gate_builders }
+		NOR = {
+			has_country_flag = gate_builder_diplomacy_engaged
+			has_country_flag = gate_builders_hostility
+		}
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+		from = { save_event_target_as = gate_builders }
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.120.a
+		country_event = { id = graygoo.121 }
+	}
+	option = {
+		default_hide_option = yes
+		name = graygoo.115.d
+	}
+}
+
+# Dessanu Diplomacy
+country_event = {
+	id = graygoo.119
+	title = "graygoo.120_title"
+	desc = {
+		text = graygoo.120.desc_01
+	}
+	desc = {
+		text = graygoo.120.desc_02
+	}
+	desc = {
+		text = graygoo.120.desc_03
+	}
+	desc = {
+		text = graygoo.120.desc_04
+	}
+	desc = {
+		text = graygoo.120.desc_05
+	}
+	desc = {
+		text = graygoo.120.desc_06
+	}
+	desc = {
+		text = graygoo.120.desc_07
+	}
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	diplomatic = yes
+	force_open = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.120.a
+		country_event = { id = graygoo.121 }
+	}
+	option = {
+		default_hide_option = yes
+		name = graygoo.115.d
+	}
+}
+
+# Tell us about yourselves
+country_event = {
+	id = graygoo.121
+	title = "graygoo.120_title"
+	desc = "graygoo.121.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.121.a
+		response_text = graygoo.121.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.121.b
+		response_text = graygoo.121.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.121.c
+		response_text = graygoo.121.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.121.d
+		hidden_effect = {
+			country_event = { id = graygoo.122 }
+		}
+	}
+	option = {
+		name = graygoo.121.e
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = graygoo.119 }
+		}
+	}
+}
+
+# Inquire about Nanites
+country_event = {
+	id = graygoo.122
+	title = "graygoo.120_title"
+	desc = "graygoo.122.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.122.a
+		hidden_effect = {
+			country_event = { id = graygoo.123 }
+		}
+	}
+	option = {
+		name = graygoo.122.b
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = graygoo.121 }
+		}
+	}
+}
+
+# Inquire about Nanites 2
+country_event = {
+	id = graygoo.123
+	title = "graygoo.120_title"
+	desc = "graygoo.123.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.123.a
+		hidden_effect = {
+			country_event = { id = graygoo.124 }
+		}
+	}
+	option = {
+		name = graygoo.123.b
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = graygoo.121 }
+		}
+	}
+}
+
+# Inquire about Nanites 3
+country_event = {
+	id = graygoo.124
+	title = "graygoo.120_title"
+	desc = "graygoo.124.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.124.a
+		hidden_effect = {
+			country_event = { id = graygoo.125 }
+		}
+	}
+}
+
+# Inquire about Nanites 4
+country_event = {
+	id = graygoo.125
+	title = "graygoo.120_title"
+	desc = "graygoo.124.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.125.a
+		hidden_effect = {
+			country_event = { id = graygoo.126 }
+		}
+	}
+}
+
+# Inquire about Nanites 5
+country_event = {
+	id = graygoo.126
+	title = "graygoo.120_title"
+	desc = "graygoo.126.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+		set_country_flag = gate_builders_hostility
+		event_target:gate_builders = {
+			#set_faction_hostility = {
+			#	target = root
+			#	set_hostile = yes
+			#	set_neutral = no
+			#	set_friendly = no
+			#}
+		}
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.126.a
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			declare_war = {
+				target = ROOT
+				attacker_war_goal = wg_fe_humiliation
+			}
+		}
+	}
+}
+
+# Dessanu Hostile Diplomacy
+country_event = {
+	id = graygoo.130
+	title = "graygoo.120_title"
+	desc = "graygoo.130.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = from
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gate_builders }
+		NOT = { has_country_flag = gate_builder_diplomacy_engaged }
+		has_country_flag = gate_builders_hostility
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.130.a
+		response_text = graygoo.130.desc
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.130.b
+		response_text = graygoo.130.desc
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.130.c
+		response_text = graygoo.130.desc
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.130.d
+		response_text = graygoo.130.desc
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.130.e
+		default_hide_option = yes
+	}
+}
+
+# Invaded Gate Builder Planet
+country_event = {
+	id = graygoo.150
+	title = "graygoo.150.name"
+	desc = {
+		trigger = { NOT = { has_country_flag = invaded_graygoo_planet } }
+		text = graygoo.150.a.desc
+	}
+	desc = {
+		trigger = { has_country_flag = invaded_graygoo_planet }
+		text = graygoo.150.b.desc
+	}
+	picture = GFX_evt_gray_goo
+	show_sound = event_ground_battle
+	location = fromfrom
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = "gate_builders" }
+	}
+
+	immediate = {
+		fromfrom = {
+			change_pc = pc_gray_goo
+			reroll_planet = yes
+			destroy_colony = yes
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = invaded_graygoo_planet } }
+				set_country_flag = invaded_graygoo_planet
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.150.a
+		hidden_effect = {
+			country_event = { id = graygoo.156 days = 3 }
+		}
+	}
+}
+
+# Turned Hostile (Space Battle)
+country_event = {
+	id = graygoo.155
+	title = TRANSMISSION
+	desc = "graygoo.155.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = from
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gate_builders }
+		NOT = { has_country_flag = gate_builders_hostility }
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+		set_country_flag = gate_builders_hostility
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.155.a
+	}
+}
+
+# Turned Hostile (Ground Battle)
+country_event = {
+	id = graygoo.156
+	title = TRANSMISSION
+	desc = "graygoo.155.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = fromfrom
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = gate_builders_hostility }
+	}
+
+	immediate = {
+		set_country_flag = gate_builder_diplomacy_engaged
+		set_country_flag = gate_builders_hostility
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	option = {
+		name = graygoo.155.a
+	}
+}
+
+# Entered Forbidden System (First Time)
+ship_event = {
+	id = graygoo.160
+	title = TRANSMISSION
+	desc = "graygoo.160.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_star_flag = graygoo_factory_system
+			any_fleet_in_system = {
+				is_ship_size = graygoo_factory
+				exists = owner
+				owner = { is_country_type = gate_builders }
+			}
+		}
+		owner = {
+			NOT = { has_country_flag = gate_builders_hostility }
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			save_event_target_as = gate_builders
+		}
+		owner = { set_country_flag = gate_builder_diplomacy_engaged }
+	}
+
+	after = {
+		hidden_effect = {
+			owner = { remove_country_flag = gate_builder_diplomacy_engaged }
+		}
+	}
+
+	option = {
+		name = graygoo.160.a
+		hidden_effect = {
+			owner = {
+				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+				set_country_flag = gk_first_entry
+				country_event = { id = graygoo.161 days = 60 }
+			}
+		}
+	}
+	option = {
+		name = graygoo.160.b
+		response_text = graygoo.160.b.response
+		hidden_effect = {
+			owner = { set_country_flag = gate_builders_hostility }
+			#event_target:gate_builders = {
+			#	set_faction_hostility = {
+			#		target = root.owner
+			#		set_hostile = yes
+			#		set_neutral = no
+			#		set_friendly = no
+			#	}
+			#}
+			random_country = {
+				limit = { is_country_type = gate_builders }
+				declare_war = {
+					target = ROOT
+					attacker_war_goal = wg_fe_humiliation
+				}
+			}
+		}
+	}
+}
+
+# Failed to leave
+country_event = {
+	id = graygoo.161
+	title = TRANSMISSION
+	desc = "graygoo.161.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		event_target:lcluster_factory_system = {
+			any_fleet_in_system = {
+				owner = { is_same_value = root }
+			}
+		}
+		event_target:lcluster_factory_system = {
+			any_fleet_in_system = {
+				is_ship_size = graygoo_factory
+				owner = { is_country_type = gate_builders }
+			}
+		}
+		NOT = { has_country_flag = gate_builders_hostility }
+	}
+
+	immediate = {
+		set_country_flag = gate_builders_hostility
+		event_target:gate_builders = {
+			#set_faction_hostility = {
+			#	target = root
+			#	set_hostile = yes
+			#	set_neutral = no
+			#	set_friendly = no
+			#}
+		}
+		set_country_flag = gate_builder_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = gate_builder_diplomacy_engaged
+		}
+	}
+
+	option = {
+		name = graygoo.161.a
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			declare_war = {
+				target = ROOT
+				attacker_war_goal = wg_fe_humiliation
+			}
+		}
+	}
+}
+
+# Entered Forbidden System (Second Time)
+fleet_event = {
+	id = graygoo.162
+	title = TRANSMISSION
+	desc = "graygoo.162.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gate_builders
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_star_flag = graygoo_factory_system
+			any_fleet_in_system = {
+				is_ship_size = graygoo_factory
+				exists = owner
+				owner = { is_country_type = gate_builders }
+			}
+		}
+		owner = {
+			has_country_flag = gk_first_entry
+			NOR = {
+				has_country_flag = gate_builders_hostility
+				has_country_flag = gk_told_to_leave
+				has_country_flag = violating_gatebuilder_space
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			save_event_target_as = gate_builders
+		}
+		owner = {
+			set_country_flag = gate_builder_diplomacy_engaged
+			set_country_flag = violating_gatebuilder_space
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			owner = {
+				remove_country_flag = gate_builder_diplomacy_engaged
+				remove_country_flag = violating_gatebuilder_space
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.162.a
+		hidden_effect = {
+			owner = {
+				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+				country_event = { id = graygoo.161 days = 60 }
+			}
+		}
+	}
+	option = {
+		name = graygoo.162.b
+		response_text = graygoo.160.b.response
+		hidden_effect = {
+			owner = { set_country_flag = gate_builders_hostility }
+			event_target:gate_builders = {
+				#set_faction_hostility = {
+				#	target = root.owner
+				#	set_hostile = yes
+				#	set_neutral = no
+				#	set_friendly = no
+				#}
+			}
+			random_country = {
+				limit = { is_country_type = gate_builders }
+				declare_war = {
+					target = ROOT
+					attacker_war_goal = wg_fe_humiliation
+				}
+			}
+		}
+	}
+}
+
+# Factory Destroyed (Dessanu)
+country_event = {
+	id = graygoo.180
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = gate_builders
+		fromfrom = { is_ship_size = graygoo_factory }
+	}
+
+	immediate = {
+		fromfromfrom = { save_event_target_as = goo_slayer_ship }
+		from = {
+			save_event_target_as = goo_slayer
+			country_event = { id = graygoo.181 }
+		}
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = event_target:goo_slayer }
+			}
+			country_event = { id = graygoo.182 }
+		}
+		observer_event = { id = observer.67 }
+		every_owned_planet = {
+			limit = { is_planet_class = pc_gaia }
+			change_pc = pc_gray_goo
+			reroll_planet = yes
+			destroy_colony = yes
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+		every_controlled_fleet = { destroy_fleet = this }
+		destroy_country = yes
+	}
+}
+
+# Factory Destroyed, Instigator (Dessanu)
+country_event = {
+	id = graygoo.181
+	title = "graygoo.181.name"
+	desc = "graygoo.181.desc"
+	picture = GFX_evt_large_explosion
+	show_sound = event_ship_explosion
+
+	is_triggered_only = yes
+
+	option = {
+		name = INTERESTING
+	}
+}
+
+# Factory Destroyed, Others (Dessanu)
+country_event = {
+	id = graygoo.182
+	title = "graygoo.181.name"
+	desc = {
+		trigger = { NOT = { has_modifier = dessanu_gift } }
+		text = graygoo.182.a.desc
+	}
+	desc = {
+		trigger = { has_modifier = dessanu_gift }
+		text = graygoo.182.b.desc
+	}
+	picture = GFX_evt_large_explosion
+	show_sound = event_ship_explosion
+
+	is_triggered_only = yes
+
+	after = {
+		remove_modifier = dessanu_gift
+	}
+
+	option = {
+		name = graygoo.182.a
+	}
+}
+
+# Dessanu Gift terminated due to hostility (HIDDEN)
+event = {
+	id = graygoo.183
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			has_modifier = "dessanu_gift"
+			any_country = {
+				is_country_type = gate_builders
+				is_hostile = prev
+			}
+		}
+	}
+
+	immediate = {
+		random_playable_country = {
+			limit = {
+				has_modifier = dessanu_gift
+				any_country = {
+					is_country_type = gate_builders
+					is_hostile = prev
+				}
+			}
+			country_event = { id = graygoo.184 }
+		}
+	}
+}
+
+# Dessanu Gift terminated due to hostility
+country_event = {
+	id = graygoo.184
+	title = "graygoo.184.name"
+	desc = "graygoo.184.desc"
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_modifier = dessanu_gift
+	}
+
+	option = {
+		name = graygoo.184.a
+		tooltip = {
+			remove_modifier = dessanu_gift
+		}
+	}
+}

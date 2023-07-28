@@ -1,4 +1,103 @@
 
+##################################
+# Gate Builders as Fallen Empire #
+##################################
+
+gate_builders = {
+	scaled_difficulty_bonuses = 1.0	# scales to setting
+	counts_for_victory = yes
+	sub_title = "COUNTRY_FALLEN_EMPIRE"
+	sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
+
+	share_survey_data = no
+	relations = yes
+	fallen_empire = yes
+	needs_survey = no
+	diplomatic_wars = yes
+	ship_disengagement = yes
+	army_disengagement = yes
+	uses_special_buildables = yes
+	observable = yes
+	
+	#custom_diplomacy = yes
+	#enforces_borders = no
+	has_complete_sensor = yes
+	custom_starbase = starbase_gatebuilders
+	ai = {
+		enabled = yes
+		declare_war = yes
+		min_navy_for_wars = 0.0
+		min_assault_armies_for_wars = @armies_for_declaring_war
+		colonizer = no
+		internal_policies = no
+		modification = no
+		construction = no
+		starbase_upgrade = no
+		limited_construction = yes
+		tech = no
+		modules = {
+			anti_crisis_military_minister_module
+			military_minister_module
+			foreign_minister_module
+			interior_minister_module
+		}
+	}
+	faction = {
+		#hostile = no
+		needs_border_access = no
+		needs_colony = no
+		#generate_borders = yes
+	}
+
+	modules = {
+		all_technology_module = {}
+		standard_event_module = {}
+		standard_leader_module = {}
+		standard_economy_module = {}
+		standard_species_rights_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
+			can_receive = {
+				action_declare_war
+				action_offer_peace
+				action_make_rival
+				action_end_rivalry
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_insult
+				action_open_borders
+			}
+			can_send = {
+				action_declare_war
+				action_make_rival
+				action_end_rivalry
+				action_offer_peace
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_open_borders
+				action_close_borders
+			}
+		}
+	}
+
+	resources = {
+		category = country_base
+		produces = {
+			energy = 100
+			minerals = 10
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+			influence = 3
+			unity = 2
+			alloys = 125
+			volatile_motes = 20
+			rare_crystals = 1
+			exotic_gases = 1
+		}
+	}
+}
+
 ##################
 # NEW LEVIATHANS #
 ##################

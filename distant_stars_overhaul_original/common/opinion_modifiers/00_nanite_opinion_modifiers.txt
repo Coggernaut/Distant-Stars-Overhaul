@@ -24,3 +24,9 @@ opinion_harvested_a_world = {
 		base = 5
 	}
 }
+
+opinion_opened_lgate = {
+	opinion = {
+		base = 200
+	}
+}
