@@ -1,0 +1,28 @@
+####################
+# NOTE FOR MODDERS #
+####################
+# Matching to planet classes are done via name matching (trait_PLANET_CLASS_KEY_preference) or using setting ideal_planet_class.
+# ideal_planet_class = pc_desert # Must be set and match an existing planet class or it will not be treated as a habitability trait. Note that only one trait
+####################
+
+trait_pc_dessanu_relic_preference = {
+	icon = "gfx/interface/icons/traits/trait_pc_relic_preference.dds"
+	species_potential_add = {
+		always = no
+	}
+	species_potential_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	sorting_priority = 30
+	modifier = {
+		pc_dessanu_relic_habitability = 2.0
+		pc_gaia_habitability = 1.0
+	}
+	ai_weight = {
+		weight = 0
+	}
+}

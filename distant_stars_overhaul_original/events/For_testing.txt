@@ -100,3 +100,105 @@ country_event = {
 		}
 	}
 }
+#Debug Event for Empire Outcome
+country_event = {
+	id = distar_overhaul.20950
+	hide_window = yes
+	is_test_event = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lcluster_opener
+		set_global_flag = l_cluster_opened
+		# spawn L-Cluster
+		country_event = { id = distar.11000 }
+		# enable L-Gate
+		from.solar_system = {
+			if = {
+				# flag prevents the Tempest from using this gate,
+				# do not set the flag if there's only one l-gate system
+				limit = {
+					any_system = {
+						has_star_flag = lgate
+						NOT = { is_same_value = prev }
+					}
+				}
+				set_star_flag = lgate_originating_system
+			}
+			else = {
+				root = { set_country_flag = only_one_lgate }
+			}
+			random_system_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+					NOT = { has_megastructure_flag = lgate_activated }
+				}
+				activate_gateway = this
+				set_megastructure_flag = lgate_activated
+			}
+		}
+		# outcome, to be determined at game start
+		# if = {
+			# limit = { has_global_flag = gray_goo_crisis_set }
+				# set_global_flag = gray_goo_crisis_set
+				# country_event = {
+				#	id = graygoo.1
+				#	days = 1
+				#}
+				# Make friendly
+				# country_event = {
+				#	id = distar.13006
+				#	days = 1
+				#}
+				# country_event = {
+				#	id = a_deadly_tempest.137
+				#	days = 24
+				#}
+			# country_event = { id = graygoo.1 }
+			# every_megastructure = {
+			#	limit = {
+			#		is_megastructure_type = lgate_base
+			#		NOT = { has_megastructure_flag = lgate_activated }
+			#	}
+			#	activate_gateway = this
+			# set_megastructure_flag = lgate_activated
+			#}
+		#}
+		# else_if = {
+		#	# limit = { has_global_flag = dragon_season }
+			remove_global_flag = gray_goo_crisis_set
+			remove_global_flag = dragon_season
+			country_event = { id = graygoo.100 }
+			set_global_flag = gray_goo_empire_set
+		#}
+		# else_if = {
+		#	limit = { has_global_flag = gray_goo_empire_set }
+		#	country_event = { id = graygoo.100 }
+		#}
+		# else = {
+		#	country_event = { id = distar.10951 }
+			# enable other L-Gates over time
+		#	random_country = {
+		#		limit = { is_country_type = global_event }
+		#		country_event = { id = distar.10960 days = 200 random = 500 }
+		#	}
+		#}
+		# activated terminal egress l-gate
+		event_target:lcluster1 = {
+			random_system_megastructure = {
+				activate_gateway = this
+				set_megastructure_flag = lgate_activated
+			}
+		}
+		set_global_flag = lgates_activated_globally
+		every_playable_country = {
+			if = {
+				limit = { is_researching_technology = tech_lgate_activation }
+				give_technology = {
+					tech = tech_lgate_activation
+					message = no
+				}
+			}
+		}
+	}
+}

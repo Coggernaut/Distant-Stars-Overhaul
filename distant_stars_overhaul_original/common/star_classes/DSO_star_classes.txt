@@ -1,0 +1,21 @@
+random_list = {
+	name = "DSO_rl_ancient_system_stars"
+	stars = {
+		"DSO_sc_ancient_system_1"
+	}
+}
+
+DSO_sc_ancient_system_1 = { # Binary System: Black Hole and Red Giant
+	class			 = m_star
+	icon				= a_binary_star
+	planet			= {
+						key = pc_black_hole
+						class = black_hole
+					}
+	planet			= {
+						key = pc_m_giant_star
+						class = m_star
+					}
+	spawn_odds		 = 5
+	num_planets	 = { min = 4 max = 10 }
+}

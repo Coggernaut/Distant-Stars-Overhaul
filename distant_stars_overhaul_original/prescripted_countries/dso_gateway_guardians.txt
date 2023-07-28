@@ -3,6 +3,10 @@ fareen={
 	ship_prefix={
 		key="FAR"
 	}
+	spawn_enabled=always
+	flags={
+		"is_cult_of_the_gateway_flag"
+	}
 	species={
 		class="FUN"
 		portrait="fun10"
@@ -16,12 +20,17 @@ fareen={
 		trait="trait_deviants"
 		trait="trait_adaptive"
 	}
-	adjective="PRESCRIPTED_adjective_fareen"
-	authority="auth_oligarchic"
-	flags={
-		"is_cult_of_the_gateway_flag"
+	room="personality_evangelizing_zealots_room"
+	ethic="ethic_militarist"
+	ethic="ethic_fanatic_spiritualist"
+	civics={
+		"civic_exalted_priesthood"
+		"civic_distinguished_admiralty"
 	}
+	authority="auth_oligarchic"
 	government="gov_spiritualist_gateway_worshiper"
+	origin="civic_gateway_worshiper"
+	adjective="PRESCRIPTED_adjective_fareen"
 	planet_name={
 		key="Gridaar"
 		literal=yes
@@ -31,9 +40,12 @@ fareen={
 		key="Gridaar"
 		literal=yes
 	}
-	initializer=""
+	initializer= "civic_gateway_worshiper_system"
 	graphical_culture="fungoid_01"
 	city_graphical_culture="fungoid_01"
+	spawn_as_fallen=no
+	ignore_portrait_duplication=no
+	
 	empire_flag={
 		icon={
 			category="ornate"
@@ -70,15 +82,4 @@ fareen={
 		heir_title="RT_IMPERATRIX"
 		leader_class="ruler"
 	}
-	spawn_as_fallen=no
-	ignore_portrait_duplication=no
-	room="personality_evangelizing_zealots_room"
-	spawn_enabled=always
-	ethic="ethic_militarist"
-	ethic="ethic_fanatic_spiritualist"
-	civics={
-		"civic_exalted_priesthood"
-		"civic_distinguished_admiralty"
-	}
-	origin="civic_gateway_worshiper"
 }

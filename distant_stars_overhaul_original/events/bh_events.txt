@@ -211,6 +211,7 @@ planet_event = {
 			is_planet_class = pc_nanite_forgeworld
 			is_artificial = yes
 			is_planet_class = pc_relic
+			is_planet_class = pc_dessanu_relic
 			is_planet_class = pc_bh_harvest_colony
 			exists = archaeological_site
 			has_planet_flag = apsr_planet
@@ -524,35 +525,59 @@ country_event = {
 						clear_blocker = yes
 					}
 					add_modifier = { modifier = "DSO_dessanu_heritage_world" days = -1 }
-					ROOT = { 
+					ROOT = {
 						random_system_within_border = {
-							spawn_planet = {
-								class = "pc_relic"
-								name = "Sunder"
-								location = PREVPREV
-								orbit_location = yes
-								orbit_angle_offset = 25
-								orbit_distance_offset = 10
-								size = 10
-								has_ring = no
-								init_effect = {
-									#create_archaeological_site = dso_ancient_dessanu_battle_site
-									add_deposit = d_nanosands
-									add_modifier = { modifier = "DSO_ancient_dessanu_colony" days = -1 }
-									create_colony = {
-										owner = root
-										species = owner_main_species
-										ethos = owner
-									}
-								}
+							spawn_megastructure = {
+								type = spy_orb_ruined
+								planet = PREVPREV
 							}
 						}
 					}
 				}
 				ROOT = {
 					random_planet_within_border = {
+						limit = { is_planet_class = pc_m_giant_star }
+						clear_deposits = yes
+						random_list = { 
+							10 = { add_deposit = d_energy_2 } 
+							50 = { add_deposit = d_energy_3 } 
+							25 = { add_deposit = d_energy_4 } 
+							15 = { add_deposit = d_energy_5 } 
+						}
+					}
+					random_planet_within_border = {
+						limit = { is_planet_class = pc_black_hole }
+						clear_deposits = yes
+						add_deposit = d_dark_matter_deposit_1
+						random_list = {
+							50 = {
+								random_list = { 
+									30 = { add_deposit = d_physics_3 } 
+									40 = { add_deposit = d_physics_4 } 
+									30 = { add_deposit = d_physics_5 } 
+								}
+							} 
+							50 = {
+								random_list = { 
+									30 = { add_deposit = d_engineering_3 } 
+									40 = { add_deposit = d_engineering_4 } 
+									30 = { add_deposit = d_engineering_5 } 
+								}
+							} 
+						}	
+					}
+					random_planet_within_border = {
 						limit = { is_planet_class = pc_relic }
-						set_name = "Abandonded Outpost"
+						#create_colony = {
+						#	owner = root
+						#	species = owner_main_species
+						#	ethos = owner
+						#}
+						change_pc = pc_dessanu_relic
+						set_owner = root
+						set_controller = root
+						set_name = "Abandonded Observatory"
+						add_deposit = d_nanosands
 						create_pop = {
 							species = owner_main_species
 							ethos = owner
@@ -560,6 +585,30 @@ country_event = {
 						create_pop = {
 							species = owner_main_species
 							ethos = owner
+						}
+						create_pop = {
+							species = owner_main_species
+							ethos = owner
+						}
+					}
+					every_orbital_station = { 
+						limit = {
+							OR = {
+								is_ship_size = mining_station
+								is_ship_size = research_station
+							}
+						}
+						dismantle = yes 
+					}
+					every_planet_within_border = { 
+						limit = { has_deposit = yes } 
+						if = {
+							limit = { has_deposit_for = shipclass_mining_station }
+							create_mining_station = { owner = ROOT }
+						}
+						if = {
+							limit = { has_deposit_for = shipclass_research_station }
+							create_research_station = { owner = ROOT }
 						}
 					}
 					country_event = { id = bio_harvest.5 days = 1 }
@@ -725,8 +774,8 @@ country_event = {
 			}
 			capital_scope = {
 				spawn_system = {
-					min_jumps = 5
-					max_jumps = 7
+					min_jumps = 2
+					max_jumps = 4
 					initializer = lost_dessanu_colony_system
 					hyperlane = yes
 					is_discovered = no
@@ -750,14 +799,19 @@ country_event = {
 					capital_scope = {
 						planet_event = { id = bio_harvest.6 days = 1 }
 					}
-					random_planet_within_border = {
-						limit = { is_planet_class = pc_relic }
-						change_pc = pc_gray_goo
-						every_deposit = {
-							limit = { is_blocker = yes }
-							clear_blocker = yes
+					random_owned_megastructure = {
+						limit = { is_megastructure_type = spy_orb_ruined }
+						delete_megastructure = THIS
+					}
+					random_system_within_border = {
+						set_star_class = sc_black_hole
+					}
+					every_planet_within_border = {
+						limit = { 
+							is_star = no
+							is_homeworld = no
 						}
-						add_deposit = d_nanosands
+						remove_planet = yes
 					}
 					destroy_country = yes
 				}
@@ -770,14 +824,19 @@ country_event = {
 						capital_scope = {
 							planet_event = { id = bio_harvest.6 days = 1 }
 						}
-						random_planet_within_border = {
-							limit = { is_planet_class = pc_relic }
-							change_pc = pc_gray_goo
-							every_deposit = {
-								limit = { is_blocker = yes }
-								clear_blocker = yes
+						random_owned_megastructure = {
+							limit = { is_megastructure_type = spy_orb_ruined }
+							delete_megastructure = THIS
+						}
+						random_system_within_border = {
+							set_star_class = sc_black_hole
+						}
+						every_planet_within_border = {
+							limit = { 
+								is_star = no
+								is_homeworld = no
 							}
-							add_deposit = d_nanosands
+							remove_planet = yes
 						}
 						destroy_country = yes
 					}
@@ -786,21 +845,13 @@ country_event = {
 		}
 	}
 }
-#Changes capital of destroyed empire into gray-goo world.
+#Removes Capital Planet.
 planet_event = {
 	id = bio_harvest.6
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
-		set_planet_size = 30
-		change_pc = pc_shattered
-		every_deposit = {
-			limit = { is_blocker = yes }
-			clear_blocker = yes
-		}
-		add_deposit = d_minerals_4
-		add_deposit = d_minerals_4
-		remove_modifier = "DSO_dessanu_heritage_world"
+		remove_planet = yes
 	}
 }
 
