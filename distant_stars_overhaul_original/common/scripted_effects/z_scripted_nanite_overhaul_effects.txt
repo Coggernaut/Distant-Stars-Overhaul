@@ -13,19 +13,6 @@ fallen_empire_humiliate_effect = {
 				cooldown = yes
 			}
 		}
-		if = {
-			limit = { has_country_flag = gate_builders_hostility }
-			hidden_effect = { remove_country_flag = gate_builders_hostility }
-			random_country = {
-				limit = { is_country_type = gate_builders }
-				add_opinion_modifier = { modifier = opinion_refused_fallen_empire_request who = ROOT }
-				set_closed_borders = {
-					who = ROOT
-					status = yes
-					forced = 50
-				}
-			}
-		}
 		end_rivalry = event_target:fallen_empire_humiliator
 		save_event_target_as = fallen_empire_humiliated
 		event_target:fallen_empire_humiliator = {
@@ -43,6 +30,20 @@ fallen_empire_humiliate_effect = {
 					event_target:fallen_empire_humiliated = { has_claim = prev }
 				}
 				remove_claims = { who = event_target:fallen_empire_humiliated }
+			}
+		}
+	}
+	#If Fallen Empire is Dessanu
+	if = {
+		limit = { has_country_flag = gate_builders_hostility }
+		hidden_effect = { remove_country_flag = gate_builders_hostility }
+		random_country = {
+			limit = { is_country_type = gate_builders }
+			add_opinion_modifier = { modifier = opinion_refused_fallen_empire_request who = PREV }
+			set_closed_borders = {
+				who = PREV
+				status = yes
+				forced = 50
 			}
 		}
 	}

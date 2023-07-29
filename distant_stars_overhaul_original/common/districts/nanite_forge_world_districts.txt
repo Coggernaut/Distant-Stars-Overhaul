@@ -2,6 +2,7 @@
 @base_cost = 300
 @nanite_city_cost = 500
 
+
 dso_district_nexus = {
 	base_buildtime = 480
 	icon = district_nanite_forgeworld_nexus

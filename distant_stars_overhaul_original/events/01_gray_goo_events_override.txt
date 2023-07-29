@@ -115,9 +115,9 @@ country_event = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
 					set_formation_scale = 2
-					#set_fleet_stance = aggressive
-					#set_aggro_range_measure_from = self
-					#set_aggro_range = 250
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
 					set_location = {
 						target = event_target:nanite_factory
 						distance = 80
@@ -146,9 +146,9 @@ country_event = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
 					set_formation_scale = 2
-					#set_fleet_stance = aggressive
-					#set_aggro_range_measure_from = self
-					#set_aggro_range = 250
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
 					set_location = {
 						target = event_target:nanite_factory
 						distance = 80
@@ -177,9 +177,9 @@ country_event = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
 					set_formation_scale = 2
-					#set_fleet_stance = aggressive
-					#set_aggro_range_measure_from = self
-					#set_aggro_range = 250
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
 					set_location = {
 						target = event_target:nanite_factory
 						distance = 80
@@ -208,9 +208,9 @@ country_event = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
 					set_formation_scale = 2
-					#set_fleet_stance = aggressive
-					#set_aggro_range_measure_from = self
-					#set_aggro_range = 250
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
 					set_location = {
 						target = event_target:nanite_factory
 						distance = 80
@@ -243,9 +243,9 @@ country_event = {
 							set_owner = event_target:graygoo_country
 							create_dessanu_ships_1 = yes
 							set_formation_scale = 2
-							#set_fleet_stance = aggressive
-							#set_aggro_range_measure_from = self
-							#set_aggro_range = 250
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 500
 							set_location = {
 								target = prev
 								distance = 15
@@ -327,24 +327,59 @@ country_event = {
 					change_pc = pc_gaia
 					reset_planet = yes
 					set_planet_flag = hidden_nanite_world
+					set_planet_flag = fallen_empire_world
 					prevent_anomaly = yes
 					set_owner = event_target:graygoo_country
-					while = {
-						count = 30
-						create_pop = {
-							species = owner_main_species
+					if = {
+						limit = { is_capital = yes }
+						change_planet_size = 30
+						while = {
+							count = 112
+							create_pop = {
+								species = owner_main_species
+							}
 						}
 					}
-					while = {
-						count = 2
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_city
+					else = {
+						while = {
+							count = 30
+							create_pop = {
+								species = owner_main_species
+							}
 						}
 					}
-					while = {
-						count = 3
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_mining
+					if = {
+						limit = { is_capital = yes }
+						while = {
+							count = 12
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_city
+							}
+						}
+					}
+					else = {
+						while = {
+							count = 6
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_city
+							}
+						}
+					}
+					if = {
+						limit = { is_capital = yes }
+						while = {
+							count = 12
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_mining
+							}
+						}
+					}
+					else = {
+						while = {
+							count = 6
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_mining
+							}
 						}
 					}
 					while = {
@@ -377,13 +412,25 @@ country_event = {
 							}
 						}
 					}
-					add_building = building_capital
-					add_building = building_mineral_purification_hub
-					add_building = building_energy_grid
-					add_building = building_stronghold
-					add_building = building_factory_1
-					add_building = building_holo_theatres
-					add_building = building_foundry_1
+					add_building = building_ancient_palace
+					if = {
+						limit = { is_capital = yes }
+						add_building = building_fe_dome
+						add_building = building_fe_dome
+						add_building = building_fe_dome
+						add_building = building_fe_dome
+					}
+					add_building = building_fe_dome
+					if = {
+						limit = { is_capital = yes }
+						add_building = building_fe_stronghold
+					}
+					add_building = building_fe_stronghold
+					add_building = building_nourishment_center
+					add_building = building_class_4_singularity
+					add_building = building_affluence_center
+					add_building = building_nano_forge
+					
 				}
 			}
 		}
