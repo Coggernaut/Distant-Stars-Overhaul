@@ -90,8 +90,12 @@ civic_gateway_worshiper = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } }
 	}
-	traits = { trait = trait_dessanu_uplifted }
+	traits = { 
+		trait = trait_dessanu_uplifted 
+		trait = trait_latent_psionic
+	}
 	flags = { custom_start_screen }
+	advanced_start = yes
 	possible = {
 		ethics = {
 			OR = {

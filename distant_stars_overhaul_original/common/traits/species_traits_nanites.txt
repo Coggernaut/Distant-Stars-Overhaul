@@ -38,17 +38,37 @@ trait_dessanu_nanites = {
 trait_dessanu_uplifted = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
+	
+	opposites = { "trait_cybernetic" }
+	
 	initial = no
-	# modification = no
-	species_potential_add = { always = no }
 	randomized = no
-	allowed_archetypes = {
-		BIOLOGICAL
-		LITHOID
+	species_potential_add = {
+		always = no
 	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+	allowed_archetypes = { BIOLOGICAL LITHOID }
 	# custom_tooltip = TRAIT_DESSANU_UPLIFTED_EFFECT
 	modifier = { 
-		planet_jobs_unity_produces_mult = 0.05 
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	slave_cost = {
+		energy = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 0.5
+			from = { has_unity_designation = yes }
+		}
+		modifier = {
+			add = 0.5
+			from = { has_building = building_order_keep }
+		}
 	}
 	ai_weight = { weight = 0 }
 }

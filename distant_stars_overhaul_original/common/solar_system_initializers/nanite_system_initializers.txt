@@ -62,7 +62,7 @@ civic_gateway_worshiper_system = {
 			orbit_distance = 25
 			home_planet = yes
 			class = ideal_planet_class
-			orbit_angle = { min = 10 max = 50 }
+			orbit_angle = { min = 145 max = 145 }
 			size = { min = @homeworld_min_size max = @homeworld_max_size }
 			deposit_blockers = none
 			modifiers = none
@@ -77,7 +77,7 @@ civic_gateway_worshiper_system = {
 			moon = {
 				count = { min = 1 max = 1 }
 				class = "pc_relic"
-				orbit_angle = { min = 50 max = 200 }
+				orbit_angle = { min = 145 max = 145 }
 				orbit_distance = 5
 				size = 10
 				init_effect = {
