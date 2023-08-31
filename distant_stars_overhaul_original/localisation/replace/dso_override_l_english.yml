@@ -1,0 +1,6 @@
+﻿l_english:
+ l_cluster_chain_title:1 "The L-Cluster"
+ l_cluster_chain_desc:0 "[DSO_lcluster_project_loc]"
+ clues:1 "L-Gate Insights"
+ clue:1 "L-Gate Insight"
+ add_lcluster_clue:1 "$clue$ Gained: §G+1§!"

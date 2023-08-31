@@ -7,6 +7,20 @@
 #####################################################
 #####################################################
 
+start_lcluster_chain = {
+	hidden_effect = {
+		custom_tooltip = begin_lcluster_chain
+		begin_event_chain = {
+			event_chain = l_cluster_chain
+			target = this
+		}
+		set_variable = {
+			which = num_lcluster_clues
+			value = 0
+		}
+	}
+}
+
 generate_lcluster_clue = {
 	optimize_memory
 	hidden_effect = {
