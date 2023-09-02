@@ -39,8 +39,6 @@ trait_dessanu_uplifted = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	
-	opposites = { "trait_cybernetic" }
-	
 	initial = no
 	randomized = no
 	species_potential_add = {

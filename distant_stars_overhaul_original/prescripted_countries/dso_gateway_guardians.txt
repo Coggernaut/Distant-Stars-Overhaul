@@ -16,16 +16,18 @@ fareen={
 		name_list="MOL3"
 		gender=not_set
 		trait="trait_dessanu_uplifted"
+		trait="trait_latent_psionic"
 		trait="trait_nomadic"
 		trait="trait_deviants"
 		trait="trait_adaptive"
 	}
 	room="personality_evangelizing_zealots_room"
 	ethic="ethic_militarist"
-	ethic="ethic_fanatic_spiritualist"
+	ethic="ethic_spiritualist"
+	ethic="ethic_xenophile"
 	civics={
 		"civic_exalted_priesthood"
-		"civic_distinguished_admiralty"
+		"civic_citizen_service"
 	}
 	authority="auth_oligarchic"
 	government="gov_spiritualist_gateway_worshiper"

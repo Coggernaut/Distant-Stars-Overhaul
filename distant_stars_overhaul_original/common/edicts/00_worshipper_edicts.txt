@@ -7,13 +7,13 @@
 @EdictDuration = -1
 consecrate_lgate = {
 	icon = GFX_edict_type_policy
-	length = 3600
+	length = 10800
 	resources = {
 		category = edicts
 		cost = { influence = 100 }
 	}
 	effect = {
-		set_timed_country_flag = { flag = DSO_consecrated_lgate years = 10 }
+		set_timed_country_flag = { flag = DSO_consecrated_lgate years = 30 }
 	}
 	modifier = { country_base_unity_produces_add = 10 }
 	potential = {
@@ -34,12 +34,12 @@ consecrate_lgate = {
 
 lgate_guardian = {
 	icon = GFX_edict_type_policy
-	length = 3600
+	length = 10800
 	resources = {
 		category = edicts
-		cost = { influence = 200 }
+		cost = { influence = 250 }
 	}
-	modifier = { country_unity_produces_mult = 0.5 }
+	modifier = { country_unity_produces_mult = 0.25 }
 	potential = {
 		has_government = gov_spiritualist_gateway_worshiper
 		custom_tooltip = {

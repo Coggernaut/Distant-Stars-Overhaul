@@ -1,0 +1,39 @@
+## Gateway Covenant
+pop_faction_name_parts_list = {
+	key = "gateway_covenant_names"
+	parts = {
+		Gateway_Covenant_Orthodoxy = 1
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			is_pop_faction_type = "gateway_covenant"
+			NOT = { OWNER = { has_origin = civic_gateway_worshiper } }
+		}
+	}
+	format = "{<gateway_covenant_names>}"
+}
+
+## Gateway Covenant Origin
+pop_faction_name_parts_list = {
+	key = "gateway_covenant_origin_names"
+	parts = {
+		Gateway_Covenant_Tribunal = 1
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			is_pop_faction_type = "gateway_covenant"
+			OWNER = { has_origin = civic_gateway_worshiper }
+		}
+	}
+	format = "{<gateway_covenant_origin_names>}"
+}

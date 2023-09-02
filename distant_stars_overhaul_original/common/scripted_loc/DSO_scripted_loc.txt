@@ -40,5 +40,8 @@ defined_text = {
 	}
 	text = {
 		localization_key = DSO_lcluster_project_loc_dessanu_else
+		trigger = {
+			NOT = { has_government = gov_spiritualist_gateway_worshiper }
+		}
 	}
 }

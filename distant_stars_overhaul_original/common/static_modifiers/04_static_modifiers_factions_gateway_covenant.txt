@@ -1,0 +1,19 @@
+#icon_frame = 1 # green frame
+#icon_frame = 2 # yellow frame
+#icon_frame = 3 # red frame
+
+##########################################################################
+# Faction Modifiers Gateway Covenant
+##########################################################################
+
+promoted_gateway_covenant = {
+	pop_ethic_spiritualist_attraction_mult = 0.45
+	pop_ethic_militarist_attraction_mult = 0.35
+	pop_ethic_xenophile_attraction_mult = 0.20
+}
+
+suppressed_gateway_covenant = {
+	pop_ethic_spiritualist_attraction_mult = -0.45
+	pop_ethic_militarist_attraction_mult = -0.35
+	pop_ethic_xenophile_attraction_mult = -0.20
+}

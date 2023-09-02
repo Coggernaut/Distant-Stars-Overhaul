@@ -88,7 +88,7 @@ civic_gateway_worshiper = {
 	preferred_planet_class_neighbor = no
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-		authority = { NOT = { value = auth_corporate } }
+		authority = { NOT = { value = auth_corporate } } #Corporate Megachurch does not make much sense...
 	}
 	traits = { 
 		trait = trait_dessanu_uplifted 
@@ -107,6 +107,11 @@ civic_gateway_worshiper = {
 				text = civic_tooltip_spiritualist
 				value = ethic_spiritualist
 				value = ethic_fanatic_spiritualist
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
 			}
 		}
 	}
