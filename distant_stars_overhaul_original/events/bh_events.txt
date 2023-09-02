@@ -582,7 +582,7 @@ country_event = {
 						add_deposit = d_nanosands
 						add_deposit = d_nanosands
 						add_deposit = d_nanosands
-						planet_event = { id = colony.1500 days = 360 random = 360 }
+						planet_event = { id = colony.2015 days = 360 random = 360 }
 						create_pop = {
 							species = owner_main_species
 							ethos = owner
