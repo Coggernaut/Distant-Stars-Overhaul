@@ -12,6 +12,7 @@ civic_harvester_nanites = {
 			NOR = {
 				value = civic_machine_assimilator
 				value = civic_machine_servitor
+				value = civic_machine_catalytic_processing
 			}
 		}
 	}
@@ -47,15 +48,18 @@ civic_gateway_pursuer = {
 	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {
-			# value = civic_harvester_nanites
 			NOR = {
 				value = civic_machine_terminator
 				value = civic_machine_assimilator
 				value = civic_machine_servitor
+				value = civic_machine_catalytic_processing
 			}
 		}
 	}
-	traits = { trait = trait_dessanu_nanites }
+	traits = { 
+		trait = trait_dessanu_nanites 
+		trait = trait_robot_irregular_emotion_emulators
+	}
 	flags = { custom_start_screen }
 	# modification = no
 	random_weight = {

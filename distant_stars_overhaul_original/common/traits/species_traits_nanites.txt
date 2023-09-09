@@ -2,7 +2,7 @@ trait_robot_advanced_nanites = {
 	cost = 0
 	initial = no
 	randomized = no
-	# modification = no
+	opposites = { "trait_robot_custom_made" }
 	species_potential_add = { always = no }
 	allowed_archetypes = {
 		ROBOT
@@ -27,12 +27,40 @@ trait_dessanu_nanites = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
-	# modification = no
 	randomized = no
-	species_potential_add = { always = no }
+	opposites = { "trait_robot_custom_made" }
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
 	allowed_archetypes = { MACHINE }
 	# Machines only
-	modifier = { planet_pop_assembly_mult = 0.1 }
+	modifier = { 
+		planet_pop_assembly_mult = 0.1 
+		planet_jobs_food_produces_mult = -0.75
+	}
+}
+
+trait_robot_irregular_emotion_emulators = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_robot_emotion_emulators.dds"
+	opposites = { 
+		"trait_robot_uncanny" 
+		"trait_robot_emotion_emulators" 
+	}
+	allowed_archetypes = { MACHINE }
+	modifier = {
+		pop_job_amenities_mult = 0.20
+		planet_jobs_unity_produces_mult = 0.05
+	}
+	slave_cost = {
+		energy = 750
+	}
 }
 
 trait_dessanu_uplifted = {

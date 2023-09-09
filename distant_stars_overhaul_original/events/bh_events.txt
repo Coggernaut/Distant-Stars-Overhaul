@@ -178,7 +178,7 @@ planet_event = {
 		set_planet_flag = abandon_nanite_forgeworld_flag
 		remove_planet_flag = pc_nanite_forgeworld
 		destroy_colony = yes
-		remove_deposit = d_nanites_deposit
+		remove_deposit = d_nanite_forgeworld_deposit
 	}
 	after = {
 		change_pc = pc_gray_goo
@@ -484,7 +484,7 @@ country_event = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
 				}
-				add_deposit = d_nanites_deposit
+				add_deposit = d_nanite_forgeworld_deposit
 				add_district = district_nanite_forgeworld_industry
 				planet_event = { id = bio_harvest.4 days = 3 }
 			}

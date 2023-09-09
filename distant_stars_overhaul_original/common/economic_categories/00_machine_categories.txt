@@ -1,7 +1,0 @@
-# orbital_harvestering_deposits = {
-#	parent = station_harvesters
-#}
-
-# station_harvesters = {
-#	parent = stations
-#}

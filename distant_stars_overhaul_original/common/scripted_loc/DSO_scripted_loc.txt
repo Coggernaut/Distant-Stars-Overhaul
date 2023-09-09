@@ -39,9 +39,25 @@ defined_text = {
 		}
 	}
 	text = {
+		localization_key = DSO_lcluster_project_loc_dessanu_pursuer
+		trigger = {
+			has_government = gov_machine_gateway_pursuer
+		}
+	}
+	text = {
+		localization_key = DSO_lcluster_project_loc_dessanu_pursuer
+		trigger = {
+			has_government = gov_machine_bio_harvesters
+		}
+	}
+	text = {
 		localization_key = DSO_lcluster_project_loc_dessanu_else
 		trigger = {
-			NOT = { has_government = gov_spiritualist_gateway_worshiper }
+			NOT = { 
+				has_government = gov_spiritualist_gateway_worshiper 
+				has_government = gov_machine_gateway_pursuer
+				has_government = gov_machine_bio_harvesters
+			}
 		}
 	}
 }

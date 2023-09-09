@@ -160,3 +160,41 @@ bio_processor_drone = {
 		}
 	}
 }
+
+DSO_nanite_forge_overseer = {
+	icon = administrator
+	category = overseer_drone
+	condition_string = OVERSEER_JOB_TRIGGER
+	is_capped_by_modifier = yes
+	building_icon = d_mining_tunnels
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+
+	resources = {
+		category = DSO_planet_nanite_forge
+		produces = {
+			nanites = 2
+			unity = 10
+		}
+		upkeep = {
+			energy = 30
+			alloys = 10
+		}
+	}
+	
+	planet_modifier = {
+		planet_pop_assembly_add = 5
+		planet_crime_no_happiness_add = -100
+	}
+
+	weight = {
+		weight = 1000
+	}
+}
