@@ -347,8 +347,8 @@ gateway_covenant = {
 				OR = {
 					any_owned_ship = {
 						OR = {
-							if = {
-								limit = { has_ancrel = yes }
+							AND = {
+								has_ancrel = yes
 								has_component = ARCHAEO_MISSILE
 							}
 							is_ship_size = dso_nanite_interdictor

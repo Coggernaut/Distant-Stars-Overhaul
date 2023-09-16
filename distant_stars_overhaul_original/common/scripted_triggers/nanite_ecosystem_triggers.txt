@@ -1,16 +1,2 @@
-# NNot use
-# has_any_lcluster_star_flag = {
-# 	OR = {
-# 		has_star_flag = lcluster1
-# 		has_star_flag = lcluster2
-# 		has_star_flag = lcluster3
-# 		has_star_flag = lcluster4
-# 		has_star_flag = lcluster5
-# 		has_star_flag = lcluster1b
-# 		has_star_flag = lcluster2b
-# 		has_star_flag = lcluster3b
-# 		has_star_flag = lcluster4b
-# 	}
-# }
 is_nanite_gaia = { is_planet_class = pc_nanite_gaia }
 is_nanite_forgeworld = { is_planet_class = pc_nanite_forgeworld }

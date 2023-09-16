@@ -691,7 +691,7 @@ country_event = {
 		}
 		fromfrom = {
 			create_country = {
-				name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+				name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
 				species = event_target:nanite_ecosystem_subterranean_species
 				type = default
 				auto_delete = yes
@@ -707,7 +707,7 @@ country_event = {
 					colors = { "red" "black" "null" "null" }
 				}
 				effect = {
-					set_name = "NAME_Nanite_Ecosystem_Subterranean_Empire"
+					set_name = "NAME_Nanite_Ecosystem_Subterranean_Nation"
 					set_relation_flag = { who = event_target:nanite_ecosystem_subterranean_former_planet_owner flag = subwar }
 					set_country_flag = nanite_ecosystem_subterranean_empire
 					establish_communications_no_message = event_target:nanite_ecosystem_subterranean_former_planet_owner
@@ -715,30 +715,22 @@ country_event = {
 					owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 				}
 			}
-
-		}
-		from = { destroy_country = yes }
-		fromfrom = {
 			remove_planet_flag = nanite_ecosystem_subterranean_invasion_planet
 			save_event_target_as = nanite_ecosystem_conquered_planet
 			set_owner = event_target:nanite_ecosystem_subterranean_empire
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
-			create_pop = { species = owner_main_species }
-			create_pop = { species = owner_main_species }
-			create_army = {
-				name = "NAME_Loot-Equipped_Army"
-				owner = event_target:nanite_ecosystem_subterranean_empire
-				species = event_target:nanite_ecosystem_subterranean_species
-				type = "defense_army"
-				# land_army = yes
-			}
-			create_army = {
-				name = "NAME_Loot-Equipped_Army"
-				owner = event_target:nanite_ecosystem_subterranean_empire
-				species = event_target:nanite_ecosystem_subterranean_species
-				type = "defense_army"
-				# land_army = yes
+			while = {
+				count = 2
+				if = {
+					limit = { NOT = { any_owned_pop = { is_unemployed = yes } } }
+					random_owned_pop = { kill_pop = yes }
+					create_pop = { species = event_target:nanite_ecosystem_subterranean_species }
+				}
+				create_army = {
+					name = "NAME_Loot-Equipped_Army"
+					owner = event_target:nanite_ecosystem_subterranean_empire
+					species = event_target:nanite_ecosystem_subterranean_species
+					type = "defense_army"
+				}
 			}
 			# flip starbase
 			solar_system = {
@@ -748,6 +740,7 @@ country_event = {
 				}
 			}
 		}
+		from = { destroy_country = yes }
 	}
 	option = {
 		name = "ONSCREEN"
