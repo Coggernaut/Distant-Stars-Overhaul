@@ -21,6 +21,6 @@ nanite_ecosystem_subterranean_civilization_chain = {
 	picture = GFX_evt_surreal_visions
 	# counter = { ?
 }
-
-# harvest_subterranean_civilization_chain = {
-# }
+# TODO
+harvest_subterranean_civilization_chain = {
+}

@@ -3,16 +3,18 @@ fareen={
 	ship_prefix={
 		key="FAR"
 	}
-	spawn_enabled=always
-	flags={
-		"is_cult_of_the_gateway_flag"
-	}
 	species={
 		class="FUN"
 		portrait="fun10"
-		name="PRESCRIPTED_species_name_fareen"
-		plural="PRESCRIPTED_species_plural_fareen"
-		adjective="PRESCRIPTED_adjective_fareen"
+		species_name={
+			key="PRESCRIPTED_species_name_fareen"
+		}
+		species_plural={
+			key="PRESCRIPTED_species_plural_fareen"
+		}
+		species_adjective={
+			key="PRESCRIPTED_adjective_fareen"
+		}
 		name_list="MOL3"
 		gender=not_set
 		trait="trait_dessanu_uplifted"
@@ -21,18 +23,17 @@ fareen={
 		trait="trait_deviants"
 		trait="trait_adaptive"
 	}
-	room="personality_evangelizing_zealots_room"
-	ethic="ethic_militarist"
-	ethic="ethic_spiritualist"
-	ethic="ethic_xenophile"
-	civics={
-		"civic_exalted_priesthood"
-		"civic_citizen_service"
+	name={
+		key="Cult of the Gateway"
+	}
+	adjective={
+		key="PRESCRIPTED_adjective_fareen"
 	}
 	authority="auth_oligarchic"
+	flags={
+		"is_cult_of_the_gateway_flag"
+	}
 	government="gov_spiritualist_gateway_worshiper"
-	origin="civic_gateway_worshiper"
-	adjective="PRESCRIPTED_adjective_fareen"
 	planet_name={
 		key="Gridaar"
 		literal=yes
@@ -42,12 +43,9 @@ fareen={
 		key="Gridaar"
 		literal=yes
 	}
-	initializer= "civic_gateway_worshiper_system"
+	initializer="civic_gateway_worshiper_system"
 	graphical_culture="fungoid_01"
 	city_graphical_culture="fungoid_01"
-	spawn_as_fallen=no
-	ignore_portrait_duplication=no
-	
 	empire_flag={
 		icon={
 			category="ornate"
@@ -77,11 +75,29 @@ fareen={
 		clothes=4
 		ruler_title={
 			key="High Guardian"
+			literal=yes
+		}
+		heir_title={
+			key="Imperatrix"
+			literal=yes
 		}
 		ruler_title_female={
 			key="High Guardian"
+			literal=yes
 		}
-		heir_title="RT_IMPERATRIX"
-		leader_class="ruler"
+		trait="leader_trait_principled"
+		leader_class="governor"
 	}
+	spawn_as_fallen=no
+	ignore_portrait_duplication=no
+	room="personality_evangelizing_zealots_room"
+	spawn_enabled=always
+	ethic="ethic_militarist"
+	ethic="ethic_spiritualist"
+	ethic="ethic_xenophile"
+	civics={
+		"civic_exalted_priesthood"
+		"civic_citizen_service"
+	}
+	origin="civic_gateway_worshiper"
 }

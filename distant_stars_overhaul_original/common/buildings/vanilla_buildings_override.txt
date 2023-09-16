@@ -87,17 +87,17 @@ building_gaiaseeders_1 = {
 	potential = {
 		exists = owner
 		owner = {
-			is_country_type = default
+			merg_is_default_empire = yes
 			is_idyllic_bloom_empire = yes
 		}
 		NOR = {
 			is_planet_class = pc_gaia
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
 			is_planet_class = pc_relic
+			is_artificial = yes
 		}
-		is_artificial = no
 	}
 
 	allow = {
@@ -107,9 +107,9 @@ building_gaiaseeders_1 = {
 	destroy_trigger = {
 		OR = {
 			is_planet_class = pc_gaia	# No double bonuses if player uses other tools to turn it into a Gaia world.
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
 			is_planet_class = pc_relic
 			NOT = { exists = owner }
 			owner = {
@@ -151,9 +151,9 @@ building_ranger_lodge = {
 			has_valid_civic = civic_environmentalist
 		}
 		NOR = {
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
 			is_planet_class = pc_relic
 		}
 		is_artificial = no
@@ -177,9 +177,9 @@ building_ranger_lodge = {
 			owner = { is_regular_empire = no }
 			has_modifier = slave_colony
 			owner = { NOT = { has_valid_civic = civic_environmentalist } }
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
 			is_planet_class = pc_relic
 		}
 	}
@@ -212,7 +212,7 @@ building_ranger_lodge = {
 		deposit_blockers_natural_unity_produces_add = 2
 	}
 
-	#triggered_planet_modifier = { TODO_CD Reimplement this later with propper tooltips
+	# triggered_planet_modifier = { TODO_CD Reimplement this later with propper tooltips
 	#	potential = {
 	#		has_designation = col_resort
 	#	}
@@ -268,7 +268,7 @@ building_ranger_lodge = {
 # ***VANILLA OVERRIDE***  Memorialists Buildings (Relic Compatibility)
 ############################
 
-#Sanctuary of Repose
+# Sanctuary of Repose
 building_galactic_memorial_1 = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
@@ -356,15 +356,14 @@ building_galactic_memorial_1 = {
 		text = "job_chronicle_drone_effect_desc"
 	}
 
-	#Tomb/Relic worlds
+	# Tomb/Relic worlds
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		pop_government_ethic_attraction = 0.20
@@ -375,8 +374,7 @@ building_galactic_memorial_1 = {
 			owner = { is_gestalt = yes }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		planet_crime_no_happiness_add = -20
@@ -391,7 +389,7 @@ building_galactic_memorial_1 = {
 	}
 }
 
-#Pillar of Quietus
+# Pillar of Quietus
 building_galactic_memorial_2 = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -487,15 +485,14 @@ building_galactic_memorial_2 = {
 		text = "job_chronicle_drone_effect_desc"
 	}
 
-	#Tomb/Relic worlds
+	# Tomb/Relic worlds
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		pop_government_ethic_attraction = 0.20
@@ -506,8 +503,7 @@ building_galactic_memorial_2 = {
 			owner = { is_gestalt = yes }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		planet_crime_no_happiness_add = -20
@@ -522,7 +518,7 @@ building_galactic_memorial_2 = {
 	 }
 }
 
-#Galactic Memorial
+# Galactic Memorial
 building_galactic_memorial_3 = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -614,15 +610,14 @@ building_galactic_memorial_3 = {
 		text = "job_chronicle_drone_effect_desc"
 	}
 
-	#Tomb/Relic worlds
+	# Tomb/Relic worlds
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		pop_government_ethic_attraction = 0.20
@@ -633,8 +628,7 @@ building_galactic_memorial_3 = {
 			owner = { is_gestalt = yes }
 			OR = {
 				is_planet_class = pc_nuked
-				is_planet_class = pc_relic
-				is_planet_class = pc_dessanu_relic
+				merg_is_relic_world = yes
 			}
 		}
 		planet_crime_no_happiness_add = -20
@@ -663,10 +657,9 @@ building_bio_reprocessing_facilities = {
 			is_criminal_syndicate = yes
 		}
 		NOR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 	}
 
@@ -707,10 +700,9 @@ building_food_conglomerate = {
 			is_criminal_syndicate = no
 		}
 		NOR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 	}
 
@@ -760,7 +752,7 @@ building_food_conglomerate = {
 
 	ai_weight = {
 		factor = 1
-	}#AI has many other sources for this resource
+	}# AI has many other sources for this resource
 }
 
 ############################
@@ -791,16 +783,15 @@ holding_idyllic_bloom = {
 	potential = {
 		exists = owner
 		owner.overlord = {
-			is_country_type = default
+			merg_is_default_empire = yes
 			is_idyllic_bloom_empire = yes
 		}
 		NOR = {
 			is_planet_class = pc_gaia
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 		is_artificial = no
 	}
@@ -900,22 +891,20 @@ holding_park_ranger_lodge = {
 			owner = { has_valid_civic = civic_environmentalist }
 		}
 		NOR = {
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 		is_artificial = no
 	}
 
 	destroy_trigger = {
 		OR = {
-			is_planet_class = pc_city
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_arcology = yes
+			merg_is_hive_world = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 	}
 	allow = {
@@ -990,19 +979,17 @@ holding_tree_of_life_sapling = {
 			}
 		}
 		NOR = {
-			is_planet_class = pc_city
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_arcology = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 		is_artificial = no
 	}
 	destroy_trigger = {
 		OR = {
-			is_planet_class = pc_city
-			is_planet_class = pc_machine
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_arcology = yes
+			merg_is_machine_world = yes
+			merg_is_relic_world = yes
 		}
 	}
 
@@ -1107,7 +1094,7 @@ building_archaeostudies_faculty = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { 
+			owner = {
 				is_gestalt = no
 				has_ascension_perk = ap_archaeoengineers
 			}
@@ -1159,13 +1146,12 @@ building_archaeostudies_faculty = {
 	}
 
 	triggered_country_modifier = {
-		potential = { 
-			planet = { 
+		potential = {
+			planet = {
 				OR = {
-					is_planet_class = pc_relic 
-					is_planet_class = pc_dessanu_relic 
+					merg_is_relic_world = yes
 				}
-			} 
+			}
 		}
 		category_archaeostudies_research_speed_mult = 0.5
 	}
@@ -1309,7 +1295,7 @@ building_mineral_purification_hub = {
 			merg_is_arcology = no
 			NOR = {
 				is_planet_class = pc_shattered_ring_habitable
-				is_planet_class = pc_nanite_forgeworld
+				is_nanite_forgeworld = yes
 			}
 		}
 		modifier = { district_mining_max = 4 }
@@ -1452,7 +1438,7 @@ building_energy_grid = {
 			merg_is_machine_world = no
 			merg_is_hive_world = no
 			merg_is_arcology = no
-			NOT = { is_planet_class = pc_nanite_forgeworld }
+			is_nanite_forgeworld = no
 		}
 		modifier = { district_generator_max = 2 }
 	}
@@ -1555,7 +1541,7 @@ building_energy_nexus = {
 			merg_is_machine_world = no
 			merg_is_hive_world = no
 			merg_is_arcology = no
-			NOT = { is_planet_class = pc_nanite_forgeworld }
+			is_nanite_forgeworld = no
 		}
 		modifier = { district_generator_max = 4 }
 	}

@@ -56,8 +56,8 @@ civic_gateway_pursuer = {
 			}
 		}
 	}
-	traits = { 
-		trait = trait_dessanu_nanites 
+	traits = {
+		trait = trait_dessanu_nanites
 		trait = trait_robot_irregular_emotion_emulators
 	}
 	flags = { custom_start_screen }
@@ -92,10 +92,10 @@ civic_gateway_worshiper = {
 	preferred_planet_class_neighbor = no
 	potential = {
 		ethics = { NOT = { value = ethic_gestalt_consciousness } }
-		authority = { NOT = { value = auth_corporate } } #Corporate Megachurch does not make much sense...
+		authority = { NOT = { value = auth_corporate } } # Corporate Megachurch does not make much sense...
 	}
-	traits = { 
-		trait = trait_dessanu_uplifted 
+	traits = {
+		trait = trait_dessanu_uplifted
 		trait = trait_latent_psionic
 	}
 	flags = { custom_start_screen }
@@ -141,17 +141,18 @@ civic_gateway_worshiper = {
 origin_gate_builder = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_elder_race.dds"
-
+	max_once_global = yes
 	playable = {
 		always = no # Non-player origin
 	}
 
 	possible = {
-		is_country_type = gate_builders
+		authority = { value = auth_democratic }
+		# is_country_type = gate_builders does not work
 	}
 
 	description = origin_no_effect
-
+	advanced_start = yes
 	random_weight = {
 		base = 0
 	}

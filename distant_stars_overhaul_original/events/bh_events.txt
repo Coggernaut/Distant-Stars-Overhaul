@@ -165,7 +165,7 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = no
 	trigger = {
-		is_planet_class = pc_nanite_forgeworld
+		is_nanite_forgeworld = yes
 		NOT = { has_planet_flag = abandon_nanite_forgeworld_flag }
 		owner = {
 			NOR = {
@@ -208,10 +208,9 @@ planet_event = {
 		NOR = {
 			is_planet_class = pc_nuked
 			merg_is_machine_world = yes
-			is_planet_class = pc_nanite_forgeworld
+			is_nanite_forgeworld = yes
 			is_artificial = yes
-			is_planet_class = pc_relic
-			is_planet_class = pc_dessanu_relic
+			merg_is_relic_world = yes
 			is_planet_class = pc_bh_harvest_colony
 			exists = archaeological_site
 			has_planet_flag = apsr_planet
@@ -236,7 +235,7 @@ planet_event = {
 			set_planet_flag = pc_bh_harvest
 			# space_owner = { country_event = { id = harvest_colony.50 } } TODO
 			# If it is Nanite Gaia World
-			if = { limit = { is_planet_class = pc_nanite_gaia }
+			if = { limit = { is_nanite_gaia = yes }
 				space_owner = {
 					country_event = { id = harvest_nanite_gaia.1 days = 90 }
 				}
@@ -515,7 +514,7 @@ country_event = {
 			if = { limit = { has_origin = civic_gateway_pursuer }
 				start_lcluster_chain = yes
 				set_country_flag = encountered_first_lgate
-			} 
+			}
 			else_if = { limit = { has_origin = civic_gateway_worshiper }
 				capital_scope = {
 					set_planet_size = 30
@@ -530,7 +529,7 @@ country_event = {
 						random_system_within_border = {
 							spawn_megastructure = {
 								type = spy_orb_ruined
-								planet = PREVPREV
+								planet = prevprev
 							}
 						}
 					}
@@ -539,11 +538,11 @@ country_event = {
 					random_planet_within_border = {
 						limit = { is_planet_class = pc_m_giant_star }
 						clear_deposits = yes
-						random_list = { 
-							10 = { add_deposit = d_energy_2 } 
-							50 = { add_deposit = d_energy_3 } 
-							25 = { add_deposit = d_energy_4 } 
-							15 = { add_deposit = d_energy_5 } 
+						random_list = {
+							10 = { add_deposit = d_energy_2 }
+							50 = { add_deposit = d_energy_3 }
+							25 = { add_deposit = d_energy_4 }
+							15 = { add_deposit = d_energy_5 }
 						}
 					}
 					random_planet_within_border = {
@@ -552,28 +551,28 @@ country_event = {
 						add_deposit = d_dark_matter_deposit_1
 						random_list = {
 							50 = {
-								random_list = { 
-									30 = { add_deposit = d_physics_3 } 
-									40 = { add_deposit = d_physics_4 } 
-									30 = { add_deposit = d_physics_5 } 
+								random_list = {
+									30 = { add_deposit = d_physics_3 }
+									40 = { add_deposit = d_physics_4 }
+									30 = { add_deposit = d_physics_5 }
 								}
-							} 
+							}
 							50 = {
-								random_list = { 
-									30 = { add_deposit = d_engineering_3 } 
-									40 = { add_deposit = d_engineering_4 } 
-									30 = { add_deposit = d_engineering_5 } 
+								random_list = {
+									30 = { add_deposit = d_engineering_3 }
+									40 = { add_deposit = d_engineering_4 }
+									30 = { add_deposit = d_engineering_5 }
 								}
-							} 
-						}	
+							}
+						}
 					}
 					random_planet_within_border = {
 						limit = { is_planet_class = pc_relic }
-						#create_colony = {
+						# create_colony = {
 						#	owner = root
 						#	species = owner_main_species
 						#	ethos = owner
-						#}
+						# }
 						change_pc = pc_dessanu_relic
 						set_owner = root
 						set_controller = root
@@ -596,24 +595,24 @@ country_event = {
 							ethos = owner
 						}
 					}
-					every_orbital_station = { 
+					every_orbital_station = {
 						limit = {
 							OR = {
 								is_ship_size = mining_station
 								is_ship_size = research_station
 							}
 						}
-						dismantle = yes 
+						dismantle = yes
 					}
-					every_planet_within_border = { 
-						limit = { has_deposit = yes } 
+					every_planet_within_border = {
+						limit = { has_deposit = yes }
 						if = {
 							limit = { has_deposit_for = shipclass_mining_station }
-							create_mining_station = { owner = ROOT }
+							create_mining_station = { owner = root }
 						}
 						if = {
 							limit = { has_deposit_for = shipclass_research_station }
-							create_research_station = { owner = ROOT }
+							create_research_station = { owner = root }
 						}
 					}
 					country_event = { id = bio_harvest.5 days = 1 }
@@ -760,20 +759,20 @@ country_event = {
 	}
 }
 
-#Lost Dessanu Colony System
+# Lost Dessanu Colony System
 country_event = {
 	id = bio_harvest.5
 	is_triggered_only = yes
 	fire_only_once = yes
 	hide_window = yes
 	immediate = {
-		#Generates system for Lost Dessanu Colony.
+		# Generates system for Lost Dessanu Colony.
 		random_country = {
 			limit = { has_origin = civic_gateway_worshiper }
 			weights = {
 				base = 1
-				modifier = { 
-					factor = 100 
+				modifier = {
+					factor = 100
 					is_ai = no
 				}
 			}
@@ -787,32 +786,32 @@ country_event = {
 				}
 			}
 		}
-		#If 2 Guardians exist, a non-player one is destroyed
+		# If 2 Guardians exist, a non-player one is destroyed
 		if = {
 			limit = {
 				any_country = {
 					has_origin = civic_gateway_worshiper
-					NOT = { is_same_empire = ROOT }
+					NOT = { is_same_empire = root }
 				}
 			}
 			random_country = {
 				limit = {
 					has_origin = civic_gateway_worshiper
 				}
-				if = { 
+				if = {
 					limit = { THIS = { is_ai = yes } }
 					capital_scope = {
 						planet_event = { id = bio_harvest.6 days = 1 }
 					}
 					random_owned_megastructure = {
 						limit = { is_megastructure_type = spy_orb_ruined }
-						delete_megastructure = THIS
+						delete_megastructure = this
 					}
 					random_system_within_border = {
 						set_star_class = sc_black_hole
 					}
 					every_planet_within_border = {
-						limit = { 
+						limit = {
 							is_star = no
 							is_homeworld = no
 						}
@@ -820,7 +819,7 @@ country_event = {
 					}
 					destroy_country = yes
 				}
-				else = { 
+				else = {
 					random_country = {
 						limit = {
 							has_origin = civic_gateway_worshiper
@@ -831,13 +830,13 @@ country_event = {
 						}
 						random_owned_megastructure = {
 							limit = { is_megastructure_type = spy_orb_ruined }
-							delete_megastructure = THIS
+							delete_megastructure = this
 						}
 						random_system_within_border = {
 							set_star_class = sc_black_hole
 						}
 						every_planet_within_border = {
-							limit = { 
+							limit = {
 								is_star = no
 								is_homeworld = no
 							}
@@ -850,7 +849,7 @@ country_event = {
 		}
 	}
 }
-#Removes Capital Planet.
+# Removes Capital Planet.
 planet_event = {
 	id = bio_harvest.6
 	is_triggered_only = yes
@@ -859,8 +858,6 @@ planet_event = {
 		remove_planet = yes
 	}
 }
-
-
 
 # Fix Capital
 planet_event = {

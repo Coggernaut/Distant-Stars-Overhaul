@@ -1,5 +1,5 @@
 DSO_planet_nanite_forge_overseer = {
-	icon = "job_administrator"
+	icon = "job_politician"
 	parent = planet_jobs_productive
 	generate_mult_modifiers = {
 		produces

@@ -2,6 +2,7 @@
 # Nanite Researcher Specialist Jobs
 ###################
 nanite_researcher = {
+	icon = researcher # TODO
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_research_lab_1
@@ -104,6 +105,7 @@ nanite_researcher = {
 }
 
 bio_processor_drone = {
+	icon = bath_attendant_hive # TODO
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_bio_reactor
@@ -166,7 +168,7 @@ DSO_nanite_forge_overseer = {
 	category = overseer_drone
 	condition_string = OVERSEER_JOB_TRIGGER
 	is_capped_by_modifier = yes
-	building_icon = d_mining_tunnels
+	building_icon = d_mining_tunnels # vanilla copy
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -178,7 +180,7 @@ DSO_nanite_forge_overseer = {
 	possible_precalc = can_fill_worker_job
 
 	resources = {
-		category = DSO_planet_nanite_forge
+		category = DSO_planet_nanite_forge_overseer
 		produces = {
 			nanites = 2
 			unity = 10
@@ -188,7 +190,7 @@ DSO_nanite_forge_overseer = {
 			alloys = 10
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_pop_assembly_add = 5
 		planet_crime_no_happiness_add = -100

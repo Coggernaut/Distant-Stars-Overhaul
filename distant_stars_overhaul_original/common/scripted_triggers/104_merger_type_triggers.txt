@@ -50,13 +50,13 @@ merg_is_default_empire = {
 	OR = {
 		is_country_type = default
 		# Darkspace
-		is_country_type = ds_nomads
+		# is_country_type = ds_nomads
 		# Ethics & Civics Infinity
-		is_country_type = uo_une_member_active
+		# is_country_type = uo_une_member_active
 		# Scripted Triggers Undercoat
 		has_country_flag = is_playable
 		# The Empty Vagrant
-		is_country_type = default_ev
+		# is_country_type = default_ev
 		# ZOFE
 		is_zofe_country = yes
 		# Nomads: The wondering Void Farers.
@@ -69,7 +69,7 @@ merg_is_fallen_empire = {
 	OR = {
 		is_country_type = fallen_empire
 		# History of the Lost Empire
-		is_country_type = LsE_fallen_empire
+		# is_country_type = LsE_fallen_empire
 		# ZOFE
 		# is_country_type = lost_empire
 		# Human Fallen Empire
@@ -79,9 +79,9 @@ merg_is_fallen_empire = {
 		# 	NOT = { has_civic = hfe_civic_egypt_fury }
 		# }
 		# SW:KUAT ANCIENT EMPIRE
-		is_country_type = kuat_fallen_empire
+		# is_country_type = kuat_fallen_empire
 		# The Empty Vagrant
-		is_country_type = fallen_empire_ev
+		# is_country_type = fallen_empire_ev
 	}
 }
 
@@ -90,14 +90,14 @@ merg_is_awakened_fe = {
 	OR = {
 		is_country_type = awakened_fallen_empire
 		# SW:KUAT ANCIENT EMPIRE
-		is_country_type = kuat_awakened_fallen_empire
-		is_country_type = awakened_return_kuat_empire
+		# is_country_type = kuat_awakened_fallen_empire
+		# is_country_type = awakened_return_kuat_empire
 		# A Deadly Tempest
 		is_country_type = awakened_gate_builders
 		# ZOFE With its last submod, ZOFE's fallen and awakened empires work differently and should not be here.
 		# is_country_type = ascended_empire
 		# The Empty Vagrant
-		is_country_type = awakened_fallen_empire_ev
+		# is_country_type = awakened_fallen_empire_ev
 		# # Human Fallen Empire
 		# AND = { goes the other way
 		# 	hfe_trigger_is_human_fallen = yes # is_country_type = hfe_fallen

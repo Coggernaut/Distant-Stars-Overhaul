@@ -19,8 +19,8 @@ gate_builders = {
 	uses_special_buildables = yes
 	observable = yes
 	
-	#custom_diplomacy = yes
-	#enforces_borders = no
+	# custom_diplomacy = yes
+	# enforces_borders = no
 	has_complete_sensor = yes
 	custom_starbase = starbase_gatebuilders
 	ai = {
@@ -43,10 +43,10 @@ gate_builders = {
 		}
 	}
 	faction = {
-		#hostile = no
+		# hostile = no
 		needs_border_access = no
 		needs_colony = no
-		#generate_borders = yes
+		# generate_borders = yes
 	}
 
 	modules = {

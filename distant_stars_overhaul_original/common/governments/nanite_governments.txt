@@ -13,7 +13,6 @@
 	}
 }
 
-
 # L-Gate Pursuer
  gov_machine_gateway_pursuer = {
 	ruler_title = RT_GP

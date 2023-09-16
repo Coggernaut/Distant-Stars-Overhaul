@@ -34,7 +34,7 @@ create_dessanu_roamers_1 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -42,7 +42,7 @@ create_dessanu_roamers_1 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -51,7 +51,7 @@ create_dessanu_roamers_1 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -100,7 +100,7 @@ create_dessanu_roamers_2 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -108,7 +108,7 @@ create_dessanu_roamers_2 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -117,7 +117,7 @@ create_dessanu_roamers_2 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -166,7 +166,7 @@ create_dessanu_roamers_3 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -174,7 +174,7 @@ create_dessanu_roamers_3 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -183,7 +183,7 @@ create_dessanu_roamers_3 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -232,7 +232,7 @@ create_dessanu_roamers_4 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -240,7 +240,7 @@ create_dessanu_roamers_4 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -249,7 +249,7 @@ create_dessanu_roamers_4 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -298,7 +298,7 @@ create_dessanu_roamers_5 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -306,7 +306,7 @@ create_dessanu_roamers_5 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -315,7 +315,7 @@ create_dessanu_roamers_5 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -364,7 +364,7 @@ create_dessanu_roamers_6 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -372,7 +372,7 @@ create_dessanu_roamers_6 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -381,7 +381,7 @@ create_dessanu_roamers_6 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25
@@ -430,7 +430,7 @@ create_dessanu_roamers_7 = {
 			set_aggro_range = 500
 			assign_leader = last_created_leader
 
-			#queue_actions = {
+			# queue_actions = {
 			#	repeat = {
 			#		find_random_system = {
 			#			trigger = {
@@ -438,7 +438,7 @@ create_dessanu_roamers_7 = {
 			#				has_star_flag = lcluster
 			#			}
 			#			found_system = {
-			#				move_to = THIS
+			#				move_to = this
 			#			}
 			#		}
 			#		find_closest_planet = {
@@ -447,7 +447,7 @@ create_dessanu_roamers_7 = {
 			#				is_planet_class = "pc_gray_goo"
 			#			}
 			#			found_planet = {
-			#				orbit_planet = THIS
+			#				orbit_planet = this
 			#				wait = {
 			#					duration = 50
 			#					random = 25

@@ -49,22 +49,18 @@ country_event = {
 					ethic = "ethic_egalitarian"
 					ethic = "ethic_fanatic_xenophile"
 				}
-				civics = {
-				}
+				civics = random
 				authority = "auth_democratic"
 				effect = {
 					save_event_target_as = graygoo_country
-					add_resource = { minerals = 5000 }
-					add_resource = { energy = 5000 }
-					add_resource = { influence = 5000 }
+					add_resource = { minerals = 5000 energy = 5000 influence = 5000 }
 					set_origin = "origin_gate_builder"
-					change_government = {
-						authority = auth_democratic
-						civics = { 
-						}
-						cooldown = yes
-						remove_invalid_civics = no
-					}
+					# change_government = {
+					# 	authority = auth_democratic
+					# 	civics = random
+					# 	cooldown = yes
+					# 	# remove_invalid_civics = yes
+					# }
 					if = {
 						limit = { NOT ={ has_civic = civic_lethargic_leadership } }
 						force_add_civic = civic_lethargic_leadership
@@ -96,7 +92,6 @@ country_event = {
 			}
 			every_country = { establish_communications_no_message = event_target:graygoo_country }
 
-
 			event_target:graygoo_country = {
 				create_ship_design = { design = "NAME_Gatebuilder_Starbase" }
 				add_ship_design = last_created_design
@@ -126,7 +121,7 @@ country_event = {
 					assign_leader = last_created_leader
 				}
 				settings = {
-					#garrison = yes
+					# garrison = yes
 					uses_naval_capacity = no
 				}
 			}
@@ -157,7 +152,7 @@ country_event = {
 					assign_leader = last_created_leader
 				}
 				settings = {
-					#garrison = yes
+					# garrison = yes
 					uses_naval_capacity = no
 				}
 			}
@@ -188,7 +183,7 @@ country_event = {
 					assign_leader = last_created_leader
 				}
 				settings = {
-					#garrison = yes
+					# garrison = yes
 					uses_naval_capacity = no
 				}
 			}
@@ -219,7 +214,7 @@ country_event = {
 					assign_leader = last_created_leader
 				}
 				settings = {
-					#garrison = yes
+					# garrison = yes
 					uses_naval_capacity = no
 				}
 			}
@@ -254,7 +249,7 @@ country_event = {
 							assign_leader = last_created_leader
 						}
 						settings = {
-							#garrison = yes
+							# garrison = yes
 							uses_naval_capacity = no
 						}
 					}
@@ -430,7 +425,7 @@ country_event = {
 					add_building = building_class_4_singularity
 					add_building = building_affluence_center
 					add_building = building_nano_forge
-					
+
 				}
 			}
 		}
@@ -578,22 +573,22 @@ country_event = {
 			modifier = "dessanu_gift"
 			days = -1
 		}
-		IF = {
+		if = {
 			limit = { NOT = { has_technology = tech_mine_living_metal } }
 			 give_technology = { tech = tech_mine_living_metal }
 		}
-		ELSE = {
-			#nothing
+		else = {
+			# nothing
 		}
 		random_country = {
 			limit = { is_country_type = gate_builders }
-			add_opinion_modifier = { modifier = opinion_fallen_empire_gift who = ROOT }
+			add_opinion_modifier = { modifier = opinion_fallen_empire_gift who = root }
 			set_closed_borders = {
-				who = ROOT
+				who = root
 				status = no
 				forced = 500
 			}
-			add_opinion_modifier = { modifier = opinion_opened_lgate who = ROOT }
+			add_opinion_modifier = { modifier = opinion_opened_lgate who = root }
 		}
 	}
 }
@@ -617,7 +612,7 @@ country_event = {
 		random_country = {
 			limit = { is_country_type = gate_builders }
 			set_closed_borders = {
-				who = ROOT
+				who = root
 				status = no
 				forced = 500
 			}
@@ -946,7 +941,7 @@ country_event = {
 		set_country_flag = gate_builder_diplomacy_engaged
 		set_country_flag = gate_builders_hostility
 		event_target:gate_builders = {
-			#set_faction_hostility = {
+			# set_faction_hostility = {
 			#	target = root
 			#	set_hostile = yes
 			#	set_neutral = no
@@ -964,7 +959,7 @@ country_event = {
 		random_country = {
 			limit = { is_country_type = gate_builders }
 			declare_war = {
-				target = ROOT
+				target = root
 				attacker_war_goal = wg_fe_humiliation
 			}
 		}
@@ -1187,7 +1182,7 @@ ship_event = {
 		name = graygoo.160.a
 		hidden_effect = {
 			owner = {
-				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+				set_timed_country_flag = { flag = gk_told_to_leave months = 2 }
 				set_country_flag = gk_first_entry
 				country_event = { id = graygoo.161 days = 60 }
 			}
@@ -1198,7 +1193,7 @@ ship_event = {
 		response_text = graygoo.160.b.response
 		hidden_effect = {
 			owner = { set_country_flag = gate_builders_hostility }
-			#event_target:gate_builders = {
+			# event_target:gate_builders = {
 			#	set_faction_hostility = {
 			#		target = root.owner
 			#		set_hostile = yes
@@ -1209,7 +1204,7 @@ ship_event = {
 			random_country = {
 				limit = { is_country_type = gate_builders }
 				declare_war = {
-					target = ROOT
+					target = root
 					attacker_war_goal = wg_fe_humiliation
 				}
 			}
@@ -1234,7 +1229,7 @@ country_event = {
 	trigger = {
 		event_target:lcluster_factory_system = {
 			any_fleet_in_system = {
-				owner = { is_same_value = root }
+				is_owned_by = root
 			}
 		}
 		event_target:lcluster_factory_system = {
@@ -1249,7 +1244,7 @@ country_event = {
 	immediate = {
 		set_country_flag = gate_builders_hostility
 		event_target:gate_builders = {
-			#set_faction_hostility = {
+			# set_faction_hostility = {
 			#	target = root
 			#	set_hostile = yes
 			#	set_neutral = no
@@ -1270,7 +1265,7 @@ country_event = {
 		random_country = {
 			limit = { is_country_type = gate_builders }
 			declare_war = {
-				target = ROOT
+				target = root
 				attacker_war_goal = wg_fe_humiliation
 			}
 		}
@@ -1334,7 +1329,7 @@ fleet_event = {
 		name = graygoo.162.a
 		hidden_effect = {
 			owner = {
-				set_timed_country_flag = { flag = gk_told_to_leave days = 60 }
+				set_timed_country_flag = { flag = gk_told_to_leave months = 2 }
 				country_event = { id = graygoo.161 days = 60 }
 			}
 		}
@@ -1345,7 +1340,7 @@ fleet_event = {
 		hidden_effect = {
 			owner = { set_country_flag = gate_builders_hostility }
 			event_target:gate_builders = {
-				#set_faction_hostility = {
+				# set_faction_hostility = {
 				#	target = root.owner
 				#	set_hostile = yes
 				#	set_neutral = no
@@ -1355,7 +1350,7 @@ fleet_event = {
 			random_country = {
 				limit = { is_country_type = gate_builders }
 				declare_war = {
-					target = ROOT
+					target = root
 					attacker_war_goal = wg_fe_humiliation
 				}
 			}

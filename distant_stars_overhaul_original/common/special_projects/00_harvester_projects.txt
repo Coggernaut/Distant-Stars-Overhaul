@@ -49,7 +49,7 @@
 # TODO
 special_project = {
 	key = "HARVESTER_DISTURBANCE_1_PROJECT"
-	event_chain = "harvest_subterranean_civilization_chain"
+	event_chain = "harvest_subterranean_civilization_chain" # TODO
 	cost = 1
 	tech_department = society_technology
 	picture = GFX_evt_underground_civilization
@@ -61,12 +61,12 @@ special_project = {
 		change_pc = pc_bh_harvest_colony
 		space_owner = {
 			country_event = { id = harvest_colony.510 }
-			end_event_chain = "harvest_subterranean_civilization_chain"
+			end_event_chain = "harvest_subterranean_civilization_chain" # TODO
 		}
 	}
 
 	on_fail = {
-		end_event_chain = "harvest_subterranean_civilization_chain"
+		end_event_chain = "harvest_subterranean_civilization_chain" # TODO
 		random_list = {
 			60 = { from = { planet_event = { id = harvest_colony.54 } } }
 			40 = { from = { planet_event = { id = harvest_colony.59 } } }
@@ -76,7 +76,7 @@ special_project = {
 
 special_project = {
 	key = "HARVESTER_DISTURBANCE_2_PROJECT"
-	event_chain = "harvest_subterranean_civilization_chain"
+	event_chain = "harvest_subterranean_civilization_chain" # TODO
 	cost = 1
 	tech_department = engineering_technology
 	picture = GFX_evt_nuclear_explosion
@@ -88,11 +88,11 @@ special_project = {
 
 	on_success = {
 		planet_event = { id = harvest_colony.52 }
-		space_owner = { end_event_chain = "harvest_subterranean_civilization_chain" }
+		space_owner = { end_event_chain = "harvest_subterranean_civilization_chain" } # TODO
 	}
 
 	on_fail = {
-		end_event_chain = "harvest_subterranean_civilization_chain"
+		end_event_chain = "harvest_subterranean_civilization_chain" # TODO
 		if = { limit = { is_homicidal = yes }
 			from = { planet_event = { id = harvest_colony.54 } }
 		}

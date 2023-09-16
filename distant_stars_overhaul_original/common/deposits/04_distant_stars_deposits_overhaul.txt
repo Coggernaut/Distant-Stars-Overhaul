@@ -20,12 +20,12 @@ d_vast_unity_deposit = {
 d_nanite_forgeworld_deposit = {
 	is_for_colonizable = yes
 	category = deposit_cat_rare
-	
+
 	icon = d_mining_tunnels
-	
+
 	triggered_planet_modifier = {
 		potential = {
-			is_planet_class = pc_nanite_forgeworld
+			is_nanite_forgeworld = yes
 		}
 		modifier = {
 			job_DSO_nanite_forge_overseer_add = 1

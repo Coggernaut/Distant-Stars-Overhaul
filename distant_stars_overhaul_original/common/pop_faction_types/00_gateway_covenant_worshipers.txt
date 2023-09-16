@@ -5,8 +5,8 @@
 gateway_covenant = {
 	election_header = "GFX_faction_header_yellow"
 	guiding_ethic = ethic_spiritualist
-	#guiding_ethic = ethic_militarist
-	#guiding_ethic = ethic_xenophile
+	# guiding_ethic = ethic_militarist
+	# guiding_ethic = ethic_xenophile
 	use_guiding_ethic_as_pop_filter = no
 	visual_ethic = "gateway_covenant_ethic"
 
@@ -29,15 +29,15 @@ gateway_covenant = {
 			limit = {
 				if = {
 					limit = { OWNER = { NOT = { has_origin = civic_gateway_worshiper } } }
-					pop_has_ethic = ethic_spiritualist #The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
+					pop_has_ethic = ethic_spiritualist # The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
 				}
-				species = { 
+				species = {
 					OR = {
 						has_species_flag = DSO_dessanu_heritage
 						pop_has_trait = trait_dessanu_uplifted
 					}
 				}
-				
+
 			}
 		}
 	}
@@ -59,7 +59,7 @@ gateway_covenant = {
 		has_culture_shock = no
 		can_think = yes
 		if = {
-			limit = { 
+			limit = {
 				NOT = {
 					has_species_flag = DSO_dessanu_heritage
 					pop_has_trait = trait_dessanu_uplifted
@@ -78,7 +78,7 @@ gateway_covenant = {
 
 	attraction = {
 		base = 150
-		
+
 		modifier = {
 			factor = 1000
 			exists = from
@@ -87,7 +87,7 @@ gateway_covenant = {
 				pop_has_trait = trait_dessanu_uplifted
 			}
 		}
-		
+
 		modifier = {
 			factor = 1.25
 			exists = from
@@ -100,7 +100,7 @@ gateway_covenant = {
 		modifier = {
 			factor = 0.75
 			exists = from
-			from = { 
+			from = {
 				NOT = { exists = leader }
 			}
 		}
@@ -193,9 +193,9 @@ gateway_covenant = {
 			}
 		}
 	}
-	
-	#Does the faction that wants the L-Gates closed really need a spiritualist government?
-	#demand = {
+
+	# Does the faction that wants the L-Gates closed really need a spiritualist government?
+	# demand = {
 	#	title = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT"
 	#	unfulfilled_title = "GATEWAY_COVENANT_SECULAR_GOVERNMENT"
 	#	desc = "GATEWAY_COVENANT_SPIRITUALIST_GOVERNMENT_DESC"
@@ -347,19 +347,19 @@ gateway_covenant = {
 				OR = {
 					any_owned_ship = {
 						OR = {
-							if = { 
+							if = {
 								limit = { has_ancrel = yes }
 								has_component = ARCHAEO_MISSILE
 							}
-							is_ship_class = dso_nanite_interdictor
-							is_ship_class = dso_nanite_mothership
-							is_ship_class = dso_nanite_core
+							is_ship_size = dso_nanite_interdictor
+							is_ship_size = dso_nanite_mothership
+							is_ship_size = dso_nanite_core
 						}
 					}
 					any_system_within_border = {
-						count_starbase_buildings = { 
+						count_starbase_buildings = {
 							type = orbital_nanite_shipyard
-							include_being_constructed = yes 
+							include_being_constructed = yes
 							count > 0
 						}
 					}
@@ -389,9 +389,9 @@ gateway_covenant = {
 				is_megastructure_type = lgate_base
 				exists = owner
 				owner = {
-					#OR = { 
+					# OR = {
 					#	NOT = { has_government = gov_spiritualist_gateway_worshiper }
-					#	RULER = { NOT = { leader_of_faction = gateway_covenant } }
+					#	RULER = { NOT = { leader_of_faction = gateway_covenant } } removed in 3.8
 					#}
 					has_communications = root.owner
 				}
@@ -404,23 +404,26 @@ gateway_covenant = {
 				is_megastructure_type = lgate_base
 				exists = owner
 				owner = {
-					OR = { 
+					OR = {
 						NOT = { has_government = gov_spiritualist_gateway_worshiper }
-						RULER = { NOT = { leader_of_faction = gateway_covenant } }
+						# AND = {
+						# 	exists = ruler
+						# 	ruler = { NOT = { leader_of_faction = gateway_covenant } } removed in 3.8
+						# }
 					}
 					has_communications = root.owner
 				}
 			}
 		}
 	}
-	
+
 	# Faction Demands for Ruler and Council positions.
 	inline_script = {
 		script = "paragon/global_faction_demands"
 		ETHIC = ethic_spiritualist
 		ETHIC_FANATIC = ethic_fanatic_spiritualist
 		ETHIC_OPPOSED = ethic_materialist
-	} 
+	}
 
 	on_create = {
 		pop_faction_event = { id = factions.1 }
@@ -472,25 +475,25 @@ gateway_covenant = {
 			}
 
 			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
+				add_modifier = { modifier = embraced_faction years = 10 }
 				parameter:empire = {
-					if = { 
+					if = {
 						limit = { NOT = { has_ethic = ethic_xenophile } }
 						shift_ethic = ethic_xenophile
 					}
-					if = { 
+					if = {
 						limit = { NOT = { has_ethic = ethic_militarist } }
 						shift_ethic = ethic_militarist
 					}
-					if = { 
+					if = {
 						limit = { NOT = { has_ethic = ethic_spiritualist } }
 						shift_ethic = ethic_spiritualist
 					}
 					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						add_modifier = { modifier = embraced_faction_timer years = 10 }
 						every_pop_faction = {
 							limit = { NOT = { is_same_value = root } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
+							add_modifier = { modifier = embraced_another_faction years = 10 }
 						}
 					}
 				}
@@ -500,7 +503,7 @@ gateway_covenant = {
 						every_relation = {
 							limit = {
 								is_ai = no
-								is_country_type = default
+								merg_is_default_empire = yes
 								has_communications = prev
 								has_intel_level = {
 									who = prev

@@ -27,8 +27,10 @@ cb_lgate_containment = {
 			}
 		}
 		from = {
-			NOT = { has_origin = civic_gateway_worshiper }
-			NOT = { is_country_type = gate_builders }
+			NOR = {
+				has_origin = civic_gateway_worshiper 
+				is_country_type = gate_builders 
+			}
 		}
 	}
 }

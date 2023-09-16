@@ -100,7 +100,7 @@ country_event = {
 		}
 	}
 }
-#Debug Event for Empire Outcome
+# Debug Event for Empire Outcome
 country_event = {
 	id = distar_overhaul.20950
 	hide_window = yes

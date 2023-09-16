@@ -1,12 +1,12 @@
 colonizable_planet = {
 	OR = {
-		is_planet_class = pc_city
-		is_planet_class = pc_relic
-		is_planet_class = pc_dessanu_relic 
+		# is_planet_class = pc_city
+		# merg_is_relic_world = yes
+		gpm_is_planet_class_city = yes
 		is_planet_class = pc_nuked
 		is_planet_class = pc_hive
 		is_planet_class = pc_machine
-		is_planet_class = pc_nanite_forgeworld
+		is_nanite_forgeworld = yes
 		habitable_structure = yes
 		habitable_planet = yes
 	}
@@ -15,9 +15,9 @@ colonizable_planet = {
 habitable_planet = {
 	OR = {
 		habitable_planet_not_urban = yes
-		is_planet_class = pc_relic
-		is_planet_class = pc_dessanu_relic 
-		is_planet_class = pc_city
+		# merg_is_relic_world = yes
+		# is_planet_class = pc_city
+		gpm_is_planet_class_city = yes
 	}
 }
 
@@ -34,8 +34,7 @@ can_have_habitable_deposits = {
 		is_planet_class = pc_alpine
 		is_planet_class = pc_savannah
 		is_planet_class = pc_gaia
-		is_planet_class = pc_relic
-		is_planet_class = pc_dessanu_relic 
+		merg_is_relic_world = yes
 	}
 }
 
@@ -54,10 +53,9 @@ can_have_sensory_readings = {
 		is_planet_class = pc_arctic
 		is_planet_class = pc_alpine
 		is_planet_class = pc_savannah
-		is_planet_class = pc_gaia
-		is_planet_class = pc_nanite_gaia
-		is_planet_class = pc_relic
-		is_planet_class = pc_dessanu_relic 
-		is_planet_class = pc_city
+		merg_is_gaia_basic = yes
+		# merg_is_relic_world = yes
+		# is_planet_class = pc_city
+		gpm_is_planet_class_city = yes
 	}
 }

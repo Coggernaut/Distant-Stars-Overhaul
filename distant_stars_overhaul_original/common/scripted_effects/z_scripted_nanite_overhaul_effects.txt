@@ -4,7 +4,7 @@
 
 fallen_empire_humiliate_effect = {
 	hidden_effect = {
-		add_modifier = { modifier = humiliated days = 3600 }
+		add_modifier = { modifier = humiliated years = 10 }
 		if = {
 			limit = { has_policy_flag = diplo_stance_supremacist }
 			set_policy = {
@@ -33,15 +33,15 @@ fallen_empire_humiliate_effect = {
 			}
 		}
 	}
-	#If Fallen Empire is Dessanu
+	# If Fallen Empire is Dessanu
 	if = {
 		limit = { has_country_flag = gate_builders_hostility }
 		hidden_effect = { remove_country_flag = gate_builders_hostility }
 		random_country = {
 			limit = { is_country_type = gate_builders }
-			add_opinion_modifier = { modifier = opinion_refused_fallen_empire_request who = PREV }
+			add_opinion_modifier = { modifier = opinion_refused_fallen_empire_request who = prev }
 			set_closed_borders = {
-				who = PREV
+				who = prev
 				status = yes
 				forced = 50
 			}

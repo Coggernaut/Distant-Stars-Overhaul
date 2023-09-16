@@ -9,7 +9,7 @@
 @homeworld_max_size = 21
 #### README: On changing and saving file, game must be restarted from desktop to prevent crash.
 
-#Dessanu Guardian Home System
+# Dessanu Guardian Home System
 civic_gateway_worshiper_system = {
 	class = "DSO_rl_ancient_system_stars"
 
@@ -81,7 +81,7 @@ civic_gateway_worshiper_system = {
 				orbit_distance = 5
 				size = 10
 				init_effect = {
-					#create_archaeological_site = dso_ancient_dessanu_battle_site
+					# create_archaeological_site = dso_ancient_dessanu_battle_site
 					add_modifier = { modifier = "DSO_ancient_dessanu_colony" days = -1 }
 				}
 			}
@@ -107,7 +107,7 @@ civic_gateway_worshiper_system = {
 
 	change_orbit = -245
 
-	#planet = {
+	# planet = {
 	#	count = { min = 2 max = 3 }
 	#	class = rl_unhabitable_planets
 	#	size = { min = 14 max = 24 }
