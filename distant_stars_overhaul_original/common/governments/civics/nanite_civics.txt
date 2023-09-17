@@ -4,7 +4,8 @@ civic_harvester_nanites = {
 	description = "civic_harvester_nanites_effects"
 	playable = { has_synthethic_dawn = yes }
 	potential = { authority = { value = auth_machine_intelligence } }
-	starting_colony = pc_nuked
+	starting_colony = pc_nanite_forgeworld
+	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {
@@ -44,7 +45,8 @@ civic_gateway_pursuer = {
 		has_distar = yes
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
-	starting_colony = pc_nuked
+	starting_colony = pc_nanite_forgeworld
+	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {
 		civics = {

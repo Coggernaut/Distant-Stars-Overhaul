@@ -1,0 +1,10 @@
+
+# Derelict Gray Tempest Ship
+ambient_object = {
+	name = "abandoned_gray_tempest_mothership_object"
+	description = "abandoned_gray_tempest_mothership_object_desc"
+	tooltip = "abandoned_gray_tempest_mothership_object_tooltip"
+	entity = "gatebuilder_01_mothership_section_entity"
+	selectable = yes
+	show_name = yes
+}

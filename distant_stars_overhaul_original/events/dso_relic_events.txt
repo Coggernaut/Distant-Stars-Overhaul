@@ -1,4 +1,5 @@
 namespace = dso_story
+namespace = DSO_ancrel
 ### 5 - Remnants
 country_event = {
 	id = dso_story.5
@@ -70,4 +71,105 @@ country_event = {
 		}
 	}
 }
+######################################
+# Ancient Gray Tempest Micro-missles #
+######################################
+fleet_event = {
+	id = dso_story.6
+	title = dso_story.6.name
+	# First
+	desc = {
+		trigger = {  
+			OR = {
+				has_origin = civic_gateway_pursuer
+				has_origin = civic_harvester_nanites
+			}
+		}
+		text = story.6.desc.nanite
+	}
+	# Gestalt Consciousness
+	desc = {
+		trigger = { 
+			is_gestalt = yes 
+			NOT = {
+				has_origin = civic_gateway_pursuer
+				has_origin = civic_harvester_nanites
+			}
+		}
+		text = story.6.desc.gesta
+	}
+	# Materialist
+	desc = {
+		trigger = {  is_materialist = yes }
+		text = story.6.desc.materialist
+	}
+	# Gateway Guardian
+	desc = {
+		trigger = {  has_origin = civic_gateway_worshiper }
+		text = story.6.desc.gateway_guardian
+	}
+	# other
+	desc = {
+		trigger = {  
+			NOT = {
+				has_origin = civic_gateway_worshiper 
+				has_origin = civic_gateway_pursuer
+				has_origin = civic_harvester_nanites
+			}
+			is_gestalt = no 	
+			is_materialist = no
+		}
+		text = story.6.desc.followup
+	}
+	picture = GFX_evt_news_room
+	show_sound = event_scanner
 
+	is_triggered_only = yes
+
+	#trigger = {
+	#}
+
+	#immediate = {
+	#}
+
+	option = {
+		name = REMARKABLE
+	}
+
+	after = {
+		hidden_effect = {
+			country_event = { id = first_contact.1060 days = 10 random = 10 }
+		}
+	}
+}
+
+# 
+fleet_event = {
+	id = DSO_ancrel.1
+	title = "nanite_insight"
+	desc = "DSO_ancrel.1.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	option = {
+		name = DSO_ancrel.1.a
+		if = { 
+			limit = { has_ancrel = yes } 
+			OWNER = { add_tech_progress = { tech = tech_archaeo_missiles progress = 0.14 } }
+		}
+	}
+}
+
+# 
+fleet_event = {
+	id = DSO_ancrel.2
+	title = "nanite_insight"
+	desc = "DSO_ancrel.2.desc"
+	picture = GFX_evt_drifting_gateway
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	option = {
+		name = DSO_ancrel.2.a
+		
+	}
+}

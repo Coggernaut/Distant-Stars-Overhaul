@@ -182,6 +182,10 @@ DSO_nanite_forge_overseer = {
 	resources = {
 		category = DSO_planet_nanite_forge_overseer
 		produces = {
+			trigger = { has_ancrel = yes }
+			minor_artifacts = 0.5
+		}
+		produces = {
 			nanites = 2
 			unity = 10
 		}
@@ -192,7 +196,7 @@ DSO_nanite_forge_overseer = {
 	}
 
 	planet_modifier = {
-		planet_pop_assembly_add = 5
+		planet_pop_assembly_add = 3
 		planet_crime_no_happiness_add = -100
 	}
 
