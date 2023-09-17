@@ -37,6 +37,7 @@ dso_ancient_dessanu_battle_site = {
 	}
 }
 
+# TODO
 # Ancient Gray Tempest Micro-missles
 dso_ancient_gray_tempest_ship = {
 	desc = dso_ancient_gray_tempest_ship_desc
@@ -44,16 +45,16 @@ dso_ancient_gray_tempest_ship = {
 	stages = 6
 	max_instances = 31
 	allow = {
-		FROM = { is_ambient_object_type = abandoned_gray_tempest_mothership_object }
+		from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object }
 		is_ship_class = shipclass_science_ship
 		exists = leader
 	}
 	visible = {
 		default_site_visible_trigger = yes
 	}
-	#on_visible = {
-	#	country_event = { id = dso_story.6 days = 30 }
-	#}
+	# on_visible = {
+	# 	country_event = { id = dso_story.6 days = 30 }
+	# }
 
 	weight = {
 		base = 0
@@ -61,12 +62,12 @@ dso_ancient_gray_tempest_ship = {
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E1
-		
+		# event = DSO_ancrel.
 	}
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E2
-		
+		# event = DSO_ancrel.
 	}
 	stage = {
 		difficulty = 5
@@ -76,12 +77,12 @@ dso_ancient_gray_tempest_ship = {
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E4
-		
+		# event = DSO_ancrel.
 	}
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E5
-		
+		# event = DSO_ancrel.
 	}
 	stage = {
 		difficulty = 5

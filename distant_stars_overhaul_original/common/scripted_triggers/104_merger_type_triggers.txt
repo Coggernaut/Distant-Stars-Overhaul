@@ -16,6 +16,25 @@
 # 	}
 # }
 
+# Expanded version of country_type = default
+merg_is_default_empire = {
+	OR = {
+		is_country_type = default
+		# Darkspace
+		# is_country_type = ds_nomads
+		# Ethics & Civics Infinity
+		# is_country_type = uo_une_member_active
+		# Scripted Triggers Undercoat
+		has_country_flag = is_playable
+		# The Empty Vagrant
+		# is_country_type = default_ev
+		# ZOFE
+		is_zofe_country = yes
+		# Nomads: The wondering Void Farers.
+		# is_void_farer = yes
+	}
+}
+
 # Merger of Rules scripted triggers, very similar to vanilla is_country_type_with_subjects
 # Extended Merger of Rules with Nomads: The wondering Void Farers
 # These triggers are also meant as a library for modders who want to reuse them in their own mods.
@@ -42,25 +61,6 @@ is_default_or_fallen = {
 		# hfe_trigger_insane_admiral_trait = yes
 		# # Nomads: The wondering Void Farers.
 		# # is_void_farer = yes
-	}
-}
-
-# Expanded version of country_type = default
-merg_is_default_empire = {
-	OR = {
-		is_country_type = default
-		# Darkspace
-		# is_country_type = ds_nomads
-		# Ethics & Civics Infinity
-		# is_country_type = uo_une_member_active
-		# Scripted Triggers Undercoat
-		has_country_flag = is_playable
-		# The Empty Vagrant
-		# is_country_type = default_ev
-		# ZOFE
-		is_zofe_country = yes
-		# Nomads: The wondering Void Farers.
-		# is_void_farer = yes
 	}
 }
 

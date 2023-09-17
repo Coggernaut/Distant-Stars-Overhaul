@@ -18,6 +18,10 @@ nanite_actuators = {
 	icon = "GFX_edict_type_time"
 	resources = {
 		category = rare_edicts
+		cost = {
+			nanites = 0.5
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
 			nanites = 0.5
 			multiplier = value:edict_size_effect

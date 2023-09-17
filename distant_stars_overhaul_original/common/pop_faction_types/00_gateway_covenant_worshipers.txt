@@ -450,9 +450,9 @@ gateway_covenant = {
 			potential = {
 				exists = owner
 				owner = {
-					OR = {
-						is_subject = no
-						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					NAND = {
+						is_subject = yes
+						any_agreement = { agreement_preset = preset_dominion }
 					}
 				}
 			}
