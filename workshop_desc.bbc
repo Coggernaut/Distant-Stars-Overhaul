@@ -1,15 +1,13 @@
 Adds a new Nanite Machine Origin and overhaul of the Distant Stars DLC with new nanite technology, ships and more!
 
-I've always felt the distant stars L-Gate DLC was lackluster... like it was missing some greater part of the story within stellaris. I've spent 100+ hours coding huge amounts of content into overhauling what distant stars is about.
-
-This mod is not work-in-progress and is mostly completed.
+I've always felt the Distant Stars L-Gate DLC was lackluster… like it was missing some greater part of the story within stellaris. I've spent 200+ hours coding huge amounts of content into overhauling what distant stars is about.
 
 This was inspired by the [url=//steamcommunity.com/sharedfiles/filedetails/1594571319]Bio-Harvester Nanite Mod[/url].
 
 We have worked in collaboration with [url=//steamcommunity.com/sharedfiles/filedetails/2285039543]Twink315's Dessanu asset/texture pack[/url].
 
 [h1][b]L-Cluster Overhaul: L-Drake Scenario (WIP)[/b][/h1]
-The L-Drake scenario has been overhauled with new mysterious L-Gaia Worlds that contain a vibrant ecosystem of new species. There is now a variety of new L-Species that populate the L-Cluster with tons of content to explore and stories to unfold. Discover the origin of the L-Species and maybe even interact with locals that may inhabit the L-Cluster. But be cautious, not everything is friendly within the Flourishing Ecosystem... especially if you provoke it. The mod introduces a mechanic to randomly assign systems and planets with events, so every game wont have the same location of events or types of event!
+The L-Drake scenario has been overhauled with new mysterious L-Gaia Worlds that contain a vibrant ecosystem of new species. There is now a variety of new L-Species that populate the L-Cluster with tons of content to explore and stories to unfold. Discover the origin of the L-Species and maybe even interact with locals that may inhabit the L-Cluster. But be cautious, not everything is friendly within the Flourishing Ecosystem… especially if you provoke it. The mod introduces a mechanic to randomly assign systems and planets with events, so every game wont have the same location of events or types of event!
 
 [h1][b]Nanite Machine Origin & Harvesting Habitable Worlds Mechanic:[/b][/h1]
 A new way to play, where this machine race can only colonize tomb worlds, machine worlds, etc. Though Nanite Harvesters start on a Nanite Forgeworld as an advantage. Though instead of colonizing habitable worlds, Harvesters transform them into "harvest worlds" which yields resources at a decaying rate for a specific amount of years tied to it's planet size/class. This yields an interesting way to play where early expansion is unneeded, but by the time these harvest worlds begin decaying, you will rapidly need to expand more and more to feed your hunger for resources later game. Encouraged to expand through purely economic needs rather than a will to consume biological life. Though every world you harvest will cause all known empires to dislike you (since you're wiping out life).[list]
@@ -23,56 +21,56 @@ This is a Spiritualist/militarist Civic where a religion was born from the myste
 
 [hr]
 [h1][b]L-Gate Technology:[/b][/h1]
-Opening the L-Gates only gives a single technology... it hardly feels like you're unleashing a deadly machine technology into the galaxy like it's lead to be. This mod adds dangerous new technology that utilizes nanites for new weapons, war machines, titan-ships, and world destroying (harvesting) weapons. Providing a whole new avenue of play mid-game.
+Opening the L-Gates only gives a single technology… it hardly feels like you're unleashing a deadly machine technology into the galaxy like it's lead to be. This mod adds dangerous new technology that utilizes nanites for new weapons, war machines, titan-ships, and world destroying (harvesting) weapons. Providing a whole new avenue of play mid-game.
 
 [h1][b]New Nanite Mothership (Titan) and Harvester Engine:[/b][/h1]
 After researching necessary components, you are able to build a titan-class Nanite Mothership that comes with the "Harvester Engine" which gives the ability to harvest habitable planets like like nanite-machines can do. This ship has been balanced and is subject to change upon any balance change needed. This ship utilizes new nanite weapons provided by this mod which also require a nanite resource upkeep.
 
 [h1][b]New Technologies:[/b][/h1][list]
-[*]------------------------------------------------------- [b]Nanite Bombardment Stance[/b]
-[*][Titan-Class] ----------------------------------------- [b]Nanite Mothership[/b]
-[*][Station Upgrade] ----------------------------------- [b]Orbital Nanite Shipyard[/b]
-[*][Megastructure] ------------------------------------- [b]Nanite Foundry[/b] 
-[*][Building] -------------------------------------------- [b]Nanite Weapons Lab[/b]
-[*][Weapon] -------------------------------------------- [b]Nanite Torpedo Capsules[/b]
-[*][Titan Weapon] ------------------------------------- [b]Titanic Nanite Lance[/b]
-[*][World Destroyer Option] --------------------------- [b]Harvester Engine[/b] 
-[*][Hybrid Fighter/Bomber] ---------------------------- [b]Nanite Lancers[/b]
-[*][Upgrade for Robot Pop Producer] ----------------- [b]Nanite Assembly Plant[/b]
+[*]−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Bombardment Stance[/b]
+[*][Titan-Class] −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Mothership[/b]
+[*][Station Upgrade] −−−−−−−−−−−−−−−−−−−−−−−−−−−⠀[b]Orbital Nanite Shipyard[/b]
+[*][Megastructure] −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Foundry[/b] 
+[*][Building] −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Weapons Lab[/b]
+[*][Weapon] −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Torpedo Capsules[/b]
+[*][Titan Weapon] −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Titanic Nanite Lance[/b]
+[*][World Destroyer Option] −−−−−−−−−−−−−−−−−−−−−−−−−− [b]Harvester Engine[/b] 
+[*][Hybrid Fighter/Bomber] −−−−−−−−−−−−−−−−−−−−−−−−−−−− [b]Nanite Lancers[/b]
+[*][Upgrade for Robot Pop Producer] −−−−−−−−−−−−−−⠀[b]Nanite Assembly Plant[/b]
 [/list]
 
-[b]To-Do List:[/b]
-- Random events / story for harvest worlds
-- Nanite "Grey Goo" Rebellion Event (A possible scenario caused by researching Dangerous Tech)
-- Precursor Questline/Story for Gateway Pursuer and Harvester Civic
+[b]To-Do:[/b]
+− Random events / story for harvest worlds
+− Nanite "Grey Goo" Rebellion Event (A possible scenario caused by researching Dangerous Tech)
+− Precursor Questline/Story for Gateway Pursuer and Harvester Civic
 
 [h1][b]Mods & Compatibility:[/b][/h1]
 This mod should be compatible with most mods that don't modify Distant Stars DLC heavily.
 
 [b]Italian Translation provided by NN123[/b]
 
-[u][b]This IS Compatible with:[/b][/u][list]
-[*]XVCV 's Unofficial Machine & Synthetic Empire DLC
+[u][b]This IS Compatible with:[/b][/u][list] 
+[*]XVCV 's [url=//steamcommunity.com/sharedfiles/filedetails/2441507863]Machine & Robot Expansion[/url]
 [*]NSC and [url=//steamcommunity.com/sharedfiles/filedetails/1121692237]Gigastructural Engineering[/url]
 [*][url=//steamcommunity.com/sharedfiles/filedetails/1346877266]APSR: Anomalies, Planetary and Space Resources[/url]
 [*][url=//steamcommunity.com/sharedfiles/filedetails/2028826064]A Deadly Tempest[/url]
-[*]I HEAVILY recommend playing this with the [url=//steamcommunity.com/sharedfiles/filedetails/1100284147]Cultures Overhaul Mod[/url]
+[*]HEAVILY recommend [url=//steamcommunity.com/sharedfiles/filedetails/1100284147]Cultures Overhaul Mod[/url] (aka E&CC)
 [/list]
 
 [b]NOT Compatible:[/b]
-- "Universal Districts Patch" mod
+− "Universal Districts Patch" mod
 
 [b]For Modders:[/b]
-If you'ed like to make this mod compatible, I've added some planet flags for conditions:
+If you'ed like to make this mod compatible, there are some planet flags/triggers for conditions:
 [CODE]
 	has_planet_flag = pc_bh_harvest # Harvest World
 	has_planet_flag = pc_bh_harvested # Harvested World (Depleted)
 	has_planet_flag = pc_nanite_forgeworld # Nanite Forgeworld
 [/CODE]
 
-My goal is to make this mod compatible with as many mods as I can, and I will continue to reach out to modders to make more mods compatible amongst each other by utilizing flags.
+The goal is to make this mod compatible as possible, and we will continue to reach out to modders to make more mods compatible amongst each other (by utilizing flags and triggers).
 
 [h1][b]Discord:[/b][/h1]
 Want to contact us about bugs, suggestions or anything? [url=//discord.gg/B7YavZw]Come join us on Discord![/url]
 
-This discord is also the Cultures Overhaul Mod discord, which this mod is meant to be paired with (but the mod is not required). We hope to see you there to discuss modding! :D
+This discord is also the Cultures Overhaul Mod discord, which this mod is meant to be paired (recommended) with. We hope to see you there to discuss modding! :D

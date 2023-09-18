@@ -1,10 +1,8 @@
 namespace = bio_harvest
 namespace = bio_harvest_planet
-namespace = harvest_nanite_planet
 namespace = nanite_forgeworld_lost
-namespace = harvest_nanite_gaia
 namespace = distar_overhaul
-# has_global_flag = a_deadly_tempest_mod_active
+
 # distar_overhaul_compatibility
 event = {
 	id = distar_overhaul.999
@@ -460,13 +458,13 @@ planet_event = {
 	}
 }
 
-# Prepare capital world for game start
+# Prepare capital world (on_game_start_country)
 country_event = {
 	id = bio_harvest.3
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = {
-		exists = capital_scope
+		# exists = capital_scope
 		OR = {
 			has_origin = civic_harvester_nanites
 			has_origin = civic_gateway_pursuer
@@ -495,7 +493,7 @@ country_event = {
 				limit = { is_planet_class = pc_shattered }
 				add_deposit = d_minerals_6
 			}
-			country_event = { id = harvest_nanite_planet.1 days = 30 }
+			country_event = { id = bio_harvest_planet.0 days = 30 } # harvest_nanite_planet
 		}
 		if = {
 			limit = {
@@ -517,11 +515,6 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { has_origin = civic_gateway_pursuer }
-				start_lcluster_chain = yes
-				set_country_flag = encountered_first_lgate
-			}
-			else_if = {
 				limit = { has_origin = civic_gateway_worshiper }
 				capital_scope = {
 					set_planet_size = 30
@@ -623,8 +616,6 @@ country_event = {
 				}
 				country_event = { id = bio_harvest.5 days = 1 }
 				owner_species = { set_species_flag = DSO_dessanu_heritage }
-				start_lcluster_chain = yes
-				set_country_flag = encountered_first_lgate
 				if = {
 					limit = {
 						has_country_flag = is_cult_of_the_gateway_flag
@@ -692,6 +683,8 @@ country_event = {
 					}
 				}
 			}
+			start_lcluster_chain = yes
+			set_country_flag = encountered_first_lgate
 		}
 		if = {
 			limit = {
@@ -811,6 +804,7 @@ country_event = {
 		}
 	}
 }
+
 # Fix Capital
 planet_event = {
 	id = bio_harvest.4
@@ -838,7 +832,7 @@ country_event = {
 		has_origin = civic_gateway_worshiper
 	}
 	immediate = {
-		# If 2 Guardians exist, a non-player one is destroyed
+		# Fallback (theoretically not possible) if 2 Guardians exist, a non-player one is destroyed
 		if = {
 			limit = {
 				any_playable_country = {
@@ -872,15 +866,30 @@ country_event = {
 				}
 				destroy_country = yes
 			}
+			random_playable_country = {
+				limit = { has_origin = civic_gateway_worshiper }
+				# Generates system for Lost Dessanu Colony.
+				capital_scope = {
+					spawn_system = {
+						min_jumps = 2
+						max_jumps = 4
+						initializer = lost_dessanu_colony_system
+						hyperlane = yes
+						is_discovered = no
+					}
+				}
+			}
 		}
-		# Generates system for Lost Dessanu Colony.
-		capital_scope = {
-			spawn_system = {
-				min_jumps = 2
-				max_jumps = 4
-				initializer = lost_dessanu_colony_system
-				hyperlane = yes
-				is_discovered = no
+		else = {
+			# Generates system for Lost Dessanu Colony.
+			capital_scope = {
+				spawn_system = {
+					min_jumps = 2
+					max_jumps = 4
+					initializer = lost_dessanu_colony_system
+					hyperlane = yes
+					is_discovered = no
+				}
 			}
 		}
 	}
@@ -977,11 +986,11 @@ planet_event = {
 #								Harvest Stages
 # ----------------------------------------------------------------------------------
 
-# Harvester grey_goo planet
+# Harvester grey_goo planet (on first month after game start)
 country_event = {
-	id = harvest_nanite_planet.1
+	id = bio_harvest_planet.0
 	title = harvest_nanite_planet.1.name
-	desc = harvest_nanite_planet.1.desc
+	desc = harvest_nanite_planet.1.desc # TODO
 	picture = GFX_evt_gray_gooed_planet
 	show_sound = event_laboratory_sound
 	# location = root
