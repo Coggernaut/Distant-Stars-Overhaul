@@ -4,8 +4,11 @@
 namespace = harvest_colony
 namespace = distar_overhaul
 
-# Discovered Nanite World (Harvest/Forge/Nanite)
-country_event = {
+# Discovered Nanite World (on_entering_system_first_time Harvest/Forge/Nanite)
+# Scope = Ship
+# From = System
+# fromfrom = Country
+ship_event = {
 	id = distar_overhaul.3
 	is_triggered_only = yes
 	hide_window = yes

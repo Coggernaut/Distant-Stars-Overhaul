@@ -38,7 +38,7 @@ fareen={
 		key="Gridaar"
 		literal=yes
 	}
-	planet_class="pc_continental" # "pc_gaia" log claims invalid
+	planet_class="pc_gaia" # log claims invalid?
 	system_name={
 		key="Gridaar"
 		literal=yes
