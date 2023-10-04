@@ -1,2 +1,8 @@
 is_nanite_gaia = { is_planet_class = pc_nanite_gaia }
 is_nanite_forgeworld = { is_planet_class = pc_nanite_forgeworld }
+is_nanite_habitat_shielded = { is_planet_class = pc_nanite_habitat_shielded }
+is_bh_harvest = { is_planet_class = pc_bh_harvest }
+is_bh_harvest_colony = { is_planet_class = pc_bh_harvest_colony }
+is_bh_harvested = { is_planet_class = pc_bh_harvested }
+is_nanite_gas_giant = { is_planet_class = pc_nanite_gas_giant }
+is_dessanu_relic = { is_planet_class = pc_dessanu_relic }

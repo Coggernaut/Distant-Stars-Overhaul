@@ -2,7 +2,7 @@
 
 # List of all habitable ringworld sections.
 merg_is_hab_ringworld = {
-	habitable_structure = yes # Exlcude some ringworld entities is_artificial = yes
+	habitable_structure = yes  # Exlcude some ringworld entities is_artificial = yes
 	has_ringworld_output_boost = yes
 	NOR = {
 		uses_district_set = habitat
@@ -47,7 +47,7 @@ merg_is_hab_ringworld = {
 
 # Listing habitats (upd v3.4.3)
 merg_is_habitat = {
-	habitable_structure = yes # Exlcude some entities is_artificial = yes
+	habitable_structure = yes  # Exlcude some entities is_artificial = yes
 	OR = {
 		is_planet_class = pc_habitat
 		# has_ringworld_output_boost = no # there are mods which trigger habitats as ringworlds like Giga
@@ -92,7 +92,7 @@ is_pd_hive_world = {
 merg_is_hive_world = {
 	OR = {
 		is_planet_class = pc_hive
-		# is_planet_class = pc_ringworld_hive # Gigastructural Engineering & More
+		is_planet_class = pc_ringworld_hive # Gigastructural Engineering & More
 		is_pd_hive_world = yes # Planetary Diversity
 		is_pd_hive_arcology = yes # Planetary Diversity
 		uses_district_set = hive_world
@@ -139,7 +139,7 @@ merg_is_arcology = {
 
 merg_is_relic_world = {
 	OR = {
-		is_planet_class = pc_relic
+	is_planet_class = pc_relic
 		# Nanite Machine and Distant Stars Overhaul
 		is_planet_class = pc_dessanu_relic
 		# Planetary Diversity
@@ -150,6 +150,7 @@ merg_is_relic_world = {
 
 gpm_is_planet_class_city = {
 	OR = {
+		is_planet_class = pc_city
 		merg_is_arcology = yes
 		merg_is_relic_world = yes
 		# is_planet_class = pc_matryoshka ### (Mod) Additional Mega Planets merged into Forgotten Queens - compatibility
@@ -157,6 +158,11 @@ gpm_is_planet_class_city = {
 	}
 }
 
+merg_is_molten = { is_planet_class = pc_molten }
+merg_is_toxic = { is_planet_class = pc_toxic }
+merg_is_frozen = { is_planet_class = pc_frozen }
+merg_is_barren = { is_planet_class = pc_barren }
+merg_is_barren_cold = { is_planet_class = pc_barren_cold }
 merg_is_gaia_basic = {
 	OR = {
 		is_planet_class = pc_gaia
@@ -166,5 +172,14 @@ merg_is_gaia_basic = {
 		is_planet_class = pc_nanite_gaia
 		# Planetary Diversity
 		# is_pd_gaia = yes
+	}
+}
+merg_is_shielded_world = {
+	OR = {
+		is_planet_class = pc_habitat_shielded
+		is_planet_class = pc_ringworld_shielded
+		is_planet_class = pc_shielded
+		# Nanite Machine and Distant Stars Overhaul
+		is_planet_class = pc_nanite_habitat_shielded
 	}
 }

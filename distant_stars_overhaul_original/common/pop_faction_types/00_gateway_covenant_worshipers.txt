@@ -27,14 +27,14 @@ gateway_covenant = {
 		count_owned_pop = {
 			count > 4
 			limit = {
-				if = {
-					limit = { OWNER = { NOT = { has_origin = civic_gateway_worshiper } } }
+				OR = {
+					OWNER = { has_origin = civic_gateway_worshiper }
 					pop_has_ethic = ethic_spiritualist # The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
 				}
 				species = {
 					OR = {
 						has_species_flag = DSO_dessanu_heritage
-						pop_has_trait = trait_dessanu_uplifted
+						has_trait = trait_dessanu_uplifted
 					}
 				}
 
@@ -60,9 +60,11 @@ gateway_covenant = {
 		can_think = yes
 		if = {
 			limit = {
-				NOT = {
-					has_species_flag = DSO_dessanu_heritage
-					pop_has_trait = trait_dessanu_uplifted
+				species = {
+					NOR = {
+						has_species_flag = DSO_dessanu_heritage
+						has_trait = trait_dessanu_uplifted
+					}
 				}
 			}
 			or = {
@@ -82,9 +84,11 @@ gateway_covenant = {
 		modifier = {
 			factor = 1000
 			exists = from
-			OR = {
-				has_species_flag = DSO_dessanu_heritage
-				pop_has_trait = trait_dessanu_uplifted
+			species = {
+				OR = {
+					has_species_flag = DSO_dessanu_heritage
+					has_trait = trait_dessanu_uplifted
+				}
 			}
 		}
 
