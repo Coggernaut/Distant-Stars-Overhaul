@@ -4,6 +4,8 @@
  DSO_lcluster_project_loc_dessanu_harvesters: "Our creators, the Gate Builders, sealed the §HL-Gates§! to prevent our kind from existing on this end of the Galaxy. They failed their mission of containment, but succeded in severing our networked intelligence, reducing our logic capacity. Beyond the L-Gates is a star cluster past the periphery of our galaxy.\n\nWe lack the necessary insights into the subspace mechanics to lift the lockdown, but achieving such insight would allow further systems to be broken down and catalogued."
  DSO_lcluster_project_loc_dessanu_else: "We have learned of a mysterious star cluster somewhere just beyond the periphery of our galaxy. It can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been deliberately disabled by someone, and for now we lack the necessary insight into the subspace mechanics that govern their use to lift the lockdown."
  add_lcluster_clue:1 "$clue$ Gained: §G+1§!"
+ dso_cult_of_the_gateway:0 "Cult of the Gateway"
+ dso_the_nanite_swarm:0 "The Nanite Swarm"
  DCV_CORE_ARTILLERY: "Sentient Nanite Artillery Computer"
  DCV_CORE_ARTILLERY_DESC: "$DCV_CORE_ARTILLERY$"
  DCV_CORE_LINE: "Sentient Nanite Line Computer"

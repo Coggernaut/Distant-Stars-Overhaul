@@ -1,4 +1,4 @@
-fareen={
+dso_cult_of_the_gateway={
 	name="Cult of the Gateway"
 	ship_prefix={
 		key="FAR"

@@ -44,8 +44,8 @@ dso_ancient_gray_tempest_ship = {
 	picture = GFX_evt_derelict_interior
 	stages = 6
 	max_instances = 31
+	potential = { from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object } }
 	allow = {
-		from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object }
 		is_ship_class = shipclass_science_ship
 		exists = leader
 	}
