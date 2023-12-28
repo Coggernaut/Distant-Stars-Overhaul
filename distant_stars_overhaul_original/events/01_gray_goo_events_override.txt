@@ -319,7 +319,7 @@ country_event = {
 				}
 				every_system_planet = {
 					limit = { is_planet_class = pc_gray_goo }
-					change_pc = pc_gaia
+					change_pc = pc_nanite_gaia
 					reset_planet = yes
 					set_planet_flag = hidden_nanite_world
 					set_planet_flag = fallen_empire_world

@@ -44,7 +44,7 @@ dso_ancient_gray_tempest_ship = {
 	picture = GFX_evt_derelict_interior
 	stages = 6
 	max_instances = 31
-	potential = { from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object } }
+	#potential = { from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object } }
 	allow = {
 		is_ship_class = shipclass_science_ship
 		exists = leader
@@ -62,32 +62,32 @@ dso_ancient_gray_tempest_ship = {
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E1
-		# event = DSO_ancrel.
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E2
-		# event = DSO_ancrel.
-	}
-	stage = {
-		difficulty = 5
-		icon = GFX_archaeology_runes_E3
 		event = DSO_ancrel.1
 	}
 	stage = {
 		difficulty = 3
+		icon = GFX_archaeology_runes_E2
+		event = DSO_ancrel.2
+	}
+	stage = {
+		difficulty = 5
+		icon = GFX_archaeology_runes_E3
+		event = DSO_ancrel.3
+	}
+	stage = {
+		difficulty = 3
 		icon = GFX_archaeology_runes_E4
-		# event = DSO_ancrel.
+		event = DSO_ancrel.4
 	}
 	stage = {
 		difficulty = 3
 		icon = GFX_archaeology_runes_E5
-		# event = DSO_ancrel.
+		event = DSO_ancrel.5
 	}
 	stage = {
 		difficulty = 5
 		icon = GFX_archaeology_runes_E6
-		event = DSO_ancrel.2
+		event = DSO_ancrel.6
 	}
 
 	on_roll_failed = {

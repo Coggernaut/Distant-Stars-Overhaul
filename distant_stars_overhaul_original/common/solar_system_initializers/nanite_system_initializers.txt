@@ -153,6 +153,7 @@ civic_harvester_nanites_system = {
 					distance = 120
 					angle = 270
 				}
+				create_archaeological_site = dso_ancient_gray_tempest_ship
 			}
 			create_ambient_object = {
 				type = "abandoned_gray_tempest_mothership_object"

@@ -744,7 +744,7 @@ country_event = {
 					create_research_station = { owner = root }
 				}
 			}
-			planet_event = { id = bio_harvest.6 days = 1 }
+			#planet_event = { id = bio_harvest.6 days = 1 }
 			random_system_within_border = {
 				limit = {
 					distance = {
@@ -796,10 +796,6 @@ country_event = {
 					entity_offset_height = 8
 					entity_face_object = star
 					entity_scale_to_size = no
-				}
-				random_system_ambient_object = {
-					limit = { is_ambient_object_type = abandoned_gray_tempest_mothership_object }
-					create_archaeological_site = dso_ancient_gray_tempest_ship
 				}
 			}
 		}

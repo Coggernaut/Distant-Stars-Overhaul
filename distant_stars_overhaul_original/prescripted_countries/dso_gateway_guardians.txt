@@ -3,31 +3,56 @@ dso_cult_of_the_gateway={
 	ship_prefix={
 		key="FAR"
 	}
-	species={
+	species=
+	{
 		class="FUN"
 		portrait="fun10"
-		species_name={
-			key="PRESCRIPTED_species_name_fareen"
+		species_name=
+		{
+			key="Fareen"
+			literal=yes
 		}
-		species_plural={
-			key="PRESCRIPTED_species_plural_fareen"
+		species_plural=
+		{
+			key="Fareens"
+			literal=yes
 		}
-		species_adjective={
-			key="PRESCRIPTED_adjective_fareen"
+		species_adjective=
+		{
+			key="Fareen"
+			literal=yes
 		}
 		name_list="MOL3"
 		gender=not_set
 		trait="trait_dessanu_uplifted"
 		trait="trait_latent_psionic"
 		trait="trait_nomadic"
+		trait="trait_extremely_adaptive"
+		trait="trait_slow_learners"
+		trait="trait_fleeting"
 		trait="trait_deviants"
-		trait="trait_adaptive"
 	}
-	name={
+	name=
+	{
 		key="Cult of the Gateway"
+		literal=yes
 	}
-	adjective={
-		key="PRESCRIPTED_adjective_fareen"
+	adjective=
+	{
+		key="%ADJ%"
+		variables=
+		{
+			
+			{
+				key="adjective"
+				value=
+				{
+					key="Gateway Cult"
+					literal=yes
+				}
+			}
+ 
+		}
 	}
 	authority="auth_oligarchic"
 	flags={
@@ -62,10 +87,13 @@ dso_cult_of_the_gateway={
 			"null"
 		}
 	}
-	ruler={
+	ruler=
+	{
 		gender=female
-		name={
-			full_names={
+		name=
+		{
+			full_names=
+			{
 				key="Forthi"
 			}
 		}
@@ -73,20 +101,13 @@ dso_cult_of_the_gateway={
 		texture=0
 		attachment=0
 		clothes=4
-		ruler_title={
+		ruler_title=
+		{
 			key="High Guardian"
 			literal=yes
 		}
-		heir_title={
-			key="Imperatrix"
-			literal=yes
-		}
-		ruler_title_female={
-			key="High Guardian"
-			literal=yes
-		}
-		trait="leader_trait_principled"
-		leader_class="governor"
+		trait="trait_ruler_charismatic"
+		leader_class="official"
 	}
 	spawn_as_fallen=no
 	ignore_portrait_duplication=no
