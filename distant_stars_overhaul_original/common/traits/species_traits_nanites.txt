@@ -1,22 +1,22 @@
 trait_robot_advanced_nanites = {
 	cost = 0
+	icon = "gfx/interface/icons/traits/trait_uplifted.dds"
 	initial = no
 	randomized = no
 	opposites = { "trait_robot_custom_made" }
-	species_potential_add = { always = no }
-	allowed_archetypes = {
-		ROBOT
-		MACHINE
-	}
-	# Machines only
+	
 	species_potential_add = {
-		exists = from
-		from = {
-			is_machine_empire = yes
-			has_technology = tech_advanced_nanites
-			NOT = { has_policy_flag = ai_outlawed }
-		}
+		always = no
 	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+	
+	allowed_archetypes = { ROBOT MACHINE } # Machines only
+
 	modifier = {
 		planet_jobs_unity_produces_mult = 0.15
 		planet_pop_assembly_mult = 0.1
@@ -38,6 +38,7 @@ trait_dessanu_nanites = {
 	species_possible_merge_add = {
 		always = no
 	}
+	immortal_leaders = yes
 	allowed_archetypes = { MACHINE }
 	# Machines only
 	modifier = { 
