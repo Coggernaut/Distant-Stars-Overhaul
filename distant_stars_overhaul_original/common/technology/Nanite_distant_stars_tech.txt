@@ -64,17 +64,16 @@ tech_repeatable_nanite_technology_insight = {
 	is_rare = yes
 	category = { voidcraft }
 	levels = -1
-	weight = 0
-	# potential = {
-	#	has_global_flag = l_cluster_opened
-	#	NOT = { has_country_flag = lcluster_opener }
-	#	NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
-	#	NOT = { has_technology = tech_nanite_technology_mastery }
-	#	NOT = { has_origin = civic_gateway_worshiper }
+	weight = 0 #Change to 70 when ready to implement
+	#potential = {
+	#	has_technology = tech_repeatable_nanite_technology_insight
 	#	if = {
 	#		limit = { is_machine_empire = no }
 	#		has_technology = tech_synthetic_workers
+	#		NOT = { has_origin = civic_gateway_worshiper }
 	#	}
+	#	NOT = { has_country_flag = completed_nanite_technology_mastery_chain }
+	#	NOT = { has_technology = tech_nanite_technology_mastery }
 	#}
 	prereqfor_desc = {
 		custom = {
