@@ -546,7 +546,7 @@ civic_gateway_worshiper_system = {
 
 			moon = {
 				count = { min = 1 max = 1 }
-				class = "pc_relic"
+				class = "pc_dessanu_relic"
 				orbit_angle = { min = 145 max = 145 }
 				orbit_distance = 5
 				size = 10

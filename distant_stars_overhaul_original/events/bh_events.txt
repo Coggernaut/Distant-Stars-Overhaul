@@ -573,14 +573,13 @@ country_event = {
 							max_jumps = 4
 							type = hyperlane
 						}
-						is_planet_class = pc_relic
+						is_planet_class = pc_dessanu_relic
 					}
 					# create_colony = {
 					#	owner = root
 					#	species = owner_main_species
 					#	ethos = owner
 					# }
-					change_pc = pc_dessanu_relic
 					set_owner = root
 					set_controller = root
 					set_name = "Abandonded Observatory"
