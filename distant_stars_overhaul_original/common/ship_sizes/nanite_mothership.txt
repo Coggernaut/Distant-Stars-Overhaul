@@ -72,7 +72,7 @@ dso_nanite_interdictor = {
 		category = ships
 		upkeep = {
 			energy = 5
-			nanites = 0.01
+			nanites = 0.05
 		}
 	}
 
@@ -254,7 +254,7 @@ dso_nanite_mothership = {
 		category = ships
 		upkeep = {
 			energy = 10
-			nanites = 1
+			nanites = 0.2
 		}
 	}
 
@@ -392,7 +392,7 @@ dso_nanite_core = {
 		category = ships
 		upkeep = {
 			energy = 15
-			nanites = 2
+			nanites = 1
 		}
 	}
 
