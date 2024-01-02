@@ -155,13 +155,13 @@ weapon_component_template = {
 	
 	# cost = 0
 	power = -90
-	damage = { min = 100 max = 150 }
+	damage = { min = 180 max = 240 }
 	hull_damage = 3.00
 	shield_damage = 0.10
 	shield_penetration = 0.90
 	armor_damage = 1.25
 	armor_penetration = 0
-	windup = { min = 2.00 max = 20 }
+	windup = { min = 20.00 max = 60 }
 	total_fire_time = 10
 	range = 120
 	accuracy = 1.00
@@ -205,14 +205,14 @@ weapon_component_template = {
 
 	# cost = 0
 	power = -250
-	damage = { min = 500 max = 1500 }
+	damage = { min = 900 max = 1800 }
 	hull_damage = 3.00
 	shield_damage = 0.10
 	shield_penetration = 0.90
 	armor_damage = 1.25
 	armor_penetration = 0
-	windup = { min = 2.00 max = 20 }
-	total_fire_time = 115.00
+	windup = { min = 30.00 max = 130 }
+	total_fire_time = 20.00
 	range = 150
 	accuracy = 1.00
 	tracking = 0.20
@@ -255,14 +255,14 @@ weapon_component_template = {
 
 	# cost = 0
 	power = -500
-	damage = { min = 1000 max = 3000 }
+	damage = { min = 3000 max = 7000 }
 	hull_damage = 3.00
-	shield_damage = 1.00
-	shield_penetration = 1.00
-	armor_damage = 1.00
-	armor_penetration = 1.00
-	windup = { min = 2.00 max = 20 }
-	total_fire_time = 115.00
+	shield_damage = 0.10
+	shield_penetration = 0.90
+	armor_damage = 1.25
+	armor_penetration = 0
+	windup = { min = 30.00 max = 130 }
+	total_fire_time = 80.00
 	range = 250
 	accuracy = 1.00
 	tracking = 0.20
@@ -301,7 +301,7 @@ weapon_component_template = {
 
 	# cost = 0
 	power = -7
-	damage = { min = 20 max = 25.00 }
+	damage = { min = 20 max = 50.00 }
 	hull_damage = 3.00
 	shield_damage = 0.10
 	shield_penetration = 0.90
@@ -348,7 +348,7 @@ weapon_component_template = {
 
 	# cost = 0
 	power = -13
-	damage = { min = 40 max = 50 }
+	damage = { min = 50 max = 80 }
 	hull_damage = 3.00
 	shield_damage = 0.10
 	shield_penetration = 0.90
@@ -395,7 +395,7 @@ weapon_component_template = {
 
 	# cost = 0
 	power = -26
-	damage = { min = 80 max = 100 }
+	damage = { min = 100 max = 180 }
 	hull_damage = 3.00
 	shield_damage = 0.10
 	shield_penetration = 0.90
