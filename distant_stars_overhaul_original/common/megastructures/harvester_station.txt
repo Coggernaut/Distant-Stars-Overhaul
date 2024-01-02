@@ -14,7 +14,7 @@ nanite_factory_station_0 = {
 		cost = { alloys = 10000 }
 		upkeep = {
 			energy = 100
-			alloys = 50
+			alloys = 10
 		}
 		produces = { nanites = 10 }
 	}
