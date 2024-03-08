@@ -485,7 +485,7 @@ country_event = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
 				}
-				add_deposit = d_nanite_forgeworld_deposit
+				#add_deposit = d_nanite_forgeworld_deposit #Taken out and put in on_action for terraform. Event ID bio_harvest.12
 				add_district = district_nanite_forgeworld_industry
 				planet_event = { id = bio_harvest.4 days = 3 }
 			}
@@ -975,6 +975,20 @@ planet_event = {
 		remove_modifier = "bh_harvest_modifier"
 		change_pc = pc_barren
 		clear_deposits = yes
+	}
+}
+
+planet_event = {
+	id = bio_harvest.12
+	is_triggered_only = yes
+	trigger = { 
+		is_planet_class = pc_nanite_forgeworld 
+		NOT = { has_deposit = d_nanite_forgeworld_deposit }
+	}
+	hide_window = yes
+	immediate = { 
+		add_deposit = d_nanite_forgeworld_deposit
+		add_district = district_nanite_forgeworld_industry
 	}
 }
 

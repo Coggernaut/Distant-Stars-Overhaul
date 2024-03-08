@@ -94,3 +94,20 @@ on_decade_pulse = {
 		nanite_ecosystem.10
 	}
 }
+
+# Planet has been terraformed
+# This = Planet
+# From = Terraforming country
+on_terraforming_complete = {
+	events = {
+		action.68
+		syndaw.1320 # Planet of the Mechs achievement check
+		distar.197
+		terra.10 # Terraforming random events
+		toxoids.50
+		paragon.253 # Astrocreator Azaryn's terraformation
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+		astral_planes.5010 # Celestial Tear Modifier Effect
+		bio_harvest.12
+	}
+}
