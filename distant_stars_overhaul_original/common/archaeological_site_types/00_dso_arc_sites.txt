@@ -36,9 +36,9 @@ dso_ancient_gray_tempest_ship = {
 		intel_level = { level >= low system = from.solar_system }
 		# default_site_visible_trigger = yes only works on planets sites
 	}
-	# on_visible = {
-	# 	country_event = { id = dso_story.6 days = 30 } # TODO!!
-	# }
+	on_visible = {
+		country_event = { id = dso_story.6 days = 30 } # TODO!!
+	}
 
 	weight = { base = 0 }
 	stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = DSO_ancrel.1 }

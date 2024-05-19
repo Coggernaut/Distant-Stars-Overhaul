@@ -75,7 +75,8 @@ country_event = {
 # Ancient Gray Tempest Micro-missles #
 ######################################
 # TODO!!
-fleet_event = {
+# From = fleet?
+country_event = {
 	id = dso_story.6
 	title = dso_story.6.name
 	# First

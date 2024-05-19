@@ -10,7 +10,7 @@ trait_pc_dessanu_relic_preference = {
 	species_potential_add = {
 		always = no
 	}
-	species_potential_remove = {
+	species_possible_remove = {
 		always = no
 	}
 	species_possible_merge_add = {

@@ -657,7 +657,7 @@ create_l_tiyanki_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.1
+							id = l_tiyanki.patrol.1
 							has_planet_flag = tiyanki_l_gas_giant2
 						}
 						found_planet = {
@@ -667,7 +667,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.2
+							id = l_tiyanki.patrol.2
 							has_planet_flag = tiyanki_l_gas_giant3
 						}
 						found_planet = {
@@ -677,7 +677,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.3
+							id = l_tiyanki.patrol.3
 							has_planet_flag = tiyanki_l_gas_giant4
 						}
 						found_planet = {
@@ -687,7 +687,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.4
+							id = l_tiyanki.patrol.4
 							has_planet_flag = tiyanki_l_gas_giant1
 						}
 						found_planet = {
@@ -723,7 +723,7 @@ create_l_tiyanki_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.1
+							id = l_tiyanki2.patrol.1
 							has_planet_flag = tiyanki_l_gas_giant4
 						}
 						found_planet = {
@@ -733,7 +733,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.2
+							id = l_tiyanki2.patrol.2
 							has_planet_flag = tiyanki_l_gas_giant3
 						}
 						found_planet = {
@@ -743,7 +743,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.3
+							id = l_tiyanki2.patrol.3
 							has_planet_flag = tiyanki_l_gas_giant2
 						}
 						found_planet = {
@@ -753,7 +753,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.4
+							id = l_tiyanki2.patrol.4
 							has_planet_flag = tiyanki_l_gas_giant1
 						}
 						found_planet = {
@@ -789,7 +789,7 @@ create_l_tiyanki_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.1
+							id = l_tiyanki3.patrol.1
 							has_planet_flag = tiyanki_l_gas_giant2
 						}
 						found_planet = {
@@ -799,7 +799,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.2
+							id = l_tiyanki3.patrol.2
 							has_planet_flag = tiyanki_l_gas_giant1
 						}
 						found_planet = {
@@ -809,7 +809,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.3
+							id = l_tiyanki3.patrol.3
 							has_planet_flag = tiyanki_l_gas_giant4
 						}
 						found_planet = {
@@ -819,7 +819,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.4
+							id = l_tiyanki3.patrol.4
 							has_planet_flag = tiyanki_l_gas_giant3
 						}
 						found_planet = {
@@ -855,7 +855,7 @@ create_l_tiyanki_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki4.patrol.1
+							id = l_tiyanki4.patrol.1
 							has_planet_flag = tiyanki_l_gas_giant3
 						}
 						found_planet = {
@@ -865,7 +865,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki4.patrol.2
+							id = l_tiyanki4.patrol.2
 							has_planet_flag = tiyanki_l_gas_giant4
 						}
 						found_planet = {
@@ -875,7 +875,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki4.patrol.3
+							id = l_tiyanki4.patrol.3
 							has_planet_flag = tiyanki_l_gas_giant1
 						}
 						found_planet = {
@@ -885,7 +885,7 @@ create_l_tiyanki_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki4.patrol.4
+							id = l_tiyanki4.patrol.4
 							has_planet_flag = tiyanki_l_gas_giant2
 						}
 						found_planet = {
@@ -1439,7 +1439,7 @@ create_l_amoeba_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.1
+							id = l_amoeba.patrol.1
 							has_planet_flag = l_amoeba_gas_giant2
 						}
 						found_planet = {
@@ -1449,7 +1449,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.2
+							id = l_amoeba.patrol.2
 							has_planet_flag = l_amoeba_gas_giant3
 						}
 						found_planet = {
@@ -1459,7 +1459,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.3
+							id = l_amoeba.patrol.3
 							has_planet_flag = l_amoeba_gas_giant4
 						}
 						found_planet = {
@@ -1469,7 +1469,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki.patrol.4
+							id = l_amoeba.patrol.4
 							has_planet_flag = l_amoeba_gas_giant1
 						}
 						found_planet = {
@@ -1505,7 +1505,7 @@ create_l_amoeba_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.1
+							id = l_amoeba2.patrol.1
 							has_planet_flag = l_amoeba_gas_giant4
 						}
 						found_planet = {
@@ -1515,7 +1515,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.2
+							id = l_amoeba2.patrol.2
 							has_planet_flag = l_amoeba_gas_giant3
 						}
 						found_planet = {
@@ -1525,7 +1525,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.3
+							id = l_amoeba2.patrol.3
 							has_planet_flag = l_amoeba_gas_giant2
 						}
 						found_planet = {
@@ -1535,7 +1535,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki2.patrol.4
+							id = l_amoeba2.patrol.4
 							has_planet_flag = l_amoeba_gas_giant1
 						}
 						found_planet = {
@@ -1571,7 +1571,7 @@ create_l_amoeba_home_roaming_fleets = {
 				repeat = {
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.1
+							id = l_amoeba3.patrol.1
 							has_planet_flag = l_amoeba_gas_giant2
 						}
 						found_planet = {
@@ -1581,7 +1581,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.2
+							id = l_amoeba3.patrol.2
 							has_planet_flag = l_amoeba_gas_giant1
 						}
 						found_planet = {
@@ -1591,7 +1591,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.3
+							id = l_amoeba3.patrol.3
 							has_planet_flag = l_amoeba_gas_giant4
 						}
 						found_planet = {
@@ -1601,7 +1601,7 @@ create_l_amoeba_home_roaming_fleets = {
 					}
 					find_closest_planet = {
 						trigger = {
-							id = tiyanki3.patrol.4
+							id = l_amoeba3.patrol.4
 							has_planet_flag = l_amoeba_gas_giant3
 						}
 						found_planet = {

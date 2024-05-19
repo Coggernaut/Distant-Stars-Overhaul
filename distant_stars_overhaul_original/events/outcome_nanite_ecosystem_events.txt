@@ -1551,34 +1551,37 @@ country_event = {
 				limit = { is_planet_class = pc_gray_goo }
 				# set_planet_flag = distar_nanite_ecosystem_planet_flag TODO unused?
 				change_pc = pc_nanite_gaia
-				clear_blocker = yes
+				every_deposit = {
+					limit = { is_blocker = yes }
+					clear_blocker = yes
+				}
 				add_blocker = { type = d_dangerous_wildlife_blocker }
 				add_blocker = { type = d_dense_jungle }
-				random_list = { 
+				random_list = {
 					10 = {
 						add_blocker = { type = d_poisonous_algae }
 						add_blocker = { type = d_venomous_insects }
 						add_blocker = { type = d_toxic_kelp }
 						add_blocker = { type = d_noxious_swamp }
-					} 
+					}
 					20 = {
 						add_blocker = { type = d_poisonous_algae }
 						add_blocker = { type = d_venomous_insects }
-						random_list = { 
-							50 = { add_blocker = { type = d_toxic_kelp } } 
-							50 = { add_blocker = { type = d_noxious_swamp } }  
+						random_list = {
+							50 = { add_blocker = { type = d_toxic_kelp } }
+							50 = { add_blocker = { type = d_noxious_swamp } }
 						}
-					} 
-					70 = { 
-						random_list = { 
-							50 = { add_blocker = { type = d_poisonous_algae } } 
-							50 = { add_blocker = { type = d_venomous_insects } } 
+					}
+					70 = {
+						random_list = {
+							50 = { add_blocker = { type = d_poisonous_algae } }
+							50 = { add_blocker = { type = d_venomous_insects } }
 						}
-						random_list = { 
-							50 = { add_blocker = { type = d_toxic_kelp } } 
-							50 = { add_blocker = { type = d_noxious_swamp } }  
+						random_list = {
+							50 = { add_blocker = { type = d_toxic_kelp } }
+							50 = { add_blocker = { type = d_noxious_swamp } }
 						}
-					} 
+					}
 				}
 			}
 		}
