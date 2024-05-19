@@ -203,11 +203,11 @@ planet_event = {
 						}
 						set_location = root
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						# or return_point
+						set_aggro_range_measure_from = self						# Or return_point
 						set_aggro_range = 300
 						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
-						#	clear_auto_move_on_arrival = yes # hang around
+						#	clear_auto_move_on_arrival = yes # Hang around
 						# }
 					}
 				}
@@ -414,7 +414,7 @@ planet_event = {
 			merg_is_arcology = yes
 			is_planet_class = pc_relic
 		}
-		has_planet_flag = nanite_ecosystem_subterranean_planet # from distar_nanite_ecosystem.4
+		has_planet_flag = nanite_ecosystem_subterranean_planet # From distar_nanite_ecosystem.4
 	}
 	immediate = {
 		owner = { save_event_target_as = nanite_ecosystem_subterranean_planet_owner }
@@ -591,7 +591,7 @@ planet_event = {
 		set_planet_flag = nanite_ecosystem_subterranean_invasion_planet
 		event_target:nanite_ecosystem_subterranean_nation = {
 			create_leader = {
-				class = general
+				class = commander
 				species = owner_main_species
 				name = random
 				skill = 3
@@ -732,7 +732,7 @@ country_event = {
 					type = "defense_army"
 				}
 			}
-			# flip starbase
+			# Flip starbase
 			solar_system = {
 				if = {
 					limit = { exists = starbase }
@@ -813,7 +813,7 @@ planet_event = {
 			save_event_target_as = nanite_ecosystem_subterranean_nation
 			owner_species = { save_event_target_as = nanite_ecosystem_subterranean_species }
 			create_leader = {
-				class = general
+				class = commander
 				species = event_target:nanite_ecosystem_subterranean_species
 				name = random
 				skill = 3
@@ -1828,11 +1828,11 @@ country_event = {
 						}
 						set_location = prev
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						# or return_point
+						set_aggro_range_measure_from = self						# Or return_point
 						set_aggro_range = 300
 						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
-						#	clear_auto_move_on_arrival = yes # hang around
+						#	clear_auto_move_on_arrival = yes # Hang around
 						# }
 					}
 				}
@@ -2026,11 +2026,11 @@ country_event = {
 						}
 						set_location = prev
 						set_fleet_stance = aggressive
-						set_aggro_range_measure_from = self						# or return_point
+						set_aggro_range_measure_from = self						# Or return_point
 						set_aggro_range = 300
 						# auto_move_to_planet = {
 						#	target = prev # dragon_point star
-						#	clear_auto_move_on_arrival = yes # hang around
+						#	clear_auto_move_on_arrival = yes # Hang around
 						# }
 					}
 				}

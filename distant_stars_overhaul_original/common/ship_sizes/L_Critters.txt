@@ -1,4 +1,4 @@
-# reloadable with 'reload stats'
+# Reloadable with 'reload stats'
 # This file is where you start when you want to configure something new, then go to sections
 @corvette_collision_radius = 2
 @destroyer_collision_radius = 2.5

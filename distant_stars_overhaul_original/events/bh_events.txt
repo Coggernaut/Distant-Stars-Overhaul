@@ -22,7 +22,7 @@ country_event = {
 	desc = "distar_overhaul_insight_start.1.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
-	# can be triggered via outcome ship_events
+	# Can be triggered via outcome ship_events
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 2 }
 	trigger = {
@@ -63,7 +63,7 @@ country_event = {
 	option = { name = OK }
 }
 
-# finish nanite mastery (alternate)
+# Finish nanite mastery (alternate)
 country_event = {
 	id = distar_overhaul.10001
 	hide_window = yes
@@ -81,7 +81,7 @@ country_event = {
 	}
 }
 
-# start insight (alternate)
+# Start insight (alternate)
 country_event = {
 	id = distar_overhaul.10002
 	title = "nanite_insight"
@@ -116,7 +116,7 @@ country_event = {
 	desc = "distar_overhaul.10904.desc"
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
-	# can be triggered via outcome ship_events
+	# Can be triggered via outcome ship_events
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 2 }
 	# trigger = {	}
@@ -485,15 +485,15 @@ country_event = {
 					limit = { is_blocker = yes }
 					clear_blocker = yes
 				}
-				add_deposit = d_nanite_forgeworld_deposit #Also put in on_action for terraform. Event ID bio_harvest.12
+				add_deposit = d_nanite_forgeworld_deposit # Also put in on_action for terraform. Event ID bio_harvest.12
 				add_district = district_nanite_forgeworld_industry
-				planet_event = { id = bio_harvest.4 days = 3 } #Sets up starting world economy.
+				planet_event = { id = bio_harvest.4 days = 3 } # Sets up starting world economy.
 			}
 			random_planet_within_border = {
 				limit = { is_planet_class = pc_shattered }
 				add_deposit = d_minerals_6
-			} #Found this to be necessary for good deposit income.
-			country_event = { id = bio_harvest_planet.0 days = 30 } #This is a flavor event that gives the player ~50 nanites at the beginning of the game after 1 month.
+			} # Found this to be necessary for good deposit income.
+			country_event = { id = bio_harvest_planet.0 days = 30 } # This is a flavor event that gives the player ~50 nanites at the beginning of the game after 1 month.
 		}
 		if = {
 			limit = {
@@ -506,7 +506,7 @@ country_event = {
 			# 		modifier = { add = 100 star = { is_star_class = sc_black_hole } }
 			# 	}
 			# }
-			#Everything below is mostly just setting up the start-system's flavor.
+			# Everything below is mostly just setting up the start-system's flavor.
 			capital_scope.solar_system = {
 				save_event_target_as = gateway_system
 				set_star_flag = lgate
@@ -744,7 +744,7 @@ country_event = {
 					create_research_station = { owner = root }
 				}
 			}
-			#planet_event = { id = bio_harvest.6 days = 1 }
+			# planet_event = { id = bio_harvest.6 days = 1 }
 			random_system_within_border = {
 				limit = {
 					distance = {

@@ -10,9 +10,9 @@ namespace = harvester_engine
 #}
 # Add static war exhaustion for these planet destruction events with:
 # add_static_war_exhaustion = {
-#				attacker = <country>		 				# attacker in this battle
-#				location = <planet>							# location for battle
-#				value_for_planet_destruction = <0.0-1.0>	# scale amount of WE added to this battle
+#				attacker = <country>		 				# Attacker in this battle
+#				location = <planet>							# Location for battle
+#				value_for_planet_destruction = <0.0-1.0>	# Scale amount of WE added to this battle
 #			}
 # Cracked
 planet_event = {
@@ -92,7 +92,7 @@ planet_event = {
 		}
 		every_owned_pop = { kill_pop = yes }
 		remove_all_buildings = yes
-		# destroy habitats and ringworlds
+		# Destroy habitats and ringworlds
 		# Actual Harvest world Stuff
 		if = {
 			limit = {

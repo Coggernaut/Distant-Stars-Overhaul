@@ -12,7 +12,7 @@ pop_faction_name_format = {
 		modifier = {
 			add = 100
 			is_pop_faction_type = "gateway_covenant"
-			NOT = { OWNER = { has_origin = civic_gateway_worshiper } }
+			NOT = { owner = { has_origin = civic_gateway_worshiper } }
 		}
 	}
 	format = "{<gateway_covenant_names>}"
@@ -32,7 +32,7 @@ pop_faction_name_format = {
 		modifier = {
 			add = 100
 			is_pop_faction_type = "gateway_covenant"
-			OWNER = { has_origin = civic_gateway_worshiper }
+			owner = { has_origin = civic_gateway_worshiper }
 		}
 	}
 	format = "{<gateway_covenant_origin_names>}"

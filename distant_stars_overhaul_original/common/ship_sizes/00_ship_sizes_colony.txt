@@ -1,4 +1,4 @@
-# reloadable with 'reload stats'
+# Reloadable with 'reload stats'
 # This file is where you start when you want to configure something new, then go to sections
 
 ####################
@@ -6,11 +6,11 @@
 ####################
 # modifier = { } only takes the following modifiers
 # hull, shield & armor add/mult and regen add perc/static
-# evasion add/mult
+# Evasion add/mult
 # speed/base speed mult
-# weapon damage mult
-# upkeep mult
-# for other modifiers, use ship_modifier = { }
+# Weapon damage mult
+# Upkeep mult
+# For other modifiers, use ship_modifier = { }
 ####################
 
 ############
@@ -35,8 +35,8 @@ colonizer = {
 
 	combat_disengage_chance = 0.5
 
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_default_design = yes	# if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes # if yes, ship design will have a 3d view in the ship browser
 	prerequisites = { "tech_colonization_1" }
 	is_civilian = yes
 	is_designable = no
@@ -163,8 +163,8 @@ colony_vessel = {
 
 	combat_disengage_chance = 0.5
 
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = no #if yes, ship design will have a 3d view in the ship browser
+	enable_default_design = yes	# if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = no # if yes, ship design will have a 3d view in the ship browser
 	prerequisites = { "tech_colonization_1" }
 	is_civilian = yes
 	is_designable = no

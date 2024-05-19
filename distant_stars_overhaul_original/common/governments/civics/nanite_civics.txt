@@ -2,7 +2,7 @@ civic_harvester_nanites = {
 	picture = GFX_origin_harvester_nanites
 	is_origin = yes
 	description = "civic_harvester_nanites_effects"
-	playable = { has_synthethic_dawn = yes }
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
@@ -23,12 +23,12 @@ civic_harvester_nanites = {
 	random_weight = {
 		base = 1
 		modifier = {
-			# civic has no effect after galaxy generation, disable for random generation
+			# Civic has no effect after galaxy generation, disable for random generation
 			factor = 0
 			has_global_flag = game_started
 		}
 		modifier = {
-			# civic is not spawned if user does not have DLC
+			# Civic is not spawned if user does not have DLC
 			factor = 0
 			has_distar = no
 		}
@@ -41,7 +41,7 @@ civic_gateway_pursuer = {
 	# max_once_global = yes
 	description = "civic_gateway_pursuer_effects"
 	playable = {
-		has_synthethic_dawn = yes
+		host_has_dlc = "Synthetic Dawn Story Pack"
 		has_distar = yes
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
@@ -67,12 +67,12 @@ civic_gateway_pursuer = {
 	random_weight = {
 		base = 1
 		modifier = {
-			# civic has no effect after galaxy generation, disable for random generation
+			# Civic has no effect after galaxy generation, disable for random generation
 			factor = 0
 			has_global_flag = game_started
 		}
 		modifier = {
-			# civic is not spawned if user does not have DLC
+			# Civic is not spawned if user does not have DLC
 			factor = 0
 			has_distar = no
 		}
@@ -128,12 +128,12 @@ civic_gateway_worshiper = {
 	random_weight = {
 		base = 1
 		modifier = {
-			# civic has no effect after galaxy generation, disable for random generation
+			# Civic has no effect after galaxy generation, disable for random generation
 			factor = 0
 			has_global_flag = game_started
 		}
 		modifier = {
-			# civic is not spawned if user does not have DLC
+			# Civic is not spawned if user does not have DLC
 			factor = 0
 			has_distar = no
 		}

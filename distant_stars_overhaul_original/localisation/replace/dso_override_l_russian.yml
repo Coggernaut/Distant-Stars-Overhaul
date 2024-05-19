@@ -1,0 +1,6 @@
+﻿l_russian:
+ l_cluster_chain_title: "L-скопление"
+ l_cluster_chain_desc: "[DSO_lcluster_project_loc]" #NT!
+ clues: "Знания об L-вратах"
+ clue: "Знание об L-вратах"
+ add_lcluster_clue: "Получено $clue$: §G+1§!"

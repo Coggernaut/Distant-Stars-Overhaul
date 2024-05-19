@@ -23,22 +23,20 @@ is_regular_empire = {
 		is_country_type = default
 		is_country_type = gate_builders
 		is_country_type = fallen_empire
-		is_country_type = awakened_fallen_empire # for checks in buildings
-		is_country_type = awakened_marauders # for checks in buildings
+		is_country_type = awakened_fallen_empire # For checks in buildings
+		is_country_type = awakened_marauders # For checks in buildings
 	}
 	is_gestalt = no
 }
 
 is_fallen_empire_machine = {
-	is_fallen_empire = yes
-	is_machine_empire = yes # has_authority = auth_machine_intelligence
+	is_fallen_empire_machine = yes # has_authority = auth_machine_intelligence
 }
 
 is_fallen_empire_spiritualist = {
 	OR = {
 		AND = {
-			is_fallen_empire = yes
-			has_ethic = ethic_fanatic_spiritualist
+			is_fallen_empire_spiritualist = yes
 		}
 		AND = {
 			is_country_type = gate_builders

@@ -8,13 +8,13 @@ country_event = {
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_global_flag = l_cluster_opened
-		# spawn L-Cluster
+		# Spawn L-Cluster
 		country_event = { id = distar.11000 }
-		# enable L-Gate
+		# Enable L-Gate
 		from.solar_system = {
 			if = {
-				# flag prevents the Tempest from using this gate,
-				# do not set the flag if there's only one l-gate system
+				# Flag prevents the Tempest from using this gate,
+				# Do not set the flag if there's only one l-gate system
 				limit = {
 					any_system = {
 						has_star_flag = lgate
@@ -75,13 +75,13 @@ country_event = {
 		#}
 		# else = {
 		#	country_event = { id = distar.10951 }
-			# enable other L-Gates over time
+			# Enable other L-Gates over time
 		#	random_country = {
 		#		limit = { is_country_type = global_event }
 		#		country_event = { id = distar.10960 days = 200 random = 500 }
 		#	}
 		#}
-		# activated terminal egress l-gate
+		# Activated terminal egress l-gate
 		event_target:lcluster1 = {
 			random_system_megastructure = {
 				activate_gateway = this
@@ -110,13 +110,13 @@ country_event = {
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_global_flag = l_cluster_opened
-		# spawn L-Cluster
+		# Spawn L-Cluster
 		country_event = { id = distar.11000 }
-		# enable L-Gate
+		# Enable L-Gate
 		from.solar_system = {
 			if = {
-				# flag prevents the Tempest from using this gate,
-				# do not set the flag if there's only one l-gate system
+				# Flag prevents the Tempest from using this gate,
+				# Do not set the flag if there's only one l-gate system
 				limit = {
 					any_system = {
 						has_star_flag = lgate
@@ -177,13 +177,13 @@ country_event = {
 		#}
 		# else = {
 		#	country_event = { id = distar.10951 }
-			# enable other L-Gates over time
+			# Enable other L-Gates over time
 		#	random_country = {
 		#		limit = { is_country_type = global_event }
 		#		country_event = { id = distar.10960 days = 200 random = 500 }
 		#	}
 		#}
-		# activated terminal egress l-gate
+		# Activated terminal egress l-gate
 		event_target:lcluster1 = {
 			random_system_megastructure = {
 				activate_gateway = this

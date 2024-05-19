@@ -16,7 +16,7 @@ gateway_covenant = {
 	resources = {
 		category = pop_factions
 		produces = {
-			unity = @faction_base_unity
+			unity = @faction_base_output
 		}
 	}
 
@@ -28,7 +28,7 @@ gateway_covenant = {
 			count > 4
 			limit = {
 				OR = {
-					OWNER = { has_origin = civic_gateway_worshiper }
+					owner = { has_origin = civic_gateway_worshiper }
 					pop_has_ethic = ethic_spiritualist # The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
 				}
 				species = {
@@ -67,7 +67,7 @@ gateway_covenant = {
 					}
 				}
 			}
-			or = {
+			OR = {
 				pop_has_ethic = ethic_spiritualist
 				pop_has_ethic = ethic_fanatic_spiritualist
 				pop_has_ethic = ethic_militarist
@@ -321,7 +321,7 @@ gateway_covenant = {
 				any_playable_country = {
 					has_communications = prev
 					NOT = { is_same_empire = prev }
-					any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
+					any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # Not a real planet_modifier (only static)
 				}
 			}
 		}
@@ -329,7 +329,7 @@ gateway_covenant = {
 		trigger = {
 			any_playable_country = {
 				has_migration_access = root.owner
-				any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # not a real planet_modifier (only static)
+				any_owned_planet = { has_modifier = DSO_dessanu_heritage_world } # Not a real planet_modifier (only static)
 			}
 		}
 	}

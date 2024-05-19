@@ -4,7 +4,7 @@
 #		always = yes
 #	}
 #
-#	# icon_frame = 1	# this is the frame for the shared icon file, will also need a GFX_fleet_order_button_ground_support_NAME entry
+#	# icon_frame = 1	# This is the frame for the shared icon file, will also need a GFX_fleet_order_button_ground_support_NAME entry
 #	default = yes	# Is this the default stance that new fleets will use?
 #
 #	stop_when_armies_dead = yes	# Will this stance continue to bombard planets where all defensive armies are dead? default = no

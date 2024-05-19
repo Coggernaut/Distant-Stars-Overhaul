@@ -27,8 +27,8 @@ on_monthly_pulse = {
 on_tech_increased = {
 	events = {
 		distar_overhaul.12000 # generate_nanite_insight
-		distar_overhaul.10001 # finish insight (alternate)
-		distar_overhaul.10002 # start insight (alternate)
+		distar_overhaul.10001 # Finish insight (alternate)
+		distar_overhaul.10002 # Start insight (alternate)
 	}
 }
 

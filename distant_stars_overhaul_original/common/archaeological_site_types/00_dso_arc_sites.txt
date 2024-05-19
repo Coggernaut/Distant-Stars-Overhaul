@@ -5,30 +5,15 @@ dso_ancient_dessanu_battle_site = {
 	picture = GFX_evt_landing_ship
 	stages = 2
 	max_instances = 2
-	allow = {
-		is_ship_class = shipclass_science_ship
-		exists = leader
-	}
-	visible = {
-		default_site_visible_trigger = yes
-	}
+	allow = { is_ship_class = shipclass_science_ship exists = leader }
+	visible = { default_site_visible_trigger = yes }
 	on_visible = {
 		country_event = { id = dso_story.5 days = 30 }
 	}
 
-	weight = {
-		base = 0
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E5
-		event = ancrel.108
-	}
-	stage = {
-		difficulty = 5
-		icon = GFX_archaeology_runes_E6
-		event = ancrel.109
-	}
+	weight = { base = 0 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_E5 event = ancrel.108 }
+	stage = { difficulty = 5 icon = GFX_archaeology_runes_E6 event = ancrel.109 }
 
 	on_roll_failed = {
 		from = {
@@ -37,58 +22,31 @@ dso_ancient_dessanu_battle_site = {
 	}
 }
 
-# TODO
+# TODO dso_story.6
 # Ancient Gray Tempest Micro-missles
 dso_ancient_gray_tempest_ship = {
 	desc = dso_ancient_gray_tempest_ship_desc
 	picture = GFX_evt_derelict_interior
 	stages = 6
 	max_instances = 31
-	#potential = { from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object } }
-	allow = {
-		is_ship_class = shipclass_science_ship
-		exists = leader
-	}
+	# potential = { from = { is_ambient_object_type = abandoned_gray_tempest_mothership_object } }
+	allow = { is_ship_class = shipclass_science_ship exists = leader }
 	visible = {
-		default_site_visible_trigger = yes
+		merg_is_default_empire = yes
+		intel_level = { level >= low system = from.solar_system }
+		# default_site_visible_trigger = yes only works on planets sites
 	}
 	# on_visible = {
-	# 	country_event = { id = dso_story.6 days = 30 }
+	# 	country_event = { id = dso_story.6 days = 30 } # TODO!!
 	# }
 
-	weight = {
-		base = 0
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E1
-		event = DSO_ancrel.1
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E2
-		event = DSO_ancrel.2
-	}
-	stage = {
-		difficulty = 5
-		icon = GFX_archaeology_runes_E3
-		event = DSO_ancrel.3
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E4
-		event = DSO_ancrel.4
-	}
-	stage = {
-		difficulty = 3
-		icon = GFX_archaeology_runes_E5
-		event = DSO_ancrel.5
-	}
-	stage = {
-		difficulty = 5
-		icon = GFX_archaeology_runes_E6
-		event = DSO_ancrel.6
-	}
+	weight = { base = 0 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_E1 event = DSO_ancrel.1 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_E2 event = DSO_ancrel.2 }
+	stage = { difficulty = 5 icon = GFX_archaeology_runes_E3 event = DSO_ancrel.3 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_E4 event = DSO_ancrel.4 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_E5 event = DSO_ancrel.5 }
+	stage = { difficulty = 5 icon = GFX_archaeology_runes_E6 event = DSO_ancrel.6 }
 
 	on_roll_failed = {
 		from = {

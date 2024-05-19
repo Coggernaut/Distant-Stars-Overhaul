@@ -36,5 +36,5 @@
  harvest_colony.74.desc: "After seeing the advanced weapons that our security forces are equipped with, several generals from the subterranean alien empire on [Root.GetName] have come forward requesting that we share some of our military technology.\n\nOur own officers are hesitant to do this, as it would make the aliens more difficult to defeat in battle should it ever come to that. If we refuse the request, however, the aliens are certain to view it as an insult."
  harvest_colony.75.desc: "Trade with the subterranean aliens on [Root.GetName] has dried up as of late, with their caravans showing up more and more seldom. Today we received a message from a representative of their military. They don't seem very pleased."
  harvest_colony.76.desc: "Surfacer. We tried to be good neighbors, but it has become clear that you have no intention of treating us with the respect our glorious civilization deserves.\n\nOur emperor has thus decreed that we must claim this entire world for ourselves, as is our right. We shall drive you back to the stars from whence you came!"
- subterraneans_displeased: "Relations with the subterranean civilization will be harmed."
- subterraneans_pleased: "Relations with the subterranean civilization will be improved."
+ # subterraneans_displeased: "Relations with the subterranean civilization will be harmed."
+ # subterraneans_pleased: "Relations with the subterranean civilization will be improved."

@@ -8,7 +8,7 @@
 #	}
 #	required_menace = 0		# The required amount of Menace to unlock the level
 #	allow = { has_completed_special_project_in_log = CRISIS_SPECIAL_PROJECT_1 }	# You can only unlock this level when this trigger returns true
-#																			# scope COUNTRY, This = country trying to unlock the level
-#	on_unlock = { set_country_flag = CRISIS_LEVEL_FLAG }	# an effect that is triggered when you unlock the level
-#															# scope COUNTRY, This = country the level is being unlocked for
+#																			# Scope COUNTRY, This = country trying to unlock the level
+#	on_unlock = { set_country_flag = CRISIS_LEVEL_FLAG }	# An effect that is triggered when you unlock the level
+#															# Scope COUNTRY, This = country the level is being unlocked for
 # }

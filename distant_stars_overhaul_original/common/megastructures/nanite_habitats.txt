@@ -1,4 +1,4 @@
-# see README.txt for example
+# See README.txt for example
 
 nanite_habitat_0 = {
 	entity = "nanite_habitat_shielded_entity_01_entity"
@@ -33,7 +33,7 @@ nanite_habitat_0 = {
 				limit = { NOT = { has_planet_flag = shattered_planet_habitat } }
 				custom_tooltip = {
 					fail_text = "requires_surveyed_planet"
-					is_surveyed = {			# prevent leaking habitability information
+					is_surveyed = {			# Prevent leaking habitability information
 						who = prev.from
 						status = yes
 					}
@@ -64,7 +64,7 @@ nanite_habitat_0 = {
 					has_orbital_station = no
 				}
 
-				# balance for habitats
+				# Balance for habitats
 				custom_tooltip = {
 					fail_text = "requires_not_minor_planetary_body"
 					NOR = {
@@ -77,7 +77,7 @@ nanite_habitat_0 = {
 					is_star = no
 				}
 			}
-		} # use these for all non-star megastructures
+		} # Use these for all non-star megastructures
 	}
 
 	# root = system

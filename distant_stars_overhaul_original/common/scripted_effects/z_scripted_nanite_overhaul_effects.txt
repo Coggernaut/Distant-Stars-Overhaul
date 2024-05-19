@@ -1,5 +1,5 @@
 
-# giving clues, see pop_lcluster_event for popping follow-up events
+# Giving clues, see pop_lcluster_event for popping follow-up events
 # this = country getting a clue
 
 fallen_empire_humiliate_effect = {
@@ -51,26 +51,26 @@ fallen_empire_humiliate_effect = {
 
 generate_add_nanite_insight = {
 	hidden_effect = {
-		# increment counter
+		# Increment counter
 		if = {
 			limit = {
 				has_distar = yes
 				has_event_chain = nanite_technology_mastery_chain
 			}
-			# increment counter
+			# Increment counter
 			custom_tooltip = add_nanite_insight
 			add_event_chain_counter = {
 				event_chain = nanite_technology_mastery_chain
 				counter = nanite_insight
 				amount = 1
 			}
-			# increment variable
+			# Increment variable
 			change_variable = { which = num_nanite_insight value = 1 }
 		}
 		# else = {
 		#	# failsafe, do nothing
 		#}
-		# check if completed
+		# Check if completed
 		if = {
 			limit = {
 				has_completed_event_chain_counter = {
@@ -94,7 +94,7 @@ start_nanite_technology_mastery_chain = {
 		target = this
 	}
 	set_variable = { which = num_nanite_insight value = 0 }
-	if = { #  already get some insight
+	if = { # Already get some insight
 		limit = {
 			check_variable = { which = num_lcluster_clues value > 0 }
 		}

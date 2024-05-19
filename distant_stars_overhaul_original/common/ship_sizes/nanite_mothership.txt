@@ -54,7 +54,7 @@ dso_nanite_interdictor = {
 				}
 				AND = {
 					is_scope_type = starbase 
-					OWNER = {
+					owner = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
@@ -136,7 +136,7 @@ dso_nanite_mothership = {
 			}
 			AND = {
 					is_scope_type = starbase 
-					OWNER = {
+					owner = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
@@ -166,7 +166,7 @@ dso_nanite_mothership = {
 				}
 				AND = {
 					is_scope_type = starbase 
-					OWNER = {
+					owner = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
@@ -194,7 +194,7 @@ dso_nanite_mothership = {
 				}
 				AND = {
 					is_scope_type = starbase 
-					OWNER = {
+					owner = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {
@@ -222,7 +222,7 @@ dso_nanite_mothership = {
 				}
 				AND = {
 					is_scope_type = starbase 
-					OWNER = {
+					owner = {
 						any_owned_ship = { 
 							has_component = DCV_MAINTENANCE_CREW
 							distance = {

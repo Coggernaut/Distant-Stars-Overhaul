@@ -1,5 +1,5 @@
 # # TODO: The complete file is just an inactive copy of outcome_nanite_ecosystem_events.txt
-# # just all keys nanite_ecosystem are renamed to harvest_colony
+# # Just all keys nanite_ecosystem are renamed to harvest_colony
 
 namespace = harvest_colony
 namespace = distar_overhaul
@@ -24,7 +24,7 @@ ship_event = {
 	}
 	immediate = {
 		fromfrom = { set_country_flag = distar_overhaul_discovered_nanite_world_flag }
-		FROM = {
+		from = {
 			random_system_planet = {
 				limit = {
 					OR = {
@@ -288,7 +288,7 @@ planet_event = {
 		set_planet_flag = subterranean_harvester_invasion_planet
 		event_target:harvester_subterranean_nation = {
 			create_leader = {
-				class = general
+				class = commander
 				species = owner_main_species
 				name = random
 				skill = 3
@@ -440,7 +440,7 @@ country_event = {
 				species = event_target:harvester_subterranean_species
 				type = "defense_army"
 			}
-			# flip starbase
+			# Flip starbase
 			solar_system = {
 				if = {
 					limit = { exists = starbase }
@@ -519,7 +519,7 @@ planet_event = {
 			save_event_target_as = harvester_subterranean_nation
 			owner_species = { save_event_target_as = harvester_subterranean_species }
 			create_leader = {
-				class = general
+				class = commander
 				species = event_target:harvester_subterranean_species
 				name = random
 				skill = 3

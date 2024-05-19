@@ -9,8 +9,7 @@
 @homeworld_max_size = 21
 #### README: On changing and saving file, game must be restarted from desktop to prevent crash.
 
-
-#Nanite Home System
+# Nanite Home System
 civic_harvester_nanites_system = {
 	class = "DSO_rl_ancient_system_stars"
 
@@ -59,7 +58,7 @@ civic_harvester_nanites_system = {
 					distance = 120
 					angle = 30
 				}
-				#save_global_event_target_as = debris_field_01
+				# save_global_event_target_as = debris_field_01
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -98,7 +97,7 @@ civic_harvester_nanites_system = {
 						distance = 130
 						angle = random
 					}
-					#save_global_event_target_as = debris_field_02
+					# save_global_event_target_as = debris_field_02
 				}
 			}
 			while = {
@@ -187,7 +186,7 @@ civic_harvester_nanites_system = {
 					distance = 112
 					angle = 270
 				}
-				#save_global_event_target_as = debris_field_03
+				# save_global_event_target_as = debris_field_03
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -296,7 +295,7 @@ civic_harvester_nanites_system = {
 					distance = 140
 					angle = 180
 				}
-				#save_global_event_target_as = debris_field_04
+				# save_global_event_target_as = debris_field_04
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -352,7 +351,7 @@ civic_harvester_nanites_system = {
 					distance = 134
 					angle = 0
 				}
-				#save_global_event_target_as = debris_field_05
+				# save_global_event_target_as = debris_field_05
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -424,7 +423,7 @@ civic_harvester_nanites_system = {
 				orbit_angle = { min = 0 max = 145 }
 				orbit_distance = 5
 				size = 10
-				#init_effect = {
+				# init_effect = {
 				#	
 				#}
 			}
@@ -450,7 +449,7 @@ civic_harvester_nanites_system = {
 
 	change_orbit = -245
 
-	#planet = {
+	# planet = {
 	#	count = { min = 2 max = 3 }
 	#	class = rl_unhabitable_planets
 	#	size = { min = 14 max = 24 }
@@ -479,7 +478,7 @@ civic_harvester_nanites_system = {
 	}
 }
 
-#Dessanu Guardian Home System
+# Dessanu Guardian Home System
 civic_gateway_worshiper_system = {
 	class = "DSO_rl_ancient_system_stars"
 

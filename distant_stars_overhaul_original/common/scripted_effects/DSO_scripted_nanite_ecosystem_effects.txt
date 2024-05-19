@@ -32,11 +32,11 @@ generate_l_tiyanki_herd = {
 			}
 			set_location = prev
 			set_fleet_stance = aggressive
-			set_aggro_range_measure_from = self # or return_point
+			set_aggro_range_measure_from = self # Or return_point
 			set_aggro_range = 300
 			# auto_move_to_planet = {
 			#	target = prev # dragon_point star
-			#	clear_auto_move_on_arrival = yes # hang around
+			#	clear_auto_move_on_arrival = yes # Hang around
 			#}
 			set_formation_scale = 10
 		}
@@ -929,11 +929,11 @@ generate_l_amoeba_herd = {
 			}
 			set_location = prev
 			set_fleet_stance = aggressive
-			set_aggro_range_measure_from = self # or return_point
+			set_aggro_range_measure_from = self # Or return_point
 			set_aggro_range = 300
 			# auto_move_to_planet = {
 			#	target = prev # dragon_point star
-			#	clear_auto_move_on_arrival = yes # hang around
+			#	clear_auto_move_on_arrival = yes # Hang around
 			#}
 			set_formation_scale = 10
 		}

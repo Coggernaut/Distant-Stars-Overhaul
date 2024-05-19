@@ -4,7 +4,7 @@
 ##################################
 
 gate_builders = {
-	scaled_difficulty_bonuses = 1.0	# scales to setting
+	scaled_difficulty_bonuses = 1.0	# Scales to setting
 	counts_for_victory = yes
 	sub_title = "COUNTRY_FALLEN_EMPIRE"
 	sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
@@ -103,7 +103,7 @@ gate_builders = {
 ##################
 
 lgaia_incarnation_country = {
-	scaled_difficulty_bonuses = 1	# scales to setting
+	scaled_difficulty_bonuses = 1	# Scales to setting
 	is_space_critter = yes
 	government = no
 	destroys_starbases = yes
@@ -125,7 +125,7 @@ lgaia_incarnation_country = {
 }
 
 l_tiyanki_elder_country = {
-	scaled_difficulty_bonuses = 0.75	# scales to setting
+	scaled_difficulty_bonuses = 0.75	# Scales to setting
 	is_space_critter = yes
 	government = no
 	destroys_starbases = yes
@@ -147,7 +147,7 @@ l_tiyanki_elder_country = {
 }
 
 l_amoeba_elder_country = {
-	scaled_difficulty_bonuses = 0.75	# scales to setting
+	scaled_difficulty_bonuses = 0.75	# Scales to setting
 	is_space_critter = yes
 	government = no
 	destroys_starbases = yes

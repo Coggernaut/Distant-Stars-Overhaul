@@ -168,7 +168,7 @@ DSO_nanite_forge_overseer = {
 	category = overseer_drone
 	condition_string = OVERSEER_JOB_TRIGGER
 	is_capped_by_modifier = yes
-	building_icon = d_mining_tunnels # vanilla copy
+	building_icon = d_mining_tunnels # Vanilla copy
 
 	possible_pre_triggers = {
 		has_owner = yes

@@ -1,4 +1,4 @@
-# see README.txt for example
+# See README.txt for example
 nanite_factory_station_0 = {
 	entity = "gatebuilder_01_space_station_section_entity"
 	construction_entity = "gatebuilder_01_space_station_section_entity"

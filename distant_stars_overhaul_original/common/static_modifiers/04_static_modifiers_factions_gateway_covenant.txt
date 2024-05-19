@@ -1,6 +1,6 @@
-# icon_frame = 1 # green frame
-# icon_frame = 2 # yellow frame
-# icon_frame = 3 # red frame
+# icon_frame = 1 # Green frame
+# icon_frame = 2 # Yellow frame
+# icon_frame = 3 # Red frame
 
 ##########################################################################
 # Faction Modifiers Gateway Covenant
