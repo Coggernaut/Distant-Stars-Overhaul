@@ -11,6 +11,6 @@ tags={
 	"Gameplay"
 	"Galaxy Generation"
 }
-name="Nanite Machines & Distant Stars Overhaul"
+name="Distant Stars Overhaul & Playable Nanite Machines"
 supported_version="3.12.*"
 remote_file_id="1971940221"
