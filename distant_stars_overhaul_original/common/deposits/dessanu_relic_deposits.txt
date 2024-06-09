@@ -20,7 +20,7 @@ d_dessanu_relic_odd_factory = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_DSO_dessanu_odd_factory_drone_add = 1
+			job_DSO_dessanu_odd_factory_worker_add = 1
 		}
 	}
 	

@@ -3,7 +3,7 @@
 ###################
 
 DSO_dessanu_relic_chronicler = {
-	icon = administrator
+	icon = fe_archivist
 	category = ruler
 	condition_string = OVERSEER_JOB_TRIGGER
 	is_capped_by_modifier = yes
@@ -21,9 +21,10 @@ DSO_dessanu_relic_chronicler = {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 2
-			engineering_research = 2
+			physics_research = 1
+			engineering_research = 1
 			society_research = 5
+			unity = 5
 		}
 		produces = {
 			trigger = { has_ancrel = yes }
@@ -31,6 +32,7 @@ DSO_dessanu_relic_chronicler = {
 		}
 		upkeep = {
 			consumer_goods = 2
+			energy = 5
 		}
 		upkeep = {
 			trigger = {
@@ -39,16 +41,6 @@ DSO_dessanu_relic_chronicler = {
 				}
 			}
 			consumer_goods = 1
-		}
-	}
-	
-	resources = {
-		category = planet_culture_workers
-		produces = {
-			unity = 4
-		}
-		upkeep = {
-			consumer_goods = 3
 		}
 	}
 
@@ -71,8 +63,7 @@ DSO_dessanu_relic_chronicler = {
 	}
 
 	planet_modifier = {
-		planet_pop_assembly_add = 3
-		planet_crime_no_happiness_add = -50
+		
 	}
 
 	weight = {
@@ -81,10 +72,11 @@ DSO_dessanu_relic_chronicler = {
 }
 
 DSO_dessanu_odd_factory_worker = {
+	icon = foundry
 	category = worker
 	is_capped_by_modifier = yes
 	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_primitive_factory
+	building_icon = building_foundry_1
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -125,10 +117,11 @@ DSO_dessanu_odd_factory_worker = {
 }
 
 DSO_dessanu_odd_factory_drone = {
+	icon = foundry
 	category = simple_drone
 	is_capped_by_modifier = yes
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_primitive_factory
+	building_icon = building_foundry_1
 
 	possible_pre_triggers = {
 		has_owner = yes

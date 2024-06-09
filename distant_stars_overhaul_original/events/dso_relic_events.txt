@@ -215,12 +215,12 @@ fleet_event = {
 planet_event = {
 	id = dso_story.2015
 	title = dso_story.2015.name
+	#desc = {
+	#	trigger = { NOT = { has_origin = civic_gateway_worshiper } }
+	#	text =dso_story.2015.desc
+	#}
 	desc = {
-		trigger = { NOT = { has_government = gov_spiritualist_gateway_worshiper } }
-		text =dso_story.2015.desc
-	}
-	desc = {
-		trigger = { has_government = gov_spiritualist_gateway_worshiper }
+		#trigger = { has_origin = civic_gateway_worshiper }
 		text =dso_story.2015.desc_gateway_cult
 	}
 	picture = GFX_evt_alien_city
@@ -285,8 +285,9 @@ planet_event = {
 		trigger = { 
 			NOT = {
 				any_country = {
+					NOT = { is_country = ROOT }
 					has_established_contact = ROOT
-					has_government = gov_spiritualist_gateway_worshiper
+					has_origin = civic_gateway_worshiper
 				}
 			}
 		}
@@ -295,8 +296,9 @@ planet_event = {
 	desc = {
 		trigger = { 
 			any_country = {
+				NOT = { is_country = ROOT }
 				has_established_contact = ROOT
-				has_government = gov_spiritualist_gateway_worshiper
+				has_origin = civic_gateway_worshiper
 			}
 		}
 		text =dso_story.2016.desc_gateway_cult
