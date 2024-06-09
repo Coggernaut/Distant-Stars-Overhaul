@@ -30,7 +30,7 @@
 
 # L-Gate Worshiper
 gov_spiritualist_gateway_worshiper = {
-	ruler_title = RT_GW
+	ruler_title = gov_spiritualist_gateway_worshiper_ruler_title
 	
 	should_force_rename = yes
 

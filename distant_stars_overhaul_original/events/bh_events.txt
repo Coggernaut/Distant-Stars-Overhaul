@@ -569,11 +569,11 @@ country_event = {
 				}
 				random_planet_within_border = {
 					limit = {
-						distance = {
-							source = root.capital_scope
-							max_jumps = 4
-							type = hyperlane
-						}
+						#distance = {
+						#	source = root.capital_scope
+						#	max_jumps = 4
+						#	type = hyperlane
+						#}
 						is_planet_class = pc_dessanu_relic
 					}
 					# create_colony = {
@@ -593,7 +593,7 @@ country_event = {
 							ethos = owner
 						}
 					}
-					planet_event = { id = colony.2015 days = 360 random = 360 }
+					planet_event = { id = dso_story.2015 days = 360 random = 360 }
 				}
 				every_orbital_station = {
 					limit = {

@@ -208,3 +208,320 @@ fleet_event = {
 	is_triggered_only = yes
 	option = { name = DSO_ancrel.2.a }
 }
+
+#############################################
+#Odd Factory Clone - Ancient Dessanu Factory#
+#############################################
+planet_event = {
+	id = dso_story.2015
+	title = dso_story.2015.name
+	desc = {
+		trigger = { NOT = { has_government = gov_spiritualist_gateway_worshiper } }
+		text =dso_story.2015.desc
+	}
+	desc = {
+		trigger = { has_government = gov_spiritualist_gateway_worshiper }
+		text =dso_story.2015.desc_gateway_cult
+	}
+	picture = GFX_evt_alien_city
+	show_sound = event_activating_unknown_technology
+	location = root
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		is_ai = no
+		has_ground_combat = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+
+	trigger = {
+		owner = {
+			NOR = {
+				has_country_flag = dso_story_colony_odd_factory
+				has_authority = auth_machine_intelligence
+			}
+		}
+		num_pops > 0
+		NOR = {
+			has_planet_flag = colony_event
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_shattered_ring_habitable
+			is_planet_class = pc_habitat
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_planet_flag = colony_event
+		owner = { set_country_flag = dso_story_colony_odd_factory }
+		random_owned_pop = { unemploy_pop = yes }
+		add_deposit = d_dessanu_relic_odd_factory
+		random_list = {
+			30 = { 
+				if = { 
+					limit = { has_government = gov_spiritualist_gateway_worshiper } 
+					set_planet_flag = dso_story_colony_factory_no_effect
+				}
+				else = { set_planet_flag = dso_story_colony_factory_kidnap }
+			}
+			35 = { set_planet_flag = dso_story_colony_factory_no_effect }
+		}
+	}
+
+	option = {
+		name = INTRIGUING
+		tooltip = { add_deposit = d_dessanu_relic_odd_factory }
+	}
+}
+#Follow-up: Kidnap
+planet_event = {
+	id = dso_story.2016
+	title = dso_story.2015.name
+	desc = {
+		trigger = { 
+			NOT = {
+				any_country = {
+					has_established_contact = ROOT
+					has_government = gov_spiritualist_gateway_worshiper
+				}
+			}
+		}
+		text =dso_story.2016.desc
+	}
+	desc = {
+		trigger = { 
+			any_country = {
+				has_established_contact = ROOT
+				has_government = gov_spiritualist_gateway_worshiper
+			}
+		}
+		text =dso_story.2016.desc_gateway_cult
+	}
+	picture = GFX_evt_alien_city
+	show_sound = event_ghost_town
+	location = root
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = dso_story_colony_factory_kidnap
+		has_deposit = d_dessanu_relic_odd_factory
+		num_assigned_jobs = {
+			job = odd_factory_worker
+			value >= 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	immediate = {
+		owner = { set_country_flag = odd_factory_pause }
+		random_owned_pop = {
+			limit = { has_job = odd_factory_worker }
+			kill_pop = yes
+		}
+	}
+
+	option = {
+		name = dso_story.2016.b
+		custom_tooltip = dso_story.2016.a.tooltip
+		remove_deposit = d_dessanu_relic_odd_factory
+		hidden_effect = {
+			owner = { remove_country_flag = odd_factory_pause }
+		}
+	}
+
+	option = {
+		name = dso_story.2016.a
+		custom_tooltip = dso_story.2016.a.tooltip
+		hidden_effect = {
+			remove_planet_flag = dso_story_colony_factory_kidnap
+			owner = { remove_country_flag = odd_factory_pause }
+			random_list = {
+				50 = { set_planet_flag = dso_story_colony_factory_kidnap_sequel }
+				50 = { set_planet_flag = dso_story_colony_factory_no_effect }
+			}
+		}
+	}
+}
+#Follow-up: Kidnap 2
+planet_event = {
+	id = dso_story.2017
+	title = dso_story.2015.name
+	desc = dso_story.2017.desc
+	picture = GFX_evt_alien_city
+	show_sound = event_ghost_town
+	location = root
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = dso_story_colony_factory_kidnap_sequel
+		has_deposit = d_dessanu_relic_odd_factory
+		num_assigned_jobs = {
+			job = odd_factory_worker
+			value >= 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 4
+	}
+
+	immediate = {
+		owner = { set_country_flag = odd_factory_pause }
+		random_owned_pop = {
+			limit = { has_job = odd_factory_worker }
+			kill_pop = yes
+		}
+	}
+
+	option = {
+		name = dso_story.2017.a
+		custom_tooltip = dso_story.2017.a.tooltip
+		add_modifier = {
+			modifier = scared_population
+			days = 1800
+		}
+		hidden_effect = {
+			owner = { remove_country_flag = odd_factory_pause }
+			remove_planet_flag = dso_story_colony_factory_kidnap_sequel
+		}
+	}
+	option = {
+		name = dso_story.2017.b
+		custom_tooltip = dso_story.2017.b.tooltip
+		add_modifier = {
+			modifier = secured_factory
+			days = 1800
+		}
+		hidden_effect = {
+			owner = { remove_country_flag = odd_factory_pause }
+			remove_planet_flag = dso_story_colony_factory_kidnap_sequel
+		}
+	}
+}
+
+#Follow-up: No effect
+planet_event = {
+	id = dso_story.2019
+	title = dso_story.2015.name
+	desc = dso_story.2019.desc
+	picture = GFX_evt_alien_city
+	show_sound = event_administrative_work
+	location = root
+
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		original_owner = yes
+		is_ai = no
+		has_ground_combat = no
+	}
+
+	trigger = {
+		has_planet_flag = dso_story_colony_factory_no_effect
+		has_deposit = d_dessanu_relic_odd_factory
+		num_assigned_jobs = {
+			job = odd_factory_worker
+			value >= 1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = GOOD
+		hidden_effect = {
+			remove_planet_flag = dso_story_colony_factory_no_effect
+		}
+	}
+}
+##Follow-up: Destroyed
+#planet_event = {
+#	id = dso_story.2020
+#	title = dso_story.2015.name
+#	desc = dso_story.2020.desc
+#	picture = GFX_evt_burning_settlement
+#	show_sound = event_structural_collapse
+#	location = root
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_planet_flag = odd_factory_destroyed }
+#	}
+#
+#	immediate = {
+#		set_planet_flag = odd_factory_destroyed
+#	}
+#
+#	option = {
+#		name = dso_story.2018.a
+#		add_deposit = d_odd_factory_wreckage_1
+#		hidden_effect = {
+#			remove_planet_flag = dso_story_colony_factory_found
+#			remove_planet_flag = dso_story_colony_factory_no_effect
+#			remove_planet_flag = dso_story_colony_factory_kidnap
+#			remove_planet_flag = dso_story_colony_factory_kidnap_sequel
+#			if = {
+#				limit = {
+#					has_modifier = secured_factory
+#				}
+#				remove_modifier = secured_factory
+#			}
+#			if = {
+#				limit = {
+#					has_modifier = scared_population
+#				}
+#				remove_modifier = scared_population
+#			}
+#		}
+#	}
+#	option = {
+#		name = dso_story.2018.b
+#		add_deposit = d_odd_factory_wreckage_2
+#		hidden_effect = {
+#			remove_planet_flag = dso_story_colony_factory_found
+#			remove_planet_flag = dso_story_colony_factory_no_effect
+#			remove_planet_flag = dso_story_colony_factory_breaks
+#			remove_planet_flag = dso_story_colony_factory_kidnap
+#			remove_planet_flag = dso_story_colony_factory_kidnap_sequel
+#			if = {
+#				limit = {
+#					has_modifier = secured_factory
+#				}
+#				remove_modifier = secured_factory
+#			}
+#			if = {
+#				limit = {
+#					has_modifier = scared_population
+#				}
+#				remove_modifier = scared_population
+#			}
+#		}
+#	}
+#}

@@ -1,0 +1,43 @@
+d_dessanu_relic_odd_factory = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_building
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_DSO_dessanu_odd_factory_worker_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_DSO_dessanu_odd_factory_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes 
+				has_government = gov_spiritualist_gateway_worshiper
+			}
+		}
+		modifier = {
+			job_DSO_dessanu_relic_chronicler_add = 1
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

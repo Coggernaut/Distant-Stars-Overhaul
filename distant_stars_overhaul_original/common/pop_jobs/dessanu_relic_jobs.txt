@@ -1,0 +1,158 @@
+###################
+# Dessanu Relic Jobs
+###################
+
+DSO_dessanu_relic_chronicler = {
+	icon = administrator
+	category = ruler
+	condition_string = OVERSEER_JOB_TRIGGER
+	is_capped_by_modifier = yes
+	building_icon = d_mining_tunnels # Vanilla copy
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 2
+			engineering_research = 2
+			society_research = 5
+		}
+		produces = {
+			trigger = { has_ancrel = yes }
+			minor_artifacts = 0.3
+		}
+		upkeep = {
+			consumer_goods = 2
+		}
+		upkeep = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_science_ministry
+				}
+			}
+			consumer_goods = 1
+		}
+	}
+	
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			consumer_goods = 3
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 2.5
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_research
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_science_ministry
+				}
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_pop_assembly_add = 3
+		planet_crime_no_happiness_add = -50
+	}
+
+	weight = {
+		weight = 1000
+	}
+}
+
+DSO_dessanu_odd_factory_worker = {
+	category = worker
+	is_capped_by_modifier = yes
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_primitive_factory
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 4
+		}
+	}
+
+	weight = {
+		weight = 999
+		mult = value:job_weights_modifier|JOB|odd_factory_worker|RESOURCE|alloys|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				owner = { has_country_flag = odd_factory_pause }
+				planet = { num_pops < 2 } # Odd Factory should not risk completely depopulating a colony
+			}
+		}
+	}
+}
+
+DSO_dessanu_odd_factory_drone = {
+	category = simple_drone
+	is_capped_by_modifier = yes
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_primitive_factory
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 4
+		}
+	}
+
+	weight = {
+		weight = 999
+		mult = value:job_weights_modifier|JOB|odd_factory_drone|RESOURCE|alloys|
+		modifier = {
+			factor = 0
+			planet = { num_pops < 2 } # Odd Factory should not risk completely depopulating a colony
+		}
+	}
+}
