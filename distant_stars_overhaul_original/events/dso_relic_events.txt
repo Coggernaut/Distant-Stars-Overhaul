@@ -76,65 +76,65 @@ country_event = {
 ######################################
 # TODO!!
 # From = fleet?
-country_event = {
-	id = dso_story.6
-	title = dso_story.6.name
-	# First
-	desc = {
-		# trigger = {
-		# 	OR = {
-		# 		has_origin = civic_gateway_pursuer
-		# 		has_origin = civic_harvester_nanites
-		# 	}
-		# }
-		text = story.6.desc.nanite
-	}
-	# Gestalt Consciousness
-	desc = {
-		exclusive_trigger = {
-			is_gestalt = yes
-			NOT = {
-				has_origin = civic_gateway_pursuer
-				has_origin = civic_harvester_nanites
-			}
-		}
-		text = story.6.desc.gesta
-	}
-	# Materialist
-	desc = {
-		trigger = { is_materialist = yes }
-		text = story.6.desc.materialist
-	}
-	# Gateway Guardian
-	desc = {
-		trigger = { has_origin = civic_gateway_worshiper }
-		text = story.6.desc.gateway_guardian
-	}
-	# other
-	desc = {
-		trigger = {
-			NOR = {
-				has_origin = civic_gateway_worshiper
-				has_origin = civic_gateway_pursuer
-				has_origin = civic_harvester_nanites
-				is_gestalt = yes
-				is_materialist = yes
-			}
-		}
-		text = story.6.desc.followup
-	}
-	picture = GFX_evt_news_room
-	show_sound = event_scanner
-	is_triggered_only = yes
-	trigger = { }
-	immediate = { }
-	option = { name = REMARKABLE }
-	after = {
-		hidden_effect = {
-			country_event = { id = first_contact.1060 days = 10 random = 10 }
-		}
-	}
-}
+#country_event = {
+#	id = dso_story.6
+#	title = dso_story.6.name
+#	# First
+#	desc = {
+#		# trigger = {
+#		# 	OR = {
+#		# 		has_origin = civic_gateway_pursuer
+#		# 		has_origin = civic_harvester_nanites
+#		# 	}
+#		# }
+#		text = story.6.desc.nanite
+#	}
+#	# Gestalt Consciousness
+#	desc = {
+#		exclusive_trigger = {
+#			is_gestalt = yes
+3			NOT = {
+#				has_origin = civic_gateway_pursuer
+#				has_origin = civic_harvester_nanites
+#			}
+#		}
+#		text = story.6.desc.gesta
+#	}
+#	# Materialist
+#	desc = {
+#		trigger = { is_materialist = yes }
+#		text = story.6.desc.materialist
+#	}
+#	# Gateway Guardian
+#	desc = {
+#		trigger = { has_origin = civic_gateway_worshiper }
+#		text = story.6.desc.gateway_guardian
+#	}
+#	# other
+#	desc = {
+#		trigger = {
+#			NOR = {
+#				has_origin = civic_gateway_worshiper
+#				has_origin = civic_gateway_pursuer
+#				has_origin = civic_harvester_nanites
+#				is_gestalt = yes
+#				is_materialist = yes
+#			}
+#		}
+#		text = story.6.desc.followup
+#	}
+#	picture = GFX_evt_news_room
+#	show_sound = event_scanner
+#	is_triggered_only = yes
+#	trigger = { }
+#	immediate = { }
+#	option = { name = REMARKABLE }
+#	after = {
+#		hidden_effect = {
+#			country_event = { id = first_contact.1060 days = 10 random = 10 }
+#		}
+#	}
+#}
 
 #
 fleet_event = {

@@ -27,7 +27,7 @@
  dso_story.2020.b.tooltip:1 "Adds the following to the surface of [Root.GetName]:\n£minerals£ §G+3§!\n\n"
 
  d_dessanu_relic_odd_factory:0 "Ancient Dessanu Factory"
- d_dessanu_relic_odd_factory_desc:0 "An ancient and operational precursor factory, what secrets reside within the facility's memory core?
+ d_dessanu_relic_odd_factory_desc:0 "An ancient and operational precursor factory, what secrets reside within the facility's memory core?"
  
  DSO_dessanu_relic_chronicler: "Dessanu Relic Chronicler"
  DSO_dessanu_relic_chronicler_desc: "The Chroniclers are the sacred word bearers of the Cult. They maintain the holy records of our ancestors, rarely do they have the oppurtunity to access a Dessanu factory's memory core."

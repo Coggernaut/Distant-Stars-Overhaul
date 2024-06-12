@@ -5,6 +5,7 @@ civic_harvester_nanites = {
 	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nanite_forgeworld
+	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {
@@ -46,6 +47,7 @@ civic_gateway_pursuer = {
 	}
 	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nanite_forgeworld
+	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {

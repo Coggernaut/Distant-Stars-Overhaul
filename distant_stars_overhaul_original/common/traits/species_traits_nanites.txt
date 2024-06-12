@@ -42,9 +42,8 @@ trait_dessanu_nanites = {
 	allowed_archetypes = { MACHINE }
 	# Machines only
 	modifier = { 
-		planet_pop_assembly_mult = 0.1 
 		planet_jobs_food_produces_mult = -0.75
-		pc_nanite_forgeworld_habitability = 2.0
+		planet_pop_assembly_mult = 0.1 
 	}
 }
 
@@ -54,6 +53,15 @@ trait_robot_irregular_emotion_emulators = {
 	opposites = { 
 		"trait_robot_uncanny" 
 		"trait_robot_emotion_emulators" 
+	}
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_add = {
+		always = no
 	}
 	allowed_archetypes = { MACHINE }
 	modifier = {
