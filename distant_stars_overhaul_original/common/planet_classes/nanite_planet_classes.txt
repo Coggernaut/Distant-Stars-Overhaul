@@ -173,7 +173,7 @@ pc_nanite_gaia = {
 		planet_orbital_bombardment_damage = -0.25
 		planet_clear_blocker_time_mult = 3
 		deposit_blockers_cost_mult = 3
-
+		pop_environment_tolerance = 1
 	}
 
 	min_distance_from_sun = 60
