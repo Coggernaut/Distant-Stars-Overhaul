@@ -3,12 +3,12 @@ civic_harvester_nanites = {
 	is_origin = yes
 	description = "civic_harvester_nanites_effects"
 	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
-	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nanite_forgeworld
 	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {
+		species_archetype = { value = MACHINE }
 		civics = {
 			value = civic_machine_terminator
 			NOR = {
@@ -18,7 +18,9 @@ civic_harvester_nanites = {
 			}
 		}
 	}
-	traits = { trait = trait_dessanu_nanites }
+	traits = { 
+		trait = trait_dessanu_nanites 	
+	}
 	flags = { custom_start_screen }
 	# modification = no
 	random_weight = {
@@ -45,12 +47,12 @@ civic_gateway_pursuer = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
 		has_distar = yes
 	}
-	potential = { authority = { value = auth_machine_intelligence } }
 	starting_colony = pc_nanite_forgeworld
 	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
 	preferred_planet_class_neighbor = no
 	possible = {
+		species_archetype = { value = MACHINE }
 		civics = {
 			NOR = {
 				value = civic_machine_terminator
@@ -95,7 +97,6 @@ civic_gateway_worshiper = {
 	initializers = { civic_gateway_worshiper_system }
 	preferred_planet_class_neighbor = no
 	potential = {
-		ethics = { NOT = { value = ethic_gestalt_consciousness } }
 		authority = { NOT = { value = auth_corporate } } # Corporate Megachurch does not make much sense...
 	}
 	traits = {
@@ -105,6 +106,7 @@ civic_gateway_worshiper = {
 	flags = { custom_start_screen }
 	advanced_start = yes
 	possible = {
+		species_archetype = { NOT = { value = MACHINE } }
 		ethics = {
 			OR = {
 				text = civic_tooltip_militarist
@@ -116,10 +118,10 @@ civic_gateway_worshiper = {
 				value = ethic_spiritualist
 				value = ethic_fanatic_spiritualist
 			}
-			NOR = {
-				text = civic_tooltip_not_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
+			OR = {
+				text = civic_tooltip_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
 			}
 		}
 	}

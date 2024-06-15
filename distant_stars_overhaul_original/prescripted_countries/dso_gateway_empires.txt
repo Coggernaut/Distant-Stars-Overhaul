@@ -20,7 +20,6 @@
 		gender=not_set
 		trait="trait_dessanu_uplifted"
 		trait="trait_latent_psionic"
-		trait="trait_nomadic"
 		trait="trait_extremely_adaptive"
 		trait="trait_slow_learners"
 		trait="trait_fleeting"
@@ -86,7 +85,7 @@
 	civics= {
 		#Distant Stars Overhaul w/ Vanilla
 		"civic_exalted_priesthood"
-		"civic_citizen_service"
+		"civic_warrior_culture"
 	}
 	origin="civic_gateway_worshiper"
 }
@@ -113,7 +112,6 @@
 		gender=not_set
 		trait="trait_dessanu_uplifted"
 		trait="trait_latent_psionic"
-		trait="trait_nomadic"
 		trait="trait_extremely_adaptive"
 		trait="trait_slow_learners"
 		trait="trait_fleeting"

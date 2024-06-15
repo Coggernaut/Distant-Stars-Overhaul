@@ -21,14 +21,18 @@ DSO_dessanu_relic_chronicler = {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 1
-			engineering_research = 1
+			physics_research = 5
+			engineering_research = 5
 			society_research = 5
 			unity = 5
 		}
-		produces = {
+		upkeep = {
 			trigger = { has_ancrel = yes }
-			minor_artifacts = 0.3
+			minor_artifacts = 1
+		}
+		upkeep = {
+			trigger = { has_ancrel = no }
+			consumer_goods = 3
 		}
 		upkeep = {
 			consumer_goods = 2
@@ -47,6 +51,10 @@ DSO_dessanu_relic_chronicler = {
 	planet_modifier = {
 		planet_stability_add = 2.5
 	}
+	
+	country_modifier = {
+		custom_tooltip = unlock_tech_repeatable_lcluster_clue_requirements_tooltip
+	}
 
 	overlord_resources = {
 		category = planet_requisitioned_research
@@ -60,10 +68,6 @@ DSO_dessanu_relic_chronicler = {
 			engineering_research = 1
 			society_research = 1
 		}
-	}
-
-	planet_modifier = {
-		
 	}
 
 	weight = {

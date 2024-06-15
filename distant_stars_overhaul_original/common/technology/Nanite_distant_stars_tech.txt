@@ -32,10 +32,17 @@ tech_repeatable_lcluster_clue = {
 	levels = -1
 	weight = 70
 	potential = {
-		has_country_flag = encountered_first_lgate
+		if = {
+			limit = { has_origin = civic_gateway_worshiper }
+			num_assigned_jobs = { job = DSO_dessanu_relic_chronicler value > 0 }
+			if = {
+				limit = { has_ancrel = yes }
+				NOT = { has_deficit = minerals }
+			}
+		}
+		else = { has_country_flag = encountered_first_lgate }
 		NOR = {
 			has_country_flag = completed_lcluster_chain
-			has_origin = civic_gateway_worshiper
 			has_global_flag = l_cluster_opened
 		}
 	}

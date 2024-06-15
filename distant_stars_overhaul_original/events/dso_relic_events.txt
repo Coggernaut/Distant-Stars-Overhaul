@@ -209,6 +209,1310 @@ fleet_event = {
 	option = { name = DSO_ancrel.2.a }
 }
 
+
+##########################
+#End of the Cult's Schism#
+##########################
+
+### Radical Cult
+country_event = {
+	id = dso_story.200
+	title = "dso_story.200.name"
+	desc = "dso_story.200.desc"
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_ship_thrusters
+	location = event_target:cultist_ship
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_ethic = ethic_gestalt_consciousness
+			has_country_flag = starting_event
+		}
+		is_ai = no
+	}
+
+	immediate = {
+		set_country_flag = starting_event
+		save_event_target_as = owner_country
+		capital_scope = {
+			solar_system = {
+				random_system_planet = {
+					limit = {
+						is_capital = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+						NOT = { is_planet_class = pc_gas_giant }
+					}
+					save_event_target_as = hijacked_fleet_planet
+				}
+			}
+		}
+		owner_species = { save_event_target_as = owner_species }
+		create_country = {
+			name = "NAME_dso_story_dessanu_cult_schism"
+			species = event_target:owner_species
+			type = faction
+			name_list = ROOT
+			auto_delete = no
+			effect = {
+				set_country_flag = dso_story_dessanu_cult_schism
+				establish_communications_no_message = root
+				establish_contact = { who = root location = root.capital_scope }
+				create_leader = {
+					class = commander
+					species = owner_main_species
+					name = random
+					skill = 2
+				}
+				create_fleet = {
+					name = "NAME_Hijacked_Fleet"
+					effect = {
+						set_owner = prev
+						create_ship_design = {
+							design = "NAME_Dagger"
+						}
+						create_ship = {
+							name = "NAME_Unyielding_Faith"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Holy_Avatar"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Divine_Fury"
+							design = last_created_design
+							effect = {
+								set_ship_flag = cultist_ship
+								set_disable_at_health = 0.05
+								save_event_target_as = cultist_ship
+							}
+						}
+						set_location = event_target:hijacked_fleet_planet
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = return_point
+						set_aggro_range = 50
+						assign_leader = last_created_leader
+						queue_actions = {
+							repeat = {
+								wait = {
+									duration = 100
+								}
+							}
+						}
+					}
+				}
+				add_ship_design = last_created_design
+				save_event_target_as = dso_story_dessanu_cult_schism
+				set_name = random
+				set_country_flag = cultist_rebels_of@root
+			}
+		}
+		begin_event_chain = {
+			event_chain = "dso_story_dessanu_cult_schism"
+			target = ROOT
+		}
+	}
+
+	option = {
+		name = "dso_story.200.a"
+		tooltip = {
+			begin_event_chain = {
+				event_chain = "dso_story_dessanu_cult_schism"
+				target = ROOT
+			}
+		}
+		hidden_effect = {
+			create_point_of_interest = {
+				id = dso_story_dessanu_cult_schism_poi.1
+				name = "hijacked_cult_fleet_poi"
+				desc = "hijacked_cult_fleet_poi_desc"
+				event_chain = "dso_story_dessanu_cult_schism"
+				location = event_target:cultist_ship
+			}
+		}
+	}
+}
+
+# Ship Disabled (HIDDEN)
+ship_event = {
+	id = dso_story.201
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ship_flag = cultist_ship
+		owner = { has_country_flag = cultist_rebels_of@from.owner }
+	}
+
+	immediate = {
+		FROM = { owner = { country_event = { id = dso_story.202 } } }
+	}
+}
+
+# Ship Disabled
+country_event = {
+	id = dso_story.202
+	title = "dso_story.202.name"
+	desc = "dso_story.202.desc"
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_space_battle
+	location = FROM
+	trackable = yes
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = { save_event_target_as = disabled_cultist_ship }
+	}
+
+	option = {
+		name = "dso_story.202.a"
+		from = {
+			create_ambient_object = {
+				type = small_debris_object
+				scale = 0.1
+				effect = { #unused, but leaving it in to show people it's now possible...
+					set_ambient_object_flag = cultist_ship_debris
+					save_event_target_as = cultist_ship_debris
+				}
+			}
+			enable_special_project = {
+				name = "BOARD_CULT_SHIP_1"
+				location = event_target:cultist_ship_debris
+				owner = root
+			}
+		}
+		hidden_effect = {
+			remove_point_of_interest = dso_story_dessanu_cult_schism_poi.1
+		}
+	}
+}
+
+# Ship Disabled By Someone Else (HIDDEN)
+ship_event = {
+	id = dso_story.217
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ship_flag = cultist_ship
+		owner = {
+			NOT = { has_country_flag = cultist_rebels_of@from.owner }
+		}
+	}
+
+	immediate = {
+		random_playable_country = {
+			limit = {
+				root = {
+					owner = { has_country_flag = cultist_rebels_of@prevprev }
+				}
+			}
+			country_event = { id = dso_story.218 }
+		}
+	}
+}
+
+# Ship Disabled By Someone Else
+country_event = {
+	id = dso_story.218
+	title = "dso_story.218.name"
+	desc = "dso_story.218.desc"
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_space_battle
+	location = FROM
+	trackable = yes
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = { save_event_target_as = disabled_cultist_ship }
+	}
+
+	option = {
+		name = "dso_story.202.a"
+		hidden_effect = { remove_point_of_interest = dso_story_dessanu_cult_schism_poi.1 }
+		from = {
+			create_ambient_object = {
+				type = small_debris_object
+				scale = 0.1
+				effect = {
+					set_ambient_object_flag = cultist_ship_debris
+					save_event_target_as = cultist_ship_debris
+				}
+			}
+			enable_special_project = {
+				name = "BOARD_CULT_SHIP_1"
+				location = event_target:cultist_ship_debris
+				owner = root
+			}
+		}
+	}
+}
+
+# Ship Boarded
+ship_event = {
+	id = dso_story.203
+	title = "dso_story.203.name"
+	desc = "dso_story.203.desc"
+	picture = GFX_evt_interior_battle
+	show_sound = event_ground_battle
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			owner = {
+				remove_point_of_interest = dso_story_dessanu_cult_schism_poi.1
+				capital_scope = { save_event_target_as = capital }
+				set_country_flag = searching_for_dso_story_dessanu_heretics
+			}
+			fromfrom = {
+				owner = { save_event_target_as = cult_name }
+				fleet = { destroy_fleet = this }
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = event_target:capital
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 5
+					}
+					NOR = {
+						exists = space_owner
+						has_star_flag = hostile_system
+						is_star_class = sc_black_hole
+					}
+				}
+				save_event_target_as = dso_story_dessanu_heretics_1
+				set_star_flag = dso_story_dessanu_heretics_1
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = event_target:capital
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 5
+					}
+					NOR = {
+						exists = space_owner
+						has_star_flag = dso_story_dessanu_heretics_1
+						has_star_flag = hostile_system
+						is_star_class = sc_black_hole
+					}
+				}
+				save_event_target_as = dso_story_dessanu_heretics_2
+				set_star_flag = dso_story_dessanu_heretics_2
+			}
+			random_system = {
+				limit = {
+					distance = {
+						source = event_target:capital
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 5
+					}
+					NOR = {
+						exists = space_owner
+						has_star_flag = dso_story_dessanu_heretics_1
+						has_star_flag = dso_story_dessanu_heretics_2
+						has_star_flag = hostile_system
+						is_star_class = sc_black_hole
+					}
+				}
+				save_event_target_as = dso_story_dessanu_heretics_3
+				set_star_flag = dso_story_dessanu_heretics_3
+			}
+			owner = {
+				create_point_of_interest = {
+					id = cultist_search_poi.1
+					name = "cultist_search_1_poi"
+					desc = "cultist_search_1_poi_desc"
+					event_chain = "dso_story_dessanu_cult_schism"
+					location = event_target:dso_story_dessanu_heretics_1
+				}
+				create_point_of_interest = {
+					id = cultist_search_poi.2
+					name = "cultist_search_2_poi"
+					desc = "cultist_search_1_poi_desc"
+					event_chain = "dso_story_dessanu_cult_schism"
+					location = event_target:dso_story_dessanu_heretics_2
+				}
+				create_point_of_interest = {
+					id = cultist_search_poi.3
+					name = "cultist_search_3_poi"
+					desc = "cultist_search_1_poi_desc"
+					event_chain = "dso_story_dessanu_cult_schism"
+					location = event_target:dso_story_dessanu_heretics_3
+				}
+			}
+			ROOT = { capital_scope = { planet_event = { id = dso_story.202 days = 15 } } }
+		}
+	}
+
+	option = {
+		name = "dso_story.203.a"
+	}
+}
+
+# Cultist Discovered a Dessanu War Relic
+country_event = {
+	id = dso_story.230
+	title = "dso_story.230.name"
+	desc = "dso_story.230.desc"
+	picture = GFX_evt_news_room
+	show_sound = event_planetary_riot
+	location = home_planet
+	trackable = yes
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	option = {
+		name = "dso_story.230.a"
+		
+	}
+}
+
+# Cultist Ships Sighted 1
+fleet_event = {
+	id = dso_story.204
+	title = "dso_story.204.name"
+	desc = "dso_story.204.desc"
+	picture = GFX_evt_small_space_battle
+	show_sound = event_red_alert
+	location = ROOT
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = searching_for_dso_story_dessanu_heretics
+			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_1 }
+		}
+		from = { has_star_flag = dso_story_dessanu_heretics_1 }
+	}
+
+	immediate = {
+		owner = {
+			save_event_target_as = owner_country
+			set_country_flag = dso_story_dessanu_heretics_sighted_1
+		}
+		from = {
+			random_system_planet = {
+				limit = {
+					is_capital = no
+					is_asteroid = no
+					is_star = no
+				}
+				save_event_target_as = cultist_marauder_planet
+			}
+		}
+		owner = {
+			random_country = {
+				limit = { has_country_flag = cultist_rebels_of@root.owner }
+				save_event_target_as = dso_story_dessanu_cult_schism
+				create_leader = {
+					class = commander
+					species = owner_main_species
+					name = random
+					skill = 2
+				}
+				create_fleet = {
+					name = "NAME_Cultist_Marauders"
+					effect = {
+						set_owner = PREV
+						create_ship_design = {
+							design = "NAME_Dagger"
+						}
+						create_ship = {
+							name = "NAME_Divine_Vessel"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Sacred_Might"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Heavenly_Portent"
+							design = last_created_design
+						}
+						assign_leader = last_created_leader
+						set_location = event_target:cultist_marauder_planet
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						set_fleet_flag = cultist_marauders
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "BATTLESTATIONS"
+	}
+}
+
+# Cultist Ships Defeated (HIDDEN)
+country_event = {
+	id = dso_story.216
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfromfrom
+		FROMFROMFROM = { has_fleet_flag = cultist_marauders }
+	}
+
+	immediate = {
+		FROMFROMFROM = { solar_system = { save_event_target_as = marauder_system } }
+		random_country = {
+			limit = {
+				from = { has_country_flag = cultist_rebels_of@prev }
+			}
+			save_event_target_as = cultist_target
+			change_variable = {
+				which = "cultist_fleets_destroyed"
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "cultist_fleets_destroyed"
+						value < 3
+					}
+				}
+				country_event = { id = dso_story.219 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = "cultist_fleets_destroyed"
+						value > 2
+					}
+				}
+				country_event = { id = dso_story.207 }
+			}
+		}
+		if = {
+			limit = {
+				FROMFROMFROM = {
+					solar_system = { has_star_flag = dso_story_dessanu_heretics_1 }
+				}
+			}
+			event_target:cultist_target = { remove_point_of_interest = cultist_search_poi.1 }
+			FROMFROMFROM = {
+				solar_system = {
+					remove_star_flag = dso_story_dessanu_heretics_1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROMFROMFROM = {
+					solar_system = { has_star_flag = dso_story_dessanu_heretics_2 }
+				}
+			}
+			event_target:cultist_target = { remove_point_of_interest = cultist_search_poi.2 }
+			FROMFROMFROM = {
+				solar_system = {
+					remove_star_flag = dso_story_dessanu_heretics_2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROMFROMFROM = {
+					solar_system = { has_star_flag = dso_story_dessanu_heretics_3 }
+				}
+			}
+			event_target:cultist_target = { remove_point_of_interest = cultist_search_poi.3 }
+			FROMFROMFROM = {
+				solar_system = {
+					remove_star_flag = dso_story_dessanu_heretics_3
+				}
+			}
+		}
+	}
+}
+
+# Cultist Fleet Destroyed
+country_event = {
+	id = dso_story.219
+	title = "dso_story.219.name"
+	desc = "dso_story.219.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_space_battle
+	location = event_target:marauder_system
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	option = {
+		name = "GOOD"
+	}
+}
+
+# Cultist Ships Sighted 2
+fleet_event = {
+	id = dso_story.205
+	title = "dso_story.204.name"
+	desc = "dso_story.205.desc"
+	picture = GFX_evt_small_space_battle
+	show_sound = event_red_alert
+	location = ROOT
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = searching_for_dso_story_dessanu_heretics
+			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_2 }
+		}
+		from = { has_star_flag = dso_story_dessanu_heretics_2 }
+	}
+
+	immediate = {
+		owner = {
+			save_event_target_as = owner_country
+			set_country_flag = dso_story_dessanu_heretics_sighted_2
+		}
+		from = {
+			random_system_planet = {
+				limit = {
+					#is_capital = no
+					#is_asteroid = no
+					is_star = no
+				}
+				save_event_target_as = cultist_marauder_planet
+			}
+		}
+		owner = {
+			random_country = {
+				limit = { has_country_flag = cultist_rebels_of@root.owner }
+				save_event_target_as = dso_story_dessanu_cult_schism
+				create_leader = {
+					class = commander
+					species = owner_main_species
+					name = random
+					skill = 2
+					traits = {
+					}
+				}
+				create_fleet = {
+					name = "NAME_Cultist_Marauders"
+					effect = {
+						set_owner = PREV
+						create_ship_design = {
+							design = "NAME_Dagger"
+						}
+						create_ship = {
+							name = "NAME_Heavenly_Judgment"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Revered_Elder"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Wrath_of_the_Spirits"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Bane_of_the_Heretic"
+							design = last_created_design
+						}
+						assign_leader = last_created_leader
+						set_location = event_target:cultist_marauder_planet
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						set_fleet_flag = cultist_marauders
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "BATTLESTATIONS"
+	}
+}
+
+# Cultist Ships Sighted 3
+fleet_event = {
+	id = dso_story.206
+	title = "dso_story.204.name"
+	desc = "dso_story.206.desc"
+	picture = GFX_evt_small_space_battle
+	show_sound = event_red_alert
+	location = ROOT
+	event_chain = dso_story_dessanu_cult_schism
+
+	auto_opens = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = searching_for_dso_story_dessanu_heretics
+			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_3 }
+		}
+		from = { has_star_flag = dso_story_dessanu_heretics_3 }
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = dso_story_dessanu_heretics_sighted_3
+			save_event_target_as = owner_country
+		}
+		from = {
+			random_system_planet = {
+				limit = {
+					is_capital = no
+					is_asteroid = no
+					is_star = no
+				}
+				save_event_target_as = cultist_marauder_planet
+			}
+		}
+		random_country = {
+			limit = { has_country_flag = cultist_rebels_of@root.owner }
+			save_event_target_as = dso_story_dessanu_cult_schism
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+				skill = 2
+			}
+			create_fleet = {
+				name = "NAME_Cultist_Marauders"
+				effect = {
+					set_owner = PREV
+					create_ship_design = {
+						design = "NAME_Dagger"
+					}
+					create_ship = {
+						name = "NAME_Heathens_Doom"
+						design = last_created_design
+					}
+					create_ship = {
+						name = "NAME_Infidel_Slayer"
+						design = last_created_design
+					}
+					create_ship = {
+						name = "NAME_Pious_Crusader"
+						design = last_created_design
+					}
+					create_ship_design = {
+						design = "NAME_Righteous"
+					}
+					create_ship = {
+						name = "NAME_Temple_of_Light"
+						design = last_created_design
+					}
+					assign_leader = last_created_leader
+					set_location = event_target:cultist_marauder_planet
+					set_fleet_flag = cultist_marauders
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 500
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "BATTLESTATIONS"
+	}
+}
+
+# Cultist Marauders Defeated
+country_event = {
+	id = dso_story.207
+	title = "dso_story.207.name"
+	desc = "dso_story.207.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_space_battle
+	trackable = yes
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_flag = searching_for_dso_story_dessanu_heretics
+		fromfromfrom = {
+			save_event_target_as = our_fleet
+			solar_system = {
+				save_event_target_as = our_fleet_position #used for loc purposes
+				set_star_flag = cultist_debris_system
+				create_ambient_object = {
+					type = "abandoned_ship_object"
+				}
+				random_system_ambient_object = {
+					limit = { is_same_value = last_created_ambient_object }
+					set_location = {
+						target = event_target:our_fleet
+						distance = 5
+						angle = random
+					}
+					set_ambient_object_flag = cultist_debris_object
+					enable_special_project = {
+						name = CULTIST_DEBRIS
+						location = this
+						owner = root
+					}
+				}
+			}
+			from = { save_event_target_as = enemy_fleet_position }
+		}
+		random_country = {
+			limit = { has_country_flag = cultist_rebels_of@root }
+			save_event_target_as = dso_story_dessanu_cult_schism
+		}
+	}
+
+	option = {
+		name = "dso_story.207.a"
+		custom_tooltip = dso_story.207.a.tooltip
+	}
+}
+
+# Debris Investigated
+country_event = {
+	id = dso_story.208
+	title = "dso_story.208.name"
+	desc = "dso_story.208.desc"
+	picture = GFX_evt_space_station
+	show_sound = event_radio_chatter
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_system = {
+				limit = { has_star_flag = cultist_debris_system }
+				remove_star_flag = cultist_debris_system
+				random_system_ambient_object = {
+					limit = { has_ambient_object_flag = cultist_debris_object }
+					destroy_ambient_object = this
+				}
+			}
+			random_country = {
+				limit = { has_country_flag = cultist_rebels_of@root }
+				save_event_target_as = dso_story_dessanu_cult_schism
+			}
+			save_event_target_as = owner_country
+			capital_scope = { save_event_target_as = capital }
+			if = {
+				limit = {
+					NOT = { exists = event_target:our_fleet }
+				}
+				ordered_owned_fleet = {
+					limit = {
+						NOT = {
+							is_ship_class = shipclass_starbase
+						}
+					}
+					position = 0
+					order_by = trigger:fleet_power
+					save_event_target_as = our_fleet
+				}
+			}
+			event_target:our_fleet.solar_system = {
+				closest_system = {
+					min_steps = 10
+					limit = {
+						NOR = {
+							has_star_flag = hostile_system
+							any_system_planet = { has_owner = yes }
+							root = { intel_level = { level > low system = prev } }
+						}
+						is_surveyed = {
+							who = root
+							status = no
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_star = no
+						}
+						save_event_target_as = cult_planet
+					}
+				}
+			}
+			event_target:dso_story_dessanu_cult_schism = {
+				create_fleet = {
+					name = "NAME_Cultist_Shipyard"
+					effect = {
+						set_owner = PREV
+						create_ship = {
+							name = "NAME_Cultist_Shipyard"
+							design = "NAME_Citadel"
+						}
+						set_location = event_target:cult_planet
+						set_fleet_flag = cult_shipyard
+						save_event_target_as = cult_shipyard
+					}
+				}
+				create_leader = {
+					class = commander
+					species = owner_main_species
+					name = random
+					skill = 2
+				}
+				create_fleet = {
+					name = "NAME_Cult_Defense_Fleet"
+					effect = {
+						set_owner = PREV
+						create_ship_design = {
+							design = "NAME_Dagger"
+						}
+						create_ship = {
+							name = "NAME_Final_Judgment"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_The_Chosen_One"
+							design = last_created_design
+						}
+						create_ship = {
+							name = "NAME_Eternal_Damnation"
+							design = last_created_design
+						}
+						create_ship_design = {
+							design = "NAME_Righteous"
+						}
+						create_ship = {
+							name = "NAME_Path_of_the_Pilgrim"
+							design = last_created_design
+						}
+						assign_leader = last_created_leader
+						set_location = event_target:cult_planet
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 300
+						queue_actions = {
+							repeat = {
+								wait = {
+									duration = 100
+								}
+							}
+						}
+					}
+				}
+			}
+			create_point_of_interest = {
+				id = cultist_shipyard_poi.1
+				name = "cultist_shipyard_poi"
+				desc = "cultist_shipyard_poi_desc"
+				event_chain = "dso_story_dessanu_cult_schism"
+				location = event_target:cult_shipyard
+			}
+		}
+	}
+
+	option = {
+		name = "dso_story.208.a"
+	}
+}
+
+# Shipyard Destroyed (HIDDEN)
+country_event = {
+	id = dso_story.215
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = fromfromfrom
+		FROMFROMFROM = { has_fleet_flag = cult_shipyard }
+		FROM = { has_country_flag = cultist_rebels_of@root }
+	}
+
+	immediate = {
+		remove_point_of_interest = cultist_shipyard_poi.1
+		country_event = { id = dso_story.209 }
+	}
+}
+
+# Shipyard Destroyed
+country_event = {
+	id = dso_story.209
+	title = "dso_story.209.name"
+	desc = "dso_story.209.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_space_battle
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROMFROM = { save_event_target_as = dso_story_dessanu_cult_schism }
+	}
+
+	option = {
+		name = "dso_story.209.a"
+		hidden_effect = {
+			country_event = { id = dso_story.210 days = 150 random = 50 }
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+}
+
+# Shipyard Destroyed By Someone Else (HIDDEN)
+country_event = {
+	id = dso_story.220
+	hide_window = yes
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROMFROM = { has_fleet_flag = cult_shipyard }
+		NOT = { has_country_flag = cultist_rebels_of@from }
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				root = { has_country_flag = cultist_rebels_of@prev }
+			}
+			country_event = { id = dso_story.221 }
+			remove_point_of_interest = cultist_shipyard_poi.1
+		}
+	}
+}
+
+# Shipyard Destroyed By Someone Else
+country_event = {
+	id = dso_story.221
+	title = "dso_story.209.name"
+	desc = "dso_story.221.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_space_battle
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = { save_event_target_as = dso_story_dessanu_cult_schism }
+	}
+
+	option = {
+		name = "dso_story.209.a"
+		hidden_effect = {
+			country_event = { id = dso_story.210 days = 150 random = 50 }
+		}
+	}
+}
+
+# Flagship Detected
+country_event = {
+	id = dso_story.210
+	title = "dso_story.210.name"
+	desc = "dso_story.210.desc"
+	picture = GFX_evt_ship_in_orbit
+	show_sound = event_red_alert
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = hunting_cult_flagship
+			capital_scope = { save_event_target_as = capital }
+			closest_system = {
+				limit = {
+					NOR = {
+						has_star_flag = hostile_system
+						is_star_class = sc_black_hole
+						root = { intel_level = { level > low system = prev } }
+					}
+					is_surveyed = {
+						who = root
+						status = no
+					}
+					is_pirate_system = no
+					any_system_planet = {
+						is_asteroid = no
+						is_star = no
+					}
+					has_owner = no
+				}
+				save_event_target_as = cult_flagship_system
+				set_star_flag = cult_flagship_system
+			}
+			create_point_of_interest = {
+				id = cultist_flagship_poi.1
+				name = "cultist_flagship_poi"
+				desc = "cultist_flagship_poi_desc"
+				event_chain = "dso_story_dessanu_cult_schism"
+				location = event_target:cult_flagship_system
+			}
+		}
+	}
+
+	option = {
+		name = "dso_story.210.a"
+	}
+}
+
+# Cult Leader Signals
+fleet_event = {
+	id = dso_story.211
+	title = "dso_story.211.name"
+	desc = "dso_story.211.desc"
+
+	diplomatic = yes
+	auto_opens = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { has_country_flag = hunting_cult_flagship }
+		from = { has_star_flag = cult_flagship_system }
+	}
+
+	picture_event_data = {
+		portrait = event_target:dso_story_dessanu_cult_schism
+		room = ethic_spaceship_room
+	}
+
+	immediate = {
+		owner = {
+			remove_country_flag = hunting_cult_flagship
+			save_event_target_as = shipowner
+		}
+		from = { remove_star_flag = cult_flagship_system }
+		hidden_effect = {
+			from = {
+				random_system_planet = {
+					limit = {
+						is_capital = no
+						is_asteroid = no
+						is_star = no
+					}
+					save_event_target_as = cultist_flagship_planet
+				}
+			}
+			owner = {
+				random_country = {
+					limit = { has_country_flag = cultist_rebels_of@root.owner }
+					save_event_target_as = dso_story_dessanu_cult_schism
+					create_fleet = {
+						name = "NAME_Cultist_Flagship"
+						effect = {
+							set_owner = PREV
+							create_ship_design = {
+								design = "NAME_Dagger"
+							}
+							create_ship = {
+								name = "NAME_Glorious_Might"
+								design = last_created_design
+							}
+							create_ship = {
+								name = "NAME_Righteous_Zealot"
+								design = last_created_design
+							}
+							create_ship = {
+								name = "NAME_Holy_Protector"
+								design = last_created_design
+							}
+							create_ship = {
+								name = "NAME_Holy_Defender"
+								design = last_created_design
+							}
+							create_ship = {
+								name = "NAME_Divine_Justicar"
+								design = last_created_design
+							}
+							create_ship_design = {
+								design = "NAME_Divine_Glory"
+							}
+							create_ship = {
+								name = "NAME_Dawn_of_Creation"
+								design = last_created_design
+								effect = {
+									set_ship_flag = cultist_flagship
+									set_disable_at_health = 0.05
+								}
+							}
+							set_location = event_target:cultist_flagship_planet
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dso_story.211.a"
+	}
+}
+
+# Flagship Disabled (HIDDEN)
+ship_event = {
+	id = dso_story.212
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ship_flag = cultist_flagship
+		owner = { has_country_flag = cultist_rebels_of@from.owner }
+	}
+
+	immediate = {
+		remove_ship_flag = cultist_flagship
+		owner = { save_event_target_as = dso_story_dessanu_cult_schism }
+		FROM = {
+			ship_event = { id = dso_story.213 }
+			owner = { remove_point_of_interest = cultist_flagship_poi.1 }
+		}
+	}
+}
+
+# Flagship Disabled
+ship_event = {
+	id = dso_story.213
+	title = "dso_story.213.name"
+	desc = "dso_story.213.desc"
+	picture = GFX_evt_interior_battle
+	show_sound = event_space_battle
+	location = from
+	trackable = yes
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { save_event_target_as = shipowner}
+		FROM = {
+			save_event_target_as = disabled_cultist_flagship
+			owner = { save_event_target_as = dso_story_dessanu_cult_schism }
+		}
+	}
+
+	option = {
+		name = "dso_story.213.a"
+		from = {
+			enable_special_project = {
+				name = "BOARD_CULT_SHIP_2"
+				location = this
+				owner = event_target:shipowner
+			}
+		}
+	}
+}
+
+# Flagship Disabled By Someone Else (HIDDEN)
+ship_event = {
+	id = dso_story.222
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_ship_flag = cultist_flagship
+		owner = {
+			NOT = { has_country_flag = cultist_rebels_of@from.owner }
+		}
+	}
+
+	immediate = {
+		solar_system = { save_event_target_as = flagship_system }
+		random_country = {
+			limit = {
+				root.owner = { has_country_flag = cultist_rebels_of@prev }
+			}
+			country_event = { id = dso_story.223 }
+			remove_point_of_interest = cultist_flagship_poi.1
+		}
+		fleet = { destroy_fleet = this }
+	}
+}
+
+# Flagship Disabled By Someone Else
+country_event = {
+	id = dso_story.223
+	title = "dso_story.223.name"
+	desc = "dso_story.223.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_space_battle
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	option = {
+		name = "GOOD"
+		end_event_chain = "dso_story_dessanu_cult_schism"
+		hidden_effect = {
+			capital_scope.solar_system = {
+				random_system_ambient_object = {
+					limit = { has_ambient_object_flag = cultist_ship_debris }
+					destroy_ambient_object = this
+				}
+			}
+		}
+	}
+}
+
+# Flagship Boarded and Captured
+country_event = {
+	id = dso_story.214
+	title = "dso_story.214.name"
+	desc = "dso_story.214.desc"
+	picture = GFX_evt_interior_battle
+	show_sound = event_ground_battle
+	location = fromfrom
+	event_chain = dso_story_dessanu_cult_schism
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EXCELLENT"
+		end_event_chain = "dso_story_dessanu_cult_schism"
+		hidden_effect = {
+			capital_scope.solar_system = {
+				random_system_ambient_object = {
+					limit = { has_ambient_object_flag = cultist_ship_debris }
+					destroy_ambient_object = this
+				}
+			}
+			fromfrom = {
+				set_disabled = no
+				set_name = random
+				fleet = {
+					set_owner = root
+					set_name = "NAME_Former_Cult_Flagship"
+				}
+			}
+		}
+	}
+}
+
 #############################################
 #Odd Factory Clone - Ancient Dessanu Factory#
 #############################################
