@@ -46,6 +46,84 @@
 #	on_fail
 #	this = country (project owner)
 #	from = project creation scope (usually equals location)
+
+
+############################
+#Cult of the Gateway Schism#
+############################
+# Board Cult Ship 1
+special_project = {
+	key = "BOARD_HERETIC_SHIP_1"
+	event_chain = "dso_story_dessanu_cult_schism"
+	cost = 0
+	days_to_research = 60
+	tech_department = engineering_technology
+	picture = GFX_evt_sabotaged_ship
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_military = 1
+	}
+
+	on_success = {
+		ship_event = { id = dso_story.203 }
+		custom_tooltip = BOARD_HERETIC_SHIP_1_tooltip
+	}
+
+	on_fail = {
+	}
+}
+
+# Board Cult Ship 2
+special_project = {
+	key = "BOARD_HERETIC_SHIP_2"
+	event_chain = "dso_story_dessanu_cult_schism"
+	cost = 0
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_sabotaged_ship
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_transport = 1
+	}
+
+	on_success = {
+		owner = { country_event = { id = dso_story.214 } }
+		custom_tooltip = BOARD_HERETIC_SHIP_2_tooltip
+	}
+
+	on_fail = {
+	}
+}
+
+# Research Cult debris
+special_project = {
+	key = "HERETIC_DEBRIS"
+	event_chain = "dso_story_dessanu_cult_schism"
+	cost = 0
+	days_to_research = 60
+	tech_department = society_technology
+	picture = GFX_evt_space_debris
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+	}
+
+	on_success = {
+		#ship_event = { id = dso_story.208 }
+		owner = { country_event = { id = dso_story.208 } }
+		owner = { add_tech_progress = { tech = tech_repeatable_lcluster_clue progress = 0.075 } }
+	}
+
+	on_fail = {
+	}
+}
+
 # TODO
 special_project = {
 	key = "HARVESTER_DISTURBANCE_1_PROJECT"
