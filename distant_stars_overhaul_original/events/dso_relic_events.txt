@@ -968,7 +968,7 @@ country_event = {
 					limit = { is_same_value = last_created_ambient_object }
 					set_location = {
 						target = event_target:our_fleet
-						distance = 3
+						distance = 2
 						angle = random
 					}
 					set_ambient_object_flag = dessanu_cult_schism_debris_object
@@ -1241,7 +1241,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			set_country_flag = hunting_cult_flagship
+			set_country_flag = hunting_dessanu_cult_schism_flagship
 			capital_scope = { save_event_target_as = capital }
 			closest_system = {
 				limit = {
@@ -1261,15 +1261,15 @@ country_event = {
 					}
 					has_owner = no
 				}
-				save_event_target_as = cult_flagship_system
-				set_star_flag = cult_flagship_system
+				save_event_target_as = dso_story_dessanu_cult_schism_flagship_system
+				set_star_flag = dso_story_dessanu_cult_schism_flagship_system
 			}
 			create_point_of_interest = {
 				id = dessanu_cult_schism_flagship_poi.1
 				name = "dessanu_cult_schism_flagship_poi"
 				desc = "dessanu_cult_schism_flagship_poi_desc"
 				event_chain = "dso_story_dessanu_cult_schism"
-				location = event_target:cult_flagship_system
+				location = event_target:dso_story_dessanu_cult_schism_flagship_system
 			}
 		}
 	}
@@ -1291,8 +1291,8 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		owner = { has_country_flag = hunting_cult_flagship }
-		from = { has_star_flag = cult_flagship_system }
+		owner = { has_country_flag = hunting_dessanu_cult_schism_flagship }
+		from = { has_star_flag = dso_story_dessanu_cult_schism_flagship_system }
 	}
 
 	picture_event_data = {
@@ -1302,10 +1302,10 @@ fleet_event = {
 
 	immediate = {
 		owner = {
-			remove_country_flag = hunting_cult_flagship
+			remove_country_flag = hunting_dessanu_cult_schism_cult_flagship
 			save_event_target_as = shipowner
 		}
-		from = { remove_star_flag = cult_flagship_system }
+		from = { remove_star_flag = dso_story_dessanu_cult_schism_flagship_system }
 		hidden_effect = {
 			from = {
 				random_system_planet = {

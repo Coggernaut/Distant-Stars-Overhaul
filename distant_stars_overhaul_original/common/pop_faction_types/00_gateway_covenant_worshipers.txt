@@ -219,7 +219,7 @@ gateway_covenant = {
 		unfulfilled_title = "GATEWAY_COVENANT_NO_CONSECRATED_L_GATE"
 		desc = "GATEWAY_COVENANT_CONSECRATE_L_GATE_DESC"
 
-		unfulfilled_effect = -15
+		unfulfilled_effect = -0.001
 		fulfilled_effect = 5
 
 		potential = {
@@ -348,7 +348,7 @@ gateway_covenant = {
 
 		trigger = {
 			owner = {
-				OR = {
+				NOT = {
 					any_owned_ship = {
 						OR = {
 							AND = {

@@ -78,6 +78,7 @@
  BOARD_HERETIC_SHIP_2_tooltip:0 "Must atleast one troop transport ship physically near the special project."
  HERETIC_DEBRIS:0 "Precursor Warship Debris"
  HERETIC_DEBRIS_DESC:0 "The cult has been archaeo-engineering some sort of precusor warship, almost certainly Dessanu in design. The trace to their base of operations has ended here. If we investigate the ship we might find some clues to their leader's whereabouts."
+ NAME_dessanu_cult_schism_Shipyard:0 "Ancient Precusor Shipyard"
  
  dessanu_cult_schism_search_1_poi:1 "Search [dessanu_cult_schism_1.GetName]"
  dessanu_cult_schism_search_1_poi_desc:0 "We have detected ion trails in the vicinity of this star system that belonging to the Cult of the Open Gate. Those heretics must be hunted and dealt with!"
