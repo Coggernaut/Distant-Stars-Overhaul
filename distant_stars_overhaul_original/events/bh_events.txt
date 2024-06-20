@@ -644,6 +644,8 @@ country_event = {
 						limit = { is_valid_drone_expansion_destination_system = yes }
 						min_steps = 2
 						max_steps = 5
+						set_star_flag = hostile_system
+						set_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
 						spawn_planet = {
 							class = "pc_gray_goo"
 							name = "Sunder"
@@ -876,9 +878,9 @@ country_event = {
 				# Generates system for Lost Dessanu Colony.
 				capital_scope = {
 					spawn_system = {
-						min_jumps = 2
+						min_jumps = 4
 						max_jumps = 4
-						initializer = lost_dessanu_colony_system
+						initializer = cult_of_the_open_gate_system
 						hyperlane = yes
 						is_discovered = no
 					}
@@ -889,9 +891,9 @@ country_event = {
 			# Generates system for Lost Dessanu Colony.
 			capital_scope = {
 				spawn_system = {
-					min_jumps = 2
+					min_jumps = 4
 					max_jumps = 4
-					initializer = lost_dessanu_colony_system
+					initializer = cult_of_the_open_gate_system
 					hyperlane = yes
 					is_discovered = no
 				}

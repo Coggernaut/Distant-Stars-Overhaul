@@ -1,4 +1,48 @@
 
+
+
+
+
+
+
+
+
+# Cult of the Open Gateway Shipyard
+ship_design = {
+	name = "NAME_Cult_of_The_Open_Gateway_Shipyard"
+	ship_size = Cult_of_The_Open_Gateway_Shipyard_01
+	section = {
+		template = "Cult_of_The_Open_Gateway_Shipyard_01_key"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "POINT_DEFENCE_1"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_RED_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_RED_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_RED_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_RED_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "ENERGY_LANCE_1"
+		}
+	}
+}
+
+
 #####################################
 #									#
 # 			Space Amoebas			#

@@ -16,6 +16,31 @@
 @speed_fast = 140
 @speed_very_fast = 160
 
+# Generic Starbase
+Cult_of_The_Open_Gateway_Shipyard_01 = {
+	entity = "gatebuilder_01_space_station_section_entity"
+	graphical_culture = no
+	max_speed = 0.0
+	acceleration = 0.0
+	rotation_speed = 0.0
+	modifier = {
+		ship_evasion_mult = -1
+		ship_armor_add = 11
+		ships_upkeep_mult = -0.25
+	}
+	max_hitpoints = 4000
+	size_multiplier = 8
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = yes
+	build_block_radius = @build_block_radius_civilian
+
+	class = shipclass_military_station
+	is_designable = no
+	icon = ship_size_military_station
+}
+
 #####################
 # TIYANKI MATRIARCH #
 #####################

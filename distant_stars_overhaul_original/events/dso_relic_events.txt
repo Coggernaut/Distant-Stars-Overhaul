@@ -252,6 +252,15 @@ country_event = {
 				type = faction
 				name_list = ROOT
 				auto_delete = no
+				ignore_initial_colony_error = yes
+				species = last_created_species
+				ethos = {
+					ethic = "ethic_egalitarian"
+					ethic = "ethic_xenophobic"
+				}
+				civics = random
+				authority = "auth_oligarchic"
+				}
 				effect = {
 					set_country_flag = dso_story_dessanu_cult_schism
 					establish_communications_no_message = root
@@ -260,7 +269,7 @@ country_event = {
 						class = commander
 						species = owner_main_species
 						name = random
-						skill = 2
+						skill = 4
 					}
 					create_fleet = {
 						name = "NAME_Hijacked_Fleet"
@@ -997,7 +1006,24 @@ country_event = {
 country_event = {
 	id = dso_story.208
 	title = "dso_story.208.name"
-	desc = "dso_story.208.desc"
+	desc = {
+		trigger = {
+			OR = {
+				any_system_within_border = { has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system }
+				any_system = { 
+					has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
+					any_ship_in_system = { is_owned_by = ROOT }
+				}
+			}
+		}
+		text = dso_story.208.desc_2
+	}
+	desc = {
+		trigger = {
+			always = yes 
+		}
+		text = dso_story.208.desc
+	}
 	picture = GFX_evt_space_station
 	show_sound = event_radio_chatter
 	event_chain = dso_story_dessanu_cult_schism
@@ -1039,21 +1065,20 @@ country_event = {
 				closest_system = {
 					min_steps = 10
 					limit = {
-						NOR = {
-							has_star_flag = hostile_system
-							any_system_planet = { has_owner = yes }
-							root = { intel_level = { level > low system = prev } }
-						}
-						is_surveyed = {
-							who = root
-							status = no
-						}
+						has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
+						#NOR = {
+						#	has_star_flag = hostile_system
+						#	any_system_planet = { has_owner = yes }
+						#	root = { intel_level = { level > low system = prev } }
+						#}
+						#is_surveyed = {
+						#	who = root
+						#	status = no
+						#}
 					}
 					random_system_planet = {
-						limit = {
-							is_star = no
-						}
-						save_event_target_as = cult_planet
+						limit = { is_planet_class = pc_gray_goo }
+						save_event_target_as = dso_story_dessanu_cult_schism_planet
 					}
 				}
 			}
@@ -1064,11 +1089,11 @@ country_event = {
 						set_owner = PREV
 						create_ship = {
 							name = "NAME_dessanu_cult_schism_Shipyard"
-							design = "NAME_Citadel"
+							design = "Cult_of_The_Open_Gateway_Shipyard_01"
 						}
-						set_location = event_target:cult_planet
-						set_fleet_flag = cult_shipyard
-						save_event_target_as = cult_shipyard
+						set_location = event_target:dso_story_dessanu_cult_schism_planet
+						set_fleet_flag = dso_story_dessanu_cult_schism_shipyard
+						save_event_target_as = dso_story_dessanu_cult_schism_shipyard
 					}
 				}
 				create_leader = {
@@ -1104,7 +1129,7 @@ country_event = {
 							design = last_created_design
 						}
 						assign_leader = last_created_leader
-						set_location = event_target:cult_planet
+						set_location = event_target:dso_story_dessanu_cult_schism_planet
 						set_fleet_stance = aggressive
 						set_aggro_range_measure_from = self
 						set_aggro_range = 300
@@ -1123,7 +1148,7 @@ country_event = {
 				name = "dessanu_cult_schism_shipyard_poi"
 				desc = "dessanu_cult_schism_shipyard_poi_desc"
 				event_chain = "dso_story_dessanu_cult_schism"
-				location = event_target:cult_shipyard
+				location = event_target:dso_story_dessanu_cult_schism_shipyard
 			}
 		}
 	}
@@ -1142,7 +1167,7 @@ country_event = {
 
 	trigger = {
 		exists = fromfromfrom
-		FROMFROMFROM = { has_fleet_flag = cult_shipyard }
+		FROMFROMFROM = { has_fleet_flag = dso_story_dessanu_cult_schism_shipyard }
 		FROM = { has_country_flag = dessanu_cult_schism_rebels_of@root }
 	}
 
@@ -1190,7 +1215,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROMFROM = { has_fleet_flag = cult_shipyard }
+		FROMFROM = { has_fleet_flag = dso_story_dessanu_cult_schism_shipyard }
 		NOT = { has_country_flag = dessanu_cult_schism_rebels_of@from }
 	}
 
@@ -1232,7 +1257,24 @@ country_event = {
 country_event = {
 	id = dso_story.210
 	title = "dso_story.210.name"
-	desc = "dso_story.210.desc"
+	desc = {
+		trigger = {
+			OR = {
+				any_system_within_border = { has_star_flag = cult_of_the_open_gate_system }
+				any_system = { 
+					has_star_flag = cult_of_the_open_gate_system
+					any_ship_in_system = { is_owned_by = ROOT }
+				}
+			}
+		}
+		text = dso_story.210.desc_2
+	}
+	desc = {
+		trigger = {
+			always = yes 
+		}
+		text = dso_story.210.desc
+	}
 	picture = GFX_evt_ship_in_orbit
 	show_sound = event_red_alert
 	event_chain = dso_story_dessanu_cult_schism
@@ -1245,21 +1287,22 @@ country_event = {
 			capital_scope = { save_event_target_as = capital }
 			closest_system = {
 				limit = {
-					NOR = {
-						has_star_flag = hostile_system
-						is_star_class = sc_black_hole
-						root = { intel_level = { level > low system = prev } }
-					}
-					is_surveyed = {
-						who = root
-						status = no
-					}
-					is_pirate_system = no
-					any_system_planet = {
-						is_asteroid = no
-						is_star = no
-					}
-					has_owner = no
+					#NOR = {
+					#	has_star_flag = hostile_system
+					#	is_star_class = sc_black_hole
+					#	root = { intel_level = { level > low system = prev } }
+					#}
+					#is_surveyed = {
+					#	who = root
+					#	status = no
+					#}
+					#is_pirate_system = no
+					#any_system_planet = {
+					#	is_asteroid = no
+					#	is_star = no
+					#}
+					#has_owner = no
+					has_star_flag = cult_of_the_open_gate_system
 				}
 				save_event_target_as = dso_story_dessanu_cult_schism_flagship_system
 				set_star_flag = dso_story_dessanu_cult_schism_flagship_system
@@ -1442,7 +1485,7 @@ ship_event = {
 	}
 
 	immediate = {
-		solar_system = { save_event_target_as = flagship_system }
+		solar_system = { save_event_target_as = dso_story_dessanu_cult_schism_flagship_system }
 		random_country = {
 			limit = {
 				root.owner = { has_country_flag = dessanu_cult_schism_rebels_of@prev }
@@ -1492,7 +1535,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = "EXCELLENT"
+		name = "dso_story.214.a"
 		end_event_chain = "dso_story_dessanu_cult_schism"
 		hidden_effect = {
 			capital_scope.solar_system = {
@@ -1506,7 +1549,7 @@ country_event = {
 				set_name = random
 				fleet = {
 					set_owner = root
-					set_name = "NAME_Former_Cult_Flagship"
+					set_name = "NAME_Ancient_Dessanu_Flagship"
 				}
 			}
 		}
@@ -1567,7 +1610,7 @@ planet_event = {
 		random_list = {
 			30 = { 
 				if = { 
-					limit = { has_government = gov_spiritualist_gateway_worshiper } 
+					limit = { ROOT = { has_government = gov_spiritualist_gateway_worshiper } }
 					set_planet_flag = dso_story_colony_factory_no_effect
 				}
 				else = { set_planet_flag = dso_story_colony_factory_kidnap }
