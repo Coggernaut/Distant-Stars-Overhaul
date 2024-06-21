@@ -1,4 +1,97 @@
 
+
+#########################
+# Cult of the Open Gate #
+#########################
+
+dso_cult_of_the_open_gate = {
+	scaled_difficulty_bonuses = 1.0	# Scales to setting
+	counts_for_victory = no
+	#sub_title = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE"
+	#sub_title_desc = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE_DESC"
+	
+	playable = no
+	share_survey_data = no
+	relations = yes
+	fallen_empire = no
+	needs_survey = no
+	diplomatic_wars = no
+	ship_disengagement = no
+	army_disengagement = no
+	uses_special_buildables = no
+	observable = no
+	show_in_contacts_list = yes
+	can_have_their_comms_shared = no
+	
+	custom_diplomacy = no
+	enforces_borders = no
+	has_complete_sensor = yes
+	#custom_starbase = starbase_gatebuilders
+	ai = {
+		enabled = yes
+		declare_war = yes
+		min_navy_for_wars = 0.0
+		min_assault_armies_for_wars = @armies_for_declaring_war
+		colonizer = no
+		internal_policies = no
+		modification = no
+		construction = no
+		starbase_upgrade = no
+		limited_construction = yes
+		tech = no
+		modules = {
+			anti_crisis_military_minister_module
+			military_minister_module
+			foreign_minister_module
+			interior_minister_module
+		}
+	}
+	faction = {
+		hostile = yes						#if yes, fleets will attack everything on sight ( except neutral fleets )
+#		follow = no							#if yes, fleets will follow the fleets of allies
+		auto_delete = no					#if yes, country will be automatically be deleted when considered dead ( usually when out of colonies and colony ships ). Should be yes in most cases but can be useful to turn off for some countries that are created by events.
+		needs_border_access = no			#decides if a country needs to have explicit border access from another country to enter its borders.
+		generate_borders = yes				#decides if a country generates borders or not
+		needs_colony = no					#decides if a country needs a colony ( or a colony ship ) to be considered alive.
+#		primitive = no						#primitive countries can have observation stations build by others in orbit of their planets
+#		primitive_age = "STONE_AGE"			#if primitive = yes, localization string. Remember that these values are dynamic and this value will most likely be overwritten instantly by the same event that created the country. This field can probably be left empty
+#		hostile_when_attacked = yes			#toggles if country turns hostile against attacker.
+#		show_borders_in_us = yes			#if no, borders for countries of this type will not be shown if in uncharted space
+#		intel_effects_surveyed = yes
+	}
+
+	modules = {
+		basic_technology_module = {}
+		#standard_event_module = {}
+		#standard_leader_module = {}
+		#standard_economy_module = {}
+		#standard_species_rights_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
+			can_receive = {
+			#	action_declare_war
+			#	action_offer_peace
+			#	action_make_rival
+			#	action_end_rivalry
+			#	action_offer_trade_deal
+			#	action_cancel_trade_deal
+			#	action_insult
+			#	action_open_borders
+			}
+			can_send = {
+			#	action_declare_war
+				action_make_rival
+			#	action_end_rivalry
+			#	action_offer_peace
+			#	action_offer_trade_deal
+			#	action_cancel_trade_deal
+			#	action_open_borders
+			#	action_close_borders
+			}
+		}
+	}
+}
+
 ##################################
 # Gate Builders as Fallen Empire #
 ##################################
@@ -18,6 +111,7 @@ gate_builders = {
 	army_disengagement = yes
 	uses_special_buildables = yes
 	observable = yes
+	show_in_contacts_list = yes
 	
 	# custom_diplomacy = yes
 	# enforces_borders = no

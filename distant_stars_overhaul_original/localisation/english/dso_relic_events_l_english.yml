@@ -35,6 +35,7 @@
  dso_story.203.name:0 "Boarding Action"
  dso_story.203.desc:0 "Though the survivors offered stiff resistance, our boarding party was able to secure several prisoners from the disabled heretic starship. From them we have learned that this conspiracy is more organized than we initially suspected - the agents of the [cult_name.GetName] include several flag officers and high-ranking officials within our government!\n\nMass arrests are being made on [Root.Owner.Capital.GetName], and all assets belonging to these heretics have been seized in hopes to uncover their ultimate plan. However, several of the starships they built in secret remain unaccounted for and the upper echelons of the cult's leadership have vanished. We have picked up faint ion trails leading to several outlying systems."
  dso_story.203.a:0 "Pursue them! We will put an end to this schism once and for all!"
+ dso_story_203_a_tooltip:0 "becomes §Gowner§! of the §Youtpost§!."
  dso_story.204.name:0 "Heretic Marauders Encountered"
  dso_story.204.desc:0 "We have sighted ships flying the flag of the [dso_story_dessanu_cult_schism.GetName] in the [Root.GetStarName] system. They have charged their weapons and are moving to intercept us!"
  dso_story.205.desc:0 "More ships belonging to the [dso_story_dessanu_cult_schism.GetName] have been encountered in the [Root.GetStarName] system. They are approaching in attack formation!"
@@ -70,6 +71,19 @@
  dso_story.223.name:0 "Dessanu War Relic Claimed by Another"
  dso_story.223.desc:0 "Someone else recently defeated the Cult of the Open Gate's flagship after a pitched battle in the [dso_story_dessanu_cult_schism_flagship_system.GetName] system. Our commanders have expressed regret over the fact that our own forces were unable to reclaim the Dessanu War Relic, but at least this should signify the end of this malignant cult and its campaign of terror."
  
+ NAME_dso_cult_of_the_open_gate_schism_war:0 "Schism of the Gateway Orthodoxy"
+ wg_dso_gateway_orthodoxy_civil_war_att:0 "End the Schism"
+ wg_dso_gateway_orthodoxy_civil_war_att_desc:0 "A Holy War is waged to end a threat to the unity of our Great Gateway Orthodoxy.\n\n§RThere will be no Status Quo peace in this war: we either win, or we die.§!"
+ wg_dso_gateway_orthodoxy_civil_war_def:0 "End the Schism"
+ wg_dso_gateway_orthodoxy_civil_war_def_desc:0 "A Holy War is waged to end a threat to the unity of our Great Gateway Orthodoxy.\n\n§RThere will be no Status Quo peace in this war: we either win, or we die.§!"
+ war_goal_wg_dso_gateway_orthodoxy_civil_war_def:0 "Purge Open Gate Cultists"
+ war_goal_wg_dso_gateway_orthodoxy_civil_war_def_desc:0 "A Holy War is waged to end a threat to the unity of our Great Gateway Orthodoxy.\n\n§RThere will be no Status Quo peace in this war: we either win, or we die.§!"
+ war_goal_wg_dso_gateway_orthodoxy_civil_war_att:0 "Succumb to Annihilation"
+ war_goal_wg_dso_gateway_orthodoxy_civil_war_att_desc:0 "A Holy War is waged to end a threat to the unity of our Great Gateway Orthodoxy.\n\n§RThere will be no Status Quo peace in this war: we lose, we die.§!"
+ cb_dso_cult_of_the_open_gate:0 "Civil War"
+ Cult_of_The_Open_Gateway_Shipyard_01:0 "Ancient Dessanu Shipyard"
+ Cult_of_The_Open_Gateway_Shipyard_01_plural:0 "Ancient Dessanu Shipyard"
+
  dessanu_cult_schism_hijacked_cult_fleet_poi:0 "Cult of the Open Gate Fleet"
  dessanu_cult_schism_hijacked_cult_fleet_poi_desc:0 "The Cult of the Open Gate managed to build a small fleet of starships at a secret facility on [Root.Capital.GetName]. Upon discovery the cultists fled in their ships. They must be destroyed before they can cause any more damage!"
  BOARD_HERETIC_SHIP_1:0 "Board Heretic's Ship"
@@ -83,6 +97,9 @@
  NAME_dessanu_cult_schism_Shipyard:0 "Ancient Precusor Shipyard"
  NAME_dessanu_cult_schism_Flagship:0 "Ancient Dessanu Flagship"
  NAME_Ancient_Dessanu_Flagship:0 "Ancient Dessanu Flagship"
+ NAME_dso_dessanu_small_ship_fallen_empire:0 "Dessanu Precusor Warship"
+ dso_dessanu_small_ship_fallen_empire:0 "Dessanu Precusor Warship"
+ dso_dessanu_small_ship_fallen_empire_plural:0 "Dessanu Precusor Warships"
  
  dessanu_cult_schism_search_1_poi:1 "Search [dessanu_cult_schism_1.GetName]"
  dessanu_cult_schism_search_1_poi_desc:0 "We have detected ion trails in the vicinity of this star system that belonging to the Cult of the Open Gate. Those heretics must be hunted and dealt with!"
@@ -95,7 +112,9 @@
  
  dso_story_dessanu_cult_schism:0 "Cult of the Open Gateway"
  dso_story_dessanu_cult_schism_names:0 "Cult of the Open Gateway"
+ dso_cult_of_the_open_gate:0 "Cult of the Open Gateway"
  NAME_dso_story_dessanu_cult_schism:0 "Cult of the Open Gateway"
+ NAME_dso_story_dessanu_cult_schism_ADJ:0 "Open Gate Cultists"
  dso_story_dessanu_cult_schism_title:0 "Cult of the Gateway Schism"
  dso_story_dessanu_cult_schism_desc:0 "Centuries ago, a group of Relic Chroniclers and their devoted followers on [Root.Capital.GetName] decided that inward isolation was our only salvation. They claim the supremacy of [Root.owner_species.GetName] kind and wish to open L-Gates and §Runleash the Gray Tempest§! to purge the galaxy of all other species. These xenophobic extremists called themselves the §H[dso_story_dessanu_cult_schism.GetName]§!, and have been responsible for sabotaging xeno-communication efforts and acts of terror over the years."
  

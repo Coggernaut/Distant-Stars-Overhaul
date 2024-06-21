@@ -18,7 +18,6 @@ special_project = {
 
 	on_success = {
 		ship_event = { id = dso_story.203 }
-		custom_tooltip = BOARD_HERETIC_SHIP_1_tooltip
 	}
 
 	on_fail = {
@@ -42,7 +41,6 @@ special_project = {
 
 	on_success = {
 		owner = { country_event = { id = dso_story.214 } }
-		custom_tooltip = BOARD_HERETIC_SHIP_2_tooltip
 	}
 
 	on_fail = {
@@ -61,13 +59,16 @@ special_project = {
 	event_scope = ship_event
 
 	requirements = {
-		#shipclass_science_ship = 1
+		shipclass_science_ship = 1
 	}
 
 	on_success = {
 		#ship_event = { id = dso_story.208 }
-		owner = { country_event = { id = dso_story.208 } }
-		owner = { add_tech_progress = { tech = tech_repeatable_lcluster_clue progress = 0.075 } }
+		OWNER = { country_event = { id = dso_story.208 } }
+		random_country = {
+			limit = { has_origin = civic_gateway_worshiper }
+			add_tech_progress = { tech = tech_repeatable_lcluster_clue progress = 0.075 }
+		}
 	}
 
 	on_fail = {

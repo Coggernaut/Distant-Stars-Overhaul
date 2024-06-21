@@ -28,6 +28,21 @@ ship_section_template = {
 		locatorname = "root"
 	}
 	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
 		name = "MEDIUM_GUN_01"
 		template = "medium_turret"
 		locatorname = "root"
@@ -45,16 +60,6 @@ ship_section_template = {
 	component_slot = {
 		name = "LARGE_GUN_02"
 		template = "large_turret"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_01"
-		template = "large_strike_craft"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "STRIKE_CRAFT_02"
-		template = "large_strike_craft"
 		locatorname = "root"
 	}
 

@@ -8,6 +8,17 @@
 # 								# Notification when a claim CB is generated)
 #}
 
+cb_dso_cult_of_the_open_gate = {
+	show_in_diplomacy = no
+	show_notification = no
+	potential = {
+		has_event_chain = dso_story_dessanu_cult_schism
+	}
+	is_valid = {
+		always = no
+	}
+}
+
 cb_lgate_containment = {
 	show_in_diplomacy = yes
 	show_notification = yes

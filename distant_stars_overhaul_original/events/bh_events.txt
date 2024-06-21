@@ -473,6 +473,19 @@ country_event = {
 		}
 	}
 	immediate = {
+		#Setting up bot scavanger System
+		if = {
+			limit = { any_system = { has_star_flag = scavenger_bot_system } }
+			every_system = { 
+				limit = { has_star_flag = scavenger_bot_system } 
+				spawn_megastructure = {
+					type = lgate_base
+					orbit_angle = 225
+					orbit_distance = 40
+				}
+			}
+		}
+		#Setting up Nanite Empires
 		if = {
 			limit = {
 				NOT = { has_origin = civic_gateway_worshiper }
