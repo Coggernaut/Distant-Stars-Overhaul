@@ -170,8 +170,8 @@ country_event = {
 #
 fleet_event = {
 	id = DSO_ancrel.1
-	title = "nanite_insight"
-	desc = "DSO_ancrel.1.desc"
+	title = DSO_ancrel.1.name
+	desc = DSO_ancrel.1.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
@@ -181,24 +181,24 @@ fleet_event = {
 }
 fleet_event = {
 	id = DSO_ancrel.2
-	title = "nanite_insight"
-	desc = "DSO_ancrel.1.desc"
+	title = DSO_ancrel.2.name
+	desc = DSO_ancrel.2.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 	option = {
-		name = DSO_ancrel.1.a
+		name = DSO_ancrel.2.a
 	}
 }
 fleet_event = {
 	id = DSO_ancrel.3
-	title = "nanite_insight"
-	desc = "DSO_ancrel.1.desc"
+	title = DSO_ancrel.3.name
+	desc = DSO_ancrel.3.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 	option = {
-		name = DSO_ancrel.1.a
+		name = DSO_ancrel.3.a
 		if = {
 			limit = { has_ancrel = yes }
 			owner = {
@@ -209,35 +209,35 @@ fleet_event = {
 }
 fleet_event = {
 	id = DSO_ancrel.4
-	title = "nanite_insight"
-	desc = "DSO_ancrel.1.desc"
+	title = DSO_ancrel.4.name
+	desc = DSO_ancrel.4.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 	option = {
-		name = DSO_ancrel.1.a
+		name = DSO_ancrel.4.a
 	}
 }
 fleet_event = {
 	id = DSO_ancrel.5
-	title = "nanite_insight"
-	desc = "DSO_ancrel.1.desc"
+	title = DSO_ancrel.5.name
+	desc = DSO_ancrel.5.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 	option = {
-		name = DSO_ancrel.1.a
+		name = DSO_ancrel.5.a
 	}
 }
 #
 fleet_event = {
 	id = DSO_ancrel.6
-	title = "nanite_insight"
-	desc = "DSO_ancrel.2.desc"
+	title = DSO_ancrel.6.name
+	desc = DSO_ancrel.6.desc_nanite
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-	option = { name = DSO_ancrel.2.a }
+	option = { name = DSO_ancrel.6.a }
 }
 
 

@@ -509,9 +509,9 @@ country_event = {
 			} # Found this to be necessary for good deposit income.
 			country_event = { id = bio_harvest_planet.0 days = 30 } # This is a flavor event that gives the player ~50 nanites at the beginning of the game after 1 month.
 		}
-		######################
-		##Cult of the Gateway#
-		######################
+		######################################
+		#Gateway Worshipper & Gateway Pursuer#
+		######################################
 		if = {
 			limit = {
 				NOT = { has_origin = civic_harvester_nanites }
@@ -523,10 +523,6 @@ country_event = {
 			# 		modifier = { add = 100 star = { is_star_class = sc_black_hole } }
 			# 	}
 			# }
-			
-			#Cult of the Open Gateway Schism
-			set_country_flag = starting_event
-			country_event = { id = dso_story.200 days = 400 }
 			# Everything below is mostly just setting up the start-system's flavor.
 			capital_scope.solar_system = {
 				save_event_target_as = gateway_system
@@ -537,8 +533,14 @@ country_event = {
 					orbit_distance = 40
 				}
 			}
+			####################
+			#Gateway Worshipper#
+			####################
 			if = {
 				limit = { has_origin = civic_gateway_worshiper }
+				#Cult of the Open Gateway Schism
+				set_country_flag = starting_event
+				country_event = { id = dso_story.200 days = 400 }
 				capital_scope = {
 					set_planet_size = 30
 					reroll_deposits = yes
