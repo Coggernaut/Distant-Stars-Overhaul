@@ -52,6 +52,8 @@ trait_dessanu_nanites = {
 trait_robot_irregular_emotion_emulators = {
 	cost = 0
 	icon = "gfx/interface/icons/traits/trait_robot_emotion_emulators.dds"
+	initial = no
+	randomized = no
 	opposites = { 
 		"trait_robot_uncanny" 
 		"trait_robot_emotion_emulators" 
