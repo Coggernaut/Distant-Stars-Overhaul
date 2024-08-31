@@ -655,10 +655,17 @@ country_event = {
 					# random_system_within_border = { starbase = { set_starbase_size = starbase_starport } }
 				}
 				event_target:gateway_system = {
-					closest_system = {
-						limit = { is_valid_drone_expansion_destination_system = yes }
-						min_steps = 2
-						max_steps = 5
+					spawn_system = {
+						min_jumps = 2 
+						max_jumps = 2 
+						#min_distance = <int 0-100> 
+						#max_distance = <int 0-100> 
+						initializer = dso_story_dessanu_cult_schism_gray_goo_system
+						hyperlane = no
+						is_discovered = no
+						#direction = <corewards/rimwards> (optional) 
+					}
+					last_created_system = {
 						set_star_flag = hostile_system
 						set_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
 						spawn_planet = {
@@ -667,14 +674,14 @@ country_event = {
 							location = solar_system.star
 							orbit_location = yes
 							orbit_angle_offset = 50
-							orbit_distance_offset = 100
-							size = 11
-							has_ring = yes
-							init_effect = {
-								set_name = "Sunder"
-								create_archaeological_site = dso_ancient_dessanu_battle_site
-								add_deposit = d_nanosands
-							}
+							orbit_distance_offset = 120
+							size = 25
+							has_ring = no
+						}
+						random_system_planet = {
+							limit = { is_planet_class = pc_gray_goo }
+							create_archaeological_site = dso_ancient_dessanu_battle_site
+							add_deposit = d_nanosands
 						}
 						create_ambient_object = {
 							type = ancient_battlefield_02_object
@@ -854,7 +861,7 @@ country_event = {
 		has_origin = civic_gateway_worshiper
 	}
 	immediate = {
-		# Fallback (theoretically not possible) if 2 Guardians exist, a non-player one is destroyed
+		# Fallback (theoretically possible mechanically, lorefully not possible) if 2 Guardians exist, a non-player one is destroyed
 		if = {
 			limit = {
 				any_playable_country = {
@@ -864,7 +871,7 @@ country_event = {
 			}
 			random_playable_country = {
 				limit = { has_origin = civic_gateway_worshiper }
-				weights = { base = 1 modifier = { add = 100  is_ai = yes } }
+				weights = { base = 0 modifier = { add = 100  is_ai = yes } }
 				capital_scope = {
 					planet_event = { id = bio_harvest.6 days = 1 }
 					solar_system = { set_star_class = sc_black_hole }
@@ -896,9 +903,37 @@ country_event = {
 						min_jumps = 4
 						max_jumps = 4
 						initializer = cult_of_the_open_gate_system
-						hyperlane = yes
+						hyperlane = no
 						is_discovered = no
 					}
+					last_created_system = {
+						spawn_natural_wormhole = { 
+							bypass_type = wormhole
+							orbit_distance = 100 
+							orbit_angle = 90 
+							random_pos = no 
+						}
+					}
+					random_system = {
+						limit = { has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system }
+						spawn_natural_wormhole = { 
+							bypass_type = wormhole
+							orbit_distance = 100 
+							orbit_angle = 90 
+							random_pos = no 
+						}
+						link_wormholes = last_created_system
+						if = {
+							limit = {  
+								any_playable_country = {
+									has_origin = civic_gateway_worshiper
+									is_ai = yes
+								}
+							}
+							add_hyperlane = { from = last_created_system to = THIS }
+						}
+					}
+					
 				}
 			}
 		}
@@ -909,8 +944,35 @@ country_event = {
 					min_jumps = 4
 					max_jumps = 4
 					initializer = cult_of_the_open_gate_system
-					hyperlane = yes
+					hyperlane = no
 					is_discovered = no
+				}
+				last_created_system = {
+					spawn_natural_wormhole = { 
+						bypass_type = wormhole
+						orbit_distance = 100 
+						orbit_angle = 90 
+						random_pos = no 
+					}
+				}
+				random_system = {
+					limit = { has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system }
+					spawn_natural_wormhole = { 
+						bypass_type = wormhole
+						orbit_distance = 100 
+						orbit_angle = 90 
+						random_pos = no 
+					}
+					link_wormholes = last_created_system
+					if = { 
+						limit = {  
+							any_playable_country = {
+								has_origin = civic_gateway_worshiper
+								is_ai = yes
+							}
+						}
+						add_hyperlane = { from = last_created_system to = THIS }
+					}
 				}
 			}
 		}

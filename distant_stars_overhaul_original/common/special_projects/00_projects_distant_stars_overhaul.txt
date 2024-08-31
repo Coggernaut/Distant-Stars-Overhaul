@@ -52,7 +52,7 @@ special_project = {
 	key = "HERETIC_DEBRIS"
 	event_chain = "dso_story_dessanu_cult_schism"
 	cost = 2000
-	days_to_research = 60
+	#days_to_research = 60
 	tech_department = society_technology
 	picture = GFX_evt_space_debris
 

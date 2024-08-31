@@ -1,10 +1,6 @@
 ##########################################################################
 # Empire edicts
 ##########################################################################
-@Edict1Cost = 100
-@Edict2Cost = 200
-@Edict3Cost = 300
-@EdictDuration = -1
 consecrate_lgate = {
 	icon = GFX_edict_type_policy
 	length = 10800
@@ -12,6 +8,17 @@ consecrate_lgate = {
 		category = edicts
 		cost = { influence = 100 }
 	}
+	#resources = {
+	#	category = edicts
+	#	cost = {
+	#		unity = 25
+	#		multiplier = value:edict_size_effect
+	#	}
+	#	upkeep = {
+	#		unity = 25
+	#		multiplier = value:edict_size_effect
+	#	}
+	#}
 	effect = {
 		set_timed_country_flag = { flag = DSO_consecrated_lgate years = 30 }
 	}

@@ -38,7 +38,7 @@ dso_cult_of_the_open_gate = {
 		construction = no
 		starbase_upgrade = no
 		limited_construction = yes
-		tech = no
+		tech = yes
 		modules = {
 			anti_crisis_military_minister_module
 			military_minister_module

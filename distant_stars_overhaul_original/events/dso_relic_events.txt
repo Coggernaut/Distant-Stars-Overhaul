@@ -330,6 +330,10 @@ country_event = {
 							civic = "civic_chosen_people"
 						}
 						effect = {
+							copy_techs_from = {
+								target = ROOT
+								except = { }
+							}
 							room_name_override = personality_evangelizing_zealots_room
 							set_country_flag = dso_story_dessanu_cult_schism
 							establish_communications_no_message = PREV
@@ -350,7 +354,7 @@ country_event = {
 								effect = {
 									set_owner = prev
 									create_ship_design = {
-										design = "NAME_Dagger"
+										design = "NAME_DSO_Dagger"
 									}
 									create_ship = {
 										name = "NAME_Unyielding_Faith"
@@ -431,6 +435,10 @@ country_event = {
 							civic = "civic_chosen_people"
 						}
 						effect = {
+							copy_techs_from = {
+								target = ROOT
+								except = { }
+							}
 							room_name_override = personality_evangelizing_zealots_room
 							set_country_flag = dso_story_dessanu_cult_schism
 							establish_communications_no_message = PREV
@@ -446,7 +454,7 @@ country_event = {
 								effect = {
 									set_owner = prev
 									create_ship_design = {
-										design = "NAME_Dagger"
+										design = "NAME_DSO_Dagger"
 									}
 									create_ship = {
 										name = "NAME_Unyielding_Faith"
@@ -528,7 +536,8 @@ country_event = {
 			}
 		}
 		else = {}
-		last_created_country = {
+		random_country = {
+			limit = { is_country_type = dso_cult_of_the_open_gate }
 			declare_war = {
 				target = ROOT
 				name = {
@@ -690,7 +699,7 @@ ship_event = {
 						source = event_target:capital
 						use_bypasses = no
 						min_jumps = 1
-						max_jumps = 3
+						max_jumps = 4
 					}
 					NOR = {
 						exists = space_owner
@@ -707,7 +716,7 @@ ship_event = {
 						source = event_target:capital
 						use_bypasses = no
 						min_jumps = 1
-						max_jumps = 3
+						max_jumps = 4
 					}
 					NOR = {
 						exists = space_owner
@@ -725,7 +734,7 @@ ship_event = {
 						source = event_target:capital
 						use_bypasses = no
 						min_jumps = 1
-						max_jumps = 3
+						max_jumps = 4
 					}
 					NOR = {
 						exists = space_owner
@@ -834,8 +843,8 @@ fleet_event = {
 		from = {
 			random_system_planet = {
 				limit = {
-					is_capital = no
-					is_asteroid = no
+					#is_capital = no
+					#is_asteroid = no
 					is_star = no
 				}
 				save_event_target_as = dessanu_cult_schism_marauder_planet
@@ -856,7 +865,7 @@ fleet_event = {
 					effect = {
 						set_owner = PREV
 						create_ship_design = {
-							design = "NAME_Dagger"
+							design = "NAME_DSO_Dagger"
 						}
 						create_ship = {
 							name = "NAME_Divine_Vessel"
@@ -1040,7 +1049,7 @@ fleet_event = {
 					effect = {
 						set_owner = PREV
 						create_ship_design = {
-							design = "NAME_Dagger"
+							design = "NAME_DSO_Dagger"
 						}
 						create_ship = {
 							name = "NAME_Heavenly_Judgment"
@@ -1104,8 +1113,8 @@ fleet_event = {
 		from = {
 			random_system_planet = {
 				limit = {
-					is_capital = no
-					is_asteroid = no
+					#is_capital = no
+					#is_asteroid = no
 					is_star = no
 				}
 				save_event_target_as = dessanu_cult_schism_marauder_planet
@@ -1125,7 +1134,7 @@ fleet_event = {
 				effect = {
 					set_owner = PREV
 					create_ship_design = {
-						design = "NAME_Dagger"
+						design = "NAME_DSO_Dagger"
 					}
 					create_ship = {
 						name = "NAME_Heathens_Doom"
@@ -1231,7 +1240,13 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			always = yes 
+			NOT = {
+				any_system_within_border = { has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system }
+				any_system = { 
+					has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
+					any_ship_in_system = { is_owned_by = ROOT }
+				}
+			}
 		}
 		text = dso_story.208.desc
 	}
@@ -1251,6 +1266,7 @@ country_event = {
 					destroy_ambient_object = this
 				}
 			}
+			
 			random_country = {
 				limit = { has_country_flag = dessanu_cult_schism_rebels_of@root }
 				save_event_target_as = dso_story_dessanu_cult_schism
@@ -1277,6 +1293,7 @@ country_event = {
 					limit = {
 						has_star_flag = dso_story_dessanu_cult_schism_gray_goo_system
 					}
+					add_hyperlane = { from = THIS to = ROOT.capital_scope.solar_system }
 					random_system_planet = {
 						limit = { is_planet_class = pc_gray_goo }
 						save_event_target_as = dso_story_dessanu_cult_schism_planet
@@ -1316,7 +1333,7 @@ country_event = {
 					effect = {
 						set_owner = PREV
 						create_ship_design = {
-							design = "NAME_Dagger"
+							design = "NAME_DSO_Dagger"
 						}
 						create_ship = {
 							name = "NAME_Final_Judgment"
@@ -1494,7 +1511,13 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			always = yes 
+			NOT = {
+				any_system_within_border = { has_star_flag = cult_of_the_open_gate_system }
+				any_system = { 
+					has_star_flag = cult_of_the_open_gate_system
+					any_ship_in_system = { is_owned_by = ROOT }
+				}
+			}
 		}
 		text = dso_story.210.desc
 	}
@@ -1516,9 +1539,9 @@ country_event = {
 					limit = { has_owner = no } 
 					random_country = {
 						limit = { is_country_type = dso_cult_of_the_open_gate }
-						PREV = { 
+						event_target:dso_story_dessanu_cult_schism_flagship_system = { 
 							create_starbase = {
-								owner = PREVPREV
+								owner = PREV
 								size = starbase_outpost
 								effect = { set_starbase_flag = dessanu_cult_schism_hijacked_fleet_planet_flag }
 							}
@@ -1571,11 +1594,11 @@ fleet_event = {
 		hidden_effect = {
 			from = {
 				random_system_planet = {
-					limit = {
-						is_capital = no
-						is_asteroid = no
-						is_star = no
-					}
+					#limit = {
+					#	is_capital = no
+					#	is_asteroid = no
+					#	is_star = no
+					#}
 					save_event_target_as = dessanu_cult_schism_flagship_planet
 				}
 			}
@@ -1588,7 +1611,7 @@ fleet_event = {
 						effect = {
 							set_owner = PREV
 							create_ship_design = {
-								design = "NAME_Dagger"
+								design = "NAME_DSO_Dagger"
 							}
 							create_ship = {
 								name = "NAME_Glorious_Might"
@@ -1760,7 +1783,23 @@ country_event = {
 	option = {
 		name = "dso_story.214.a"
 		end_event_chain = "dso_story_dessanu_cult_schism"
+		if = {
+			limit = { 
+				has_machine_age_dlc = yes 
+				NOT = { has_civic = civic_guided_sapience }
+			}
+			force_add_civic = civic_guided_sapience
+		}
+		if = {
+			limit = { NOT = { has_technology = tech_genome_mapping } }
+			give_technology = { tech = tech_genome_mapping message = no }
+		}
+		if = {
+			limit = { NOT = { has_technology = tech_epigenetic_triggers } }
+			add_research_option = tech_epigenetic_triggers
+		}
 		hidden_effect = {
+			set_country_flag = DSO_dessanu_uplifting_process
 			capital_scope.solar_system = {
 				random_system_ambient_object = {
 					limit = { has_ambient_object_flag = dessanu_cult_schism_ship_debris }
@@ -2101,3 +2140,45 @@ planet_event = {
 #		}
 #	}
 #}
+
+# Dessanu Uplift Event (HIDDEN)
+planet_event = {
+	id = dso_story.224
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_origin = civic_gateway_worshiper
+			has_country_flag = DSO_dessanu_uplifting_process
+		}
+	}
+
+	immediate = {
+		planet_event = { id = dso_story.225 days = 1 }	#Problem with event was if it's at an instance, the uplift species modifer never 'technically' gets added.
+	}
+}
+
+# Dessanu Uplift Event (HIDDEN)
+planet_event = {
+	id = dso_story.225
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		modify_species = {
+			species = FROM.FROM								# species to modify
+			base = auto 								# new base species; default: auto (uses species)
+			add_trait = trait_dessanu_uplifted 			# optional, can specify multiple
+			remove_trait = trait_uplifted 				# optional, can specify multiple
+			
+			#add_traits_at_start_of_list = no 			# optional, pushes out other traits if needed
+			#ideal_planet_class = <target or pc_name> 	# optional
+			#change_scoped_species = yes/no 			# modify scoped pops/planet/leader/country; default: yes
+			#portrait = <target or portrait name> 		# optional
+			#effect = { SCOPE_SPECIES } 				# optional effect to run on the resulting new species, is executed after any handling of change_scoped_species
+		}
+	}
+}

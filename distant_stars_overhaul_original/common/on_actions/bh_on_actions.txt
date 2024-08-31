@@ -156,3 +156,9 @@ on_terraforming_complete = {
 		bio_harvest.12
 	}
 }
+
+on_uplift_completion = {
+	events = {
+		dso_story.224		#Dessanu Uplifted Event
+	}
+}

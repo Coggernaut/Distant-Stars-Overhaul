@@ -9,7 +9,7 @@
 	}
 
 	weight = {
-		base = 4000
+		base = 100000
 	}
 }
 
@@ -24,7 +24,7 @@
 	}
 
 	weight = {
-		base = 4000
+		base = 100000
 	}
 }
 
@@ -39,7 +39,7 @@ gov_spiritualist_gateway_worshiper = {
 	}
 
 	weight = {
-		base = 4000
+		base = 100000
 	}
 }
 

@@ -2394,3 +2394,17 @@ cult_of_the_open_gate_system = {
 	}
 
 }
+
+# Black Holes
+dso_story_dessanu_cult_schism_gray_goo_system = {
+	class = sc_black_hole
+
+	usage = misc_system_init
+	usage_odds = 2
+
+	planet = {
+		class = star
+		orbit_distance = 0
+	}
+
+}

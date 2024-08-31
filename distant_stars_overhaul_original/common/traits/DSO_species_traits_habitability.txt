@@ -19,6 +19,7 @@ trait_pc_dessanu_relic_preference = {
 	species_possible_merge_add = {
 		always = yes
 	}
+	potential_crossbreeding_chance = 0 #1.0 100% of being considered for new traits when forming half-species. doe snot guarantee the trait will be added if it costs points.
 	initial = no
 	randomized = no
 	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }

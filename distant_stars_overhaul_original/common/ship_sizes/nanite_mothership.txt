@@ -2,24 +2,25 @@
 dso_dessanu_small_ship_fallen_empire = {
 	formation_priority = @destroyer_formation_priority
 	entity = "fallen_empire_01_warship_small_entity"
-	max_speed = @speed_fast
+	max_speed = 140
 	acceleration = 0.3
 	rotation_speed = 0.2
-	collision_radius = @destroyer_collision_radius
+	collision_radius = 4
 	modifier = {
 		ship_evasion_add = 35
 		ship_hull_regen_add_perc = 0.1
 		ship_armor_regen_add_perc = 0.1
+		ship_piracy_suppression_add = 4
 	}
 	ship_modifier = {
 		ship_weapon_range_mult = 0.2
 	}
-	max_hitpoints = @fe_destroyer_hp
-	size_multiplier = 2
-	fleet_slot_size = 2
+	max_hitpoints = 2000
+	size_multiplier = 4
+	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon = ship_size_military_2
+	icon = ship_size_military_4
 	is_space_station = no
 
 	combat_disengage_chance = 1.5
@@ -29,9 +30,17 @@ dso_dessanu_small_ship_fallen_empire = {
 		cost = {
 			alloys = 500
 		}
+		upkeep = {
+			unity = 10
+		}
+	}
+	
+	min_upgrade_cost = {
+		unity = 500
 	}
 
 	base_buildtime = 200
+	can_have_federation_design = no
 
 	use_shipnames_from = destroyer
 
