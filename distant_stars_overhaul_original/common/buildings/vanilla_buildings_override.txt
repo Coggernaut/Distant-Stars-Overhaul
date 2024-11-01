@@ -1,1194 +1,3 @@
-#############
-# Vanilla Assembly Complex Override
-#############
-
-building_machine_assembly_complex = {
-	base_buildtime = @b3_time
-	can_build = no
-
-	category = pop_assembly
-
-	potential = {
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
-
-	convert_to = { building_robot_assembly_plant }
-
-	allow = {
-		OR = {
-			owner = { is_ai = no }
-			AND = {
-				num_buildings = { type = any value <= 14 }
-				merg_is_habitat = no
-			}
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			# buildings_no_crystals = yes
-			owner = { is_robot_empire = no }
-			AND = {
-				owner = { is_ai = yes }
-				free_jobs < 1
-				OR = {
-					num_buildings = { type = any value = 16 }
-					merg_is_habitat = yes
-				}
-			}
-		}
-	}
-
-	planet_modifier = { job_replicator_add = 3 }
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			rare_crystals = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			rare_crystals = @b3_rare_upkeep
-		}
-	}
-
-	upgrades = { building_nanite_assembly_plant }
-
-	prerequisites = { tech_mega_assembly }
-
-	triggered_desc = { text = job_replicator_effect_desc }
-
-	ai_weight = {
-		weight = 50000
-		modifier = {
-			factor = 0
-			OR = {
-				merg_is_habitat = yes
-				num_buildings = { type = any value >= 14 }
-			}
-		}
-	}
-}
-
-############################
-# ***VANILLA OVERRIDE***  Government Buildings (Relic Compatibility)
-############################
-
-building_gaiaseeders_1 = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
-	category = government
-	can_be_disabled = no
-	upgrades = { "building_gaiaseeders_2" }
-
-	potential = {
-		exists = owner
-		owner = {
-			merg_is_default_empire = yes
-			is_idyllic_bloom_empire = yes
-		}
-		NOR = {
-			is_planet_class = pc_gaia
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			is_planet_class = pc_relic
-			is_artificial = yes
-		}
-	}
-
-	allow = {
-		has_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		OR = {
-			is_planet_class = pc_gaia	# No double bonuses if player uses other tools to turn it into a Gaia world.
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			is_planet_class = pc_relic
-			NOT = { exists = owner }
-			owner = {
-				is_idyllic_bloom_empire = no
-			}
-		}
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			energy = 1500
-			multiplier = value:gaiaseeder_cost_mult
-		}
-		upkeep = {
-			energy = 20
-			multiplier = value:gaiaseeder_upkeep
-		}
-	}
-
-	planet_modifier = {
-		pop_growth_speed = 0.1
-	}
-}
-
-############################
-# ***VANILLA OVERRIDE***  Amenity Buildings (Relic Compatibility)
-############################
-
-building_ranger_lodge = {
-	base_buildtime = @b1_time
-	base_cap_amount = 1
-	category = amenity
-	icon = holding_park_ranger_lodge
-	potential = {
-		NOT = {	has_modifier = slave_colony	}
-		owner = {
-			is_regular_empire = yes
-			has_valid_civic = civic_environmentalist
-		}
-		NOR = {
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			is_planet_class = pc_relic
-		}
-		is_artificial = no
-	}
-
-	allow = {
-		custom_tooltip = {
-			fail_text = no_free_district_for_ranger_lodge
-			planet = {
-				num_free_districts = {
-					type = any
-					value > 0
-				}
-			}
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_regular_empire = no }
-			has_modifier = slave_colony
-			owner = { NOT = { has_valid_civic = civic_environmentalist } }
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			is_planet_class = pc_relic
-		}
-	}
-
-	ai_resource_production = {
-		unity = 2
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		mult = value:natural_blocker_count
-	}
-
-	ai_resource_production = {
-		unity = 1
-		trigger = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		mult = value:natural_blocker_count
-	}
-
-	planet_modifier = {
-		job_ranger_add = @b1_jobs
-		deposit_blockers_natural_unity_produces_add = 2
-	}
-
-	# triggered_planet_modifier = { TODO_CD Reimplement this later with propper tooltips
-	#	potential = {
-	#		has_designation = col_resort
-	#	}
-	#	job_ranger_per_pop = 0.1 # 1 job per 10 pops
-	#}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
-		deposit_blockers_natural_unity_produces_add = 1
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
-		}
-	}
-
-	triggered_desc = {
-		text = job_ranger_effect_desc
-	}
-
-	on_built = {
-		planet = {
-			add_blocker = { type = d_big_nature_preserve_blocker }
-		}
-	}
-
-	on_destroy = {
-		planet = {
-			if = {
-				limit = { has_deposit = d_big_nature_preserve_blocker }
-				remove_deposit = d_big_nature_preserve_blocker
-			}
-		}
-	}
-}
-
-############################
-# ***VANILLA OVERRIDE***  Memorialists Buildings (Relic Compatibility)
-############################
-
-# Sanctuary of Repose
-building_galactic_memorial_1 = {
-	base_buildtime = @b1_time
-	base_cap_amount = 1
-	category = unity
-
-	potential = {
-		exists = owner
-		NOT = { has_modifier = slave_colony }
-		owner = {
-			is_memorialist_empire = yes
-		}
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			has_modifier = slave_colony
-			owner = {
-				is_memorialist_empire = no
-			}
-		}
-	}
-
-	convert_to = {
-		building_autochthon_monument
-		building_corporate_monument
-		building_simulation_1
-		building_sensorium_1
-	}
-
-	resources = {
-		category = planet_buildings
-		produces = {
-			trigger = { exists = owner }
-			unity = 1
-			multiplier = owner.trigger:num_ascension_perks
-		}
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			minerals = @b1_upkeep
-		}
-	}
-
-	planet_modifier = {
-		planet_jobs_unity_produces_mult = 0.05
-	}
-
-	triggered_desc = {
-		text = building_autochthon_monument_effect
-	}
-
-	prerequisites = {
-		"tech_cultural_heritage"
-	}
-
-	#Jobs
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		job_death_chronicler_add = @b1_jobs
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = "job_death_chronicler_effect_desc"
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		job_chronicle_drone_add = @b1_jobs
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = "job_chronicle_drone_effect_desc"
-	}
-
-	# Tomb/Relic worlds
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		pop_government_ethic_attraction = 0.20
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		planet_crime_no_happiness_add = -20
-	}
-
-	upgrades = {
-		building_galactic_memorial_2
-	}
-
-	show_tech_unlock_if = {
-		is_memorialist_empire = yes
-	}
-}
-
-# Pillar of Quietus
-building_galactic_memorial_2 = {
-	base_buildtime = @b2_time
-	can_build = no
-	category = unity
-
-	potential = {
-		exists = owner
-		NOT = { has_modifier = slave_colony }
-		owner = {
-			is_memorialist_empire = yes
-		}
-	}
-
-	allow = {
-		exists = owner
-		has_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			has_modifier = slave_colony
-			owner = {
-				is_memorialist_empire = no
-			}
-		}
-	}
-
-	convert_to = {
-		building_heritage_site
-		building_corporate_site
-		building_simulation_2
-		building_sensorium_2
-	}
-
-	resources = {
-		category = planet_buildings
-		produces = {
-			trigger = { exists = owner }
-			unity = 2
-			multiplier = owner.trigger:num_ascension_perks
-		}
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
-		}
-		upkeep = {
-			minerals = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-	}
-
-	planet_modifier = {
-		planet_jobs_unity_produces_mult = 0.10
-	}
-
-	triggered_desc = {
-		text = building_heritage_site_effect
-	}
-
-	prerequisites = {
-		"tech_heritage_site"
-	}
-
-	#Jobs
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		job_death_chronicler_add = @b2_jobs
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = "job_death_chronicler_effect_desc"
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		job_chronicle_drone_add = @b2_jobs
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = "job_chronicle_drone_effect_desc"
-	}
-
-	# Tomb/Relic worlds
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		pop_government_ethic_attraction = 0.20
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		planet_crime_no_happiness_add = -20
-	}
-
-	upgrades = {
-		building_galactic_memorial_3
-	}
-
-	show_tech_unlock_if = {
-		is_memorialist_empire = yes
-	 }
-}
-
-# Galactic Memorial
-building_galactic_memorial_3 = {
-	base_buildtime = @b3_time
-	can_build = no
-	category = unity
-
-	potential = {
-		exists = owner
-		NOT = { has_modifier = slave_colony }
-		owner = {
-			is_memorialist_empire = yes
-		}
-	}
-
-	allow = {
-		has_major_upgraded_capital = yes
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			has_modifier = slave_colony
-			owner = { is_memorialist_empire = no }
-		}
-	}
-
-	convert_to = {
-		building_hypercomms_forum
-		building_corporate_forum
-		building_simulation_3
-		building_sensorium_3
-	}
-
-	resources = {
-		category = planet_buildings
-		produces = {
-			trigger = { exists = owner }
-			unity = 3
-			multiplier = owner.trigger:num_ascension_perks
-		}
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			minerals = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
-
-	planet_modifier = {
-		planet_jobs_unity_produces_mult = 0.15
-	}
-
-	triggered_desc = {
-		text = building_hypercomms_forum_effect
-	}
-
-	prerequisites = {
-		"tech_hypercomms_forum"
-	}
-
-	#Jobs
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		job_death_chronicler_add = @b3_jobs
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = "job_death_chronicler_effect_desc"
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		job_chronicle_drone_add = @b3_jobs
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = "job_chronicle_drone_effect_desc"
-	}
-
-	# Tomb/Relic worlds
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		pop_government_ethic_attraction = 0.20
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			OR = {
-				is_planet_class = pc_nuked
-				merg_is_relic_world = yes
-			}
-		}
-		planet_crime_no_happiness_add = -20
-	}
-
-	show_tech_unlock_if = {
-		is_memorialist_empire = yes
-	}
-}
-
-############################
-# ***VANILLA OVERRIDE***  Branch Office Buildings (Relic Compatibility)
-############################
-
-building_bio_reprocessing_facilities = {
-	base_buildtime = @b1_time
-
-	owner_type = corporate
-
-	category = resource
-
-	potential = {
-		has_branch_office = yes
-		branch_office_owner = {
-			is_ai = no
-			is_criminal_syndicate = yes
-		}
-		NOR = {
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-	}
-
-	planet_modifier = {
-		planet_crime_add = 25
-		trade_value_add = 5
-	}
-
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		produces = {
-			food = 10
-		}
-		upkeep = {
-			energy = 2
-		}
-	}
-
-	ai_weight = {
-		factor = 1
-	}
-}
-
-building_food_conglomerate = {
-	base_buildtime = @b1_time
-
-	owner_type = corporate
-
-	category = resource
-
-	potential = {
-		has_branch_office = yes
-		branch_office_owner = {
-			is_ai = no
-			is_criminal_syndicate = no
-		}
-		NOR = {
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					is_anglers_empire = no
-					AND = {
-						is_anglers_empire = yes
-						prev = { planet = { is_wet = no } }
-					}
-				}
-			}
-		}
-		modifier = {
-			job_farmer_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_anglers_empire = yes
-				prev = { planet = { is_wet = yes } }
-			}
-		}
-		modifier = {
-			job_angler_add = 1
-		}
-	}
-
-	resources = {
-		category = planet_branch_office_buildings
-		cost = {
-			minerals = 500
-		}
-		produces = {
-			food = 10
-		}
-		upkeep = {
-			energy = 2
-		}
-	}
-
-	ai_weight = {
-		factor = 1
-	}# AI has many other sources for this resource
-}
-
-############################
-# ***VANILLA OVERRIDE***  Overlord Holdings (Relic Compatibility)
-############################
-
-holding_idyllic_bloom = {
-	base_buildtime = @b1_time
-	owner_type = subject_holding
-	icon = building_gaiaseeders_4
-	base_cap_amount = 1
-
-	category = government
-
-	resources = {
-		category = planet_holdings
-		cost = {
-			energy = 1500
-			exotic_gases = @b4_rare_cost
-		}
-		upkeep = {
-			energy = 20
-			exotic_gases = @b3_rare_upkeep
-			multiplier = value:overlord_gaiaseeder_upkeep
-		}
-	}
-
-	potential = {
-		exists = owner
-		owner.overlord = {
-			merg_is_default_empire = yes
-			is_idyllic_bloom_empire = yes
-		}
-		NOR = {
-			is_planet_class = pc_gaia
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-		is_artificial = no
-	}
-
-	planet_modifier = {
-		pop_environment_tolerance = 0.2
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = {
-				has_ascension_perk = ap_hydrocentric
-			}
-		}
-		monthly_loyalty = -0.5
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = {
-				NOT = { has_ascension_perk = ap_hydrocentric }
-			}
-		}
-		monthly_loyalty = 1
-	}
-
-	on_built = {
-		planet = {
-			set_timed_planet_flag = {
-				flag = anti_cheese_idyllic_bloom_flag
-			days = 3599
-			}
-			set_saved_date = {
-				key = idyllic_bloom_holding_timer
-				days_from_present = 3600
-				expires = 3600
-			}
-		}
-		owner.overlord = {
-			country_event = {
-				id = plant.105
-				days = 3600
-			}
-		}
-	}
-	on_destroy = {
-		planet = {
-			remove_planet_flag = anti_cheese_idyllic_bloom_flag
-		}
-	}
-	triggered_desc = {
-		trigger = {
-			planet = {
-				has_planet_flag = anti_cheese_idyllic_bloom_flag
-			}
-		}
-		text = holding_idyllic_bloom_effect_timer
-	}
-	triggered_desc = {
-		trigger = {
-			planet = {
-				NOT = {
-					has_planet_flag = anti_cheese_idyllic_bloom_flag
-				}
-			}
-		}
-		text = holding_idyllic_bloom_effect
-	}
-	allow = {
-		can_build_overlord_gaiaseeder = yes
-	}
-}
-
-holding_park_ranger_lodge = {
-	base_buildtime = @b2_time
-	owner_type = subject_holding
-	icon = holding_park_ranger_lodge
-	base_cap_amount = 1
-
-	category = amenity
-
-	resources = {
-		category = planet_holdings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
-		}
-	}
-
-	potential = {
-		owner.overlord = { has_valid_civic = civic_environmentalist }
-		NOT = {
-			owner = { has_valid_civic = civic_environmentalist }
-		}
-		NOR = {
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-		is_artificial = no
-	}
-
-	destroy_trigger = {
-		OR = {
-			merg_is_arcology = yes
-			merg_is_hive_world = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-	}
-	allow = {
-		custom_tooltip = {
-			fail_text = no_free_district_for_ranger_lodge
-			planet = {
-				num_free_districts = {
-					type = any
-					value > 0
-				}
-			}
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = { is_gestalt = no }
-		}
-		job_overlord_ranger_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = { is_gestalt = yes }
-		}
-		job_overlord_ranger_drone_add = 1
-	}
-
-	on_built = {
-		planet = {
-			add_blocker = { type = d_nature_preserve_blocker }
-		}
-	}
-
-	on_destroy = {
-		planet = {
-			if = {
-				limit = { has_deposit = d_nature_preserve_blocker }
-				remove_deposit = d_nature_preserve_blocker
-			}
-		}
-	}
-
-	triggered_desc = {
-		text = job_overlord_ranger_effect_desc
-	}
-}
-
-holding_tree_of_life_sapling = {
-	base_buildtime = @b1_time
-	owner_type = subject_holding
-	icon = holding_tree_of_life_sapling
-	base_cap_amount = 1
-
-	category = resource
-
-	resources = {
-		category = planet_holdings
-		cost = {
-			food = 1000
-		}
-	}
-
-	potential = {
-		owner.overlord = { has_origin = origin_tree_of_life }
-		NOR = {
-			owner = {
-				has_origin = origin_tree_of_life
-				country_uses_food = no
-			}
-		}
-		NOR = {
-			merg_is_arcology = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-		is_artificial = no
-	}
-	destroy_trigger = {
-		OR = {
-			merg_is_arcology = yes
-			merg_is_machine_world = yes
-			merg_is_relic_world = yes
-		}
-	}
-
-	planet_modifier = {
-		monthly_loyalty = 1
-		pop_environment_tolerance = 0.1
-		planet_farmers_food_produces_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = { is_gestalt = no }
-		}
-		job_overlord_arborist_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = planet.owner
-			planet.owner = { is_gestalt = yes }
-		}
-		job_overlord_arborist_drone_add = 1
-	}
-}
-
-############################
-# ***VANILLA OVERRIDE***  Research Buildings (Relic Compatibility)
-############################
-
-building_archaeostudies_faculty = {
-	base_buildtime = @b2_time
-
-	category = research
-
-	empire_limit = {
-	 	base = 1
-	}
-
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-			# has_modifier = crucible_colony removed in v.3.12
-		}
-		exists = owner
-	}
-
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-			# has_modifier = crucible_colony removed in v.3.12
-		}
-	}
-
-	allow = {
-		has_upgraded_capital = yes
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			minor_artifacts = 50
-		}
-		upkeep = {
-			energy = 20
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_archaeoengineers_add = 3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_archaeo_drone_add = 3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_archaeo_unit_add = 3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				has_ascension_perk = ap_archaeoengineers
-			}
-		}
-		modifier = {
-			job_archaeoengineers_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_hive_empire = yes
-				has_ascension_perk = ap_archaeoengineers
-			}
-		}
-		modifier = {
-			job_archaeo_drone_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-				has_ascension_perk = ap_archaeoengineers
-			}
-		}
-		modifier = {
-			job_archaeo_unit_add = 2
-		}
-	}
-
-	country_modifier = {
-		category_archaeostudies_research_speed_mult = 1.0
-		country_resource_max_minor_artifacts_add = 1000
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_ascension_perk = ap_archaeoengineers
-			}
-		}
-		country_resource_max_minor_artifacts_add = 2000
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			planet = {
-				OR = {
-					merg_is_relic_world = yes
-				}
-			}
-		}
-		category_archaeostudies_research_speed_mult = 0.5
-	}
-
-	prerequisites = {
-		"tech_archaeostudies"
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_archaeoengineers_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_archaeo_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_archaeo_unit_effect_desc
-	}
-
-	triggered_desc = {
-		text = building_archaeostudies_faculty_relic_effect
-	}
-}
-
 ############################
 # ***VANILLA OVERRIDE***  Resource production building adaptations for the mod
 ############################
@@ -1592,3 +401,1194 @@ building_energy_nexus = {
 		text = job_fe_acolyte_generator_effect_desc
 	}
 }
+##############
+## Vanilla Assembly Complex Override
+##############
+#
+#building_machine_assembly_complex = {
+#	base_buildtime = @b3_time
+#	can_build = no
+#
+#	category = pop_assembly
+#
+#	potential = {
+#		exists = owner
+#		owner = { is_machine_empire = yes }
+#	}
+#
+#	convert_to = { building_robot_assembly_plant }
+#
+#	allow = {
+#		OR = {
+#			owner = { is_ai = no }
+#			AND = {
+#				num_buildings = { type = any value <= 14 }
+#				merg_is_habitat = no
+#			}
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			# buildings_no_crystals = yes
+#			owner = { is_robot_empire = no }
+#			AND = {
+#				owner = { is_ai = yes }
+#				free_jobs < 1
+#				OR = {
+#					num_buildings = { type = any value = 16 }
+#					merg_is_habitat = yes
+#				}
+#			}
+#		}
+#	}
+#
+#	planet_modifier = { job_replicator_add = 3 }
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @b3_minerals
+#			rare_crystals = @b3_rare_cost
+#		}
+#		upkeep = {
+#			energy = @b3_upkeep
+#			rare_crystals = @b3_rare_upkeep
+#		}
+#	}
+#
+#	upgrades = { building_nanite_assembly_plant }
+#
+#	prerequisites = { tech_mega_assembly }
+#
+#	triggered_desc = { text = job_replicator_effect_desc }
+#
+#	ai_weight = {
+#		weight = 50000
+#		modifier = {
+#			factor = 0
+#			OR = {
+#				merg_is_habitat = yes
+#				num_buildings = { type = any value >= 14 }
+#			}
+#		}
+#	}
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Government Buildings (Relic Compatibility)
+#############################
+#
+#building_gaiaseeders_1 = {
+#	base_buildtime = @b2_time
+#	base_cap_amount = 1
+#	category = government
+#	can_be_disabled = no
+#	upgrades = { "building_gaiaseeders_2" }
+#
+#	potential = {
+#		exists = owner
+#		owner = {
+#			merg_is_default_empire = yes
+#			is_idyllic_bloom_empire = yes
+#		}
+#		NOR = {
+#			is_planet_class = pc_gaia
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			is_planet_class = pc_relic
+#			is_artificial = yes
+#		}
+#	}
+#
+#	allow = {
+#		has_upgraded_capital = yes
+#	}
+#
+#	destroy_trigger = {
+#		OR = {
+#			is_planet_class = pc_gaia	# No double bonuses if player uses other tools to turn it into a Gaia world.
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			is_planet_class = pc_relic
+#			NOT = { exists = owner }
+#			owner = {
+#				is_idyllic_bloom_empire = no
+#			}
+#		}
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			energy = 1500
+#			multiplier = value:gaiaseeder_cost_mult
+#		}
+#		upkeep = {
+#			energy = 20
+#			multiplier = value:gaiaseeder_upkeep
+#		}
+#	}
+#
+#	planet_modifier = {
+#		pop_growth_speed = 0.1
+#	}
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Amenity Buildings (Relic Compatibility)
+#############################
+#
+#building_ranger_lodge = {
+#	base_buildtime = @b1_time
+#	base_cap_amount = 1
+#	category = amenity
+#	icon = holding_park_ranger_lodge
+#	potential = {
+#		NOT = {	has_modifier = slave_colony	}
+#		owner = {
+#			is_regular_empire = yes
+#			has_valid_civic = civic_environmentalist
+#		}
+#		NOR = {
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			is_planet_class = pc_relic
+#		}
+#		is_artificial = no
+#	}
+#
+#	allow = {
+#		custom_tooltip = {
+#			fail_text = no_free_district_for_ranger_lodge
+#			planet = {
+#				num_free_districts = {
+#					type = any
+#					value > 0
+#				}
+#			}
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			owner = { is_regular_empire = no }
+#			has_modifier = slave_colony
+#			owner = { NOT = { has_valid_civic = civic_environmentalist } }
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			is_planet_class = pc_relic
+#		}
+#	}
+#
+#	ai_resource_production = {
+#		unity = 2
+#		mult = value:natural_blocker_count
+#	}
+#
+#	ai_resource_production = {
+#		unity = 1
+#		trigger = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
+#		mult = value:natural_blocker_count
+#	}
+#
+#	ai_resource_production = {
+#		unity = 1
+#		trigger = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
+#		mult = value:natural_blocker_count
+#	}
+#
+#	ai_resource_production = {
+#		unity = 1
+#		trigger = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
+#		mult = value:natural_blocker_count
+#	}
+#
+#	planet_modifier = {
+#		job_ranger_add = @b1_jobs
+#		deposit_blockers_natural_unity_produces_add = 2
+#	}
+#
+#	# triggered_planet_modifier = { TODO_CD Reimplement this later with propper tooltips
+#	#	potential = {
+#	#		has_designation = col_resort
+#	#	}
+#	#	job_ranger_per_pop = 0.1 # 1 job per 10 pops
+#	#}
+#
+#	triggered_planet_modifier = {
+#		potential = { owner_has_resolution = { RES = resolution_ecology_integrated_gardens } }
+#		deposit_blockers_natural_unity_produces_add = 1
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = { owner_has_resolution = { RES = resolution_ecology_environmental_control_board } }
+#		deposit_blockers_natural_unity_produces_add = 1
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = { owner_has_resolution = { RES = resolution_ecology_paradise_initiative } }
+#		deposit_blockers_natural_unity_produces_add = 1
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @b1_minerals
+#		}
+#		upkeep = {
+#			energy = @b1_upkeep
+#		}
+#	}
+#
+#	triggered_desc = {
+#		text = job_ranger_effect_desc
+#	}
+#
+#	on_built = {
+#		planet = {
+#			add_blocker = { type = d_big_nature_preserve_blocker }
+#		}
+#	}
+#
+#	on_destroy = {
+#		planet = {
+#			if = {
+#				limit = { has_deposit = d_big_nature_preserve_blocker }
+#				remove_deposit = d_big_nature_preserve_blocker
+#			}
+#		}
+#	}
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Memorialists Buildings (Relic Compatibility)
+#############################
+#
+## Sanctuary of Repose
+#building_galactic_memorial_1 = {
+#	base_buildtime = @b1_time
+#	base_cap_amount = 1
+#	category = unity
+#
+#	potential = {
+#		exists = owner
+#		NOT = { has_modifier = slave_colony }
+#		owner = {
+#			is_memorialist_empire = yes
+#		}
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			has_modifier = slave_colony
+#			owner = {
+#				is_memorialist_empire = no
+#			}
+#		}
+#	}
+#
+#	convert_to = {
+#		building_autochthon_monument
+#		building_corporate_monument
+#		building_simulation_1
+#		building_sensorium_1
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		produces = {
+#			trigger = { exists = owner }
+#			unity = 1
+#			multiplier = owner.trigger:num_ascension_perks
+#		}
+#		cost = {
+#			minerals = @b1_minerals
+#		}
+#		upkeep = {
+#			minerals = @b1_upkeep
+#		}
+#	}
+#
+#	planet_modifier = {
+#		planet_jobs_unity_produces_mult = 0.05
+#	}
+#
+#	triggered_desc = {
+#		text = building_autochthon_monument_effect
+#	}
+#
+#	prerequisites = {
+#		"tech_cultural_heritage"
+#	}
+#
+#	#Jobs
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		job_death_chronicler_add = @b1_jobs
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		text = "job_death_chronicler_effect_desc"
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		job_chronicle_drone_add = @b1_jobs
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		text = "job_chronicle_drone_effect_desc"
+#	}
+#
+#	# Tomb/Relic worlds
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		pop_government_ethic_attraction = 0.20
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		planet_crime_no_happiness_add = -20
+#	}
+#
+#	upgrades = {
+#		building_galactic_memorial_2
+#	}
+#
+#	show_tech_unlock_if = {
+#		is_memorialist_empire = yes
+#	}
+#}
+#
+## Pillar of Quietus
+#building_galactic_memorial_2 = {
+#	base_buildtime = @b2_time
+#	can_build = no
+#	category = unity
+#
+#	potential = {
+#		exists = owner
+#		NOT = { has_modifier = slave_colony }
+#		owner = {
+#			is_memorialist_empire = yes
+#		}
+#	}
+#
+#	allow = {
+#		exists = owner
+#		has_upgraded_capital = yes
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			has_modifier = slave_colony
+#			owner = {
+#				is_memorialist_empire = no
+#			}
+#		}
+#	}
+#
+#	convert_to = {
+#		building_heritage_site
+#		building_corporate_site
+#		building_simulation_2
+#		building_sensorium_2
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		produces = {
+#			trigger = { exists = owner }
+#			unity = 2
+#			multiplier = owner.trigger:num_ascension_perks
+#		}
+#		cost = {
+#			minerals = @b2_minerals
+#			exotic_gases = @b2_rare_cost
+#		}
+#		upkeep = {
+#			minerals = @b2_upkeep
+#			exotic_gases = @b2_rare_upkeep
+#		}
+#	}
+#
+#	planet_modifier = {
+#		planet_jobs_unity_produces_mult = 0.10
+#	}
+#
+#	triggered_desc = {
+#		text = building_heritage_site_effect
+#	}
+#
+#	prerequisites = {
+#		"tech_heritage_site"
+#	}
+#
+#	#Jobs
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		job_death_chronicler_add = @b2_jobs
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		text = "job_death_chronicler_effect_desc"
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		job_chronicle_drone_add = @b2_jobs
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		text = "job_chronicle_drone_effect_desc"
+#	}
+#
+#	# Tomb/Relic worlds
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		pop_government_ethic_attraction = 0.20
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		planet_crime_no_happiness_add = -20
+#	}
+#
+#	upgrades = {
+#		building_galactic_memorial_3
+#	}
+#
+#	show_tech_unlock_if = {
+#		is_memorialist_empire = yes
+#	 }
+#}
+#
+## Galactic Memorial
+#building_galactic_memorial_3 = {
+#	base_buildtime = @b3_time
+#	can_build = no
+#	category = unity
+#
+#	potential = {
+#		exists = owner
+#		NOT = { has_modifier = slave_colony }
+#		owner = {
+#			is_memorialist_empire = yes
+#		}
+#	}
+#
+#	allow = {
+#		has_major_upgraded_capital = yes
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			has_modifier = slave_colony
+#			owner = { is_memorialist_empire = no }
+#		}
+#	}
+#
+#	convert_to = {
+#		building_hypercomms_forum
+#		building_corporate_forum
+#		building_simulation_3
+#		building_sensorium_3
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		produces = {
+#			trigger = { exists = owner }
+#			unity = 3
+#			multiplier = owner.trigger:num_ascension_perks
+#		}
+#		cost = {
+#			minerals = @b3_minerals
+#			exotic_gases = @b3_rare_cost
+#		}
+#		upkeep = {
+#			minerals = @b3_upkeep
+#			exotic_gases = @b3_rare_upkeep
+#		}
+#	}
+#
+#	planet_modifier = {
+#		planet_jobs_unity_produces_mult = 0.15
+#	}
+#
+#	triggered_desc = {
+#		text = building_hypercomms_forum_effect
+#	}
+#
+#	prerequisites = {
+#		"tech_hypercomms_forum"
+#	}
+#
+#	#Jobs
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		job_death_chronicler_add = @b3_jobs
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		text = "job_death_chronicler_effect_desc"
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		job_chronicle_drone_add = @b3_jobs
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#		}
+#		text = "job_chronicle_drone_effect_desc"
+#	}
+#
+#	# Tomb/Relic worlds
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		pop_government_ethic_attraction = 0.20
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = yes }
+#			OR = {
+#				is_planet_class = pc_nuked
+#				merg_is_relic_world = yes
+#			}
+#		}
+#		planet_crime_no_happiness_add = -20
+#	}
+#
+#	show_tech_unlock_if = {
+#		is_memorialist_empire = yes
+#	}
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Branch Office Buildings (Relic Compatibility)
+#############################
+#
+#building_bio_reprocessing_facilities = {
+#	base_buildtime = @b1_time
+#
+#	owner_type = corporate
+#
+#	category = resource
+#
+#	potential = {
+#		has_branch_office = yes
+#		branch_office_owner = {
+#			is_ai = no
+#			is_criminal_syndicate = yes
+#		}
+#		NOR = {
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#	}
+#
+#	planet_modifier = {
+#		planet_crime_add = 25
+#		trade_value_add = 5
+#	}
+#
+#	resources = {
+#		category = planet_branch_office_buildings
+#		cost = {
+#			minerals = 500
+#		}
+#		produces = {
+#			food = 10
+#		}
+#		upkeep = {
+#			energy = 2
+#		}
+#	}
+#
+#	ai_weight = {
+#		factor = 1
+#	}
+#}
+#
+#building_food_conglomerate = {
+#	base_buildtime = @b1_time
+#
+#	owner_type = corporate
+#
+#	category = resource
+#
+#	potential = {
+#		has_branch_office = yes
+#		branch_office_owner = {
+#			is_ai = no
+#			is_criminal_syndicate = no
+#		}
+#		NOR = {
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				OR = {
+#					is_anglers_empire = no
+#					AND = {
+#						is_anglers_empire = yes
+#						prev = { planet = { is_wet = no } }
+#					}
+#				}
+#			}
+#		}
+#		modifier = {
+#			job_farmer_add = 1
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				is_anglers_empire = yes
+#				prev = { planet = { is_wet = yes } }
+#			}
+#		}
+#		modifier = {
+#			job_angler_add = 1
+#		}
+#	}
+#
+#	resources = {
+#		category = planet_branch_office_buildings
+#		cost = {
+#			minerals = 500
+#		}
+#		produces = {
+#			food = 10
+#		}
+#		upkeep = {
+#			energy = 2
+#		}
+#	}
+#
+#	ai_weight = {
+#		factor = 1
+#	}# AI has many other sources for this resource
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Overlord Holdings (Relic Compatibility)
+#############################
+#
+#holding_idyllic_bloom = {
+#	base_buildtime = @b1_time
+#	owner_type = subject_holding
+#	icon = building_gaiaseeders_4
+#	base_cap_amount = 1
+#
+#	category = government
+#
+#	resources = {
+#		category = planet_holdings
+#		cost = {
+#			energy = 1500
+#			exotic_gases = @b4_rare_cost
+#		}
+#		upkeep = {
+#			energy = 20
+#			exotic_gases = @b3_rare_upkeep
+#			multiplier = value:overlord_gaiaseeder_upkeep
+#		}
+#	}
+#
+#	potential = {
+#		exists = owner
+#		owner.overlord = {
+#			merg_is_default_empire = yes
+#			is_idyllic_bloom_empire = yes
+#		}
+#		NOR = {
+#			is_planet_class = pc_gaia
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#		is_artificial = no
+#	}
+#
+#	planet_modifier = {
+#		pop_environment_tolerance = 0.2
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = {
+#				has_ascension_perk = ap_hydrocentric
+#			}
+#		}
+#		monthly_loyalty = -0.5
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = {
+#				NOT = { has_ascension_perk = ap_hydrocentric }
+#			}
+#		}
+#		monthly_loyalty = 1
+#	}
+#
+#	on_built = {
+#		planet = {
+#			set_timed_planet_flag = {
+#				flag = anti_cheese_idyllic_bloom_flag
+#			days = 3599
+#			}
+#			set_saved_date = {
+#				key = idyllic_bloom_holding_timer
+#				days_from_present = 3600
+#				expires = 3600
+#			}
+#		}
+#		owner.overlord = {
+#			country_event = {
+#				id = plant.105
+#				days = 3600
+#			}
+#		}
+#	}
+#	on_destroy = {
+#		planet = {
+#			remove_planet_flag = anti_cheese_idyllic_bloom_flag
+#		}
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			planet = {
+#				has_planet_flag = anti_cheese_idyllic_bloom_flag
+#			}
+#		}
+#		text = holding_idyllic_bloom_effect_timer
+#	}
+#	triggered_desc = {
+#		trigger = {
+#			planet = {
+#				NOT = {
+#					has_planet_flag = anti_cheese_idyllic_bloom_flag
+#				}
+#			}
+#		}
+#		text = holding_idyllic_bloom_effect
+#	}
+#	allow = {
+#		can_build_overlord_gaiaseeder = yes
+#	}
+#}
+#
+#holding_park_ranger_lodge = {
+#	base_buildtime = @b2_time
+#	owner_type = subject_holding
+#	icon = holding_park_ranger_lodge
+#	base_cap_amount = 1
+#
+#	category = amenity
+#
+#	resources = {
+#		category = planet_holdings
+#		cost = {
+#			minerals = @b1_minerals
+#		}
+#		upkeep = {
+#			energy = @b1_upkeep
+#		}
+#	}
+#
+#	potential = {
+#		owner.overlord = { has_valid_civic = civic_environmentalist }
+#		NOT = {
+#			owner = { has_valid_civic = civic_environmentalist }
+#		}
+#		NOR = {
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#		is_artificial = no
+#	}
+#
+#	destroy_trigger = {
+#		OR = {
+#			merg_is_arcology = yes
+#			merg_is_hive_world = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#	}
+#	allow = {
+#		custom_tooltip = {
+#			fail_text = no_free_district_for_ranger_lodge
+#			planet = {
+#				num_free_districts = {
+#					type = any
+#					value > 0
+#				}
+#			}
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = { is_gestalt = no }
+#		}
+#		job_overlord_ranger_add = 1
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = { is_gestalt = yes }
+#		}
+#		job_overlord_ranger_drone_add = 1
+#	}
+#
+#	on_built = {
+#		planet = {
+#			add_blocker = { type = d_nature_preserve_blocker }
+#		}
+#	}
+#
+#	on_destroy = {
+#		planet = {
+#			if = {
+#				limit = { has_deposit = d_nature_preserve_blocker }
+#				remove_deposit = d_nature_preserve_blocker
+#			}
+#		}
+#	}
+#
+#	triggered_desc = {
+#		text = job_overlord_ranger_effect_desc
+#	}
+#}
+#
+#holding_tree_of_life_sapling = {
+#	base_buildtime = @b1_time
+#	owner_type = subject_holding
+#	icon = holding_tree_of_life_sapling
+#	base_cap_amount = 1
+#
+#	category = resource
+#
+#	resources = {
+#		category = planet_holdings
+#		cost = {
+#			food = 1000
+#		}
+#	}
+#
+#	potential = {
+#		owner.overlord = { has_origin = origin_tree_of_life }
+#		NOR = {
+#			owner = {
+#				has_origin = origin_tree_of_life
+#				country_uses_food = no
+#			}
+#		}
+#		NOR = {
+#			merg_is_arcology = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#		is_artificial = no
+#	}
+#	destroy_trigger = {
+#		OR = {
+#			merg_is_arcology = yes
+#			merg_is_machine_world = yes
+#			merg_is_relic_world = yes
+#		}
+#	}
+#
+#	planet_modifier = {
+#		monthly_loyalty = 1
+#		pop_environment_tolerance = 0.1
+#		planet_farmers_food_produces_add = 1
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = { is_gestalt = no }
+#		}
+#		job_overlord_arborist_add = 1
+#	}
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = planet.owner
+#			planet.owner = { is_gestalt = yes }
+#		}
+#		job_overlord_arborist_drone_add = 1
+#	}
+#}
+#
+#############################
+## ***VANILLA OVERRIDE***  Research Buildings (Relic Compatibility)
+#############################
+#
+#building_archaeostudies_faculty = {
+#	base_buildtime = @b2_time
+#
+#	category = research
+#
+#	empire_limit = {
+#	 	base = 1
+#	}
+#
+#	potential = {
+#		NOR = {
+#			has_modifier = resort_colony
+#			has_modifier = slave_colony
+#			# has_modifier = crucible_colony removed in v.3.12
+#		}
+#		exists = owner
+#	}
+#
+#	destroy_trigger = {
+#		exists = owner
+#		OR = {
+#			has_modifier = resort_colony
+#			has_modifier = slave_colony
+#			# has_modifier = crucible_colony removed in v.3.12
+#		}
+#	}
+#
+#	allow = {
+#		has_upgraded_capital = yes
+#	}
+#
+#	resources = {
+#		category = planet_buildings
+#		cost = {
+#			minerals = @b2_minerals
+#			minor_artifacts = 50
+#		}
+#		upkeep = {
+#			energy = 20
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		modifier = {
+#			job_archaeoengineers_add = 3
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_hive_empire = yes }
+#		}
+#		modifier = {
+#			job_archaeo_drone_add = 3
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { is_machine_empire = yes }
+#		}
+#		modifier = {
+#			job_archaeo_unit_add = 3
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				is_gestalt = no
+#				has_ascension_perk = ap_archaeoengineers
+#			}
+#		}
+#		modifier = {
+#			job_archaeoengineers_add = 2
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				is_hive_empire = yes
+#				has_ascension_perk = ap_archaeoengineers
+#			}
+#		}
+#		modifier = {
+#			job_archaeo_drone_add = 2
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				is_machine_empire = yes
+#				has_ascension_perk = ap_archaeoengineers
+#			}
+#		}
+#		modifier = {
+#			job_archaeo_unit_add = 2
+#		}
+#	}
+#
+#	country_modifier = {
+#		category_archaeostudies_research_speed_mult = 1.0
+#		country_resource_max_minor_artifacts_add = 1000
+#	}
+#
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_ascension_perk = ap_archaeoengineers
+#			}
+#		}
+#		country_resource_max_minor_artifacts_add = 2000
+#	}
+#
+#	triggered_country_modifier = {
+#		potential = {
+#			planet = {
+#				OR = {
+#					merg_is_relic_world = yes
+#				}
+#			}
+#		}
+#		category_archaeostudies_research_speed_mult = 0.5
+#	}
+#
+#	prerequisites = {
+#		"tech_archaeostudies"
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_gestalt = no }
+#		}
+#		text = job_archaeoengineers_effect_desc
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_hive_empire = yes }
+#		}
+#		text = job_archaeo_drone_effect_desc
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			exists = owner
+#			owner = { is_machine_empire = yes }
+#		}
+#		text = job_archaeo_unit_effect_desc
+#	}
+#
+#	triggered_desc = {
+#		text = building_archaeostudies_faculty_relic_effect
+#	}
+#}
+#
