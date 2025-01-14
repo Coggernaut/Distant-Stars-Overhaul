@@ -41,3 +41,58 @@ d_dessanu_relic_odd_factory = {
 		weight = 0
 	}
 }
+
+d_DSO_ancient_dessanu_colony = { #added by Bryn
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_building
+
+	inline_script = {
+		script = jobs/archaeoengineers_add
+		BASE_AMOUNT = 3
+		AP_AMOUNT = 0
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+
+d_DSO_dessanu_heritage_world = {  #added by Bryn
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_building
+	
+	inline_script = {
+		script = jobs/archaeoengineers_add
+		BASE_AMOUNT = 1
+		AP_AMOUNT = 0
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner = {
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+		}
+		job_high_priest_add = 1
+		}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner.federation
+			owner = {
+				has_origin = origin_cybernetic_creed
+			}
+		}
+		job_technophant_add = 1
+		}
+
+	drop_weight = {
+		weight = 0
+	}
+}
