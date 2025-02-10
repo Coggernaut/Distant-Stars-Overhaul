@@ -13,8 +13,9 @@ DSO_dessanu_heritage_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 2
 	planet_immigration_pull_mult = 0.25
-	job_high_priest_add = 1
-	job_archaeoengineers_add = 1
+	#job_high_priest_add = 1
+	#job_archaeoengineers_add = 1
+	#jobs switched to deposits for gestalt variants - by Bryn
 	# pop_ethic_spiritualist_attraction_mult = 0.15
 	important = yes
 }
@@ -22,7 +23,8 @@ DSO_dessanu_heritage_world = {
 DSO_ancient_dessanu_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 2
-	job_archaeoengineers_add = 3
+	#job_archaeoengineers_add = 3
+	#jobs switched to deposits for gestalt variants - by Bryn
 	important = yes
 }
 

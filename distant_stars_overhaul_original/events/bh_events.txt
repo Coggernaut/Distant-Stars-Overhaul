@@ -550,6 +550,7 @@ country_event = {
 					}
 					add_building = building_stronghold
 					add_modifier = { modifier = "DSO_dessanu_heritage_world" days = -1 }
+					add_deposit = d_DSO_dessanu_heritage_world #added by Bryn
 					solar_system = {
 						spawn_megastructure = {
 							type = spy_orb_ruined
@@ -608,6 +609,7 @@ country_event = {
 					set_controller = root
 					set_name = "Abandonded Observatory"
 					add_deposit = d_nanosands
+					add_deposit = d_DSO_ancient_dessanu_colony   #added by Bryn 
 					while = {
 						count = 3
 						add_deposit = d_nanosands
