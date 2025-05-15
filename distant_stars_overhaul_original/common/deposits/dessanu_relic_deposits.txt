@@ -10,7 +10,7 @@ d_dessanu_relic_odd_factory = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_DSO_dessanu_odd_factory_worker_add = 1
+			job_DSO_dessanu_odd_factory_worker_add = 100
 		}
 	}
 
@@ -20,7 +20,7 @@ d_dessanu_relic_odd_factory = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_DSO_dessanu_odd_factory_worker_add = 1
+			job_DSO_dessanu_odd_factory_worker_add = 100
 		}
 	}
 	
@@ -33,7 +33,7 @@ d_dessanu_relic_odd_factory = {
 			}
 		}
 		modifier = {
-			job_DSO_dessanu_relic_chronicler_add = 1
+			job_DSO_dessanu_relic_chronicler_add = 100
 		}
 	}
 

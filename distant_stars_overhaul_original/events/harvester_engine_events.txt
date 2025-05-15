@@ -21,7 +21,7 @@ planet_event = {
 	hide_window = yes
 	immediate = {
 		if = {
-			limit = { is_planet_class = pc_frozen }
+			limit = { merg_is_frozen = yes }
 			from.owner = {
 				country_event = { id = harvester_engine.102 }
 			}
@@ -90,7 +90,7 @@ planet_event = {
 				}
 			}
 		}
-		every_owned_pop = { kill_pop = yes }
+		every_owned_pop_group = { kill_all_pop = yes }
 		remove_all_buildings = yes
 		# Destroy habitats and ringworlds
 		# Actual Harvest world Stuff

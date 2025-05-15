@@ -28,7 +28,7 @@ d_nanite_forgeworld_deposit = {
 			is_nanite_forgeworld = yes
 		}
 		modifier = {
-			job_DSO_nanite_forge_overseer_add = 1
+			job_DSO_nanite_forge_overseer_add = 100
 		}
 	}
 
@@ -51,8 +51,7 @@ d_nanites_deposit = {
 	potential = {
 		solar_system = { has_star_flag = lcluster }
 		is_star = no
-		is_colonizable = no
-		NOT = { has_modifier = terraforming_candidate }
+		NOR = { is_colonizable = yes has_modifier = terraforming_candidate }
 	}
 	drop_weight = {
 		weight = 0

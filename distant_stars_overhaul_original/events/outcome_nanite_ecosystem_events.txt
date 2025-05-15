@@ -100,7 +100,7 @@ country_event = {
 	option = {
 		name = harvest_nanite_gaia.2.b
 		trigger = {
-			NOT = { any_owned_fleet = { is_ship_size = colossus } }
+			count_owned_fleet = { count = 0 limit = { is_ship_size = colossus } }
 		}
 		hidden_effect = {
 			country_event = { id = harvest_nanite_gaia.3 days = 90 }
@@ -157,11 +157,7 @@ planet_event = {
 				}
 				event_target:l_gaia_incarnation = {
 					set_faction_hostility = {
-						target = from
-						set_hostile = yes
-						set_neutral = no
-						set_friendly = no
-					}
+						target = from set_hostile = yes }
 				}
 			}
 			else = {
@@ -173,11 +169,7 @@ planet_event = {
 						save_global_event_target_as = l_gaia_incarnation
 						every_playable_country = { establish_communications_no_message = prev }
 						set_faction_hostility = {
-							target = from
-							set_hostile = yes
-							set_neutral = no
-							set_friendly = no
-						}
+							target = from set_hostile = yes }
 					}
 				}
 			}
@@ -340,7 +332,7 @@ event = {
 						is_homeworld = no
 						original_owner = yes
 						has_ground_combat = no
-						num_pops > 0
+						pop_amount > 0
 						 # solar_system = { has_star_flag = lcluster }
 						has_planet_flag = nanite_ecosystem_seismic_disturbance
 						OR = {
@@ -405,14 +397,13 @@ planet_event = {
 		has_owner = yes
 	}
 	trigger = {
-		num_pops > 0
+		pop_amount > 0
 		NOR = {
 			has_global_flag = nanite_ecosystem_seismic_disturbance_global
 			has_planet_flag = colony_event
 			is_planet_class = pc_nuked
 			is_artificial = yes
-			merg_is_arcology = yes
-			is_planet_class = pc_relic
+			is_urban_planet = yes
 		}
 		has_planet_flag = nanite_ecosystem_subterranean_planet # From distar_nanite_ecosystem.4
 	}
@@ -592,7 +583,7 @@ planet_event = {
 		event_target:nanite_ecosystem_subterranean_nation = {
 			create_leader = {
 				class = commander
-				species = owner_main_species
+				species = owner_species
 				name = random
 				skill = 3
 			}
@@ -721,8 +712,8 @@ country_event = {
 			while = {
 				count = 2
 				if = {
-					limit = { NOT = { any_owned_pop = { is_unemployed = yes } } }
-					random_owned_pop = { kill_pop = yes }
+					limit = { any_owned_pop_group = { is_unemployed = no } }
+					weighted_random_owned_pop_group = { kill_single_pop = yes }
 					create_pop = { species = event_target:nanite_ecosystem_subterranean_species }
 				}
 				create_army = {
@@ -798,7 +789,7 @@ planet_event = {
 	}
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -877,7 +868,7 @@ planet_event = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_collapse }
 		has_army = yes
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -906,7 +897,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_raid }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -937,7 +928,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_war
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_attack }
-		num_pops > 1
+		pop_amount > 100
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -945,7 +936,7 @@ planet_event = {
 	option = {
 		name = "colony.63.a"
 		add_planet_devastation = 10
-		random_owned_pop = { kill_pop = yes }
+		weighted_random_owned_pop_group = { kill_single_pop = yes }
 		add_deposit = d_sinkhole_subterraneans
 	}
 }
@@ -967,7 +958,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_pocket }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -986,7 +977,7 @@ planet_event = {
 	option = {
 		name = "colony.64.b"
 		trigger = {
-			# free_housing > 5
+			# free_housing > 500
 			owner = {
 				OR = {
 					is_authoritarian = yes
@@ -1031,7 +1022,7 @@ planet_event = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_expansion }
 		# has_any_strategic_resource = no
-		num_pops > 0
+		pop_amount > 0
 		# planet_size < 25
 	}
 	is_triggered_only = yes
@@ -1061,7 +1052,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_gold }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1098,7 +1089,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_treasury }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1133,7 +1124,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_destroyed
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_quake }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1164,7 +1155,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_famine }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1173,7 +1164,7 @@ planet_event = {
 		name = "colony.69.a"
 		allow = {
 			owner = {
-				resource_stockpile_compare = { resource = food value >= 50 }
+				has_country_resource = { type = food amount >= 50 }
 			}
 		}
 		owner = {
@@ -1210,7 +1201,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_gift }
-		num_pops > 0
+		pop_amount > 0
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 	is_triggered_only = yes
@@ -1246,7 +1237,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_refugees }
-		num_pops > 0
+		pop_amount > 0
 		# free_housing > 0
 	}
 	is_triggered_only = yes
@@ -1301,7 +1292,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_anthropologists }
-		num_pops > 0
+		pop_amount > 0
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 	is_triggered_only = yes
@@ -1337,7 +1328,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_quake2 }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1348,7 +1339,7 @@ planet_event = {
 	option = {
 		name = "colony.73.a"
 		tooltip = { add_planet_devastation = 10 }
-		every_owned_pop = {
+		every_owned_pop_group = {
 			add_modifier = { modifier = "pop_angry_subterranean" years = 10 }
 		}
 	}
@@ -1379,7 +1370,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = nanite_ecosystem_seismic_disturbance_friendly
 		NOT = { has_planet_flag = nanite_ecosystem_seismic_disturbance_tech }
-		num_pops > 0
+		pop_amount > 0
 	}
 	is_triggered_only = yes
 	# mean_time_to_happen = { months = 240 }
@@ -1613,8 +1604,8 @@ country_event = {
 				has_star_flag = lcluster
 				NOT = { has_star_flag = lcluster1 }
 				count_system_planet = {
-					limit = { is_nanite_gaia = yes }
 					count < 2
+					limit = { is_nanite_gaia = yes }
 				}
 				NOT = { has_star_flag = nanite_ecosystem_presapient_system }
 			}
@@ -1654,8 +1645,8 @@ country_event = {
 				has_star_flag = lcluster
 				NOT = { has_star_flag = lcluster1 }
 				count_system_planet = {
-					limit = { is_nanite_gaia = yes }
 					count < 2
+					limit = { is_nanite_gaia = yes }
 				}
 				NOR = {
 					has_star_flag = nanite_ecosystem_presapient_system
@@ -2074,18 +2065,10 @@ country_event = {
 		}
 		event_target:l_amoeba_elder = {
 			set_faction_hostility = {
-				target = event_target:l_tiyanki_elder
-				set_hostile = yes
-				set_neutral = no
-				set_friendly = no
-			}
+				target = event_target:l_tiyanki_elder set_hostile = yes }
 			prev = {
 				set_faction_hostility = {
-					target = prev
-					set_hostile = yes
-					set_neutral = no
-					set_friendly = no
-				}
+					target = prev set_hostile = yes }
 			}
 		}
 		random_system = {
@@ -2159,9 +2142,9 @@ country_event = {
 				}
 				while = {
 					limit = {
-						count_owned_pop = {
+						count_owned_pop_amount = {
+							count < 300
 							limit = { is_sapient = no }
-							count < 3
 						}
 					}
 					create_pop = { species = last_created_species }

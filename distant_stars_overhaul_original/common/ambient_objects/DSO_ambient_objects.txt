@@ -1,4 +1,3 @@
-
 # Derelict Gray Tempest Ship
 ambient_object = {
 	name = "abandoned_gray_tempest_mothership_object"

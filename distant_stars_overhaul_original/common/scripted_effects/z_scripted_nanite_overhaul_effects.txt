@@ -1,4 +1,3 @@
-
 # Giving clues, see pop_lcluster_event for popping follow-up events
 # this = country getting a clue
 

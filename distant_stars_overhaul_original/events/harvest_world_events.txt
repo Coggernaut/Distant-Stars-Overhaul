@@ -132,7 +132,7 @@ country_event = {
 		from = {
 			create_colony = {
 				owner = root
-				species = owner_main_species
+				species = owner_species
 				ethos = owner
 			}
 			planet_event = { id = harvest_colony.51 days = 10 }
@@ -289,7 +289,7 @@ planet_event = {
 		event_target:harvester_subterranean_nation = {
 			create_leader = {
 				class = commander
-				species = owner_main_species
+				species = owner_species
 				name = random
 				skill = 3
 			}
@@ -424,10 +424,10 @@ country_event = {
 			remove_planet_flag = subterranean_harvester_invasion_planet
 			save_event_target_as = conquered_harvester_planet
 			set_owner = event_target:subterranean_harvester_empire
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
-			create_pop = { species = owner_main_species }
-			create_pop = { species = owner_main_species }
+			weighted_random_owned_pop_group = { kill_single_pop = yes }
+			weighted_random_owned_pop_group = { kill_single_pop = yes }
+			create_pop = { species = owner_species }
+			create_pop = { species = owner_species }
 			create_army = {
 				name = "NAME_Loot-Equipped_Army"
 				owner = event_target:subterranean_harvester_empire
@@ -505,7 +505,7 @@ planet_event = {
 	}
 	trigger = {
 		has_planet_flag = harvest_disturbance_war
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -676,7 +676,7 @@ planet_event = {
 		has_planet_flag = harvest_disturbance_war
 		NOT = { has_planet_flag = harvest_disturbance_collapse }
 		has_army = yes
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_collapse }
@@ -704,7 +704,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_war
 		NOT = { has_planet_flag = harvest_disturbance_raid }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -734,14 +734,14 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_war
 		NOT = { has_planet_flag = harvest_disturbance_attack }
-		num_pops > 1
+		pop_amount > 100
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_attack }
 	option = {
 		name = harvest_colony.63.a
 		add_planet_devastation = 10
-		random_owned_pop = { kill_pop = yes }
+		weighted_random_owned_pop_group = { kill_single_pop = yes }
 		add_deposit = d_sinkhole_subterraneans
 	}
 }
@@ -763,7 +763,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_pocket }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -781,7 +781,7 @@ planet_event = {
 	option = {
 		name = harvest_colony.64.b
 		trigger = {
-			# free_housing > 5
+			# free_housing > 500
 			owner = {
 				OR = {
 					is_authoritarian = yes
@@ -826,7 +826,7 @@ planet_event = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_expansion }
 		# has_any_strategic_resource = no
-		num_pops > 0
+		pop_amount > 0
 		# planet_size < 25
 	}
 	mean_time_to_happen = { months = 240 }
@@ -855,7 +855,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_gold }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -891,7 +891,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_treasury }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_treasury }
@@ -925,7 +925,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_destroyed
 		NOT = { has_planet_flag = harvest_disturbance_quake }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -955,7 +955,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_famine }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_famine }
@@ -963,7 +963,7 @@ planet_event = {
 		name = harvest_colony.69.a
 		allow = {
 			owner = {
-				resource_stockpile_compare = { resource = food value >= 50 }
+				has_country_resource = { type = food amount >= 50 }
 			}
 		}
 		owner = {
@@ -1000,7 +1000,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_gift }
-		num_pops > 0
+		pop_amount > 0
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 	mean_time_to_happen = { months = 240 }
@@ -1035,7 +1035,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_refugees }
-		num_pops > 0
+		pop_amount > 0
 		# free_housing > 0
 	}
 	mean_time_to_happen = { months = 240 }
@@ -1089,7 +1089,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_anthropologists }
-		num_pops > 0
+		pop_amount > 0
 		check_variable = { which = "angry_subterraneans" value < 1 }
 	}
 	mean_time_to_happen = { months = 240 }
@@ -1124,7 +1124,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_quake2 }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = {
@@ -1134,7 +1134,7 @@ planet_event = {
 	option = {
 		name = harvest_colony.73.a
 		tooltip = { add_planet_devastation = 10 }
-		every_owned_pop = {
+		every_owned_pop_group = {
 			add_modifier = { modifier = "pop_angry_subterranean" years = 10 }
 		}
 	}
@@ -1165,7 +1165,7 @@ planet_event = {
 	trigger = {
 		has_planet_flag = harvest_disturbance_friendly
 		NOT = { has_planet_flag = harvest_disturbance_tech }
-		num_pops > 0
+		pop_amount > 0
 	}
 	mean_time_to_happen = { months = 240 }
 	immediate = { set_planet_flag = harvest_disturbance_tech }

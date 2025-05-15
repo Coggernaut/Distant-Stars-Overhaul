@@ -10,7 +10,7 @@ dso_dessanu_small_ship_fallen_empire = {
 		ship_evasion_add = 35
 		ship_hull_regen_add_perc = 0.1
 		ship_armor_regen_add_perc = 0.1
-		ship_piracy_suppression_add = 4
+		# ship_piracy_suppression_add = 4
 	}
 	ship_modifier = {
 		ship_weapon_range_mult = 0.2
@@ -63,7 +63,7 @@ dso_nanite_interdictor = {
 	max_hitpoints = 2000
 	modifier = {
 		ship_evasion_add = 20
-		ship_piracy_suppression_add = 4
+		# ship_piracy_suppression_add = 4
 	}
 	size_multiplier = 4
 	fleet_slot_size = 4
@@ -146,7 +146,7 @@ dso_nanite_mothership = {
 	max_hitpoints = @titan_hp
 	modifier = {
 		ship_evasion_add = @titan_evasion
-		ship_piracy_suppression_add = 4
+		# ship_piracy_suppression_add = 4
 	}
 	size_multiplier = 16
 	fleet_slot_size = 8
@@ -167,7 +167,7 @@ dso_nanite_mothership = {
 	class = shipclass_military
 
 	is_designable = yes
-	selectable = { host_has_dlc = "Apocalypse" }
+	selectable = { has_apocalypse_dlc = yes }
 
 	construction_type = starbase_shipyard
 	required_component_set = "power_core"
@@ -334,7 +334,7 @@ dso_nanite_core = {
 		ship_hull_regen_add_perc = 0.1
 		ship_armor_regen_add_perc = 0.1
 		ship_shield_regen_add_perc = 0.25
-		ship_piracy_suppression_add = 4
+		# ship_piracy_suppression_add = 4
 	}
 	combat_size_multiplier = 5
 	size_multiplier = 64

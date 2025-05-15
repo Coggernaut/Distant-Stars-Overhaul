@@ -64,11 +64,7 @@ country_event = {
 				limit = { is_country_type = gray_goo }
 				every_playable_country = { establish_communications_no_message = prev }
 				set_faction_hostility = {
-					target = root
-					set_hostile = no
-					set_neutral = yes
-					set_friendly = no
-				}
+					target = root set_neutral = yes }
 			}
 		}
 	}
@@ -106,11 +102,7 @@ country_event = {
 					limit = { is_country_type = gray_goo }
 					every_playable_country = { establish_communications_no_message = prev }
 					set_faction_hostility = {
-						target = root
-						set_hostile = no
-						set_neutral = yes
-						set_friendly = no
-					}
+						target = root set_neutral = yes }
 				}
 			}
 		}
@@ -149,11 +141,7 @@ country_event = {
 					limit = { is_country_type = gray_goo }
 					every_playable_country = { establish_communications_no_message = prev }
 					set_faction_hostility = {
-						target = root
-						set_hostile = no
-						set_neutral = yes
-						set_friendly = no
-					}
+						target = root set_neutral = yes }
 				}
 			}
 		}

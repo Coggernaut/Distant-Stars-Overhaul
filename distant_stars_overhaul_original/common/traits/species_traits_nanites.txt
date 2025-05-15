@@ -96,7 +96,7 @@ trait_dessanu_uplifted = {
 	# custom_tooltip = TRAIT_DESSANU_UPLIFTED_EFFECT
 	modifier = { 
 		planet_jobs_unity_produces_mult = 0.05
-		pop_growth_from_immigration = 0.25
+		planet_resettlement_unemployed_mult = 0.25
 		pop_ethic_spiritualist_attraction_mult = 0.1
 		pop_ethic_militarist_attraction_mult = 0.1
 		pop_ethic_xenophile_attraction_mult = 0.1
@@ -108,14 +108,14 @@ trait_dessanu_uplifted = {
 		}
 		pop_government_ethic_attraction = -0.1
 	}
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			exists = planet
 			planet = { is_planet_class = pc_dessanu_relic }
 		}
 		pop_amenities_usage_mult = -0.10
 		pop_housing_usage_mult = -0.10
-		pop_growth_from_immigration = -0.25
+		planet_resettlement_unemployed_mult = -0.25
 	}
 	custom_tooltip_with_modifiers = trait_dessanu_uplifted_tooltip
 	slave_cost = {

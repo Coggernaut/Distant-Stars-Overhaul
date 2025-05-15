@@ -1,5 +1,5 @@
 ﻿l_english:
- 
+
  dso_story.2015.name:0 "Ancient Dessanu Factory"
  dso_story.2015.desc:0 "A group of investigators have found a hidden Dessanu factory on [Root.GetName]. The building and its state of decay tells of an old civilization, one that excelled at constructing things that stood the test of time.\n\nOur population would easily be able to use the facility to add to the colony's production output."
  dso_story.2015.desc_gateway_cult:0 "Archaeologists have uncovered a hidden Dessanu factory on [Root.GetName]. The building and its state of decay cannot be tolerated, this holy site must be made restored.\n\nThe Dessanu's gift to our species lies within our genetic key. With it, the security systems and facility operate as if we are the precursors themselves. This site will now not only add to the colony's production output, but also a historic site harnessing the unity of our species."
@@ -61,7 +61,7 @@
  dso_story.213.desc:0 "Our forces have managed to disable the flagship of the [dso_story_dessanu_cult_schism.GetName]! Its weapons and engines are no longer functional, but life support systems remain stable. We should prepare for a boarding action.\n\nDue to the large number of armed heretics within the ship, a significant number of troops will be necessary to secure it."
  dso_story.213.a:0 "The Dessanu War Relic will be ours!"
  dso_story.214.name:0 "Dessanu War Relic Secured"
- dso_story.214.desc:0 "After slowly fighting their way deck by deck, our marines have finally eradicated the last pockets of resistance on the former flagship of the [dso_story_dessanu_cult_schism.GetName]. Few prisoners were taken as most of the zealous heretics preferred to throw their lives away in futile suicide attacks. The cult's leader was found on the vessel's bridge, killed by her own hand. At long last, it looks like the [dso_story_dessanu_cult_schism.GetName] has met its end.\n\nThe Grand Archaeo-Engineers have managed to recover the §HDessanu War Relic§!! This memory core contains detailed schematics for this very Dessanu Warship. Although the memory core also contained detailed records of Dessanu santurary worlds which oversaw the §GGenesis Guidance§! projects. More importantantly, these records also detail our own species's uplifting process, with enough research we can replicate the process!\n\nThe recovered Dessanu Warship has been pressed into service with our fleet as the [disabled_heretic_flagship.GetName]. Sadly, the software for these relics require a memory core's computing power to operate, limiting our empire to one at a time. Therefor the vessel should be brought to spaceport as soon as possible for more permanent repairs!"
+ dso_story.214.desc:0 "After slowly fighting their way deck by deck, our marines have finally eradicated the last pockets of resistance on the former flagship of the [dso_story_dessanu_cult_schism.GetName]. Few prisoners were taken as most of the zealous heretics preferred to throw their lives away in futile suicide attacks. The cult's leader was found on the vessel's bridge, killed by her own hand. At long last, it looks like the [dso_story_dessanu_cult_schism.GetName] has met its end.\n\nThe Grand Archaeo-Engineers have managed to recover the §HDessanu War Relic§!! This memory core contains detailed schematics for this very Dessanu Warship. Although the memory core also contained detailed records of Dessanu santurary worlds which oversaw the §GGenesis Guidance§! projects. More importantantly, these records also detail our own species's uplifting process, with enough research we can replicate the process!\n\nThe recovered Dessanu Warship has been pressed into service with our fleet as the [disabled_dessanu_cult_schism_flagship.GetName]. Sadly, the software for these relics require a memory core's computing power to operate, limiting our empire to one at a time. Therefor the vessel should be brought to spaceport as soon as possible for more permanent repairs!"
  dso_story.214.a:0 "This moment will be celebrated as a holy day from here younder!"
  dso_story_214_tooltip:0 "§GCommandeer§! §YAncient Dessanu Flagship§!§G.§!"
  dso_story.218.name:0 "Cult of the Open Gate's Ship is Disabled!"
@@ -71,7 +71,7 @@
  dso_story.221.desc:0 "Someone has destroyed the Precusor Shipyard that was being used by the [dso_story_dessanu_cult_schism.GetName]. Preliminary reports indicate that the heretic forces were thoroughly wiped out, but we have also received intelligence that the cult's charismatic leader left the shipyard on her new flagship moments before the battle had begun.\n\nThis §HDessanu War Relic§! is somewhere in the galaxy. Military intelligence has also reported her flagship is a §HPrecusor Warship§!!"
  dso_story.223.name:0 "Dessanu War Relic Claimed by Another"
  dso_story.223.desc:0 "Someone else recently defeated the Cult of the Open Gate's flagship after a pitched battle in the [dso_story_dessanu_cult_schism_flagship_system.GetName] system. Our commanders have expressed regret over the fact that our own forces were unable to reclaim the Dessanu War Relic, but at least this should signify the end of this malignant cult and its campaign of terror."
- 
+
  NAME_dso_cult_of_the_open_gate_schism_war:0 "Schism of the Gateway Orthodoxy"
  wg_dso_gateway_orthodoxy_civil_war_att:0 "End the Schism"
  wg_dso_gateway_orthodoxy_civil_war_att_desc:0 "A Holy War is waged to end a threat to the unity of our Great Gateway Orthodoxy.\n\n§RThere will be no Status Quo peace in this war: we either win, or we die.§!"
@@ -101,7 +101,7 @@
  NAME_dso_dessanu_small_ship_fallen_empire:0 "Dessanu Precusor Warship"
  dso_dessanu_small_ship_fallen_empire:0 "Dessanu Precusor Warship"
  dso_dessanu_small_ship_fallen_empire_plural:0 "Dessanu Precusor Warships"
- 
+
  dessanu_cult_schism_search_1_poi:1 "Search [dessanu_cult_schism_1.GetName]"
  dessanu_cult_schism_search_1_poi_desc:0 "We have detected ion trails in the vicinity of this star system that belonging to the Cult of the Open Gate. Those heretics must be hunted and dealt with!"
  dessanu_cult_schism_search_2_poi:1 "Search [dessanu_cult_schism_2.GetName]"
@@ -110,7 +110,7 @@
  dessanu_cult_schism_shipyard_poi_desc:0 "We have finally identified the source of their ships - An ancient precursor shipyard, discovered within the [cult_planet.GetStarName] system!\n\nThey recovered a functioning §HDessanu Memory Core§! within an this shipyard. This prized treasure must be optimizing ship production, and now they're producing an ancient Precursor warship! This cannot be allowed to continue."
  dessanu_cult_schism_flagship_poi:0 "Find the Dessanu War Relic"
  dessanu_cult_schism_flagship_poi_desc:0 "As the [dso_story_dessanu_cult_schism.GetName]'s defence dwindled heat signatures on the shipyard began to go critical. The heretics sabotaged the energy reactor and set the facility to self destruct! In the aftermath, some of the heretics were captured within their escape pods and picked up by our forces. One of those prisoners included the now disgraced High Lord Archaeo-Engineer. After thorough interrogation we revealed the §HDessanu Memory Core§! was transported off-site.\n\nEven worse, we have also learned that the schism's charismatic leader is the one who smuggled it and departed the factory several weeks ago on a §HDessanu War Relic§! - this one being an ancient Dessanu warship. Military intelligence is working on pinpointing the location of this vessel."
- 
+
  dso_story_dessanu_cult_schism:0 "Cult of the Open Gateway"
  dso_story_dessanu_cult_schism_names:0 "Cult of the Open Gateway"
  dso_cult_of_the_open_gate:0 "Cult of the Open Gateway"
@@ -118,26 +118,26 @@
  NAME_dso_story_dessanu_cult_schism_ADJ:0 "Open Gate Cultists"
  dso_story_dessanu_cult_schism_title:0 "Cult of the Gateway Schism"
  dso_story_dessanu_cult_schism_desc:0 "Centuries ago, a group of Relic Chroniclers and their devoted followers on [Root.Capital.GetName] decided that inward isolation was our only salvation. They claim the supremacy of [Root.owner_species.GetName] kind and wish to open L-Gates and §Runleash the Gray Tempest§! to purge the galaxy of all other species. These xenophobic extremists called themselves the §H[dso_story_dessanu_cult_schism.GetName]§!, and have been responsible for sabotaging xeno-communication efforts and acts of terror over the years."
- 
+
  d_dessanu_relic_odd_factory_negative_artifact_tooltip:0 "§RResearch Path Bocked:§! Insufficient Minor Artifacts"
- 
+
  d_dessanu_relic_odd_factory:0 "Ancient Dessanu Factory"
  d_dessanu_relic_odd_factory_desc:0 "An ancient and operational precursor factory, what secrets reside within the facility's memory core?"
- 
+
  DSO_dessanu_relic_chronicler: "Dessanu Relic Chronicler"
  DSO_dessanu_relic_chronicler_desc: "The Chroniclers are the sacred word bearers of the Cult. They maintain the holy records of our ancestors, rarely do they have the oppurtunity to access a Dessanu factory's memory core."
  job_DSO_dessanu_relic_chronicler:0 "Dessanu Relic Chronicler"
  job_DSO_dessanu_relic_chronicler_plural:0 "Dessanu Relic Chroniclers"
  job_DSO_dessanu_relic_chronicler_desc:1 "The Chroniclers are the sacred word bearers of the Cult. They maintain the holy records of our ancestors, rarely do they have the oppurtunity to access a Dessanu factory's memory core."
  mod_job_DSO_dessanu_relic_chronicler_add:0 "$job_DSO_dessanu_relic_chronicler$ Jobs"
- 
+
  DSO_dessanu_odd_factory_worker: "Ancient Dessanu Factory Worker"
  DSO_dessanu_odd_factory_worker_desc: "While fabrication in the factory is enitrely autonmated, production must be monitored by an worker to ensure all systems are nominal."
  job_DSO_dessanu_odd_factory_worker:0 "Ancient Dessanu Factory Worker"
  job_DSO_dessanu_odd_factory_worker_plural:0 "Ancient Dessanu Factory Workers"
  job_DSO_dessanu_odd_factory_worker_desc:1 "While fabrication in the factory is enitrely autonmated, production must be monitored by an overseer to ensure all systems are nominal."
  mod_job_DSO_dessanu_odd_factory_worker_add:0 "$job_DSO_dessanu_odd_factory_worker$ Jobs"
- 
+
  DSO_dessanu_odd_factory_drone: "Ancient Dessanu Factory Drone"
  DSO_dessanu_odd_factory_drone_desc: "While fabrication in the factory is enitrely autonmated, production must be monitored by a drone to ensure all systems are nominal."
  job_DSO_dessanu_odd_factory_drone:0 "Ancient Dessanu Factory Drone"

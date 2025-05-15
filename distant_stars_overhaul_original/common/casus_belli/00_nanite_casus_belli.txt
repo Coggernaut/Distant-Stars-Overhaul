@@ -26,8 +26,7 @@ cb_lgate_containment = {
 		has_origin = civic_gateway_worshiper
 	}
 	is_valid = {
-		has_total_war_cb = no
-		NOT = { is_overlord_to = from }
+		NOR = { has_total_war_cb = yes is_overlord_to = from }
 		OR = {
 			is_subject = no
 			overlord = { NOT = { is_same_value = from } }

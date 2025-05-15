@@ -8,7 +8,7 @@ consecrate_lgate = {
 		category = edicts
 		cost = { influence = 100 }
 	}
-	#resources = {
+	# resources = {
 	#	category = edicts
 	#	cost = {
 	#		unity = 25
@@ -52,8 +52,8 @@ lgate_guardian = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
 			count_owned_megastructure = {
-				limit = { is_megastructure_type = lgate_base }
 				count >= 3
+				limit = { is_megastructure_type = lgate_base }
 			}
 		}
 	}
@@ -61,8 +61,8 @@ lgate_guardian = {
 		custom_tooltip = {
 			fail_text = "requires_3_lgate"
 			count_owned_megastructure = {
-				limit = { is_megastructure_type = lgate_base }
 				count >= 3
+				limit = { is_megastructure_type = lgate_base }
 			}
 		}
 	}

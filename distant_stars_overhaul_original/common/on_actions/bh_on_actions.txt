@@ -6,22 +6,22 @@ on_game_start = {
 
 # This = owner of fleet 1 (destroyed)
 # From = owner of fleet 2 (combatant)
-# FromFrom = fleet 1
-# FromFromFrom = fleet 2
+# fromfrom = fleet 1
+# fromfromfrom = fleet 2
 on_fleet_destroyed_victim = {
 	events = {
-		#Cult of the Open Gateway#
+		# Cult of the Open Gateway#
 		dso_story.220
 	}
 }
 
 # This = owner of fleet 1 (combatant)
 # From = owner of fleet 2 (destroyed)
-# FromFrom = fleet 1
-# FromFromFrom = fleet 2
+# fromfrom = fleet 1
+# fromfromfrom = fleet 2
 on_fleet_destroyed_perp = {
 	events = {
-		#Cult of the Open Gateway#
+		# Cult of the Open Gateway#
 		dso_story.215
 		dso_story.216
 	}
@@ -29,7 +29,7 @@ on_fleet_destroyed_perp = {
 
 on_entering_system_fleet = {
 	events = {
-		#Cult of the Open Gateway#
+		# Cult of the Open Gateway#
 		dso_story.211
 		dso_story.204
 		dso_story.205
@@ -41,7 +41,7 @@ on_entering_system_fleet = {
 # From = Disabler Ship
 on_ship_disabled = {
 	events = {
-		#Cult of the Open Gateway#
+		# Cult of the Open Gateway#
 		dso_story.201 
 		dso_story.212
 		dso_story.217
@@ -159,6 +159,6 @@ on_terraforming_complete = {
 
 on_uplift_completion = {
 	events = {
-		dso_story.224		#Dessanu Uplifted Event
+		dso_story.224		# Dessanu Uplifted Event
 	}
 }

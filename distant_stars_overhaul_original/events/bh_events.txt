@@ -473,7 +473,7 @@ country_event = {
 		}
 	}
 	immediate = {
-		#Setting up bot scavanger System
+		# Setting up bot scavanger System
 		if = {
 			limit = { any_system = { has_star_flag = scavenger_bot_system } }
 			every_system = { 
@@ -485,7 +485,7 @@ country_event = {
 				}
 			}
 		}
-		#Setting up Nanite Empires
+		# Setting up Nanite Empires
 		if = {
 			limit = {
 				NOT = { has_origin = civic_gateway_worshiper }
@@ -510,7 +510,7 @@ country_event = {
 			country_event = { id = bio_harvest_planet.0 days = 30 } # This is a flavor event that gives the player ~50 nanites at the beginning of the game after 1 month.
 		}
 		######################################
-		#Gateway Worshipper & Gateway Pursuer#
+		# Gateway Worshipper & Gateway Pursuer#
 		######################################
 		if = {
 			limit = {
@@ -534,11 +534,11 @@ country_event = {
 				}
 			}
 			####################
-			#Gateway Worshipper#
+			# Gateway Worshipper#
 			####################
 			if = {
 				limit = { has_origin = civic_gateway_worshiper }
-				#Cult of the Open Gateway Schism
+				# Cult of the Open Gateway Schism
 				set_country_flag = starting_event
 				country_event = { id = dso_story.200 days = 400 }
 				capital_scope = {
@@ -592,16 +592,16 @@ country_event = {
 				}
 				random_planet_within_border = {
 					limit = {
-						#distance = {
+						# distance = {
 						#	source = root.capital_scope
 						#	max_jumps = 4
 						#	type = hyperlane
-						#}
+						# }
 						is_planet_class = pc_dessanu_relic
 					}
 					# create_colony = {
 					#	owner = root
-					#	species = owner_main_species
+					#	species = owner_species
 					#	ethos = owner
 					# }
 					set_owner = root
@@ -612,7 +612,7 @@ country_event = {
 						count = 3
 						add_deposit = d_nanosands
 						create_pop = {
-							species = owner_main_species
+							species = owner_species
 							ethos = owner
 						}
 					}
@@ -658,12 +658,12 @@ country_event = {
 					spawn_system = {
 						min_jumps = 2 
 						max_jumps = 2 
-						#min_distance = <int 0-100> 
-						#max_distance = <int 0-100> 
+						# min_distance = <int 0-100> 
+						# max_distance = <int 0-100> 
 						initializer = dso_story_dessanu_cult_schism_gray_goo_system
 						hyperlane = no
 						is_discovered = no
-						#direction = <corewards/rimwards> (optional) 
+						# direction = <corewards/rimwards> (optional) 
 					}
 					last_created_system = {
 						set_star_flag = hostile_system
@@ -930,7 +930,7 @@ country_event = {
 									is_ai = yes
 								}
 							}
-							add_hyperlane = { from = last_created_system to = THIS }
+							add_hyperlane = { from = last_created_system to = this }
 						}
 					}
 					
@@ -971,7 +971,7 @@ country_event = {
 								is_ai = yes
 							}
 						}
-						add_hyperlane = { from = last_created_system to = THIS }
+						add_hyperlane = { from = last_created_system to = this }
 					}
 				}
 			}

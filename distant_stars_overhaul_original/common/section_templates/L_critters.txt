@@ -1,4 +1,3 @@
-
 # Cult of the Open Gate Section
 ship_section_template = {
 	key = "Cult_of_The_Open_Gateway_Shipyard_01_key"

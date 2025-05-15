@@ -14,7 +14,7 @@
 #	army_damage = 1.0		# General scale of damage to armies, default = 1.0
 #
 #	kill_pop_chance = 0.2		# Chance that a pop is killed when planetary damage reaches 100%, default = 0
-#	min_pops_to_kill_pop = 8	# Will not kill/abduct pops if pops < this number already, default = 0
+#	min_pops_to_kill_pop = 800	# Will not kill/abduct pops if pops < this number already, default = 0
 #
 #	# root = fleet
 #	# from = planet

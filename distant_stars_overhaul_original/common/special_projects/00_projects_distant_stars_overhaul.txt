@@ -1,5 +1,5 @@
 ############################
-#Cult of the Gateway Schism#
+# Cult of the Gateway Schism#
 ############################
 # Board Cult Ship 1
 special_project = {
@@ -40,6 +40,7 @@ special_project = {
 	}
 
 	on_success = {
+		save_event_target_as = disabled_dessanu_cult_schism_flagship
 		owner = { country_event = { id = dso_story.214 } }
 	}
 
@@ -52,7 +53,7 @@ special_project = {
 	key = "HERETIC_DEBRIS"
 	event_chain = "dso_story_dessanu_cult_schism"
 	cost = 2000
-	#days_to_research = 60
+	# days_to_research = 60
 	tech_department = society_technology
 	picture = GFX_evt_space_debris
 
@@ -63,8 +64,8 @@ special_project = {
 	}
 
 	on_success = {
-		#ship_event = { id = dso_story.208 }
-		OWNER = { country_event = { id = dso_story.208 } }
+		# ship_event = { id = dso_story.208 }
+		owner = { country_event = { id = dso_story.208 } }
 		random_country = {
 			limit = { has_origin = civic_gateway_worshiper }
 			add_tech_progress = { tech = tech_repeatable_lcluster_clue progress = 0.075 }

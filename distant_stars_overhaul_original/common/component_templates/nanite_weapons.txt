@@ -7,7 +7,7 @@
 #	size = planet_killer
 #	entity = "invisible_turret_entity"
 #	type = planet_killer
-#	use_ship_kill_target = no
+#	use_ship_main_target = no
 #
 #	icon = GFX_technology_unknown
 #	icon_frame = 1
@@ -30,7 +30,7 @@ weapon_component_template = { # Nanobot Assimilation
 	size = planet_killer
 	entity = "invisible_turret_entity"
 	type = planet_killer
-		use_ship_kill_target = no
+		use_ship_main_target = no
 
 	prerequisites = { "tech_nanite_core" }
 

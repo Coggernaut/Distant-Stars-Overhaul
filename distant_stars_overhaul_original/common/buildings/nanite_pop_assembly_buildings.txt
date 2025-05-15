@@ -14,7 +14,7 @@ building_nanite_weapons_lab = {
 
 	allow = { has_upgraded_capital = yes }
 
-	planet_modifier = { job_nanite_researcher_add = 1 }
+	planet_modifier = { job_nanite_researcher_add = 100 }
 
 	resources = {
 		category = planet_buildings
@@ -78,7 +78,7 @@ building_nanite_assembly_plant = {
 			owner = { is_robot_empire = no }
 			AND = {
 				owner = { is_ai = yes }
-				free_jobs < 1
+				free_jobs < 100
 				OR = {
 					num_buildings = { type = any value = 16 }
 					merg_is_habitat = yes
@@ -87,7 +87,7 @@ building_nanite_assembly_plant = {
 		}
 	}
 
-	planet_modifier = { job_replicator_add = 5 }
+	planet_modifier = { job_replicator_add = 500 }
 
 	resources = {
 		category = planet_buildings

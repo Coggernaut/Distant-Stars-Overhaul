@@ -97,7 +97,7 @@ country_event = {
 				add_ship_design = last_created_design
 				create_leader = {
 					class = commander
-					species = owner_main_species
+					species = owner_species
 					name = random
 					skill = 3
 					leader_age_min = 25
@@ -128,7 +128,7 @@ country_event = {
 			event_target:graygoo_country = {
 				create_leader = {
 					class = commander
-					species = owner_main_species
+					species = owner_species
 					name = random
 					skill = 3
 					leader_age_min = 25
@@ -159,7 +159,7 @@ country_event = {
 			event_target:graygoo_country = {
 				create_leader = {
 					class = commander
-					species = owner_main_species
+					species = owner_species
 					name = random
 					skill = 3
 					leader_age_min = 25
@@ -190,7 +190,7 @@ country_event = {
 			event_target:graygoo_country = {
 				create_leader = {
 					class = commander
-					species = owner_main_species
+					species = owner_species
 					name = random
 					skill = 3
 					leader_age_min = 25
@@ -225,7 +225,7 @@ country_event = {
 					event_target:graygoo_country = {
 						create_leader = {
 							class = commander
-							species = owner_main_species
+							species = owner_species
 							name = random
 							skill = 3
 							leader_age_min = 25
@@ -328,20 +328,10 @@ country_event = {
 					if = {
 						limit = { is_capital = yes }
 						change_planet_size = 30
-						while = {
-							count = 112
-							create_pop = {
-								species = owner_main_species
-							}
-						}
+						create_pop = { species = owner_species size = 112 }
 					}
 					else = {
-						while = {
-							count = 30
-							create_pop = {
-								species = owner_main_species
-							}
-						}
+						create_pop = { species = owner_species size = 30 }
 					}
 					if = {
 						limit = { is_capital = yes }
@@ -491,8 +481,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				is_ai = no
-				NOT = { has_communications = from }
+				NOR = { is_ai = yes has_communications = from }
 			}
 			establish_communications_no_message = from
 		}
@@ -520,8 +509,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				is_ai = no
-				NOT = { has_communications = from }
+				NOR = { is_ai = yes has_communications = from }
 			}
 			establish_communications_no_message = from
 		}
@@ -1378,8 +1366,7 @@ country_event = {
 		}
 		every_playable_country = {
 			limit = {
-				is_ai = no
-				NOT = { is_same_value = event_target:goo_slayer }
+				NOR = { is_ai = yes is_same_value = event_target:goo_slayer }
 			}
 			country_event = { id = graygoo.182 }
 		}

@@ -2,11 +2,16 @@
 # Nanite Researcher Specialist Jobs
 ###################
 nanite_researcher = {
-	icon = researcher # TODO
+
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_research_lab_1
-	clothes_texture_index = 3
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_research_lab_1
+			icon = researcher # TODO
+		}
+	}
+
 	possible_precalc = can_fill_specialist_job
 	possible = {
 		complex_specialist_job_check_trigger = yes
@@ -32,8 +37,7 @@ nanite_researcher = {
 		weight = 100
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no
-			NOT = {
+			NOR = { has_citizenship_rights = yes
 				has_trait = trait_mechanical
 			}
 		}
@@ -99,16 +103,20 @@ nanite_researcher = {
 		}
 		modifier = {
 			factor = 1.5
-			has_job = nanite_researcher
+			has_job_type = nanite_researcher
 		}
 	}
 }
 
 bio_processor_drone = {
-	icon = bath_attendant_hive # TODO
 	category = simple_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_bio_reactor
+	swappable_data = {
+		default = {
+			icon = bath_attendant_hive # TODO
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_bio_reactor
+		}
+	}
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -138,7 +146,7 @@ bio_processor_drone = {
 		modifier = {
 			factor = 0.9
 			NOT = {
-				has_job = mining_drone
+				has_job_type = mining_drone
 			}
 			owner = {
 				has_monthly_income = {
@@ -149,7 +157,7 @@ bio_processor_drone = {
 		}
 		modifier = {
 			factor = 1.2
-			has_job = bio_processor_drone
+			has_job_type = bio_processor_drone
 		}
 		modifier = {
 			factor = 1.1
@@ -164,9 +172,13 @@ bio_processor_drone = {
 }
 
 DSO_nanite_forge_overseer = {
-	icon = administrator
 	category = overseer_drone
-	condition_string = OVERSEER_JOB_TRIGGER
+	swappable_data = {
+		default = {
+			icon = administrator
+			condition_string = OVERSEER_JOB_TRIGGER
+		}
+	}
 	is_capped_by_modifier = yes
 	building_icon = d_mining_tunnels # Vanilla copy
 

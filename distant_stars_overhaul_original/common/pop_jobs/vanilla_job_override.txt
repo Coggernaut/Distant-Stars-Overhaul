@@ -4,9 +4,13 @@
 
 archaeoengineers = {
 	category = specialist
-	condition_string = SPECIALIST_JOB_TRIGGER
-	building_icon = building_archaeostudies_faculty
-	clothes_texture_index = 3
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_archaeostudies_faculty
+		}
+	}
+
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -62,7 +66,7 @@ archaeoengineers = {
 		}
 	}
 
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			planet = {
 				exists = army_leader
@@ -81,8 +85,7 @@ archaeoengineers = {
 		mult = value:job_weights_research_modifier|JOB|archaeoengineers|
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOR = { has_citizenship_rights = yes has_trait = trait_mechanical }
 		}
 		modifier = {
 			factor = 2
@@ -94,7 +97,7 @@ archaeoengineers = {
 		}
 		modifier = {
 			factor = 1.5
-			has_job = archaeoengineers
+			has_job_type = archaeoengineers
 		}
 		modifier = {
 			factor = 0.8
@@ -106,8 +109,12 @@ archaeoengineers = {
 
 archaeo_drone = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_research_lab_1
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_research_lab_1
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -163,7 +170,7 @@ archaeo_drone = {
 		}
 	}
 
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			planet = {
 				exists = army_leader
@@ -185,8 +192,12 @@ archaeo_drone = {
 
 archaeo_unit = {
 	category = complex_drone
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_research_lab_1
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_research_lab_1
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -242,7 +253,7 @@ archaeo_unit = {
 		}
 	}
 
-	triggered_pop_modifier = {
+	triggered_pop_group_modifier = {
 		potential = {
 			planet = {
 				exists = army_leader

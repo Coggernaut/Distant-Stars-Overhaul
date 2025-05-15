@@ -3,9 +3,14 @@
 ###################
 
 DSO_dessanu_relic_chronicler = {
-	icon = fe_archivist
 	category = ruler
-	condition_string = OVERSEER_JOB_TRIGGER
+
+	swappable_data = {
+		default = {
+			icon = fe_archivist
+			condition_string = OVERSEER_JOB_TRIGGER
+		}
+	}
 	is_capped_by_modifier = yes
 	building_icon = d_mining_tunnels # Vanilla copy
 
@@ -17,7 +22,7 @@ DSO_dessanu_relic_chronicler = {
 	}
 
 	possible_precalc = can_fill_worker_job
-	
+
 	resources = {
 		category = planet_researchers
 		produces = {
@@ -51,7 +56,7 @@ DSO_dessanu_relic_chronicler = {
 	planet_modifier = {
 		planet_stability_add = 2.5
 	}
-	
+
 	country_modifier = {
 		custom_tooltip = unlock_tech_repeatable_lcluster_clue_requirements_tooltip
 	}
@@ -76,11 +81,15 @@ DSO_dessanu_relic_chronicler = {
 }
 
 DSO_dessanu_odd_factory_worker = {
-	icon = foundry
 	category = worker
 	is_capped_by_modifier = yes
-	condition_string = WORKER_JOB_TRIGGER
-	building_icon = building_foundry_1
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_foundry_1
+			icon = foundry
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -103,8 +112,7 @@ DSO_dessanu_odd_factory_worker = {
 		mult = value:job_weights_modifier|JOB|odd_factory_worker|RESOURCE|alloys|
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOR = { has_citizenship_rights = yes has_trait = trait_mechanical }
 		}
 		modifier = {
 			factor = 0.1
@@ -114,18 +122,22 @@ DSO_dessanu_odd_factory_worker = {
 			factor = 0
 			OR = {
 				owner = { has_country_flag = odd_factory_pause }
-				planet = { num_pops < 2 } # Odd Factory should not risk completely depopulating a colony
+				planet = { pop_amount < 200 } # Odd Factory should not risk completely depopulating a colony
 			}
 		}
 	}
 }
 
 DSO_dessanu_odd_factory_drone = {
-	icon = foundry
 	category = simple_drone
 	is_capped_by_modifier = yes
-	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_foundry_1
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_foundry_1
+			icon = foundry
+		}
+	}
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -149,7 +161,7 @@ DSO_dessanu_odd_factory_drone = {
 		mult = value:job_weights_modifier|JOB|odd_factory_drone|RESOURCE|alloys|
 		modifier = {
 			factor = 0
-			planet = { num_pops < 2 } # Odd Factory should not risk completely depopulating a colony
+			planet = { pop_amount < 200 } # Odd Factory should not risk completely depopulating a colony
 		}
 	}
 }

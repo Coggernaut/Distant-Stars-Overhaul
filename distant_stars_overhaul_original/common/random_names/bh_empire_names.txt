@@ -1,4 +1,3 @@
-
 # empire_name_format = { TODO?
 # 	random_weight = {
 # 		factor = 0
@@ -14,9 +13,9 @@
 # 			merg_is_awakened_fe = no
 # 		}
 # 	}
-# 	format = "format.bio_harvesters.1"
-# 	noun = "[This.GetSpeciesName]"
-# 	prefix_format = "[This.GetSpeciesName] <bio_harvesters>"
+# 	format = "{format.bio_harvesters.1}"
+# 	noun = "{[This.GetSpeciesName]}"
+# 	prefix_format = "{[This.GetSpeciesName] <bio_harvesters>}"
 # }
 
 empire_name_parts_list = {
@@ -47,7 +46,7 @@ empire_name_format = {
 			is_fallen_empire = no
 		}
 	}
-	format = "format.olig_spi.3"
-	noun = "[This.GetSpeciesName]"
-	prefix_format = "[This.GetSpeciesName] <oligarchic_spi>"
+	format = "{format.olig_spi.3}"
+	noun = "{[This.GetSpeciesName]}"
+	prefix_format = "{[This.GetSpeciesName] <oligarchic_spi>}"
 }

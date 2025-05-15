@@ -1,7 +1,7 @@
 overseer_drone = {
 	
 	rank = 3
-	clothes_texture_index = 1
+
 
 	change_job_threshold = 2
 
@@ -9,7 +9,7 @@ overseer_drone = {
 		weight = 3
 	}
 
-	pop_modifier = {
+	pop_group_modifier = {
 		pop_housing_usage_base = 1
 		pop_amenities_usage_no_happiness_base = 1
 	}
@@ -39,14 +39,14 @@ overseer_drone = {
 		potential = {
 			can_assemble_budding_pop = yes
 		}
-		planet_pop_assembly_organic_add = @plantoid_budding_rate
+		bonus_pop_growth_add = @plantoid_budding_rate
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			can_assemble_tiyanki_pop = yes
 		}
-		planet_pop_assembly_organic_add = @tiyanki_budding_rate
+		bonus_pop_growth_add = @tiyanki_budding_rate
 	}
 
 	unemployment_resources = {

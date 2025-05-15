@@ -1193,7 +1193,7 @@ dessanu_war_system = {
 					distance = 40
 					angle = 30
 				}
-				#save_global_event_target_as = debris_field_01
+				# save_global_event_target_as = debris_field_01
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -1615,7 +1615,7 @@ lost_dessanu_colony_system = {
 					distance = 40
 					angle = 30
 				}
-				#save_global_event_target_as = debris_field_01
+				# save_global_event_target_as = debris_field_01
 			}
 			create_ambient_object = {
 				type = "large_debris_object"
@@ -2026,7 +2026,7 @@ cult_of_the_open_gate_system = {
 					distance = 40
 					angle = 30
 				}
-				#save_global_event_target_as = debris_field_01
+				# save_global_event_target_as = debris_field_01
 			}
 			create_ambient_object = {
 				type = "large_debris_object"

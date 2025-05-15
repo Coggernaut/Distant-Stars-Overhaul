@@ -1,4 +1,4 @@
-#has_any_industry_district = {
+# has_any_industry_district = {
 #	OR = {
 #		has_district = district_industrial
 #		has_district = district_hab_industrial

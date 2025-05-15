@@ -1,5 +1,3 @@
-
-
 #########################
 # Cult of the Open Gate #
 #########################
@@ -7,8 +5,8 @@
 dso_cult_of_the_open_gate = {
 	scaled_difficulty_bonuses = 1.0	# Scales to setting
 	counts_for_victory = no
-	#sub_title = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE"
-	#sub_title_desc = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE_DESC"
+	# sub_title = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE"
+	# sub_title_desc = "COUNTRY_DSO_CULT_OF_THE_OPEN_GATE_DESC"
 	
 	playable = no
 	share_survey_data = no
@@ -26,7 +24,7 @@ dso_cult_of_the_open_gate = {
 	custom_diplomacy = no
 	enforces_borders = no
 	has_complete_sensor = yes
-	#custom_starbase = starbase_gatebuilders
+	# custom_starbase = starbase_gatebuilders
 	ai = {
 		enabled = yes
 		declare_war = yes
@@ -47,25 +45,25 @@ dso_cult_of_the_open_gate = {
 		}
 	}
 	faction = {
-		hostile = yes						#if yes, fleets will attack everything on sight ( except neutral fleets )
-#		follow = no							#if yes, fleets will follow the fleets of allies
-		auto_delete = no					#if yes, country will be automatically be deleted when considered dead ( usually when out of colonies and colony ships ). Should be yes in most cases but can be useful to turn off for some countries that are created by events.
-		needs_border_access = no			#decides if a country needs to have explicit border access from another country to enter its borders.
-		generate_borders = yes				#decides if a country generates borders or not
-		needs_colony = no					#decides if a country needs a colony ( or a colony ship ) to be considered alive.
-#		primitive = no						#primitive countries can have observation stations build by others in orbit of their planets
-#		primitive_age = "STONE_AGE"			#if primitive = yes, localization string. Remember that these values are dynamic and this value will most likely be overwritten instantly by the same event that created the country. This field can probably be left empty
-#		hostile_when_attacked = yes			#toggles if country turns hostile against attacker.
-#		show_borders_in_us = yes			#if no, borders for countries of this type will not be shown if in uncharted space
+		hostile = yes						# if yes, fleets will attack everything on sight ( except neutral fleets )
+#		follow = no							# if yes, fleets will follow the fleets of allies
+		auto_delete = no					# If yes, country will be automatically be deleted when considered dead ( usually when out of colonies and colony ships ). Should be yes in most cases but can be useful to turn off for some countries that are created by events.
+		needs_border_access = no			# Decides if a country needs to have explicit border access from another country to enter its borders.
+		generate_borders = yes				# decides if a country generates borders or not
+		needs_colony = no					# Decides if a country needs a colony ( or a colony ship ) to be considered alive.
+#		primitive = no						# primitive countries can have observation stations build by others in orbit of their planets
+#		primitive_age = "STONE_AGE"			# if primitive = yes, localization string. Remember that these values are dynamic and this value will most likely be overwritten instantly by the same event that created the country. This field can probably be left empty
+#		hostile_when_attacked = yes			# Toggles if country turns hostile against attacker.
+#		show_borders_in_us = yes			# if no, borders for countries of this type will not be shown if in uncharted space
 #		intel_effects_surveyed = yes
 	}
 
 	modules = {
 		basic_technology_module = {}
-		#standard_event_module = {}
-		#standard_leader_module = {}
-		#standard_economy_module = {}
-		#standard_species_rights_module = {}
+		# standard_event_module = {}
+		# standard_leader_module = {}
+		# standard_economy_module = {}
+		# standard_species_rights_module = {}
 		exclusive_diplomacy_module = {
 			contact_rule = on_action_only
 			can_receive = {

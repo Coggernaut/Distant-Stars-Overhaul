@@ -5,8 +5,10 @@ wg_dso_gateway_orthodoxy_civil_war_def = {
 	hide_if_no_cb = yes
 	total_war = yes
 
-	allowed_peace_offers = {
-		always = no
+	forbidden_peace_offers = {
+		status_quo = ""
+		demand_surrender = ""
+		surrender = ""
 	}
 
 	surrender_acceptance = -1000
@@ -32,8 +34,10 @@ wg_dso_gateway_orthodoxy_civil_war_att = {
 	total_war = yes
 	set_defender_wargoal = wg_dso_gateway_orthodoxy_civil_war_def
 
-	allowed_peace_offers = {
-		always = no
+	forbidden_peace_offers = {
+		status_quo = ""
+		demand_surrender = ""
+		surrender = ""
 	}
 
 	surrender_acceptance = -1000
@@ -71,11 +75,7 @@ wg_claim_lgates = {
 	# Hide this wargoal if country doesn't have the requisite CB
 	hide_if_no_cb = no	# Default no
 
-	allowed_peace_offers = {
-		status_quo
-		surrender
-		demand_surrender
-	}
+
 
 	# Cede claims on peace?
 	cede_claims = occupied_only

@@ -24,12 +24,12 @@ gateway_covenant = {
 		# years_passed > 10
 		# is_gestalt = no
 		is_faction_allowed = yes
-		count_owned_pop = {
-			count > 4
+		count_owned_pop_amount = {
+			count > 400
 			limit = {
 				OR = {
 					owner = { has_origin = civic_gateway_worshiper }
-					pop_has_ethic = ethic_spiritualist # The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
+					pop_group_has_ethic = ethic_spiritualist # The Spiritualist Dessanu heritage pops are necessary to START the faction in other Empires
 				}
 				species = {
 					OR = {
@@ -68,12 +68,12 @@ gateway_covenant = {
 				}
 			}
 			OR = {
-				pop_has_ethic = ethic_spiritualist
-				pop_has_ethic = ethic_fanatic_spiritualist
-				pop_has_ethic = ethic_militarist
-				pop_has_ethic = ethic_fanatic_militarist
-				pop_has_ethic = ethic_xenophile
-				pop_has_ethic = ethic_fanatic_xenophile
+				pop_group_has_ethic = ethic_spiritualist
+				pop_group_has_ethic = ethic_fanatic_spiritualist
+				pop_group_has_ethic = ethic_militarist
+				pop_group_has_ethic = ethic_fanatic_militarist
+				pop_group_has_ethic = ethic_xenophile
+				pop_group_has_ethic = ethic_fanatic_xenophile
 			}
 		}
 	}
@@ -254,8 +254,8 @@ gateway_covenant = {
 		trigger = {
 			owner = {
 				count_owned_megastructure = {
-					limit = { is_megastructure_type = lgate_base }
 					count >= 3
+					limit = { is_megastructure_type = lgate_base }
 				}
 			}
 		}
@@ -296,7 +296,7 @@ gateway_covenant = {
 			owner = {
 				NOR = {
 					# has_country_flag = flesh_weakened removed in 3.6
-					has_country_flag = cyborg_empire
+					is_cyborg_empire = yes
 					has_tradition = tr_cybernetics_transubstantiation_synthesis
 				}
 			}
@@ -314,9 +314,9 @@ gateway_covenant = {
 		potential = {
 			exists = owner
 			owner = {
-				pop_percentage = {
+				pop_amount_percentage = {
 					percentage > 0.09
-					limit = { pop_has_ethic = ethic_spiritualist }
+					limit = { pop_group_has_ethic = ethic_spiritualist }
 				}
 				any_playable_country = {
 					has_communications = prev
