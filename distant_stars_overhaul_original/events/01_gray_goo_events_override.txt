@@ -1366,7 +1366,7 @@ country_event = {
 		}
 		every_playable_country = {
 			limit = {
-				NOR = { is_ai = yes is_same_value = event_target:goo_slayer }
+				NOR = { is_ai = yes is_same_empire = event_target:goo_slayer }
 			}
 			country_event = { id = graygoo.182 }
 		}

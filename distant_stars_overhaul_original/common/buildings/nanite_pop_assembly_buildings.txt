@@ -1,6 +1,6 @@
 building_nanite_weapons_lab = {
 	base_buildtime = 360
-	base_cap_amount = 1
+	planet_limit = 1
 
 	category = research
 

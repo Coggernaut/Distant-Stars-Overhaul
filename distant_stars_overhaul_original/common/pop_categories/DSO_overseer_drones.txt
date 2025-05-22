@@ -1,5 +1,5 @@
 overseer_drone = {
-	
+
 	rank = 3
 
 
@@ -35,19 +35,18 @@ overseer_drone = {
 		unity = 10
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			can_assemble_budding_pop = yes
-		}
-		bonus_pop_growth_add = @plantoid_budding_rate
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			can_assemble_tiyanki_pop = yes
-		}
-		bonus_pop_growth_add = @tiyanki_budding_rate
-	}
+	# triggered_planet_modifier = { # No longer used in Vanilla v4.0
+	# 	potential = {
+	# 		can_assemble_budding_pop = yes
+	# 	}
+	# 	bonus_pop_growth_add = @plantoid_budding_rate
+	# }
+	# triggered_planet_modifier = { # No longer used in Vanilla v4.0
+	# 	potential = {
+	# 		can_assemble_tiyanki_pop = yes
+	# 	}
+	# 	bonus_pop_growth_add = @tiyanki_budding_rate
+	# }
 
 	unemployment_resources = {
 		category = unemployment_resources

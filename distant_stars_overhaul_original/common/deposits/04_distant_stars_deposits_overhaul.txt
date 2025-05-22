@@ -50,8 +50,7 @@ d_nanites_deposit = {
 
 	potential = {
 		solar_system = { has_star_flag = lcluster }
-		is_star = no
-		NOR = { is_colonizable = yes has_modifier = terraforming_candidate }
+		NOR = { is_star = yes is_colonizable = yes has_modifier = terraforming_candidate }
 	}
 	drop_weight = {
 		weight = 0

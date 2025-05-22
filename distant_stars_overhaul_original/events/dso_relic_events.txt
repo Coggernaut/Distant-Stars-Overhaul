@@ -97,7 +97,11 @@ country_event = {
 	option = { name = REMARKABLE }
 	after = {
 		hidden_effect = {
-			country_event = { id = first_contact.1060 days = 10 random = 10 }
+			# TODO
+			if = {
+				limit = { very_first_contact_paragon = yes }
+				set_country_flag = first_contact_protocol_event_happened
+			}
 		}
 	}
 }
@@ -162,7 +166,10 @@ country_event = {
 #	option = { name = REMARKABLE }
 #	after = {
 #		hidden_effect = {
-#			country_event = { id = first_contact.1060 days = 10 random = 10 }
+#			if = {
+#				limit = { very_first_contact_paragon = yes }
+#				set_country_flag = first_contact_protocol_event_happened
+#			}
 #		}
 #	}
 #}
@@ -278,10 +285,13 @@ country_event = {
 				}
 				random_system_planet = {
 					limit = {
-						is_capital = no
-						is_asteroid = no
-						is_star = no
-						NOR = { is_moon = yes is_planet_class = pc_gas_giant }
+						NOR = {
+							is_capital = yes
+							is_asteroid = yes
+							is_star = yes
+							is_moon = yes
+							is_planet_class = pc_gas_giant
+						}
 					}
 					save_event_target_as = dessanu_cult_schism_hijacked_fleet_planet
 				}
@@ -1185,7 +1195,7 @@ country_event = {
 		fromfromfrom = {
 			save_event_target_as = our_fleet
 			solar_system = {
-				save_event_target_as = our_fleet_position # used for loc purposes
+				save_event_target_as = our_fleet_position # Used for loc purposes
 				set_star_flag = dessanu_cult_schism_debris_system
 				create_ambient_object = {
 					type = "abandoned_ship_object"
@@ -1867,7 +1877,7 @@ planet_event = {
 			}
 			pop_amount < 100
 			has_planet_flag = colony_event
-			merg_is_hab_ringworld = yes
+			has_ringworld_output_boost = yes
 			is_planet_class = pc_shattered_ring_habitable
 			merg_is_habitat = yes
 		}

@@ -45,16 +45,16 @@ dso_cult_of_the_open_gate = {
 		}
 	}
 	faction = {
-		hostile = yes						# if yes, fleets will attack everything on sight ( except neutral fleets )
-#		follow = no							# if yes, fleets will follow the fleets of allies
+		hostile = yes						# If yes, fleets will attack everything on sight ( except neutral fleets )
+#		follow = no							# If yes, fleets will follow the fleets of allies
 		auto_delete = no					# If yes, country will be automatically be deleted when considered dead ( usually when out of colonies and colony ships ). Should be yes in most cases but can be useful to turn off for some countries that are created by events.
 		needs_border_access = no			# Decides if a country needs to have explicit border access from another country to enter its borders.
-		generate_borders = yes				# decides if a country generates borders or not
+		generate_borders = yes				# Decides if a country generates borders or not
 		needs_colony = no					# Decides if a country needs a colony ( or a colony ship ) to be considered alive.
-#		primitive = no						# primitive countries can have observation stations build by others in orbit of their planets
-#		primitive_age = "STONE_AGE"			# if primitive = yes, localization string. Remember that these values are dynamic and this value will most likely be overwritten instantly by the same event that created the country. This field can probably be left empty
+#		primitive = no						# Primitive countries can have observation stations build by others in orbit of their planets
+#		primitive_age = "STONE_AGE"			# If primitive = yes, localization string. Remember that these values are dynamic and this value will most likely be overwritten instantly by the same event that created the country. This field can probably be left empty
 #		hostile_when_attacked = yes			# Toggles if country turns hostile against attacker.
-#		show_borders_in_us = yes			# if no, borders for countries of this type will not be shown if in uncharted space
+#		show_borders_in_us = yes			# If no, borders for countries of this type will not be shown if in uncharted space
 #		intel_effects_surveyed = yes
 	}
 
