@@ -3,6 +3,11 @@ building_nanite_weapons_lab = {
 	planet_limit = 1
 
 	category = research
+	
+	building_sets = {
+		government
+		urban
+	}
 
 	potential = {
 		NOR = {
@@ -48,6 +53,11 @@ building_nanite_assembly_plant = {
 	can_build = no
 
 	category = pop_assembly
+	
+	building_sets = {
+		government
+		urban
+	}
 
 	prerequisites = {
 		tech_mega_assembly

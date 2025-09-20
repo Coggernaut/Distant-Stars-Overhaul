@@ -78,6 +78,18 @@ DSO_dessanu_relic_chronicler = {
 	weight = {
 		weight = 1000
 	}
+	
+	inline_script = "jobs/automodding_priority_charisma"
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = ruler
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 DSO_dessanu_odd_factory_worker = {
@@ -126,6 +138,16 @@ DSO_dessanu_odd_factory_worker = {
 			}
 		}
 	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 DSO_dessanu_odd_factory_drone = {
@@ -162,6 +184,16 @@ DSO_dessanu_odd_factory_drone = {
 		modifier = {
 			factor = 0
 			planet = { pop_amount < 200 } # Odd Factory should not risk completely depopulating a colony
+		}
+	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = worker
+				AMOUNT = local_pop_amount
+			}
 		}
 	}
 }

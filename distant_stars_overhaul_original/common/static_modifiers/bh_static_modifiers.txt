@@ -14,7 +14,7 @@ DSO_dessanu_heritage_world = {
 	icon_frame = 2
 	planet_resettlement_unemployed_destination_mult = 0.5
 	job_high_priest_add = 100
-	job_biologist_add = 100
+	job_archaeoengineers_add = 100
 	# pop_ethic_spiritualist_attraction_mult = 0.15
 	important = yes
 }
@@ -22,7 +22,7 @@ DSO_dessanu_heritage_world = {
 DSO_ancient_dessanu_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
 	icon_frame = 2
-	job_biologist_add = 300
+	job_archaeoengineers_add = 300
 	important = yes
 }
 

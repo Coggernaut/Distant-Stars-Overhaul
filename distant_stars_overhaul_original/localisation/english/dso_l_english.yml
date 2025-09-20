@@ -242,12 +242,23 @@
  distar_overhaul_insight_start.1.a: "Nanite Technology is a mystery, for now."
  distar_overhaul_insight_start.1.desc: "Our scientists where baffled as the L-Gates opened. Though it is clear nanite technology has flooded our galaxy, and can be reverse engineered. The question is, shall we pursue it?"
  distar_overhaul_insight_start.1.name: "Nanite Technology Floods The Galaxy"
+ 
  district_forgeworld_bio_reactor: "Bio-Processing Foundry"
  district_forgeworld_bio_reactor_desc: "Nanite Forgeworlds regularly process biomass into energy. These sectors of the Forgeworld are called Bio-Processing Foundries. Biological organisms find them extremely disturbing."
  district_forgeworld_bio_reactor_plural: "Bio-Processing Foundries"
+ 
  district_nanite_forgeworld_industry: "Alloy Foundry"
  district_nanite_forgeworld_industry_desc: "Nanite Forgeworlds regularly process minerals into useful alloys. These sectors of the Forgeworld are called Alloy Foundries. The temperatures are so high that biological organisms find them extremely unpleasant."
  district_nanite_forgeworld_industry_plural: "Alloy Foundries"
+ 
+ zone_nanite_forgeworld_bio_reactor: "Biomass Repositories"
+ zone_nanite_forgeworld_bio_reactor_desc: "Nanite Forgeworlds regularly process biomass into energy. These repositories supplement the Forgeworld's constant upkeep of organic matter."
+ zone_nanite_forgeworld_bio_reactor_plural: "Bionass Repositories"
+ 
+ zone_nanite_forgeworld_industry: "Auxiliary Forges"
+ zone_nanite_forgeworld_industry_desc: "Nanite Forgeworlds regularly process minerals into useful alloys. These auxiliary forges augment the Forgeworld for even higher efficiency."
+ zone_nanite_forgeworld_industry_plural: "Auxiliary Forges"
+ 
  dso_ancient_dessanu_battle_site: "$ancrel.108.name$"
  dso_district_generator_uncapped: "Energy Generator District"
  dso_district_generator_uncapped_desc: ""
@@ -302,7 +313,8 @@
  harvest_nanite_planet.1.a: "Prepare a replicator, harvest a new world soon!"
  harvest_nanite_planet.1.desc: ""
  harvest_nanite_planet.1.name: "Intact Nanites found on Ember!"
- job_bio_processor_drone: "Bio-Processor Job"
+ job_bio_processor_drone: "Bio-Processor Drone"
+ job_bio_processor_drone_plural: "Bio-Processor Drones"
  job_nanite_replicator_effect_desc: "Fabricators that merge §YNanites§! into new §YMachine Pops§!"
  job_nanite_researcher_effect_desc: "£job_researcher£ Nanite Researchers turn §YNanites§! into £engineering£ §YResearch Points§! for new technologies."
  l_amoeba_spawn_modifier: "L-Amoeba Spawning Grounds"

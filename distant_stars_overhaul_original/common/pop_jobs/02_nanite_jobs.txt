@@ -106,13 +106,23 @@ nanite_researcher = {
 			has_job_type = nanite_researcher
 		}
 	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 bio_processor_drone = {
 	category = simple_drone
 	swappable_data = {
 		default = {
-			icon = bath_attendant_hive # TODO
+			icon = bio_processor_drone # TODO
 			condition_string = DRONE_JOB_TRIGGER
 			building_icon = building_bio_reactor
 		}
@@ -129,6 +139,9 @@ bio_processor_drone = {
 		category = planet_technician
 		produces = {
 			energy = 10
+		}
+		produces = {
+			alloys = 3
 		}
 		upkeep = {
 			food = 8
@@ -169,14 +182,25 @@ bio_processor_drone = {
 			has_trait = trait_cybernetic
 		}
 	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
 }
 
 DSO_nanite_forge_overseer = {
 	category = overseer_drone
 	swappable_data = {
 		default = {
-			icon = administrator
+			icon = DSO_nanite_forge_overseer
 			condition_string = OVERSEER_JOB_TRIGGER
+			building_icon = building_fe_assembly_1
 		}
 	}
 	is_capped_by_modifier = yes
@@ -214,5 +238,15 @@ DSO_nanite_forge_overseer = {
 
 	weight = {
 		weight = 1000
+	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = ruler
+				AMOUNT = local_pop_amount
+			}
+		}
 	}
 }

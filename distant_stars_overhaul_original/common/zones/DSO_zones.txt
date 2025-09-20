@@ -1,0 +1,29 @@
+# Planet District Zones
+#
+# Documentation: ./99_HOW_TO_ZONE.txt
+
+zone_nanite_forgeworld_industry = {
+	inline_script = {
+		script = zones/shared_industrial_foundry_zone
+		AMOUNT = @scaling_district_1_job
+	}
+
+	zone_sets = {
+		nanite_forgeworld_industry
+	}
+
+	#show_in_tech = tech_mineral_purification_1
+}
+
+zone_nanite_forgeworld_bio_reactor = {
+	inline_script = {
+		script = zones/shared_nanite_forgeworld_bio_reactor_zone
+		AMOUNT = @scaling_district_1_job
+	}
+
+	zone_sets = {
+		nanite_forgeworld_bio_reactor
+	}
+
+	#show_in_tech = tech_food_processing_1
+}

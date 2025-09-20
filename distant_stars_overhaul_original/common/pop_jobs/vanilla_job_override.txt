@@ -10,7 +10,8 @@ archaeoengineers = {
 			building_icon = building_archaeostudies_faculty
 		}
 	}
-
+	
+	tags = { research minor_artifacts }
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -103,6 +104,16 @@ archaeoengineers = {
 			factor = 0.8
 			is_enslaved = yes
 			has_slavery_type = { type = slavery_indentured }
+		}
+	}
+	
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = specialist
+				AMOUNT = local_pop_amount
+			}
 		}
 	}
 }
