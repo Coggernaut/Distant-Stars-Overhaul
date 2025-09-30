@@ -38,9 +38,7 @@ empire_name_format = {
 		factor = 0
 		modifier = {
 			add = 5
-			OR = {
-				has_government = "gov_spiritualist_gateway_worshiper"
-			}
+			has_government = "gov_spiritualist_gateway_worshiper"
 			is_pirate = no
 			is_primitive = no
 			is_fallen_empire = no

@@ -6,7 +6,7 @@ dso_district_nexus = {
 	base_buildtime = 480
 	icon = district_nanite_forgeworld_nexus
 	is_capped_by_modifier = no
-	
+
 	zone_slots = {
 		slot_city_government
 		slot_city_01
@@ -59,9 +59,7 @@ dso_district_nexus = {
 			exists = owner
 			owner = { has_technology = tech_housing_1 }
 		}
-		modifier = {
-			planet_housing_add = 100
-		}
+		planet_housing_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -69,10 +67,8 @@ dso_district_nexus = {
 			exists = owner
 			owner = { has_technology = tech_housing_2 }
 		}
-		modifier = {
-			planet_housing_add = 100
-			job_maintenance_drone_add = 100
-		}
+		planet_housing_add = 100
+		job_maintenance_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -80,9 +76,7 @@ dso_district_nexus = {
 			exists = owner
 			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
 		}
-		modifier = {
-			planet_housing_add = 100
-		}
+		planet_housing_add = 100
 	}
 }
 
@@ -90,7 +84,7 @@ district_nanite_forgeworld_industry = {
 	icon = district_nanite_forgeworld_industry
 	base_buildtime = 240
 	is_capped_by_modifier = no
-	
+
 	zone_slots = {
 		slot_nanite_forgeworld_industry
 	}
@@ -128,10 +122,8 @@ district_nanite_forgeworld_industry = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {
-			job_fabricator_add = 500
-			planet_jobs_alloys_produces_mult = 0.01
-		}
+		job_fabricator_add = 500
+		planet_jobs_alloys_produces_mult = 0.01
 	}
 
 	triggered_desc = {
@@ -141,28 +133,23 @@ district_nanite_forgeworld_industry = {
 		}
 		text = job_fabricator_effect_desc
 	}
-
 }
 
 dso_district_generator_uncapped = {
 	base_buildtime = 240
 	icon = district_nanite_forgeworld_generator
 	is_capped_by_modifier = no
-	
+
 	zone_slots = {
 		slot_energy
 	}
 
 	show_on_uncolonized = {
-		OR = {
-			uses_district_set = dso_nanite_forgeworld
-		}
+		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
-		OR = {
-			uses_district_set = dso_nanite_forgeworld
-		}
+		uses_district_set = dso_nanite_forgeworld
 	}
 
 	allow = {
@@ -196,9 +183,7 @@ dso_district_generator_uncapped = {
 				has_valid_civic = civic_agrarian_idyll
 			}
 		}
-		modifier = {
-			planet_housing_add = 100
-		}
+		planet_housing_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -206,9 +191,7 @@ dso_district_generator_uncapped = {
 			exists = owner
 			owner = { is_hive_empire = yes }
 		}
-		modifier = {
-			job_technician_drone_add = 300
-		}
+		job_technician_drone_add = 300
 	}
 
 	triggered_planet_modifier = {
@@ -216,11 +199,9 @@ dso_district_generator_uncapped = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {
-			job_technician_drone_add = 400
-			planet_housing_add = 100
-			planet_jobs_energy_produces_mult = 0.01
-		}
+		job_technician_drone_add = 400
+		planet_housing_add = 100
+		planet_jobs_energy_produces_mult = 0.01
 	}
 
 	triggered_planet_modifier = {
@@ -229,9 +210,7 @@ dso_district_generator_uncapped = {
 			owner = { is_gestalt = yes }
 			has_active_building = building_energy_nexus
 		}
-		modifier = {
-			job_technician_drone_add = 100
-		}
+		job_technician_drone_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -242,9 +221,7 @@ dso_district_generator_uncapped = {
 				is_fallen_empire_spiritualist = no
 			}
 		}
-		modifier = {
-			job_technician_add = 200
-		}
+		job_technician_add = 200
 	}
 
 	triggered_planet_modifier = {
@@ -256,9 +233,7 @@ dso_district_generator_uncapped = {
 			}
 			has_active_building = building_energy_nexus
 		}
-		modifier = {
-			job_technician_add = 100
-		}
+		job_technician_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -266,9 +241,7 @@ dso_district_generator_uncapped = {
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
-		modifier = {
-			job_fe_acolyte_generator_add = 200
-		}
+		job_fe_acolyte_generator_add = 200
 	}
 
 	triggered_planet_modifier = {
@@ -277,9 +250,7 @@ dso_district_generator_uncapped = {
 			owner = { is_fallen_empire_spiritualist = yes }
 			has_active_building = building_energy_nexus
 		}
-		modifier = {
-			job_fe_acolyte_generator_add = 100
-		}
+		job_fe_acolyte_generator_add = 100
 	}
 
 	triggered_desc = {
@@ -323,7 +294,7 @@ district_forgeworld_bio_reactor = {
 	icon = district_forgeworld_bio_reactor
 	base_buildtime = 240
 	is_capped_by_modifier = no
-	
+
 	zone_slots = {
 		slot_nanite_forgeworld_bio_reactor
 	}
@@ -362,10 +333,8 @@ district_forgeworld_bio_reactor = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {
-			job_bio_processor_drone_add = 500
-			planet_jobs_energy_produces_mult = 0.01
-		}
+		job_bio_processor_drone_add = 500
+		planet_jobs_energy_produces_mult = 0.01
 	}
 
 	triggered_desc = {
@@ -375,5 +344,4 @@ district_forgeworld_bio_reactor = {
 		}
 		text = bio_processor_drone_effect_desc
 	}
-
 }

@@ -17,7 +17,7 @@
 #	base_buildtime = @b2_time
 #	can_build = no
 #	category = resource
-#	
+#
 #	building_sets = {
 #		mining
 #	}
@@ -194,7 +194,7 @@
 #
 #	destroy_trigger = {
 #		OR = {
-#			OR = { has_modifier = resort_colony }
+#			has_modifier = resort_colony
 #
 #			AND = {
 #				exists = owner

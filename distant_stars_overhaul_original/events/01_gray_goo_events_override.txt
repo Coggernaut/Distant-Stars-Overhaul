@@ -106,6 +106,10 @@ country_event = {
 			}
 			create_fleet = {
 				name = "NAME_Dessanu_Fleet"
+				settings = {
+					# garrison = yes
+					uses_naval_capacity = no
+				}
 				effect = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
@@ -120,10 +124,6 @@ country_event = {
 					}
 					assign_leader = last_created_leader
 				}
-				settings = {
-					# garrison = yes
-					uses_naval_capacity = no
-				}
 			}
 			event_target:graygoo_country = {
 				create_leader = {
@@ -137,6 +137,10 @@ country_event = {
 			}
 			create_fleet = {
 				name = "NAME_Dessanu_Fleet"
+				settings = {
+					# garrison = yes
+					uses_naval_capacity = no
+				}
 				effect = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
@@ -151,10 +155,6 @@ country_event = {
 					}
 					assign_leader = last_created_leader
 				}
-				settings = {
-					# garrison = yes
-					uses_naval_capacity = no
-				}
 			}
 			event_target:graygoo_country = {
 				create_leader = {
@@ -168,6 +168,10 @@ country_event = {
 			}
 			create_fleet = {
 				name = "NAME_Dessanu_Fleet"
+				settings = {
+					# garrison = yes
+					uses_naval_capacity = no
+				}
 				effect = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
@@ -182,10 +186,6 @@ country_event = {
 					}
 					assign_leader = last_created_leader
 				}
-				settings = {
-					# garrison = yes
-					uses_naval_capacity = no
-				}
 			}
 			event_target:graygoo_country = {
 				create_leader = {
@@ -199,6 +199,10 @@ country_event = {
 			}
 			create_fleet = {
 				name = "NAME_Dessanu_Fleet"
+				settings = {
+					# garrison = yes
+					uses_naval_capacity = no
+				}
 				effect = {
 					set_owner = event_target:graygoo_country
 					create_dessanu_ships_1 = yes
@@ -212,10 +216,6 @@ country_event = {
 						angle = 270
 					}
 					assign_leader = last_created_leader
-				}
-				settings = {
-					# garrison = yes
-					uses_naval_capacity = no
 				}
 			}
 			every_system = {
@@ -234,6 +234,10 @@ country_event = {
 					}
 					create_fleet = {
 						name = "NAME_Dessanu_Fleet"
+						settings = {
+							# garrison = yes
+							uses_naval_capacity = no
+						}
 						effect = {
 							set_owner = event_target:graygoo_country
 							create_dessanu_ships_1 = yes
@@ -247,10 +251,6 @@ country_event = {
 								angle = random
 							}
 							assign_leader = last_created_leader
-						}
-						settings = {
-							# garrison = yes
-							uses_naval_capacity = no
 						}
 					}
 				}
@@ -328,10 +328,10 @@ country_event = {
 					if = {
 						limit = { is_capital = yes }
 						change_planet_size = 30
-						create_pop = { species = owner_species size = 112 }
+						create_pop_group = { species = owner_species size = 112 }
 					}
 					else = {
-						create_pop = { species = owner_species size = 30 }
+						create_pop_group = { species = owner_species size = 30 }
 					}
 					if = {
 						limit = { is_capital = yes }
@@ -375,9 +375,7 @@ country_event = {
 					}
 					if = {
 						limit = {
-							event_target:graygoo_country.species = {
-								is_lithoid = yes
-							}
+							event_target:graygoo_country = { is_lithoid_empire = yes }
 						}
 						while = {
 							count = 2
@@ -415,7 +413,6 @@ country_event = {
 					add_building = building_class_4_singularity
 					add_building = building_affluence_center
 					add_building = building_nano_forge
-
 				}
 			}
 		}
@@ -563,7 +560,7 @@ country_event = {
 		}
 		if = {
 			limit = { NOT = { has_technology = tech_mine_living_metal } }
-			 give_technology = { tech = tech_mine_living_metal }
+			give_technology = { tech = tech_mine_living_metal }
 		}
 		else = {
 			# nothing
@@ -929,8 +926,7 @@ country_event = {
 		set_country_flag = gate_builder_diplomacy_engaged
 		set_country_flag = gate_builders_hostility
 		event_target:gate_builders = {
-			# set_faction_hostility = {
-			#	target = root
+			# set_faction_hostility = { #	target = root
 			#	set_hostile = yes
 			#	set_neutral = no
 			#	set_friendly = no
@@ -1182,8 +1178,7 @@ ship_event = {
 		hidden_effect = {
 			owner = { set_country_flag = gate_builders_hostility }
 			# event_target:gate_builders = {
-			#	set_faction_hostility = {
-			#		target = root.owner
+			#	set_faction_hostility = { #		target = root.owner
 			#		set_hostile = yes
 			#		set_neutral = no
 			#		set_friendly = no
@@ -1232,8 +1227,7 @@ country_event = {
 	immediate = {
 		set_country_flag = gate_builders_hostility
 		event_target:gate_builders = {
-			# set_faction_hostility = {
-			#	target = root
+			# set_faction_hostility = { #	target = root
 			#	set_hostile = yes
 			#	set_neutral = no
 			#	set_friendly = no
@@ -1328,8 +1322,7 @@ fleet_event = {
 		hidden_effect = {
 			owner = { set_country_flag = gate_builders_hostility }
 			event_target:gate_builders = {
-				# set_faction_hostility = {
-				#	target = root.owner
+				# set_faction_hostility = { #	target = root.owner
 				#	set_hostile = yes
 				#	set_neutral = no
 				#	set_friendly = no
@@ -1372,7 +1365,7 @@ country_event = {
 		}
 		observer_event = { id = observer.67 }
 		every_owned_planet = {
-			limit = { is_planet_class = pc_gaia }
+			limit = { merg_is_gaia_basic = yes }
 			change_pc = pc_gray_goo
 			reroll_planet = yes
 			destroy_colony = yes

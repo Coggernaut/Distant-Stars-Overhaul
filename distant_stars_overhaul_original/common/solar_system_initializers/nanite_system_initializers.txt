@@ -22,21 +22,14 @@ scavenger_system = {
 		base = 90000
 		modifier = {
 			factor = 0
-			has_distar = no
+			OR = {
+				has_distar = no
+				is_fe_cluster = yes
+				has_star_flag = empire_cluster
+				is_bottleneck_system = yes
+			}
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
-		modifier = {
-			factor = 0
-			is_bottleneck_system = yes
-		}
-	}
+			}
 	scaled_spawn_chance = 8
 	max_instances = 1
 
@@ -922,7 +915,6 @@ civic_harvester_nanites_system = {
 				}
 			}
 		}
-		
 	}
 
 	planet = {
@@ -935,13 +927,12 @@ civic_harvester_nanites_system = {
 		satellite_naming_policy = upper_case_roman_numerals
 
 		change_orbit = 25
-		
+
 		planet = {
 			count = { min = 1 max = 1 }
 			orbit_distance = 15
 			class = pc_molten
 			orbit_angle = { min = 90 max = 270 }
-			
 		}
 
 		planet = {
@@ -970,7 +961,7 @@ civic_harvester_nanites_system = {
 				orbit_distance = 5
 				size = 10
 				# init_effect = {
-				#	
+				#
 				#}
 			}
 		}
@@ -990,7 +981,6 @@ civic_harvester_nanites_system = {
 				orbit_distance = 5
 			}
 		}
-		
 	}
 
 	change_orbit = -245
@@ -1050,7 +1040,6 @@ civic_gateway_worshiper_system = {
 		orbit_angle = 0
 		size = { min = 35 max = 35 }
 		has_ring = no
-		
 	}
 
 	planet = {
@@ -1063,13 +1052,12 @@ civic_gateway_worshiper_system = {
 		satellite_naming_policy = upper_case_roman_numerals
 
 		change_orbit = 25
-		
+
 		planet = {
 			count = { min = 1 max = 1 }
 			orbit_distance = 15
 			class = pc_molten
 			orbit_angle = { min = 90 max = 270 }
-			
 		}
 
 		planet = {
@@ -1117,7 +1105,6 @@ civic_gateway_worshiper_system = {
 				orbit_distance = 5
 			}
 		}
-		
 	}
 
 	change_orbit = -245
@@ -1151,7 +1138,7 @@ civic_gateway_worshiper_system = {
 	}
 }
 
-# 
+#
 dessanu_war_system = {
 	class = "sc_m_giant"
 	asteroid_belt = {
@@ -1570,7 +1557,6 @@ dessanu_war_system = {
 			prevent_anomaly = yes
 		}
 	}
-
 }
 
 # Lost Dessanu Colony System
@@ -1981,7 +1967,6 @@ lost_dessanu_colony_system = {
 			prevent_anomaly = yes
 		}
 	}
-
 }
 
 # Cult of the Open Gate System
@@ -2392,7 +2377,6 @@ cult_of_the_open_gate_system = {
 			prevent_anomaly = yes
 		}
 	}
-
 }
 
 # Black Holes
@@ -2406,5 +2390,4 @@ dso_story_dessanu_cult_schism_gray_goo_system = {
 		class = star
 		orbit_distance = 0
 	}
-
 }

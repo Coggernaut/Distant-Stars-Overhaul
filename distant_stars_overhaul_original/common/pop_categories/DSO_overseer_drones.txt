@@ -2,7 +2,6 @@ overseer_drone = {
 
 	rank = 3
 
-
 	change_job_threshold = 2
 
 	weight = {
@@ -25,6 +24,7 @@ overseer_drone = {
 
 	resettlement_cost = {
 		trigger = {
+			exists = owner
 			owner = {
 				NOR = {
 					has_valid_civic = civic_machine_ota_updates

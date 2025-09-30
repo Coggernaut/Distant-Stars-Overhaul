@@ -49,7 +49,7 @@ colonizer = {
 	required_component_set = "sensor_components"
 	valid_target_aggressive_stance = no
 	auto_upgrade = yes
-	
+
 	resources = {
 		category = colonies
 		# Alloys
@@ -98,9 +98,10 @@ colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					is_lithoid_empire = no
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_lithoid_empire = yes
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -124,8 +125,9 @@ colonizer = {
 			trigger = {
 				from = {
 					is_lithoid_empire = yes
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -149,9 +151,9 @@ colonizer = {
 			trigger = {
 				from = {
 					is_robot_empire = yes
-					is_gestalt = no
-					is_virtual_empire = no
 					NOR = {
+						is_gestalt = yes
+						is_virtual_empire = yes
 						has_origin = civic_harvester_nanites
 						has_origin = civic_gateway_pursuer
 					}
@@ -334,9 +336,10 @@ guided_sapience_colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					is_lithoid_empire = no
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_lithoid_empire = yes
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -360,8 +363,9 @@ guided_sapience_colonizer = {
 			trigger = {
 				from = {
 					is_lithoid_empire = yes
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -538,9 +542,10 @@ colony_vessel = {
 		cost = {
 			trigger = {
 				from = {
-					is_lithoid_empire = no
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_lithoid_empire = yes
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -564,8 +569,9 @@ colony_vessel = {
 			trigger = {
 				from = {
 					is_lithoid_empire = yes
-					is_robot_empire = no
-					NOR = { is_hive_empire = yes
+					NOR = {
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}

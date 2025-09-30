@@ -67,10 +67,8 @@ nanite_habitat_0 = {
 				# Balance for habitats
 				custom_tooltip = {
 					fail_text = "requires_not_minor_planetary_body"
-					NOR = {
-						is_asteroid = yes
-						is_moon = yes
-					}
+					is_asteroid = no
+					is_moon = no
 				}
 				custom_tooltip = {
 					fail_text = "requires_not_star"
@@ -84,12 +82,10 @@ nanite_habitat_0 = {
 	# from = country
 	ai_weight = {
 		factor = 10
-
 		modifier = {
 			factor = 0
 			starbase = { NOT = { has_starbase_size >= starbase_starport } }
 		}
-
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
@@ -384,7 +380,6 @@ nanite_habitat_0 = {
 					set_planet_flag = mining_habitat
 				}
 			}
-
 		}
 		# TODO?
 		# event_target:nanite_habitat_target = { planet_event = { id = harvest_nanite_planet.3 } }

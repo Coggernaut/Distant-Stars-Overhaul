@@ -27,9 +27,7 @@ d_nanite_forgeworld_deposit = {
 		potential = {
 			is_nanite_forgeworld = yes
 		}
-		modifier = {
-			job_DSO_nanite_forge_overseer_add = 100
-		}
+		job_DSO_nanite_forge_overseer_add = 100
 	}
 
 	drop_weight = {

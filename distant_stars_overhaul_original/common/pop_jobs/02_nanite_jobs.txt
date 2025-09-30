@@ -72,11 +72,11 @@ nanite_researcher = {
 		}
 		modifier = {
 			factor = 1.25
-			has_trait = trait_latent_psionic
+			is_latent_psionic_species = yes
 		}
 		modifier = {
 			factor = 1.5
-			has_trait = trait_psionic
+			is_psionic_species = yes
 		}
 		modifier = {
 			factor = 0.2
@@ -106,7 +106,7 @@ nanite_researcher = {
 			has_job_type = nanite_researcher
 		}
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {
@@ -182,7 +182,7 @@ bio_processor_drone = {
 			has_trait = trait_cybernetic
 		}
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {
@@ -239,7 +239,7 @@ DSO_nanite_forge_overseer = {
 	weight = {
 		weight = 1000
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {

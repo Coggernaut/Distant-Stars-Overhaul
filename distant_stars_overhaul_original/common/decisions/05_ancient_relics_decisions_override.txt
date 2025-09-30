@@ -18,7 +18,7 @@ decision_baol_life_seed = {
 			merg_is_machine_world = yes
 			merg_is_relic_world = yes
 			merg_is_hive_world = yes
-			is_planet_class = pc_gaia
+			merg_is_gaia_basic = yes
 			is_artificial = yes
 		}
 		exists = owner
@@ -51,7 +51,7 @@ decision_baol_life_seed = {
 			}
 			while = {
 				count = 4
-				create_pop = {
+				create_pop_group = {
 					species = event_target:nu_baol_species
 					ethos = {
 						ethic = "ethic_pacifist"

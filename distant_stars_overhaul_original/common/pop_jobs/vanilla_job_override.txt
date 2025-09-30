@@ -10,7 +10,7 @@ archaeoengineers = {
 			building_icon = building_archaeostudies_faculty
 		}
 	}
-	
+
 	tags = { research minor_artifacts }
 
 	possible_pre_triggers = {
@@ -67,7 +67,7 @@ archaeoengineers = {
 		}
 	}
 
-	triggered_pop_group_modifier = {
+	triggered_planet_pop_group_modifier_for_all = {
 		potential = {
 			planet = {
 				exists = army_leader
@@ -77,7 +77,7 @@ archaeoengineers = {
 			}
 		}
 		modifier = {
-			pop_defense_armies_add = 1
+			planet_defense_armies_add = 1
 		}
 	}
 
@@ -106,7 +106,7 @@ archaeoengineers = {
 			has_slavery_type = { type = slavery_indentured }
 		}
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {
@@ -181,7 +181,7 @@ archaeo_drone = {
 		}
 	}
 
-	triggered_pop_group_modifier = {
+	triggered_planet_pop_group_modifier_for_all = {
 		potential = {
 			planet = {
 				exists = army_leader
@@ -191,7 +191,7 @@ archaeo_drone = {
 			}
 		}
 		modifier = {
-			pop_defense_armies_add = 1
+			planet_defense_armies_add = 1
 		}
 	}
 
@@ -264,7 +264,7 @@ archaeo_unit = {
 		}
 	}
 
-	triggered_pop_group_modifier = {
+	triggered_planet_pop_group_modifier_for_all = {
 		potential = {
 			planet = {
 				exists = army_leader
@@ -274,7 +274,7 @@ archaeo_unit = {
 			}
 		}
 		modifier = {
-			pop_defense_armies_add = 1
+			planet_defense_armies_add = 1
 		}
 	}
 

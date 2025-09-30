@@ -9,9 +9,7 @@ d_dessanu_relic_odd_factory = {
 			exists = owner
 			owner = { is_regular_empire = yes }
 		}
-		modifier = {
-			job_DSO_dessanu_odd_factory_worker_add = 100
-		}
+		job_DSO_dessanu_odd_factory_worker_add = 100
 	}
 
 	triggered_planet_modifier = {
@@ -19,22 +17,18 @@ d_dessanu_relic_odd_factory = {
 			exists = owner
 			owner = { is_hive_empire = yes }
 		}
-		modifier = {
-			job_DSO_dessanu_odd_factory_worker_add = 100
-		}
+		job_DSO_dessanu_odd_factory_worker_add = 100
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { 
-				is_regular_empire = yes 
+			owner = {
+				is_regular_empire = yes
 				has_government = gov_spiritualist_gateway_worshiper
 			}
 		}
-		modifier = {
-			job_DSO_dessanu_relic_chronicler_add = 100
-		}
+		job_DSO_dessanu_relic_chronicler_add = 100
 	}
 
 	drop_weight = {

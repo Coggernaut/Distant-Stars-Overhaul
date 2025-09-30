@@ -12,6 +12,9 @@ create_dessanu_roamers_1 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -59,9 +62,6 @@ create_dessanu_roamers_1 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -78,6 +78,9 @@ create_dessanu_roamers_2 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -125,9 +128,6 @@ create_dessanu_roamers_2 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -144,6 +144,9 @@ create_dessanu_roamers_3 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -191,9 +194,6 @@ create_dessanu_roamers_3 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -210,6 +210,9 @@ create_dessanu_roamers_4 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -257,9 +260,6 @@ create_dessanu_roamers_4 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -276,6 +276,9 @@ create_dessanu_roamers_5 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -323,9 +326,6 @@ create_dessanu_roamers_5 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -342,6 +342,9 @@ create_dessanu_roamers_6 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -389,9 +392,6 @@ create_dessanu_roamers_6 = {
 			#	}
 			#}
 		}
-		settings = {
-			uses_naval_capacity = no
-		}
 	}
 }
 
@@ -408,6 +408,9 @@ create_dessanu_roamers_7 = {
 	}
 	create_fleet = {
 		name = "NAME_Dessanu_Fleet_2"
+		settings = {
+			uses_naval_capacity = no
+		}
 		effect = {
 			set_owner = event_target:graygoo_country
 			create_ship = {
@@ -454,9 +457,6 @@ create_dessanu_roamers_7 = {
 			#		}
 			#	}
 			#}
-		}
-		settings = {
-			uses_naval_capacity = no
 		}
 	}
 }

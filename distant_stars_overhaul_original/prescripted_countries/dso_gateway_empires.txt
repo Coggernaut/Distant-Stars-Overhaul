@@ -1,4 +1,4 @@
-"dso_cult_of_the_gateway" = {
+﻿dso_cult_of_the_gateway = {
 	key="dso_cult_of_the_gateway"
 	ship_prefix = { key="FAR" }
 	species = {
@@ -30,11 +30,11 @@
 		literal=yes
 	}
 	adjective = {
-		key="%ADJ%" 
+		key="%ADJ%"
 		variables = { { key="adjective" value = { key="Gateway Cult" literal=yes } } }
 	}
 	authority="auth_oligarchic"
-	flags = { "is_cult_of_the_gateway_flag" }
+	flag = empire_dso_cult_of_the_gateway
 	government="gov_spiritualist_gateway_worshiper"
 	planet_name = {
 		key="Gridaar"
@@ -90,7 +90,7 @@
 	origin="civic_gateway_worshiper"
 }
 #Version will only appear if Ethics and Civics Classic is activated
-"dso_cult_of_the_gateway_EaC" = {
+dso_cult_of_the_gateway_EaC = {
 	key="dso_cult_of_the_gateway_EaC"
 	ship_prefix = { key="FAR" }
 	species = {
@@ -122,11 +122,11 @@
 		literal=yes
 	}
 	adjective = {
-		key="%ADJ%" 
+		key="%ADJ%"
 		variables = { { key="adjective" value = { key="Gateway Cult" literal=yes } } }
 	}
 	authority="auth_democratic"
-	flags = { "is_cult_of_the_gateway_flag" }
+	flag = empire_dso_cult_of_the_gateway
 	government="gov_spiritualist_gateway_worshiper"
 	planet_name = {
 		key="Gridaar"
@@ -228,7 +228,7 @@
 		key="%ADJ%"
 		variables=
 		{
-			
+
 			{
 				key="adjective"
 				value=
@@ -237,7 +237,7 @@
 					literal=yes
 				}
 			}
- 
+
 		}
 	}
 	authority="auth_machine_intelligence"

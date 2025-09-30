@@ -247,7 +247,6 @@ fleet_event = {
 	option = { name = DSO_ancrel.6.a }
 }
 
-
 ##########################
 # End of the Cult's Schism#
 ##########################
@@ -820,7 +819,6 @@ country_event = {
 
 	option = {
 		name = "dso_story.230.a"
-
 	}
 }
 
@@ -837,6 +835,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		owner = {
 			has_country_flag = searching_for_dso_story_dessanu_heretics
 			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_1 }
@@ -1019,6 +1018,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		owner = {
 			has_country_flag = searching_for_dso_story_dessanu_heretics
 			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_2 }
@@ -1105,6 +1105,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		owner = {
 			has_country_flag = searching_for_dso_story_dessanu_heretics
 			NOT = { has_country_flag = dso_story_dessanu_heretics_sighted_3 }
@@ -1583,6 +1584,7 @@ fleet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		owner = { has_country_flag = hunting_dessanu_cult_schism_flagship }
 		from = { has_star_flag = dso_story_dessanu_cult_schism_flagship_system }
 	}
@@ -1914,8 +1916,8 @@ planet_event = {
 	title = dso_story.2015.name
 	desc = {
 		trigger = {
-			NOT = {
-				any_country = {
+			count_country = { count = 0
+				limit = {
 					NOT = { is_same_empire = root }
 					has_established_contact = root
 					has_origin = civic_gateway_worshiper
@@ -1946,6 +1948,7 @@ planet_event = {
 	}
 
 	trigger = {
+		exists = owner
 		owner = { is_ai = no }
 		has_planet_flag = dso_story_colony_factory_kidnap
 		has_deposit = d_dessanu_relic_odd_factory
@@ -2006,6 +2009,7 @@ planet_event = {
 	}
 
 	trigger = {
+		exists = owner
 		owner = { is_ai = no }
 		has_planet_flag = dso_story_colony_factory_kidnap_sequel
 		has_deposit = d_dessanu_relic_odd_factory
@@ -2070,6 +2074,7 @@ planet_event = {
 	}
 
 	trigger = {
+		exists = owner
 		owner = { is_ai = no }
 		has_planet_flag = dso_story_colony_factory_no_effect
 		has_deposit = d_dessanu_relic_odd_factory
@@ -2167,6 +2172,7 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		exists = owner
 		owner = {
 			has_origin = civic_gateway_worshiper
 			has_country_flag = DSO_dessanu_uplifting_process

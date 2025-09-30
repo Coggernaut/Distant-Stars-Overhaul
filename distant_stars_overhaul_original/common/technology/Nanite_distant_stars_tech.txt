@@ -225,6 +225,16 @@ tech_advanced_nanites = {
 	}
 	ai_weight = {
 		modifier = {
+			factor = 0
+			NOR = {
+				has_origin = civic_harvester_nanites
+				has_origin = civic_gateway_pursuer
+				is_spiritualist = no
+				is_materialist = yes
+				has_origin = civic_gateway_worshiper
+			}
+		}
+		modifier = {
 			factor = 0.25
 			NOR = {
 				has_origin = civic_harvester_nanites
@@ -240,16 +250,6 @@ tech_advanced_nanites = {
 				has_origin = civic_gateway_pursuer
 				is_spiritualist = yes
 				is_materialist = no
-			}
-		}
-		modifier = {
-			factor = 0
-			NOR = {
-				has_origin = civic_harvester_nanites
-				has_origin = civic_gateway_pursuer
-				is_spiritualist = no
-				is_materialist = yes
-				has_origin = civic_gateway_worshiper
 			}
 		}
 		modifier = {
@@ -549,7 +549,7 @@ tech_nanite_weaponry = {
 		}
 		modifier = {
 			factor = 0.35
-			OR = { is_materialist = yes }
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 2

@@ -156,8 +156,7 @@ planet_event = {
 					any_country = { is_country_type = lgaia_incarnation_country }
 				}
 				event_target:l_gaia_incarnation = {
-					set_faction_hostility = {
-						target = from set_hostile = yes }
+					set_faction_hostility = { target = from set_hostile = yes }
 				}
 			}
 			else = {
@@ -168,8 +167,7 @@ planet_event = {
 						set_name = "L_Gaia_Incarnation"
 						save_global_event_target_as = l_gaia_incarnation
 						every_playable_country = { establish_communications_no_message = prev }
-						set_faction_hostility = {
-							target = from set_hostile = yes }
+						set_faction_hostility = { target = from set_hostile = yes }
 					}
 				}
 			}
@@ -493,7 +491,6 @@ planet_event = {
 				save_global_event_target_as = nanite_ecosystem_subterranean_nation
 			}
 		}
-
 	}
 	option = {
 		name = "colony.51.a"
@@ -714,7 +711,7 @@ country_event = {
 				if = {
 					limit = { any_owned_pop_group = { is_unemployed = no } }
 					weighted_random_owned_pop_group = { kill_single_pop = yes }
-					create_pop = { species = event_target:nanite_ecosystem_subterranean_species }
+					create_pop_group = { species = event_target:nanite_ecosystem_subterranean_species }
 				}
 				create_army = {
 					name = "NAME_Loot-Equipped_Army"
@@ -986,18 +983,18 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			create_pop = {
+			create_pop_group = {
 				species = event_target:nanite_ecosystem_subterranean_species
 				ethos = { ethic = "ethic_spiritualist" }
 			}
-			create_pop = {
+			create_pop_group = {
 				species = event_target:nanite_ecosystem_subterranean_species
 				ethos = { ethic = "ethic_spiritualist" }
-			}
-			last_created_pop = {
-				set_citizenship_type = {
-					type = citizenship_slavery
-					cooldown = yes
+				effect = {
+					set_citizenship_type = {
+						type = citizenship_slavery
+						cooldown = yes
+					}
 				}
 			}
 		}
@@ -1257,7 +1254,7 @@ planet_event = {
 		trigger = {
 			# free_housing > 0
 		}
-		create_pop = {
+		create_pop_group = {
 			species = event_target:nanite_ecosystem_subterranean_species
 			ethos = { ethic = "ethic_spiritualist" }
 		}
@@ -1959,7 +1956,6 @@ country_event = {
 						}
 					}
 				}
-
 			}
 			spawn_planet = {
 				class = "pc_nanite_gas_giant"
@@ -2064,11 +2060,9 @@ country_event = {
 			}
 		}
 		event_target:l_amoeba_elder = {
-			set_faction_hostility = {
-				target = event_target:l_tiyanki_elder set_hostile = yes }
+			set_faction_hostility = { target = event_target:l_tiyanki_elder set_hostile = yes }
 			prev = {
-				set_faction_hostility = {
-					target = prev set_hostile = yes }
+				set_faction_hostility = { target = prev set_hostile = yes }
 			}
 		}
 		random_system = {
@@ -2147,7 +2141,7 @@ country_event = {
 							limit = { is_sapient = no }
 						}
 					}
-					create_pop = { species = last_created_species }
+					create_pop_group = { species = last_created_species }
 				}
 			}
 		}

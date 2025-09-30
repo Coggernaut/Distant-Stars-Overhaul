@@ -39,7 +39,6 @@ ship_event = {
 			}
 		}
 	}
-
 }
 planet_event = {
 	id = distar_overhaul.4
@@ -424,10 +423,10 @@ country_event = {
 			remove_planet_flag = subterranean_harvester_invasion_planet
 			save_event_target_as = conquered_harvester_planet
 			set_owner = event_target:subterranean_harvester_empire
-			weighted_random_owned_pop_group = { kill_single_pop = yes }
-			weighted_random_owned_pop_group = { kill_single_pop = yes }
-			create_pop = { species = owner_species }
-			create_pop = { species = owner_species }
+			weighted_random_owned_pop_group = {
+				kill_pop_group = { pop_group = this amount = 200 }
+			}
+			create_pop_group = { species = owner_species size = 200 }
 			create_army = {
 				name = "NAME_Loot-Equipped_Army"
 				owner = event_target:subterranean_harvester_empire
@@ -790,18 +789,18 @@ planet_event = {
 			}
 		}
 		hidden_effect = {
-			create_pop = {
+			create_pop_group = {
 				species = event_target:harvester_subterranean_species
 				ethos = { ethic = "ethic_spiritualist" }
 			}
-			create_pop = {
+			create_pop_group = {
 				species = event_target:harvester_subterranean_species
 				ethos = { ethic = "ethic_spiritualist" }
-			}
-			last_created_pop = {
-				set_citizenship_type = {
-					type = citizenship_slavery
-					cooldown = yes
+				effect = {
+					set_citizenship_type = {
+						type = citizenship_slavery
+						cooldown = yes
+					}
 				}
 			}
 		}
@@ -1054,7 +1053,7 @@ planet_event = {
 		trigger = {
 			# free_housing > 0
 		}
-		create_pop = {
+		create_pop_group = {
 			species = event_target:harvester_subterranean_species
 			ethos = { ethic = "ethic_spiritualist" }
 		}

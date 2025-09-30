@@ -96,7 +96,7 @@ planet_event = {
 		# Actual Harvest world Stuff
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 25
 					planet_size = 24
@@ -108,7 +108,7 @@ planet_event = {
 		# gaia_large
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 22
 					planet_size = 21
@@ -120,7 +120,7 @@ planet_event = {
 		# gaia_medium
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 19
 					planet_size = 18
@@ -132,7 +132,7 @@ planet_event = {
 		# gaia_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 16
 					planet_size = 15
@@ -144,7 +144,7 @@ planet_event = {
 		# gaia_very_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				planet_size < 14
 			}
 			planet_event = { id = harvester_engine.1 days = 14000 }
@@ -232,7 +232,7 @@ planet_event = {
 		# gaia_very_large
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 25
 					planet_size = 24
@@ -244,7 +244,7 @@ planet_event = {
 		# gaia_large
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 22
 					planet_size = 21
@@ -256,7 +256,7 @@ planet_event = {
 		# gaia_medium
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 19
 					planet_size = 18
@@ -268,7 +268,7 @@ planet_event = {
 		# gaia_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 16
 					planet_size = 15
@@ -280,7 +280,7 @@ planet_event = {
 		# gaia_very_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				planet_size < 14
 			}
 			planet_event = { id = harvester_engine.2 days = 10400 }
@@ -355,7 +355,7 @@ planet_event = {
 		# gaia_very_large
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 25
 					planet_size = 24
@@ -367,7 +367,7 @@ planet_event = {
 		# gaia_large
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 22
 					planet_size = 21
@@ -379,7 +379,7 @@ planet_event = {
 		# gaia_medium
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 19
 					planet_size = 18
@@ -391,7 +391,7 @@ planet_event = {
 		# gaia_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				OR = {
 					planet_size = 16
 					planet_size = 15
@@ -403,7 +403,7 @@ planet_event = {
 		# gaia_very_small
 		if = {
 			limit = {
-				is_planet_class = pc_gaia
+				merg_is_gaia_basic = yes
 				planet_size < 14
 			}
 			planet_event = { id = harvester_engine.3 days = 5200 }

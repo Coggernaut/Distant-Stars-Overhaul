@@ -29,8 +29,8 @@ nanite_factory_station_0 = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
-			NOT = {
-				any_system_planet = {
+			count_system_planet = { count = 0
+				limit = {
 					is_surveyed = {
 						who = prev.from
 						status = no

@@ -1,0 +1,5 @@
+# Generated/updated by Stellaris Mod Updater
+
+empire_dso_cult_of_the_gateway = {
+	flags = { is_cult_of_the_gateway_flag }
+}
