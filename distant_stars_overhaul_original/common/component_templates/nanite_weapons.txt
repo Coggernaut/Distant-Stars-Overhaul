@@ -94,7 +94,7 @@ strike_craft_component_template = {
 	icon_frame = 1
 
 	tags = { weapon_type_strike_craft }
-	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor nanite_interdictor dso_true_nanite_mothership }
 
 	power = -60
 
@@ -147,7 +147,7 @@ weapon_component_template = {
 
 	component_set = "GG_ENERGY_MISSILE_NANITE"
 	projectile_gfx = "gatebuilder_torpedo"
-	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor nanite_interdictor dso_true_nanite_mothership }
 
 	tags = { weapon_type_energy }
 	ai_tags = { weapon_role_artillery artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
@@ -199,7 +199,7 @@ weapon_component_template = {
 	tags = { weapon_type_kinetic }
 
 	component_set = "GG_BEAM_STATIC_X_NANITE"
-	size_restriction = { dso_nanite_core dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_true_nanite_mothership }
 
 	projectile_gfx = "gatebuilder_titan_weapon"
 
@@ -249,7 +249,7 @@ weapon_component_template = {
 	tags = { weapon_type_kinetic }
 
 	component_set = "GG_BEAM_STATIC_NANITE"
-	size_restriction = { dso_nanite_core dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_true_nanite_mothership }
 
 	projectile_gfx = "gatebuilder_titan_weapon"
 
@@ -293,7 +293,7 @@ weapon_component_template = {
 
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
-	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor dso_true_nanite_mothership }
 
 	projectile_gfx = "mass_driver_s"
 	tags = { weapon_type_kinetic }
@@ -340,7 +340,7 @@ weapon_component_template = {
 
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
-	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor dso_true_nanite_mothership }
 
 	projectile_gfx = "mass_driver_m"
 	tags = { weapon_type_kinetic }
@@ -387,7 +387,7 @@ weapon_component_template = {
 
 	prerequisites = { "tech_nanite_guns" }
 	component_set = "GG_NANITE_GUNS"
-	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor }
+	size_restriction = { dso_nanite_core dso_nanite_mothership dso_nanite_interdictor dso_true_nanite_mothership }
 
 	projectile_gfx = "mass_driver_l"
 	tags = { weapon_type_kinetic }
