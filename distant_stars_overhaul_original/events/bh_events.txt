@@ -612,10 +612,11 @@ country_event = {
 					while = {
 						count = 3
 						add_deposit = d_nanosands
-						create_pop_group = {
-							species = owner_species
-							ethos = owner
-						}
+					}
+					create_pop_group = {
+						species = owner_species
+						ethos = owner
+						size = 300
 					}
 					planet_event = { id = dso_story.2015 days = 360 random = 360 }
 				}

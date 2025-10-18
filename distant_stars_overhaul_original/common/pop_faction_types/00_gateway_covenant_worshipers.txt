@@ -37,7 +37,6 @@ gateway_covenant = {
 						has_trait = trait_dessanu_uplifted
 					}
 				}
-
 			}
 		}
 	}
@@ -408,13 +407,11 @@ gateway_covenant = {
 				is_megastructure_type = lgate_base
 				exists = owner
 				owner = {
-					OR = {
-						NOT = { has_government = gov_spiritualist_gateway_worshiper }
-						# AND = {
-						# 	exists = ruler
-						# 	ruler = { NOT = { leader_of_faction = gateway_covenant } } removed in 3.8
-						# }
-					}
+					 # AND = {
+					 # 	exists = ruler
+					 # 	ruler = { NOT = { leader_of_faction = gateway_covenant } } removed in 3.8
+					 # }
+					NOT = { has_government = gov_spiritualist_gateway_worshiper }
 					has_communications = root.owner
 				}
 			}

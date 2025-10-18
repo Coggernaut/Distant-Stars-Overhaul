@@ -201,10 +201,10 @@ DSO_nanite_forge_overseer = {
 			icon = DSO_nanite_forge_overseer
 			condition_string = OVERSEER_JOB_TRIGGER
 			building_icon = building_fe_assembly_1
+			# building_icon = d_mining_tunnels
 		}
 	}
 	is_capped_by_modifier = yes
-	building_icon = d_mining_tunnels # Vanilla copy
 
 	possible_pre_triggers = {
 		has_owner = yes

@@ -49,13 +49,11 @@ decision_baol_life_seed = {
 					create_nu_baol_effect = yes
 				}
 			}
-			while = {
-				count = 4
-				create_pop_group = {
-					species = event_target:nu_baol_species
-					ethos = {
-						ethic = "ethic_pacifist"
-					}
+			create_pop_group = {
+				species = event_target:nu_baol_species
+				size = 400
+				ethos = {
+					ethic = "ethic_pacifist"
 				}
 			}
 			planet_event = { id = ancrel.2025 } # Notification event

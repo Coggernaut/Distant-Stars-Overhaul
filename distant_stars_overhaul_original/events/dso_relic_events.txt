@@ -1862,10 +1862,10 @@ planet_event = {
 	pre_triggers = {
 		has_owner = yes
 		is_homeworld = no
-		original_owner = yes
-		has_ground_combat = no
 		is_capital = no
+		original_owner = yes
 		is_occupied_flag = no
+		has_ground_combat = no
 	}
 
 	trigger = {

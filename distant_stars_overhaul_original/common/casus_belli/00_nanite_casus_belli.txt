@@ -29,7 +29,7 @@ cb_lgate_containment = {
 		NOR = { has_total_war_cb = yes is_overlord_to = from }
 		OR = {
 			is_subject = no
-			overlord = { NOT = { is_same_value = from } }
+			overlord = { NOT = { is_same_empire = from } }
 		}
 		from = {
 			any_owned_megastructure = {
@@ -38,8 +38,8 @@ cb_lgate_containment = {
 		}
 		from = {
 			NOR = {
-				has_origin = civic_gateway_worshiper 
-				is_country_type = gate_builders 
+				has_origin = civic_gateway_worshiper
+				is_country_type = gate_builders
 			}
 		}
 	}

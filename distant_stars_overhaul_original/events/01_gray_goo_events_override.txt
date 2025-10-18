@@ -328,40 +328,29 @@ country_event = {
 					if = {
 						limit = { is_capital = yes }
 						change_planet_size = 30
-						create_pop_group = { species = owner_species size = 112 }
-					}
-					else = {
-						create_pop_group = { species = owner_species size = 30 }
-					}
-					if = {
-						limit = { is_capital = yes }
+						create_pop_group = { species = owner_species size = 11200 }
 						while = {
 							count = 12
 							add_district_and_planet_size_if_needed_effect = {
 								district = district_city
 							}
-						}
-					}
-					else = {
-						while = {
-							count = 6
-							add_district_and_planet_size_if_needed_effect = {
-								district = district_city
-							}
-						}
-					}
-					if = {
-						limit = { is_capital = yes }
-						while = {
-							count = 12
 							add_district_and_planet_size_if_needed_effect = {
 								district = district_mining
 							}
 						}
+						while = {
+							count = 4
+							add_building = building_fe_dome
+						}
+						add_building = building_fe_stronghold
 					}
 					else = {
+						create_pop_group = { species = owner_species size = 3000 }
 						while = {
 							count = 6
+							add_district_and_planet_size_if_needed_effect = {
+								district = district_city
+							}
 							add_district_and_planet_size_if_needed_effect = {
 								district = district_mining
 							}
@@ -396,18 +385,7 @@ country_event = {
 						}
 					}
 					add_building = building_ancient_palace
-					if = {
-						limit = { is_capital = yes }
-						add_building = building_fe_dome
-						add_building = building_fe_dome
-						add_building = building_fe_dome
-						add_building = building_fe_dome
-					}
 					add_building = building_fe_dome
-					if = {
-						limit = { is_capital = yes }
-						add_building = building_fe_stronghold
-					}
 					add_building = building_fe_stronghold
 					add_building = building_nourishment_center
 					add_building = building_class_4_singularity
@@ -436,23 +414,20 @@ country_event = {
 		hidden_effect = {
 			every_playable_country = {
 				limit = {
-					OR = {
-						has_special_project = LCLUSTER_PROJECT
-						has_event_chain = l_cluster_chain
-					}
-					NOT = { is_same_value = root }
+					NOT = { is_same_empire = root }
 				}
-				country_event = { id = graygoo.111 }
-			}
-			every_playable_country = {
-				limit = {
-					NOR = {
-						has_event_chain = l_cluster_chain
-						has_special_project = LCLUSTER_PROJECT
-						is_same_value = root
+				if = {
+					limit = {
+						OR = {
+							has_special_project = LCLUSTER_PROJECT
+							has_event_chain = l_cluster_chain
+						}
 					}
+					country_event = { id = graygoo.111 }
 				}
-				country_event = { id = graygoo.112 }
+				else = {
+					country_event = { id = graygoo.112 }
+				}
 			}
 		}
 	}

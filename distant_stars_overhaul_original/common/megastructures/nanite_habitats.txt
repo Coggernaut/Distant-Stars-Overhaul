@@ -90,7 +90,7 @@ nanite_habitat_0 = {
 			factor = 0.1
 			any_neighbor_system = {
 				has_owner = yes
-				owner = { NOT = { is_same_value = from } }
+				owner = { NOT = { is_same_empire = from } }
 			}
 		}
 	}

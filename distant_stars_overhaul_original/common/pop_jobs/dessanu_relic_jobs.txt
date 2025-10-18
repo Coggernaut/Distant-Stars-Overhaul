@@ -9,10 +9,10 @@ DSO_dessanu_relic_chronicler = {
 		default = {
 			icon = fe_archivist
 			condition_string = OVERSEER_JOB_TRIGGER
+			# building_icon = d_mining_tunnels
 		}
 	}
 	is_capped_by_modifier = yes
-	building_icon = d_mining_tunnels # Vanilla copy
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -78,9 +78,9 @@ DSO_dessanu_relic_chronicler = {
 	weight = {
 		weight = 1000
 	}
-	
+
 	inline_script = "jobs/automodding_priority_charisma"
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {
@@ -138,7 +138,7 @@ DSO_dessanu_odd_factory_worker = {
 			}
 		}
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {
@@ -186,7 +186,7 @@ DSO_dessanu_odd_factory_drone = {
 			planet = { pop_amount < 200 } # Odd Factory should not risk completely depopulating a colony
 		}
 	}
-	
+
 	promotion = {
 		time = @standard_promotion_time
 		effect = {

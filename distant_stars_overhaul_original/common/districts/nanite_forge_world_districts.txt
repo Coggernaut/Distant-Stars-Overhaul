@@ -5,7 +5,7 @@
 dso_district_nexus = {
 	base_buildtime = 480
 	icon = district_nanite_forgeworld_nexus
-	is_capped_by_modifier = no
+	# is_capped_by_modifier = no obsolete in v4.1.6
 
 	zone_slots = {
 		slot_city_government
@@ -83,7 +83,7 @@ dso_district_nexus = {
 district_nanite_forgeworld_industry = {
 	icon = district_nanite_forgeworld_industry
 	base_buildtime = 240
-	is_capped_by_modifier = no
+	# is_capped_by_modifier = no obsolete in v4.1.6
 
 	zone_slots = {
 		slot_nanite_forgeworld_industry
@@ -138,7 +138,7 @@ district_nanite_forgeworld_industry = {
 dso_district_generator_uncapped = {
 	base_buildtime = 240
 	icon = district_nanite_forgeworld_generator
-	is_capped_by_modifier = no
+	# is_capped_by_modifier = no obsolete in v4.1.6
 
 	zone_slots = {
 		slot_energy
@@ -293,7 +293,7 @@ dso_district_generator_uncapped = {
 district_forgeworld_bio_reactor = {
 	icon = district_forgeworld_bio_reactor
 	base_buildtime = 240
-	is_capped_by_modifier = no
+	# is_capped_by_modifier = no obsolete in v4.1.6
 
 	zone_slots = {
 		slot_nanite_forgeworld_bio_reactor

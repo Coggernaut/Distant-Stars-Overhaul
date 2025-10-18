@@ -35,8 +35,8 @@ colonizer = {
 
 	combat_disengage_chance = 0.5
 
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_default_design = yes	# if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes # if yes, ship design will have a 3d view in the ship browser
 	prerequisites = { "tech_colonization_1" }
 	is_civilian = yes
 	is_designable = no
@@ -121,10 +121,10 @@ colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					is_lithoid_empire = no
-					is_robot_empire = no
-					is_hive_empire = no
-					NOT = {
+					NOR = {
+						is_lithoid_empire = yes
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -171,9 +171,9 @@ colonizer = {
 			trigger = {
 				from = {
 					is_lithoid_empire = yes
-					is_robot_empire = no
-					is_hive_empire = no
-					NOT = {
+					NOR = {
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -303,8 +303,8 @@ guided_sapience_colonizer = {
 
 	combat_disengage_chance = 0.5
 
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = no #if yes, ship design will have a 3d view in the ship browser
+	enable_default_design = yes	# if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = no # if yes, ship design will have a 3d view in the ship browser
 	prerequisites = { "tech_colonization_1" }
 	is_civilian = yes
 	is_designable = no
@@ -407,10 +407,10 @@ guided_sapience_colonizer = {
 		cost = {
 			trigger = {
 				from = {
-					is_lithoid_empire = no
-					is_robot_empire = no
-					is_hive_empire = no
-					NOT = {
+					NOR = {
+						is_lithoid_empire = yes
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
@@ -457,9 +457,9 @@ guided_sapience_colonizer = {
 			trigger = {
 				from = {
 					is_lithoid_empire = yes
-					is_robot_empire = no
-					is_hive_empire = no
-					NOT = {
+					NOR = {
+						is_robot_empire = yes
+						is_hive_empire = yes
 						has_origin = origin_synthetic_fertility
 					}
 				}
