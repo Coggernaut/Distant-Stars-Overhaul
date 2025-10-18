@@ -5,7 +5,7 @@ bh_harvested_planet_deposit_small = {
 			# physics_research = 4
 			# society_research = 4
 			# engineering_research = 4
-			unity = 5
+			unity = 25
 			minerals = 10
 			food = 15
 		}
@@ -23,7 +23,7 @@ bh_harvested_planet_deposit_moderate = {
 			# physics_research = 8
 			# society_research = 8
 			# engineering_research = 8
-			unity = 10
+			unity = 30
 			minerals = 20
 			food = 30
 		}
@@ -41,7 +41,7 @@ bh_harvested_planet_deposit_large = {
 			# physics_research = 15
 			# society_research = 15
 			# engineering_research = 15
-			unity = 20
+			unity = 40
 			minerals = 40
 			food = 60
 		}
