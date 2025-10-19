@@ -29,7 +29,7 @@ utility_component_template = {
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
 	component_set = "power_core"
-	size_restriction = { dso_nanite_mothership }
+	size_restriction = { dso_nanite_mothership dso_true_nanite_mothership }
 }
 
 utility_component_template = {
@@ -86,7 +86,7 @@ utility_component_template = {
 		ship_evasion_add = 8
 	}
 	component_set = "thruster_components"
-	size_restriction = { dso_nanite_mothership }
+	size_restriction = { dso_nanite_mothership dso_true_nanite_mothership }
 }
 
 utility_component_template = {
@@ -123,7 +123,7 @@ utility_component_template = {
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership dso_true_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "swarm"
 
@@ -179,7 +179,7 @@ utility_component_template = {
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership dso_true_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "line"
 
@@ -207,7 +207,7 @@ utility_component_template = {
 	}
 	prerequisites = { tech_repeatable_nanite_technology_insight }
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership }
+	size_restriction = { dso_nanite_core dso_nanite_interdictor dso_nanite_mothership dso_true_nanite_mothership }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 
