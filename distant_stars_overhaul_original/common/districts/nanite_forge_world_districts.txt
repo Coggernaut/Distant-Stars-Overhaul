@@ -240,32 +240,32 @@ dso_district_generator = {
 	ai_weight_coefficient = @rural_district_ai_coefficient
 }
 
-dso_district_generator_uncapped = {
-	expansion_planner = yes
-	base_buildtime = 240
-	icon = district_generator
-	overlay_icon = GFX_district_energy
-
-	zone_slots = {
-		slot_energy
-	}
-
-	show_on_uncolonized = {
-		always = no				# Kept for save compatibility
-	}
-
-	potential = {
-		always = no				# Kept for save compatibility
-	}
-
-	conversion_ratio = 1
-	convert_to = {
-		dso_district_generator
-		district_forgeworld_bio_reactor
-		dso_district_nexus
-		district_nanite_forgeworld_industry
-	}
-}
+#dso_district_generator_uncapped = {
+#	expansion_planner = yes
+#	base_buildtime = 240
+#	icon = district_generator
+#	overlay_icon = GFX_district_energy
+#
+#	zone_slots = {
+#		slot_energy
+#	}
+#
+#	show_on_uncolonized = {
+#		always = no				# Kept for save compatibility
+#	}
+#
+#	potential = {
+#		always = no				# Kept for save compatibility
+#	}
+#
+#	conversion_ratio = 1
+#	convert_to = {
+#		dso_district_generator
+#		district_forgeworld_bio_reactor
+#		dso_district_nexus
+#		district_nanite_forgeworld_industry
+#	}
+#}
 
 
 district_forgeworld_bio_reactor = {
