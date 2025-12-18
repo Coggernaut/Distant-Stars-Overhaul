@@ -141,7 +141,7 @@ dso_district_generator = {
 	base_buildtime = 240
 	overlay_icon = GFX_district_energy
 	is_uncapped = {
-		is_generator_district_uncapped = yes
+		uses_district_set = dso_nanite_forgeworld
 	}
 
 	min_for_deposits_on_planet = 3

@@ -67,6 +67,7 @@ civic_gateway_pursuer = {
 		trait = trait_robot_irregular_emotion_emulators
 	}
 	flags = { custom_start_screen }
+	advanced_start = yes
 	# modification = no
 	random_weight = {
 		base = 1
