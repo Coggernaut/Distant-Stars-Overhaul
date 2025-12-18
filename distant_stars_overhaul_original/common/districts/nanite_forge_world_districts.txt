@@ -31,10 +31,9 @@ dso_district_nexus = {
 
 	conversion_ratio = 0.5
 	convert_to = {
-		district_arcology_housing
-		district_city
-		district_hive
-		district_mindlink
+		dso_district_generator
+		district_forgeworld_bio_reactor
+		district_nanite_forgeworld_industry
 	}
 	resources = {
 		category = planet_districts_cities
@@ -99,7 +98,9 @@ district_nanite_forgeworld_industry = {
 
 	conversion_ratio = 1
 	convert_to = {
-		district_nexus
+		dso_district_nexus
+		dso_district_generator
+		district_forgeworld_bio_reactor
 	}
 
 	resources = {
@@ -135,10 +136,16 @@ district_nanite_forgeworld_industry = {
 	}
 }
 
-dso_district_generator_uncapped = {
+dso_district_generator = {
+	expansion_planner = yes
 	base_buildtime = 240
-	icon = district_nanite_forgeworld_generator
-	# is_capped_by_modifier = no obsolete in v4.1.6
+	overlay_icon = GFX_district_energy
+	is_uncapped = {
+		is_generator_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
 
 	zone_slots = {
 		slot_energy
@@ -153,16 +160,21 @@ dso_district_generator_uncapped = {
 	}
 
 	allow = {
-		NOT = { has_modifier = resort_colony }
+		custom_tooltip = {
+			fail_text = arcology_project_construction_fail_tt
+			NOT = { has_planet_flag = arcology_project_construction }
+		}
 	}
 
 	conversion_ratio = 1
 	convert_to = {
-		district_generator
+		dso_district_nexus
+		district_forgeworld_bio_reactor
+		district_nanite_forgeworld_industry
 	}
 
 	resources = {
-		category = planet_districts
+		category = planet_districts_generator
 		cost = {
 			minerals = @nanite_district_cost
 			nanites = 10
@@ -172,8 +184,13 @@ dso_district_generator_uncapped = {
 		}
 	}
 
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = @base_rural_district_jobs
+	}
+
 	planet_modifier = {
-		planet_housing_add = 400
+		planet_housing_add = 200
 	}
 
 	triggered_planet_modifier = {
@@ -183,112 +200,73 @@ dso_district_generator_uncapped = {
 				has_valid_civic = civic_agrarian_idyll
 			}
 		}
-		planet_housing_add = 100
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
+		modifier = {
+			planet_housing_add = 300
 		}
-		job_technician_drone_add = 300
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		job_technician_drone_add = 400
-		planet_housing_add = 100
-		planet_jobs_energy_produces_mult = 0.01
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = yes }
-			has_active_building = building_energy_nexus
 		}
-		job_technician_drone_add = 100
+		modifier = {
+			planet_housing_add = 100
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
+			owner = { is_tankbound_empire = yes }
 		}
-		job_technician_add = 200
+		modifier = {
+			job_technician_automated_workforce_mult = 1.0
+			job_production_overseer_add = 100
+		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_energy_nexus
-		}
-		job_technician_add = 100
+	inline_script = {
+		script = districts/district_triggered_name_generator
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		job_fe_acolyte_generator_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_energy_nexus
-		}
-		job_fe_acolyte_generator_add = 100
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_technician_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-		}
-		text = job_technician_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-		}
-		text = job_fe_acolyte_generator_effect_desc
+	inline_script = {
+		script = districts/district_triggered_flavor_desc_generator
 	}
 
 	prerequisites = {
 		tech_power_plant_1
 	}
 
-	ai_resource_production = {
-		energy = 1
-		trigger = {
-			always = yes
-		}
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+dso_district_generator_uncapped = {
+	expansion_planner = yes
+	base_buildtime = 240
+	icon = district_generator
+	overlay_icon = GFX_district_energy
+
+	zone_slots = {
+		slot_energy
+	}
+
+	show_on_uncolonized = {
+		always = no				# Kept for save compatibility
+	}
+
+	potential = {
+		always = no				# Kept for save compatibility
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		dso_district_generator
+		district_forgeworld_bio_reactor
+		dso_district_nexus
+		district_nanite_forgeworld_industry
 	}
 }
+
 
 district_forgeworld_bio_reactor = {
 	icon = district_forgeworld_bio_reactor
@@ -309,7 +287,8 @@ district_forgeworld_bio_reactor = {
 
 	conversion_ratio = 1
 	convert_to = {
-		district_nexus
+		dso_district_generator
+		dso_district_nexus
 		district_nanite_forgeworld_industry
 	}
 
