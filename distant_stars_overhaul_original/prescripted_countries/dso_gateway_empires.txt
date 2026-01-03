@@ -78,7 +78,7 @@
 	spawn_as_fallen=no
 	ignore_portrait_duplication=no
 	room="personality_evangelizing_zealots_room"
-	spawn_enabled=always
+	spawn_enabled=yes	#spawn_enabled=always was determined to be unfun, perhaps should be spawned as an uplifted Pre-FTL empire?
 	ethic="ethic_militarist"
 	ethic="ethic_spiritualist"
 	ethic="ethic_xenophile"
@@ -170,7 +170,7 @@ dso_cult_of_the_gateway_EaC = {
 	spawn_as_fallen=no
 	ignore_portrait_duplication=no
 	room="personality_evangelizing_zealots_room"
-	spawn_enabled=always
+	spawn_enabled=yes	#spawn_enabled=always was determined to be unfun, perhaps should be spawned as an uplifted Pre-FTL empire?
 	ethic="ethic_fanatic_spiritualist"
 	ethic="ethic_fanatic_xenophile"
 	ethic="ethic_militarist"
@@ -301,7 +301,7 @@ dso_cult_of_the_gateway_EaC = {
 	spawn_as_fallen=no
 	ignore_portrait_duplication=no
 	room="machine_room"
-	spawn_enabled=always
+	spawn_enabled=yes	#spawn_enabled=always was determined to be unfun, perhaps should be spawned as an uplifted Pre-FTL empire?
 	ethic="ethic_gestalt_consciousness"
 	civics=
 	{
