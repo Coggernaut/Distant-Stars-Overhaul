@@ -843,10 +843,10 @@ planet_event = {
 	hide_window = yes
 	pre_triggers = { has_owner = yes }
 	immediate = {
-		add_district = dso_district_generator_uncapped
-		add_district = dso_district_generator_uncapped
-		add_district = dso_district_generator_uncapped
-		add_district = dso_district_generator_uncapped
+		add_district = dso_district_generator
+		add_district = dso_district_generator
+		add_district = dso_district_generator
+		add_district = dso_district_generator
 		add_district = dso_district_nexus
 		add_district = dso_district_nexus
 		add_district = dso_district_nexus

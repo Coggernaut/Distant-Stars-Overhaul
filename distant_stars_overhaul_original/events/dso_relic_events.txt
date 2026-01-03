@@ -244,7 +244,47 @@ fleet_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
-	option = { name = DSO_ancrel.6.a }
+	option = {
+		name = "DSO_ancrel.6.a"
+		trigger = {
+			has_machine_age_dlc = yes
+			owner = {
+				OR = {
+					has_origin = civic_harvester_nanites
+					has_origin = civic_gateway_pursuer
+				}
+			}
+		}
+		owner = {
+			hidden_effect = { 
+				set_country_flag = transformation_nanotech
+				set_variable = {
+					which = nanotech_worlds_created
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					num_tradition_categories < @max_tradition_trees
+				}
+				set_country_flag = nanotech_traditions_unlocked
+				add_tradition = tr_nanotech_adopt
+				custom_tooltip = "machine_age.4005.a.nanotech.tt"
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { 
+		name = "DSO_ancrel.6.b"
+		trigger = { has_machine_age_dlc = yes }
+	}
+	
+	option = { 
+		name = "DSO_ancrel.6.a"
+		trigger = { has_machine_age_dlc = no }
+	}
 }
 
 ##########################
