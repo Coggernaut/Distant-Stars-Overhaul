@@ -491,6 +491,18 @@ country_event = {
 			limit = {
 				NOT = { has_origin = civic_gateway_worshiper }
 			}
+			every_system = { 
+				limit = { 
+					has_planet_class = pc_nanite_forgeworld
+				}
+				every_system_planet = {
+					limit = { 
+						is_planet_class = pc_nanite_forgeworld 
+						has_owner = no
+					}
+					change_pc = pc_gray_goo
+				}
+			}
 			capital_scope = {
 				set_planet_flag = pc_nanite_forgeworld
 				clear_deposits = yes
@@ -502,7 +514,7 @@ country_event = {
 				}
 				add_deposit = d_nanite_forgeworld_deposit # Also put in on_action for terraform. Event ID bio_harvest.12
 				add_district = district_nanite_forgeworld_industry
-				planet_event = { id = bio_harvest.4 days = 3 } # Sets up starting world economy.
+				planet_event = { id = bio_harvest.4 days = 1 } # Sets up starting world economy.
 			}
 			random_planet_within_border = {
 				limit = { is_planet_class = pc_shattered }
@@ -850,6 +862,50 @@ planet_event = {
 		add_district = dso_district_nexus
 		add_district = dso_district_nexus
 		add_district = dso_district_nexus
+	}
+	after = {
+		if = {
+			limit = { NOT = { has_building = building_machine_assembly_plant } }
+			add_building = building_machine_assembly_plant
+		}
+		if = {
+			limit = { NOT = { has_building = building_drone_storage } }
+			add_building = building_drone_storage
+		}
+
+		add_zone = {
+			district = district_nexus
+			zone = zone_research_unity
+			zone_slot = 1
+		}
+
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_machine_cult_machine
+						has_valid_civic = civic_machine_servitor
+						has_valid_civic = civic_machine_obsessional_directive
+					}
+				}
+			}
+			add_zone = {
+				district = district_nexus
+				zone = zone_industrial
+				zone_slot = 2
+			}
+			add_building = {
+				building = building_factory_1
+				zone = zone_industrial
+			}
+		}
+		else = {
+			add_zone = {
+				district = district_nexus
+				zone = zone_research_nexus
+				zone_slot = 2
+			}
+		}
 	}
 }
 

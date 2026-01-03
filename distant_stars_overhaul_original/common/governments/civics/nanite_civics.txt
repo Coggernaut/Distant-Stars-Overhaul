@@ -6,7 +6,7 @@ civic_harvester_nanites = {
 	starting_colony = pc_nanite_forgeworld
 	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
-	preferred_planet_class_neighbor = no
+	preferred_planet_class_neighbor = yes
 	possible = {
 		species_archetype = { value = MACHINE }
 		civics = {
@@ -50,7 +50,7 @@ civic_gateway_pursuer = {
 	starting_colony = pc_nanite_forgeworld
 	habitability_preference = pc_nanite_forgeworld
 	initializers = { civic_harvester_nanites_system }
-	preferred_planet_class_neighbor = no
+	preferred_planet_class_neighbor = yes
 	possible = {
 		species_archetype = { value = MACHINE }
 		civics = {

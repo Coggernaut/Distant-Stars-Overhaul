@@ -260,9 +260,9 @@
  zone_nanite_forgeworld_industry_plural: "Auxiliary Forges"
  
  dso_ancient_dessanu_battle_site: "$ancrel.108.name$"
- dso_district_generator_uncapped: "Energy Generator District"
- dso_district_generator_uncapped_desc: ""
- dso_district_generator_uncapped_plural: "Energy Generator Districts"
+ dso_district_generator: "Energy Generator District"
+ dso_district_generator_desc: ""
+ dso_district_generator_plural: "Energy Generator Districts"
  dso_district_nexus: "Nexus District"
  dso_district_nexus_desc: ""
  dso_district_nexus_plural: "Nexus Districts"
