@@ -349,6 +349,7 @@
  nanite_technology_mastery_chain_desc: "We have learned the mysterious star cluster just beyond the periphery of our galaxy was home to the §HDessanu§!. The Dessanu are seemingly connected to the mysterious constructs created by Nanite Technology. Though, the §HDessanu Cluster§! can only be accessed through §HL-Gates§!, artificial subspace portals found in certain systems.\n\nThese Gateways have been opened by someone, and insight into these nanite constructs can bring about §HNanite Technological Mastery§!."
  nanite_technology_mastery_chain_title: "The Flood of Nanite Technology"
  nanite_technology_mastery_finish_tooltip: "Finishes the §YNanite Technological Mastery§! event chain."
+ mod_pc_gray_goo_habitability:0 "Nanite World Habitability"
  opinion_harvested_a_world: "Harvested a World"
  orbital_nanite_shipyard: "$DCV_MAINTENANCE_CREW$"
  orbital_nanite_shipyard_desc: "Station shipyards are outfitted with nanite cloud vents to optimize shipyard production."

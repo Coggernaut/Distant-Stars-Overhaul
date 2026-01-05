@@ -42,8 +42,8 @@ trait_dessanu_nanites = {
 	allowed_archetypes = { MACHINE }
 	# Machines only
 	modifier = { 
-		pc_nanite_forgeworld_habitability = 2.0
-		pc_dessanu_relic_habitability = 1.0
+		#pc_nanite_forgeworld_habitability = 2.0	#Cog Note - now in habitability preference trait
+		#pc_dessanu_relic_habitability = 1.0		#Cog Note - now in habitability preference trait
 		planet_jobs_food_produces_mult = -0.75
 		planet_pop_assembly_mult = 0.1 
 	}

@@ -52,7 +52,8 @@ trait_pc_nanite_forgeworld_preference = {
 	allowed_archetypes = { ROBOT MACHINE }
 	sorting_priority = 30
 	modifier = {
-		pc_nanite_forgeworld_habitability = 2.0
+		pc_nanite_forgeworld_habitability = 3.0
+		pc_gray_goo_habitability = 3.0
 		pc_dessanu_relic_habitability = 1.0
 	}
 	ai_weight = {
