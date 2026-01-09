@@ -9,6 +9,7 @@ civic_harvester_nanites = {
 	preferred_planet_class_neighbor = yes
 	possible = {
 		species_archetype = { value = MACHINE }
+		authority = { value = auth_machine_intelligence }
 		civics = {
 			value = civic_machine_terminator
 			NOR = {

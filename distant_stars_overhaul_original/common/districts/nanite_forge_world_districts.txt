@@ -15,13 +15,23 @@ dso_district_nexus = {
 
 	show_on_uncolonized = {
 		exists = from
-		from = { is_machine_empire = yes }
+		from = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
 		exists = owner
-		owner = { is_machine_empire = yes }
+		owner = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
@@ -89,10 +99,24 @@ district_nanite_forgeworld_industry = {
 	}
 
 	show_on_uncolonized = {
+		exists = from
+		from = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
@@ -152,10 +176,24 @@ dso_district_generator = {
 	}
 
 	show_on_uncolonized = {
+		exists = from
+		from = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
@@ -278,10 +316,24 @@ district_forgeworld_bio_reactor = {
 	}
 
 	show_on_uncolonized = {
+		exists = from
+		from = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
 	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				is_machine_empire = yes 
+				is_individual_machine = yes
+			}
+		}
 		uses_district_set = dso_nanite_forgeworld
 	}
 
